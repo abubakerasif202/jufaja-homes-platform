@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { Home, Layers, RefreshCw, PenTool, Box, KeyRound, ArrowRight, Sparkles } from 'lucide-react';
@@ -16,42 +14,37 @@ interface SelectorOption {
 const selectorItems: SelectorOption[] = [
   {
     title: 'Single Storey Designs',
-    subtitle: 'Thoughtfully planned single-level residences for modern family living',
+    subtitle: 'Browse single storey design listings and compare their listed specifications.',
     icon: Home,
     link: '/designs?dwelling_type=single',
-    badge: '23 Plans',
   },
   {
     title: 'Double Storey Homes',
-    subtitle: 'Expansive multi-level living with open entertaining and master suites',
+    subtitle: 'Browse double storey design listings and compare their listed specifications.',
     icon: Layers,
     link: '/designs?dwelling_type=double',
-    badge: '20 Plans',
   },
   {
     title: 'Knockdown Rebuild',
-    subtitle: 'Stay in the street you love. Replace your older home with an architectural sanctuary',
+    subtitle: 'Explore questions about the site, planning requirements and rebuild scope.',
     icon: RefreshCw,
     link: '/knockdown-rebuild',
-    badge: 'Site Feasibility',
   },
   {
     title: 'Duplex & Dual Living',
-    subtitle: 'Smart dual-occupancy plans engineered for multi-generational yield and privacy',
+    subtitle: 'Browse duplex design listings. Confirm drawings and site suitability directly.',
     icon: Box,
     link: '/designs?dwelling_type=duplex',
-    badge: '9 Plans',
   },
   {
     title: 'House & Land Packages',
-    subtitle: 'Complete turnkey home and land combinations in premier Sydney growth corridors',
+    subtitle: 'Contact JUFAJA to confirm current listings and package details.',
     icon: KeyRound,
     link: '/packages',
-    badge: '16 Lots Available',
   },
   {
     title: 'Custom Architecture',
-    subtitle: 'One-off bespoke residences engineered for sloping, narrow, or acreage blocks',
+    subtitle: 'Start with your site, your priorities and a clear design brief.',
     icon: PenTool,
     link: '/custom-homes',
     badge: 'Design Briefing',
@@ -66,7 +59,7 @@ export default function SelectorDashboard() {
           
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-jufaja-gold block mb-1">
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-jufaja-gold-700 block mb-1">
               Find Your Living Solution
             </span>
             <h2 className="text-2xl sm:text-4xl font-serif font-black text-jufaja-forest tracking-tight">
@@ -106,7 +99,7 @@ export default function SelectorDashboard() {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-stone-200/60 flex items-center justify-between text-xs font-bold text-jufaja-forest group-hover:text-jufaja-gold transition-colors">
-                    <span className="uppercase tracking-wider text-[11px]">View Plans</span>
+                    <span className="uppercase tracking-wider text-[11px]">Explore information</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>

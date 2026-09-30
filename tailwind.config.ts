@@ -24,7 +24,7 @@ const config: Config = {
           gold: {
             DEFAULT: '#c5a059',
             700: '#8e6f30',
-            600: '#a4823d',
+          600: '#8e6f30',
             500: '#c5a059',
             400: '#dfc17b',
             300: '#ecd9a8',
@@ -62,13 +62,16 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Playfair Display', 'Cinzel', 'Georgia', 'serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Georgia', 'serif'],
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
       },
       boxShadow: {
         'luxury': '0 20px 40px -15px rgba(22, 48, 36, 0.08)',
         'luxury-hover': '0 25px 50px -12px rgba(22, 48, 36, 0.15)',
         'gold-glow': '0 0 25px -5px rgba(197, 160, 89, 0.35)',
+        'jufaja-soft': '0 8px 24px rgba(22, 48, 36, 0.06)',
+        'jufaja-card': '0 18px 40px rgba(22, 48, 36, 0.09)',
+        'jufaja-elevated': '0 24px 56px rgba(22, 48, 36, 0.14)',
       },
     },
   },

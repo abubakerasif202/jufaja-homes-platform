@@ -1,17 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* JUFAJA Primary Design Tokens */
+  color-scheme: light;
+  /* JUFAJA semantic brand tokens */
   --jufaja-green-950: #0d1e16;
   --jufaja-green-900: #163024;
   --jufaja-green-800: #1e4131;
   --jufaja-green-700: #295540;
   
-  --jufaja-gold-600: #a4823d;
+  --jufaja-gold-600: #8e6f30;
   --jufaja-gold-500: #c5a059;
   --jufaja-gold-400: #dfc17b;
   --jufaja-gold-100: #fbf7ee;
@@ -27,20 +26,56 @@
   --jufaja-charcoal: #1a1a1a;
   --jufaja-muted: #5c5852;
   --jufaja-border: #e6e2da;
+  --jufaja-border-muted: #d8d3c8;
+  --surface-white: #ffffff;
+  --surface-ivory: #faf8f5;
+  --surface-cream: #fdfbf7;
+  --surface-stone: #f4f1ea;
+  --text-primary: #1a1a1a;
+  --text-secondary: #5c5852;
+  --text-muted: #706b63;
+  --border-soft: #e6e2da;
+  --border-gold: #c5a059;
+  --shadow-soft: 0 8px 24px rgba(22, 48, 36, 0.06);
+  --shadow-card: 0 18px 40px rgba(22, 48, 36, 0.09);
+  --shadow-elevated: 0 24px 56px rgba(22, 48, 36, 0.14);
 }
 
 body {
   color: var(--jufaja-charcoal);
   background-color: var(--jufaja-white);
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Luxury Editorial Headings */
 h1, h2, h3, .font-editorial {
-  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--jufaja-gold-600);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .jufaja-mark--animated .mark-roof,
+  .jufaja-mark--animated .mark-spine,
+  .jufaja-mark--animated .mark-j,
+  .jufaja-mark--animated .mark-tower,
+  .jufaja-mark--animated .mark-window {
+    animation: none !important;
+    opacity: 0.9;
+    stroke-dashoffset: 0;
+    transform: none;
+  }
 }
 
 /* Subtle Architectural Blueprint Grid Pattern */
@@ -58,6 +93,50 @@ h1, h2, h3, .font-editorial {
     linear-gradient(to bottom, rgba(22, 48, 36, 0.03) 1px, transparent 1px);
 }
 
+.jufaja-intro__grid {
+  background-image:
+    linear-gradient(to right, rgba(164, 130, 61, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(164, 130, 61, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+  animation: intro-grid-in 700ms ease-out both;
+}
+
+.jufaja-intro__mark svg {
+  filter: drop-shadow(0 10px 18px rgba(22, 48, 36, 0.08));
+}
+
+.jufaja-mark--animated .mark-roof {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: intro-roof-draw 650ms cubic-bezier(0.4, 0, 0.2, 1) 300ms forwards;
+}
+.jufaja-mark--animated .mark-spine,
+.jufaja-mark--animated .mark-j,
+.jufaja-mark--animated .mark-tower {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+  animation: intro-element-rise 480ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.jufaja-mark--animated .mark-spine { animation-delay: 700ms; }
+.jufaja-mark--animated .mark-j { animation-delay: 900ms; }
+.jufaja-mark--animated .mark-tower--one { animation-delay: 1000ms; }
+.jufaja-mark--animated .mark-tower--two { animation-delay: 1150ms; }
+.jufaja-mark--animated .mark-tower--three { animation-delay: 1300ms; }
+.jufaja-mark--animated .mark-window {
+  opacity: 0;
+  animation: intro-window-reveal 250ms ease-out 1450ms forwards;
+}
+
+@keyframes intro-grid-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes intro-roof-draw { to { stroke-dashoffset: 0; } }
+@keyframes intro-element-rise { to { transform: scaleY(1); } }
+@keyframes intro-window-reveal { to { opacity: 0.9; } }
+
 /* Custom Refined Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
@@ -67,7 +146,7 @@ h1, h2, h3, .font-editorial {
   background: var(--jufaja-stone-50);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d8d3c8;
+  background: var(--jufaja-border-muted);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {

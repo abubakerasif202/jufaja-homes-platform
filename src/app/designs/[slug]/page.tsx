@@ -1,20 +1,18 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import rawDesigns from '@/data/designs.json';
-import { HomeDesign } from '@/types';
-import { formatSquares, formatSqm, formatCurrency } from '@/lib/utils';
-import { Bed, Bath, Car, ArrowLeft, Check, Sparkles } from 'lucide-react';
+import type { HomeDesign } from '@/types';
+import { formatSquares } from '@/lib/utils';
+import { Bed, Bath, Car, ArrowLeft } from 'lucide-react';
 import FloorplanViewer from '@/components/designs/FloorplanViewer';
 import DimensionTable from '@/components/designs/DimensionTable';
-import VirtualTourModal from '@/components/designs/VirtualTourModal';
 import FacadeGallery from '@/components/designs/FacadeGallery';
 import DesignCard from '@/components/catalogue/DesignCard';
-import EnquireDesignButton from '@/components/designs/EnquireDesignButton';
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -25,25 +23,28 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
   const designs = rawDesigns as HomeDesign[];
-  const design = designs.find((d) => d.slug === params.slug);
+  const design = designs.find((d) => d.slug === slug);
 
   if (!design) return { title: 'Design Not Found' };
 
   return {
-    title: `${design.name} (${formatSquares(design.houseSizeSquares)}) | JUFAJA Homes`,
-    description: `Explore the ${design.name} by JUFAJA Homes. ${design.bedrooms} bed, ${design.bathrooms} bath, ${design.garages} car floorplan layout with ${formatSquares(design.houseSizeSquares)} built area. View floorplans and 3D tours.`,
+    title: `${design.name} | Home Design Catalogue`,
+    description: `View the listed information for the ${design.name} home design. Confirm the current plan, dimensions and inclusions with JUFAJA Constructions.`,
+    alternates: { canonical: `/designs/${design.slug}` },
+    robots: { index: false, follow: true },
     openGraph: {
-      title: `${design.name} - Architectural Plan | JUFAJA Homes`,
-      description: design.description,
-      images: [design.facades[0]?.image || ''],
+      title: `${design.name} | Home Design Catalogue`,
+      description: 'An indicative design listing. Confirm current plans and specifications directly with JUFAJA Constructions.',
     },
   };
 }
 
-export default function SingleDesignPage({ params }: Props) {
+export default async function SingleDesignPage({ params }: Props) {
+  const { slug } = await params;
   const designs = rawDesigns as HomeDesign[];
-  const design = designs.find((d) => d.slug === params.slug);
+  const design = designs.find((d) => d.slug === slug);
 
   if (!design) notFound();
 
@@ -52,19 +53,19 @@ export default function SingleDesignPage({ params }: Props) {
     .slice(0, 3);
 
   return (
-    <div className="bg-slate-50 min-h-screen pb-20">
+    <main className="min-h-screen bg-jufaja-cream pb-20">
       
       {/* Top Breadcrumb Header Bar */}
-      <div className="bg-white border-b border-slate-200 py-4">
+      <div className="border-b border-jufaja-border bg-white py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-xs">
           <Link
             href="/designs"
-            className="inline-flex items-center gap-1.5 font-bold text-brand-navy hover:text-brand-orange transition-colors"
+            className="inline-flex min-h-11 items-center gap-1.5 rounded-sm font-semibold text-jufaja-forest transition-colors hover:text-jufaja-forest-700"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Back to All 63 Designs</span>
+            <span>Back to Home Designs</span>
           </Link>
-          <div className="text-slate-500 font-medium hidden sm:block">
+          <div className="hidden text-xs font-medium text-jufaja-muted sm:block">
             Home Designs &bull; {design.dwellingType.toUpperCase()} &bull; {design.name}
           </div>
         </div>
@@ -74,47 +75,42 @@ export default function SingleDesignPage({ params }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-10">
         
         {/* Design Header Summary */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+        <div className="flex flex-col items-start justify-between gap-6 border border-jufaja-border bg-white p-6 shadow-jufaja-soft sm:p-8 lg:flex-row lg:items-center">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="bg-brand-orange text-white text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+              <span className="rounded-sm bg-jufaja-forest-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                 {formatSquares(design.houseSizeSquares)}
               </span>
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">
+              <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-muted">
                 {design.dwellingType.replace('single', 'Single Storey').replace('double', 'Double Storey').replace('duplex', 'Duplex')}
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy tracking-tight">
+            <h1 className="font-serif text-4xl tracking-tight text-jufaja-forest sm:text-5xl">
               {design.name}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-500 font-semibold mt-1">
-              Part of the {design.series} Architectural Master Collection
+            <p className="mt-2 text-xs font-medium text-jufaja-muted sm:text-sm">
+                {design.series} design · listed details require confirmation
             </p>
           </div>
 
           {/* Core Specs Badge Cluster & Tour CTA */}
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-4 px-5 py-3 rounded-xl bg-slate-100 border border-slate-200 text-brand-navy font-bold text-sm">
-              <div className="flex items-center gap-1.5">
-                <Bed className="w-4 h-4 text-brand-orange" />
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3 border border-jufaja-border bg-jufaja-cream px-4 py-3 text-sm font-medium text-jufaja-forest sm:gap-4 sm:px-5">
+              <div className="flex items-center gap-1.5"><Bed aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" />
                 <span>{design.bedrooms} Beds</span>
               </div>
               <span className="text-slate-300">&bull;</span>
               <div className="flex items-center gap-1.5">
-                <Bath className="w-4 h-4 text-brand-orange" />
+                <Bath aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" />
                 <span>{design.bathrooms} Baths</span>
               </div>
               <span className="text-slate-300">&bull;</span>
               <div className="flex items-center gap-1.5">
-                <Car className="w-4 h-4 text-brand-orange" />
+                <Car aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" />
                 <span>{design.garages} Car</span>
               </div>
             </div>
 
-            {/* Virtual Tour Trigger */}
-            {design.virtualTourUrl && (
-              <VirtualTourModal virtualTourUrl={design.virtualTourUrl} designName={design.name} />
-            )}
           </div>
         </div>
 
@@ -128,42 +124,27 @@ export default function SingleDesignPage({ params }: Props) {
 
           {/* Right 1 Col: Highlights & Quick Enquiry */}
           <div className="space-y-6">
-            <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-brand-navy mb-4 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-brand-orange" />
-                <span>Design Highlights</span>
+            <div className="border border-jufaja-border bg-white p-6 shadow-jufaja-soft">
+              <h3 className="text-lg font-bold text-jufaja-forest mb-4">
+                Listed specifications
               </h3>
-              <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
-                {design.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm leading-6 text-jufaja-muted">The catalogue lists {design.bedrooms} bedrooms, {design.bathrooms} bathrooms and {design.garages} garage spaces. Confirm the current plan and specifications with JUFAJA.</p>
             </div>
 
             {/* Quote Action Box */}
-            <div className="bg-brand-navy rounded-xl p-6 text-white text-center shadow-lg border border-brand-surface space-y-4">
-              <span className="text-xs font-black text-brand-orange uppercase tracking-wider block">
-                FREE SITE FEASIBILITY CHECK
-              </span>
-              <h4 className="text-xl font-bold">
-                Does the {design.name} fit your block?
-              </h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Requires minimum {design.minLotWidth}m block frontage. Our site engineers will check your council requirements for zero cost.
-              </p>
-              <EnquireDesignButton designName={design.name} squares={design.houseSizeSquares} />
+            <div className="space-y-4 rounded-sm border border-jufaja-border bg-jufaja-cream p-6 text-center">
+              <h2 className="font-serif text-2xl text-jufaja-forest">Interested in this design?</h2>
+              <p className="text-sm leading-6 text-jufaja-muted">Ask about current plans, site fit and available options.</p>
+              <Link href={`/contact?design=${encodeURIComponent(design.name)}`} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-jufaja-forest px-5 text-sm font-semibold text-white hover:bg-jufaja-forest-800">Ask JUFAJA <ArrowLeft aria-hidden="true" className="h-4 w-4 rotate-180 text-jufaja-gold-400" /></Link>
             </div>
           </div>
 
         </div>
 
-        {/* Floorplans & Dimensions Grid */}
+        {/* Plan availability and listed dimensions */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <FloorplanViewer floorplans={design.floorplans} designName={design.name} />
+            <FloorplanViewer designName={design.name} />
           </div>
           <div>
             <DimensionTable design={design} />
@@ -172,17 +153,17 @@ export default function SingleDesignPage({ params }: Props) {
 
         {/* Related Designs Section */}
         {relatedDesigns.length > 0 && (
-          <div className="pt-12 border-t border-slate-200">
+          <div className="border-t border-jufaja-border pt-12">
             <div className="flex justify-between items-end mb-6">
               <div>
-                <span className="text-xs font-bold text-brand-orange uppercase tracking-wider">
-                  EXPLORE ALTERNATIVES
+                <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-gold-600">
+                  Similar listings
                 </span>
-                <h3 className="text-2xl font-black text-brand-navy mt-0.5">
-                  Similar {design.dwellingType === 'single' ? 'Single Storey' : 'Double Storey'} Designs
+                <h3 className="mt-1 font-serif text-3xl text-jufaja-forest">
+                  More {design.dwellingType === 'single' ? 'single storey' : design.dwellingType === 'double' ? 'double storey' : design.dwellingType} designs
                 </h3>
               </div>
-              <Link href="/designs" className="text-xs font-bold text-brand-orange hover:underline">
+              <Link href="/designs" className="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-jufaja-forest hover:text-jufaja-forest-700">
                 View All Designs &rarr;
               </Link>
             </div>
@@ -196,6 +177,6 @@ export default function SingleDesignPage({ params }: Props) {
         )}
 
       </div>
-    </div>
+    </main>
   );
 }

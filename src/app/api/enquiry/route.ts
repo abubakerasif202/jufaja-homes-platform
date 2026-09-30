@@ -1,104 +1,128 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+
+export const runtime = 'nodejs';
+
+const clean = (value: unknown, maxLength: number) =>
+  typeof value === 'string'
+    ? value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').trim().slice(0, maxLength)
+    : '';
 
 export async function POST(request: Request) {
+  const contentType = request.headers.get('content-type')?.split(';', 1)[0].trim().toLowerCase();
+  if (contentType !== 'application/json') {
+    return NextResponse.json({ success: false, error: 'Please submit the form using the website.' }, { status: 415 });
+  }
+
+  let body: Record<string, unknown>;
   try {
-    const body = await request.json();
-    const { 
-      name, 
-      fullName, 
-      phone, 
-      email, 
-      enquiryType, 
-      interestType, 
-      suburb, 
-      suburbOrCouncil, 
-      landStatus, 
-      ownLand, 
-      targetDesignName,
-      message, 
-      website, 
-      honeypot 
-    } = body;
-
-    // Honeypot spam check
-    const trap = website || honeypot;
-    if (trap && String(trap).trim() !== '') {
-      return NextResponse.json({ success: true, message: 'Enquiry received' }, { status: 200 });
+    const maxBytes = 20_000;
+    const contentLength = Number(request.headers.get('content-length'));
+    if (Number.isFinite(contentLength) && contentLength > maxBytes) {
+      return NextResponse.json({ success: false, error: 'Your message is too long. Please shorten it and try again.' }, { status: 413 });
+    }
+    if (!request.body) {
+      return NextResponse.json({ success: false, error: 'The form could not be read. Please try again.' }, { status: 400 });
     }
 
-    const resolvedName = (name || fullName || '').trim();
-    const resolvedPhone = (phone || '').trim();
-    const resolvedEmail = (email || '').trim().toLowerCase();
-
-    // Basic validation
-    if (!resolvedName || !resolvedEmail || !resolvedPhone) {
-      return NextResponse.json(
-        { success: false, error: 'Name, phone number, and email address are required.' },
-        { status: 400 }
-      );
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(resolvedEmail)) {
-      return NextResponse.json(
-        { success: false, error: 'Please enter a valid email address.' },
-        { status: 400 }
-      );
-    }
-
-    const leadRecord = {
-      id: `LEAD-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-      receivedAt: new Date().toISOString(),
-      name: resolvedName,
-      phone: resolvedPhone,
-      email: resolvedEmail,
-      enquiryType: enquiryType || interestType || 'General Enquiry',
-      targetContext: targetDesignName || null,
-      suburb: (suburb || suburbOrCouncil || 'Not specified').trim(),
-      landStatus: landStatus || (ownLand ? 'Already owns land' : 'Not specified'),
-      message: (message || '').trim(),
-      status: 'new'
-    };
-
-    // Store in data/leads.json
-    try {
-      const dataDir = path.join(process.cwd(), 'src', 'data');
-      if (!fs.existsSync(dataDir)) {
-        fs.mkdirSync(dataDir, { recursive: true });
+    const reader = request.body.getReader();
+    const decoder = new TextDecoder('utf-8', { fatal: true });
+    const chunks: string[] = [];
+    let size = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > maxBytes) {
+        await reader.cancel().catch(() => undefined);
+        return NextResponse.json({ success: false, error: 'Your message is too long. Please shorten it and try again.' }, { status: 413 });
       }
-      const leadsFilePath = path.join(dataDir, 'leads.json');
-      let leads = [];
-      if (fs.existsSync(leadsFilePath)) {
-        try {
-          const fileContent = fs.readFileSync(leadsFilePath, 'utf-8');
-          leads = JSON.parse(fileContent);
-        } catch (e) {
-          leads = [];
-        }
-      }
-      leads.push(leadRecord);
-      fs.writeFileSync(leadsFilePath, JSON.stringify(leads, null, 2), 'utf-8');
-    } catch (saveError) {
-      console.error('Failed to append to leads.json:', saveError);
+      chunks.push(decoder.decode(value, { stream: true }));
     }
+    chunks.push(decoder.decode());
+    const raw = chunks.join('');
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      return NextResponse.json({ success: false, error: 'The form could not be read. Please check the fields and try again.' }, { status: 400 });
+    }
+    body = parsed as Record<string, unknown>;
+  } catch {
+    return NextResponse.json({ success: false, error: 'The form could not be read. Please try again.' }, { status: 400 });
+  }
 
-    console.log('[JUFAJA Lead Captured]:', leadRecord);
+  if (clean(body.website, 500) || clean(body.honeypot, 500)) {
+    return NextResponse.json({ success: true, message: 'Enquiry received' });
+  }
 
+  const name = clean(body.name ?? body.fullName, 120);
+  const email = clean(body.email, 254).toLowerCase();
+  const phone = clean(body.phone, 40);
+  const suburb = clean(body.suburb ?? body.suburbOrCouncil, 120);
+  const enquiryType = clean(body.enquiryType ?? body.interestType, 80) || 'General enquiry';
+  const target = clean(body.targetDesignName, 120);
+  const landStatus = body.ownLand === true ? 'Land owned' : 'Land not confirmed';
+  const message = clean(body.message, 4_000);
+  const phoneDigits = phone.replace(/\D/g, '');
+
+  if (!name || !email || !phone) {
+    return NextResponse.json({ success: false, error: 'Name, phone number and email address are required.' }, { status: 400 });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ success: false, error: 'Please enter a valid email address.' }, { status: 400 });
+  }
+  if (phoneDigits.length < 8 || phoneDigits.length > 15) {
+    return NextResponse.json({ success: false, error: 'Please enter a valid phone number.' }, { status: 400 });
+  }
+
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.ENQUIRY_TO_EMAIL;
+  const from = process.env.ENQUIRY_FROM_EMAIL;
+  if (!apiKey || !to || !from) {
     return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Your enquiry has been received. A JUFAJA building consultant will contact you shortly.',
-        leadId: leadRecord.id
-      },
-      { status: 200 }
-    );
-  } catch (error: any) {
-    console.error('Error processing enquiry:', error);
-    return NextResponse.json(
-      { success: false, error: 'An unexpected error occurred while processing your enquiry.' },
-      { status: 500 }
+      { success: false, error: 'The enquiry service is temporarily unavailable. Please try again later.' },
+      { status: 503 },
     );
   }
+
+  try {
+    const delivery = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        reply_to: email,
+        subject: `Website enquiry: ${enquiryType}`,
+        text: [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Phone: ${phone}`,
+          `Suburb / build location: ${suburb || 'Not provided'}`,
+          `Enquiry type: ${enquiryType}`,
+          `Land status: ${landStatus}`,
+          `Design or package: ${target || 'Not provided'}`,
+          '',
+          'Message:',
+          message || 'No message provided',
+        ].join('\n'),
+      }),
+      signal: AbortSignal.timeout(8_000),
+    });
+
+    if (!delivery.ok) {
+      return NextResponse.json(
+        { success: false, error: 'Your enquiry could not be sent just now. Please try again later.' },
+        { status: 502 },
+      );
+    }
+  } catch {
+    return NextResponse.json(
+      { success: false, error: 'Your enquiry could not be sent just now. Please try again later.' },
+      { status: 502 },
+    );
+  }
+
+  return NextResponse.json({ success: true, message: 'Your enquiry has been sent to JUFAJA Constructions.' });
 }

@@ -1,164 +1,61 @@
 'use client';
 
-import React from 'react';
-import { FilterState } from '@/lib/filter-designs';
-import { DwellingType } from '@/types';
-import { RotateCcw, Video, SlidersHorizontal } from 'lucide-react';
+import type { FilterState } from '@/lib/filter-designs';
+import type { DwellingType } from '@/types';
+import { RotateCcw, SlidersHorizontal } from 'lucide-react';
 
 interface Props {
   filters: FilterState;
   onFilterChange: (newFilters: Partial<FilterState>) => void;
   onReset: () => void;
   totalResults: number;
+  totalDesigns: number;
+  categoryCounts: Record<DwellingType | 'all', number>;
 }
 
-const categories: { label: string; value: DwellingType | 'all'; count: number }[] = [
-  { label: 'All Designs', value: 'all', count: 63 },
-  { label: 'Single Storey', value: 'single', count: 23 },
-  { label: 'Double Storey', value: 'double', count: 20 },
-  { label: 'Duplexes & Dual Living', value: 'duplex', count: 9 },
-  { label: 'Integrated Granny Flats', value: 'granny', count: 6 },
-  { label: 'Rural & Acreage', value: 'rural', count: 5 },
+const categoryLabels: { label: string; value: DwellingType | 'all' }[] = [
+  { label: 'All listings', value: 'all' },
+  { label: 'Single storey', value: 'single' },
+  { label: 'Double storey', value: 'double' },
+  { label: 'Duplex', value: 'duplex' },
+  { label: 'Granny flat', value: 'granny' },
+  { label: 'Rural and acreage', value: 'rural' },
 ];
 
-export default function FilterBar({ filters, onFilterChange, onReset, totalResults }: Props) {
+const selectClass = 'min-h-11 w-full rounded-sm border border-jufaja-border bg-white px-3 text-sm text-jufaja-forest-900 focus:border-jufaja-gold-600';
+const labelClass = 'mb-1.5 block text-xs font-medium text-jufaja-muted';
+
+export default function FilterBar({ filters, onFilterChange, onReset, totalResults, totalDesigns, categoryCounts }: Props) {
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-8">
-      
-      {/* Top Header: Title, Count, Reset */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-100">
+    <section aria-labelledby="design-filter-heading" className="mb-8 border border-jufaja-border bg-white p-4 shadow-jufaja-soft sm:p-6">
+      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-jufaja-border pb-4">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-brand-navy flex items-center justify-center text-white">
-            <SlidersHorizontal className="w-4 h-4" />
-          </div>
+          <div className="flex h-9 w-9 items-center justify-center rounded-sm bg-jufaja-forest-900 text-white"><SlidersHorizontal aria-hidden="true" className="h-4 w-4" /></div>
           <div>
-            <h2 className="text-base font-bold text-brand-navy">
-              Filter Master Catalogue
-            </h2>
-            <p className="text-xs text-slate-500">
-              Showing <span className="font-bold text-brand-orange">{totalResults}</span> of 63 designs matching your criteria
-            </p>
+            <h2 id="design-filter-heading" className="text-base font-semibold text-jufaja-forest">Filter designs</h2>
+            <p aria-live="polite" className="text-xs text-jufaja-muted">Showing {totalResults} of {totalDesigns} listings</p>
           </div>
         </div>
-
-        <button
-          onClick={onReset}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-brand-orange transition-colors"
-        >
-          <RotateCcw className="w-3.5 h-3.5" />
-          <span>Reset Filters</span>
+        <button type="button" onClick={onReset} className="inline-flex min-h-11 items-center gap-2 rounded-sm px-3 text-sm font-medium text-jufaja-forest transition-colors hover:bg-jufaja-cream">
+          <RotateCcw aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" /> Reset filters
         </button>
       </div>
 
-      {/* Category Pills Row */}
-      <div className="py-4 border-b border-slate-100 flex flex-wrap gap-2">
-        {categories.map((cat) => {
-          const isActive = (filters.dwellingType || 'all') === cat.value;
-          return (
-            <button
-              key={cat.value}
-              onClick={() => onFilterChange({ dwellingType: cat.value })}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
-                isActive
-                  ? 'bg-brand-navy text-white shadow-sm'
-                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-              }`}
-            >
-              <span>{cat.label}</span>
-              <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200 text-slate-600'}`}>
-                {cat.count}
-              </span>
-            </button>
-          );
+      <div className="flex flex-wrap gap-2 border-b border-jufaja-border py-4" aria-label="Filter by dwelling type">
+        {categoryLabels.map(({ label, value }) => {
+          const active = (filters.dwellingType || 'all') === value;
+          return <button key={value} type="button" aria-pressed={active} onClick={() => onFilterChange({ dwellingType: value })} className={`inline-flex min-h-10 items-center gap-2 rounded-sm border px-3 text-xs font-medium transition-colors ${active ? 'border-jufaja-forest-900 bg-jufaja-forest-900 text-white' : 'border-jufaja-border bg-white text-jufaja-muted hover:border-jufaja-gold-500'}`}>
+            {label} <span className={active ? 'text-jufaja-gold-400' : 'text-jufaja-muted'}>{categoryCounts[value]}</span>
+          </button>;
         })}
       </div>
 
-      {/* Secondary Dropdown Filter Strip */}
-      <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-        
-        {/* Bedrooms */}
-        <div>
-          <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-            Bedrooms
-          </label>
-          <select
-            value={filters.bedrooms || 'any'}
-            onChange={(e) => onFilterChange({ bedrooms: e.target.value === 'any' ? 'any' : Number(e.target.value) })}
-            className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange text-slate-800"
-          >
-            <option value="any">Any Bedrooms</option>
-            <option value="3">3+ Bedrooms</option>
-            <option value="4">4+ Bedrooms</option>
-            <option value="5">5+ Bedrooms</option>
-          </select>
-        </div>
-
-        {/* Bathrooms */}
-        <div>
-          <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-            Bathrooms
-          </label>
-          <select
-            value={filters.bathrooms || 'any'}
-            onChange={(e) => onFilterChange({ bathrooms: e.target.value === 'any' ? 'any' : Number(e.target.value) })}
-            className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange text-slate-800"
-          >
-            <option value="any">Any Bathrooms</option>
-            <option value="2">2+ Bathrooms</option>
-            <option value="3">3+ Bathrooms</option>
-          </select>
-        </div>
-
-        {/* Garages */}
-        <div>
-          <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-            Garages
-          </label>
-          <select
-            value={filters.garages || 'any'}
-            onChange={(e) => onFilterChange({ garages: e.target.value === 'any' ? 'any' : Number(e.target.value) })}
-            className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange text-slate-800"
-          >
-            <option value="any">Any Garages</option>
-            <option value="1">1 Car Garage</option>
-            <option value="2">2 Car Garage</option>
-          </select>
-        </div>
-
-        {/* Sort By */}
-        <div>
-          <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
-            Sort Order
-          </label>
-          <select
-            value={filters.sortBy || 'name'}
-            onChange={(e) => onFilterChange({ sortBy: e.target.value as any })}
-            className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-orange text-slate-800"
-          >
-            <option value="name">Name (A-Z)</option>
-            <option value="size-desc">Size: Largest First</option>
-            <option value="size-asc">Size: Smallest First</option>
-            <option value="beds-desc">Bedrooms: Most First</option>
-          </select>
-        </div>
-
-        {/* 3D Virtual Tour Filter */}
-        <div className="flex flex-col justify-end">
-          <button
-            onClick={() => onFilterChange({ hasVirtualTour: !filters.hasVirtualTour })}
-            className={`w-full py-2 px-3 rounded-lg text-xs font-bold border transition-colors flex items-center justify-center gap-1.5 cursor-pointer ${
-              filters.hasVirtualTour
-                ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
-            }`}
-          >
-            <Video className="w-3.5 h-3.5" />
-            <span>3D Tours Only</span>
-          </button>
-        </div>
-
+      <div className="grid grid-cols-1 gap-3 pt-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div><label htmlFor="design-bedrooms" className={labelClass}>Bedrooms</label><select id="design-bedrooms" value={filters.bedrooms ?? 'any'} onChange={(event) => onFilterChange({ bedrooms: event.target.value === 'any' ? 'any' : Number(event.target.value) })} className={selectClass}><option value="any">Any</option><option value="3">3 or more</option><option value="4">4 or more</option><option value="5">5 or more</option></select></div>
+        <div><label htmlFor="design-bathrooms" className={labelClass}>Bathrooms</label><select id="design-bathrooms" value={filters.bathrooms ?? 'any'} onChange={(event) => onFilterChange({ bathrooms: event.target.value === 'any' ? 'any' : Number(event.target.value) })} className={selectClass}><option value="any">Any</option><option value="2">2 or more</option><option value="3">3 or more</option></select></div>
+        <div><label htmlFor="design-garages" className={labelClass}>Garage spaces</label><select id="design-garages" value={filters.garages ?? 'any'} onChange={(event) => onFilterChange({ garages: event.target.value === 'any' ? 'any' : Number(event.target.value) })} className={selectClass}><option value="any">Any</option><option value="1">1 space</option><option value="2">2 spaces</option></select></div>
+        <div><label htmlFor="design-sort" className={labelClass}>Sort by</label><select id="design-sort" value={filters.sortBy ?? 'name'} onChange={(event) => onFilterChange({ sortBy: event.target.value as FilterState['sortBy'] })} className={selectClass}><option value="name">Name (A–Z)</option><option value="size-desc">Floor area (largest)</option><option value="size-asc">Floor area (smallest)</option><option value="beds-desc">Bedrooms (most)</option></select></div>
       </div>
-
-    </div>
+    </section>
   );
 }

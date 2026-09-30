@@ -1,46 +1,44 @@
-# JUFAJA Constructions & Homes Platform
+# JUFAJA Constructions website
 
-> **"Building Homes for a Brighter Tomorrow."**  
-> Premium Australian Residential Architecture, Custom Homes & Turnkey Developments across Greater Sydney & NSW.  
-> Leadership: Javed Iqbal, B.Eng (Civil) | Licensed Master Residential Builder NSW
+The JUFAJA website is a light, editorial home-design and building-enquiry site built with Next.js App Router. Catalogue measurements and external residential imagery are presented as indicative references; confirm current plans and project details with JUFAJA before relying on them. The `/projects` page is design inspiration, not a portfolio of verified completed builds.
 
----
+## Development
 
-## 🌟 Overview & Highlights
+Requirements: Node.js 20 or later and npm.
 
-JUFAJA Constructions is an editorial, light-and-bright architectural web platform engineered for Australian luxury residential construction, bespoke homes, duplexes, and turnkey house & land packages.
+```sh
+npm install
+npm run dev
+```
 
-- **Vector Logo & Identity System:** Custom architectural monogram, horizontal, stacked, light and dark vector SVG marks (`/public/brand/`) combining pitched roof geometry and three structural towers (Forest Green, Antique Gold, and Deep Burgundy).
-- **Cinematic Website Opening:** Architectural blueprint drafting sequence rendered via SVG stroke motion and Framer Motion, with `sessionStorage` frequency control and `prefers-reduced-motion` compliance.
-- **Dedicated Commissions Portfolio (`/projects`):** Curated showcase of genuine JUFAJA projects including The Arden Grove Residence (Box Hill), The Meridian Duplex (Leppington), The Ashbury Residence (Prestons), and The Verdant Knockdown Rebuild (Camden).
-- **63 Master Home Designs Catalogue:** Single storey, double storey, duplexes, granny flats, and acreage series with real-time multi-criteria filtering (bedrooms, bathrooms, frontage width, storeys, 3D tour availability).
-- **Interactive 3D Matterport Virtual Tours:** Integrated virtual walkthrough modal for display homes with 360° dollhouse exploration.
-- **House & Land Marketplace:** 16 turnkey house & land packages across Sydney growth corridors (Austral, Cobbitty, Tahmoor, Leppington, Gilead, Wilton).
-- **Knockdown Rebuild Engine:** Interactive block feasibility calculator, cost comparison matrix (KDRB vs. Renovation vs. Relocation), and 6-stage milestone timeline.
-- **Custom Homes & Sloping Sites:** Bespoke architectural briefing system for split-level, narrow, and acreage blocks.
-- **Inclusions Studio:** Standard Prestige vs. Luxe Signature comparison matrix across kitchen, wet areas, framing, air conditioning, and brand partners.
-- **Display Homes Directory:** Complete opening hours, street addresses, and direct Google Maps navigation for Box Hill, Leppington, Cobbitty, and Prestons Head Office.
-- **Lead Capture & Anti-Spam API:** Global floating enquiry drawer + contact forms backed by a validated POST API endpoint with honeypot spam traps and structured JSON persistence.
-- **SEO & Search Indexing:** Automatic Schema.org JSON-LD structured data, dynamic `sitemap.xml` covering 95 routes, and `robots.txt`.
+Available validation commands:
 
----
+```sh
+npm run lint
+npx tsc --noEmit
+npm test
+npm run build
+```
 
-## 🏗️ Architecture & Technology Stack
+## Enquiry delivery
 
-- **Framework:** Next.js 14+ (App Router with Static Site Generation / SSG)
-- **Language:** TypeScript 5.7+ (Strict typing across designs, packages, and enquiries)
-- **Styling:** Tailwind CSS 3.4 (JUFAJA Palette: Forest Green `#163024`, Antique Gold `#c5a059`, Burgundy `#6b1d2f`, Warm Ivory `#faf8f5`, Light Stone `#f4f1ea`)
-- **Typography:** Cormorant Garamond serif + Plus Jakarta Sans
-- **Motion:** Framer Motion 12+
-- **Icons:** Lucide React
-- **Performance:** 95 statically pre-rendered routes generated cleanly with zero hydration errors.
+`POST /api/enquiry` validates and bounds submissions, applies a honeypot, and sends accepted enquiries through Resend. It does not store submissions in the repository: filesystem writes are ephemeral on serverless deployments. Configure these variables in the local environment or deployment platform before enabling the form:
 
----
+```dotenv
+RESEND_API_KEY=
+ENQUIRY_TO_EMAIL=
+ENQUIRY_FROM_EMAIL=
+```
 
-## 🛡️ License & Legal
+The sender must be accepted by the Resend account. If configuration is missing or delivery fails, the API returns an error and the UI does not claim success. Distributed rate limiting still requires an external shared rate-limit service before launch.
 
-- **Company:** JUFAJA Constructions Pty Ltd  
-- **Registration:** Licensed Master Residential Builder NSW  
-- **Quality Assurance:** Independent 4-Point Hold Quality Inspections & AS2870/AS1684 Engineering Compliance  
-- **Warranty:** 25-Year Structural Guarantee  
-- **Copyright:** &copy; 2026 JUFAJA Constructions Pty Ltd. All rights reserved.
+## Content requiring owner confirmation
+
+The design catalogue contains 63 source records whose measurements, names, availability and plan documentation have not been independently verified in this repository. Several image URLs repeat generic external imagery; visible labels identify those as illustrative. House-and-land and display-home data files are retained as source material but are not currently published as factual offers or locations. Verify the source records and provide genuine project photography, current offers, contact details, privacy/legal links and any credentials or service-area claims before restoring them to public pages.
+
+## Brand and route notes
+
+- Canonical logo files are in `public/brand/`; the header uses the SVG horizontal lockup.
+- The home-page logo intro runs once per session, can be skipped, and has a reduced-motion path.
+- The public sitemap contains the indexable top-level routes. Individual design detail pages and legacy package detail URLs are noindex and omitted from it.
+- Production metadata currently uses `https://jufaja-homes-platform.vercel.app/`, the production URL supplied for this project.

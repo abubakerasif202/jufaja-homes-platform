@@ -6,16 +6,21 @@ import BrandDifference from '@/components/home/BrandDifference';
 import SelectedProjects from '@/components/home/SelectedProjects';
 import FounderStory from '@/components/home/FounderStory';
 import DisplayLocationsStrip from '@/components/home/DisplayLocationsStrip';
-import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
+import ContactPrompt from '@/components/home/ContactPrompt';
 import CinematicIntro from '@/components/motion/CinematicIntro';
 
 import rawDesigns from '@/data/designs.json';
-import rawPackages from '@/data/packages.json';
-import { HomeDesign, PackageListing } from '@/types';
+import type { HomeDesign } from '@/types';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'JUFAJA Constructions | Home Designs & Building Enquiries',
+  description: 'Explore JUFAJA Constructions home designs, custom home enquiries, knockdown rebuild information and house and land options.',
+  alternates: { canonical: '/' },
+};
 
 export default function HomePage() {
   const designs = rawDesigns as HomeDesign[];
-  const packages = rawPackages as PackageListing[];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -29,10 +34,7 @@ export default function HomePage() {
       <SelectorDashboard />
 
       {/* 3. Featured Designs & Turnkey Packages Showcase */}
-      <FeaturedGalleries 
-        featuredDesigns={designs}
-        featuredPackages={packages}
-      />
+      <FeaturedGalleries featuredDesigns={designs} />
 
       {/* 4. The JUFAJA Difference (Verified Standards & Hold Points) */}
       <BrandDifference />
@@ -40,14 +42,14 @@ export default function HomePage() {
       {/* 5. Selected Projects / Our Work Portfolio Showcase */}
       <SelectedProjects />
 
-      {/* 6. Founder & Leadership Story (Javed Iqbal, Civil Engineer) */}
+      {/* 6. Founder introduction */}
       <FounderStory />
 
       {/* 7. Display Homes & Consultation Hubs */}
       <DisplayLocationsStrip />
 
       {/* 8. Client Reflections & Handover Standards */}
-      <TestimonialsCarousel />
+      <ContactPrompt />
     </div>
   );
 }

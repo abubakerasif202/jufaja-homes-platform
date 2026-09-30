@@ -6,28 +6,34 @@ import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jufajahomes.com.au'),
+  metadataBase: new URL('https://jufaja-homes-platform.vercel.app'),
   title: {
-    default: 'Specialist Home Builders Sydney | JUFAJA Homes',
-    template: '%s | JUFAJA Homes Sydney',
+    default: 'JUFAJA Constructions | Home Designs & Building Enquiries',
+    template: '%s | JUFAJA Constructions',
   },
-  description: 'JUFAJA Homes are quality specialist builders in Sydney. Master catalogue of 63 single & double storey home designs, knockdown rebuilds, duplexes, and turnkey packages.',
+  description: 'Explore JUFAJA Constructions home designs, custom home enquiries, knockdown rebuild information and house and land enquiries.',
   keywords: [
-    'Sydney home builders',
+    'Australian home designs',
     'JUFAJA homes',
     'single storey designs',
     'double storey designs',
-    'knockdown rebuild Sydney',
+    'knockdown rebuild information',
     'house and land packages',
-    'custom builder Prestons'
   ],
   openGraph: {
-    title: 'Specialist Home Builders Sydney | JUFAJA Homes',
-    description: 'Explore 63 architectural home designs, interactive floorplans, and turnkey house & land packages across Sydney.',
-    siteName: 'JUFAJA Homes',
+    title: 'JUFAJA Constructions | Home Designs & Building Enquiries',
+    description: 'Explore home designs, custom home enquiries, knockdown rebuild information and house and land enquiries.',
+    url: 'https://jufaja-homes-platform.vercel.app/',
+    siteName: 'JUFAJA Constructions',
     locale: 'en_AU',
     type: 'website',
   },
+  twitter: {
+    card: 'summary',
+    title: 'JUFAJA Constructions | Home Designs & Building Enquiries',
+    description: 'Explore home designs, custom home enquiries, knockdown rebuild information and house and land enquiries.',
+  },
+  icons: { icon: '/brand/favicon.svg' },
 };
 
 export default function RootLayout({

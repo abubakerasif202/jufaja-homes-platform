@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useTransition } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { HomeDesign, DwellingType } from '@/types';
-import { filterDesigns, FilterState } from '@/lib/filter-designs';
+import type { HomeDesign, DwellingType } from '@/types';
+import { filterDesigns, type FilterState } from '@/lib/filter-designs';
 import FilterBar from '@/components/catalogue/FilterBar';
 import DesignCard from '@/components/catalogue/DesignCard';
 import { Home, Layers, Video } from 'lucide-react';
@@ -16,15 +16,29 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [, startTransition] = useTransition();
+  const categoryCounts = initialDesigns.reduce<Record<DwellingType | 'all', number>>((counts, design) => {
+    counts.all += 1;
+    counts[design.dwellingType] += 1;
+    return counts;
+  }, { all: 0, single: 0, double: 0, duplex: 0, granny: 0, rural: 0 });
+
+  const searchDwellingType = searchParams.get('dwelling_type');
+  const dwellingType: DwellingType | 'all' = ['single', 'double', 'duplex', 'granny', 'rural'].includes(searchDwellingType ?? '')
+    ? searchDwellingType as DwellingType
+    : 'all';
+  const searchSort = searchParams.get('sort');
+  const sortBy: FilterState['sortBy'] = ['name', 'size-desc', 'size-asc', 'beds-desc'].includes(searchSort ?? '')
+    ? searchSort as FilterState['sortBy']
+    : 'name';
 
   const [filters, setFilters] = useState<FilterState>(() => {
     return {
-      dwellingType: (searchParams.get('dwelling_type') as DwellingType) || 'all',
+      dwellingType,
       bedrooms: searchParams.get('bedrooms') ? Number(searchParams.get('bedrooms')) : 'any',
       bathrooms: searchParams.get('bathrooms') ? Number(searchParams.get('bathrooms')) : 'any',
       garages: searchParams.get('garages') ? Number(searchParams.get('garages')) : 'any',
-      hasVirtualTour: searchParams.get('has_tour') === 'true',
-      sortBy: (searchParams.get('sort') as any) || 'name',
+      hasVirtualTour: false,
+      sortBy,
     };
   });
 
@@ -39,7 +53,6 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
       if (updated.bedrooms && updated.bedrooms !== 'any') params.set('bedrooms', String(updated.bedrooms));
       if (updated.bathrooms && updated.bathrooms !== 'any') params.set('bathrooms', String(updated.bathrooms));
       if (updated.garages && updated.garages !== 'any') params.set('garages', String(updated.garages));
-      if (updated.hasVirtualTour) params.set('has_tour', 'true');
       if (updated.sortBy && updated.sortBy !== 'name') params.set('sort', updated.sortBy);
 
       const queryString = params.toString();
@@ -70,6 +83,8 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
         onFilterChange={handleFilterChange}
         onReset={handleReset}
         totalResults={filtered.length}
+        totalDesigns={initialDesigns.length}
+        categoryCounts={categoryCounts}
       />
 
       {/* Grid of Results */}

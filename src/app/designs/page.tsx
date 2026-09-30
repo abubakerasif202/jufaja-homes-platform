@@ -5,27 +5,28 @@ import { HomeDesign } from '@/types';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home Designs Catalogue | 63 Master Plans | JUFAJA Homes',
-  description: 'Browse our complete catalogue of 63 architecturally designed single storey, double storey, and duplex home designs across Sydney. Interactive floorplans and 3D tours.',
+  title: 'Home Design Catalogue',
+  description: 'Browse JUFAJA Constructions home design listings. Listed images, plans, dimensions and specifications are indicative and should be confirmed directly.',
+  alternates: { canonical: '/designs' },
 };
 
 export default function DesignsPage() {
   const designs = rawDesigns as HomeDesign[];
 
   return (
-    <div className="bg-slate-50 min-h-screen py-12">
+    <div className="min-h-screen bg-jufaja-cream py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Page Title & Breadcrumbs */}
         <div className="mb-8">
-          <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">
+          <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-jufaja-muted">
             Home &bull; Home Designs Catalogue
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-brand-navy tracking-tight">
-            Master Home Designs
+          <h1 className="font-serif text-4xl tracking-tight text-jufaja-forest sm:text-6xl">
+            Home design catalogue
           </h1>
-          <p className="text-sm sm:text-base text-slate-600 mt-2 max-w-3xl">
-            Explore 63 precision-engineered residential plans crafted for modern Sydney living. Filter by dwelling type, bedroom count, and block size to find your ideal home.
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-jufaja-muted sm:text-base">
+            Compare the information shown for {designs.length} listed home designs. Images are illustrative and listed figures require confirmation; ask JUFAJA for current drawings and specifications.
           </p>
         </div>
 

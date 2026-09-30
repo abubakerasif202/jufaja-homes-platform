@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://jufajahomes.com.au/sitemap.xml',
+    sitemap: 'https://jufaja-homes-platform.vercel.app/sitemap.xml',
   };
 }

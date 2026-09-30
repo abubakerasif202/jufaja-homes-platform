@@ -1,13 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { X, Send, Phone, CheckCircle2, MessageSquare } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { X, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 export default function QuickEnquiryDrawer() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const [targetContext, setTargetContext] = useState<string>('');
+  const closeButton = useRef<HTMLButtonElement>(null);
+  const dialog = useRef<HTMLElement>(null);
+  const previousFocus = useRef<HTMLElement | null>(null);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -21,21 +25,54 @@ export default function QuickEnquiryDrawer() {
   });
 
   useEffect(() => {
-    const handleOpen = (e?: CustomEvent) => {
-      if (e?.detail?.context) {
-        setTargetContext(e.detail.context);
-      }
+    const handleOpen = (event: Event) => {
+      const context = (event as CustomEvent<{ context?: string }>).detail?.context;
+      previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      setTargetContext(context ?? '');
       setIsOpen(true);
       setIsSubmitted(false);
+      setError('');
     };
 
-    window.addEventListener('open-enquiry-drawer' as any, handleOpen);
-    return () => window.removeEventListener('open-enquiry-drawer' as any, handleOpen);
+    window.addEventListener('open-enquiry-drawer', handleOpen);
+    return () => window.removeEventListener('open-enquiry-drawer', handleOpen);
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButton.current?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+        previousFocus.current?.focus();
+      }
+      if (event.key === 'Tab' && dialog.current) {
+        const focusable = [...dialog.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])')];
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last?.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first?.focus();
+        }
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', onKeyDown);
+      previousFocus.current?.focus();
+    };
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
 
     try {
       const res = await fetch('/api/enquiry', {
@@ -47,11 +84,14 @@ export default function QuickEnquiryDrawer() {
         }),
       });
 
-      if (res.ok) {
+      const result = await res.json();
+      if (res.ok && result.success) {
         setIsSubmitted(true);
+      } else {
+        setError(typeof result.error === 'string' ? result.error : 'The enquiry could not be sent. Please try again.');
       }
-    } catch (err) {
-      console.error(err);
+    } catch {
+      setError('We could not connect to the enquiry service. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -64,6 +104,9 @@ export default function QuickEnquiryDrawer() {
         <button
           onClick={() => {
             setTargetContext('');
+            setError('');
+            setIsSubmitted(false);
+            previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
             setIsOpen(true);
           }}
           className="flex items-center gap-2.5 bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-semibold text-xs sm:text-sm px-5 py-3.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group border-2 border-jufaja-gold cursor-pointer"
@@ -76,25 +119,30 @@ export default function QuickEnquiryDrawer() {
       {/* Drawer Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-jufaja-charcoal/60 backdrop-blur-sm transition-opacity"
+          <button
+            type="button"
+            aria-label="Close enquiry form"
+            className="absolute inset-0 bg-jufaja-forest-950/40 transition-opacity"
             onClick={() => setIsOpen(false)}
           />
 
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div className="w-screen max-w-md bg-white shadow-2xl flex flex-col border-l border-jufaja-gold/20">
+          <div className="fixed inset-y-0 right-0 flex max-w-full pl-0 sm:pl-10">
+            <section ref={dialog} role="dialog" aria-modal="true" aria-labelledby="enquiry-title" className="flex w-screen max-w-md flex-col border-l border-jufaja-gold/20 bg-white shadow-2xl">
               
               {/* Drawer Header */}
               <div className="bg-jufaja-forest p-6 text-white flex justify-between items-center border-b border-jufaja-gold/20">
                 <div>
-                  <h3 className="text-xl font-serif font-bold tracking-tight text-white">
+                  <h2 id="enquiry-title" className="text-xl font-serif font-bold tracking-tight text-white">
                     Enquire With JUFAJA
-                  </h3>
+                  </h2>
                   <p className="text-xs text-jufaja-ivory/70 mt-0.5 font-sans">
                     {targetContext ? `Enquiring about: ${targetContext}` : 'Start your building journey today'}
                   </p>
                 </div>
-                <button 
+                <button
+                  ref={closeButton}
+                  type="button"
+                  aria-label="Close enquiry form"
                   onClick={() => setIsOpen(false)}
                   className="p-1 rounded-full text-jufaja-ivory/70 hover:text-white hover:bg-white/10 transition-colors"
                 >
@@ -109,7 +157,7 @@ export default function QuickEnquiryDrawer() {
                     <CheckCircle2 className="w-16 h-16 text-jufaja-forest mx-auto" />
                     <h4 className="text-2xl font-serif font-bold text-jufaja-forest">Enquiry Received</h4>
                     <p className="text-xs sm:text-sm text-jufaja-muted max-w-xs mx-auto font-sans leading-relaxed">
-                      Thank you for contacting JUFAJA Constructions. A building consultant will review your details and contact you within 24 business hours.
+                      Thank you for contacting JUFAJA Constructions. Your enquiry has been sent.
                     </p>
                     <button
                       onClick={() => setIsOpen(false)}
@@ -120,12 +168,16 @@ export default function QuickEnquiryDrawer() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    {error && <p role="alert" className="rounded-sm border border-jufaja-burgundy-700/25 bg-jufaja-burgundy-700/5 px-3 py-2 text-sm text-jufaja-burgundy-800">{error}</p>}
                     <div>
-                      <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
+                      <label htmlFor="enquiry-name" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                         Full Name *
                       </label>
                       <input
                         type="text"
+                        id="enquiry-name"
+                        name="name"
+                        autoComplete="name"
                         required
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -134,13 +186,17 @@ export default function QuickEnquiryDrawer() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                       <div>
-                        <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
+                        <label htmlFor="enquiry-phone" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                           Phone *
                         </label>
                         <input
                           type="tel"
+                          id="enquiry-phone"
+                          name="tel"
+                          autoComplete="tel"
+                          inputMode="tel"
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -149,11 +205,14 @@ export default function QuickEnquiryDrawer() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
+                        <label htmlFor="enquiry-email" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                           Email *
                         </label>
                         <input
                           type="email"
+                          id="enquiry-email"
+                          name="email"
+                          autoComplete="email"
                           required
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -164,10 +223,11 @@ export default function QuickEnquiryDrawer() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
+                      <label htmlFor="enquiry-type" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                         I am interested in:
                       </label>
                       <select
+                        id="enquiry-type"
                         value={formData.interestType}
                         onChange={(e) => setFormData({ ...formData, interestType: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
@@ -181,11 +241,14 @@ export default function QuickEnquiryDrawer() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
+                      <label htmlFor="enquiry-suburb" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                         Build Suburb / Council Area
                       </label>
                       <input
                         type="text"
+                        id="enquiry-suburb"
+                        name="address-level2"
+                        autoComplete="address-level2"
                         value={formData.suburbOrCouncil}
                         onChange={(e) => setFormData({ ...formData, suburbOrCouncil: e.target.value })}
                         placeholder="e.g. Camden, Liverpool, Penrith"
@@ -207,10 +270,12 @@ export default function QuickEnquiryDrawer() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
+                      <label htmlFor="enquiry-message" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                         Message / Block Details
                       </label>
                       <textarea
+                        id="enquiry-message"
+                        name="message"
                         rows={3}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -222,7 +287,8 @@ export default function QuickEnquiryDrawer() {
                     {/* Honeypot field */}
                     <input
                       type="text"
-                      className="hidden"
+                      className="absolute -left-[10000px] h-px w-px overflow-hidden"
+                      aria-hidden="true"
                       tabIndex={-1}
                       value={formData.honeypot}
                       onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
@@ -231,6 +297,7 @@ export default function QuickEnquiryDrawer() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
+                      aria-busy={isSubmitting}
                       className="w-full py-3.5 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer border border-jufaja-gold/40"
                     >
                       {isSubmitting ? (
@@ -243,18 +310,12 @@ export default function QuickEnquiryDrawer() {
                       )}
                     </button>
 
-                    <div className="pt-2 text-center text-xs text-jufaja-muted flex items-center justify-center gap-1.5">
-                      <Phone className="w-3.5 h-3.5 text-jufaja-gold" />
-                      <span>Prefer to speak? Call </span>
-                      <a href="tel:0287838800" className="font-semibold text-jufaja-forest hover:text-jufaja-gold transition-colors">
-                        (02) 8783 8800
-                      </a>
-                    </div>
+                    <p className="pt-2 text-center text-xs leading-5 text-jufaja-muted">Availability, pricing and specifications should be confirmed for your project.</p>
                   </form>
                 )}
               </div>
 
-            </div>
+            </section>
           </div>
         </div>
       )}

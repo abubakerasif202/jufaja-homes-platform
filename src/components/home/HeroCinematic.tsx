@@ -16,7 +16,7 @@ export default function HeroCinematic() {
   };
 
   return (
-    <section className="relative w-full bg-[#faf8f5] overflow-hidden border-b border-stone-200/80 pt-8 pb-16 lg:py-24">
+    <section className="relative w-full overflow-hidden border-b border-jufaja-border bg-jufaja-cream pb-16 pt-8 lg:py-24">
       {/* Background Architectural Blueprint Grid */}
       <div className="absolute inset-0 bg-blueprint-grid opacity-60 pointer-events-none" />
 
@@ -51,7 +51,7 @@ export default function HeroCinematic() {
             >
               Building Homes <br />
               for a Brighter <br />
-              <span className="text-jufaja-gold font-normal italic">Tomorrow.</span>
+              <span className="text-jufaja-gold-600 font-normal italic">Tomorrow.</span>
             </motion.h1>
 
             {/* Concise Supporting Copy */}
@@ -61,7 +61,7 @@ export default function HeroCinematic() {
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
               className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed max-w-xl"
             >
-              Modern home designs, considered craftsmanship and a seamless building experience across Sydney and NSW.
+              Explore considered home designs and practical information to help you start planning your build.
             </motion.p>
 
             {/* CTAs */}
@@ -103,7 +103,7 @@ export default function HeroCinematic() {
             >
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-jufaja-forest shrink-0" />
-                <span>63 Master Architectural Plans</span>
+                <span>Home design catalogue</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-jufaja-gold shrink-0" />
@@ -111,7 +111,7 @@ export default function HeroCinematic() {
               </div>
               <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
                 <CheckCircle2 className="w-4 h-4 text-jufaja-forest shrink-0" />
-                <span>Quality at Every Hold Point</span>
+                <span>Custom home enquiries</span>
               </div>
             </motion.div>
 
@@ -134,7 +134,7 @@ export default function HeroCinematic() {
                   y1="80"
                   x2="480"
                   y2="80"
-                  stroke="#c5a059"
+                  stroke="var(--jufaja-gold-500)"
                   strokeWidth="0.75"
                   strokeDasharray="4 4"
                   initial={{ pathLength: 0 }}
@@ -146,7 +146,7 @@ export default function HeroCinematic() {
                   y1="20"
                   x2="60"
                   y2="460"
-                  stroke="#c5a059"
+                  stroke="var(--jufaja-gold-500)"
                   strokeWidth="0.75"
                   strokeDasharray="4 4"
                   initial={{ pathLength: 0 }}
@@ -155,7 +155,7 @@ export default function HeroCinematic() {
                 />
                 <motion.polygon
                   points="70,140 250,50 430,140 430,420 70,420"
-                  stroke="#c5a059"
+                  stroke="var(--jufaja-gold-500)"
                   strokeWidth="1.2"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
@@ -174,10 +174,11 @@ export default function HeroCinematic() {
               <div className="relative h-[380px] sm:h-[460px] lg:h-[500px] w-full rounded-xl overflow-hidden bg-stone-100">
                 <Image
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85"
-                  alt="Modern Australian Architectural Residence by JUFAJA"
+                  alt="Illustrative image of a modern Australian-style residence"
                   fill
                   priority
-                  className="object-cover object-center transform hover:scale-103 transition-transform duration-700"
+                  sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 42vw, 620px"
+                  className="object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
                 />
 
                 {/* Subtle warm daylight vignette (Not dark overlay) */}
@@ -187,7 +188,7 @@ export default function HeroCinematic() {
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-jufaja-gold/40 shadow-sm flex items-center gap-2">
                   <Compass className="w-3.5 h-3.5 text-jufaja-gold" />
                   <span className="text-[10px] font-bold uppercase tracking-widest text-jufaja-forest">
-                    Sydney Architectural Portfolio
+                    Residential design inspiration
                   </span>
                 </div>
 
@@ -195,17 +196,17 @@ export default function HeroCinematic() {
                 <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-stone-200/80 shadow-md flex items-center justify-between">
                   <div>
                     <span className="text-[9px] uppercase font-bold tracking-widest text-jufaja-gold block">
-                      Featured Residence
+                      Illustrative residence
                     </span>
                     <h3 className="font-serif font-bold text-sm sm:text-base text-jufaja-forest">
-                      The Arden Grove Residence
+                      A considered home design
                     </h3>
                   </div>
                   <Link
                     href="/designs"
                     className="text-xs font-bold text-jufaja-gold hover:text-jufaja-forest flex items-center gap-1 transition-colors uppercase tracking-wider"
                   >
-                    <span>View Plan</span>
+                    <span>Explore designs</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
