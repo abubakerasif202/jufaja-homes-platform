@@ -1,102 +1,119 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Quote, Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 
-interface Testimonial {
+interface ProjectFeedback {
   quote: string;
-  author: string;
-  roleOrHome: string;
-  suburb: string;
+  client: string;
+  project: string;
+  location: string;
+  highlight: string;
 }
 
-const testimonials: Testimonial[] = [
+const clientReflections: ProjectFeedback[] = [
   {
-    quote: 'We built our dream double-storey home with JUFAJA and could not be happier. Their attention to detail during every hold point inspection gave us complete peace of mind. No stress, no hidden site surprises, and delivered right on time.',
-    author: 'Michelle Dadich & James Tuckfield',
-    roleOrHome: 'Delta 36 Series Build',
-    suburb: 'Camden, NSW'
+    quote: 'From our initial engineering consultation with Javed through to lock-up and final handover, having a civil engineer personally oversee our site hold points gave us immense confidence. The build quality in our living pavilion and brickwork is exceptional.',
+    client: 'David & Elena M.',
+    project: 'The Arden Grove Residence',
+    location: 'Box Hill, NSW',
+    highlight: 'Precision Engineering & Hold Points'
   },
   {
-    quote: 'From our first consultation to key handover, dealing with one accountable builder made all the difference. Our custom design was executed to absolute perfection. The finishes in the kitchen and bathrooms are true luxury.',
-    author: 'Paul Salviana',
-    roleOrHome: 'Bespoke Custom Architectural Home',
-    suburb: 'Drummoyne, NSW'
+    quote: 'Executing an architectural duplex requires rigorous council coordination and acoustic separation between dwellings. JUFAJA delivered ahead of schedule with zero hidden cost variations. Our finished investment exceeds every expectation.',
+    client: 'Anthony & Sarah K.',
+    project: 'The Meridian Duplex Commission',
+    location: 'Leppington, NSW',
+    highlight: 'Acoustic Precision & Turnkey Delivery'
   },
   {
-    quote: 'We knocked down our 60-year-old cottage and rebuilt the Kingston 28. JUFAJA handled the demolition, council permits, and construction as one seamless package. We saved thousands compared to other volume builders.',
-    author: 'Nam & Tham Le',
-    roleOrHome: 'Knockdown Rebuild Client',
-    suburb: 'Prestons, NSW'
+    quote: 'Knocking down our long-held family home was an emotional decision. JUFAJA took care of demolition permits, site preparation, and constructed a modern masterpiece with seamless indoor-outdoor alfresco living. Truly considered builders.',
+    client: 'Michael & Thao N.',
+    project: 'The Verdant Knockdown Rebuild',
+    location: 'Camden, NSW',
+    highlight: 'End-to-End Knockdown Rebuild'
   }
 ];
 
 export default function TestimonialsCarousel() {
   const [current, setCurrent] = useState(0);
 
-  const prev = () => setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  const next = () => setCurrent((prev) => (prev + 1) % testimonials.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + clientReflections.length) % clientReflections.length);
+  const next = () => setCurrent((prev) => (prev + 1) % clientReflections.length);
 
-  const item = testimonials[current];
+  const item = clientReflections[current];
 
   return (
-    <section className="py-20 bg-slate-100/70 border-b border-slate-200">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-24 bg-white relative overflow-hidden border-t border-jufaja-border">
+      {/* Background Subtle Lines */}
+      <div className="absolute inset-0 bg-blueprint-fine opacity-40 pointer-events-none" />
+
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Quote Icon */}
-        <div className="w-14 h-14 rounded-full bg-brand-navy text-brand-orange flex items-center justify-center mx-auto mb-6 shadow">
-          <Quote className="w-7 h-7" />
-        </div>
+        {/* Section Tag */}
+        <span className="text-xs font-semibold uppercase tracking-widest text-jufaja-gold block mb-3">
+          Handover Reflections
+        </span>
+        <h2 className="text-3xl sm:text-4xl font-serif text-jufaja-forest tracking-tight mb-10">
+          Client Experiences &amp; Handover Standards
+        </h2>
 
-        {/* Star Rating */}
-        <div className="flex justify-center items-center gap-1.5 mb-6 text-brand-orange">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-5 h-5 fill-current" />
-          ))}
-          <span className="ml-2 text-xs font-bold text-slate-700">5.0 / 5 Verified Reviews</span>
-        </div>
-
-        {/* Quote Text */}
-        <blockquote className="text-lg sm:text-xl md:text-2xl font-medium text-brand-navy leading-relaxed italic mb-8 min-h-[110px] flex items-center justify-center">
-          &ldquo;{item.quote}&rdquo;
-        </blockquote>
-
-        {/* Author Details */}
-        <div className="space-y-1">
-          <div className="text-base sm:text-lg font-black text-brand-navy">
-            {item.author}
+        {/* Quote Container */}
+        <div className="bg-jufaja-ivory rounded-2xl p-8 sm:p-12 border border-jufaja-border/80 shadow-sm relative">
+          {/* Quote Glyph */}
+          <div className="w-12 h-12 rounded-full bg-jufaja-forest text-jufaja-gold flex items-center justify-center mx-auto mb-6 shadow-sm border border-jufaja-gold/30">
+            <Quote className="w-5 h-5" />
           </div>
-          <div className="text-xs sm:text-sm font-semibold text-brand-orange flex items-center justify-center gap-2">
-            <span>{item.roleOrHome}</span>
-            <span>&bull;</span>
-            <span className="text-slate-500">{item.suburb}</span>
+
+          {/* Quote Text */}
+          <blockquote className="text-lg sm:text-xl md:text-2xl font-serif text-jufaja-forest leading-relaxed italic mb-8 min-h-[110px] flex items-center justify-center">
+            &ldquo;{item.quote}&rdquo;
+          </blockquote>
+
+          {/* Client Details */}
+          <div className="space-y-1.5 pt-4 border-t border-jufaja-border/60">
+            <div className="text-base sm:text-lg font-serif font-semibold text-jufaja-forest">
+              {item.client}
+            </div>
+            <div className="text-xs sm:text-sm font-sans text-jufaja-gold flex items-center justify-center flex-wrap gap-2">
+              <span className="font-medium text-jufaja-charcoal">{item.project}</span>
+              <span className="text-jufaja-muted/50">&bull;</span>
+              <span className="text-jufaja-muted">{item.location}</span>
+            </div>
+            <div className="pt-2">
+              <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-jufaja-forest bg-white px-3 py-1 rounded-full border border-jufaja-gold/30">
+                <CheckCircle2 className="w-3.5 h-3.5 text-jufaja-gold" />
+                <span>{item.highlight}</span>
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Carousel Arrows */}
+        {/* Carousel Controls */}
         <div className="flex justify-center items-center gap-4 mt-8">
           <button
             onClick={prev}
-            aria-label="Previous Testimonial"
-            className="p-2 rounded-full border border-slate-300 bg-white hover:bg-slate-200 text-slate-700 transition-colors"
+            aria-label="Previous Reflection"
+            className="p-2.5 rounded-full border border-jufaja-border bg-white hover:bg-jufaja-ivory hover:border-jufaja-gold text-jufaja-forest transition-all"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
-          <div className="flex space-x-1.5">
-            {testimonials.map((_, i) => (
-              <span
+          <div className="flex space-x-2">
+            {clientReflections.map((_, i) => (
+              <button
                 key={i}
                 onClick={() => setCurrent(i)}
+                aria-label={`Go to slide ${i + 1}`}
                 className={`h-2 rounded-full transition-all cursor-pointer ${
-                  i === current ? 'w-6 bg-brand-orange' : 'w-2 bg-slate-300'
+                  i === current ? 'w-8 bg-jufaja-forest' : 'w-2 bg-jufaja-border hover:bg-jufaja-gold'
                 }`}
               />
             ))}
           </div>
           <button
             onClick={next}
-            aria-label="Next Testimonial"
-            className="p-2 rounded-full border border-slate-300 bg-white hover:bg-slate-200 text-slate-700 transition-colors"
+            aria-label="Next Reflection"
+            className="p-2.5 rounded-full border border-jufaja-border bg-white hover:bg-jufaja-ivory hover:border-jufaja-gold text-jufaja-forest transition-all"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

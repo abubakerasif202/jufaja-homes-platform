@@ -23,24 +23,24 @@ export default function FeasibilityCalculator() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-lg">
+    <div className="bg-white rounded-2xl border border-jufaja-border p-6 sm:p-10 shadow-sm">
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-xl bg-brand-navy text-brand-orange flex items-center justify-center mx-auto mb-3">
+          <div className="w-12 h-12 rounded-xl bg-jufaja-forest text-jufaja-gold flex items-center justify-center mx-auto mb-3 border border-jufaja-gold/30">
             <Calculator className="w-6 h-6" />
           </div>
-          <h3 className="text-2xl font-black text-brand-navy">
-            Interactive Site Feasibility Calculator
+          <h3 className="text-2xl sm:text-3xl font-serif font-bold text-jufaja-forest">
+            Site Feasibility Assessment
           </h3>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
-            Check your block's eligibility for Complying Development (CDC) and find matching designs.
+          <p className="text-xs sm:text-sm text-jufaja-muted mt-1 font-sans">
+            Check your block's eligibility for Complying Development (CDC) and identify matching architectural designs.
           </p>
         </div>
 
         {!isCalculated ? (
           <form onSubmit={handleCalculate} className="space-y-5">
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                 Property Suburb / Council Area *
               </label>
               <input
@@ -49,18 +49,18 @@ export default function FeasibilityCalculator() {
                 value={suburb}
                 onChange={(e) => setSuburb(e.target.value)}
                 placeholder="e.g. Prestons, Camden, Ryde, Blacktown"
-                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm font-medium"
+                className="w-full px-4 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm font-sans bg-white"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                 Approximate Frontage / Lot Width (Metres)
               </label>
               <select
                 value={lotWidth}
                 onChange={(e) => setLotWidth(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-orange text-sm font-medium bg-white"
+                className="w-full px-4 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm font-sans bg-white"
               >
                 <option value="10.0">Narrow Lot: 10.0m - 11.5m</option>
                 <option value="12.5">Standard Lot: 12.5m - 14.0m</option>
@@ -70,17 +70,17 @@ export default function FeasibilityCalculator() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
+              <label className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
                 Is There An Existing Home On The Block?
               </label>
               <div className="grid grid-cols-2 gap-3">
                 <button
                   type="button"
                   onClick={() => setHasExistingHouse('yes')}
-                  className={`py-2.5 rounded-lg text-xs font-bold border transition-colors cursor-pointer ${
+                  className={`py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider border transition-colors cursor-pointer ${
                     hasExistingHouse === 'yes'
-                      ? 'bg-brand-navy text-white border-brand-navy shadow-sm'
-                      : 'bg-slate-50 text-slate-700 border-slate-200'
+                      ? 'bg-jufaja-forest text-white border-jufaja-forest shadow-sm'
+                      : 'bg-jufaja-ivory text-jufaja-forest border-jufaja-border'
                   }`}
                 >
                   Yes, Knockdown Needed
@@ -88,10 +88,10 @@ export default function FeasibilityCalculator() {
                 <button
                   type="button"
                   onClick={() => setHasExistingHouse('no')}
-                  className={`py-2.5 rounded-lg text-xs font-bold border transition-colors cursor-pointer ${
+                  className={`py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider border transition-colors cursor-pointer ${
                     hasExistingHouse === 'no'
-                      ? 'bg-brand-navy text-white border-brand-navy shadow-sm'
-                      : 'bg-slate-50 text-slate-700 border-slate-200'
+                      ? 'bg-jufaja-forest text-white border-jufaja-forest shadow-sm'
+                      : 'bg-jufaja-ivory text-jufaja-forest border-jufaja-border'
                   }`}
                 >
                   No, Vacant Land
@@ -101,39 +101,39 @@ export default function FeasibilityCalculator() {
 
             <button
               type="submit"
-              className="w-full py-3.5 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-white font-extrabold text-sm uppercase tracking-wider transition-all shadow hover:shadow-md cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-semibold text-xs sm:text-sm uppercase tracking-wider transition-all shadow-sm cursor-pointer flex items-center justify-center gap-2 border border-jufaja-gold/40"
             >
               <span>Calculate Block Feasibility</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 text-jufaja-gold" />
             </button>
           </form>
         ) : (
           <div className="space-y-6 pt-2">
-            <div className="p-5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 space-y-2">
-              <div className="flex items-center gap-2 font-bold text-base text-emerald-800">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+            <div className="p-5 rounded-xl bg-jufaja-ivory border border-jufaja-gold/40 text-jufaja-forest space-y-2">
+              <div className="flex items-center gap-2 font-serif font-bold text-lg text-jufaja-forest">
+                <CheckCircle2 className="w-5 h-5 text-jufaja-gold" />
                 <span>High Feasibility for {suburb || 'Your Area'}</span>
               </div>
-              <p className="text-xs text-emerald-700 leading-relaxed">
+              <p className="text-xs text-jufaja-muted leading-relaxed font-sans">
                 With a {lotWidth}m frontage, your block is eligible for both Complying Development (CDC fast-tracked in 20 days) and standard Council DA approval.
               </p>
             </div>
 
-            <div className="bg-slate-50 rounded-xl p-5 border border-slate-200 space-y-3 text-xs text-slate-700">
-              <div className="font-bold text-sm text-brand-navy uppercase tracking-wider">
-                Matching JUFAJA Configurations:
+            <div className="bg-jufaja-ivory/40 rounded-xl p-5 border border-jufaja-border space-y-3 text-xs text-jufaja-charcoal font-sans">
+              <div className="font-semibold text-xs text-jufaja-gold uppercase tracking-wider">
+                Matching Architectural Configurations:
               </div>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
+                  <span className="w-2 h-2 rounded-full bg-jufaja-forest"></span>
                   <span><strong>Double Storey:</strong> Delta 36, Verona 35, Alpha 32 Series</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
+                  <span className="w-2 h-2 rounded-full bg-jufaja-forest"></span>
                   <span><strong>Single Storey:</strong> Kingston 28, Oxley 26, Majestic 26</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-brand-orange"></span>
+                  <span className="w-2 h-2 rounded-full bg-jufaja-gold"></span>
                   <span><strong>Duplex Potential:</strong> Eligible for dual occupancy if lot &gt; 15m</span>
                 </li>
               </ul>
@@ -142,13 +142,13 @@ export default function FeasibilityCalculator() {
             <div className="flex gap-3">
               <button
                 onClick={() => setIsCalculated(false)}
-                className="flex-1 py-3 rounded-lg border border-slate-300 text-slate-700 text-xs font-bold uppercase hover:bg-slate-50"
+                className="flex-1 py-3.5 rounded-lg border border-jufaja-border text-jufaja-forest text-xs font-semibold uppercase hover:bg-jufaja-ivory transition-colors"
               >
                 Recalculate
               </button>
               <button
                 onClick={triggerConsult}
-                className="flex-1 py-3 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-bold uppercase tracking-wider shadow"
+                className="flex-1 py-3.5 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white text-xs font-semibold uppercase tracking-wider shadow-sm border border-jufaja-gold/40 transition-colors"
               >
                 Book Site Inspection
               </button>

@@ -40,7 +40,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-white selection:bg-brand-orange selection:text-white">
+      <body className="min-h-screen flex flex-col antialiased bg-white text-jufaja-charcoal selection:bg-jufaja-gold selection:text-jufaja-forest font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

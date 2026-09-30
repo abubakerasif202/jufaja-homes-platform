@@ -1,31 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-primary: #1e2b4f;
-  --color-accent: #f58220;
+  /* JUFAJA Primary Design Tokens */
+  --jufaja-green-950: #0d1e16;
+  --jufaja-green-900: #163024;
+  --jufaja-green-800: #1e4131;
+  --jufaja-green-700: #295540;
+  
+  --jufaja-gold-600: #a4823d;
+  --jufaja-gold-500: #c5a059;
+  --jufaja-gold-400: #dfc17b;
+  --jufaja-gold-100: #fbf7ee;
+  
+  --jufaja-burgundy-800: #541624;
+  --jufaja-burgundy-700: #6b1d2f;
+  --jufaja-burgundy-500: #9e3049;
+  
+  --jufaja-ivory: #faf8f5;
+  --jufaja-white: #ffffff;
+  --jufaja-stone-50: #f4f1ea;
+  --jufaja-cream: #fdfbf7;
+  --jufaja-charcoal: #1a1a1a;
+  --jufaja-muted: #5c5852;
+  --jufaja-border: #e6e2da;
 }
 
 body {
-  color: #1e293b;
-  background-color: #ffffff;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--jufaja-charcoal);
+  background-color: var(--jufaja-white);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom scrollbar */
+/* Luxury Editorial Headings */
+h1, h2, h3, .font-editorial {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+/* Subtle Architectural Blueprint Grid Pattern */
+.bg-blueprint-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+}
+
+.bg-blueprint-fine {
+  background-size: 16px 16px;
+  background-image: 
+    linear-gradient(to right, rgba(22, 48, 36, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 48, 36, 0.03) 1px, transparent 1px);
+}
+
+/* Custom Refined Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--jufaja-stone-50);
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #d8d3c8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--jufaja-gold-500);
+}
+
+/* Gold Underline Sweep Animation */
+.hover-gold-sweep {
+  position: relative;
+}
+.hover-gold-sweep::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--jufaja-gold-500);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-gold-sweep:hover::after {
+  width: 100%;
 }

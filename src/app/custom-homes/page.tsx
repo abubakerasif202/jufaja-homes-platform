@@ -3,22 +3,18 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
-  Compass, 
   Sparkles, 
-  Layers, 
-  Ruler, 
-  Eye, 
-  CheckCircle2, 
   ArrowRight,
-  ShieldCheck,
   Mountain,
   Maximize2,
   Trees,
-  Users
+  Users,
+  Compass,
+  CheckCircle2
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Custom Home Builders Sydney | Bespoke Architecture | JUFAJA Homes',
+  title: 'Custom Home Builders Sydney | Bespoke Architecture | JUFAJA Constructions',
   description: 'Bespoke architectural design and precision construction for complex, sloping, acreage, and luxury residential blocks across Greater Sydney. Turnkey fixed contracts.',
 };
 
@@ -79,47 +75,41 @@ export default function CustomHomesPage() {
   ];
 
   return (
-    <div className="bg-slate-50 min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-brand-navy text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <Image
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
-            alt="JUFAJA Bespoke Architecture"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+    <div className="bg-white min-h-screen">
+      {/* Hero Section - Light & Architectural */}
+      <section className="relative bg-jufaja-ivory py-20 md:py-28 overflow-hidden border-b border-jufaja-border">
+        {/* Background Blueprint Grid */}
+        <div className="absolute inset-0 bg-blueprint-grid opacity-50 pointer-events-none" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-orange/20 border border-brand-orange/40 text-brand-orange text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Bespoke Architectural Design & Build</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-jufaja-gold/40 text-jufaja-forest text-xs font-semibold uppercase tracking-widest shadow-sm">
+              <Compass className="w-3.5 h-3.5 text-jufaja-gold" />
+              <span>Bespoke Architectural Design &amp; Construction</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif text-jufaja-forest tracking-tight leading-[1.08]">
               Designed For Your Land.<br />
-              <span className="text-brand-orange">Crafted For Your Legacy.</span>
+              <span className="text-jufaja-gold font-normal italic">Crafted For Your Legacy.</span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              When standard floorplans cannot accommodate your unique vision or challenging block conditions, JUFAJA’s custom architectural service delivers bespoke luxury, tailored engineering, and fixed-price security.
+            <p className="text-jufaja-muted text-base sm:text-lg leading-relaxed font-sans">
+              When standard floorplans cannot accommodate your unique vision or challenging block conditions, JUFAJA’s bespoke custom architectural service delivers tailored engineering, high-end materiality, and fixed-price security.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
                 href="/contact"
-                className="px-8 py-3.5 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider transition-all shadow-lg flex items-center gap-2"
+                className="px-8 py-4 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all shadow-md border border-jufaja-gold/40 flex items-center gap-2"
               >
                 <span>Book Architectural Consultation</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-jufaja-gold" />
               </Link>
               <Link
-                href="/designs"
-                className="px-6 py-3.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors"
+                href="/projects"
+                className="px-6 py-4 rounded-lg bg-white hover:bg-jufaja-ivory border border-jufaja-border text-jufaja-forest text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors shadow-sm"
               >
-                View Master Design Range
+                View Completed Work
               </Link>
             </div>
           </div>
@@ -127,16 +117,16 @@ export default function CustomHomesPage() {
       </section>
 
       {/* Specialty Pillars Section */}
-      <section className="py-16 md:py-24 bg-white border-b border-slate-200">
+      <section className="py-16 md:py-24 bg-white border-b border-jufaja-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-black uppercase tracking-widest text-brand-orange">
+            <span className="text-xs font-semibold uppercase tracking-widest text-jufaja-gold">
               Specialist Engineering
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy mt-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-jufaja-forest mt-2">
               Building Where Other Builders Hesitate
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-3">
+            <p className="text-jufaja-muted text-sm sm:text-base mt-3 font-sans">
               Many volume builders reject non-flat or irregular blocks. At JUFAJA, our specialized structural engineers and building designers turn site obstacles into architectural focal points.
             </p>
           </div>
@@ -147,16 +137,16 @@ export default function CustomHomesPage() {
               return (
                 <div 
                   key={i} 
-                  className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-brand-navy/30 hover:shadow-md transition-all flex flex-col justify-between"
+                  className="p-6 rounded-2xl bg-jufaja-ivory border border-jufaja-border hover:border-jufaja-gold/40 hover:shadow-md transition-all flex flex-col justify-between"
                 >
                   <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-xl bg-brand-navy text-brand-orange flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-xl bg-jufaja-forest text-jufaja-gold flex items-center justify-center border border-jufaja-gold/30">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-extrabold text-brand-navy text-lg leading-snug">
+                    <h3 className="font-serif font-bold text-jufaja-forest text-xl leading-snug">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-jufaja-muted leading-relaxed font-sans">
                       {pillar.description}
                     </p>
                   </div>
@@ -168,17 +158,17 @@ export default function CustomHomesPage() {
       </section>
 
       {/* The 4-Stage Architectural Journey */}
-      <section className="py-16 md:py-24 bg-slate-50">
+      <section className="py-16 md:py-24 bg-jufaja-ivory border-b border-jufaja-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-black uppercase tracking-widest text-brand-orange">
-              Concept To Keys
+            <span className="text-xs font-semibold uppercase tracking-widest text-jufaja-gold">
+              Concept To Handover
             </span>
-            <h2 className="text-3xl sm:text-4xl font-black text-brand-navy mt-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-jufaja-forest mt-2">
               The JUFAJA Custom Design Process
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-3">
-              A collaborative, stress-free architectural journey that pairs your individual aesthetic with rigorous budgeting and structural discipline.
+            <p className="text-jufaja-muted text-sm sm:text-base mt-3 font-sans">
+              A collaborative, transparent architectural journey that pairs your individual aesthetic with rigorous budgeting and structural discipline.
             </p>
           </div>
 
@@ -186,16 +176,16 @@ export default function CustomHomesPage() {
             {designStages.map((stage, sIdx) => (
               <div 
                 key={sIdx}
-                className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm relative overflow-hidden flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-jufaja-border p-6 sm:p-8 shadow-sm relative overflow-hidden flex flex-col justify-between"
               >
                 <div className="space-y-4">
-                  <div className="text-3xl font-black text-brand-orange/40 font-mono">
+                  <div className="text-3xl font-serif font-bold text-jufaja-gold">
                     {stage.num}
                   </div>
-                  <h3 className="text-base font-bold text-brand-navy">
+                  <h3 className="text-lg font-serif font-semibold text-jufaja-forest">
                     {stage.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-jufaja-muted leading-relaxed font-sans">
                     {stage.desc}
                   </p>
                 </div>
@@ -205,26 +195,26 @@ export default function CustomHomesPage() {
         </div>
       </section>
 
-      {/* Premium Inclusions & Finishes Section */}
-      <section className="py-16 md:py-24 bg-brand-navy text-white">
+      {/* Premium Inclusions & Finishes Section - Light & High End */}
+      <section className="py-16 md:py-24 bg-white border-b border-jufaja-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-brand-orange">
-                Exquisite Finishes
+              <span className="text-xs font-semibold uppercase tracking-widest text-jufaja-gold">
+                Materiality &amp; Detailing
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black leading-tight">
-                Luxury Materials Selected For Durability & Drama
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-jufaja-forest leading-tight">
+                Luxury Materials Selected For Durability &amp; Architectural Drama
               </h2>
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Every custom home we build receives an elevated specification standard. Work directly with our interior styling consultants in our colour studio to tailor every fixture, stone profile, and joinery accent.
+              <p className="text-jufaja-muted text-sm sm:text-base leading-relaxed font-sans">
+                Every custom residence we build receives an elevated specification standard. Work directly with our interior styling consultants in our colour studio to tailor every fixture, stone profile, and joinery accent.
               </p>
 
               <div className="space-y-3 pt-2">
                 {customFinishes.map((item, fIdx) => (
                   <div key={fIdx} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-brand-orange shrink-0 mt-0.5" />
-                    <span className="text-xs sm:text-sm text-slate-200 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-jufaja-gold shrink-0 mt-0.5" />
+                    <span className="text-xs sm:text-sm text-jufaja-charcoal font-medium font-sans">
                       {item}
                     </span>
                   </div>
@@ -234,25 +224,25 @@ export default function CustomHomesPage() {
               <div className="pt-4">
                 <Link
                   href="/inclusions"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-extrabold uppercase tracking-wider transition-all shadow"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm border border-jufaja-gold/40"
                 >
                   <span>Explore Inclusions Specification</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-jufaja-gold" />
                 </Link>
               </div>
             </div>
 
             <div className="lg:col-span-6 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden shadow-sm border border-jufaja-border">
                   <Image
                     src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80"
-                    alt="Luxury Kitchen"
+                    alt="Luxury Kitchen Joinery"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <div className="relative h-36 sm:h-48 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative h-36 sm:h-48 rounded-2xl overflow-hidden shadow-sm border border-jufaja-border">
                   <Image
                     src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80"
                     alt="Master Ensuite"
@@ -262,18 +252,18 @@ export default function CustomHomesPage() {
                 </div>
               </div>
               <div className="space-y-4 pt-6">
-                <div className="relative h-36 sm:h-48 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative h-36 sm:h-48 rounded-2xl overflow-hidden shadow-sm border border-jufaja-border">
                   <Image
                     src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?auto=format&fit=crop&w=800&q=80"
-                    alt="Alfresco Lounge"
+                    alt="Architectural Living"
                     fill
                     className="object-cover"
                   />
                 </div>
-                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden shadow-md">
+                <div className="relative h-48 sm:h-64 rounded-2xl overflow-hidden shadow-sm border border-jufaja-border">
                   <Image
                     src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
-                    alt="Architectural Living Area"
+                    alt="Alfresco Entertaining"
                     fill
                     className="object-cover"
                   />
@@ -284,31 +274,29 @@ export default function CustomHomesPage() {
         </div>
       </section>
 
-      {/* Consultation Booking CTA */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <span className="text-xs font-black uppercase tracking-widest text-brand-orange">
-            Start Your Custom Journey
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-black text-brand-navy">
-            Bring Your Site Plan To An Architectural Session
+      {/* Bottom CTA */}
+      <section className="bg-jufaja-forest text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-blueprint-fine opacity-5 pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white">
+            Ready To Design Your Bespoke Home?
           </h2>
-          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Sit down with our Senior Building Designer. We’ll review your contour survey, section 10.7 planning certificates, and design aspirations to outline what’s achievable.
+          <p className="text-jufaja-ivory/80 max-w-2xl mx-auto text-sm sm:text-base font-sans">
+            Schedule an obligation-free architectural site feasibility appraisal with our principal builder Javed Iqbal.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-white text-xs sm:text-sm font-extrabold uppercase tracking-wider transition-all shadow-md"
+              className="px-8 py-4 rounded-lg bg-jufaja-gold hover:bg-jufaja-gold-400 text-jufaja-forest text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all shadow"
             >
-              Book An In-Office Or Site Design Meeting
+              Book Site Feasibility Consultation
             </Link>
-            <a
-              href="tel:0287838800"
-              className="px-8 py-3.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors"
+            <Link
+              href="/projects"
+              className="px-8 py-4 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-medium uppercase tracking-wider transition-colors"
             >
-              Direct Line: (02) 8783 8800
-            </a>
+              Explore Our Portfolio
+            </Link>
           </div>
         </div>
       </section>

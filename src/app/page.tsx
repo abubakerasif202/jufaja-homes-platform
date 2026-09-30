@@ -1,10 +1,13 @@
 import React from 'react';
-import HeroSlider from '@/components/home/HeroSlider';
+import HeroCinematic from '@/components/home/HeroCinematic';
 import SelectorDashboard from '@/components/home/SelectorDashboard';
 import FeaturedGalleries from '@/components/home/FeaturedGalleries';
-import DisplayLocationsStrip from '@/components/home/DisplayLocationsStrip';
 import BrandDifference from '@/components/home/BrandDifference';
+import SelectedProjects from '@/components/home/SelectedProjects';
+import FounderStory from '@/components/home/FounderStory';
+import DisplayLocationsStrip from '@/components/home/DisplayLocationsStrip';
 import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
+import CinematicIntro from '@/components/motion/CinematicIntro';
 
 import rawDesigns from '@/data/designs.json';
 import rawPackages from '@/data/packages.json';
@@ -15,26 +18,35 @@ export default function HomePage() {
   const packages = rawPackages as PackageListing[];
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* 1. Hero Slideshow Banner */}
-      <HeroSlider />
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* 0. Cinematic Website Opening Sequence (Plays once per session) */}
+      <CinematicIntro />
 
-      {/* 2. Interactive "I'm looking for" Selector Dashboard */}
+      {/* 1. Light Cinematic Architectural Hero */}
+      <HeroCinematic />
+
+      {/* 2. Interactive "Find Your Perfect Home" Selector Dashboard */}
       <SelectorDashboard />
 
-      {/* 3. Featured Designs & Packages Showcases */}
+      {/* 3. Featured Designs & Turnkey Packages Showcase */}
       <FeaturedGalleries 
         featuredDesigns={designs}
         featuredPackages={packages}
       />
 
-      {/* 4. Display Homes Strip */}
-      <DisplayLocationsStrip />
-
-      {/* 5. The JUFAJA Difference */}
+      {/* 4. The JUFAJA Difference (Verified Standards & Hold Points) */}
       <BrandDifference />
 
-      {/* 6. Client Reviews */}
+      {/* 5. Selected Projects / Our Work Portfolio Showcase */}
+      <SelectedProjects />
+
+      {/* 6. Founder & Leadership Story (Javed Iqbal, Civil Engineer) */}
+      <FounderStory />
+
+      {/* 7. Display Homes & Consultation Hubs */}
+      <DisplayLocationsStrip />
+
+      {/* 8. Client Reflections & Handover Standards */}
       <TestimonialsCarousel />
     </div>
   );

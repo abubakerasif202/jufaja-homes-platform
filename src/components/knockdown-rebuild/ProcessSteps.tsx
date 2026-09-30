@@ -85,7 +85,7 @@ const steps: Step[] = [
       'Independent engineer sign-off on piering and steel waffle slab foundation',
       'Pre-lining structural frame, electrical, and plumbing hold-point inspection',
       'Waterproofing certification for all wet areas prior to tiling',
-      'Weekly progress photos and transparent portal updates'
+      'Weekly progress photos and transparent builder updates'
     ]
   },
   {
@@ -127,21 +127,21 @@ export default function ProcessSteps() {
               onClick={() => setActiveStep(idx)}
               className={`p-4 rounded-xl text-left border transition-all cursor-pointer flex flex-col justify-between ${
                 isActive
-                  ? 'bg-brand-navy text-white border-brand-navy shadow-md ring-2 ring-brand-orange ring-offset-2'
-                  : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                  ? 'bg-jufaja-forest text-white border-jufaja-forest shadow-md ring-2 ring-jufaja-gold ring-offset-2'
+                  : 'bg-white text-jufaja-forest border-jufaja-border hover:border-jufaja-gold/40 hover:bg-jufaja-ivory'
               }`}
             >
               <div className="flex items-center justify-between mb-3">
-                <span className={`text-xs font-black tracking-widest ${isActive ? 'text-brand-orange' : 'text-slate-400'}`}>
+                <span className={`text-[11px] font-semibold tracking-widest ${isActive ? 'text-jufaja-gold' : 'text-jufaja-muted/70'}`}>
                   PHASE {item.step}
                 </span>
-                <Icon className={`w-5 h-5 ${isActive ? 'text-brand-orange' : 'text-slate-400'}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'text-jufaja-gold' : 'text-jufaja-muted'}`} />
               </div>
               <div>
-                <p className={`text-xs font-bold leading-tight line-clamp-2 ${isActive ? 'text-white' : 'text-slate-800'}`}>
+                <p className={`text-xs font-serif font-bold leading-tight line-clamp-2 ${isActive ? 'text-white' : 'text-jufaja-forest'}`}>
                   {item.title}
                 </p>
-                <div className={`flex items-center gap-1 mt-2 text-[10px] font-semibold ${isActive ? 'text-brand-orange' : 'text-slate-500'}`}>
+                <div className={`flex items-center gap-1 mt-2 text-[10px] font-sans font-medium ${isActive ? 'text-jufaja-gold' : 'text-jufaja-muted'}`}>
                   <Clock className="w-3 h-3" />
                   <span>{item.duration}</span>
                 </div>
@@ -152,75 +152,75 @@ export default function ProcessSteps() {
       </div>
 
       {/* Active Step Detailed Card */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-10 shadow-sm">
+      <div className="bg-white rounded-2xl border border-jufaja-border p-6 md:p-10 shadow-sm">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2 space-y-5">
             <div className="flex items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-brand-orange text-white text-xs font-black uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-jufaja-gold text-jufaja-forest text-xs font-semibold uppercase tracking-wider">
                 Stage {steps[activeStep].step}
               </span>
-              <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-brand-orange" />
+              <span className="text-xs font-medium text-jufaja-muted flex items-center gap-1.5 font-sans">
+                <Clock className="w-3.5 h-3.5 text-jufaja-gold" />
                 Estimated Timeline: {steps[activeStep].duration}
               </span>
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-black text-brand-navy">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-jufaja-forest">
               {steps[activeStep].title}
             </h3>
 
-            <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+            <p className="text-jufaja-muted text-sm md:text-base leading-relaxed font-sans">
               {steps[activeStep].summary}
             </p>
 
             <div className="pt-2">
-              <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">
-                Key Milestone Deliverables & Safeguards:
+              <h4 className="text-xs font-semibold text-jufaja-forest uppercase tracking-wider mb-3 font-sans">
+                Key Milestone Deliverables &amp; Safeguards:
               </h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {steps[activeStep].details.map((detail, dIdx) => (
-                  <li key={dIdx} className="flex items-start gap-2.5 p-3 rounded-lg bg-slate-50 border border-slate-100">
-                    <ShieldCheck className="w-4 h-4 text-brand-orange shrink-0 mt-0.5" />
-                    <span className="text-xs text-slate-700 font-medium leading-snug">{detail}</span>
+                  <li key={dIdx} className="flex items-start gap-2.5 p-3 rounded-lg bg-jufaja-ivory border border-jufaja-border">
+                    <ShieldCheck className="w-4 h-4 text-jufaja-gold shrink-0 mt-0.5" />
+                    <span className="text-xs text-jufaja-charcoal font-medium font-sans leading-snug">{detail}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col justify-between h-full space-y-6">
+          <div className="bg-jufaja-ivory rounded-xl p-6 border border-jufaja-border flex flex-col justify-between h-full space-y-6">
             <div className="space-y-3">
-              <div className="w-10 h-10 rounded-lg bg-brand-navy text-brand-orange flex items-center justify-center">
+              <div className="w-10 h-10 rounded-lg bg-jufaja-forest text-jufaja-gold flex items-center justify-center border border-jufaja-gold/30">
                 {React.createElement(steps[activeStep].icon, { className: 'w-5 h-5' })}
               </div>
-              <h4 className="font-extrabold text-brand-navy text-base">
+              <h4 className="font-serif font-bold text-jufaja-forest text-lg">
                 Ready to begin Phase {steps[activeStep].step}?
               </h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                Our Knockdown Rebuild advisors are available for complimentary on-site consultations across Greater Sydney, Western Sydney, and the Illawarra.
+              <p className="text-xs text-jufaja-muted leading-relaxed font-sans">
+                Our Knockdown Rebuild specialists are available for complimentary on-site consultations across Greater Sydney, Western Sydney, and the Illawarra.
               </p>
             </div>
 
             <div className="space-y-2.5">
               <button
                 onClick={openConsultation}
-                className="w-full py-3 rounded-lg bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-extrabold uppercase tracking-wider shadow transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white text-xs font-semibold uppercase tracking-wider shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2 border border-jufaja-gold/40"
               >
                 <span>Book Phase {steps[activeStep].step} Review</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-jufaja-gold" />
               </button>
               <div className="flex items-center justify-between pt-2">
                 <button
                   disabled={activeStep === 0}
                   onClick={() => setActiveStep(prev => Math.max(0, prev - 1))}
-                  className={`text-xs font-bold ${activeStep === 0 ? 'text-slate-300 cursor-not-allowed' : 'text-slate-600 hover:text-brand-navy'}`}
+                  className={`text-xs font-medium font-sans ${activeStep === 0 ? 'text-jufaja-muted/40 cursor-not-allowed' : 'text-jufaja-muted hover:text-jufaja-forest'}`}
                 >
                   &larr; Previous Stage
                 </button>
                 <button
                   disabled={activeStep === steps.length - 1}
                   onClick={() => setActiveStep(prev => Math.min(steps.length - 1, prev + 1))}
-                  className={`text-xs font-bold ${activeStep === steps.length - 1 ? 'text-slate-300 cursor-not-allowed' : 'text-brand-navy hover:text-brand-orange'}`}
+                  className={`text-xs font-medium font-sans ${activeStep === steps.length - 1 ? 'text-jufaja-muted/40 cursor-not-allowed' : 'text-jufaja-forest hover:text-jufaja-gold'}`}
                 >
                   Next Stage &rarr;
                 </button>

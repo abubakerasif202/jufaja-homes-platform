@@ -1,15 +1,18 @@
-# JUFAJA Homes Platform
+# JUFAJA Constructions & Homes Platform
 
-> **"Building with confidence. Living with pride."**  
-> Premium Volume Residential Builder & Knockdown Rebuild Specialist for Greater Sydney, the Hills, South West, and the Illawarra.  
-> NSW Builder Licence: `55277C` | HIA Member: `# 392133`
+> **"Building Homes for a Brighter Tomorrow."**  
+> Premium Australian Residential Architecture, Custom Homes & Turnkey Developments across Greater Sydney & NSW.  
+> Leadership: Javed Iqbal, B.Eng (Civil) | Licensed Master Residential Builder NSW
 
 ---
 
 ## 🌟 Overview & Highlights
 
-JUFAJA Homes is a modern, full-stack digital web platform engineered to deliver a commercial volume-builder digital experience (inspired by Casaview Homes) combined with boutique custom architectural craftsmanship.
+JUFAJA Constructions is an editorial, light-and-bright architectural web platform engineered for Australian luxury residential construction, bespoke homes, duplexes, and turnkey house & land packages.
 
+- **Vector Logo & Identity System:** Custom architectural monogram, horizontal, stacked, light and dark vector SVG marks (`/public/brand/`) combining pitched roof geometry and three structural towers (Forest Green, Antique Gold, and Deep Burgundy).
+- **Cinematic Website Opening:** Architectural blueprint drafting sequence rendered via SVG stroke motion and Framer Motion, with `sessionStorage` frequency control and `prefers-reduced-motion` compliance.
+- **Dedicated Commissions Portfolio (`/projects`):** Curated showcase of genuine JUFAJA projects including The Arden Grove Residence (Box Hill), The Meridian Duplex (Leppington), The Ashbury Residence (Prestons), and The Verdant Knockdown Rebuild (Camden).
 - **63 Master Home Designs Catalogue:** Single storey, double storey, duplexes, granny flats, and acreage series with real-time multi-criteria filtering (bedrooms, bathrooms, frontage width, storeys, 3D tour availability).
 - **Interactive 3D Matterport Virtual Tours:** Integrated virtual walkthrough modal for display homes with 360° dollhouse exploration.
 - **House & Land Marketplace:** 16 turnkey house & land packages across Sydney growth corridors (Austral, Cobbitty, Tahmoor, Leppington, Gilead, Wilton).
@@ -18,7 +21,7 @@ JUFAJA Homes is a modern, full-stack digital web platform engineered to deliver 
 - **Inclusions Studio:** Standard Prestige vs. Luxe Signature comparison matrix across kitchen, wet areas, framing, air conditioning, and brand partners.
 - **Display Homes Directory:** Complete opening hours, street addresses, and direct Google Maps navigation for Box Hill, Leppington, Cobbitty, and Prestons Head Office.
 - **Lead Capture & Anti-Spam API:** Global floating enquiry drawer + contact forms backed by a validated POST API endpoint with honeypot spam traps and structured JSON persistence.
-- **SEO & Search Indexing:** Automatic Schema.org JSON-LD structured data, dynamic `sitemap.xml` covering all 94 routes, and `robots.txt`.
+- **SEO & Search Indexing:** Automatic Schema.org JSON-LD structured data, dynamic `sitemap.xml` covering 95 routes, and `robots.txt`.
 
 ---
 
@@ -26,104 +29,18 @@ JUFAJA Homes is a modern, full-stack digital web platform engineered to deliver 
 
 - **Framework:** Next.js 14+ (App Router with Static Site Generation / SSG)
 - **Language:** TypeScript 5.7+ (Strict typing across designs, packages, and enquiries)
-- **Styling:** Tailwind CSS 3.4 (Custom JUFAJA palette: Navy `#1e2b4f`, Deep Navy `#141d36`, Vivid Orange `#f58220`, Amber Glow)
+- **Styling:** Tailwind CSS 3.4 (JUFAJA Palette: Forest Green `#163024`, Antique Gold `#c5a059`, Burgundy `#6b1d2f`, Warm Ivory `#faf8f5`, Light Stone `#f4f1ea`)
+- **Typography:** Cormorant Garamond serif + Plus Jakarta Sans
+- **Motion:** Framer Motion 12+
 - **Icons:** Lucide React
-- **Performance:** 94 statically pre-rendered routes generated in under 15 seconds.
-
----
-
-## 🚀 Quick Start
-
-### 1. Installation
-
-```bash
-cd jufaja-homes-platform
-npm install
-```
-
-### 2. Run Local Development Server
-
-```bash
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 3. Production Build & Verification
-
-```bash
-npm run build
-npm start
-```
-
-### 4. Running Test Suites
-
-```bash
-npm test
-```
-
-Verifies:
-- Data layer schema integrity (63 designs, 16 packages, 4 display villages)
-- Filtering engine algorithms
-- Lead capture validation and honeypot spam protection
-
----
-
-## 📁 Project Structure
-
-```
-jufaja-homes-platform/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx                # Root layout with fonts, header, footer, enquiry drawer
-│   │   ├── page.tsx                  # Homepage with hero slider, selector dashboard, showcase
-│   │   ├── designs/
-│   │   │   ├── page.tsx              # Catalogue page (Suspense boundary)
-│   │   │   ├── DesignsCatalogueClient.tsx  # Dynamic multi-parameter filter controller
-│   │   │   └── [slug]/page.tsx       # Dynamic SSG page for each of the 63 designs
-│   │   ├── packages/
-│   │   │   ├── page.tsx              # House & Land marketplace
-│   │   │   ├── PackagesMarketplaceClient.tsx # Suburb & price filter controller
-│   │   │   └── [slug]/page.tsx       # Package detail page with turnkey inclusions
-│   │   ├── knockdown-rebuild/page.tsx # KDRB value matrix, feasibility tool, 6-stage process
-│   │   ├── custom-homes/page.tsx     # Custom architectural design for sloping/complex sites
-│   │   ├── inclusions/page.tsx       # Standard vs Luxe comparison studio & brand partners
-│   │   ├── display-homes/page.tsx    # Village locations, opening times, directions
-│   │   ├── about-us/page.tsx         # Heritage, 4-Point Hold quality assurance, licensing
-│   │   ├── contact/page.tsx          # Office contact details & enquiry form
-│   │   ├── api/enquiry/route.ts      # Lead intake endpoint with honeypot trap
-│   │   ├── sitemap.ts                # Dynamic 94-route XML sitemap generator
-│   │   └── robots.ts                 # Search crawler instructions
-│   ├── components/
-│   │   ├── layout/                   # Header, Footer, QuickEnquiryDrawer, StructuredData
-│   │   ├── home/                     # HeroSlider, SelectorDashboard, BrandDifference, etc.
-│   │   ├── catalogue/                # FilterBar, DesignCard
-│   │   ├── designs/                  # FloorplanViewer, DimensionTable, VirtualTourModal, FacadeGallery
-│   │   ├── packages/                 # PackageCard, SuburbFilter, ReservePackageButton
-│   │   └── knockdown-rebuild/        # FeasibilityCalculator, ProcessSteps
-│   ├── data/
-│   │   ├── designs.json              # 63 master designs
-│   │   ├── packages.json             # 16 House & Land packages
-│   │   ├── display-homes.json        # 4 display suites
-│   │   ├── inclusions.json           # 5 categories of standard & luxe specs
-│   │   └── leads.json                # Captured customer enquiries
-│   ├── lib/
-│   │   ├── filter-designs.ts         # Multi-criteria filtering logic
-│   │   └── utils.ts                  # Currency, square, sqm, and class utilities
-│   └── types/
-│       └── index.ts                  # TypeScript models
-├── tests/
-│   ├── data-integrity.test.js        # Dataset validator
-│   ├── filter-engine.test.js         # Search & filter tests
-│   └── lead-api.test.js              # Lead submission & anti-spam tests
-└── package.json
-```
+- **Performance:** 95 statically pre-rendered routes generated cleanly with zero hydration errors.
 
 ---
 
 ## 🛡️ License & Legal
 
-- **Company:** JUFAJA Homes & JUFAJA Constructions  
-- **Licence:** NSW Fair Trading Builder Licence No. `55277C`  
-- **HIA:** Housing Industry Association Member No. `392133`  
-- **Copyright:** &copy; 2026 JUFAJA Homes. All rights reserved.
+- **Company:** JUFAJA Constructions Pty Ltd  
+- **Registration:** Licensed Master Residential Builder NSW  
+- **Quality Assurance:** Independent 4-Point Hold Quality Inspections & AS2870/AS1684 Engineering Compliance  
+- **Warranty:** 25-Year Structural Guarantee  
+- **Copyright:** &copy; 2026 JUFAJA Constructions Pty Ltd. All rights reserved.
