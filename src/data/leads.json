@@ -1,0 +1,15 @@
+[
+  {
+    "id": "LEAD-1790779067863-pg1xz",
+    "receivedAt": "2026-09-30T14:37:47.863Z",
+    "name": "E2E Verification Lead",
+    "phone": "0412345678",
+    "email": "test.lead@jufajahomes.com.au",
+    "enquiryType": "Knock Down Rebuild",
+    "targetContext": null,
+    "suburb": "Prestons",
+    "landStatus": "Not specified",
+    "message": "End-to-end automated verification test lead",
+    "status": "new"
+  }
+]
