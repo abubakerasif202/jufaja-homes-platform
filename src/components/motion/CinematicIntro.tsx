@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface CinematicIntroProps {
@@ -183,6 +184,24 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
               transition={{ duration: 0.7, delay: 1.8, ease: 'easeOut' }}
             />
           </svg>
+
+          {/* Scene 4.5: Official 3D Metallic Emblem Luster Reveal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.9, delay: 1.9, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-4 w-48 h-28 sm:w-56 sm:h-32 pointer-events-none flex items-center justify-center"
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src="/brand/jufaja-mark-3d.png"
+                alt="JUFAJA Constructions 3D Metallic Emblem"
+                fill
+                className="object-contain drop-shadow-[0_8px_16px_rgba(22,48,36,0.15)]"
+                priority
+              />
+            </div>
+          </motion.div>
 
           {/* Scene 5: Typography Reveal */}
           <div className="text-center mt-2 overflow-hidden">

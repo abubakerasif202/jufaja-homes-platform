@@ -154,12 +154,13 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="relative rounded-2xl overflow-hidden border border-jufaja-border shadow-md bg-white p-2">
-                <div className="relative h-96 sm:h-[420px] rounded-xl overflow-hidden bg-jufaja-stone">
+                <div className="relative h-96 sm:h-[450px] rounded-xl overflow-hidden bg-jufaja-stone">
                   <Image
-                    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
+                    src="/brand/javed-iqbal-executive.png"
                     alt="Javed Iqbal, Civil Engineer & Principal Builder"
                     fill
                     className="object-cover object-top"
+                    priority
                   />
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-jufaja-forest/90 via-jufaja-forest/50 to-transparent p-5 text-white">
                     <p className="font-serif text-lg font-semibold">Javed Iqbal</p>
@@ -243,6 +244,32 @@ export default function AboutUsPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* On-Site Engineering Oversight Showcase */}
+          <div className="mt-12 rounded-2xl bg-jufaja-ivory border border-jufaja-border p-6 sm:p-8 flex flex-col lg:flex-row items-center gap-8 shadow-sm">
+            <div className="relative w-full lg:w-80 h-60 rounded-xl overflow-hidden shadow-md shrink-0 border border-stone-200">
+              <Image
+                src="/brand/javed-iqbal-site.png"
+                alt="Javed Iqbal on site inspecting construction hold points and structural blueprints"
+                fill
+                className="object-cover object-center"
+              />
+              <div className="absolute top-2.5 left-2.5 bg-jufaja-forest/90 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Active Site Audit
+              </div>
+            </div>
+            <div className="space-y-3">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-jufaja-gold">
+                Civil Engineering Oversight
+              </span>
+              <h3 className="font-serif text-2xl font-bold text-jufaja-forest">
+                Hands-On Rigour on Every Slab, Frame &amp; Waterproofing Milestone
+              </h3>
+              <p className="text-sm text-jufaja-muted leading-relaxed font-sans">
+                At JUFAJA Constructions, quality control is never treated as a remote administrative task. Principal builder Javed Iqbal (B.Eng Civil) personally coordinates structural slab piering, framing tie-down loads, and wet-area membrane flood tests alongside certified private certifiers before works proceed to subsequent stages.
+              </p>
+            </div>
           </div>
         </div>
       </section>

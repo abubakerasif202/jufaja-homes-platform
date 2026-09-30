@@ -9,10 +9,10 @@ interface JufajaMarkProps {
 export default function JufajaMark({ className = 'w-10 h-10', size, theme = 'light' }: JufajaMarkProps) {
   const isDark = theme === 'dark';
   const roofColor = isDark ? '#dfc17b' : '#c5a059';
-  const leftPillarColor = isDark ? '#2d5e48' : '#163024';
-  const rightPillarColor = isDark ? '#9e3049' : '#6b1d2f';
-  const centerGold = isDark ? '#dfc17b' : '#c5a059';
-  const goldHighlight = isDark ? '#fff4d4' : '#dfc17b';
+  const leftGreen = isDark ? '#2d5e48' : '#163024';
+  const burgundy = isDark ? '#9e3049' : '#6b1d2f';
+  const gold = isDark ? '#dfc17b' : '#c5a059';
+  const goldLight = isDark ? '#fff4d4' : '#dfc17b';
 
   return (
     <svg
@@ -21,7 +21,7 @@ export default function JufajaMark({ className = 'w-10 h-10', size, theme = 'lig
       fill="none"
       className={className}
       style={size ? { width: size, height: size } : undefined}
-      aria-label="JUFAJA Constructions Emblem"
+      aria-label="JUFAJA Constructions Official Emblem"
     >
       {/* Subtle Blueprint Datum Grid */}
       <g opacity="0.12" stroke={roofColor} strokeWidth="0.5">
@@ -32,51 +32,74 @@ export default function JufajaMark({ className = 'w-10 h-10', size, theme = 'lig
 
       {/* Architectural Pitched Gable Roofline */}
       <path
-        d="M14 42 L50 14 L86 42"
+        d="M14 44 L48 18 L82 44"
         stroke={roofColor}
         strokeWidth="3.2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="M22 43 L50 21 L78 43"
-        stroke={roofColor}
+        d="M20 44 L48 22 L76 44"
+        stroke={goldLight}
         strokeWidth="1"
         strokeLinecap="round"
-        opacity="0.6"
+        opacity="0.7"
       />
 
-      {/* Left Pillar: Deep Forest Green */}
-      <path d="M24 43.5 L36 34.2 V78 H24 V43.5 Z" fill={leftPillarColor} />
+      {/* 4-Pane Architectural Window Under Gable */}
+      <g fill={roofColor} opacity="0.9">
+        <rect x="45.5" y="46" width="3.2" height="3.2" rx="0.4" />
+        <rect x="50" y="46" width="3.2" height="3.2" rx="0.4" />
+        <rect x="45.5" y="50.5" width="3.2" height="3.2" rx="0.4" />
+        <rect x="50" y="50.5" width="3.2" height="3.2" rx="0.4" />
+      </g>
 
-      {/* Right Pillar: Deep Burgundy */}
-      <path d="M64 34.2 L76 43.5 V78 H64 V34.2 Z" fill={rightPillarColor} />
-
-      {/* Center Pillar & Architectural 'J' Monogram */}
+      {/* Left Element: Architectural 'J' Green Spine */}
       <path
-        d="M44 26 L50 21.3 L56 26 V74 C56 84 48 90 38 90 C28 90 23 83.5 23 79 C23 76.5 24.8 75 27.2 75 C29.5 75 31 76.5 31.8 78 C33 80.2 35.2 82.5 38.5 82.5 C43 82.5 47 79 47 72 V26 Z"
-        fill={centerGold}
+        d="M26 44 L36 36 V76 H26 V44 Z"
+        fill={leftGreen}
       />
 
-      {/* Keyline Spine Highlight */}
+      {/* Center & J Hook: Antique Brushed Gold */}
       <path
-        d="M50 24 V72"
-        stroke={goldHighlight}
-        strokeWidth="1.2"
-        strokeLinecap="round"
-        opacity="0.8"
+        d="M38 28 L46 22 L52 27 V74 C52 83 45 89 36 89 C27 89 22 83 22 79 C22 76.5 23.8 75 26.2 75 C28.5 75 30 76.5 30.8 78 C32 80 34 82 36.5 82 C40.5 82 44 79 44 72 V28 Z"
+        fill={gold}
       />
 
-      {/* Architectural Foundation Baseline */}
+      {/* Right Architectural Towers (Burgundy, Gold, Burgundy) */}
+      {/* Tower 1: Burgundy */}
+      <path
+        d="M58 24 L63 28 V60 H58 V24 Z"
+        fill={burgundy}
+        stroke={goldLight}
+        strokeWidth="0.6"
+      />
+      {/* Tower 2: Gold */}
+      <path
+        d="M65 30 L70 34 V60 H65 V30 Z"
+        fill={gold}
+        stroke={goldLight}
+        strokeWidth="0.6"
+      />
+      {/* Tower 3: Burgundy */}
+      <path
+        d="M72 36 L77 40 V60 H72 V36 Z"
+        fill={burgundy}
+        stroke={goldLight}
+        strokeWidth="0.6"
+      />
+
+      {/* Architectural Foundation Baseline with Gold Framing */}
       <line
-        x1="16"
-        y1="94"
-        x2="84"
-        y2="94"
+        x1="14"
+        y1="93"
+        x2="86"
+        y2="93"
         stroke={roofColor}
         strokeWidth="1.8"
         strokeLinecap="round"
       />
+      <polygon points="50,91 52,93 50,95 48,93" fill={goldLight} />
     </svg>
   );
 }
