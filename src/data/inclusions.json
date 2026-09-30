@@ -1,0 +1,122 @@
+[
+  {
+    "category": "Kitchen & Culinary",
+    "items": [
+      {
+        "name": "Kitchen Benchtops",
+        "standard": "20mm Caesarstone engineered stone with pencil round edge",
+        "luxuryUpgrade": "40mm Calacatta waterfall edge island bench"
+      },
+      {
+        "name": "Oven & Cooktop",
+        "standard": "900mm Westinghouse European stainless steel 5-burner gas cooktop & oven",
+        "luxuryUpgrade": "900mm Smeg Dolce Stil Novo pyrolytic oven & induction"
+      },
+      {
+        "name": "Rangehood",
+        "standard": "900mm concealed undermount high-airflow rangehood",
+        "luxuryUpgrade": "Commercial-grade integrated glass canopy rangehood"
+      },
+      {
+        "name": "Cabinetry & Hardware",
+        "standard": "Polytec soft-close drawers and cupboards throughout",
+        "luxuryUpgrade": "Finger-pull handleless overheads with warm LED strip illumination"
+      },
+      {
+        "name": "Sink & Tapware",
+        "standard": "Undermount double bowl stainless steel sink with pull-out mixer",
+        "luxuryUpgrade": "Brushed brass or matte black Franke granite sink and pull-out spout"
+      }
+    ]
+  },
+  {
+    "category": "Bathrooms & Ensuite",
+    "items": [
+      {
+        "name": "Wall Tiling",
+        "standard": "Full height ceramic tiling to shower recess and 2m to bath",
+        "luxuryUpgrade": "Floor-to-ceiling rectified porcelain 600x1200 tiles throughout"
+      },
+      {
+        "name": "Vanities",
+        "standard": "Floating wall-hung vanity with 20mm stone top and soft-close drawers",
+        "luxuryUpgrade": "Custom timber veneer curved vanity with recessed LED mirror cabinets"
+      },
+      {
+        "name": "Shower Screens",
+        "standard": "Semi-frameless safety glass with polished chrome pivot door",
+        "luxuryUpgrade": "Frameless 10mm glass with custom minimalist brass clips"
+      },
+      {
+        "name": "Bathtub",
+        "standard": "1600mm freestanding white acrylic designer bathtub",
+        "luxuryUpgrade": "1700mm fluted luxury stone composite bathtub"
+      }
+    ]
+  },
+  {
+    "category": "Structural, Frame & Foundation",
+    "items": [
+      {
+        "name": "Concrete Slab",
+        "standard": "Engineered M or H1 class steel-reinforced concrete slab to AS2870",
+        "luxuryUpgrade": "Engineered piering allowance with anti-termite collar barriers"
+      },
+      {
+        "name": "Framing & Trusses",
+        "standard": "T2 / H2 treated blue pine termite-resistant structural timber frame",
+        "luxuryUpgrade": "Bluescope Truecore steel frame with 50-year structural warranty"
+      },
+      {
+        "name": "Ceiling Heights",
+        "standard": "2600mm (8ft 6in) high ceilings to ground floor",
+        "luxuryUpgrade": "2740mm (9ft) ground floor + 2600mm first floor ceilings"
+      },
+      {
+        "name": "Roofing",
+        "standard": "Monier concrete roof tiles or Colorbond custom orb steel roofing",
+        "luxuryUpgrade": "Terracotta flat profile designer tiles with heavy-duty sarking"
+      }
+    ]
+  },
+  {
+    "category": "Electrical, Lighting & Comfort",
+    "items": [
+      {
+        "name": "Air Conditioning",
+        "standard": "Actron dual-zone ducted reverse cycle inverter system",
+        "luxuryUpgrade": "Actron Neo Smart 8-zone touchscreen Wi-Fi climate system"
+      },
+      {
+        "name": "Downlights",
+        "standard": "30x warm white LED slimline recessed downlights package",
+        "luxuryUpgrade": "Complete home architectural dimmable LED downlights package"
+      },
+      {
+        "name": "Power & Data",
+        "standard": "Double powerpoints to all rooms, dual USB points to kitchen & master",
+        "luxuryUpgrade": "Smart Clipsal Wiser automated switches and Cat6 data hub"
+      }
+    ]
+  },
+  {
+    "category": "Flooring & Paintwork",
+    "items": [
+      {
+        "name": "Main Living Flooring",
+        "standard": "Choice of 600x600 porcelain tiles or timber-look hybrid planks",
+        "luxuryUpgrade": "Engineered European Oak 190mm wide timber flooring"
+      },
+      {
+        "name": "Bedrooms Flooring",
+        "standard": "Premium cut-pile nylon carpet with 10mm foam underlay",
+        "luxuryUpgrade": "100% New Zealand pure wool plush carpet"
+      },
+      {
+        "name": "Paint System",
+        "standard": "Taubmans 3-coat premium washable low-VOC acrylic paint system",
+        "luxuryUpgrade": "Dulux Wash&Wear with feature wall colour consult"
+      }
+    ]
+  }
+]

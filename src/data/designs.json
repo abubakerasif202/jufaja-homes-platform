@@ -1,0 +1,3206 @@
+[
+  {
+    "id": "blaxland-series",
+    "slug": "blaxland-series",
+    "name": "Blaxland Series",
+    "series": "Blaxland",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 30,
+    "houseSizeSqm": 278.7,
+    "minLotWidth": 13.5,
+    "description": "The Blaxland Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 227.2,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 278.7
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": true,
+    "priceGuideFrom": 465000
+  },
+  {
+    "id": "kingston-series",
+    "slug": "kingston-series",
+    "name": "Kingston Series",
+    "series": "Kingston",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 28,
+    "houseSizeSqm": 260.1,
+    "minLotWidth": 13.5,
+    "description": "The Kingston Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 208.6,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 260.1
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=wqTQRheuXUN",
+    "featured": true,
+    "priceGuideFrom": 442000
+  },
+  {
+    "id": "hemsworth-series",
+    "slug": "hemsworth-series",
+    "name": "Hemsworth Series",
+    "series": "Hemsworth",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 26,
+    "houseSizeSqm": 241.5,
+    "minLotWidth": 13.5,
+    "description": "The Hemsworth Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 190,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 241.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": true,
+    "priceGuideFrom": 419000
+  },
+  {
+    "id": "majestic-series",
+    "slug": "majestic-series",
+    "name": "Majestic Series",
+    "series": "Majestic",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 26,
+    "houseSizeSqm": 241.5,
+    "minLotWidth": 13.5,
+    "description": "The Majestic Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 190,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 241.5
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=VbBQW9aXKrW",
+    "featured": true,
+    "priceGuideFrom": 419000
+  },
+  {
+    "id": "oxley-26-series",
+    "slug": "oxley-26-series",
+    "name": "Oxley 26 Series",
+    "series": "Oxley 26",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 26,
+    "houseSizeSqm": 241.5,
+    "minLotWidth": 13.5,
+    "description": "The Oxley 26 Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 190,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 241.5
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=pMrrRWV5dME",
+    "featured": true,
+    "priceGuideFrom": 419000
+  },
+  {
+    "id": "oxley-series",
+    "slug": "oxley-series",
+    "name": "Oxley Series",
+    "series": "Oxley",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 23,
+    "houseSizeSqm": 213.7,
+    "minLotWidth": 13.5,
+    "description": "The Oxley Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 162.2,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 213.7
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=CqN4VALJCbr",
+    "featured": true,
+    "priceGuideFrom": 385000
+  },
+  {
+    "id": "eden-series",
+    "slug": "eden-series",
+    "name": "Eden Series",
+    "series": "Eden",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 22,
+    "houseSizeSqm": 204.4,
+    "minLotWidth": 11.5,
+    "description": "The Eden Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 152.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 204.4
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=9oKYFRDUtbG",
+    "featured": false,
+    "priceGuideFrom": 373000
+  },
+  {
+    "id": "patterson-series",
+    "slug": "patterson-series",
+    "name": "Patterson Series",
+    "series": "Patterson",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 22,
+    "houseSizeSqm": 204.4,
+    "minLotWidth": 11.5,
+    "description": "The Patterson Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 152.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 204.4
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=m8jVwLTPg6C",
+    "featured": false,
+    "priceGuideFrom": 373000
+  },
+  {
+    "id": "hastings-series",
+    "slug": "hastings-series",
+    "name": "Hastings Series",
+    "series": "Hastings",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 21,
+    "houseSizeSqm": 195.1,
+    "minLotWidth": 11.5,
+    "description": "The Hastings Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 143.6,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 195.1
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 362000
+  },
+  {
+    "id": "riley-series",
+    "slug": "riley-series",
+    "name": "Riley Series",
+    "series": "Riley",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 21,
+    "houseSizeSqm": 195.1,
+    "minLotWidth": 11.5,
+    "description": "The Riley Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 143.6,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 195.1
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=LMNdRWXXSzK",
+    "featured": false,
+    "priceGuideFrom": 362000
+  },
+  {
+    "id": "lennox-series",
+    "slug": "lennox-series",
+    "name": "Lennox Series",
+    "series": "Lennox",
+    "dwellingType": "single",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 19.5,
+    "houseSizeSqm": 181.2,
+    "minLotWidth": 11.5,
+    "description": "The Lennox Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 146,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 181.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 344000
+  },
+  {
+    "id": "collins-series",
+    "slug": "collins-series",
+    "name": "Collins Series",
+    "series": "Collins",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 19,
+    "houseSizeSqm": 176.5,
+    "minLotWidth": 11.5,
+    "description": "The Collins Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 125,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 176.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 339000
+  },
+  {
+    "id": "glenbrook-series",
+    "slug": "glenbrook-series",
+    "name": "Glenbrook Series",
+    "series": "Glenbrook",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 19,
+    "houseSizeSqm": 176.5,
+    "minLotWidth": 11.5,
+    "description": "The Glenbrook Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 125,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 176.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 339000
+  },
+  {
+    "id": "lindsay-series",
+    "slug": "lindsay-series",
+    "name": "Lindsay Series",
+    "series": "Lindsay",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 19,
+    "houseSizeSqm": 176.5,
+    "minLotWidth": 11.5,
+    "description": "The Lindsay Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 125,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 176.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 339000
+  },
+  {
+    "id": "stuart-series",
+    "slug": "stuart-series",
+    "name": "Stuart Series",
+    "series": "Stuart",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 19,
+    "houseSizeSqm": 176.5,
+    "minLotWidth": 11.5,
+    "description": "The Stuart Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 125,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 176.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 339000
+  },
+  {
+    "id": "rozelle-series",
+    "slug": "rozelle-series",
+    "name": "Rozelle Series",
+    "series": "Rozelle",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 18.3,
+    "houseSizeSqm": 170,
+    "minLotWidth": 11.5,
+    "description": "The Rozelle Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 134.8,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 170
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 330000
+  },
+  {
+    "id": "chesterfield-series",
+    "slug": "chesterfield-series",
+    "name": "Chesterfield Series",
+    "series": "Chesterfield",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 18,
+    "houseSizeSqm": 167.2,
+    "minLotWidth": 11.5,
+    "description": "The Chesterfield Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 132,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 167.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 327000
+  },
+  {
+    "id": "crest-series",
+    "slug": "crest-series",
+    "name": "Crest Series",
+    "series": "Crest",
+    "dwellingType": "single",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 2,
+    "houseSizeSquares": 18,
+    "houseSizeSqm": 167.2,
+    "minLotWidth": 11.5,
+    "description": "The Crest Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 115.7,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 167.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 327000
+  },
+  {
+    "id": "darlington-series",
+    "slug": "darlington-series",
+    "name": "Darlington Series",
+    "series": "Darlington",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 18,
+    "houseSizeSqm": 167.2,
+    "minLotWidth": 11.5,
+    "description": "The Darlington Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 132,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 167.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 327000
+  },
+  {
+    "id": "lithgow-series",
+    "slug": "lithgow-series",
+    "name": "Lithgow Series",
+    "series": "Lithgow",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 17,
+    "houseSizeSqm": 157.9,
+    "minLotWidth": 11.5,
+    "description": "The Lithgow Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 122.7,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 157.9
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 316000
+  },
+  {
+    "id": "jardine-series",
+    "slug": "jardine-series",
+    "name": "Jardine Series",
+    "series": "Jardine",
+    "dwellingType": "single",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 16,
+    "houseSizeSqm": 148.6,
+    "minLotWidth": 11.5,
+    "description": "The Jardine Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 113.4,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 148.6
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 304000
+  },
+  {
+    "id": "stamford-series",
+    "slug": "stamford-series",
+    "name": "Stamford Series",
+    "series": "Stamford",
+    "dwellingType": "single",
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 15.5,
+    "houseSizeSqm": 144,
+    "minLotWidth": 11.5,
+    "description": "The Stamford Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 108.8,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 144
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 298000
+  },
+  {
+    "id": "winton-series",
+    "slug": "winton-series",
+    "name": "Winton Series",
+    "series": "Winton",
+    "dwellingType": "single",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "garages": 1,
+    "houseSizeSquares": 15,
+    "houseSizeSqm": 139.4,
+    "minLotWidth": 11.5,
+    "description": "The Winton Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 104.2,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 139.4
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 293000
+  },
+  {
+    "id": "bennelong-series",
+    "slug": "bennelong-series",
+    "name": "Bennelong Series",
+    "series": "Bennelong",
+    "dwellingType": "double",
+    "bedrooms": 5,
+    "bathrooms": 3.5,
+    "garages": 2,
+    "houseSizeSquares": 42,
+    "houseSizeSqm": 390.2,
+    "minLotWidth": 14,
+    "description": "The Bennelong Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 202.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 262.6
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 187.3,
+          "garageSqm": 0,
+          "totalSqm": 187.3
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 603000
+  },
+  {
+    "id": "centennial-series",
+    "slug": "centennial-series",
+    "name": "Centennial Series",
+    "series": "Centennial",
+    "dwellingType": "double",
+    "bedrooms": 5,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 38,
+    "houseSizeSqm": 353,
+    "minLotWidth": 14,
+    "description": "The Centennial Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 183.6,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 243.29999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 169.4,
+          "garageSqm": 0,
+          "totalSqm": 169.4
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 557000
+  },
+  {
+    "id": "grange-series",
+    "slug": "grange-series",
+    "name": "Grange Series",
+    "series": "Grange",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 37,
+    "houseSizeSqm": 343.7,
+    "minLotWidth": 14,
+    "description": "The Grange Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 178.7,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 238.39999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 165,
+          "garageSqm": 0,
+          "totalSqm": 165
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 546000
+  },
+  {
+    "id": "delta-series",
+    "slug": "delta-series",
+    "name": "Delta Series",
+    "series": "Delta",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 36,
+    "houseSizeSqm": 334.5,
+    "minLotWidth": 14,
+    "description": "The Delta Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 173.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 233.6
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 160.6,
+          "garageSqm": 0,
+          "totalSqm": 160.6
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 534000
+  },
+  {
+    "id": "urban-series",
+    "slug": "urban-series",
+    "name": "Urban Series",
+    "series": "Urban",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 35,
+    "houseSizeSqm": 325.2,
+    "minLotWidth": 14,
+    "description": "The Urban Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 169.1,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 228.79999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 156.1,
+          "garageSqm": 0,
+          "totalSqm": 156.1
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=iEq2Zs22jmH",
+    "featured": false,
+    "priceGuideFrom": 523000
+  },
+  {
+    "id": "verona-series",
+    "slug": "verona-series",
+    "name": "Verona Series",
+    "series": "Verona",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 35,
+    "houseSizeSqm": 325.2,
+    "minLotWidth": 14,
+    "description": "The Verona Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 169.1,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 228.79999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 156.1,
+          "garageSqm": 0,
+          "totalSqm": 156.1
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=nzaC1677PNJ",
+    "featured": false,
+    "priceGuideFrom": 523000
+  },
+  {
+    "id": "elite-series",
+    "slug": "elite-series",
+    "name": "Elite Series",
+    "series": "Elite",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 33,
+    "houseSizeSqm": 306.6,
+    "minLotWidth": 14,
+    "description": "The Elite Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 159.4,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 219.1
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 147.2,
+          "garageSqm": 0,
+          "totalSqm": 147.2
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=3sHhknLf1nA",
+    "featured": false,
+    "priceGuideFrom": 500000
+  },
+  {
+    "id": "alpha-series",
+    "slug": "alpha-series",
+    "name": "Alpha Series",
+    "series": "Alpha",
+    "dwellingType": "double",
+    "bedrooms": 5,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 32,
+    "houseSizeSqm": 297.3,
+    "minLotWidth": 12.5,
+    "description": "The Alpha Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 154.6,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 214.29999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 142.7,
+          "garageSqm": 0,
+          "totalSqm": 142.7
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 488000
+  },
+  {
+    "id": "montreal-series",
+    "slug": "montreal-series",
+    "name": "Montreal Series",
+    "series": "Montreal",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 32,
+    "houseSizeSqm": 297.3,
+    "minLotWidth": 12.5,
+    "description": "The Montreal Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 154.6,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 214.29999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 142.7,
+          "garageSqm": 0,
+          "totalSqm": 142.7
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 488000
+  },
+  {
+    "id": "crawford-series",
+    "slug": "crawford-series",
+    "name": "Crawford Series",
+    "series": "Crawford",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 30,
+    "houseSizeSqm": 278.7,
+    "minLotWidth": 12.5,
+    "description": "The Crawford Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 144.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 204.6
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 133.8,
+          "garageSqm": 0,
+          "totalSqm": 133.8
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=GTdEbzoLiBt",
+    "featured": false,
+    "priceGuideFrom": 465000
+  },
+  {
+    "id": "denison-series",
+    "slug": "denison-series",
+    "name": "Denison Series",
+    "series": "Denison",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 30,
+    "houseSizeSqm": 278.7,
+    "minLotWidth": 12.5,
+    "description": "The Denison Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 144.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 204.6
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 133.8,
+          "garageSqm": 0,
+          "totalSqm": 133.8
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 465000
+  },
+  {
+    "id": "elwood-series",
+    "slug": "elwood-series",
+    "name": "Elwood Series",
+    "series": "Elwood",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 29,
+    "houseSizeSqm": 269.4,
+    "minLotWidth": 12.5,
+    "description": "The Elwood Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 140.1,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 199.79999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 129.3,
+          "garageSqm": 0,
+          "totalSqm": 129.3
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 454000
+  },
+  {
+    "id": "meadow-series",
+    "slug": "meadow-series",
+    "name": "Meadow Series",
+    "series": "Meadow",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 28,
+    "houseSizeSqm": 260.1,
+    "minLotWidth": 12.5,
+    "description": "The Meadow Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 135.3,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 195
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 124.8,
+          "garageSqm": 0,
+          "totalSqm": 124.8
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 442000
+  },
+  {
+    "id": "atlantic-series",
+    "slug": "atlantic-series",
+    "name": "Atlantic Series",
+    "series": "Atlantic",
+    "dwellingType": "double",
+    "bedrooms": 5,
+    "bathrooms": 3.5,
+    "garages": 2,
+    "houseSizeSquares": 27,
+    "houseSizeSqm": 250.8,
+    "minLotWidth": 12.5,
+    "description": "The Atlantic Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 130.4,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 190.1
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 120.4,
+          "garageSqm": 0,
+          "totalSqm": 120.4
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=uxzEfFXui68",
+    "featured": false,
+    "priceGuideFrom": 431000
+  },
+  {
+    "id": "primavera-series",
+    "slug": "primavera-series",
+    "name": "Primavera Series",
+    "series": "Primavera",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 27,
+    "houseSizeSqm": 250.8,
+    "minLotWidth": 12.5,
+    "description": "The Primavera Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 130.4,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 190.1
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 120.4,
+          "garageSqm": 0,
+          "totalSqm": 120.4
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=a4HdZnz71ZP",
+    "featured": false,
+    "priceGuideFrom": 431000
+  },
+  {
+    "id": "stellar-series",
+    "slug": "stellar-series",
+    "name": "Stellar Series",
+    "series": "Stellar",
+    "dwellingType": "double",
+    "bedrooms": 5,
+    "bathrooms": 3,
+    "garages": 1,
+    "houseSizeSquares": 27,
+    "houseSizeSqm": 250.8,
+    "minLotWidth": 12.5,
+    "description": "The Stellar Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 130.4,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 173.79999999999998
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 120.4,
+          "garageSqm": 0,
+          "totalSqm": 120.4
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=JrjWph94RTq",
+    "featured": false,
+    "priceGuideFrom": 431000
+  },
+  {
+    "id": "linden-series",
+    "slug": "linden-series",
+    "name": "Linden Series",
+    "series": "Linden",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 24,
+    "houseSizeSqm": 223,
+    "minLotWidth": 12.5,
+    "description": "The Linden Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 116,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 175.7
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 107,
+          "garageSqm": 0,
+          "totalSqm": 107
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 396000
+  },
+  {
+    "id": "coral-series",
+    "slug": "coral-series",
+    "name": "Coral Series",
+    "series": "Coral",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 1,
+    "houseSizeSquares": 23,
+    "houseSizeSqm": 213.7,
+    "minLotWidth": 12.5,
+    "description": "The Coral Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 111.1,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 154.49999999999997
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 102.6,
+          "garageSqm": 0,
+          "totalSqm": 102.6
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 385000
+  },
+  {
+    "id": "fingal-series",
+    "slug": "fingal-series",
+    "name": "Fingal Series",
+    "series": "Fingal",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 1,
+    "houseSizeSquares": 23,
+    "houseSizeSqm": 213.7,
+    "minLotWidth": 12.5,
+    "description": "The Fingal Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 111.1,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 154.49999999999997
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 102.6,
+          "garageSqm": 0,
+          "totalSqm": 102.6
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 385000
+  },
+  {
+    "id": "pacific-series",
+    "slug": "pacific-series",
+    "name": "Pacific Series",
+    "series": "Pacific",
+    "dwellingType": "double",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 1,
+    "houseSizeSquares": 21,
+    "houseSizeSqm": 195.1,
+    "minLotWidth": 12.5,
+    "description": "The Pacific Series exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/998147837-1750051168/delta-36-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 101.5,
+          "garageSqm": 20.2,
+          "alfrescoSqm": 18.4,
+          "porchSqm": 4.8,
+          "totalSqm": 144.9
+        }
+      },
+      {
+        "level": "First Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/3522714527-1750051168/delta-35-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 93.6,
+          "garageSqm": 0,
+          "totalSqm": 93.6
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=orE5kRcV6De",
+    "featured": false,
+    "priceGuideFrom": 362000
+  },
+  {
+    "id": "mcevoy-duplex",
+    "slug": "mcevoy-duplex",
+    "name": "McEvoy (Duplex)",
+    "series": "McEvoy (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 8,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 60,
+    "houseSizeSqm": 557.4,
+    "minLotWidth": 14,
+    "description": "The McEvoy (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 505.9,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 557.4
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 810000
+  },
+  {
+    "id": "mayfield-duplex",
+    "slug": "mayfield-duplex",
+    "name": "Mayfield (Duplex)",
+    "series": "Mayfield (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 10,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 56.5,
+    "houseSizeSqm": 524.9,
+    "minLotWidth": 14,
+    "description": "The Mayfield (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 473.4,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 524.9
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 770000
+  },
+  {
+    "id": "fair-haven-duplex",
+    "slug": "fair-haven-duplex",
+    "name": "Fair Haven (Duplex)",
+    "series": "Fair Haven (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 8,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 55,
+    "houseSizeSqm": 511,
+    "minLotWidth": 14,
+    "description": "The Fair Haven (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 459.5,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 511
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=BzjDnHJy6C4",
+    "featured": false,
+    "priceGuideFrom": 753000
+  },
+  {
+    "id": "ivory-duplex",
+    "slug": "ivory-duplex",
+    "name": "Ivory (Duplex)",
+    "series": "Ivory (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 10,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 54,
+    "houseSizeSqm": 501.7,
+    "minLotWidth": 14,
+    "description": "The Ivory (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 450.2,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 501.7
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 741000
+  },
+  {
+    "id": "altona-duplex",
+    "slug": "altona-duplex",
+    "name": "Altona (Duplex)",
+    "series": "Altona (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 10,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 52.5,
+    "houseSizeSqm": 487.7,
+    "minLotWidth": 14,
+    "description": "The Altona (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 436.2,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 487.7
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 724000
+  },
+  {
+    "id": "pine-lea-duplex",
+    "slug": "pine-lea-duplex",
+    "name": "Pine Lea (Duplex)",
+    "series": "Pine Lea (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 10,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 50,
+    "houseSizeSqm": 464.5,
+    "minLotWidth": 14,
+    "description": "The Pine Lea (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 413,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 464.5
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=y6xHrYvwnNZ",
+    "featured": false,
+    "priceGuideFrom": 695000
+  },
+  {
+    "id": "tempus-duplex",
+    "slug": "tempus-duplex",
+    "name": "Tempus (Duplex)",
+    "series": "Tempus (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 8,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 50,
+    "houseSizeSqm": 464.5,
+    "minLotWidth": 14,
+    "description": "The Tempus (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 413,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 464.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 695000
+  },
+  {
+    "id": "stanmore-duplex",
+    "slug": "stanmore-duplex",
+    "name": "Stanmore (Duplex)",
+    "series": "Stanmore (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 6,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 49,
+    "houseSizeSqm": 455.2,
+    "minLotWidth": 14,
+    "description": "The Stanmore (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 403.7,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 455.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 684000
+  },
+  {
+    "id": "tempus-mk2-duplex",
+    "slug": "tempus-mk2-duplex",
+    "name": "Tempus Mk2 (Duplex)",
+    "series": "Tempus Mk2 (Duplex)",
+    "dwellingType": "duplex",
+    "bedrooms": 8,
+    "bathrooms": 6,
+    "garages": 2,
+    "houseSizeSquares": 49,
+    "houseSizeSqm": 455.2,
+    "minLotWidth": 14,
+    "description": "The Tempus Mk2 (Duplex) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 403.7,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 455.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 684000
+  },
+  {
+    "id": "marbella-355",
+    "slug": "marbella-355",
+    "name": "Marbella 35.5",
+    "series": "Marbella 35.5",
+    "dwellingType": "granny",
+    "bedrooms": 6,
+    "bathrooms": 4,
+    "garages": 2,
+    "houseSizeSquares": 35.5,
+    "houseSizeSqm": 329.8,
+    "minLotWidth": 14,
+    "description": "The Marbella 35.5 exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 278.3,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 329.8
+        }
+      }
+    ],
+    "virtualTourUrl": "https://my.matterport.com/show/?m=Cm3dfFFskFH",
+    "featured": false,
+    "priceGuideFrom": 528000
+  },
+  {
+    "id": "marbella-31",
+    "slug": "marbella-31",
+    "name": "Marbella 31",
+    "series": "Marbella 31",
+    "dwellingType": "granny",
+    "bedrooms": 6,
+    "bathrooms": 3.5,
+    "garages": 2,
+    "houseSizeSquares": 31,
+    "houseSizeSqm": 288,
+    "minLotWidth": 12.5,
+    "description": "The Marbella 31 exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 236.5,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 288
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 477000
+  },
+  {
+    "id": "marbella-31-mk1",
+    "slug": "marbella-31-mk1",
+    "name": "Marbella 31 MK1",
+    "series": "Marbella 31 MK1",
+    "dwellingType": "granny",
+    "bedrooms": 6,
+    "bathrooms": 3.5,
+    "garages": 2,
+    "houseSizeSquares": 31,
+    "houseSizeSqm": 288,
+    "minLotWidth": 12.5,
+    "description": "The Marbella 31 MK1 exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 236.5,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 288
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 477000
+  },
+  {
+    "id": "austin-26",
+    "slug": "austin-26",
+    "name": "Austin 26",
+    "series": "Austin 26",
+    "dwellingType": "granny",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 26,
+    "houseSizeSqm": 241.5,
+    "minLotWidth": 12.5,
+    "description": "The Austin 26 exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 190,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 241.5
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 419000
+  },
+  {
+    "id": "austin-25",
+    "slug": "austin-25",
+    "name": "Austin 25",
+    "series": "Austin 25",
+    "dwellingType": "granny",
+    "bedrooms": 6,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 25,
+    "houseSizeSqm": 232.3,
+    "minLotWidth": 12.5,
+    "description": "The Austin 25 exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 180.8,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 232.3
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 408000
+  },
+  {
+    "id": "austin-25-mk1",
+    "slug": "austin-25-mk1",
+    "name": "Austin 25 MK1",
+    "series": "Austin 25 MK1",
+    "dwellingType": "granny",
+    "bedrooms": 6,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 25,
+    "houseSizeSqm": 232.3,
+    "minLotWidth": 12.5,
+    "description": "The Austin 25 MK1 exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 180.8,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 232.3
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 408000
+  },
+  {
+    "id": "berkeley-27-wide-lot",
+    "slug": "berkeley-27-wide-lot",
+    "name": "Berkeley 27 (Wide Lot)",
+    "series": "Berkeley 27 (Wide Lot)",
+    "dwellingType": "rural",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 27,
+    "houseSizeSqm": 250.8,
+    "minLotWidth": 12.5,
+    "description": "The Berkeley 27 (Wide Lot) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 199.3,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 250.8
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 431000
+  },
+  {
+    "id": "edgeworth-35-wide-lot",
+    "slug": "edgeworth-35-wide-lot",
+    "name": "Edgeworth 35 (Wide Lot)",
+    "series": "Edgeworth 35 (Wide Lot)",
+    "dwellingType": "rural",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 35,
+    "houseSizeSqm": 325.2,
+    "minLotWidth": 14,
+    "description": "The Edgeworth 35 (Wide Lot) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Acreage Manor",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 273.7,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 325.2
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 523000
+  },
+  {
+    "id": "ashford-385-wide-lot",
+    "slug": "ashford-385-wide-lot",
+    "name": "Ashford 38.5 (Wide Lot)",
+    "series": "Ashford 38.5 (Wide Lot)",
+    "dwellingType": "rural",
+    "bedrooms": 4,
+    "bathrooms": 2.5,
+    "garages": 2,
+    "houseSizeSquares": 38.5,
+    "houseSizeSqm": 357.7,
+    "minLotWidth": 14,
+    "description": "The Ashford 38.5 (Wide Lot) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Contemporary Hamptons",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 306.2,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 357.7
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 563000
+  },
+  {
+    "id": "holbrook-40-wide-lot",
+    "slug": "holbrook-40-wide-lot",
+    "name": "Holbrook 40 (Wide Lot)",
+    "series": "Holbrook 40 (Wide Lot)",
+    "dwellingType": "rural",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 40,
+    "houseSizeSqm": 371.6,
+    "minLotWidth": 14,
+    "description": "The Holbrook 40 (Wide Lot) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Executive Modernist",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 320.1,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 371.6
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 580000
+  },
+  {
+    "id": "cowra-475-wide-lot",
+    "slug": "cowra-475-wide-lot",
+    "name": "Cowra 47.5 (Wide Lot)",
+    "series": "Cowra 47.5 (Wide Lot)",
+    "dwellingType": "rural",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "garages": 2,
+    "houseSizeSquares": 47.5,
+    "houseSizeSqm": 441.3,
+    "minLotWidth": 14,
+    "description": "The Cowra 47.5 (Wide Lot) exemplifies considered modern residential architecture by JUFAJA Homes. Expertly proportioned for contemporary family living, it features open-plan entertaining zones, expansive private quarters, and seamless indoor-outdoor alfresco connectivity.",
+    "features": [
+      "Master suite with private ensuite & walk-in dressing robe",
+      "Designer open-plan kitchen with walk-in butler pantry",
+      "Covered outdoor entertaining alfresco with recessed ceiling",
+      "Dual-zone ducted reverse cycle air conditioning",
+      "Engineered reinforced concrete slab foundation",
+      "Energy efficient 7-star Basix thermal performance"
+    ],
+    "facades": [
+      {
+        "name": "Coastal Scandi",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
+      },
+      {
+        "name": "Urban Brick Elite",
+        "image": "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1200&q=80"
+      }
+    ],
+    "floorplans": [
+      {
+        "level": "Ground Floor",
+        "image": "https://casaview.com.au/media/pages/designs/delta-series/2740366205-1757044933/delta-32-high-res-001-600x400.jpg",
+        "dimensions": {
+          "livingAreaSqm": 389.8,
+          "garageSqm": 36.5,
+          "alfrescoSqm": 15,
+          "porchSqm": 4.5,
+          "totalSqm": 441.3
+        }
+      }
+    ],
+    "virtualTourUrl": null,
+    "featured": false,
+    "priceGuideFrom": 666000
+  }
+]
