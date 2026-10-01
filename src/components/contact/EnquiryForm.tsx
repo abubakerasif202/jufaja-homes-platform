@@ -42,16 +42,16 @@ export default function EnquiryForm() {
   }
 
   if (status === 'sent') {
-    return <div role="status" className="border border-jufaja-gold/40 bg-white p-8 shadow-jufaja-soft">
-      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-jufaja-gold-600">Enquiry sent</p>
-      <h2 className="mt-2 font-serif text-3xl text-jufaja-forest">Thank you for getting in touch.</h2>
+    return <div role="status" className="rounded-sm border border-jufaja-gold/40 bg-white p-8 shadow-jufaja-soft">
+      <p className="eyebrow">Enquiry sent</p>
+      <h2 className="type-h3 mt-2 font-serif text-jufaja-forest">Thank you for getting in touch.</h2>
       <p className="mt-3 text-sm leading-6 text-jufaja-muted">Your message has been sent to JUFAJA Constructions.</p>
-      <button type="button" onClick={() => setStatus('idle')} className="mt-6 min-h-11 rounded-sm border border-jufaja-border px-4 text-sm font-semibold text-jufaja-forest hover:border-jufaja-gold-500">Send another enquiry</button>
+      <button type="button" onClick={() => setStatus('idle')} className="btn btn-outline mt-6">Send another enquiry</button>
     </div>;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 border border-jufaja-border bg-white p-5 shadow-jufaja-soft sm:p-8">
+    <form onSubmit={handleSubmit} className="space-y-5 rounded-sm border border-jufaja-border bg-white p-5 shadow-jufaja-soft sm:p-8">
       {status === 'error' && <p role="alert" className="border border-jufaja-burgundy-700/25 bg-jufaja-burgundy-700/5 p-3 text-sm leading-6 text-jufaja-burgundy-800">{error}</p>}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -90,7 +90,7 @@ export default function EnquiryForm() {
         <label htmlFor="contact-website">Leave this field empty</label>
         <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
-      <button type="submit" disabled={status === 'sending'} aria-busy={status === 'sending'} className="inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-jufaja-forest px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-jufaja-forest-800 disabled:cursor-wait disabled:opacity-65 sm:w-auto">
+      <button type="submit" disabled={status === 'sending'} aria-busy={status === 'sending'} className="btn btn-primary w-full disabled:cursor-wait disabled:opacity-65 sm:w-auto">
         {status === 'sending' ? 'Sending…' : 'Send enquiry'}
       </button>
     </form>

@@ -95,17 +95,17 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
           ))}
         </div>
       ) : (
-        <div className="bg-white rounded-xl border border-slate-200 p-16 text-center">
-          <div className="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mx-auto mb-4">
-            <Home className="w-8 h-8" />
+        <div className="bg-white rounded-sm border border-jufaja-border p-16 text-center">
+          <div className="w-16 h-16 rounded-full bg-jufaja-stone text-jufaja-gold-600 flex items-center justify-center mx-auto mb-4">
+            <Home aria-hidden="true" className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold text-brand-navy">No Matching Designs Found</h3>
-          <p className="text-sm text-slate-500 mt-1 max-w-md mx-auto">
+          <h3 className="font-serif text-2xl text-jufaja-forest">No Matching Designs Found</h3>
+          <p className="text-sm text-jufaja-muted mt-1 max-w-md mx-auto">
             Try adjusting your bedroom, bathroom, or dwelling type filters to view more plans from our master catalogue.
           </p>
           <button
             onClick={handleReset}
-            className="mt-6 px-6 py-2.5 rounded-lg bg-brand-orange text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-orange-hover transition-colors"
+            className="btn btn-primary mt-6"
           >
             Reset All Filters
           </button>

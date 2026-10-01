@@ -15,7 +15,7 @@ export default function FacadeGallery({ facades, designName }: Props) {
   const activeFacade = facades[selectedIdx] || facades[0];
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+    <div className="bg-white rounded-sm border border-jufaja-border overflow-hidden shadow-sm">
       {/* Main Facade View */}
       <div className="relative h-[320px] sm:h-[440px] w-full bg-jufaja-stone">
         <Image
@@ -29,10 +29,10 @@ export default function FacadeGallery({ facades, designName }: Props) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
 
         <div className="absolute bottom-6 left-6 text-white">
-          <span className="text-xs font-semibold text-jufaja-gold-400 uppercase tracking-widest block mb-1">
+          <span className="eyebrow eyebrow--light mb-1 block">
             ILLUSTRATIVE FACADE IMAGE
           </span>
-          <h3 className="text-2xl sm:text-3xl font-black drop-shadow-md">
+          <h3 className="type-h3 font-serif drop-shadow-md">
             {activeFacade.name}
           </h3>
         </div>
@@ -40,17 +40,17 @@ export default function FacadeGallery({ facades, designName }: Props) {
 
       {/* Thumbnails Selector */}
       {facades.length > 1 && (
-        <div className="p-4 bg-slate-50 border-t border-slate-200 flex gap-4 overflow-x-auto">
+        <div className="p-4 bg-jufaja-stone border-t border-jufaja-border flex gap-4 overflow-x-auto">
           {facades.map((f, idx) => (
             <button
               key={idx}
               onClick={() => setSelectedIdx(idx)}
               aria-pressed={idx === selectedIdx}
               aria-label={`Show illustrative ${f.name} facade`}
-              className={`relative h-20 w-32 shrink-0 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+              className={`relative h-20 w-32 shrink-0 rounded-sm overflow-hidden border-2 transition-[transform,opacity,border-color] duration-300 cursor-pointer ${
                 idx === selectedIdx
                   ? 'border-jufaja-gold-600 shadow-md scale-[1.02]'
-                  : 'border-slate-300 opacity-70 hover:opacity-100'
+                  : 'border-jufaja-border opacity-70 hover:opacity-100'
               }`}
             >
               <Image src={f.image} alt="" fill sizes="128px" className="object-cover" />

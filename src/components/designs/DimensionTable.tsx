@@ -15,8 +15,8 @@ export default function DimensionTable({ design }: Props) {
   ];
 
   return (
-    <section className="border border-jufaja-border bg-white p-6 shadow-jufaja-soft">
-      <h2 className="font-serif text-2xl text-jufaja-forest">Catalogue details</h2>
+    <section className="rounded-sm border border-jufaja-border bg-white p-6 shadow-jufaja-soft">
+      <h2 className="type-h3 font-serif text-jufaja-forest">Catalogue details</h2>
       <dl className="mt-4 divide-y divide-jufaja-border">
         {details.map(([label, value]) => (
           <div key={label} className="flex items-center justify-between gap-4 py-3 text-sm">

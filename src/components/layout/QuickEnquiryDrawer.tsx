@@ -109,10 +109,10 @@ export default function QuickEnquiryDrawer() {
             previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
             setIsOpen(true);
           }}
-          className="flex items-center gap-2.5 bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-semibold text-xs sm:text-sm px-5 py-3.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 group border-2 border-jufaja-gold cursor-pointer"
+          className="flex items-center gap-2.5 btn btn-primary shadow-2xl group cursor-pointer"
         >
-          <MessageSquare className="w-4 h-4 text-jufaja-gold group-hover:rotate-6 transition-transform" />
-          <span className="tracking-wider uppercase">Enquire Now</span>
+          <MessageSquare aria-hidden="true" className="w-4 h-4" />
+          <span>Enquire Now</span>
         </button>
       </div>
 
@@ -132,7 +132,7 @@ export default function QuickEnquiryDrawer() {
               {/* Drawer Header */}
               <div className="bg-jufaja-forest p-6 text-white flex justify-between items-center border-b border-jufaja-gold/20">
                 <div>
-                  <h2 id="enquiry-title" className="text-xl font-serif font-bold tracking-tight text-white">
+                  <h2 id="enquiry-title" className="type-h3 font-serif text-white">
                     Enquire With JUFAJA
                   </h2>
                   <p className="text-xs text-jufaja-ivory/70 mt-0.5 font-sans">
@@ -144,7 +144,7 @@ export default function QuickEnquiryDrawer() {
                   type="button"
                   aria-label="Close enquiry form"
                   onClick={() => setIsOpen(false)}
-                  className="p-1 rounded-full text-jufaja-ivory/70 hover:text-white hover:bg-white/10 transition-colors"
+                  className="p-1 rounded-sm text-jufaja-ivory/70 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -154,14 +154,14 @@ export default function QuickEnquiryDrawer() {
               <div className="flex-1 overflow-y-auto p-6 bg-jufaja-ivory/30">
                 {isSubmitted ? (
                   <div className="py-12 text-center space-y-4">
-                    <CheckCircle2 className="w-16 h-16 text-jufaja-forest mx-auto" />
-                    <h4 className="text-2xl font-serif font-bold text-jufaja-forest">Enquiry Received</h4>
+                    <CheckCircle2 aria-hidden="true" className="w-16 h-16 text-jufaja-forest mx-auto" />
+                    <h3 className="type-h3 font-serif text-jufaja-forest">Enquiry Received</h3>
                     <p className="text-xs sm:text-sm text-jufaja-muted max-w-xs mx-auto font-sans leading-relaxed">
                       Thank you for contacting JUFAJA Constructions. Your enquiry has been sent.
                     </p>
                     <button
                       onClick={() => setIsOpen(false)}
-                      className="mt-6 px-6 py-2.5 bg-jufaja-forest text-white text-xs font-semibold uppercase tracking-wider rounded-lg hover:bg-jufaja-forest-800 transition-colors"
+                      className="btn btn-primary mt-6"
                     >
                       Close Window
                     </button>
@@ -182,7 +182,7 @@ export default function QuickEnquiryDrawer() {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. John Smith"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                       />
                     </div>
 
@@ -201,7 +201,7 @@ export default function QuickEnquiryDrawer() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="0400 000 000"
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                          className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                         />
                       </div>
                       <div>
@@ -217,7 +217,7 @@ export default function QuickEnquiryDrawer() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="john@example.com"
-                          className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                          className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                         />
                       </div>
                     </div>
@@ -230,7 +230,7 @@ export default function QuickEnquiryDrawer() {
                         id="enquiry-type"
                         value={formData.interestType}
                         onChange={(e) => setFormData({ ...formData, interestType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                       >
                         <option value="New Build">New Home Design (from Catalogue)</option>
                         <option value="Knock Down Rebuild">Knock Down Rebuild</option>
@@ -252,7 +252,7 @@ export default function QuickEnquiryDrawer() {
                         value={formData.suburbOrCouncil}
                         onChange={(e) => setFormData({ ...formData, suburbOrCouncil: e.target.value })}
                         placeholder="e.g. Camden, Liverpool, Penrith"
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                       />
                     </div>
 
@@ -280,7 +280,7 @@ export default function QuickEnquiryDrawer() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Tell us about your land width, timeframe, or desired features..."
-                        className="w-full px-3.5 py-2.5 rounded-lg border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                       />
                     </div>
 
@@ -298,13 +298,13 @@ export default function QuickEnquiryDrawer() {
                       type="submit"
                       disabled={isSubmitting}
                       aria-busy={isSubmitting}
-                      className="w-full py-3.5 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer border border-jufaja-gold/40"
+                      className="btn btn-primary w-full cursor-pointer disabled:cursor-wait disabled:opacity-65"
                     >
                       {isSubmitting ? (
                         <span>Sending...</span>
                       ) : (
                         <>
-                          <Send className="w-4 h-4 text-jufaja-gold" />
+                          <Send aria-hidden="true" className="w-4 h-4" />
                           <span>Submit Free Enquiry</span>
                         </>
                       )}

@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 
 export const metadata: Metadata = {
@@ -17,14 +17,14 @@ export default function ProjectsPage() {
       {/* Hero Header */}
       <section className="bg-jufaja-cream text-jufaja-forest py-16 sm:py-24 relative overflow-hidden border-b border-jufaja-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-jufaja-gold/40 text-jufaja-gold-700 text-[10px] font-bold uppercase tracking-[0.18em]">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="eyebrow inline-flex items-center gap-2 rounded-sm border border-jufaja-gold-500/40 bg-white px-3 py-1">
+            <Sparkles aria-hidden="true" className="w-3.5 h-3.5" />
             <span>Illustrative concepts</span>
           </div>
-          <h1 className="text-4xl sm:text-6xl font-serif font-black tracking-tight text-jufaja-forest">
+          <h1 className="type-h1 font-serif text-jufaja-forest">
             Design Inspiration
           </h1>
-          <p className="text-stone-600 max-w-2xl mx-auto text-sm sm:text-base font-normal leading-relaxed">
+          <p className="type-lead text-jufaja-muted max-w-2xl mx-auto">
             These reference images and concept studies illustrate architectural directions. They are not photographs or records of completed JUFAJA projects.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
             >
               {/* Image Frame */}
               <div className={`lg:col-span-7 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="relative h-[340px] sm:h-[440px] w-full rounded-2xl overflow-hidden shadow-luxury border-2 border-white bg-stone-100 group">
+                <div className="relative h-[340px] sm:h-[440px] w-full rounded-sm overflow-hidden shadow-luxury border-2 border-white bg-jufaja-stone group">
                   <Image
                     src={proj.image}
                     alt={`${proj.title} illustrative concept image`}
@@ -50,10 +50,10 @@ export default function ProjectsPage() {
                     sizes="(max-width: 1023px) 100vw, 58vw"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute top-4 left-4 bg-jufaja-forest/90 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 bg-jufaja-forest-900 text-white px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider">
                     {proj.category}
                   </div>
-                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-lg text-xs font-semibold text-stone-800 shadow flex items-center gap-1.5">
+                  <div className="absolute bottom-4 left-4 bg-white px-3.5 py-1.5 rounded-sm text-xs font-semibold text-jufaja-charcoal shadow flex items-center gap-1.5">
                     <span>Illustrative image · not a completed project</span>
                   </div>
                 </div>
@@ -62,30 +62,26 @@ export default function ProjectsPage() {
               {/* Text Description */}
               <div className={`lg:col-span-5 space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <div className="space-y-2">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-jufaja-gold-700 block">
+                  <span className="eyebrow block">
                     {proj.category} · {proj.study}
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-serif font-black text-jufaja-forest">
+                  <h2 className="type-h3 font-serif text-jufaja-forest">
                     {proj.title}
                   </h2>
                 </div>
 
-                <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+                <p className="text-sm text-jufaja-muted leading-relaxed font-normal">
                   {proj.description}
                 </p>
 
                 <div className="space-y-2.5 pt-2">
-                  <span className="text-xs leading-6 text-stone-500">Concept only. Specifications and site suitability depend on an individual project brief.</span>
+                  <span className="text-xs leading-6 text-jufaja-muted">Concept only. Specifications and site suitability depend on an individual project brief.</span>
                 </div>
 
                 <div className="pt-4">
-                  <Link
-                    href={`/contact?project=${encodeURIComponent(proj.title)}`}
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white text-xs font-bold uppercase tracking-wider transition-all shadow border border-jufaja-gold/40"
-                  >
-                    <span>Discuss your project</span>
-                    <ArrowRight className="w-4 h-4 text-jufaja-gold" />
-                  </Link>
+                  <ButtonLink href={`/contact?project=${encodeURIComponent(proj.title)}`}>
+                    Discuss your project
+                  </ButtonLink>
                 </div>
               </div>
             </div>
@@ -94,21 +90,18 @@ export default function ProjectsPage() {
       </section>
 
       {/* Consultation Banner */}
-      <section className="bg-jufaja-stone py-16 border-t border-stone-200">
+      <section className="bg-jufaja-stone py-16 border-t border-jufaja-border">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-serif font-black text-jufaja-forest">
+          <h2 className="type-h2 font-serif text-jufaja-forest">
             Have an idea in mind?
           </h2>
-          <p className="text-xs sm:text-sm text-stone-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm text-jufaja-muted max-w-xl mx-auto leading-relaxed">
             Share a little about your plans and we can talk through possible next steps.
           </p>
           <div className="pt-2">
-            <Link
-              href="/contact"
-              className="px-8 py-4 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white text-xs font-bold uppercase tracking-wider transition-all shadow border border-jufaja-gold/40"
-            >
+            <ButtonLink href="/contact" arrow={false}>
               Contact JUFAJA
-            </Link>
+            </ButtonLink>
           </div>
         </div>
       </section>

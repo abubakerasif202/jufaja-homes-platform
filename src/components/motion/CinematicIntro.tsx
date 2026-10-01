@@ -9,18 +9,19 @@ interface CinematicIntroProps {
 }
 
 const STORAGE_KEY = 'jufaja_intro_viewed';
+const INTRO_MS = 1950;
+const EASE = [0.76, 0, 0.24, 1] as const;
 
+/**
+ * Short, once-per-session opening: a forest-green frame, a gold roofline drawing itself,
+ * and the approved logo resolving on an ivory plate before the frame lifts to the hero.
+ * The overlay is part of the server HTML; a beforeInteractive script hides it for returning sessions.
+ */
 export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
-  // Render the fixed overlay in the initial HTML; a beforeInteractive script
-  // hides it for sessions that have already completed the intro.
   const [visible, setVisible] = useState(true);
   const reduceMotion = useReducedMotion();
   const started = useRef(false);
-  const introStartedAt = useRef<number | null>(null);
   const skipButton = useRef<HTMLButtonElement>(null);
-  const artwork = useRef<HTMLDivElement>(null);
-  const [docking, setDocking] = useState(false);
-  const [destination, setDestination] = useState({ x: 0, y: 0, scale: 1 });
 
   const complete = useCallback(() => {
     if (started.current) return;
@@ -41,35 +42,21 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
     } catch {
       // Play once per mount when session storage is unavailable.
     }
-    if (seen) {
+    if (seen || reduceMotion) {
       document.documentElement.classList.add('jufaja-intro-seen');
+      if (reduceMotion) {
+        try {
+          window.sessionStorage.setItem(STORAGE_KEY, 'true');
+        } catch {
+          // Nothing to persist when storage is unavailable.
+        }
+      }
       setVisible(false);
       return;
     }
-
-    introStartedAt.current ??= Date.now();
-    const duration = reduceMotion ? 0 : 2900;
-    const remaining = Math.max(0, duration - (Date.now() - introStartedAt.current));
-    const timer = setTimeout(complete, remaining);
+    const timer = setTimeout(complete, INTRO_MS);
     return () => clearTimeout(timer);
   }, [complete, reduceMotion]);
-
-  useEffect(() => {
-    if (!visible || reduceMotion) return;
-    const timer = setTimeout(() => {
-      const headerLogo = document.querySelector('header [data-jufaja-logo]');
-      if (!headerLogo || !artwork.current) return;
-      const target = headerLogo.getBoundingClientRect();
-      const current = artwork.current.getBoundingClientRect();
-      setDestination({
-        x: target.left + target.width / 2 - current.left - current.width / 2,
-        y: target.top + target.height / 2 - current.top - current.height / 2,
-        scale: target.width / current.width,
-      });
-      setDocking(true);
-    }, 2450);
-    return () => clearTimeout(timer);
-  }, [visible, reduceMotion]);
 
   useEffect(() => {
     if (!visible) return;
@@ -108,41 +95,39 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
           aria-label="JUFAJA Constructions logo introduction"
           aria-modal="true"
           initial={false}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="jufaja-intro fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-jufaja-cream"
+          animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}
+          exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
+          transition={{ duration: 0.55, ease: EASE }}
+          className="jufaja-intro fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-jufaja-forest-950"
         >
-          <div aria-hidden="true" className="jufaja-intro__grid pointer-events-none absolute inset-0" />
+          <div aria-hidden="true" className="jufaja-intro__grid bg-blueprint-dark pointer-events-none absolute inset-0" />
           <button
             ref={skipButton}
             type="button"
             onClick={complete}
-            className="absolute right-4 top-4 z-10 min-h-11 rounded-sm border border-jufaja-gold/40 bg-white/80 px-4 text-xs font-semibold text-jufaja-forest transition-colors hover:bg-white sm:right-8 sm:top-8"
+            className="absolute right-4 top-4 z-10 min-h-11 rounded-sm border border-jufaja-gold-500/50 bg-jufaja-forest-900/60 px-4 text-xs font-semibold uppercase tracking-[0.14em] text-jufaja-ivory transition-colors hover:bg-jufaja-forest-800 sm:right-8 sm:top-8"
           >
             Skip intro <span aria-hidden="true">→</span>
           </button>
 
+          {/* Gold roofline drawing itself across the frame */}
+          <svg aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" className="pointer-events-none absolute inset-0 h-full w-full">
+            <motion.path d="M-20 430 L360 430 L600 200 L840 430 L1220 430" fill="none" stroke="var(--jufaja-gold-500)" strokeWidth="1.5" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.1, delay: 0.1, ease: 'easeInOut' }} />
+            <motion.path d="M-20 470 H1220" fill="none" stroke="var(--jufaja-gold-500)" strokeOpacity="0.45" strokeWidth="1" strokeDasharray="6 10" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.3, delay: 0.3, ease: 'easeOut' }} />
+          </svg>
+
+          {/* Ivory plate keeps the dark-lettered approved logo legible */}
           <motion.div
-            ref={artwork}
             aria-hidden="true"
-            initial={false}
-            animate={docking ? destination : { x: 0, y: 0, scale: 1 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-[1] aspect-[3/2] w-[240px] sm:w-[360px]"
+            initial={{ clipPath: 'inset(0 50% 0 50%)', opacity: 1 }}
+            animate={{ clipPath: 'inset(0 0% 0 0%)' }}
+            transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
+            className="relative z-[1] bg-jufaja-cream px-8 py-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:px-14 sm:py-9"
           >
-            <motion.div
-              initial={{ clipPath: 'inset(0 0 100% 0)' }}
-              animate={{ clipPath: ['inset(0 0 100% 0)', 'inset(0 0 38% 0)', 'inset(0 0 0% 0)'] }}
-              transition={{ duration: reduceMotion ? 0 : 1.95, delay: reduceMotion ? 0 : 0.3, times: [0, 0.62, 1], ease: 'easeInOut' }}
-              className="jufaja-intro__artwork absolute inset-0"
-            >
-              <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 360px, 240px" quality={90} priority className="h-full w-full object-contain" />
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }} className="relative aspect-[3/2] w-[200px] sm:w-[300px]">
+              <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 300px, 200px" quality={90} className="h-full w-full object-contain" />
             </motion.div>
-            {!reduceMotion && <svg aria-hidden="true" viewBox="0 0 1536 1024" className="pointer-events-none absolute inset-0 h-full w-full">
-              <motion.path d="M304 628 L744 334 L1109 612 L1216 624" fill="none" stroke="var(--jufaja-gold-500)" strokeWidth="4" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: [0, 0.6, 0] }} transition={{ duration: 1.15, delay: 0.1, times: [0, 0.45, 1] }} />
-              <motion.path d="M304 628 L744 334 L1109 612 L1216 624" fill="none" stroke="var(--jufaja-gold-400)" strokeWidth="3" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: [0, 0.35, 0] }} transition={{ duration: 0.45, delay: 2.05, times: [0, 0.45, 1] }} />
-            </svg>}
+            <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.6, delay: 1.35, ease: [0.16, 1, 0.3, 1] }} className="absolute inset-x-8 bottom-0 h-[3px] origin-left bg-jufaja-gold-500 sm:inset-x-14" />
           </motion.div>
         </motion.div>
       )}

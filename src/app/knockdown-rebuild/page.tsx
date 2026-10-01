@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import ButtonLink from '@/components/ui/ButtonLink';
 
 export const metadata: Metadata = {
   title: 'Knockdown Rebuild Information',
@@ -27,20 +26,20 @@ export default function KnockdownRebuildPage() {
       <section className="relative overflow-hidden border-b border-jufaja-border bg-white py-16 sm:py-24">
         <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 hidden w-2/5 bg-blueprint-fine opacity-30 lg:block" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-jufaja-gold-600">Knockdown rebuild</p>
-          <h1 className="mt-3 max-w-3xl font-serif text-5xl leading-tight tracking-tight text-jufaja-forest sm:text-7xl">Make room for a new chapter.</h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-jufaja-muted">Replacing an existing home involves site, design, planning and demolition questions. Start by understanding what applies to your property.</p>
-          <Link href="/contact?interest=Knockdown%20Rebuild" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-sm bg-jufaja-forest px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-jufaja-forest-800">Discuss your site <ArrowRight aria-hidden="true" className="h-4 w-4 text-jufaja-gold-400" /></Link>
+          <p className="eyebrow">Knockdown rebuild</p>
+          <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Make room for a new chapter.</h1>
+          <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">Replacing an existing home involves site, design, planning and demolition questions. Start by understanding what applies to your property.</p>
+          <ButtonLink href="/contact?interest=Knockdown%20Rebuild" className="mt-8">Discuss your site</ButtonLink>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="mb-9 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-jufaja-gold-600">Questions to work through</p>
-          <h2 className="mt-3 font-serif text-4xl text-jufaja-forest">Start with the property.</h2>
+          <p className="eyebrow">Questions to work through</p>
+          <h2 className="type-h2 mt-3 font-serif text-jufaja-forest">Start with the property.</h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {topics.map((topic, index) => <article key={topic.title} className="border-t-2 border-jufaja-gold-500 bg-white p-6 shadow-jufaja-soft">
+          {topics.map((topic, index) => <article key={topic.title} className="rounded-sm border-t-2 border-jufaja-gold-500 bg-white p-6 shadow-jufaja-soft transition-[transform,box-shadow] duration-300 hover:-translate-y-1">
             <span className="font-serif text-2xl text-jufaja-gold-600">0{index + 1}</span>
             <h3 className="mt-6 font-serif text-2xl text-jufaja-forest">{topic.title}</h3>
             <p className="mt-3 text-sm leading-6 text-jufaja-muted">{topic.copy}</p>
@@ -50,8 +49,8 @@ export default function KnockdownRebuildPage() {
 
       <section className="border-y border-jufaja-border bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-jufaja-gold-600">Before you decide</p>
-          <h2 className="mt-3 font-serif text-4xl text-jufaja-forest">Common questions</h2>
+          <p className="eyebrow">Before you decide</p>
+          <h2 className="type-h2 mt-3 font-serif text-jufaja-forest">Common questions</h2>
           <div className="mt-8 divide-y divide-jufaja-border border-y border-jufaja-border">
             {questions.map(([question, answer]) => <details key={question} className="group py-5">
               <summary className="cursor-pointer list-none font-serif text-xl text-jufaja-forest marker:hidden focus-visible:outline-jufaja-gold-600">{question}<span aria-hidden="true" className="float-right ml-4 text-jufaja-gold-600 group-open:rotate-45">+</span></summary>

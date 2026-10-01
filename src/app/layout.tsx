@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
+
+const display = Cormorant_Garamond({ subsets: ['latin'], weight: ['500', '600', '700'], style: ['normal', 'italic'], variable: '--font-display', display: 'swap' });
+const body = Manrope({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jufaja-homes-platform.vercel.app'),
@@ -28,9 +32,11 @@ export const metadata: Metadata = {
     siteName: 'JUFAJA Constructions',
     locale: 'en_AU',
     type: 'website',
+    images: [{ url: '/brand/jufaja-logo.png', width: 768, height: 512, alt: 'JUFAJA Constructions Pty Ltd logo' }],
   },
   twitter: {
     card: 'summary',
+    images: ['/brand/jufaja-logo.png'],
     title: 'JUFAJA Constructions | Home Designs & Building Enquiries',
     description: 'Explore home designs, custom home enquiries, knockdown rebuild information and house and land enquiries.',
   },
@@ -43,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en-AU" className={`scroll-smooth ${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
         <Script
           id="jufaja-intro-session"
