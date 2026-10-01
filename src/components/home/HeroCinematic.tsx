@@ -62,7 +62,7 @@ export default function HeroCinematic() {
       onBlur={() => setHovering(false)}
       className="relative isolate overflow-hidden bg-jufaja-forest-950 text-white lg:min-h-[calc(100svh-100px)]">
       {/* Imagery: stacked above the copy on mobile, full-bleed behind it on desktop */}
-      <div className="relative h-[46svh] min-h-[260px] w-full lg:absolute lg:inset-0 lg:h-auto">
+      <div className="relative h-[30svh] min-h-[200px] w-full lg:absolute lg:inset-0 lg:h-auto">
         {slides.map((slide, index) => (index === 0 || warm || index === active) && (
           <div
             key={slide.id}
