@@ -7,7 +7,7 @@ import { useReducedMotion } from 'framer-motion';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { HERO_SLIDES } from '@/data/hero-slides';
 
-const SLIDE_MS = 6500;
+const SLIDE_MS = 6000;
 const FADE_MS = 1300;
 const WARM_MS = 2500;
 const SWIPE_PX = 48;
@@ -110,13 +110,14 @@ export default function HeroSlideshow() {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false);
       }}
       style={{ '--hs-ms': `${SLIDE_MS}ms`, '--hs-fade': `${FADE_MS}ms` } as React.CSSProperties}
-      className="hs relative isolate -mt-[89px] h-[86svh] min-h-[560px] touch-pan-y overflow-hidden bg-jufaja-forest-950 text-white min-[360px]:-mt-[101px] lg:h-[100svh] lg:max-h-[1040px] lg:min-h-[600px]"
+      className="hs relative isolate -mt-[89px] h-[86svh] min-h-[500px] touch-pan-y overflow-hidden bg-jufaja-forest-950 text-white min-[360px]:-mt-[101px] lg:h-[100svh] lg:max-h-[1040px] lg:min-h-[600px]"
     >
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === active;
         const isPrevious = index === previous;
         if (index > 0 && !warm && !isActive && !isPrevious) return null;
         const Heading = index === 0 ? 'h1' : 'h2';
+        const alignRight = slide.align === 'right';
         return (
           <div
             key={slide.id}
@@ -139,16 +140,17 @@ export default function HeroSlideshow() {
             />
             {/* Readability: soft forest gradients sit under the copy so the house stays the hero */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-jufaja-forest-950/75 via-jufaja-forest-950/10 to-transparent" />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-jufaja-forest-950/50 via-jufaja-forest-950/5 to-transparent" />
+            <div aria-hidden="true" className={`pointer-events-none absolute inset-0 bg-gradient-to-r from-jufaja-forest-950/50 via-jufaja-forest-950/5 to-transparent ${alignRight ? 'lg:hidden' : ''}`} />
+            {alignRight && <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-l from-jufaja-forest-950/55 via-jufaja-forest-950/5 to-transparent lg:block" />}
             <div className="hs-copy absolute inset-0 z-40 flex items-end">
-              <div className="mx-auto w-full max-w-7xl px-4 pb-32 sm:px-6 lg:px-8 lg:pb-44">
+              <div className={`mx-auto w-full max-w-7xl px-4 pb-32 sm:px-6 lg:px-8 lg:pb-44 ${alignRight ? 'lg:text-right' : ''}`}>
                 {index === 0 && (
-                  <p className="eyebrow eyebrow--light hs-rise flex items-center gap-3" style={{ '--d': '250ms' } as React.CSSProperties}>
+                  <p className="eyebrow eyebrow--light hs-rise hidden items-center gap-3 sm:flex" style={{ '--d': '250ms' } as React.CSSProperties}>
                     <span aria-hidden="true" className="h-px w-10 bg-jufaja-gold-500" />
                     Australian Home Builders
                   </p>
                 )}
-                <Heading className="type-hero mt-4 max-w-4xl text-white">
+                <Heading className={`type-hero mt-4 max-w-4xl text-white ${alignRight ? 'lg:ml-auto' : ''}`}>
                   {slide.lines.map((line, i) => {
                     const accent = i === slide.lines.length - 1;
                     return (
@@ -163,10 +165,10 @@ export default function HeroSlideshow() {
                     );
                   })}
                 </Heading>
-                <p className="hs-rise type-lead hero-lead mt-5 max-w-xl text-jufaja-ivory/90" style={{ '--d': '800ms' } as React.CSSProperties}>
+                <p className={`hs-rise type-lead hero-lead mt-5 hidden max-w-xl text-jufaja-ivory/90 sm:block ${alignRight ? 'lg:ml-auto' : ''}`} style={{ '--d': '800ms' } as React.CSSProperties}>
                   {slide.copy}
                 </p>
-                <div className="hs-rise hero-ctas mt-7" style={{ '--d': '950ms' } as React.CSSProperties}>
+                <div className={`hs-rise hero-ctas mt-6 sm:mt-7 ${alignRight ? 'lg:flex lg:justify-end' : ''}`} style={{ '--d': '950ms' } as React.CSSProperties}>
                   <ButtonLink href={slide.cta.href} variant="gold">{slide.cta.label}</ButtonLink>
                 </div>
               </div>

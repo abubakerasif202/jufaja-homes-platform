@@ -10,6 +10,8 @@ export interface HeroSlide {
   /** object-position for narrow (portrait) and wide viewports so the architecture stays in frame. */
   focusMobile: string;
   focusDesktop: string;
+  /** Side the copy sits on from lg up, chosen so it never covers the slide's focal feature. */
+  align?: 'left' | 'right';
 }
 
 const unsplash = (photo: string) => `https://images.unsplash.com/${photo}?auto=format&fit=crop&w=2400&q=80`;
@@ -22,7 +24,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     lines: ['Building Homes', 'for a Brighter', 'Tomorrow.'],
     copy: 'Explore considered homes designed for modern Australian living.',
     cta: { label: 'Explore Home Designs', href: '/designs' },
-    focusMobile: '70% 50%',
+    focusMobile: '64% 50%',
     focusDesktop: '50% 45%',
   },
   {
@@ -44,6 +46,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     cta: { label: 'Knockdown Rebuild', href: '/knockdown-rebuild' },
     focusMobile: '55% 50%',
     focusDesktop: '50% 45%',
+    align: 'right',
   },
   {
     id: 'facade-detail',

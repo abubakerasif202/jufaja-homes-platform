@@ -71,7 +71,7 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // Over the home hero the header is transparent with an ivory logo plate; everywhere else (and once scrolled) it is solid.
+  // Over the home hero the header is transparent and the logo sits directly on the image with a soft light halo; everywhere else (and once scrolled) it is solid.
   const overlay = pathname === '/' && !scrolled && !menuOpen;
 
   const openEnquiry = () => {
@@ -88,8 +88,8 @@ export default function Header() {
       <div aria-hidden="true" className={`absolute inset-0 -z-10 border-b transition-opacity duration-300 ${overlay ? 'opacity-0' : 'opacity-100'} ${scrolled ? 'border-jufaja-gold/30 bg-white/95 shadow-jufaja-soft backdrop-blur-md' : 'border-jufaja-border bg-jufaja-cream/95 backdrop-blur-sm'}`} />
       <div aria-hidden="true" className={`absolute inset-0 -z-10 bg-gradient-to-b from-jufaja-forest-950/75 to-jufaja-forest-950/0 transition-opacity duration-300 ${overlay ? 'opacity-100' : 'opacity-0'}`} />
       <div className="mx-auto flex min-h-[88px] max-w-[1440px] items-center justify-between gap-2 px-4 min-[360px]:min-h-[100px] min-[360px]:gap-4 sm:min-h-[100px] sm:px-6 lg:px-8">
-        <Link href="/" aria-label="JUFAJA Constructions home" className={`shrink-0 rounded-sm px-1 py-0.5 transition-[background-color,box-shadow] min-[360px]:px-2 duration-300 ${overlay ? 'bg-jufaja-cream shadow-[0_14px_34px_-14px_rgba(0,0,0,0.65)]' : 'bg-transparent'}`}>
-          <JufajaLogo size="sm" theme="light" />
+        <Link href="/" aria-label="JUFAJA Constructions home" className="shrink-0 rounded-sm px-1 py-0.5 min-[360px]:px-2">
+          <JufajaLogo size="sm" theme="light" className={overlay ? 'logo-halo' : ''} />
         </Link>
 
         <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-5 2xl:gap-7">
