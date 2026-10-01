@@ -23,8 +23,8 @@ const config: Config = {
           },
           gold: {
             DEFAULT: '#c5a059',
-            700: '#8e6f30',
-          600: '#8e6f30',
+            700: '#7a5e26',
+            600: '#8e6f30',
             500: '#c5a059',
             400: '#dfc17b',
             300: '#ecd9a8',
@@ -62,8 +62,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ['Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Georgia', 'serif'],
-        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        serif: ['var(--font-display)', 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Georgia', 'serif'],
+        sans: ['var(--font-body)', 'Arial', 'Helvetica', 'sans-serif'],
       },
       boxShadow: {
         'luxury': '0 20px 40px -15px rgba(22, 48, 36, 0.08)',

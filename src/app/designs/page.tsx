@@ -19,20 +19,20 @@ export default function DesignsPage() {
         
         {/* Page Title & Breadcrumbs */}
         <div className="mb-8">
-          <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-jufaja-muted">
+          <div className="eyebrow mb-2">
             Home &bull; Home Designs Catalogue
           </div>
-          <h1 className="font-serif text-4xl tracking-tight text-jufaja-forest sm:text-6xl">
+          <h1 className="type-h1 font-serif text-jufaja-forest">
             Home design catalogue
           </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-jufaja-muted sm:text-base">
+          <p className="type-lead mt-3 max-w-3xl text-jufaja-muted">
             Compare the information shown for {designs.length} listed home designs. Images are illustrative and listed figures require confirmation; ask JUFAJA for current drawings and specifications.
           </p>
         </div>
 
         {/* Client-side Filter & Grid Wrapped in Suspense */}
         <Suspense fallback={
-          <div className="py-20 text-center text-slate-500 font-medium">
+          <div className="py-20 text-center text-jufaja-muted font-medium">
             Loading design catalogue...
           </div>
         }>

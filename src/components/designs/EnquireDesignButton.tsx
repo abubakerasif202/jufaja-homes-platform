@@ -21,9 +21,9 @@ export default function EnquireDesignButton({ designName, squares, className }: 
   return (
     <button
       onClick={handleClick}
-      className={className ?? 'w-full py-3 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-semibold text-xs tracking-wider uppercase transition-colors shadow-sm cursor-pointer flex items-center justify-center gap-2'}
+      className={className ?? 'btn btn-primary w-full cursor-pointer'}
     >
-      <MessageSquare className="w-4 h-4" />
+      <MessageSquare aria-hidden="true" className="w-4 h-4" />
       <span>Enquire On This Design</span>
     </button>
   );

@@ -6,6 +6,7 @@ import rawDesigns from '@/data/designs.json';
 import type { HomeDesign } from '@/types';
 import { formatSquares } from '@/lib/utils';
 import { Bed, Bath, Car, ArrowLeft } from 'lucide-react';
+import ButtonLink from '@/components/ui/ButtonLink';
 import FloorplanViewer from '@/components/designs/FloorplanViewer';
 import DimensionTable from '@/components/designs/DimensionTable';
 import FacadeGallery from '@/components/designs/FacadeGallery';
@@ -85,7 +86,7 @@ export default async function SingleDesignPage({ params }: Props) {
                 {design.dwellingType.replace('single', 'Single Storey').replace('double', 'Double Storey').replace('duplex', 'Duplex')}
               </span>
             </div>
-            <h1 className="font-serif text-4xl tracking-tight text-jufaja-forest sm:text-5xl">
+            <h1 className="type-h1 font-serif text-jufaja-forest">
               {design.name}
             </h1>
             <p className="mt-2 text-xs font-medium text-jufaja-muted sm:text-sm">
@@ -99,12 +100,12 @@ export default async function SingleDesignPage({ params }: Props) {
               <div className="flex items-center gap-1.5"><Bed aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" />
                 <span>{design.bedrooms} Beds</span>
               </div>
-              <span className="text-slate-300">&bull;</span>
+              <span className="text-jufaja-border">&bull;</span>
               <div className="flex items-center gap-1.5">
                 <Bath aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" />
                 <span>{design.bathrooms} Baths</span>
               </div>
-              <span className="text-slate-300">&bull;</span>
+              <span className="text-jufaja-border">&bull;</span>
               <div className="flex items-center gap-1.5">
                 <Car aria-hidden="true" className="h-4 w-4 text-jufaja-gold-600" />
                 <span>{design.garages} Car</span>
@@ -125,7 +126,7 @@ export default async function SingleDesignPage({ params }: Props) {
           {/* Right 1 Col: Highlights & Quick Enquiry */}
           <div className="space-y-6">
             <div className="border border-jufaja-border bg-white p-6 shadow-jufaja-soft">
-              <h3 className="text-lg font-bold text-jufaja-forest mb-4">
+              <h3 className="mb-4 font-serif text-xl text-jufaja-forest">
                 Listed specifications
               </h3>
               <p className="text-sm leading-6 text-jufaja-muted">The catalogue lists {design.bedrooms} bedrooms, {design.bathrooms} bathrooms and {design.garages} garage spaces. Confirm the current plan and specifications with JUFAJA.</p>
@@ -133,9 +134,9 @@ export default async function SingleDesignPage({ params }: Props) {
 
             {/* Quote Action Box */}
             <div className="space-y-4 rounded-sm border border-jufaja-border bg-jufaja-cream p-6 text-center">
-              <h2 className="font-serif text-2xl text-jufaja-forest">Interested in this design?</h2>
+              <h2 className="type-h3 font-serif text-jufaja-forest">Interested in this design?</h2>
               <p className="text-sm leading-6 text-jufaja-muted">Ask about current plans, site fit and available options.</p>
-              <Link href={`/contact?design=${encodeURIComponent(design.name)}`} className="inline-flex min-h-11 items-center justify-center gap-2 rounded-sm bg-jufaja-forest px-5 text-sm font-semibold text-white hover:bg-jufaja-forest-800">Ask JUFAJA <ArrowLeft aria-hidden="true" className="h-4 w-4 rotate-180 text-jufaja-gold-400" /></Link>
+              <ButtonLink href={`/contact?design=${encodeURIComponent(design.name)}`}>Ask JUFAJA</ButtonLink>
             </div>
           </div>
 
@@ -156,10 +157,10 @@ export default async function SingleDesignPage({ params }: Props) {
           <div className="border-t border-jufaja-border pt-12">
             <div className="flex justify-between items-end mb-6">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-gold-600">
+                <span className="eyebrow">
                   Similar listings
                 </span>
-                <h3 className="mt-1 font-serif text-3xl text-jufaja-forest">
+                <h3 className="type-h3 mt-1 font-serif text-jufaja-forest">
                   More {design.dwellingType === 'single' ? 'single storey' : design.dwellingType === 'double' ? 'double storey' : design.dwellingType} designs
                 </h3>
               </div>

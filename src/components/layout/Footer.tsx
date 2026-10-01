@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import ButtonLink from '@/components/ui/ButtonLink';
 import JufajaLogo from '@/components/brand/JufajaLogo';
 
 const columns = [
@@ -33,28 +33,31 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-jufaja-gold/30 bg-jufaja-forest-950 text-jufaja-ivory">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-blueprint-fine opacity-[0.06]" />
+      <div aria-hidden="true" className="bg-blueprint-dark pointer-events-none absolute inset-0 opacity-50" />
+      <svg aria-hidden="true" viewBox="0 0 800 400" fill="none" className="pointer-events-none absolute -right-20 -top-10 hidden h-[26rem] text-jufaja-gold-500 opacity-20 md:block">
+        <path d="M20 380 L400 40 L780 380" stroke="currentColor" strokeWidth="1" />
+        <path d="M110 380 L400 120 L690 380" stroke="currentColor" strokeWidth="0.6" />
+        <path d="M0 380 H800" stroke="currentColor" strokeWidth="0.6" strokeDasharray="6 8" />
+      </svg>
       <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-14 sm:px-6 sm:pt-16 lg:px-8">
         <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link href="/" aria-label="JUFAJA Constructions home" className="inline-block rounded-sm">
-              <JufajaLogo theme="dark" size="lg" />
+            <Link href="/" aria-label="JUFAJA Constructions home" className="inline-block rounded-sm bg-jufaja-cream px-6 py-4 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.8)]">
+              <JufajaLogo theme="dark" size="md" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-jufaja-ivory/75">
               Home designs, building information and ways to start a conversation about your plans.
             </p>
-            <Link href="/contact" className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-sm bg-jufaja-gold-500 px-5 py-3 text-xs font-semibold text-jufaja-forest-950 transition-colors hover:bg-jufaja-gold-400">
-              Contact JUFAJA <ArrowRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
+            <ButtonLink href="/contact" variant="gold" className="mt-7">Contact JUFAJA</ButtonLink>
           </div>
 
           {columns.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <h2 className="text-xs font-semibold uppercase tracking-[0.15em] text-jufaja-gold-400">{column.title}</h2>
+              <h2 className="eyebrow eyebrow--light">{column.title}</h2>
               <ul className="mt-4 space-y-3">
                 {column.links.map(([label, href]) => (
                   <li key={href}>
-                    <Link href={href} className="rounded-sm text-sm text-jufaja-ivory/75 transition-colors hover:text-white">{label}</Link>
+                    <Link href={href} className="hover-gold-sweep rounded-sm text-sm text-jufaja-ivory/75 transition-colors hover:text-white">{label}</Link>
                   </li>
                 ))}
               </ul>

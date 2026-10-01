@@ -44,15 +44,19 @@
 body {
   color: var(--jufaja-charcoal);
   background-color: var(--jufaja-white);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Luxury Editorial Headings */
 h1, h2, h3, .font-editorial {
-  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-family: var(--font-display), 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  font-weight: 600;
+  text-wrap: balance;
 }
+
+p { text-wrap: pretty; }
 
 :focus-visible {
   outline: 3px solid var(--jufaja-gold-600);
@@ -60,16 +64,13 @@ h1, h2, h3, .font-editorial {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .jufaja-intro { display: none !important; }
+  body:has(.jufaja-intro) { overflow: visible !important; }
   *, *::before, *::after {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  .jufaja-intro__artwork {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
   }
 }
 
@@ -89,10 +90,6 @@ h1, h2, h3, .font-editorial {
 }
 
 .jufaja-intro__grid {
-  background-image:
-    linear-gradient(to right, rgba(164, 130, 61, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(164, 130, 61, 0.045) 1px, transparent 1px);
-  background-size: 36px 36px;
   animation: intro-grid-in 700ms ease-out both;
 }
 
@@ -147,3 +144,81 @@ body:has(.jufaja-intro) {
 .hover-gold-sweep:hover::after {
   width: 100%;
 }
+
+/* ---------- Type scale (fluid) ---------- */
+.eyebrow {
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--jufaja-gold-600);
+}
+.eyebrow--light { color: var(--jufaja-gold-400); }
+.type-display { font-size: clamp(2.75rem, 1.4rem + 6.2vw, 6.5rem); line-height: 0.98; letter-spacing: -0.02em; }
+.type-h1 { font-size: clamp(2.5rem, 1.5rem + 4.2vw, 4.75rem); line-height: 1.03; letter-spacing: -0.015em; }
+.type-h2 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.5rem); line-height: 1.08; letter-spacing: -0.01em; }
+.type-h3 { font-size: clamp(1.4rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; }
+.type-lead { font-size: clamp(1.02rem, 0.96rem + 0.3vw, 1.2rem); line-height: 1.75; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  position: relative;
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateY(101%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn:hover::before, .btn:focus-visible::before { transform: translateY(0); }
+.btn svg { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+.btn:hover svg { transform: translateX(4px); }
+.btn-primary { background: var(--jufaja-green-900); color: #fff; border: 1px solid var(--jufaja-gold-500); }
+.btn-primary::before { background: var(--jufaja-gold-500); }
+.btn-primary:hover { color: var(--jufaja-green-950); }
+.btn-gold { background: var(--jufaja-gold-500); color: var(--jufaja-green-950); border: 1px solid var(--jufaja-gold-500); }
+.btn-gold::before { background: #fff; }
+.btn-outline { background: transparent; color: var(--jufaja-green-900); border: 1px solid var(--jufaja-green-900); }
+.btn-outline::before { background: var(--jufaja-green-900); }
+.btn-outline:hover { color: #fff; }
+.btn-outline-light { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.55); }
+.btn-outline-light::before { background: #fff; }
+.btn-outline-light:hover { color: var(--jufaja-green-950); }
+
+/* ---------- Architectural details ---------- */
+.gold-rule { height: 1px; background: linear-gradient(90deg, var(--jufaja-gold-500), rgba(197, 160, 89, 0)); }
+.bg-blueprint-dark {
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(197, 160, 89, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 160, 89, 0.07) 1px, transparent 1px);
+}
+.paper-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Hero headline: scales with width but never outgrows short viewports */
+.type-hero { font-size: clamp(2.6rem, min(1rem + 5.4vw, 10.5vh + 1rem), 6rem); line-height: 1; letter-spacing: -0.02em; }

@@ -1,12 +1,39 @@
 'use client';
 
-import React from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { ArrowRight, Compass, Shield, CheckCircle2 } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import ButtonLink from '@/components/ui/ButtonLink';
+import { JUFAJA_PROJECTS } from '@/data/projects';
+
+const SLIDE_MS = 6500;
+const EASE = [0.16, 1, 0.3, 1] as const;
+const SLIDE_PROJECT_IDS = ['arden-grove', 'verdant-kdrb', 'meridian-duplex'];
+
+const slides = SLIDE_PROJECT_IDS.flatMap((id) => {
+  const project = JUFAJA_PROJECTS.find((p) => p.id === id);
+  return project ? [{ ...project, image: project.image.replace('w=1200', 'w=2000') }] : [];
+});
+
+const headlineLines = ['Building Homes', 'for a Brighter'];
+
+const quickLinks = [
+  { href: '/designs', label: 'Home designs' },
+  { href: '/custom-homes', label: 'Custom homes' },
+  { href: '/knockdown-rebuild', label: 'Knockdown rebuild' },
+];
 
 export default function HeroCinematic() {
+  const reduceMotion = useReducedMotion();
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    if (reduceMotion || slides.length < 2) return;
+    const timer = window.setInterval(() => setActive((i) => (i + 1) % slides.length), SLIDE_MS);
+    return () => window.clearInterval(timer);
+  }, [reduceMotion, active]);
+
   const triggerEnquiry = () => {
     window.dispatchEvent(
       new CustomEvent('open-enquiry-drawer', {
@@ -15,207 +42,145 @@ export default function HeroCinematic() {
     );
   };
 
+  const current = slides[active];
+
   return (
-    <section className="relative w-full overflow-hidden border-b border-jufaja-border bg-jufaja-cream pb-16 pt-8 lg:py-24">
-      {/* Background Architectural Blueprint Grid */}
-      <div className="absolute inset-0 bg-blueprint-grid opacity-60 pointer-events-none" />
+    <section aria-label="JUFAJA Constructions introduction" className="relative isolate overflow-hidden bg-jufaja-forest-950 text-white lg:min-h-[calc(100svh-112px)]">
+      {/* Imagery: stacked above the copy on mobile, full-bleed behind it on desktop */}
+      <div className="relative h-[46svh] min-h-[260px] w-full lg:absolute lg:inset-0 lg:h-auto">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            aria-hidden={index !== active}
+            className={`absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${index === active ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <Image
+              src={slide.image}
+              alt={index === active ? `${slide.title}: illustrative residential design image` : ''}
+              fill
+              priority={index === 0}
+              quality={80}
+              sizes="100vw"
+              className={`object-cover object-center ${reduceMotion ? '' : index === active ? 'scale-100 duration-[7000ms]' : 'scale-110'} transition-transform ease-out`}
+            />
+          </div>
+        ))}
+        {/* Scrims: desktop left-to-right reading gradient, mobile fade into the copy panel */}
+        <div aria-hidden="true" className="absolute inset-0 hidden bg-gradient-to-r from-jufaja-forest-950 via-jufaja-forest-950/80 to-jufaja-forest-950/10 lg:block" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 hidden h-1/3 bg-gradient-to-t from-jufaja-forest-950 to-transparent lg:block" />
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-jufaja-forest-950 to-transparent lg:hidden" />
+      </div>
 
-      {/* Decorative Warm Ivory Ambient Lighting */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-jufaja-gold/10 blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="bg-blueprint-dark pointer-events-none absolute inset-0 opacity-40 mix-blend-soft-light" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Editorial & Storytelling (7 cols) */}
-          <div className="lg:col-span-6 xl:col-span-7 space-y-6 sm:space-y-8 z-10">
-            
-            {/* Eyebrow Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-jufaja-gold/40 shadow-sm"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-jufaja-gold" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-jufaja-forest">
-                Australian Home Builders
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-14 pt-6 sm:px-6 lg:min-h-[calc(100svh-112px)] lg:px-8 lg:pb-32 lg:pt-12">
+        <div className="max-w-3xl">
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
+            className="eyebrow eyebrow--light flex items-center gap-3"
+          >
+            <span aria-hidden="true" className="h-px w-10 bg-jufaja-gold-500" />
+            Australian Home Builders
+          </motion.p>
+
+          <h1 className="type-hero mt-5 text-white lg:mt-6">
+            {headlineLines.map((line, i) => (
+              <span key={line} className="block overflow-hidden pb-[0.08em]">
+                <motion.span
+                  className="block"
+                  initial={reduceMotion ? false : { y: '105%' }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 1, delay: 0.2 + i * 0.12, ease: EASE }}
+                >
+                  {line}
+                </motion.span>
               </span>
-            </motion.div>
-
-            {/* Large Luxury Editorial Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-6xl xl:text-7xl font-serif font-black text-jufaja-forest tracking-tight leading-[1.08]"
-            >
-              Building Homes <br />
-              for a Brighter <br />
-              <span className="text-jufaja-gold-600 font-normal italic">Tomorrow.</span>
-            </motion.h1>
-
-            {/* Concise Supporting Copy */}
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-              className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed max-w-xl"
-            >
-              Explore considered home designs and practical information to help you start planning your build.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.45 }}
-              className="flex flex-wrap items-center gap-3.5 pt-2"
-            >
-              <Link
-                href="/designs"
-                className="px-7 py-4 rounded-lg bg-jufaja-forest hover:bg-jufaja-forest-800 text-white font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-luxury hover:-translate-y-0.5 border border-jufaja-gold/40 flex items-center gap-2.5 group"
+            ))}
+            <span className="block overflow-hidden pb-[0.12em]">
+              <motion.span
+                className="block font-medium italic text-jufaja-gold-400"
+                initial={reduceMotion ? false : { y: '105%' }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 0.44, ease: EASE }}
               >
-                <span>Explore Home Designs</span>
-                <ArrowRight className="w-4 h-4 text-jufaja-gold group-hover:translate-x-1 transition-transform" />
-              </Link>
+                Tomorrow.
+              </motion.span>
+            </span>
+          </h1>
 
-              <Link
-                href="/projects"
-                className="px-6 py-4 rounded-lg bg-white hover:bg-jufaja-stone text-jufaja-forest font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 border border-stone-300 shadow-sm"
-              >
-                Our Work
-              </Link>
+          <motion.p
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.7, ease: EASE }}
+            className="type-lead mt-7 max-w-xl text-jufaja-ivory/85"
+          >
+            Explore considered home designs and practical information to help you start planning your build.
+          </motion.p>
 
-              <button
-                onClick={triggerEnquiry}
-                className="px-5 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider text-jufaja-forest/80 hover:text-jufaja-forest underline decoration-jufaja-gold underline-offset-8 transition-colors cursor-pointer"
-              >
-                Request Consultation
-              </button>
-            </motion.div>
-
-            {/* Refined Trust Strip */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="pt-6 border-t border-stone-200/90 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-semibold text-stone-600"
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.85, ease: EASE }}
+            className="mt-9 flex flex-wrap items-center gap-x-4 gap-y-3"
+          >
+            <ButtonLink href="/designs" variant="gold">Explore Home Designs</ButtonLink>
+            <ButtonLink href="/projects" variant="outline-light" arrow={false}>Our Work</ButtonLink>
+            <button
+              type="button"
+              onClick={triggerEnquiry}
+              className="hover-gold-sweep min-h-11 px-2 text-xs font-bold uppercase tracking-[0.14em] text-jufaja-ivory transition-colors hover:text-jufaja-gold-400"
             >
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-jufaja-forest shrink-0" />
-                <span>Home design catalogue</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-jufaja-gold shrink-0" />
-                <span>Custom &amp; Knockdown Rebuild</span>
-              </div>
-              <div className="flex items-center gap-2 col-span-2 sm:col-span-1">
-                <CheckCircle2 className="w-4 h-4 text-jufaja-forest shrink-0" />
-                <span>Custom home enquiries</span>
-              </div>
-            </motion.div>
-
-          </div>
-
-          {/* Right Column: Architectural Photography & Blueprint Drafting Animation (5 cols) */}
-          <div className="lg:col-span-6 xl:col-span-5 relative">
-            
-            {/* Background Drafting Blueprint Lines */}
-            <div className="absolute -inset-4 sm:-inset-6 pointer-events-none">
-              <svg
-                viewBox="0 0 500 500"
-                className="w-full h-full opacity-35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Elevation & Pitch Drafting Lines */}
-                <motion.line
-                  x1="20"
-                  y1="80"
-                  x2="480"
-                  y2="80"
-                  stroke="var(--jufaja-gold-500)"
-                  strokeWidth="0.75"
-                  strokeDasharray="4 4"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, ease: 'easeOut' }}
-                />
-                <motion.line
-                  x1="60"
-                  y1="20"
-                  x2="60"
-                  y2="460"
-                  stroke="var(--jufaja-gold-500)"
-                  strokeWidth="0.75"
-                  strokeDasharray="4 4"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, ease: 'easeOut' }}
-                />
-                <motion.polygon
-                  points="70,140 250,50 430,140 430,420 70,420"
-                  stroke="var(--jufaja-gold-500)"
-                  strokeWidth="1.2"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 2, delay: 0.3, ease: 'easeInOut' }}
-                />
-              </svg>
-            </div>
-
-            {/* Main Architectural Visual Frame */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-2xl overflow-hidden shadow-luxury border-2 border-white bg-white p-2.5 sm:p-3"
-            >
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[500px] w-full rounded-xl overflow-hidden bg-stone-100">
-                <Image
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85"
-                  alt="Illustrative image of a modern Australian-style residence"
-                  fill
-                  priority
-                  sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 42vw, 620px"
-                  className="object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
-                />
-
-                {/* Subtle warm daylight vignette (Not dark overlay) */}
-                <div className="absolute inset-0 bg-gradient-to-t from-jufaja-forest/40 via-transparent to-transparent opacity-60" />
-
-                {/* Corner Architectural Stamp */}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-jufaja-gold/40 shadow-sm flex items-center gap-2">
-                  <Compass className="w-3.5 h-3.5 text-jufaja-gold" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-jufaja-forest">
-                    Residential design inspiration
-                  </span>
-                </div>
-
-                {/* Bottom Project Tag */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-stone-200/80 shadow-md flex items-center justify-between">
-                  <div>
-                    <span className="text-[9px] uppercase font-bold tracking-widest text-jufaja-gold block">
-                      Illustrative residence
-                    </span>
-                    <h3 className="font-serif font-bold text-sm sm:text-base text-jufaja-forest">
-                      A considered home design
-                    </h3>
-                  </div>
-                  <Link
-                    href="/designs"
-                    className="text-xs font-bold text-jufaja-gold hover:text-jufaja-forest flex items-center gap-1 transition-colors uppercase tracking-wider"
-                  >
-                    <span>Explore designs</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-
+              Request Consultation
+            </button>
+          </motion.div>
         </div>
+
+        {/* Bottom rail: service index, slide caption and controls */}
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.1 }}
+          className="mt-14 grid gap-8 border-t border-jufaja-gold-500/40 pt-6 lg:absolute lg:inset-x-8 lg:bottom-8 lg:mt-0 lg:grid-cols-2 lg:items-end lg:gap-12"
+        >
+          <ul className="grid grid-cols-3 gap-4">
+            {quickLinks.map((link, index) => (
+              <li key={link.href}>
+                <Link href={link.href} className="group block rounded-sm py-1">
+                  <span className="text-[11px] font-bold tabular-nums text-jufaja-gold-400">0{index + 1}</span>
+                  <span className="mt-1 block text-xs font-semibold leading-snug text-white transition-colors group-hover:text-jufaja-gold-300 sm:text-sm">{link.label}</span>
+                  <span aria-hidden="true" className="mt-2 block h-px w-6 bg-jufaja-gold-500 transition-all duration-500 group-hover:w-full" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {current && (
+            <div className="flex items-end justify-between gap-5 lg:justify-end">
+              <div className="min-w-0 text-left lg:text-right">
+                <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-jufaja-gold-400">Design concept · illustrative image</p>
+                <p aria-live="polite" className="mt-1 font-serif text-lg text-white">{current.title}</p>
+              </div>
+              {slides.length > 1 && (
+                <div role="group" aria-label="Choose hero image" className="flex shrink-0 items-center gap-1">
+                  {slides.map((slide, index) => (
+                    <button
+                      key={slide.id}
+                      type="button"
+                      aria-label={`Show image ${index + 1}: ${slide.title}`}
+                      aria-current={index === active}
+                      onClick={() => setActive(index)}
+                      className="group flex min-h-11 min-w-9 items-center justify-center"
+                    >
+                      <span className={`block h-[3px] rounded-none transition-all duration-500 ${index === active ? 'w-9 bg-jufaja-gold-500' : 'w-5 bg-white/40 group-hover:bg-white/80'}`} />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+        </motion.div>
       </div>
     </section>
   );
