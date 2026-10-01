@@ -27,12 +27,14 @@ const quickLinks = [
 export default function HeroCinematic() {
   const reduceMotion = useReducedMotion();
   const [active, setActive] = useState(0);
+  const [hovering, setHovering] = useState(false);
+  const [stopped, setStopped] = useState(false);
 
   useEffect(() => {
-    if (reduceMotion || slides.length < 2) return;
+    if (reduceMotion || stopped || hovering || slides.length < 2) return;
     const timer = window.setInterval(() => setActive((i) => (i + 1) % slides.length), SLIDE_MS);
     return () => window.clearInterval(timer);
-  }, [reduceMotion, active]);
+  }, [reduceMotion, stopped, hovering, active]);
 
   const triggerEnquiry = () => {
     window.dispatchEvent(
@@ -45,7 +47,13 @@ export default function HeroCinematic() {
   const current = slides[active];
 
   return (
-    <section aria-label="JUFAJA Constructions introduction" className="relative isolate overflow-hidden bg-jufaja-forest-950 text-white lg:min-h-[calc(100svh-112px)]">
+    <section
+      aria-label="JUFAJA Constructions introduction"
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
+      onFocus={() => setHovering(true)}
+      onBlur={() => setHovering(false)}
+      className="relative isolate overflow-hidden bg-jufaja-forest-950 text-white lg:min-h-[calc(100svh-112px)]">
       {/* Imagery: stacked above the copy on mobile, full-bleed behind it on desktop */}
       <div className="relative h-[46svh] min-h-[260px] w-full lg:absolute lg:inset-0 lg:h-auto">
         {slides.map((slide, index) => (
@@ -73,7 +81,7 @@ export default function HeroCinematic() {
 
       <div aria-hidden="true" className="bg-blueprint-dark pointer-events-none absolute inset-0 opacity-40 mix-blend-soft-light" />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-14 pt-6 sm:px-6 lg:min-h-[calc(100svh-112px)] lg:px-8 lg:pb-32 lg:pt-12">
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-14 pt-6 sm:px-6 lg:min-h-[calc(100svh-112px)] lg:px-8 lg:pb-44 lg:pt-10">
         <div className="max-w-3xl">
           <motion.p
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
@@ -157,10 +165,10 @@ export default function HeroCinematic() {
           </ul>
 
           {current && (
-            <div className="flex items-end justify-between gap-5 lg:justify-end">
+            <div className="flex items-end justify-between gap-5 lg:justify-end lg:pr-44 min-[1360px]:pr-0">
               <div className="min-w-0 text-left lg:text-right">
                 <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-jufaja-gold-400">Design concept · illustrative image</p>
-                <p aria-live="polite" className="mt-1 font-serif text-lg text-white">{current.title}</p>
+                <p className="mt-1 font-serif text-lg text-white">{current.title}</p>
               </div>
               {slides.length > 1 && (
                 <div role="group" aria-label="Choose hero image" className="flex shrink-0 items-center gap-1">
@@ -169,8 +177,11 @@ export default function HeroCinematic() {
                       key={slide.id}
                       type="button"
                       aria-label={`Show image ${index + 1}: ${slide.title}`}
-                      aria-current={index === active}
-                      onClick={() => setActive(index)}
+                      aria-pressed={index === active}
+                      onClick={() => {
+                        setActive(index);
+                        setStopped(true);
+                      }}
                       className="group flex min-h-11 min-w-9 items-center justify-center"
                     >
                       <span className={`block h-[3px] rounded-none transition-all duration-500 ${index === active ? 'w-9 bg-jufaja-gold-500' : 'w-5 bg-white/40 group-hover:bg-white/80'}`} />
