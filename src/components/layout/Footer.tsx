@@ -42,8 +42,8 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-14 sm:px-6 sm:pt-16 lg:px-8">
         <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link href="/" aria-label="JUFAJA Constructions home" className="inline-block rounded-sm bg-jufaja-cream px-6 py-4 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.8)]">
-              <JufajaLogo theme="dark" size="md" />
+            <Link href="/" aria-label="JUFAJA Constructions home" className="inline-block rounded-sm">
+              <JufajaLogo theme="dark" size="lg" className="logo-glow" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-6 text-jufaja-ivory/75">
               Home designs, building information and ways to start a conversation about your plans.

@@ -290,3 +290,6 @@ html body:has(.jufaja-intro) .hs-slide .hs-rise { animation-play-state: paused; 
 /* Logo straight on the hero photo: a warm gold glow separates the dark lettering from the image without adding a background box. */
 [data-jufaja-logo] { transition: filter 0.12s ease; }
 .logo-halo { filter: brightness(1.07) drop-shadow(0 0 0.75px rgba(255, 238, 196, 0.8)) drop-shadow(0 0 6px rgba(223, 193, 123, 0.42)) drop-shadow(0 0 18px rgba(197, 160, 89, 0.22)); }
+
+/* Subtle glow that follows the logo alpha (never a rectangle) for use on dark green. */
+.logo-glow { filter: drop-shadow(0 0 1px rgba(255, 238, 196, 0.55)) drop-shadow(0 0 14px rgba(197, 160, 89, 0.28)); }

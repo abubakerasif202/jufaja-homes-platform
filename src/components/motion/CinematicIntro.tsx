@@ -116,18 +116,15 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
             <motion.path d="M-20 470 H1220" fill="none" stroke="var(--jufaja-gold-500)" strokeOpacity="0.45" strokeWidth="1" strokeDasharray="6 10" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.3, delay: 0.3, ease: 'easeOut' }} />
           </svg>
 
-          {/* Ivory plate keeps the dark-lettered approved logo legible */}
+          {/* Transparent logo sits directly on the forest-green field; the glow follows the logo alpha, not a box */}
           <motion.div
             aria-hidden="true"
-            initial={{ clipPath: 'inset(0 50% 0 50%)', opacity: 1 }}
-            animate={{ clipPath: 'inset(0 0% 0 0%)' }}
-            transition={{ duration: 0.8, delay: 0.55, ease: EASE }}
-            className="relative z-[1] bg-jufaja-cream px-8 py-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:px-14 sm:py-9"
+            initial={{ opacity: 0, y: 12, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-[1] aspect-[3/2] w-[260px] sm:w-[400px]"
           >
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }} className="relative aspect-[3/2] w-[200px] sm:w-[300px]">
-              <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 300px, 200px" quality={90} className="h-full w-full object-contain" />
-            </motion.div>
-            <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.6, delay: 1.35, ease: [0.16, 1, 0.3, 1] }} className="absolute inset-x-8 bottom-0 h-[3px] origin-left bg-jufaja-gold-500 sm:inset-x-14" />
+            <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 400px, 260px" quality={90} priority className="logo-glow h-full w-full object-contain" />
           </motion.div>
         </motion.div>
       )}
