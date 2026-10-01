@@ -125,7 +125,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: reduceMotion ? 0 : 0.25 }}
-              className="fixed inset-0 top-[88px] z-40 bg-jufaja-forest-950/40 min-[360px]:top-[100px] xl:hidden"
+              className="absolute inset-x-0 top-full z-40 h-[100dvh] bg-jufaja-forest-950/40 xl:hidden"
             />
             <motion.nav
               key="panel"

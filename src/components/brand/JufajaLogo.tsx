@@ -30,8 +30,6 @@ export default function JufajaLogo({
       height={1024}
       sizes={sizes[size]}
       quality={90}
-      loading={size === 'sm' ? 'eager' : 'lazy'}
-      fetchPriority={size === 'sm' ? 'high' : 'auto'}
       data-jufaja-logo={theme}
       className={`h-auto max-w-full object-contain ${responsiveWidths[size]} ${className}`}
       aria-hidden="true"
