@@ -44,3 +44,4 @@ The design catalogue contains 63 source records whose measurements, names and pl
 - The home-page logo intro runs once per session, can be skipped, and has a reduced-motion path.
 - The public sitemap contains the indexable top-level routes and excludes unverified package-detail URLs.
 - Production metadata currently uses `https://jufaja-homes-platform.vercel.app/`, the production URL supplied for this project.
+- The home-page hero is a CSS-driven property slideshow (`src/components/home/HeroSlideshow.tsx`, slide copy and image choices in `src/data/hero-slides.ts`). Autoplay is paced by the active slide's progress bar, pauses on hover, keyboard focus or the pause button, and is disabled under `prefers-reduced-motion`. The imagery is illustrative, not JUFAJA project photography.
