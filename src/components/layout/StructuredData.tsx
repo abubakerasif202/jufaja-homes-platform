@@ -4,7 +4,7 @@ export default function StructuredData() {
     '@type': 'Organization',
     name: 'JUFAJA Constructions Pty Ltd',
     url: 'https://jufaja-homes-platform.vercel.app/',
-    logo: 'https://jufaja-homes-platform.vercel.app/brand/jufaja-logo-horizontal.svg',
+    logo: 'https://jufaja-homes-platform.vercel.app/brand/jufaja-logo.png',
   };
 
   return (

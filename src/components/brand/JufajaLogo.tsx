@@ -2,45 +2,37 @@ import Image from 'next/image';
 
 interface JufajaLogoProps {
   className?: string;
-  variant?: 'horizontal' | 'stacked';
   theme?: 'light' | 'dark';
   size?: 'sm' | 'md' | 'lg';
 }
 
-const dimensions = {
-  sm: { width: 225, height: 50 },
-  md: { width: 270, height: 60 },
-  lg: { width: 315, height: 70 },
-} as const;
 const responsiveWidths = {
-  sm: 'w-[130px] min-[360px]:w-[160px] sm:w-[225px]',
+  sm: 'w-[112px] min-[360px]:w-[128px] sm:w-[144px]',
   md: 'w-[210px] sm:w-[270px]',
   lg: 'w-[250px] sm:w-[315px]',
+} as const;
+const sizes = {
+  sm: '(min-width: 640px) 144px, (min-width: 360px) 128px, 112px',
+  md: '(min-width: 640px) 270px, 210px',
+  lg: '(min-width: 640px) 315px, 250px',
 } as const;
 
 export default function JufajaLogo({
   className = '',
-  variant = 'horizontal',
   theme = 'light',
   size = 'md',
 }: JufajaLogoProps) {
-  const src = variant === 'stacked'
-    ? '/brand/jufaja-logo-stacked.svg'
-    : theme === 'dark'
-      ? '/brand/jufaja-logo-dark.svg'
-      : '/brand/jufaja-logo-horizontal.svg';
-  const box = variant === 'stacked'
-    ? { width: 140, height: 126 }
-    : dimensions[size];
-
   return (
     <Image
-      src={src}
+      src="/brand/jufaja-logo-transparent.png"
       alt=""
-      width={box.width}
-      height={box.height}
-      priority={size !== 'lg'}
-      className={`h-auto max-w-full ${variant === 'stacked' ? 'w-[140px]' : responsiveWidths[size]} ${className}`}
+      width={1536}
+      height={1024}
+      sizes={sizes[size]}
+      quality={90}
+      priority={size === 'sm'}
+      data-jufaja-logo={theme}
+      className={`h-auto max-w-full object-contain ${responsiveWidths[size]} ${className}`}
       aria-hidden="true"
     />
   );

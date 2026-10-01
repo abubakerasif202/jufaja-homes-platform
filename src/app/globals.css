@@ -66,22 +66,10 @@ h1, h2, h3, .font-editorial {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .jufaja-mark--animated .mark-roof,
-  .jufaja-mark--animated .mark-spine,
-  .jufaja-mark--animated .mark-j,
-  .jufaja-mark--animated .mark-tower,
-  .jufaja-mark--animated .mark-window {
-    animation: none !important;
-    opacity: 0.9;
-    stroke-dashoffset: 0;
-    transform: none;
-  }
-  .jufaja-intro__mark,
-  .jufaja-intro__wordmark,
-  .jufaja-intro__descriptor,
-  .jufaja-intro__divider {
+  .jufaja-intro__artwork {
     opacity: 1 !important;
     transform: none !important;
+    clip-path: none !important;
   }
 }
 
@@ -120,41 +108,11 @@ body:has(.jufaja-intro) {
   overflow: visible;
 }
 
-.jufaja-intro__mark svg {
-  filter: drop-shadow(0 10px 18px rgba(22, 48, 36, 0.08));
-}
-
-.jufaja-mark--animated .mark-roof {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  animation: intro-roof-draw 650ms cubic-bezier(0.4, 0, 0.2, 1) 300ms forwards;
-}
-.jufaja-mark--animated .mark-spine,
-.jufaja-mark--animated .mark-j,
-.jufaja-mark--animated .mark-tower {
-  transform-box: fill-box;
-  transform-origin: center bottom;
-  transform: scaleY(0);
-  animation: intro-element-rise 480ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-.jufaja-mark--animated .mark-spine { animation-delay: 700ms; }
-.jufaja-mark--animated .mark-j { animation-delay: 900ms; }
-.jufaja-mark--animated .mark-tower--one { animation-delay: 1000ms; }
-.jufaja-mark--animated .mark-tower--two { animation-delay: 1150ms; }
-.jufaja-mark--animated .mark-tower--three { animation-delay: 1300ms; }
-.jufaja-mark--animated .mark-window {
-  opacity: 0;
-  animation: intro-window-reveal 250ms ease-out 1450ms forwards;
-}
-
 @keyframes intro-grid-in {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes intro-roof-draw { to { stroke-dashoffset: 0; } }
-@keyframes intro-element-rise { to { transform: scaleY(1); } }
-@keyframes intro-window-reveal { to { opacity: 0.9; } }
 
 /* Custom Refined Scrollbar */
 ::-webkit-scrollbar {

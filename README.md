@@ -40,7 +40,7 @@ The design catalogue contains 63 source records whose measurements, names and pl
 
 ## Brand and route notes
 
-- Canonical logo files are in `public/brand/`; the header uses the SVG horizontal lockup.
+- Canonical logo files are in `public/brand/`; header, footer and intro use the exact approved transparent PNG with responsive image optimisation. SVG compatibility files embed that artwork instead of redrawing it; see `public/brand/README.md`.
 - The home-page logo intro runs once per session, can be skipped, and has a reduced-motion path.
 - The public sitemap contains the indexable top-level routes and excludes unverified package-detail URLs.
 - Production metadata currently uses `https://jufaja-homes-platform.vercel.app/`, the production URL supplied for this project.

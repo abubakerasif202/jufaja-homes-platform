@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import JufajaMark from '@/components/brand/JufajaMark';
+import Image from 'next/image';
 
 interface CinematicIntroProps {
   onComplete?: () => void;
@@ -18,6 +18,9 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
   const started = useRef(false);
   const introStartedAt = useRef<number | null>(null);
   const skipButton = useRef<HTMLButtonElement>(null);
+  const artwork = useRef<HTMLDivElement>(null);
+  const [docking, setDocking] = useState(false);
+  const [destination, setDestination] = useState({ x: 0, y: 0, scale: 1 });
 
   const complete = useCallback(() => {
     if (started.current) return;
@@ -44,11 +47,28 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
     }
 
     introStartedAt.current ??= Date.now();
-    const duration = reduceMotion ? 0 : 3050;
+    const duration = reduceMotion ? 0 : 2900;
     const remaining = Math.max(0, duration - (Date.now() - introStartedAt.current));
     const timer = setTimeout(complete, remaining);
     return () => clearTimeout(timer);
   }, [complete, reduceMotion]);
+
+  useEffect(() => {
+    if (!visible || reduceMotion) return;
+    const timer = setTimeout(() => {
+      const headerLogo = document.querySelector('header [data-jufaja-logo]');
+      if (!headerLogo || !artwork.current) return;
+      const target = headerLogo.getBoundingClientRect();
+      const current = artwork.current.getBoundingClientRect();
+      setDestination({
+        x: target.left + target.width / 2 - current.left - current.width / 2,
+        y: target.top + target.height / 2 - current.top - current.height / 2,
+        scale: target.width / current.width,
+      });
+      setDocking(true);
+    }, 2450);
+    return () => clearTimeout(timer);
+  }, [visible, reduceMotion]);
 
   useEffect(() => {
     if (!visible) return;
@@ -88,8 +108,8 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
           aria-modal="true"
           initial={false}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, y: -20, scale: 0.98 }}
-          transition={{ duration: reduceMotion ? 0.3 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="jufaja-intro fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-jufaja-cream"
         >
           <div aria-hidden="true" className="jufaja-intro__grid pointer-events-none absolute inset-0" />
@@ -102,40 +122,27 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
             Skip intro <span aria-hidden="true">→</span>
           </button>
 
-          <div className="relative z-[1] flex flex-col items-center px-5 text-center">
+          <motion.div
+            ref={artwork}
+            aria-hidden="true"
+            initial={false}
+            animate={docking ? destination : { x: 0, y: 0, scale: 1 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-[1] aspect-[3/2] w-[240px] sm:w-[360px]"
+          >
             <motion.div
-              aria-hidden="true"
-              initial={{ opacity: 0, y: 14, scale: 0.92 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: reduceMotion ? 0.3 : 0.75, delay: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="jufaja-intro__mark"
+              initial={{ clipPath: 'inset(0 0 100% 0)' }}
+              animate={{ clipPath: ['inset(0 0 100% 0)', 'inset(0 0 38% 0)', 'inset(0 0 0% 0)'] }}
+              transition={{ duration: reduceMotion ? 0 : 1.95, delay: reduceMotion ? 0 : 0.3, times: [0, 0.62, 1], ease: 'easeInOut' }}
+              className="jufaja-intro__artwork absolute inset-0"
             >
-              <JufajaMark size="clamp(120px, 26vw, 200px)" animated />
+              <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 360px, 240px" quality={90} priority className="h-full w-full object-contain" />
             </motion.div>
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: reduceMotion ? 0.3 : 0.55, delay: reduceMotion ? 0 : 1.45 }}
-              className="jufaja-intro__wordmark mt-1 font-serif text-4xl font-semibold tracking-[0.14em] text-jufaja-forest sm:text-5xl"
-            >
-              JUFAJA
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: reduceMotion ? 0.3 : 0.5, delay: reduceMotion ? 0 : 1.8 }}
-              className="jufaja-intro__descriptor mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-jufaja-gold-600 sm:text-xs"
-            >
-              Constructions <span className="px-1 text-jufaja-muted">·</span> Pty Ltd
-            </motion.p>
-            <motion.div
-              aria-hidden="true"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: reduceMotion ? 0.3 : 0.8, delay: reduceMotion ? 0 : 2.15, ease: 'easeInOut' }}
-              className="jufaja-intro__divider mt-6 h-px w-40 origin-left bg-jufaja-gold-500 sm:w-56"
-            />
-          </div>
+            {!reduceMotion && <svg aria-hidden="true" viewBox="0 0 1536 1024" className="pointer-events-none absolute inset-0 h-full w-full">
+              <motion.path d="M304 628 L744 334 L1109 612 L1216 624" fill="none" stroke="var(--jufaja-gold-500)" strokeWidth="4" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: [0, 0.6, 0] }} transition={{ duration: 1.15, delay: 0.1, times: [0, 0.45, 1] }} />
+              <motion.path d="M304 628 L744 334 L1109 612 L1216 624" fill="none" stroke="var(--jufaja-gold-400)" strokeWidth="3" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: [0, 0.35, 0] }} transition={{ duration: 0.45, delay: 2.05, times: [0, 0.45, 1] }} />
+            </svg>}
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
