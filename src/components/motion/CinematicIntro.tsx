@@ -42,6 +42,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
       // Play once per mount when session storage is unavailable.
     }
     if (seen) {
+      document.documentElement.classList.add('jufaja-intro-seen');
       setVisible(false);
       return;
     }
@@ -99,7 +100,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
   }, [visible, complete]);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={() => document.documentElement.classList.add('jufaja-intro-seen')}>
       {visible && (
         <motion.div
           key="jufaja-intro"
