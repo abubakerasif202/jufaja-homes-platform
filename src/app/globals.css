@@ -288,5 +288,5 @@ html body:has(.jufaja-intro) .hs-slide .hs-rise { animation-play-state: paused; 
 }
 
 /* Logo straight on the hero photo: a warm gold glow separates the dark lettering from the image without adding a background box. */
-[data-jufaja-logo] { transition: filter 0.3s ease; }
-.logo-halo { filter: brightness(1.14) drop-shadow(0 0 1px rgba(255, 238, 196, 0.95)) drop-shadow(0 0 9px rgba(223, 193, 123, 0.7)) drop-shadow(0 0 26px rgba(197, 160, 89, 0.45)); }
+[data-jufaja-logo] { transition: filter 0.12s ease; }
+.logo-halo { filter: brightness(1.07) drop-shadow(0 0 0.75px rgba(255, 238, 196, 0.8)) drop-shadow(0 0 6px rgba(223, 193, 123, 0.42)) drop-shadow(0 0 18px rgba(197, 160, 89, 0.22)); }

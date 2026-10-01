@@ -228,10 +228,10 @@ export default function HeroSlideshow() {
                 {userPaused ? <Play aria-hidden="true" className="h-4 w-4" /> : <Pause aria-hidden="true" className="h-4 w-4" />}
               </button>
             )}
-            <button type="button" onClick={prev} aria-label="Previous slide" className="hs-ctl hs-ctl--prev flex h-11 w-11 items-center justify-center border border-white/40 text-white">
+            <button type="button" onClick={prev} aria-label="Previous slide" className="hs-ctl hs-ctl--prev flex h-11 w-11 items-center justify-center border border-white/30 text-white">
               <ArrowLeft aria-hidden="true" className="h-4 w-4" />
             </button>
-            <button type="button" onClick={next} aria-label="Next slide" className="hs-ctl hs-ctl--next flex h-11 w-11 items-center justify-center border border-white/40 text-white">
+            <button type="button" onClick={next} aria-label="Next slide" className="hs-ctl hs-ctl--next flex h-11 w-11 items-center justify-center border border-white/30 text-white">
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </button>
           </div>
