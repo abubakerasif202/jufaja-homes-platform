@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroCinematic from '@/components/home/HeroCinematic';
+import HeroSlideshow from '@/components/home/HeroSlideshow';
 import SelectorDashboard from '@/components/home/SelectorDashboard';
 import FeaturedGalleries from '@/components/home/FeaturedGalleries';
 import BrandDifference from '@/components/home/BrandDifference';
@@ -27,8 +27,8 @@ export default function HomePage() {
       {/* 0. Cinematic Website Opening Sequence (Plays once per session) */}
       <CinematicIntro />
 
-      {/* 1. Light Cinematic Architectural Hero */}
-      <HeroCinematic />
+      {/* 1. Cinematic full-width property slideshow */}
+      <HeroSlideshow />
 
       {/* 2. Interactive "Find Your Perfect Home" Selector Dashboard */}
       <SelectorDashboard />

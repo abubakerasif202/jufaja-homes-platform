@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Home, Layers, RefreshCw, PenTool, Box, KeyRound, ArrowRight, Sparkles } from 'lucide-react';
-import Reveal from '@/components/motion/Reveal';
 
 interface SelectorOption {
   title: string;
@@ -53,8 +52,8 @@ const selectorItems: SelectorOption[] = [
 
 export default function SelectorDashboard() {
   return (
-    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 mb-16 sm:mb-24">
-      <Reveal>
+    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 lg:-mt-20 mb-16 sm:mb-24">
+      <div>
         <div className="bg-white rounded-sm shadow-luxury border border-jufaja-border p-6 sm:p-10">
           
           {/* Header */}
@@ -108,7 +107,7 @@ export default function SelectorDashboard() {
           </div>
 
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }

@@ -71,6 +71,9 @@ export default function Header() {
     };
   }, [menuOpen]);
 
+  // Over the home hero the header is transparent with an ivory logo plate; everywhere else (and once scrolled) it is solid.
+  const overlay = pathname === '/' && !scrolled && !menuOpen;
+
   const openEnquiry = () => {
     setMenuOpen(false);
     window.dispatchEvent(new CustomEvent('open-enquiry-drawer'));
@@ -81,23 +84,25 @@ export default function Header() {
   };
 
   return (
-    <header className={`sticky top-0 z-40 w-full border-b transition-[background-color,box-shadow,border-color] duration-300 ${scrolled ? 'border-jufaja-gold/30 bg-white/95 shadow-jufaja-soft backdrop-blur-md' : 'border-jufaja-border bg-jufaja-cream/95 backdrop-blur-sm'}`}>
-      <div className="mx-auto flex min-h-[88px] max-w-[1440px] items-center justify-between gap-4 px-4 min-[360px]:min-h-[100px] sm:min-h-[100px] sm:px-6 lg:px-8">
-        <Link href="/" aria-label="JUFAJA Constructions home" className="shrink-0 rounded-sm">
+    <header className="sticky top-0 z-40 w-full border-b border-transparent">
+      <div aria-hidden="true" className={`absolute inset-0 -z-10 border-b transition-opacity duration-300 ${overlay ? 'opacity-0' : 'opacity-100'} ${scrolled ? 'border-jufaja-gold/30 bg-white/95 shadow-jufaja-soft backdrop-blur-md' : 'border-jufaja-border bg-jufaja-cream/95 backdrop-blur-sm'}`} />
+      <div aria-hidden="true" className={`absolute inset-0 -z-10 bg-gradient-to-b from-jufaja-forest-950/75 to-jufaja-forest-950/0 transition-opacity duration-300 ${overlay ? 'opacity-100' : 'opacity-0'}`} />
+      <div className="mx-auto flex min-h-[88px] max-w-[1440px] items-center justify-between gap-2 px-4 min-[360px]:min-h-[100px] min-[360px]:gap-4 sm:min-h-[100px] sm:px-6 lg:px-8">
+        <Link href="/" aria-label="JUFAJA Constructions home" className={`shrink-0 rounded-sm px-1 py-0.5 transition-[background-color,box-shadow] min-[360px]:px-2 duration-300 ${overlay ? 'bg-jufaja-cream shadow-[0_14px_34px_-14px_rgba(0,0,0,0.65)]' : 'bg-transparent'}`}>
           <JufajaLogo size="sm" theme="light" />
         </Link>
 
         <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-5 2xl:gap-7">
           {links.map(({ href, label }) => {
             const active = href === '/' ? pathname === '/' : pathname?.startsWith(href);
-            return <Link key={href} href={href} aria-current={active ? 'page' : undefined} className={`hover-gold-sweep rounded-sm py-2 text-[13px] font-semibold tracking-wide transition-colors hover:text-jufaja-forest-700 ${active ? 'text-jufaja-forest-900 after:!w-full' : 'text-jufaja-muted'}`}>
+            return <Link key={href} href={href} aria-current={active ? 'page' : undefined} className={`hover-gold-sweep rounded-sm py-2 text-[13px] font-semibold tracking-wide transition-colors ${overlay ? `hover:text-jufaja-gold-300 ${active ? 'text-white after:!w-full' : 'text-white/90'}` : `hover:text-jufaja-forest-700 ${active ? 'text-jufaja-forest-900 after:!w-full' : 'text-jufaja-muted'}`}`}>
               {label}
             </Link>;
           })}
         </nav>
 
         <div className="ml-auto flex items-center gap-2 xl:ml-0">
-          <button type="button" onClick={openEnquiry} className="btn btn-primary min-h-11 whitespace-nowrap px-3 tracking-[0.1em] min-[360px]:px-4 sm:px-6 sm:tracking-[0.14em]">
+          <button type="button" onClick={openEnquiry} className={`btn ${overlay ? 'btn-gold' : 'btn-primary'} min-h-11 whitespace-nowrap px-3 tracking-[0.1em] min-[360px]:px-4 sm:px-6 sm:tracking-[0.14em]`}>
             <span className="min-[360px]:hidden">Enquire</span><span className="hidden min-[360px]:inline">Enquire Now</span>
           </button>
           <button
@@ -107,7 +112,7 @@ export default function Header() {
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border border-jufaja-border text-jufaja-forest-900 hover:bg-jufaja-stone xl:hidden"
+            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border transition-colors xl:hidden ${overlay ? 'border-white/60 text-white hover:bg-white/10' : 'border-jufaja-border text-jufaja-forest-900 hover:bg-jufaja-stone'}`}
           >
             {menuOpen ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
           </button>
