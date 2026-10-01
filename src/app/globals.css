@@ -76,6 +76,13 @@ h1, h2, h3, .font-editorial {
     stroke-dashoffset: 0;
     transform: none;
   }
+  .jufaja-intro__mark,
+  .jufaja-intro__wordmark,
+  .jufaja-intro__descriptor,
+  .jufaja-intro__divider {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Subtle Architectural Blueprint Grid Pattern */
@@ -99,6 +106,18 @@ h1, h2, h3, .font-editorial {
     linear-gradient(to bottom, rgba(164, 130, 61, 0.045) 1px, transparent 1px);
   background-size: 36px 36px;
   animation: intro-grid-in 700ms ease-out both;
+}
+
+.jufaja-intro-seen .jufaja-intro {
+  display: none !important;
+}
+
+body:has(.jufaja-intro) {
+  overflow: hidden;
+}
+
+.jufaja-intro-seen body:has(.jufaja-intro) {
+  overflow: visible;
 }
 
 .jufaja-intro__mark svg {

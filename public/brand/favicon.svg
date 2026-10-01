@@ -1,20 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Subtle warm ivory background with soft rounded edges -->
-  <rect width="64" height="64" rx="14" fill="#faf8f5" />
-  <rect width="64" height="64" rx="14" stroke="#c5a059" stroke-width="1.5" fill="none" opacity="0.6" />
-
-  <!-- Architectural Roofline -->
-  <path d="M12 28 L32 12 L52 28" stroke="#c5a059" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-
-  <!-- Left Pillar: Forest Green -->
-  <path d="M18 29.5 L26 23.2 V50 H18 V29.5 Z" fill="#163024" />
-
-  <!-- Right Pillar: Deep Burgundy -->
-  <path d="M38 23.2 L46 29.5 V50 H38 V23.2 Z" fill="#6b1d2f" />
-
-  <!-- Center 'J' Monogram: Antique Gold -->
-  <path d="M28 17.5 L32 14.5 L36 17.5 V48 C36 54.5 31 57.5 25 57.5 C20 57.5 17 53.5 17 51 C17 49 18.5 48 20 48 C21.5 48 22.5 49 23.5 50.5 C24.5 51.8 25.5 52.8 27.5 52.8 C30 52.8 32 50.5 32 46 V17.5 Z" fill="#c5a059" />
-
-  <!-- Foundation Baseline -->
-  <line x1="14" y1="59" x2="50" y2="59" stroke="#c5a059" stroke-width="1.8" stroke-linecap="round" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-labelledby="title">
+  <title id="title">JUFAJA Constructions</title>
+  <rect width="100" height="100" rx="18" fill="#faf8f5" />
+  <rect x="1" y="1" width="98" height="98" rx="17" stroke="#c5a059" stroke-width="1.5" opacity=".7" />
+  <path d="M14 44 48 18 82 44" stroke="#c5a059" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M20 44 48 22 76 44" stroke="#dfc17b" stroke-width="1" stroke-linecap="round" opacity=".7" />
+  <path d="M26 44 36 36V76H26V44Z" fill="#163024" />
+  <path d="M38 28 46 22 52 27V74c0 9-7 15-16 15-9 0-14-6-14-10 0-2.5 1.8-4 4.2-4 2.3 0 3.8 1.5 4.6 3 1.2 2 3.2 4 5.7 4 4 0 7.5-3 7.5-10V28Z" fill="#c5a059" />
+  <g fill="#c5a059">
+    <rect x="45.5" y="46" width="3.2" height="3.2" rx=".4" />
+    <rect x="50" y="46" width="3.2" height="3.2" rx=".4" />
+    <rect x="45.5" y="50.5" width="3.2" height="3.2" rx=".4" />
+    <rect x="50" y="50.5" width="3.2" height="3.2" rx=".4" />
+  </g>
+  <path d="M58 24 63 28V60H58V24Z" fill="#6b1d2f" stroke="#dfc17b" stroke-width=".6" />
+  <path d="M65 30 70 34V60H65V30Z" fill="#c5a059" stroke="#dfc17b" stroke-width=".6" />
+  <path d="M72 36 77 40V60H72V36Z" fill="#6b1d2f" stroke="#dfc17b" stroke-width=".6" />
+  <path d="M12 94H88" stroke="#c5a059" stroke-width="1.8" stroke-linecap="round" />
 </svg>

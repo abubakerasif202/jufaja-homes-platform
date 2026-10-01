@@ -1,8 +1,8 @@
 const test = require('node:test');
 const assert = require('node:assert');
+const fs = require('node:fs');
+const path = require('node:path');
 const designs = require('../src/data/designs.json');
-const packages = require('../src/data/packages.json');
-const displayHomes = require('../src/data/display-homes.json');
 
 test('designs.json has 63 items with valid required fields', () => {
   assert.strictEqual(designs.length, 63, 'Expected 63 designs');
@@ -21,18 +21,17 @@ test('designs.json has 63 items with valid required fields', () => {
   }
 });
 
-test('packages.json has valid listings with prices and locations', () => {
-  assert.ok(packages.length >= 10, 'Expected at least 10 packages');
-  for (const p of packages) {
-    assert.ok(p.price > 500000, `Package ${p.title} price must be realistic`);
-    assert.ok(p.suburb, `Package ${p.title} must have suburb`);
-    assert.ok(p.lotSizeSqm > 150, `Package ${p.title} lot size must be > 150m2`);
-  }
+test('unverified package listings are not shipped or generated as detail pages', () => {
+  const packageDataPath = path.join(__dirname, '../src/data/packages.json');
+  const packageRoutePath = path.join(__dirname, '../src/app/packages/[slug]/page.tsx');
+  assert.strictEqual(fs.existsSync(packageDataPath), false, 'Unverified lot, price and availability data must not ship');
+  assert.strictEqual(fs.existsSync(packageRoutePath), false, 'Legacy package URLs must use the standard 404 route');
 });
 
-test('display-homes.json has valid locations and opening hours', () => {
-  assert.strictEqual(displayHomes.length, 4, 'Expected 4 display locations');
-  for (const h of displayHomes) {
-    assert.ok(h.name && h.address && h.phone, 'Display home missing required details');
-  }
+test('unverified display locations and contact details are not shipped', () => {
+  const displayDataPath = path.join(__dirname, '../src/data/display-homes.json');
+  const displayPage = fs.readFileSync(path.join(__dirname, '../src/app/display-homes/page.tsx'), 'utf8');
+  assert.strictEqual(fs.existsSync(displayDataPath), false, 'Unverified addresses, hours and phone details must not ship');
+  assert.doesNotMatch(displayPage, /Homeworld|Oxley Ridge|openingHours|8783\s*8800/);
+  assert.match(displayPage, /confirm which display homes are currently open/i);
 });

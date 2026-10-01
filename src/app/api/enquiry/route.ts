@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { consumeEnquiryRateLimit } from '@/lib/server/enquiry-rate-limit';
 
 export const runtime = 'nodejs';
 
@@ -71,6 +72,20 @@ export async function POST(request: Request) {
   }
   if (phoneDigits.length < 8 || phoneDigits.length > 15) {
     return NextResponse.json({ success: false, error: 'Please enter a valid phone number.' }, { status: 400 });
+  }
+
+  const rateLimit = await consumeEnquiryRateLimit(request);
+  if (rateLimit.status === 'limited') {
+    return NextResponse.json(
+      { success: false, error: 'Too many enquiries were sent from this connection. Please wait before trying again.' },
+      { status: 429, headers: { 'Retry-After': String(rateLimit.retryAfterSeconds) } },
+    );
+  }
+  if (rateLimit.status === 'unavailable') {
+    return NextResponse.json(
+      { success: false, error: 'The enquiry service is temporarily unavailable. Please try again later.' },
+      { status: 503 },
+    );
   }
 
   const apiKey = process.env.RESEND_API_KEY;

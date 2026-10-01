@@ -41,44 +41,6 @@ export interface HomeDesign {
   priceGuideFrom?: number;
 }
 
-export type PackageType = 'house_and_land' | 'ready_built';
-export type PackageStatus = 'Available' | 'Under Contract' | 'Deposit Taken' | 'Ready Soon';
-
-export interface PackageListing {
-  id: string;
-  slug: string;
-  title: string;
-  packageType: PackageType;
-  suburb: string;
-  estate?: string;
-  designName: string;
-  price: number;
-  lotSizeSqm: number;
-  bedrooms: number;
-  bathrooms: number;
-  garages: number;
-  status: PackageStatus;
-  facadeImage: string;
-  fixedSiteCosts: boolean;
-  keyInclusions: string[];
-  description: string;
-}
-
-export interface DisplayHome {
-  id: string;
-  name: string;
-  estateOrHub: string;
-  address: string;
-  suburb: string;
-  postcode: string;
-  phone: string;
-  openingDays: string;
-  openingHours: string;
-  image: string;
-  designsOnDisplay: string[];
-  mapEmbedUrl?: string;
-}
-
 export interface InclusionItem {
   name: string;
   standard: string;
@@ -88,20 +50,4 @@ export interface InclusionItem {
 export interface InclusionCategory {
   category: string;
   items: InclusionItem[];
-}
-
-export interface LeadEnquiry {
-  fullName: string;
-  email: string;
-  phone: string;
-  preferredContact: 'phone' | 'email';
-  interestType: 'New Build' | 'Knock Down Rebuild' | 'House & Land' | 'Custom Design' | 'General';
-  targetDesignSlug?: string;
-  targetDesignName?: string;
-  targetPackageSlug?: string;
-  targetPackageName?: string;
-  suburbOrCouncil?: string;
-  ownLand: boolean;
-  message?: string;
-  honeypot?: string;
 }

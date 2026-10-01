@@ -48,7 +48,7 @@ export default function HomePage() {
       {/* 7. Display Homes & Consultation Hubs */}
       <DisplayLocationsStrip />
 
-      {/* 8. Client Reflections & Handover Standards */}
+      {/* 8. Consultation prompt */}
       <ContactPrompt />
     </div>
   );

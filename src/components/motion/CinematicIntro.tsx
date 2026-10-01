@@ -11,11 +11,12 @@ interface CinematicIntroProps {
 const STORAGE_KEY = 'jufaja_intro_viewed';
 
 export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
-  const [visible, setVisible] = useState(false);
-  const [exiting, setExiting] = useState(false);
+  // Render the fixed overlay in the initial HTML; a beforeInteractive script
+  // hides it for sessions that have already completed the intro.
+  const [visible, setVisible] = useState(true);
   const reduceMotion = useReducedMotion();
-  const exitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const started = useRef(false);
+  const introStartedAt = useRef<number | null>(null);
   const skipButton = useRef<HTMLButtonElement>(null);
 
   const complete = useCallback(() => {
@@ -26,11 +27,8 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
     } catch {
       // Storage can be disabled; the intro still remains skippable.
     }
-    setExiting(true);
-    exitTimer.current = setTimeout(() => {
-      setVisible(false);
-      onComplete?.();
-    }, 450);
+    setVisible(false);
+    onComplete?.();
   }, [onComplete]);
 
   useEffect(() => {
@@ -40,18 +38,30 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
     } catch {
       // Play once per mount when session storage is unavailable.
     }
-    if (seen) return;
+    if (seen) {
+      setVisible(false);
+      return;
+    }
 
-    setVisible(true);
-    const timer = setTimeout(complete, reduceMotion ? 400 : 3050);
-    return () => {
-      clearTimeout(timer);
-      if (exitTimer.current) clearTimeout(exitTimer.current);
-    };
+    introStartedAt.current ??= Date.now();
+    const duration = reduceMotion ? 0 : 3050;
+    const remaining = Math.max(0, duration - (Date.now() - introStartedAt.current));
+    const timer = setTimeout(complete, remaining);
+    return () => clearTimeout(timer);
   }, [complete, reduceMotion]);
 
   useEffect(() => {
     if (!visible) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [visible]);
+
+  useEffect(() => {
+    if (!visible) return;
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     skipButton.current?.focus();
     const keepFocusInIntro = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -62,7 +72,10 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
       }
     };
     document.addEventListener('keydown', keepFocusInIntro);
-    return () => document.removeEventListener('keydown', keepFocusInIntro);
+    return () => {
+      document.removeEventListener('keydown', keepFocusInIntro);
+      if (previouslyFocused?.isConnected) previouslyFocused.focus({ preventScroll: true });
+    };
   }, [visible, complete]);
 
   return (
@@ -73,10 +86,10 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
           role="dialog"
           aria-label="JUFAJA Constructions logo introduction"
           aria-modal="true"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: exiting ? 0 : 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          initial={false}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, y: -20, scale: 0.98 }}
+          transition={{ duration: reduceMotion ? 0.3 : 0.45, ease: [0.22, 1, 0.36, 1] }}
           className="jufaja-intro fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-jufaja-cream"
         >
           <div aria-hidden="true" className="jufaja-intro__grid pointer-events-none absolute inset-0" />
@@ -93,7 +106,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
             <motion.div
               aria-hidden="true"
               initial={{ opacity: 0, y: 14, scale: 0.92 }}
-              animate={exiting ? { opacity: 0.65, y: -24, scale: 0.96 } : { opacity: 1, y: 0, scale: 1 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: reduceMotion ? 0.3 : 0.75, delay: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="jufaja-intro__mark"
             >
@@ -103,7 +116,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: reduceMotion ? 0.3 : 0.55, delay: reduceMotion ? 0 : 1.45 }}
-              className="mt-1 font-serif text-4xl font-semibold tracking-[0.14em] text-jufaja-forest sm:text-5xl"
+              className="jufaja-intro__wordmark mt-1 font-serif text-4xl font-semibold tracking-[0.14em] text-jufaja-forest sm:text-5xl"
             >
               JUFAJA
             </motion.p>
@@ -111,7 +124,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: reduceMotion ? 0.3 : 0.5, delay: reduceMotion ? 0 : 1.8 }}
-              className="mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-jufaja-gold-600 sm:text-xs"
+              className="jufaja-intro__descriptor mt-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-jufaja-gold-600 sm:text-xs"
             >
               Constructions <span className="px-1 text-jufaja-muted">·</span> Pty Ltd
             </motion.p>
@@ -120,7 +133,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: reduceMotion ? 0.3 : 0.8, delay: reduceMotion ? 0 : 2.15, ease: 'easeInOut' }}
-              className="mt-6 h-px w-40 origin-left bg-jufaja-gold-500 sm:w-56"
+              className="jufaja-intro__divider mt-6 h-px w-40 origin-left bg-jufaja-gold-500 sm:w-56"
             />
           </div>
         </motion.div>

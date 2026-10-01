@@ -28,17 +28,19 @@ npm run build
 RESEND_API_KEY=
 ENQUIRY_TO_EMAIL=
 ENQUIRY_FROM_EMAIL=
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
 ```
 
-The sender must be accepted by the Resend account. If configuration is missing or delivery fails, the API returns an error and the UI does not claim success. Distributed rate limiting still requires an external shared rate-limit service before launch.
+The sender must be accepted by the Resend account. Production also requires an Upstash Redis REST URL and token for shared rate limiting; the limiter fails closed if either delivery or shared-rate-limit configuration is missing. Local development can run without Upstash and uses a bounded, process-local fallback. If configuration is missing or delivery fails, the API returns an error and the UI does not claim success.
 
 ## Content requiring owner confirmation
 
-The design catalogue contains 63 source records whose measurements, names, availability and plan documentation have not been independently verified in this repository. Several image URLs repeat generic external imagery; visible labels identify those as illustrative. House-and-land and display-home data files are retained as source material but are not currently published as factual offers or locations. Verify the source records and provide genuine project photography, current offers, contact details, privacy/legal links and any credentials or service-area claims before restoring them to public pages.
+The design catalogue contains 63 source records whose measurements, names and plan documentation have not been independently verified in this repository. Several image URLs repeat generic external imagery; visible labels identify those as illustrative. Unverified package pricing, lot availability, display-home addresses, contact details and opening hours were removed; package-detail URLs return not found until a verified live listings source is provided. Verify the design records and provide genuine project photography, current offers, contact details, privacy/legal links and any credentials or service-area claims before publishing them as facts.
 
 ## Brand and route notes
 
 - Canonical logo files are in `public/brand/`; the header uses the SVG horizontal lockup.
 - The home-page logo intro runs once per session, can be skipped, and has a reduced-motion path.
-- The public sitemap contains the indexable top-level routes. Individual design detail pages and legacy package detail URLs are noindex and omitted from it.
+- The public sitemap contains the indexable top-level routes and excludes unverified package-detail URLs.
 - Production metadata currently uses `https://jufaja-homes-platform.vercel.app/`, the production URL supplied for this project.

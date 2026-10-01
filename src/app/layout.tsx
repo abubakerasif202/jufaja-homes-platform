@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -42,8 +43,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className="scroll-smooth">
+    <html lang="en-AU" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <Script
+          id="jufaja-intro-session"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: "try { if (sessionStorage.getItem('jufaja_intro_viewed') === 'true') document.documentElement.classList.add('jufaja-intro-seen'); } catch {}",
+          }}
+        />
         <StructuredData />
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-white text-jufaja-charcoal selection:bg-jufaja-gold selection:text-jufaja-forest font-sans">
