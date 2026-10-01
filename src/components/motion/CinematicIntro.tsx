@@ -9,7 +9,7 @@ interface CinematicIntroProps {
 }
 
 const STORAGE_KEY = 'jufaja_intro_viewed';
-const INTRO_MS = 2300;
+const INTRO_MS = 1950;
 const EASE = [0.76, 0, 0.24, 1] as const;
 
 /**
@@ -97,7 +97,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
           initial={false}
           animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}
           exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
-          transition={{ duration: 0.7, ease: EASE }}
+          transition={{ duration: 0.55, ease: EASE }}
           className="jufaja-intro fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-jufaja-forest-950"
         >
           <div aria-hidden="true" className="jufaja-intro__grid bg-blueprint-dark pointer-events-none absolute inset-0" />
@@ -125,7 +125,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
             className="relative z-[1] bg-jufaja-cream px-8 py-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:px-14 sm:py-9"
           >
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.0, ease: [0.16, 1, 0.3, 1] }} className="relative aspect-[3/2] w-[200px] sm:w-[300px]">
-              <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 300px, 200px" quality={90} priority className="h-full w-full object-contain" />
+              <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 300px, 200px" quality={90} className="h-full w-full object-contain" />
             </motion.div>
             <motion.span initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.6, delay: 1.35, ease: [0.16, 1, 0.3, 1] }} className="absolute inset-x-8 bottom-0 h-[3px] origin-left bg-jufaja-gold-500 sm:inset-x-14" />
           </motion.div>

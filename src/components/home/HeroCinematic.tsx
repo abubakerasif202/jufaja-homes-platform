@@ -29,12 +29,19 @@ export default function HeroCinematic() {
   const [active, setActive] = useState(0);
   const [hovering, setHovering] = useState(false);
   const [stopped, setStopped] = useState(false);
+  // Later slides mount after first paint so they never compete with the LCP image.
+  const [warm, setWarm] = useState(false);
 
   useEffect(() => {
-    if (reduceMotion || stopped || hovering || slides.length < 2) return;
+    const timer = window.setTimeout(() => setWarm(true), 2500);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion || stopped || hovering || !warm || slides.length < 2) return;
     const timer = window.setInterval(() => setActive((i) => (i + 1) % slides.length), SLIDE_MS);
     return () => window.clearInterval(timer);
-  }, [reduceMotion, stopped, hovering, active]);
+  }, [reduceMotion, stopped, hovering, warm, active]);
 
   const triggerEnquiry = () => {
     window.dispatchEvent(
@@ -53,10 +60,10 @@ export default function HeroCinematic() {
       onMouseLeave={() => setHovering(false)}
       onFocus={() => setHovering(true)}
       onBlur={() => setHovering(false)}
-      className="relative isolate overflow-hidden bg-jufaja-forest-950 text-white lg:min-h-[calc(100svh-112px)]">
+      className="relative isolate overflow-hidden bg-jufaja-forest-950 text-white lg:min-h-[calc(100svh-100px)]">
       {/* Imagery: stacked above the copy on mobile, full-bleed behind it on desktop */}
       <div className="relative h-[46svh] min-h-[260px] w-full lg:absolute lg:inset-0 lg:h-auto">
-        {slides.map((slide, index) => (
+        {slides.map((slide, index) => (index === 0 || warm || index === active) && (
           <div
             key={slide.id}
             aria-hidden={index !== active}
@@ -81,8 +88,8 @@ export default function HeroCinematic() {
 
       <div aria-hidden="true" className="bg-blueprint-dark pointer-events-none absolute inset-0 opacity-40 mix-blend-soft-light" />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 pb-14 pt-6 sm:px-6 lg:min-h-[calc(100svh-112px)] lg:px-8 lg:pb-44 lg:pt-10">
-        <div className="max-w-3xl">
+      <div className="relative mx-auto flex max-w-7xl flex-col px-4 pb-14 pt-6 sm:px-6 lg:min-h-[calc(100svh-100px)] lg:px-8 lg:pb-8 lg:pt-0">
+        <div className="hero-block max-w-3xl lg:my-auto lg:py-10">
           <motion.p
             initial={reduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,7 +129,7 @@ export default function HeroCinematic() {
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.7, ease: EASE }}
-            className="type-lead mt-7 max-w-xl text-jufaja-ivory/85"
+            className="hero-lead type-lead mt-7 max-w-xl text-jufaja-ivory/85"
           >
             Explore considered home designs and practical information to help you start planning your build.
           </motion.p>
@@ -131,7 +138,7 @@ export default function HeroCinematic() {
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.85, ease: EASE }}
-            className="mt-9 flex flex-wrap items-center gap-x-4 gap-y-3"
+            className="hero-ctas mt-9 flex flex-wrap items-center gap-x-4 gap-y-3"
           >
             <ButtonLink href="/designs" variant="gold">Explore Home Designs</ButtonLink>
             <ButtonLink href="/projects" variant="outline-light" arrow={false}>Our Work</ButtonLink>
@@ -150,15 +157,15 @@ export default function HeroCinematic() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="mt-14 grid gap-8 border-t border-jufaja-gold-500/40 pt-6 lg:absolute lg:inset-x-8 lg:bottom-8 lg:mt-0 lg:grid-cols-2 lg:items-end lg:gap-12"
+          className="hero-rail mt-14 grid gap-8 border-t border-jufaja-gold-500/40 pt-6 lg:mt-4 lg:grid-cols-2 lg:items-end lg:gap-12"
         >
           <ul className="grid grid-cols-3 gap-4">
             {quickLinks.map((link, index) => (
               <li key={link.href}>
                 <Link href={link.href} className="group block rounded-sm py-1">
-                  <span className="text-[11px] font-bold tabular-nums text-jufaja-gold-400">0{index + 1}</span>
-                  <span className="mt-1 block text-xs font-semibold leading-snug text-white transition-colors group-hover:text-jufaja-gold-300 sm:text-sm">{link.label}</span>
-                  <span aria-hidden="true" className="mt-2 block h-px w-6 bg-jufaja-gold-500 transition-all duration-500 group-hover:w-full" />
+                  <span className="hero-rail-num text-[11px] font-bold tabular-nums text-jufaja-gold-400">0{index + 1}</span>
+                  <span className="hero-rail-label mt-1 block text-xs font-semibold leading-snug text-white transition-colors group-hover:text-jufaja-gold-300 sm:text-sm">{link.label}</span>
+                  <span aria-hidden="true" className="hero-rail-bar mt-2 block h-px w-6 bg-jufaja-gold-500 transition-all duration-500 group-hover:w-full" />
                 </Link>
               </li>
             ))}

@@ -87,11 +87,11 @@ export default function DesignCard({ design }: Props) {
         </div>
 
         {/* Actions Button Strip */}
-        <div className="mt-5 pt-3 border-t border-jufaja-border flex flex-wrap items-center gap-2.5">
-          <ButtonLink href={`/designs/${design.slug}`} className="flex-1">
+        <div className="mt-5 pt-3 border-t border-jufaja-border grid gap-2.5">
+          <ButtonLink href={`/designs/${design.slug}`} className="w-full">
             View design details
           </ButtonLink>
-          <EnquireDesignButton designName={design.name} squares={design.houseSizeSquares} className="btn btn-outline flex-1" />
+          <EnquireDesignButton designName={design.name} squares={design.houseSizeSquares} className="btn btn-outline w-full" />
         </div>
       </div>
 

@@ -46,7 +46,7 @@ export default function LeadershipPortrait() {
       <motion.div
         aria-hidden="true"
         style={reduceMotion ? undefined : { x: backX, y: backY }}
-        className="absolute -bottom-5 -left-5 h-24 w-24 bg-jufaja-burgundy-700 sm:-bottom-7 sm:-left-7 sm:h-32 sm:w-32"
+        className="absolute -bottom-5 -left-5 h-16 w-16 bg-jufaja-burgundy-700 sm:-bottom-7 sm:-left-7 sm:h-24 sm:w-24"
       />
 
       <motion.div style={reduceMotion ? undefined : { x: frontX, y: frontY }} className="relative">
@@ -54,7 +54,7 @@ export default function LeadershipPortrait() {
           <div className="relative bg-jufaja-forest-900 p-2 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.65)]">
             <ParallaxImage
               src="/brand/javed-iqbal-executive.png"
-              alt="Portrait of Javed Iqbal in a navy suit and tie"
+              alt="Portrait of Javed Iqbal, Chief Executive Officer of JUFAJA Constructions, in a navy suit and tie"
               sizes="(min-width: 1024px) 40vw, (min-width: 640px) 26rem, 90vw"
               quality={88}
               travel={3}
@@ -65,7 +65,7 @@ export default function LeadershipPortrait() {
             <div className="absolute inset-x-2 bottom-2 flex items-end justify-between gap-3 p-4 sm:p-5 lg:hidden">
               <div>
                 <p className="font-serif text-xl text-white sm:text-2xl">Javed Iqbal</p>
-                <p className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.22em] text-jufaja-gold-400">JUFAJA Constructions</p>
+                <p className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.22em] text-jufaja-gold-400">Chief Executive Officer</p>
               </div>
               <span aria-hidden="true" className="mb-1 h-px w-12 bg-jufaja-gold-500" />
             </div>

@@ -53,7 +53,7 @@ const selectorItems: SelectorOption[] = [
 
 export default function SelectorDashboard() {
   return (
-    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8 mb-16 sm:mb-24">
+    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 mb-16 sm:mb-24">
       <Reveal>
         <div className="bg-white rounded-sm shadow-luxury border border-jufaja-border p-6 sm:p-10">
           

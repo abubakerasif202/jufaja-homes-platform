@@ -19,7 +19,7 @@ function RoofLines() {
   );
 }
 
-/** Leadership introduction for Javed Iqbal. Uses only existing website copy; no title or credentials are asserted. */
+/** Leadership introduction for Javed Iqbal. The CEO title is owner-supplied; no other biography or credentials are asserted. */
 export default function LeadershipSection({ variant = 'home' }: LeadershipSectionProps) {
   const isAbout = variant === 'about';
 
@@ -29,7 +29,7 @@ export default function LeadershipSection({ variant = 'home' }: LeadershipSectio
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_20%_40%,rgba(41,85,64,0.55),transparent)]" />
       <RoofLines />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-12 lg:gap-20 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8 xl:gap-20">
         <div className="pl-5 sm:pl-7 lg:col-span-5">
           <LeadershipPortrait />
         </div>
@@ -38,12 +38,13 @@ export default function LeadershipSection({ variant = 'home' }: LeadershipSectio
           <Reveal>
             <p className="eyebrow eyebrow--light flex items-center gap-3">
               <span aria-hidden="true" className="h-4 w-1 bg-jufaja-burgundy-500" />
-              {isAbout ? 'An introduction' : 'Leadership'}
+              Leadership
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 id="leadership-heading" className="type-display mt-5 text-white">Javed Iqbal</h2>
-            <p className="mt-3 text-xs font-bold uppercase tracking-[0.24em] text-jufaja-gold-400">JUFAJA Constructions Pty Ltd</p>
+            <p className="mt-4 text-sm font-bold uppercase tracking-[0.24em] text-jufaja-gold-400 sm:text-base">Chief Executive Officer</p>
+            <p className="mt-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-jufaja-ivory/60">JUFAJA Constructions Pty Ltd</p>
           </Reveal>
           <Reveal delay={0.2}>
             <div aria-hidden="true" className="gold-rule my-8 w-40" />
