@@ -64,7 +64,7 @@ export default function Footer() {
 
         <div className="flex flex-col gap-3 pt-6 text-xs text-jufaja-ivory/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} JUFAJA Constructions Pty Ltd.</p>
-          <p className="pr-44 sm:pr-0 sm:text-right">Website information is a starting point; confirm project details directly before relying on them.</p>
+          <p className="pr-44 sm:pr-48 sm:text-right">Website information is a starting point; confirm project details directly before relying on them.</p>
         </div>
       </div>
     </footer>
