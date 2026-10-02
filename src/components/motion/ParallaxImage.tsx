@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import { cn } from '@/lib/utils';
 import Image, { type ImageProps } from 'next/image';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 
@@ -19,7 +20,7 @@ export default function ParallaxImage({ travel = 8, frameClassName = '', classNa
   const scale = 1 + (travel * 2) / 100;
 
   return (
-    <div ref={frame} className={`relative overflow-hidden ${frameClassName}`}>
+    <div ref={frame} className={cn('relative overflow-hidden', frameClassName)}>
       <motion.div className="absolute inset-0" style={reduceMotion ? undefined : { y, scale }}>
         <Image {...image} alt={alt} fill className={className} />
       </motion.div>

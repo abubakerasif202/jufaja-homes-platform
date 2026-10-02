@@ -1,3 +1,4 @@
+import TextReveal from '@/components/motion/TextReveal';
 import Link from 'next/link';
 import ButtonLink from '@/components/ui/ButtonLink';
 import JufajaLogo from '@/components/brand/JufajaLogo';
@@ -39,6 +40,8 @@ export default function Footer() {
         <path d="M110 380 L400 120 L690 380" stroke="currentColor" strokeWidth="0.6" />
         <path d="M0 380 H800" stroke="currentColor" strokeWidth="0.6" strokeDasharray="6 8" />
       </svg>
+      <div className="footer-statement"><p className="eyebrow eyebrow--light">Your future starts here</p><h2><TextReveal text="Let’s build your next chapter." /></h2><ButtonLink href="/contact" variant="gold">Start a conversation</ButtonLink></div>
+      <div aria-hidden="true" className="footer-wordmark">JUFAJA</div>
       <div className="relative mx-auto max-w-7xl px-4 pb-8 pt-14 sm:px-6 sm:pt-16 lg:px-8">
         <div className="grid gap-10 border-b border-white/15 pb-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">

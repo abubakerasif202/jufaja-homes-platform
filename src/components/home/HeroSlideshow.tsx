@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
-import { useReducedMotion } from 'framer-motion';
+import { useInView, useReducedMotion } from 'framer-motion';
+import ArchitecturalLines from '@/components/motion/ArchitecturalLines';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { HERO_SLIDES } from '@/data/hero-slides';
 
@@ -23,6 +24,15 @@ const pad = (n: number) => String(n).padStart(2, '0');
 export default function HeroSlideshow() {
   // Resolved only after mount so the server HTML and first client render always match.
   const prefersReducedMotion = useReducedMotion();
+  const scene = useRef<HTMLElement>(null);
+  const inView = useInView(scene);
+  const [pageHidden, setPageHidden] = useState(false);
+  useEffect(() => {
+    const update = () => setPageHidden(document.hidden);
+    update();
+    document.addEventListener('visibilitychange', update);
+    return () => document.removeEventListener('visibilitychange', update);
+  }, []);
   const [mounted, setMounted] = useState(false);
   const reduceMotion = mounted && Boolean(prefersReducedMotion);
   const [active, setActive] = useState(0);
@@ -91,10 +101,11 @@ export default function HeroSlideshow() {
     else prev();
   };
 
-  const paused = hovering || focused || userPaused;
+  const paused = hovering || focused || userPaused || !inView || pageHidden;
 
   return (
     <section
+      ref={scene}
       aria-roledescription="carousel"
       aria-label="Featured JUFAJA home designs"
       data-paused={paused}
@@ -110,12 +121,14 @@ export default function HeroSlideshow() {
         if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setFocused(false);
       }}
       style={{ '--hs-ms': `${SLIDE_MS}ms`, '--hs-fade': `${FADE_MS}ms` } as React.CSSProperties}
-      className="hs relative isolate -mt-[89px] h-[86svh] min-h-[500px] touch-pan-y overflow-hidden bg-jufaja-forest-950 text-white min-[360px]:-mt-[101px] lg:h-[100svh] lg:max-h-[1040px] lg:min-h-[600px]"
+      className="hs cinematic-hero relative isolate -mt-[89px] h-[86svh] min-h-[500px] touch-pan-y overflow-hidden bg-jufaja-forest-950 text-white min-[360px]:-mt-[101px] lg:h-[100svh] lg:max-h-[1040px] lg:min-h-[600px]"
     >
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === active;
         const isPrevious = index === previous;
-        if (index > 0 && !warm && !isActive && !isPrevious) return null;
+        // Warm only the next scene; avoid four full-screen downloads competing at once.
+        const isNext = warm && inView && !pageHidden && index === (active + 1) % COUNT;
+        if (index > 0 && !isActive && !isPrevious && !isNext) return null;
         const Heading = index === 0 ? 'h1' : 'h2';
         const alignRight = slide.align === 'right';
         return (
@@ -153,13 +166,14 @@ export default function HeroSlideshow() {
                 <Heading className={`type-hero mt-4 max-w-4xl text-white ${alignRight ? 'lg:ml-auto' : ''}`}>
                   {slide.lines.map((line, i) => {
                     const accent = i === slide.lines.length - 1;
+                    const breakOnMobile = i === 0 && (line === 'Building Homes' || line === 'Homes Designed');
                     return (
                       <span key={line} className="hs-mask block pb-[0.1em]">
                         <span
                           className={`hs-line block ${accent ? 'font-medium italic text-jufaja-gold-400' : ''}`}
                           style={{ '--d': `${350 + i * 110}ms` } as React.CSSProperties}
                         >
-                          {line}
+                          {breakOnMobile ? <>{line.split(' ')[0]}{' '}<br className="sm:hidden" />{line.split(' ')[1]}</> : line}
                         </span>
                       </span>
                     );
@@ -169,7 +183,7 @@ export default function HeroSlideshow() {
                   {slide.copy}
                 </p>
                 <div className={`hs-rise hero-ctas mt-6 sm:mt-7 ${alignRight ? 'lg:flex lg:justify-end' : ''}`} style={{ '--d': '950ms' } as React.CSSProperties}>
-                  <ButtonLink href={slide.cta.href} variant="gold">{slide.cta.label}</ButtonLink>
+                  <ButtonLink tabIndex={isActive ? undefined : -1} href={slide.cta.href} variant="gold">{slide.cta.label}</ButtonLink>
                 </div>
               </div>
             </div>
@@ -177,11 +191,18 @@ export default function HeroSlideshow() {
         );
       })}
 
+      <div aria-hidden="true" className="hero-blueprint"><ArchitecturalLines /><span>FORM / SPACE / LIGHT</span></div>
+      <div aria-hidden="true" className={`hero-detail ${HERO_SLIDES[active].align === 'right' ? 'hero-detail--left' : ''}`}>
+        <div className="hero-detail__frame"><Image src={HERO_SLIDES[active].photo} alt="" fill sizes="320px" className="object-cover" /></div>
+        <div className="hero-detail__label"><span>Design perspective</span><span>{pad(active + 1)} / {pad(COUNT)}</span></div>
+      </div>
+      <a href="#explore" className="hero-scroll"><span>Explore the possibilities</span><span aria-hidden="true">↓</span></a>
+
       {/* Top scrim keeps the transparent header legible */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 z-30 h-40 bg-gradient-to-b from-jufaja-forest-950/60 to-transparent" />
 
       {/* Controls */}
-      <div className="absolute inset-x-0 bottom-14 z-50 lg:bottom-24">
+      <div className="hero-controls absolute inset-x-0 bottom-14 z-50 lg:bottom-24">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-4">
             <p aria-hidden="true" className="hidden shrink-0 text-xs font-bold tabular-nums tracking-[0.2em] text-white sm:block">
@@ -205,7 +226,7 @@ export default function HeroSlideshow() {
                           key={`${index}-${cycle}`}
                           className={`hs-fill absolute inset-0 origin-left bg-jufaja-gold-500 ${reduceMotion ? 'is-static' : warm ? 'is-running' : 'is-idle'}`}
                           onAnimationEnd={(e) => {
-                            if (e.animationName === 'hs-progress') next();
+                            if (e.animationName === 'hs-progress' && !reduceMotion && !paused) next();
                           }}
                         />
                       )}

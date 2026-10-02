@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FacadeOption } from '@/types';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function FacadeGallery({ facades, designName }: Props) {
+  const reduced = useReducedMotion();
   const [selectedIdx, setSelectedIdx] = useState(0);
 
   const activeFacade = facades[selectedIdx] || facades[0];
@@ -17,15 +19,15 @@ export default function FacadeGallery({ facades, designName }: Props) {
   return (
     <div className="bg-white rounded-sm border border-jufaja-border overflow-hidden shadow-sm">
       {/* Main Facade View */}
-      <div className="relative h-[320px] sm:h-[440px] w-full bg-jufaja-stone">
-        <Image
+      <div className="facade-view relative h-[320px] sm:h-[440px] w-full bg-jufaja-stone">
+        <AnimatePresence initial={false}><motion.div key={activeFacade.image + selectedIdx} className="absolute inset-0" initial={reduced ? false : { opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .5 }}><Image
           src={activeFacade.image}
           alt={`Illustrative ${activeFacade.name} facade image for ${designName}; confirm the current design details with JUFAJA`}
           fill
           priority
           sizes="(max-width: 1023px) 100vw, 66vw"
           className="object-cover"
-        />
+        /></motion.div></AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
 
         <div className="absolute bottom-6 left-6 text-white">

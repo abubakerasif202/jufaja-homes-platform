@@ -12,7 +12,7 @@ const links = [
   { href: '/designs', label: 'Home Designs' },
   { href: '/packages', label: 'House & Land' },
   { href: '/display-homes', label: 'Display Homes' },
-  { href: '/projects', label: 'Our Work' },
+  { href: '/projects', label: 'Design Studies' },
   { href: '/about-us', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -36,8 +36,19 @@ export default function Header() {
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
+  // A menu hidden by the desktop breakpoint must not leave the document locked.
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1280px)');
+    const update = () => { if (desktop.matches) setMenuOpen(false); };
+    desktop.addEventListener('change', update);
+    return () => desktop.removeEventListener('change', update);
+  }, []);
+
   useEffect(() => {
     if (!menuOpen) return;
+    const background = [...document.querySelectorAll<HTMLElement>('body > main, body > footer')];
+    const previousInert = background.map(element => element.inert);
+    background.forEach(element => { element.inert = true; });
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     const focusTimer = window.setTimeout(() => {
@@ -57,7 +68,7 @@ export default function Header() {
         if (event.shiftKey && document.activeElement === first) {
           event.preventDefault();
           last.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
+        } else if (!event.shiftKey && (document.activeElement === last || !drawer.current.contains(document.activeElement))) {
           event.preventDefault();
           first.focus();
         }
@@ -67,6 +78,7 @@ export default function Header() {
     return () => {
       window.clearTimeout(focusTimer);
       document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => { element.inert = previousInert[index]; });
       document.removeEventListener('keydown', onKeyDown);
     };
   }, [menuOpen]);
@@ -143,19 +155,20 @@ export default function Header() {
               animate={{ clipPath: 'inset(0 0 0% 0)' }}
               exit={reduceMotion ? { opacity: 0 } : { clipPath: 'inset(0 0 100% 0)' }}
               transition={{ duration: reduceMotion ? 0 : 0.45, ease: [0.76, 0, 0.24, 1] }}
-              className="absolute inset-x-0 top-full z-50 max-h-[calc(100dvh-88px)] overflow-y-auto border-t border-jufaja-gold-500/40 bg-white px-4 pb-6 pt-3 shadow-jufaja-card min-[360px]:max-h-[calc(100dvh-100px)] sm:px-6 xl:hidden"
+              className="mobile-menu absolute inset-x-0 top-full z-50 max-h-[calc(100dvh-88px)] overflow-y-auto border-t border-jufaja-gold-500/40 bg-white px-4 pb-6 pt-3 shadow-jufaja-card min-[360px]:max-h-[calc(100dvh-100px)] sm:px-6 xl:hidden"
             >
               {links.map(({ href, label }, index) => {
                 const active = href === '/' ? pathname === '/' : pathname?.startsWith(href);
                 return (
                   <motion.div key={href} initial={reduceMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: reduceMotion ? 0 : 0.12 + index * 0.04 }}>
                     <Link href={href} aria-current={active ? 'page' : undefined} className={`flex min-h-12 items-center justify-between border-b border-jufaja-border/70 px-2 font-serif text-xl ${active ? 'text-jufaja-forest-900' : 'text-jufaja-muted'}`}>
-                      {label}
+                      <span><small className="mobile-menu__number">0{index + 1}</small>{label}</span>
                       {active && <span aria-hidden="true" className="h-1.5 w-1.5 bg-jufaja-gold-500" />}
                     </Link>
                   </motion.div>
                 );
               })}
+              <button type="button" onClick={closeMenu} className="btn btn-outline-light mb-4 mt-6">Close navigation <X aria-hidden="true" className="h-4 w-4" /></button>
               <div className="grid grid-cols-2 gap-2 pt-4">
                 <Link href="/custom-homes" className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">Custom Homes</Link>
                 <Link href="/knockdown-rebuild" className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">Knockdown Rebuild</Link>

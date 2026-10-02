@@ -1,3 +1,5 @@
+import PlanningSequence from '@/components/ui/PlanningSequence';
+import PageHero from '@/components/ui/PageHero';
 import type { Metadata } from 'next';
 import ButtonLink from '@/components/ui/ButtonLink';
 
@@ -10,22 +12,19 @@ export const metadata: Metadata = {
 export default function PackagesPage() {
   return (
     <div className="min-h-[65vh] bg-jufaja-cream">
-      <section className="border-b border-jufaja-border bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">House &amp; land</p>
+      <PageHero image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85" tone="green" label="Architecture reference">
+        <p className="eyebrow">House &amp; land</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Let’s talk about current options.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">
             Online package details can change. Contact JUFAJA to confirm current land availability, pricing, inclusions and specifications before making a decision.
           </p>
           <ButtonLink href="/contact?interest=House%20%26%20Land" className="mt-8">Ask about house and land</ButtonLink>
-        </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="max-w-3xl border-l-2 border-jufaja-gold-500 pl-5">
-          <h2 className="type-h3 font-serif text-jufaja-forest">What to confirm</h2>
-          <p className="mt-2 text-sm leading-6 text-jufaja-muted">Ask for the latest land status, package price, plan, site costs, inclusions and any conditions that apply to the specific property.</p>
-        </div>
-      </section>
+      </PageHero>
+      <PlanningSequence eyebrow="Before you decide" title="What to confirm." items={[
+        { title: 'Land and availability', copy: 'Ask for the latest land status and any conditions that apply to the specific property.' },
+        { title: 'Price and site costs', copy: 'Confirm the current package price, site costs and applicable allowances.' },
+        { title: 'Plan and inclusions', copy: 'Request the current plan, inclusions and written specifications.' },
+      ]} />
     </div>
   );
 }

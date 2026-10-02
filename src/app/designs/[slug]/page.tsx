@@ -54,7 +54,7 @@ export default async function SingleDesignPage({ params }: Props) {
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-jufaja-cream pb-20">
+    <main className="design-detail min-h-screen bg-jufaja-cream pb-20">
       
       {/* Top Breadcrumb Header Bar */}
       <div className="border-b border-jufaja-border bg-white py-4">

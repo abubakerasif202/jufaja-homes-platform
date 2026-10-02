@@ -40,6 +40,9 @@ export default function QuickEnquiryDrawer() {
 
   useEffect(() => {
     if (!isOpen) return;
+    const background = [...document.querySelectorAll<HTMLElement>('body > header, body > main, body > footer')];
+    const previousInert = background.map(element => element.inert);
+    background.forEach(element => { element.inert = true; });
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     closeButton.current?.focus();
@@ -49,13 +52,14 @@ export default function QuickEnquiryDrawer() {
         previousFocus.current?.focus();
       }
       if (event.key === 'Tab' && dialog.current) {
-        const focusable = [...dialog.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])')];
+        const focusable = [...dialog.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])')].filter(element => element.tabIndex >= 0 && element.getClientRects().length > 0);
+        if (!focusable.length) return;
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
         if (event.shiftKey && document.activeElement === first) {
           event.preventDefault();
           last?.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
+        } else if (!event.shiftKey && (document.activeElement === last || !dialog.current.contains(document.activeElement))) {
           event.preventDefault();
           first?.focus();
         }
@@ -64,6 +68,7 @@ export default function QuickEnquiryDrawer() {
     document.addEventListener('keydown', onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => { element.inert = previousInert[index]; });
       document.removeEventListener('keydown', onKeyDown);
       previousFocus.current?.focus();
     };
@@ -71,6 +76,7 @@ export default function QuickEnquiryDrawer() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
     setError('');
 
@@ -122,11 +128,11 @@ export default function QuickEnquiryDrawer() {
           <button
             type="button"
             aria-label="Close enquiry form"
-            className="absolute inset-0 bg-jufaja-forest-950/40 transition-opacity"
+            className="enquiry-drawer__backdrop absolute inset-0 bg-jufaja-forest-950/40 transition-opacity"
             onClick={() => setIsOpen(false)}
           />
 
-          <div className="fixed inset-y-0 right-0 flex max-w-full pl-0 sm:pl-10">
+          <div className="enquiry-drawer__panel fixed inset-y-0 right-0 flex max-w-full pl-0 sm:pl-10">
             <section ref={dialog} role="dialog" aria-modal="true" aria-labelledby="enquiry-title" className="flex w-screen max-w-md flex-col border-l border-jufaja-gold/20 bg-white shadow-2xl">
               
               {/* Drawer Header */}
@@ -144,7 +150,7 @@ export default function QuickEnquiryDrawer() {
                   type="button"
                   aria-label="Close enquiry form"
                   onClick={() => setIsOpen(false)}
-                  className="p-1 rounded-sm text-jufaja-ivory/70 hover:text-white hover:bg-white/10 transition-colors"
+                  className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-sm text-jufaja-ivory/70 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <X className="w-6 h-6" />
                 </button>

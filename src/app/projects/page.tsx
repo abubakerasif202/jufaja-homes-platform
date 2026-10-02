@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Image from 'next/image';
-import { Sparkles } from 'lucide-react';
+import ParallaxImage from '@/components/motion/ParallaxImage';
+import Reveal from '@/components/motion/Reveal';
+import PageHero from '@/components/ui/PageHero';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 
@@ -15,38 +16,29 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-jufaja-cream">
       {/* Hero Header */}
-      <section className="bg-jufaja-cream text-jufaja-forest py-16 sm:py-24 relative overflow-hidden border-b border-jufaja-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <div className="eyebrow inline-flex items-center gap-2 rounded-sm border border-jufaja-gold-500/40 bg-white px-3 py-1">
-            <Sparkles aria-hidden="true" className="w-3.5 h-3.5" />
-            <span>Illustrative concepts</span>
-          </div>
-          <h1 className="type-h1 font-serif text-jufaja-forest">
-            Design Inspiration
-          </h1>
-          <p className="type-lead text-jufaja-muted max-w-2xl mx-auto">
-            These reference images and concept studies illustrate architectural directions. They are not photographs or records of completed JUFAJA projects.
-          </p>
-        </div>
-      </section>
+      <PageHero image={JUFAJA_PROJECTS[0].image} tone="ivory">
+        <p className="eyebrow">Illustrative concepts / Design journal</p>
+        <h1 className="type-h1 mt-4 text-jufaja-forest">Design inspiration.</h1>
+        <p className="type-lead mt-6 text-jufaja-muted">These reference images and concept studies illustrate architectural directions. They are not photographs or records of completed JUFAJA projects.</p>
+      </PageHero>
 
       {/* Projects Showcase List */}
-      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="studies-journal py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-16 sm:space-y-24">
           {JUFAJA_PROJECTS.map((proj, idx) => (
             <div
               key={proj.id}
-              className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center ${
+              className={`journal-study relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center ${
                 idx % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
               {/* Image Frame */}
               <div className={`lg:col-span-7 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="relative h-[340px] sm:h-[440px] w-full rounded-sm overflow-hidden shadow-luxury border-2 border-white bg-jufaja-stone group">
-                  <Image
+                <Reveal mode="mask-up" curtain="bg-jufaja-stone"><div className="journal-image relative h-[340px] sm:h-[440px] w-full overflow-hidden bg-jufaja-stone group">
+                  <ParallaxImage
                     src={proj.image}
                     alt={`${proj.title} illustrative concept image`}
-                    fill
+                    frameClassName="absolute inset-0"
                     sizes="(max-width: 1023px) 100vw, 58vw"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
@@ -56,16 +48,17 @@ export default function ProjectsPage() {
                   <div className="absolute bottom-4 left-4 bg-white px-3.5 py-1.5 rounded-sm text-xs font-semibold text-jufaja-charcoal shadow flex items-center gap-1.5">
                     <span>Illustrative image · not a completed project</span>
                   </div>
-                </div>
+                </div></Reveal>
               </div>
 
               {/* Text Description */}
+              <span aria-hidden="true" className="journal-index">0{idx + 1}</span>
               <div className={`lg:col-span-5 space-y-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <div className="space-y-2">
                   <span className="eyebrow block">
                     {proj.category} · {proj.study}
                   </span>
-                  <h2 className="type-h3 font-serif text-jufaja-forest">
+                  <h2 className="type-h2 font-serif text-jufaja-forest">
                     {proj.title}
                   </h2>
                 </div>

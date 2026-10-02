@@ -1,3 +1,4 @@
+import PageHero from '@/components/ui/PageHero';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -21,10 +22,8 @@ const routes = [
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen bg-jufaja-cream">
-      <section className="relative overflow-hidden border-b border-jufaja-border bg-white py-16 sm:py-24">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 hidden w-2/5 bg-blueprint-fine opacity-35 lg:block" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">JUFAJA Constructions</p>
+      <PageHero image="/brand/javed-iqbal-site.png" tone="ivory" label="Javed Iqbal with colleagues on a building site">
+        <p className="eyebrow">JUFAJA Constructions</p>
           <h1 className="type-h1 mt-4 max-w-3xl text-jufaja-forest">A clearer way to begin planning your home.</h1>
           <p className="type-lead mt-7 max-w-2xl text-jufaja-muted">
             JUFAJA Constructions shares home designs and building information to help you consider what may suit your plans. Every site and brief is different, so project details are best discussed directly.
@@ -33,8 +32,7 @@ export default function AboutUsPage() {
             <ButtonLink href="/designs">Explore home designs</ButtonLink>
             <ButtonLink href="/contact" variant="outline" arrow={false}>Contact JUFAJA</ButtonLink>
           </div>
-        </div>
-      </section>
+      </PageHero>
 
       <LeadershipSection variant="about" />
 
@@ -44,7 +42,7 @@ export default function AboutUsPage() {
             <p className="eyebrow">Explore the options</p>
             <h2 className="type-h2 mt-3 text-jufaja-forest">Choose a place to start.</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="about-route-list grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {routes.map((route, index) => (
               <Reveal key={route.href} delay={index * 0.08} className="h-full"><Link href={route.href} className="group relative flex h-full min-h-56 flex-col overflow-hidden rounded-sm border border-jufaja-border bg-jufaja-cream p-6 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-jufaja-gold-500 hover:shadow-jufaja-card">
                 <span className="text-xs font-semibold tabular-nums text-jufaja-gold-600">0{index + 1}</span>

@@ -1,14 +1,10 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
-
-const display = Cormorant_Garamond({ subsets: ['latin'], weight: ['500', '600', '700'], style: ['normal', 'italic'], variable: '--font-display', display: 'swap' });
-const body = Manrope({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jufaja-homes-platform.vercel.app'),
@@ -49,8 +45,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-AU" className={`scroll-smooth ${display.variable} ${body.variable}`} suppressHydrationWarning>
+    <html lang="en-AU" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <noscript><style>{`.jufaja-intro { display: none !important; } body:has(.jufaja-intro) { overflow: visible !important; } [data-reveal] { opacity: 1 !important; transform: none !important; } [data-reveal-curtain] { display: none !important; } [data-text-reveal-word] { transform: none !important; }`}</style></noscript>
         <Script
           id="jufaja-intro-session"
           strategy="beforeInteractive"

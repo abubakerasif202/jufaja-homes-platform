@@ -1,113 +1,41 @@
-import React from 'react';
-import Link from 'next/link';
-import { Home, Layers, RefreshCw, PenTool, Box, KeyRound, ArrowRight, Sparkles } from 'lucide-react';
+'use client';
 
-interface SelectorOption {
-  title: string;
-  subtitle: string;
-  icon: React.ElementType;
-  link: string;
-  badge?: string;
-}
+import { useState } from 'react';
+import Image from 'next/image';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+import Reveal from '@/components/motion/Reveal';
+import ButtonLink from '@/components/ui/ButtonLink';
 
-const selectorItems: SelectorOption[] = [
-  {
-    title: 'Single Storey Designs',
-    subtitle: 'Browse single storey design listings and compare their listed specifications.',
-    icon: Home,
-    link: '/designs?dwelling_type=single',
-  },
-  {
-    title: 'Double Storey Homes',
-    subtitle: 'Browse double storey design listings and compare their listed specifications.',
-    icon: Layers,
-    link: '/designs?dwelling_type=double',
-  },
-  {
-    title: 'Knockdown Rebuild',
-    subtitle: 'Explore questions about the site, planning requirements and rebuild scope.',
-    icon: RefreshCw,
-    link: '/knockdown-rebuild',
-  },
-  {
-    title: 'Duplex & Dual Living',
-    subtitle: 'Browse duplex design listings. Confirm drawings and site suitability directly.',
-    icon: Box,
-    link: '/designs?dwelling_type=duplex',
-  },
-  {
-    title: 'House & Land Packages',
-    subtitle: 'Contact JUFAJA to confirm current listings and package details.',
-    icon: KeyRound,
-    link: '/packages',
-  },
-  {
-    title: 'Custom Architecture',
-    subtitle: 'Start with your site, your priorities and a clear design brief.',
-    icon: PenTool,
-    link: '/custom-homes',
-    badge: 'Design Briefing',
-  },
+const options = [
+  { title: 'Single Storey Designs', copy: 'Browse single storey design listings and compare their listed specifications.', href: '/designs?dwelling_type=single', photo: 'photo-1600585154526-990dced4db0d' },
+  { title: 'Double Storey Homes', copy: 'Browse double storey design listings and compare their listed specifications.', href: '/designs?dwelling_type=double', photo: 'photo-1600596542815-ffad4c1539a9' },
+  { title: 'Knockdown Rebuild', copy: 'Explore questions about the site, planning requirements and rebuild scope.', href: '/knockdown-rebuild', photo: 'photo-1600566753376-12c8ab7fb75b' },
+  { title: 'Duplex & Dual Living', copy: 'Browse duplex design listings. Confirm drawings and site suitability directly.', href: '/designs?dwelling_type=duplex', photo: 'photo-1600607687939-ce8a6c25118c' },
+  { title: 'House & Land Packages', copy: 'Contact JUFAJA to confirm current listings and package details.', href: '/packages', photo: 'photo-1600585154340-be6161a56a0c' },
+  { title: 'Custom Architecture', copy: 'Start with your site, your priorities and a clear design brief.', href: '/custom-homes', photo: 'photo-1600566753190-17f0baa2a6c3' },
 ];
 
 export default function SelectorDashboard() {
-  return (
-    <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 lg:-mt-20 mb-16 sm:mb-24">
-      <div>
-        <div className="bg-white rounded-sm shadow-luxury border border-jufaja-border p-6 sm:p-10">
-          
-          {/* Header */}
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="eyebrow mb-1 block">
-              Find Your Living Solution
-            </span>
-            <h2 className="type-h2 font-serif text-jufaja-forest">
-              Explore By Project Type
-            </h2>
-            <div className="w-12 h-[1.5px] bg-jufaja-gold-500 mx-auto mt-3" />
-          </div>
-
-          {/* 6 Grid Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {selectorItems.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={idx}
-                  href={item.link}
-                  className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-sm border border-jufaja-border bg-jufaja-ivory hover:bg-white hover:border-jufaja-gold-500 hover:shadow-luxury transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1"
-                >
-                  <div>
-                    <div className="flex justify-between items-start mb-5">
-                      <div className="w-12 h-12 rounded-sm bg-jufaja-forest-900 group-hover:bg-jufaja-gold-500 text-white flex items-center justify-center transition-colors shadow-sm">
-                        <Icon aria-hidden="true" className="w-5 h-5 text-white" />
-                      </div>
-                      {item.badge && (
-                        <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm bg-white border border-jufaja-border text-jufaja-muted group-hover:border-jufaja-gold-500/40 group-hover:text-jufaja-forest transition-colors">
-                          {item.badge}
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="text-lg font-serif text-jufaja-forest group-hover:text-jufaja-gold-600 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-jufaja-muted mt-2 leading-relaxed font-normal">
-                      {item.subtitle}
-                    </p>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-jufaja-border flex items-center justify-between text-xs font-bold text-jufaja-forest group-hover:text-jufaja-gold-600 transition-colors">
-                    <span className="uppercase tracking-wider text-[11px]">Explore information</span>
-                    <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-        </div>
+  const [active, setActive] = useState(0);
+  const reduced = useReducedMotion();
+  const option = options[active];
+  return <section id="explore" className="service-scene">
+    <div className="service-scene__heading"><Reveal><p className="eyebrow">01 / Your next chapter</p><h2 className="type-display mt-4 text-jufaja-forest">Different paths.<br /><em className="font-medium">One place to begin.</em></h2></Reveal><p className="max-w-sm text-sm leading-7 text-jufaja-muted">Find your living solution. Explore the designs, services and information that match what you have in mind.</p></div>
+    <div className="service-scene__body">
+      <div className="service-scene__image">
+        <AnimatePresence mode="sync" initial={false}><motion.div key={option.photo} className="absolute inset-0" initial={reduced ? false : { opacity: 0, scale: 1.06 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .65 }}>
+          <Image src={`https://images.unsplash.com/${option.photo}?auto=format&fit=crop&w=1200&q=85`} alt="Illustrative residential architecture, not a completed JUFAJA project" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        </motion.div></AnimatePresence>
+        <div className="service-scene__image-caption"><span>Illustrative architecture</span><span aria-hidden="true">0{active + 1} / 06</span></div>
+        <span aria-hidden="true" className="service-scene__large-number">0{active + 1}</span>
       </div>
-    </section>
-  );
+      <div className="service-scene__options">
+        {options.map((item, index) => <div key={item.href} className={`service-option ${active === index ? 'is-active' : ''}`}>
+          <h3><button type="button" aria-expanded={active === index} aria-controls={`service-panel-${index}`} onClick={() => setActive(index)}><span className="service-option__number">0{index + 1}</span><span>{item.title}</span><ArrowUpRight aria-hidden="true" /></button></h3>
+          <div id={`service-panel-${index}`} hidden={active !== index} className="service-option__detail"><p>{item.copy}</p><ButtonLink href={item.href} variant="outline">Explore information</ButtonLink></div>
+        </div>)}
+      </div>
+    </div>
+  </section>;
 }

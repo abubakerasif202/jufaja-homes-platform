@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import DepthFrame from '@/components/motion/DepthFrame';
 import { HomeDesign } from '@/types';
 import { Bed, Bath, Car } from 'lucide-react';
 import ButtonLink from '@/components/ui/ButtonLink';
@@ -13,10 +14,10 @@ export default function DesignCard({ design }: Props) {
   const facade = design.facades[0];
 
   return (
-    <div className="bg-white rounded-sm overflow-hidden border border-jufaja-border hover:border-jufaja-gold-500 hover:-translate-y-1 shadow-sm hover:shadow-luxury transition-[transform,box-shadow,border-color] duration-300 flex flex-col justify-between group">
+    <DepthFrame className="design-depth"><div className="design-card bg-white rounded-sm overflow-hidden border border-jufaja-border hover:border-jufaja-gold-500 hover:-translate-y-1 shadow-sm hover:shadow-luxury transition-[transform,box-shadow,border-color] duration-300 flex flex-col justify-between group">
       
       {/* Facade Image Frame */}
-      <div className="relative h-64 w-full overflow-hidden bg-jufaja-stone">
+      <div className="design-card__image relative h-64 w-full overflow-hidden bg-jufaja-stone">
         {facade && <Image
           src={facade.image}
           alt={`Illustrative ${facade.name} facade image for ${design.name}; confirm final design details`}
@@ -59,7 +60,7 @@ export default function DesignCard({ design }: Props) {
         <div>
           {/* Title & Series */}
           <div className="mb-3">
-            <h3 className="font-serif text-xl text-jufaja-forest group-hover:text-jufaja-gold-600 transition-colors">
+            <h3 className="font-serif text-3xl text-jufaja-forest group-hover:text-jufaja-gold-600 transition-colors">
               {design.name}
             </h3>
             <p className="text-[11px] text-jufaja-muted font-medium tracking-wide uppercase mt-0.5">
@@ -95,6 +96,6 @@ export default function DesignCard({ design }: Props) {
         </div>
       </div>
 
-    </div>
+    </div></DepthFrame>
   );
 }

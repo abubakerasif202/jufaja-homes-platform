@@ -2,7 +2,7 @@ import ButtonLink from '@/components/ui/ButtonLink';
 
 export default function DisplayLocationsStrip() {
   return (
-    <section className="border-t border-jufaja-border bg-jufaja-cream py-16 sm:py-20">
+    <section className="display-strip border-t border-jufaja-border bg-jufaja-cream py-16 sm:py-20">
       <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8">
         <div className="lg:col-span-8">
           <p className="eyebrow">Display homes</p>

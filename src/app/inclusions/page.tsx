@@ -1,3 +1,5 @@
+import PlanningSequence from '@/components/ui/PlanningSequence';
+import PageHero from '@/components/ui/PageHero';
 import type { Metadata } from 'next';
 import ButtonLink from '@/components/ui/ButtonLink';
 
@@ -7,28 +9,23 @@ export const metadata: Metadata = {
   alternates: { canonical: '/inclusions' },
 };
 
-const topics = ['Standard inclusions', 'Optional upgrades', 'Product selections', 'Site and contract allowances'];
+const topics = [
+  { title: 'Standard inclusions', copy: 'Ask for the written schedule that applies to the current design and specification.' },
+  { title: 'Optional upgrades', copy: 'Confirm which selections are optional and how they affect the project price.' },
+  { title: 'Product selections', copy: 'Confirm the applicable products, materials and finishes in writing.' },
+  { title: 'Site and contract allowances', copy: 'Ask which allowances and conditions apply to your specific site and contract.' },
+];
 
 export default function InclusionsPage() {
   return (
-    <main className="min-h-[65vh] bg-jufaja-cream">
-      <section className="border-b border-jufaja-border bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">Selections and specifications</p>
+    <div className="min-h-[65vh] bg-jufaja-cream">
+      <PageHero image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=85" tone="burgundy" label="Architecture reference">
+        <p className="eyebrow">Selections and specifications</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Know what is included in your project.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">Inclusions depend on the current specification, design, site and contract. Ask JUFAJA for the applicable written schedule before comparing or committing to a project.</p>
           <ButtonLink href="/contact?interest=Inclusions" className="mt-8">Ask for current details</ButtonLink>
-        </div>
-      </section>
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="type-h3 font-serif text-jufaja-forest">Questions to ask</h2>
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {topics.map((topic, index) => <li key={topic} className="rounded-sm border border-jufaja-border bg-white p-5 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-jufaja-gold-500">
-            <span className="text-xs font-semibold text-jufaja-gold-600">0{index + 1}</span>
-            <p className="mt-3 font-medium text-jufaja-forest-900">{topic}</p>
-          </li>)}
-        </ul>
-      </section>
-    </main>
+      </PageHero>
+      <PlanningSequence eyebrow="Selections / In detail" title="Questions to ask." items={topics} image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85" />
+    </div>
   );
 }

@@ -1,3 +1,5 @@
+import PlanningSequence from '@/components/ui/PlanningSequence';
+import PageHero from '@/components/ui/PageHero';
 import type { Metadata } from 'next';
 import ButtonLink from '@/components/ui/ButtonLink';
 
@@ -22,30 +24,15 @@ const questions = [
 
 export default function KnockdownRebuildPage() {
   return (
-    <main className="bg-jufaja-cream">
-      <section className="relative overflow-hidden border-b border-jufaja-border bg-white py-16 sm:py-24">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 hidden w-2/5 bg-blueprint-fine opacity-30 lg:block" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">Knockdown rebuild</p>
+    <div className="bg-jufaja-cream">
+      <PageHero image="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85" tone="burgundy" label="Architecture reference">
+        <p className="eyebrow">Knockdown rebuild</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Make room for a new chapter.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">Replacing an existing home involves site, design, planning and demolition questions. Start by understanding what applies to your property.</p>
           <ButtonLink href="/contact?interest=Knockdown%20Rebuild" className="mt-8">Discuss your site</ButtonLink>
-        </div>
-      </section>
+      </PageHero>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="mb-9 max-w-2xl">
-          <p className="eyebrow">Questions to work through</p>
-          <h2 className="type-h2 mt-3 font-serif text-jufaja-forest">Start with the property.</h2>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {topics.map((topic, index) => <article key={topic.title} className="rounded-sm border-t-2 border-jufaja-gold-500 bg-white p-6 shadow-jufaja-soft transition-[transform,box-shadow] duration-300 hover:-translate-y-1">
-            <span className="font-serif text-2xl text-jufaja-gold-600">0{index + 1}</span>
-            <h3 className="mt-6 font-serif text-2xl text-jufaja-forest">{topic.title}</h3>
-            <p className="mt-3 text-sm leading-6 text-jufaja-muted">{topic.copy}</p>
-          </article>)}
-        </div>
-      </section>
+      <PlanningSequence eyebrow="Questions to work through" title="Start with the property." items={topics} image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" />
 
       <section className="border-y border-jufaja-border bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -59,6 +46,6 @@ export default function KnockdownRebuildPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

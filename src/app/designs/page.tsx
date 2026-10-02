@@ -1,3 +1,4 @@
+import PageHero from '@/components/ui/PageHero';
 import React, { Suspense } from 'react';
 import DesignsCatalogueClient from './DesignsCatalogueClient';
 import rawDesigns from '@/data/designs.json';
@@ -14,22 +15,13 @@ export default function DesignsPage() {
   const designs = rawDesigns as HomeDesign[];
 
   return (
-    <div className="min-h-screen bg-jufaja-cream py-12 sm:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Page Title & Breadcrumbs */}
-        <div className="mb-8">
-          <div className="eyebrow mb-2">
-            Home &bull; Home Designs Catalogue
-          </div>
-          <h1 className="type-h1 font-serif text-jufaja-forest">
-            Home design catalogue
-          </h1>
-          <p className="type-lead mt-3 max-w-3xl text-jufaja-muted">
-            Compare the information shown for {designs.length} listed home designs. Images are illustrative and listed figures require confirmation; ask JUFAJA for current drawings and specifications.
-          </p>
-        </div>
-
+    <div className="min-h-screen bg-jufaja-cream">
+      <PageHero image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85" tone="green">
+        <p className="eyebrow">The design collection</p>
+        <h1 className="type-h1 mt-4 text-jufaja-forest">Find your way home.</h1>
+        <p className="type-lead mt-6 text-jufaja-muted">Compare the information shown for {designs.length} listed home designs. Images are illustrative and listed figures require confirmation; ask JUFAJA for current drawings and specifications.</p>
+      </PageHero>
+      <div className="catalogue-body py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Client-side Filter & Grid Wrapped in Suspense */}
         <Suspense fallback={
           <div className="py-20 text-center text-jufaja-muted font-medium">

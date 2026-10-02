@@ -51,6 +51,7 @@ export default function Reveal({
       <div className={`relative overflow-hidden ${className}`}>
         {children}
         <motion.div
+          data-reveal-curtain
           aria-hidden="true"
           initial={reduceMotion ? axis.to : axis.from}
           whileInView={axis.to}
@@ -64,6 +65,7 @@ export default function Reveal({
 
   return (
     <motion.div
+      data-reveal
       initial={reduceMotion ? false : fadeFrom[direction]}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
