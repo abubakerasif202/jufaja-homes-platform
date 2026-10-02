@@ -556,28 +556,38 @@ html { scroll-padding-top: 120px; }
   .site-header__menu:hover { background: #295540; }
   .site-header :focus-visible { outline-color: #dfc17b; }
 
+  .hs.cinematic-hero { margin-top: 0; }
   /* A fixed copy frame reserves the longest headline while images crossfade. */
   .cinematic-hero {
     --mobile-copy-height: 27rem;
+    --mobile-image-height: clamp(360px, 58vh, 520px);
     margin-top: 0;
-    height: calc(100vw * 9 / 16 + var(--mobile-copy-height));
+    height: calc(var(--mobile-image-height) + var(--mobile-copy-height));
     min-height: 0;
     max-height: none;
     background: #f4f1ea;
     color: #163024;
   }
+  .cinematic-hero .hs-image-frame {
+    height: var(--mobile-image-height);
+    min-height: 360px;
+    bottom: auto;
+    overflow: hidden;
+  }
   .cinematic-hero .hs-img {
     top: 0 !important;
-    bottom: auto !important;
-    height: auto !important;
-    aspect-ratio: 16 / 9;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: auto;
     object-fit: cover;
+    object-position: 50% 50%;
   }
   .cinematic-hero .hero-image-scrim { background: none; }
   .cinematic-hero .hs-slide > div[aria-hidden='true'],
   .cinematic-hero > div[aria-hidden='true'] { display: none; }
   .cinematic-hero .hs-copy {
-    top: calc(100vw * 9 / 16);
+    top: var(--mobile-image-height);
     align-items: flex-start;
     background: #f4f1ea;
   }
@@ -661,4 +671,9 @@ html { scroll-padding-top: 120px; }
   .site-header > .mx-auto { gap: .5rem; }
   .site-header a[aria-label='JUFAJA Constructions home'] { padding-inline: 0; }
   .site-header__enquire { padding-inline: .75rem; }
+}
+
+@media (max-width: 429px) {
+  .cinematic-hero { --mobile-image-height: clamp(340px, 54vh, 460px); }
+  .cinematic-hero .hs-image-frame { min-height: 340px; }
 }

@@ -141,16 +141,18 @@ export default function HeroSlideshow() {
             className={`hs-slide absolute inset-0 ${isActive ? 'is-active z-20' : isPrevious ? 'is-previous z-10' : 'z-0'}`}
             style={{ '--fm': slide.focusMobile, '--fd': slide.focusDesktop } as React.CSSProperties}
           >
-            <Image
-              src={slide.photo}
-              alt={slide.alt}
-              fill
-              priority={index === 0}
-              loading={index === 0 ? undefined : 'eager'}
-              quality={80}
-              sizes="100vw"
-              className="hs-img object-cover"
-            />
+            <div className="hs-image-frame absolute inset-0">
+              <Image
+                src={slide.photo}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                loading={index === 0 ? undefined : 'eager'}
+                quality={80}
+                sizes="100vw"
+                className="hs-img object-cover"
+              />
+            </div>
             {/* Readability: soft forest gradients sit under the copy so the house stays the hero */}
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 hero-image-scrim" />
             <div aria-hidden="true" className={`pointer-events-none absolute inset-0 bg-gradient-to-r from-jufaja-forest-950/35 via-transparent to-transparent ${alignRight ? 'lg:hidden' : ''}`} />
