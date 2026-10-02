@@ -96,7 +96,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-transparent">
+    <header data-menu-open={menuOpen} className="site-header sticky top-0 z-40 w-full border-b border-transparent">
       <div aria-hidden="true" className={`absolute inset-0 -z-10 border-b transition-opacity duration-300 ${overlay ? 'opacity-0' : 'opacity-100'} ${scrolled ? 'border-jufaja-gold/30 bg-white/95 shadow-jufaja-soft backdrop-blur-md' : 'border-jufaja-border bg-jufaja-cream/95 backdrop-blur-sm'}`} />
       <div aria-hidden="true" className={`absolute inset-0 -z-10 bg-gradient-to-b from-jufaja-forest-950/75 to-jufaja-forest-950/0 transition-opacity duration-300 ${overlay ? 'opacity-100' : 'opacity-0'}`} />
       <div className="mx-auto flex min-h-[88px] max-w-[1440px] items-center justify-between gap-2 px-4 min-[360px]:min-h-[100px] min-[360px]:gap-4 sm:min-h-[100px] sm:px-6 lg:px-8">
@@ -114,7 +114,7 @@ export default function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 xl:ml-0">
-          <button type="button" onClick={openEnquiry} className={`btn ${overlay ? 'btn-gold' : 'btn-primary'} min-h-11 whitespace-nowrap px-3 tracking-[0.1em] min-[360px]:px-4 sm:px-6 sm:tracking-[0.14em]`}>
+          <button type="button" onClick={openEnquiry} className={`site-header__enquire btn ${overlay ? 'btn-gold' : 'btn-primary'} min-h-11 whitespace-nowrap px-3 tracking-[0.1em] min-[360px]:px-4 sm:px-6 sm:tracking-[0.14em]`}>
             <span className="min-[360px]:hidden">Enquire</span><span className="hidden min-[360px]:inline">Enquire Now</span>
           </button>
           <button
@@ -124,7 +124,7 @@ export default function Header() {
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen((open) => !open)}
-            className={`inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border transition-colors xl:hidden ${overlay ? 'border-white/60 text-white hover:bg-white/10' : 'border-jufaja-border text-jufaja-forest-900 hover:bg-jufaja-stone'}`}
+            className={`site-header__menu inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm border transition-colors xl:hidden ${overlay ? 'border-white/60 text-white hover:bg-white/10' : 'border-jufaja-border text-jufaja-forest-900 hover:bg-jufaja-stone'}`}
           >
             {menuOpen ? <X aria-hidden="true" className="h-5 w-5" /> : <Menu aria-hidden="true" className="h-5 w-5" />}
           </button>

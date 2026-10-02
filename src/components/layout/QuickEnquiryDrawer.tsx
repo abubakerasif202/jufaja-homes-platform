@@ -106,7 +106,7 @@ export default function QuickEnquiryDrawer() {
   return (
     <>
       {/* Floating CTA Pill */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div data-dialog-open={isOpen} className="mobile-enquiry-rail fixed bottom-6 right-6 z-40">
         <button
           onClick={() => {
             setTargetContext('');
@@ -115,7 +115,7 @@ export default function QuickEnquiryDrawer() {
             previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
             setIsOpen(true);
           }}
-          className="flex items-center gap-2.5 btn btn-primary shadow-2xl group cursor-pointer"
+          className="mobile-enquiry-cta flex items-center gap-2.5 btn btn-primary shadow-2xl group cursor-pointer"
         >
           <MessageSquare aria-hidden="true" className="w-4 h-4" />
           <span>Enquire Now</span>

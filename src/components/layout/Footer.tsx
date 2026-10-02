@@ -33,7 +33,7 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-jufaja-gold/30 bg-jufaja-forest-950 text-jufaja-ivory">
+    <footer className="site-footer relative overflow-hidden border-t border-jufaja-gold/30 bg-jufaja-forest-950 text-jufaja-ivory">
       <div aria-hidden="true" className="bg-blueprint-dark pointer-events-none absolute inset-0 opacity-50" />
       <svg aria-hidden="true" viewBox="0 0 800 400" fill="none" className="pointer-events-none absolute -right-20 -top-10 hidden h-[26rem] text-jufaja-gold-500 opacity-20 md:block">
         <path d="M20 380 L400 40 L780 380" stroke="currentColor" strokeWidth="1" />

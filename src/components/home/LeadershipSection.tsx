@@ -24,7 +24,7 @@ export default function LeadershipSection({ variant = 'home' }: LeadershipSectio
   const isAbout = variant === 'about';
 
   return (
-    <section aria-labelledby="leadership-heading" className="relative isolate overflow-hidden bg-jufaja-forest-950 py-20 text-jufaja-ivory sm:py-28 lg:py-32">
+    <section aria-labelledby="leadership-heading" className={`relative isolate overflow-hidden bg-jufaja-forest-950 py-20 text-jufaja-ivory sm:py-28 lg:py-32 ${isAbout ? '' : 'leadership-scene--home'}`}>
       <div aria-hidden="true" className="bg-blueprint-dark pointer-events-none absolute inset-0 -z-10 opacity-70" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_20%_40%,rgba(41,85,64,0.55),transparent)]" />
       <RoofLines />

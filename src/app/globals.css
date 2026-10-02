@@ -543,3 +543,122 @@ html { scroll-padding-top: 120px; }
   .cinematic-hero .type-hero { font-size: clamp(2.8rem, 10vw, 3.8rem); }
   .project-study__image { aspect-ratio: 4 / 3; }
 }
+
+/* Mobile daylight palette. Desktop and tablet retain the existing cinematic system. */
+@media (max-width: 767px) {
+  :root { --mobile-enquiry-space: calc(5rem + env(safe-area-inset-bottom, 0px)); }
+  body { padding-bottom: var(--mobile-enquiry-space); }
+  .site-header { background: #0d1e16; border-bottom-color: #c5a05960; }
+  .site-header > div[aria-hidden='true'] { display: none; }
+  .site-header__enquire { background: #c5a059; color: #0d1e16; }
+  .site-header__enquire::before { background: #faf8f5; }
+  .site-header__menu { color: #faf8f5; border-color: #c5a05980; }
+  .site-header__menu:hover { background: #295540; }
+  .site-header :focus-visible { outline-color: #dfc17b; }
+
+  /* A fixed copy frame reserves the longest headline while images crossfade. */
+  .cinematic-hero {
+    --mobile-copy-height: 27rem;
+    margin-top: 0;
+    height: calc(100vw * 9 / 16 + var(--mobile-copy-height));
+    min-height: 0;
+    max-height: none;
+    background: #f4f1ea;
+    color: #163024;
+  }
+  .cinematic-hero .hs-img {
+    top: 0 !important;
+    bottom: auto !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .cinematic-hero .hero-image-scrim { background: none; }
+  .cinematic-hero .hs-slide > div[aria-hidden='true'],
+  .cinematic-hero > div[aria-hidden='true'] { display: none; }
+  .cinematic-hero .hs-copy {
+    top: calc(100vw * 9 / 16);
+    align-items: flex-start;
+    background: #f4f1ea;
+  }
+  .cinematic-hero .hs-copy > div { padding: 1.5rem var(--scene-gutter) 6.5rem; }
+  .cinematic-hero .type-hero {
+    margin-top: 0;
+    font-size: clamp(2.8rem, 9vw, 3.1rem);
+    min-height: 13rem;
+    color: #163024;
+    text-shadow: none;
+  }
+  .cinematic-hero .hs-line.text-jufaja-gold-400 { color: #80622b; }
+  .cinematic-hero .hero-lead { color: #5c5852; text-shadow: none; font-size: .9rem; line-height: 1.6; margin-top: .75rem; }
+  .cinematic-hero .eyebrow { color: #80622b; margin-bottom: .75rem; }
+  .cinematic-hero .hero-ctas { margin-top: 1.25rem; }
+  .cinematic-hero .hero-controls { bottom: 2.5rem; }
+  .cinematic-hero .hero-controls p, .cinematic-hero .hs-ctl { color: #163024; }
+  .cinematic-hero .hero-controls p > span { color: #5c5852; }
+  .cinematic-hero .hs-ctl { border-color: #80622b70; }
+  .cinematic-hero .hs-ctl:hover { background: #1630240d; color: #80622b; }
+  .cinematic-hero [aria-label='Choose slide'] button > span { background: #16302440; }
+  .cinematic-hero [aria-label='Choose slide'] .hs-fill { background: #80622b; }
+  .cinematic-hero .hero-scroll { color: #163024; bottom: .5rem; gap: 1rem; }
+  .cinematic-hero .hero-scroll > span:last-child { border-color: #80622b80; }
+  .cinematic-hero :focus-visible { outline-color: #80622b; }
+
+  .service-scene { background: #fdfbf7; }
+  .leadership-scene--home { background: #f4f1ea; color: #163024; padding-block: 4rem; }
+  .leadership-scene--home > div[aria-hidden='true'] { display: none; }
+  .leadership-scene--home #leadership-heading { color: #163024; }
+  .leadership-scene--home .eyebrow,
+  .leadership-scene--home .lg\:col-span-7 .text-jufaja-gold-400,
+  .leadership-scene--home .lg\:col-span-7 .text-jufaja-gold-300 { color: #80622b; }
+  .leadership-scene--home .lg\:col-span-7 .text-jufaja-ivory\/60,
+  .leadership-scene--home .lg\:col-span-7 .text-jufaja-ivory\/80 { color: #5c5852; }
+  .contact-prompt { background: #fdfbf7; color: #163024; padding-block: 4rem; }
+  .contact-prompt > div[aria-hidden='true'], .contact-prompt > .absolute { display: none; }
+  .contact-prompt h2 { color: #163024; }
+  .contact-prompt .eyebrow { color: #80622b; }
+  .contact-prompt .type-lead { color: #5c5852; }
+  .leadership-scene--home .btn-outline-light, .contact-prompt .btn-outline-light { background: transparent; color: #163024; border-color: #80622b; }
+  .leadership-scene--home .btn-outline-light::before, .contact-prompt .btn-outline-light::before { background: #163024; }
+  .leadership-scene--home .btn-outline-light:hover, .contact-prompt .btn-outline-light:hover,
+  .leadership-scene--home .btn-outline-light:focus-visible, .contact-prompt .btn-outline-light:focus-visible { color: #faf8f5; }
+  .leadership-scene--home :focus-visible { outline-color: #80622b; }
+  .site-footer { background: #1a1a1a; }
+  .site-footer .pr-44 { padding-right: 0; }
+
+  /* A reserved safe-area rail prevents the fixed enquiry action obscuring content. */
+  .mobile-enquiry-rail {
+    inset: auto 0 0;
+    height: var(--mobile-enquiry-space);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: .75rem 1rem calc(.75rem + env(safe-area-inset-bottom, 0px));
+    background: #faf8f5;
+    border-top: 1px solid #e6e2da;
+  }
+  .mobile-enquiry-cta { background: #1a1a1a; border-color: #c5a059; color: #faf8f5; min-height: 3.25rem; }
+  .mobile-enquiry-cta svg { color: #dfc17b; }
+  .mobile-enquiry-cta::before { background: #292929; }
+  .mobile-enquiry-cta:hover, .mobile-enquiry-cta:focus-visible { color: #faf8f5; }
+  .mobile-enquiry-cta:focus-visible { outline-color: #80622b; }
+  .mobile-enquiry-rail[data-dialog-open='true'],
+  body:has(.site-header[data-menu-open='true']) .mobile-enquiry-rail,
+  body:has(.jufaja-intro) .mobile-enquiry-rail { visibility: hidden; pointer-events: none; }
+  .jufaja-intro-seen body:has(.jufaja-intro) .mobile-enquiry-rail { visibility: visible; pointer-events: auto; }
+  .jufaja-intro-seen body:has(.site-header[data-menu-open='true']) .mobile-enquiry-rail,
+  .jufaja-intro-seen .mobile-enquiry-rail[data-dialog-open='true'] { visibility: hidden; pointer-events: none; }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .cinematic-hero { --mobile-copy-height: 31rem; }
+}
+
+@media (max-width: 767px) {
+  .project-study__info h3, .service-option h3 button { overflow-wrap: anywhere; }
+  .project-scene__heading .btn { white-space: normal; max-width: 100%; }
+}
+@media (min-width: 360px) and (max-width: 389px) {
+  .site-header > .mx-auto { gap: .5rem; }
+  .site-header a[aria-label='JUFAJA Constructions home'] { padding-inline: 0; }
+  .site-header__enquire { padding-inline: .75rem; }
+}
