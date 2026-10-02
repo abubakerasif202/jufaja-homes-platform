@@ -28,7 +28,7 @@ export default function FacadeGallery({ facades, designName }: Props) {
           sizes="(max-width: 1023px) 100vw, 66vw"
           className="object-cover"
         /></motion.div></AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-jufaja-forest-950/80 to-transparent" />
 
         <div className="absolute bottom-6 left-6 text-white">
           <span className="eyebrow eyebrow--light mb-1 block">
@@ -52,11 +52,11 @@ export default function FacadeGallery({ facades, designName }: Props) {
               className={`relative h-20 w-32 shrink-0 rounded-sm overflow-hidden border-2 transition-[transform,opacity,border-color] duration-300 cursor-pointer ${
                 idx === selectedIdx
                   ? 'border-jufaja-gold-600 shadow-md scale-[1.02]'
-                  : 'border-jufaja-border opacity-70 hover:opacity-100'
+                  : 'border-jufaja-border hover:border-jufaja-gold-500'
               }`}
             >
               <Image src={f.image} alt="" fill sizes="128px" className="object-cover" />
-              <div className="absolute inset-0 bg-black/30 flex items-end p-1.5">
+              <div className="absolute inset-x-0 bottom-0 bg-jufaja-forest-950/80 flex items-end p-1.5">
                 <span className="text-[10px] font-bold text-white truncate drop-shadow">{f.name}</span>
               </div>
             </button>

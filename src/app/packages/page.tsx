@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PackagesPage() {
   return (
     <div className="min-h-[65vh] bg-jufaja-cream">
-      <PageHero image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=85" tone="green" label="Architecture reference">
+      <PageHero image="/images/architecture/daylight-family-home.webp" tone="green" label="Architecture reference">
         <p className="eyebrow">House &amp; land</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Let’s talk about current options.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">

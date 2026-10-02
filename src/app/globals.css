@@ -322,7 +322,7 @@ html body:has(.jufaja-intro) .hs-slide .hs-rise { animation-play-state: paused; 
 .service-scene__heading { display: flex; align-items: end; justify-content: space-between; gap: 3rem; max-width: 1600px; margin: 0 auto 4rem; }
 .service-scene__body { display: grid; grid-template-columns: 1fr 1fr; max-width: 1600px; margin: auto; gap: clamp(2rem, 5vw, 6rem); align-items: stretch; }
 .service-scene__image { position: relative; min-height: 650px; overflow: hidden; }
-.service-scene__image::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,#0d1e16a0); pointer-events: none; }
+.service-scene__image::after { content: ''; position: absolute; inset: auto 0 0; height: 5rem; background: linear-gradient(transparent,#0d1e16a0); pointer-events: none; }
 .service-scene__image-caption { position: absolute; z-index: 2; inset: auto 1.5rem 1.5rem; display: flex; justify-content: space-between; gap: 1rem; color: white; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; }
 .service-scene__large-number { position: absolute; right: 1.5rem; top: 0; z-index: 2; font-family: var(--font-display),serif; font-size: 10rem; color: white; opacity: .65; line-height: 1; }
 .service-option { border-bottom: 1px solid #16302430; }
@@ -358,7 +358,7 @@ html body:has(.jufaja-intro) .hs-slide .hs-rise { animation-play-state: paused; 
 .project-study:nth-child(even) { margin-left: auto; width: 72%; }
 .project-study:last-child { margin-bottom: 0; }
 .project-study__image { display: block; position: relative; aspect-ratio: 16/9; overflow: hidden; background: #1e4131; }
-.project-study__image::after { content: ''; position: absolute; inset: 60% 0 0; background: linear-gradient(transparent,#0d1e16b0); pointer-events: none; }
+.project-study__image::after { content: ''; position: absolute; inset: auto 0 0; height: 5rem; background: linear-gradient(transparent,#0d1e16b0); pointer-events: none; }
 .project-study__badge { position: absolute; top: 1.5rem; left: 1.5rem; font-size: .6rem; text-transform: uppercase; letter-spacing: .15em; background: #0d1e16; border: 1px solid #c5a05980; padding: .7rem 1rem; }
 .project-study__arrow { position: absolute; z-index: 2; right: 1.5rem; bottom: 1.5rem; width: 3.5rem; height: 3.5rem; display: grid; place-items: center; border: 1px solid #dfc17b; border-radius: 50%; transition: transform .4s, background .4s; }
 .project-study__image:hover .project-study__arrow { transform: rotate(45deg); background: #c5a059; color: #0d1e16; }
@@ -455,7 +455,7 @@ details summary span { transition: transform .3s; }
 }
 .hero-detail { position: absolute; z-index: 26; right: var(--scene-gutter); bottom: 11rem; width: clamp(220px, 20vw, 330px); padding: .6rem; border: 1px solid #dfc17b60; background: #0d1e1650; transform: perspective(1000px) rotateY(-10deg) rotateX(3deg); pointer-events: none; }
 .hero-detail__frame { position: relative; aspect-ratio: 16/10; overflow: hidden; }
-.hero-detail__frame img { object-position: 85% 50%; transform: scale(1.6); }
+.hero-detail__frame img { object-position: 50% 45%; }
 .hero-detail__label { display: flex; justify-content: space-between; gap: 1rem; padding: .75rem .2rem .2rem; font-size: .55rem; letter-spacing: .14em; text-transform: uppercase; color: #faf8f5; }
 @media (max-width: 1023px) { .hero-detail { display: none; } }
 @media (prefers-reduced-motion: reduce) { .hero-detail { transform: none; } }
@@ -522,3 +522,24 @@ html { scroll-padding-top: 120px; }
 .cinematic-hero :focus-visible, .project-scene :focus-visible, footer :focus-visible, .mobile-menu :focus-visible,
 .page-hero:not(.page-hero--ivory) :focus-visible, section[aria-labelledby='leadership-heading'] :focus-visible,
 .enquiry-drawer__panel .bg-jufaja-forest :focus-visible { outline-color: var(--jufaja-gold-400); }
+
+/* Daylight architecture: keep the facade clear; shade only the reading zones. */
+.hero-image-scrim { background: linear-gradient(to top, #0d1e16e8 0%, #0d1e1680 20%, transparent 58%); }
+.hs-copy .type-hero, .hs-copy .hero-lead { text-shadow: 0 2px 14px #0d1e1680; }
+.contact-prompt__scrim { background: linear-gradient(90deg, #0d1e16f5 0%, #0d1e16dc 32%, #0d1e1640 62%, transparent 85%); }
+.contact-prompt .btn-outline-light { background: #0d1e16c9; }
+.page-hero__visual img, .service-scene__image img, .project-study__image img, .journal-image img, .facade-view img { object-position: 50% 45%; }
+/* Wide facade images need shorter frames on phones to retain both building edges. */
+@media (max-width: 639px) {
+  .page-hero__visual { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+  .journal-image, .facade-view { height: auto; aspect-ratio: 4 / 3; }
+  .contact-prompt__scrim { background: linear-gradient(to top, #0d1e16f5 0%, #0d1e16df 42%, #0d1e1630 90%); }
+  .contact-prompt { padding-top: 15rem; }
+}
+@media (max-width: 639px) {
+  .cinematic-hero { min-height: 800px; max-height: none; }
+  .cinematic-hero .hs-img { top: 101px !important; bottom: auto !important; height: auto !important; aspect-ratio: 16 / 9; object-fit: cover; }
+  .cinematic-hero .hero-image-scrim { background: linear-gradient(to top, #0d1e16 0%, #0d1e16 48%, transparent 65%); }
+  .cinematic-hero .type-hero { font-size: clamp(2.8rem, 10vw, 3.8rem); }
+  .project-study__image { aspect-ratio: 4 / 3; }
+}

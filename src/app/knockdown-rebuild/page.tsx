@@ -25,14 +25,14 @@ const questions = [
 export default function KnockdownRebuildPage() {
   return (
     <div className="bg-jufaja-cream">
-      <PageHero image="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85" tone="burgundy" label="Architecture reference">
+      <PageHero image="/images/architecture/daylight-sculptural-home.webp" tone="burgundy" label="Architecture reference">
         <p className="eyebrow">Knockdown rebuild</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Make room for a new chapter.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">Replacing an existing home involves site, design, planning and demolition questions. Start by understanding what applies to your property.</p>
           <ButtonLink href="/contact?interest=Knockdown%20Rebuild" className="mt-8">Discuss your site</ButtonLink>
       </PageHero>
 
-      <PlanningSequence eyebrow="Questions to work through" title="Start with the property." items={topics} image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85" />
+      <PlanningSequence eyebrow="Questions to work through" title="Start with the property." items={topics} image="/images/architecture/daylight-family-home.webp" />
 
       <section className="border-y border-jufaja-border bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

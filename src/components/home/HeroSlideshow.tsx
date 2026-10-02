@@ -152,9 +152,9 @@ export default function HeroSlideshow() {
               className="hs-img object-cover"
             />
             {/* Readability: soft forest gradients sit under the copy so the house stays the hero */}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-jufaja-forest-950/75 via-jufaja-forest-950/10 to-transparent" />
-            <div aria-hidden="true" className={`pointer-events-none absolute inset-0 bg-gradient-to-r from-jufaja-forest-950/50 via-jufaja-forest-950/5 to-transparent ${alignRight ? 'lg:hidden' : ''}`} />
-            {alignRight && <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-l from-jufaja-forest-950/55 via-jufaja-forest-950/5 to-transparent lg:block" />}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 hero-image-scrim" />
+            <div aria-hidden="true" className={`pointer-events-none absolute inset-0 bg-gradient-to-r from-jufaja-forest-950/35 via-transparent to-transparent ${alignRight ? 'lg:hidden' : ''}`} />
+            {alignRight && <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-l from-jufaja-forest-950/35 via-transparent to-transparent lg:block" />}
             <div className="hs-copy absolute inset-0 z-40 flex items-end">
               <div className={`mx-auto w-full max-w-7xl px-4 pb-32 sm:px-6 lg:px-8 lg:pb-44 ${alignRight ? 'lg:text-right' : ''}`}>
                 {index === 0 && (

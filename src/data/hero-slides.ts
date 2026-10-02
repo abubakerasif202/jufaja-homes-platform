@@ -1,6 +1,6 @@
 export interface HeroSlide {
   id: string;
-  /** Unsplash photo id already used elsewhere on the site; all imagery is illustrative, not JUFAJA project photography. */
+  /** Optimized local daylight concept image; all imagery is illustrative, not JUFAJA project photography. */
   photo: string;
   alt: string;
   /** Headline broken into lines; the final line is set in the gold italic accent. */
@@ -14,48 +14,46 @@ export interface HeroSlide {
   align?: 'left' | 'right';
 }
 
-const unsplash = (photo: string) => `https://images.unsplash.com/${photo}?auto=format&fit=crop&w=2400&q=80`;
-
 export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 'garden-residence',
-    photo: unsplash('photo-1600585154340-be6161a56a0c'),
-    alt: 'Illustrative image of a contemporary two-storey home with timber and dark cladding, set in a garden under a large tree at dusk',
+    photo: '/images/architecture/daylight-family-home.webp',
+    alt: 'Illustrative daylight view of a contemporary stone and timber family home with a clear driveway',
     lines: ['Building Homes', 'for a Brighter', 'Tomorrow.'],
     copy: 'Explore considered homes designed for modern Australian living.',
     cta: { label: 'Explore Home Designs', href: '/designs' },
-    focusMobile: '64% 50%',
+    focusMobile: '50% 45%',
     focusDesktop: '50% 45%',
   },
   {
     id: 'pool-residence',
-    photo: unsplash('photo-1600596542815-ffad4c1539a9'),
-    alt: 'Illustrative image of a white contemporary home with glass balustrades beside a swimming pool',
+    photo: '/images/architecture/daylight-cantilever-home.webp',
+    alt: 'Illustrative daylight view of a cantilevered white home with glass balustrades and timber soffits',
     lines: ['Homes Designed', 'Around You.'],
     copy: 'Share your site and priorities, and shape a home around them.',
     cta: { label: 'Custom Homes', href: '/custom-homes' },
-    focusMobile: '68% 50%',
-    focusDesktop: '50% 40%',
+    focusMobile: '50% 45%',
+    focusDesktop: '50% 45%',
   },
   {
     id: 'street-facade',
-    photo: unsplash('photo-1600566753376-12c8ab7fb75b'),
-    alt: 'Illustrative image of a timber and black-clad home facade at blue hour with a glowing timber stair behind glass',
+    photo: '/images/architecture/daylight-sculptural-home.webp',
+    alt: 'Illustrative daylight view of a sculptural stone home with a projecting white upper floor',
     lines: ['Rebuild Where', 'You Already', 'Belong.'],
     copy: 'Explore the information available for replacing an existing home.',
     cta: { label: 'Knockdown Rebuild', href: '/knockdown-rebuild' },
-    focusMobile: '55% 50%',
+    focusMobile: '50% 45%',
     focusDesktop: '50% 45%',
     align: 'right',
   },
   {
     id: 'facade-detail',
-    photo: unsplash('photo-1600585154526-990dced4db0d'),
-    alt: 'Illustrative close view of a dark panelled home facade with a warm timber entry',
+    photo: '/images/architecture/daylight-paired-homes.webp',
+    alt: 'Illustrative daylight view of paired homes with clean stone facades and a central glazed entry',
     lines: ['Explore the', 'JUFAJA', 'Collection.'],
     copy: 'A small collection of residential design studies for reference.',
     cta: { label: 'View Design Inspiration', href: '/projects' },
-    focusMobile: '30% 55%',
-    focusDesktop: '50% 50%',
+    focusMobile: '50% 45%',
+    focusDesktop: '50% 45%',
   },
 ];

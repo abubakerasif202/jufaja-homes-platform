@@ -19,7 +19,7 @@ const considerations = [
 export default function CustomHomesPage() {
   return (
     <div className="bg-jufaja-cream">
-      <PageHero image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=85" tone="green" label="Architecture reference">
+      <PageHero image="/images/architecture/daylight-cantilever-home.webp" tone="green" label="Architecture reference">
         <p className="eyebrow">Custom homes</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">A home shaped around your brief.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">Start with the site and the way you want to live. A clear brief helps you explore appropriate design options and identify what needs closer review.</p>
@@ -28,7 +28,7 @@ export default function CustomHomesPage() {
             <ButtonLink href="/designs" variant="outline" arrow={false}>Browse listed designs</ButtonLink>
           </div>
       </PageHero>
-      <PlanningSequence eyebrow="A useful brief" title="What would you like to work through?" items={considerations.map(([title, copy]) => ({ title, copy }))} image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85" />
+      <PlanningSequence eyebrow="A useful brief" title="What would you like to work through?" items={considerations.map(([title, copy]) => ({ title, copy }))} image="/images/architecture/daylight-stone-residence.webp" />
     </div>
   );
 }

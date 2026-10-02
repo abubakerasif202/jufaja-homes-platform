@@ -25,7 +25,7 @@ export default function DesignCard({ design }: Props) {
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 420px"
           className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
         />}
-        <div className="absolute inset-0 bg-gradient-to-t from-jufaja-forest-950/70 via-transparent to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-jufaja-forest-950/85 to-transparent" />
 
         <div className="absolute bottom-16 left-4 rounded-sm bg-white/95 px-2.5 py-1 text-[10px] font-medium text-jufaja-forest-900">Illustrative image</div>
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-jufaja-cream">
-      <PageHero image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85" tone="ivory" label="Architecture reference">
+      <PageHero image="/images/architecture/daylight-paired-homes.webp" tone="ivory" label="Architecture reference">
         <p className="eyebrow">Contact</p>
           <h1 className="type-h1 mt-3 font-serif text-jufaja-forest">Tell us what you’re planning.</h1>
           <p className="type-lead mt-5 max-w-2xl text-jufaja-muted">Share a few details about your plans. Please avoid including sensitive personal or financial information in the message.</p>

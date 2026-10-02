@@ -16,7 +16,7 @@ export default function DesignsPage() {
 
   return (
     <div className="min-h-screen bg-jufaja-cream">
-      <PageHero image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=85" tone="green">
+      <PageHero image="/images/architecture/daylight-family-home.webp" tone="green">
         <p className="eyebrow">The design collection</p>
         <h1 className="type-h1 mt-4 text-jufaja-forest">Find your way home.</h1>
         <p className="type-lead mt-6 text-jufaja-muted">Compare the information shown for {designs.length} listed home designs. Images are illustrative and listed figures require confirmation; ask JUFAJA for current drawings and specifications.</p>
