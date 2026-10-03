@@ -27,3 +27,9 @@ test('menu and drawer reserve dynamic viewport and safe-area space', () => {
   assert.equal(declarations('.enquiry-drawer__panel', 'height', '').at(-1), '100dvh');
   assert.match(fs.readFileSync('src/app/layout.tsx', 'utf8'), /viewportFit: 'cover'/);
 });
+test('catalogue cards cannot shrink into six phone-width columns', () => {
+  assert.equal(declarations('.featured-rail', 'display', '').at(-1), 'flex');
+  assert.match(declarations('.featured-rail__item', 'flex', '').at(-1), /^0 0 clamp/);
+  assert.match(declarations('.featured-rail__item', 'flex', '(max-width: 767px)').at(-1), /^0 0 clamp\(15rem, calc\(100vw/);
+  assert.equal(declarations('.featured-rail', 'grid-auto-columns', '(max-width: 767px)').length, 0);
+});
