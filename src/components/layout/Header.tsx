@@ -100,8 +100,8 @@ export default function Header() {
     };
   }, [menuOpen]);
 
-  // Over the home hero the header is transparent and the logo sits directly on the image with a soft light halo; everywhere else (and once scrolled) it is solid.
-  const overlay = pathname === '/' && !scrolled && !menuOpen;
+  // Keep navigation on a light surface so it remains readable above every image.
+  const overlay = false;
 
   const openEnquiry = () => {
     setMenuOpen(false);
@@ -113,7 +113,7 @@ export default function Header() {
   };
 
   return (
-    <header data-menu-open={menuOpen} className="site-header sticky top-0 z-40 w-full border-b border-transparent">
+    <header data-menu-open={menuOpen} className="site-header cv-header sticky top-0 z-40 w-full border-b border-transparent">
       <div aria-hidden="true" className={`absolute inset-0 -z-10 border-b transition-opacity duration-300 ${overlay ? 'opacity-0' : 'opacity-100'} ${scrolled ? 'border-jufaja-gold/30 bg-white/95 shadow-jufaja-soft backdrop-blur-md' : 'border-jufaja-border bg-jufaja-cream/95 backdrop-blur-sm'}`} />
       <div aria-hidden="true" className={`absolute inset-0 -z-10 bg-gradient-to-b from-jufaja-forest-950/75 to-jufaja-forest-950/0 transition-opacity duration-300 ${overlay ? 'opacity-100' : 'opacity-0'}`} />
       <div className="mx-auto flex min-h-[88px] max-w-[1440px] items-center justify-between gap-2 px-4 min-[360px]:min-h-[100px] min-[360px]:gap-4 sm:min-h-[100px] sm:px-6 lg:px-8">
