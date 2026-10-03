@@ -93,6 +93,15 @@ try {
       assert(result.overflow <= 1, `${route} overflows ${result.overflow}px at ${viewport.width}`);
       assert(!result.errorOverlay, `${route} has a framework error overlay`);
       assert.equal(result.brokenImages.length, 0, `${route} has broken imagery`);
+      if (route === '/' && viewport.width <= 767) {
+        const rail = await page.locator('.featured-rail').evaluate(element => ({
+          width: element.clientWidth,
+          scrollWidth: element.scrollWidth,
+          cards: [...element.children].map(card => card.getBoundingClientRect().width),
+        }));
+        assert(rail.scrollWidth > rail.width, 'Mobile catalogue must scroll, not fit all six cards');
+        assert(rail.cards.every(width => width >= 240), 'Mobile catalogue cards must remain readable');
+      }
     }
   }
 
