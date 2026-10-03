@@ -22,13 +22,15 @@ const details = ['single', 'double', 'duplex'].map(type => {
   assert(design, `No ${type} listing exists`);
   return `/designs/${design.slug}`;
 });
-const routes = ['/', '/designs', ...details, '/projects', '/about-us', '/custom-homes', '/knockdown-rebuild', '/packages', '/display-homes', '/inclusions', '/contact'];
+const routes = ['/', '/designs', ...details, '/projects', '/about-us', '/custom-homes', '/knockdown-rebuild', '/packages', '/display-homes', '/inclusions', '/contact', '/privacy'];
 const viewports = [
   { width: 1920, height: 1080 }, { width: 1440, height: 900 },
   { width: 1280, height: 720 }, { width: 1280, height: 600 },
   { width: 1024, height: 768 }, { width: 768, height: 1024 },
   { width: 430, height: 932 }, { width: 390, height: 844 },
   { width: 375, height: 812 }, { width: 320, height: 720 },
+  { width: 360, height: 640 }, { width: 320, height: 568 },
+  { width: 844, height: 390 }, { width: 640, height: 360 },
 ];
 const report = { startedAt: new Date().toISOString(), base: base.origin, output, matrix: [], interactions: [], errors: [], warnings: [], enquiryRequestsIntercepted: 0 };
 let browser;
@@ -96,13 +98,10 @@ try {
 
   await page.setViewportSize({ width: 1440, height: 900 });
   await open('/');
-  for (const button of await page.locator('.service-option h3 button').all()) {
-    await button.click();
-    assert.equal(await button.getAttribute('aria-expanded'), 'true');
-    const panel = await button.getAttribute('aria-controls');
-    assert(await page.locator(`#${panel}`).isVisible());
-  }
-  report.interactions.push('All six service panels');
+  const intents = page.locator('.intent-tile');
+  assert.equal(await intents.count(), 6, 'Expected all six intent links');
+  for (const link of await intents.all()) assert((await link.getAttribute('href'))?.startsWith('/'));
+  report.interactions.push('All six service intent links');
   const rail = page.getByRole('region', { name: 'Featured home design collection' });
   await rail.scrollIntoViewIfNeeded();
   await page.getByRole('button', { name: 'Next home designs', exact: true }).click();
@@ -137,7 +136,7 @@ try {
   report.interactions.push('Mobile menu / Escape / resize unlock');
 
   await open('/designs');
-  await page.getByRole('button', { name: /Single Storey/ }).click();
+  await page.getByRole('button', { name: /Single storey/i }).click();
   await page.waitForURL(/dwelling_type=single/);
   await page.getByRole('button', { name: 'Reset filters', exact: true }).click();
   await page.waitForURL(url => !url.search);

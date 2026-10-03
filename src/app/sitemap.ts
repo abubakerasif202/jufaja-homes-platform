@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site-metadata';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://jufaja-homes-platform.vercel.app';
+  const baseUrl = SITE_URL;
+  // Unverified design references are noindex and intentionally excluded.
   // Core Static Routes
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -56,5 +58,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  return staticRoutes;
+  return [...staticRoutes, { url: `${baseUrl}/privacy`, changeFrequency: 'monthly', priority: 0.3 }];
 }

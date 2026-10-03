@@ -9,8 +9,7 @@ import DisplayLocationsStrip from '@/components/home/DisplayLocationsStrip';
 import ContactPrompt from '@/components/home/ContactPrompt';
 import CinematicIntro from '@/components/motion/CinematicIntro';
 
-import rawDesigns from '@/data/designs.json';
-import type { HomeDesign } from '@/types';
+import { catalogueDesigns } from '@/lib/catalogue';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const designs = rawDesigns as HomeDesign[];
+  const designs = catalogueDesigns;
 
   return (
     <div className="flex flex-col min-h-screen bg-white">

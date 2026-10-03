@@ -1,86 +1,47 @@
-const assert = require('assert');
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const load = require('./load-typescript.cjs');
+const { POST } = load('src/app/api/enquiry/route.ts', {
+  '@/lib/server/enquiry-rate-limit': { consumeEnquiryRateLimit: async () => ({ status: 'allowed' }) },
+});
+const request = body => new Request('http://localhost/api/enquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+const valid = { name: 'QA Test', email: 'qa@example.com', phone: '0412345678', enquiryType: 'Home design', targetDesignName: 'Blaxland Series', message: 'Test only' };
 
-// Test honeypot logic and lead validation
-function validateLead(data) {
-  const trap = data.website || data.honeypot;
-  if (trap && String(trap).trim() !== '') {
-    return { ok: true, isSpam: true, status: 200 };
+test('actual route rejects incomplete, malformed and oversized submissions without delivery', async () => {
+  for (const [body, status] of [[{}, 400], [{ ...valid, email: 'invalid' }, 400], [{ ...valid, phone: '123' }, 400], [{ ...valid, message: 'x'.repeat(21000) }, 413]]) {
+    assert.equal((await POST(request(body))).status, status);
   }
+  assert.equal((await POST(new Request('http://localhost/api/enquiry', { method: 'POST', body: '{}' }))).status, 415);
+});
 
-  const name = (data.name || data.fullName || '').trim();
-  const phone = (data.phone || '').trim();
-  const email = (data.email || '').trim().toLowerCase();
-
-  if (!name || !email || !phone) {
-    return { ok: false, error: 'Name, phone number, and email address are required.', status: 400 };
+test('actual route retains enquiry context, reports delivery failures and traps spam', async () => {
+  const originalFetch = global.fetch;
+  const keys = ['RESEND_API_KEY', 'ENQUIRY_TO_EMAIL', 'ENQUIRY_FROM_EMAIL'];
+  const originalEnvironment = keys.map(key => process.env[key]);
+  try {
+    process.env.RESEND_API_KEY = 'test-placeholder';
+    process.env.ENQUIRY_TO_EMAIL = 'team@example.com';
+    process.env.ENQUIRY_FROM_EMAIL = 'website@example.com';
+    let delivered;
+    global.fetch = async (_url, options) => {
+      delivered = JSON.parse(options.body);
+      return new Response(JSON.stringify({ id: 'mock-delivery' }), { status: 200 });
+    };
+    assert.equal((await POST(request(valid))).status, 200);
+    assert.match(delivered.text, /Design or package: Blaxland Series/);
+    assert.match(delivered.text, /Enquiry type: Home design/);
+    assert.equal(delivered.reply_to, 'qa@example.com');
+    assert.equal(delivered.subject, 'Website enquiry: Home design');
+    global.fetch = async () => new Response('{}', { status: 500 });
+    const failed = await POST(request(valid));
+    assert.equal(failed.status, 502);
+    assert.equal((await failed.json()).success, false);
+    global.fetch = async () => { throw new Error('Spam must not attempt delivery'); };
+    assert.equal((await POST(request({ ...valid, honeypot: 'spam' }))).status, 200);
+    delete process.env.RESEND_API_KEY;
+    assert.equal((await POST(request(valid))).status, 503);
+  } finally {
+    global.fetch = originalFetch;
+    keys.forEach((key, i) => { if (originalEnvironment[i] === undefined) delete process.env[key]; else process.env[key] = originalEnvironment[i]; });
   }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return { ok: false, error: 'Please enter a valid email address.', status: 400 };
-  }
-
-  return { ok: true, isSpam: false, status: 200 };
-}
-
-console.log('--- RUNNING LEAD API UNIT TESTS ---');
-
-// Test 1: Valid payload from Contact form
-const contactPayload = {
-  name: 'Sarah Jenkins',
-  phone: '0412345678',
-  email: 'sarah.jenkins@example.com',
-  enquiryType: 'Knockdown Rebuild',
-  suburb: 'Camden'
-};
-const res1 = validateLead(contactPayload);
-assert.strictEqual(res1.ok, true, 'Valid contact payload should pass');
-assert.strictEqual(res1.isSpam, false);
-console.log('✓ Test 1: Valid contact form payload passes');
-
-// Test 2: Valid payload from Quick Enquiry Drawer
-const drawerPayload = {
-  fullName: 'David Miller',
-  phone: '0499887766',
-  email: 'david@example.com.au',
-  interestType: 'New Build',
-  targetDesignName: 'Verona 35 Series'
-};
-const res2 = validateLead(drawerPayload);
-assert.strictEqual(res2.ok, true, 'Valid drawer payload should pass');
-console.log('✓ Test 2: Valid drawer form payload passes');
-
-// Test 3: Spambot with honeypot triggered
-const spamPayload = {
-  name: 'Spam Bot',
-  phone: '123456789',
-  email: 'bot@spam.com',
-  website: 'http://spam-link.ru'
-};
-const res3 = validateLead(spamPayload);
-assert.strictEqual(res3.ok, true, 'Spambots should get a silent 200 without error');
-assert.strictEqual(res3.isSpam, true, 'Should be flagged as spam');
-console.log('✓ Test 3: Spambot honeypot correctly trapped');
-
-// Test 4: Missing required field
-const incompletePayload = {
-  name: 'No Phone Person',
-  email: 'user@example.com'
-};
-const res4 = validateLead(incompletePayload);
-assert.strictEqual(res4.ok, false);
-assert.strictEqual(res4.status, 400);
-console.log('✓ Test 4: Incomplete submission fails with 400');
-
-// Test 5: Invalid email format
-const badEmailPayload = {
-  name: 'Bad Email',
-  phone: '0411223344',
-  email: 'not-an-email'
-};
-const res5 = validateLead(badEmailPayload);
-assert.strictEqual(res5.ok, false);
-assert.strictEqual(res5.status, 400);
-console.log('✓ Test 5: Malformed email rejected with 400');
-
-console.log('--- ALL LEAD API TESTS PASSED (5/5) ---');
+});

@@ -1,13 +1,9 @@
 import PlanningSequence from '@/components/ui/PlanningSequence';
 import PageHero from '@/components/ui/PageHero';
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site-metadata';
 import ButtonLink from '@/components/ui/ButtonLink';
 
-export const metadata: Metadata = {
-  title: 'Custom Homes',
-  description: 'Discuss a custom home brief, your site and the design questions that matter to you with JUFAJA Constructions.',
-  alternates: { canonical: '/custom-homes' },
-};
+export const metadata = pageMetadata('Custom Homes', 'Discuss a custom home brief, your site and the design questions that matter to you with JUFAJA Constructions.', '/custom-homes');
 
 const considerations = [
   ['Site shape and levels', 'Talk through boundaries, access, levels and the existing conditions on your property.'],

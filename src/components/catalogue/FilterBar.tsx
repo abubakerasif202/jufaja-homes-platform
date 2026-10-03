@@ -18,7 +18,7 @@ const categoryLabels: { label: string; value: DwellingType | 'all' }[] = [
   { label: 'Single storey', value: 'single' },
   { label: 'Double storey', value: 'double' },
   { label: 'Duplex', value: 'duplex' },
-  { label: 'Granny flat', value: 'granny' },
+  { label: 'Secondary living', value: 'granny' },
   { label: 'Rural and acreage', value: 'rural' },
 ];
 

@@ -6,8 +6,8 @@ export default function DisplayLocationsStrip() {
       <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8">
         <div className="lg:col-span-8">
           <p className="eyebrow">Display homes</p>
-          <h2 className="type-h2 mt-3 font-serif text-jufaja-forest">Check what is open before you visit.</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-jufaja-muted">Locations, opening times and designs on display can change. Contact JUFAJA to confirm current details before travelling.</p>
+          <h2 className="type-h2 mt-3 font-serif text-jufaja-forest">Ask about viewing a home.</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-jufaja-muted">Viewing locations and opening hours are not published here. Ask JUFAJA about current opportunities before planning a visit.</p>
         </div>
         <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
           <ButtonLink href="/display-homes" variant="outline">Display home info</ButtonLink>

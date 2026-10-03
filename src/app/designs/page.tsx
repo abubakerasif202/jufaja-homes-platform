@@ -1,18 +1,13 @@
 import PageHero from '@/components/ui/PageHero';
 import React, { Suspense } from 'react';
 import DesignsCatalogueClient from './DesignsCatalogueClient';
-import rawDesigns from '@/data/designs.json';
-import { HomeDesign } from '@/types';
-import { Metadata } from 'next';
+import { catalogueDesigns } from '@/lib/catalogue';
+import { pageMetadata } from '@/lib/site-metadata';
 
-export const metadata: Metadata = {
-  title: 'Home Design Catalogue',
-  description: 'Browse JUFAJA Constructions home design listings. Listed images, plans, dimensions and specifications are indicative and should be confirmed directly.',
-  alternates: { canonical: '/designs' },
-};
+export const metadata = pageMetadata('Home Design Catalogue', 'Browse JUFAJA Constructions home design listings. Listed images, plans, dimensions and specifications are indicative and should be confirmed directly.', '/designs');
 
 export default function DesignsPage() {
-  const designs = rawDesigns as HomeDesign[];
+  const designs = catalogueDesigns;
 
   return (
     <div className="min-h-screen bg-jufaja-cream">

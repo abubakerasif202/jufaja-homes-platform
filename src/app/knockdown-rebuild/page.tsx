@@ -1,13 +1,9 @@
 import PlanningSequence from '@/components/ui/PlanningSequence';
 import PageHero from '@/components/ui/PageHero';
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site-metadata';
 import ButtonLink from '@/components/ui/ButtonLink';
 
-export const metadata: Metadata = {
-  title: 'Knockdown Rebuild Information',
-  description: 'Explore questions to consider when planning a knockdown rebuild and contact JUFAJA Constructions to discuss your site.',
-  alternates: { canonical: '/knockdown-rebuild' },
-};
+export const metadata = pageMetadata('Knockdown Rebuild Information', 'Explore questions to consider when planning a knockdown rebuild and contact JUFAJA Constructions to discuss your site.', '/knockdown-rebuild');
 
 const topics = [
   { title: 'The site', copy: 'Existing structures, access, services, trees, easements and site levels may affect what is possible.' },
