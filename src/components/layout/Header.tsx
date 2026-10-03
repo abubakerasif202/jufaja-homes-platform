@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 import JufajaLogo from '@/components/brand/JufajaLogo';
 
@@ -17,7 +17,15 @@ const links = [
   { href: '/contact', label: 'Contact' },
 ];
 
+const serviceLinks = [
+  { href: '/custom-homes', label: 'Custom Homes' },
+  { href: '/knockdown-rebuild', label: 'Knockdown Rebuild' },
+  { href: '/inclusions', label: 'Inclusions' },
+];
+
 export default function Header() {
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -34,7 +42,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', update);
   }, []);
 
-  useEffect(() => setMenuOpen(false), [pathname]);
+  useEffect(() => { setMenuOpen(false); setServicesOpen(false); }, [pathname]);
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+    const onPointer = (event: PointerEvent) => { if (!servicesRef.current?.contains(event.target as Node)) setServicesOpen(false); };
+    const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') { setServicesOpen(false); servicesRef.current?.querySelector('button')?.focus(); } };
+    document.addEventListener('pointerdown', onPointer);
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('pointerdown', onPointer); document.removeEventListener('keydown', onKey); };
+  }, [servicesOpen]);
 
   // A menu hidden by the desktop breakpoint must not leave the document locked.
   useEffect(() => {
@@ -111,6 +128,16 @@ export default function Header() {
               {label}
             </Link>;
           })}
+          <div ref={servicesRef} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
+            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(true)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-[13px] font-semibold tracking-wide transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
+              Services <ChevronDown aria-hidden="true" className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div id="services-menu" hidden={!servicesOpen} className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
+              <ul className="border border-jufaja-gold/40 bg-white p-2 shadow-jufaja-card">
+                {serviceLinks.map(({ href, label }) => <li key={href}><Link href={href} aria-current={pathname?.startsWith(href) ? 'page' : undefined} className="flex min-h-11 items-center px-3 text-sm font-semibold text-jufaja-forest-900 transition-colors hover:bg-jufaja-cream hover:text-jufaja-gold-700">{label}</Link></li>)}
+              </ul>
+            </div>
+          </div>
         </nav>
 
         <div className="ml-auto flex items-center gap-2 xl:ml-0">
