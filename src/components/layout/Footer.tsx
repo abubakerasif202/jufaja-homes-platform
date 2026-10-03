@@ -2,14 +2,15 @@ import TextReveal from '@/components/motion/TextReveal';
 import Link from 'next/link';
 import ButtonLink from '@/components/ui/ButtonLink';
 import JufajaLogo from '@/components/brand/JufajaLogo';
+import BusinessContactDetails from '@/components/contact/BusinessContactDetails';
 
 const columns = [
   {
     title: 'Explore',
     links: [
       ['Home Designs', '/designs'],
-      ['House & Land', '/packages'],
-      ['Display Homes', '/display-homes'],
+      ['House & Land Enquiries', '/packages'],
+      ['Display Home Enquiries', '/display-homes'],
       ['Design Inspiration', '/projects'],
     ],
   },
@@ -26,6 +27,7 @@ const columns = [
     links: [
       ['About', '/about-us'],
       ['Contact', '/contact'],
+      ['Enquiry Privacy', '/privacy'],
       ['Sitemap', '/sitemap.xml'],
     ],
   },
@@ -51,6 +53,7 @@ export default function Footer() {
             <p className="mt-5 max-w-sm text-sm leading-6 text-jufaja-ivory/75">
               Home designs, building information and ways to start a conversation about your plans.
             </p>
+            <BusinessContactDetails dark />
             <ButtonLink href="/contact" variant="gold" className="mt-7">Contact JUFAJA</ButtonLink>
           </div>
 

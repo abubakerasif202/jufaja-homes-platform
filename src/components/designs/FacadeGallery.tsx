@@ -22,7 +22,7 @@ export default function FacadeGallery({ facades, designName }: Props) {
       <div className="facade-view relative h-[320px] sm:h-[440px] w-full bg-jufaja-stone">
         <AnimatePresence initial={false}><motion.div key={activeFacade.image + selectedIdx} className="absolute inset-0" initial={reduced ? false : { opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .5 }}><Image
           src={activeFacade.image}
-          alt={`Illustrative ${activeFacade.name} facade image for ${designName}; confirm the current design details with JUFAJA`}
+          alt={`${activeFacade.name}; not a verified facade for ${designName}`}
           fill
           priority
           sizes="(max-width: 1023px) 100vw, 66vw"
@@ -32,13 +32,15 @@ export default function FacadeGallery({ facades, designName }: Props) {
 
         <div className="absolute bottom-6 left-6 text-white">
           <span className="eyebrow eyebrow--light mb-1 block">
-            ILLUSTRATIVE FACADE IMAGE
+            ARCHITECTURE INSPIRATION
           </span>
           <h3 className="type-h3 font-serif drop-shadow-md">
             {activeFacade.name}
           </h3>
         </div>
       </div>
+
+      <p className="border-t border-jufaja-border px-5 py-4 text-sm leading-6 text-jufaja-muted">Illustrative concept only. This image is not the approved facade or floorplan for {designName}.</p>
 
       {/* Thumbnails Selector */}
       {facades.length > 1 && (

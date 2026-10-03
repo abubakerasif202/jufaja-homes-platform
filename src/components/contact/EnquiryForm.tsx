@@ -1,10 +1,12 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import Link from 'next/link';
+import { ENQUIRY_TYPES, type EnquiryContext } from '@/lib/enquiry-context';
 
 type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
 
-export default function EnquiryForm() {
+export default function EnquiryForm({ context = { enquiryType: 'General enquiry', target: '' } }: { context?: EnquiryContext }) {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [error, setError] = useState('');
 
@@ -25,6 +27,7 @@ export default function EnquiryForm() {
           enquiryType: values.enquiryType,
           suburb: values.suburb,
           honeypot: values.website,
+          targetDesignName: context.target,
         }),
       });
       const result = await response.json();
@@ -52,6 +55,7 @@ export default function EnquiryForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5 rounded-sm border border-jufaja-border bg-white p-5 shadow-jufaja-soft sm:p-8">
+      {context.target && <p className="rounded-sm border border-jufaja-gold/40 bg-jufaja-cream p-4 text-sm text-jufaja-forest"><strong>Enquiring about:</strong> {context.target}</p>}
       {status === 'error' && <p role="alert" className="border border-jufaja-burgundy-700/25 bg-jufaja-burgundy-700/5 p-3 text-sm leading-6 text-jufaja-burgundy-800">{error}</p>}
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
@@ -73,23 +77,19 @@ export default function EnquiryForm() {
       </div>
       <div>
         <label htmlFor="contact-project" className="mb-1.5 block text-sm font-medium text-jufaja-forest-900">Project type</label>
-        <select id="contact-project" name="enquiryType" defaultValue="General enquiry" className="min-h-12 w-full rounded-sm border border-jufaja-border bg-white px-3 text-base text-jufaja-forest-950 focus:border-jufaja-gold-600">
-          <option>General enquiry</option>
-          <option>Home design</option>
-          <option>Custom home</option>
-          <option>Knockdown rebuild</option>
-          <option>House and land</option>
-          <option>Display home</option>
+        <select id="contact-project" name="enquiryType" defaultValue={context.enquiryType} className="min-h-12 w-full rounded-sm border border-jufaja-border bg-white px-3 text-base text-jufaja-forest-950 focus:border-jufaja-gold-600">
+          {ENQUIRY_TYPES.map(type => <option key={type}>{type}</option>)}
         </select>
       </div>
       <div>
         <label htmlFor="contact-message" className="mb-1.5 block text-sm font-medium text-jufaja-forest-900">Message</label>
-        <textarea id="contact-message" name="message" rows={5} maxLength={4000} className="w-full rounded-sm border border-jufaja-border p-3 text-base text-jufaja-forest-950 focus:border-jufaja-gold-600" />
+        <textarea id="contact-message" name="message" defaultValue={context.target ? `I would like to discuss ${context.target}.` : ''} rows={5} maxLength={4000} className="w-full rounded-sm border border-jufaja-border p-3 text-base text-jufaja-forest-950 focus:border-jufaja-gold-600" />
       </div>
       <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="contact-website">Leave this field empty</label>
         <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
+      <p className="text-xs leading-6 text-jufaja-muted">Your details are used to respond to this enquiry. <Link href="/privacy" className="text-jufaja-forest underline underline-offset-4">Read about enquiry privacy</Link>. Please avoid sending sensitive personal or financial information.</p>
       <button type="submit" disabled={status === 'sending'} aria-busy={status === 'sending'} className="btn btn-primary w-full disabled:cursor-wait disabled:opacity-65 sm:w-auto">
         {status === 'sending' ? 'Sending…' : 'Send enquiry'}
       </button>

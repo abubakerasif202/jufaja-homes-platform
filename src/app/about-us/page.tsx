@@ -1,22 +1,18 @@
 import PageHero from '@/components/ui/PageHero';
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site-metadata';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import ButtonLink from '@/components/ui/ButtonLink';
 import LeadershipSection from '@/components/home/LeadershipSection';
 import Reveal from '@/components/motion/Reveal';
 
-export const metadata: Metadata = {
-  title: 'About JUFAJA Constructions',
-  description: 'Meet JUFAJA Constructions and explore the home design and building services available through the website.',
-  alternates: { canonical: '/about-us' },
-};
+export const metadata = pageMetadata('About', 'Meet JUFAJA Constructions and explore the home design and building services available through the website.', '/about-us');
 
 const routes = [
   { title: 'Home designs', href: '/designs', text: 'Browse the current online catalogue and compare the listed layouts.' },
   { title: 'Custom homes', href: '/custom-homes', text: 'Share your brief and discuss a home shaped around your site and priorities.' },
   { title: 'Knockdown rebuild', href: '/knockdown-rebuild', text: 'Explore the information available for replacing an existing home.' },
-  { title: 'House and land', href: '/packages', text: 'View online listings and contact JUFAJA to confirm current details.' },
+  { title: 'House and land', href: '/packages', text: 'Enquire about current options in your preferred area.' },
 ];
 
 export default function AboutUsPage() {

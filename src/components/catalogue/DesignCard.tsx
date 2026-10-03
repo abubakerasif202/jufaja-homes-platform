@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { DWELLING_LABELS } from '@/lib/design-labels';
 import DepthFrame from '@/components/motion/DepthFrame';
 import { HomeDesign } from '@/types';
 import { Bed, Bath, Car } from 'lucide-react';
@@ -20,14 +21,14 @@ export default function DesignCard({ design }: Props) {
       <div className="design-card__image relative h-64 w-full overflow-hidden bg-jufaja-stone">
         {facade && <Image
           src={facade.image}
-          alt={`Illustrative ${facade.name} facade image for ${design.name}; confirm final design details`}
+          alt={`${facade.name}; not a verified facade for ${design.name}`}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 420px"
           className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
         />}
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-jufaja-forest-950/85 to-transparent" />
 
-        <div className="absolute bottom-16 left-4 rounded-sm bg-white/95 px-2.5 py-1 text-[10px] font-medium text-jufaja-forest-900">Illustrative image</div>
+        <div className="absolute bottom-16 left-4 rounded-sm bg-white/95 px-2.5 py-1 text-[10px] font-medium text-jufaja-forest-900">Architecture inspiration</div>
 
         {/* Square Size Badge (Gold) */}
         <div className="absolute top-3.5 right-3.5 bg-jufaja-forest-900 text-white text-[11px] font-bold px-3 py-1 rounded-sm shadow border border-jufaja-gold-500/40">
@@ -39,11 +40,7 @@ export default function DesignCard({ design }: Props) {
         <div className="absolute bottom-3.5 left-4 right-4 flex justify-between items-end text-white">
           <div>
             <span className="eyebrow eyebrow--light block">
-              {design.dwellingType === 'single'
-                ? 'Single Storey'
-                : design.dwellingType === 'double'
-                ? 'Double Storey'
-                : design.dwellingType.toUpperCase()}
+              {DWELLING_LABELS[design.dwellingType]}
             </span>
             <span className="text-xs font-semibold text-jufaja-stone">
               Min Frontage: {design.minLotWidth}m
@@ -56,7 +53,7 @@ export default function DesignCard({ design }: Props) {
       </div>
 
       {/* Card Content Body */}
-      <div className="p-6 flex-1 flex flex-col justify-between">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
         <div>
           {/* Title & Series */}
           <div className="mb-3">
@@ -72,19 +69,19 @@ export default function DesignCard({ design }: Props) {
           <div className="grid grid-cols-3 gap-2 py-3 border-y border-jufaja-border text-jufaja-charcoal text-xs font-semibold">
             <div className="flex items-center gap-1.5">
               <Bed aria-hidden="true" className="w-3.5 h-3.5 text-jufaja-gold-600 shrink-0" />
-              <span>{design.bedrooms} Beds</span>
+              <span className="min-w-0">{design.bedrooms} Beds</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Bath aria-hidden="true" className="w-3.5 h-3.5 text-jufaja-gold-600 shrink-0" />
-              <span>{design.bathrooms} Baths</span>
+              <span className="min-w-0">{design.bathrooms} Baths</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Car aria-hidden="true" className="w-3.5 h-3.5 text-jufaja-gold-600 shrink-0" />
-              <span>{design.garages} Car</span>
+              <span className="min-w-0">{design.garages} Car</span>
             </div>
           </div>
 
-          <p className="mt-3 text-xs leading-relaxed text-jufaja-muted">Listed figures are indicative. Confirm plan, dimensions and inclusions with JUFAJA.</p>
+          <p className="mt-3 text-xs leading-relaxed text-jufaja-muted">Reference figures · request the current plan and specifications.</p>
         </div>
 
         {/* Actions Button Strip */}

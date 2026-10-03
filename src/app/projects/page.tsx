@@ -1,16 +1,12 @@
 import React from 'react';
-import type { Metadata } from 'next';
+import { pageMetadata } from '@/lib/site-metadata';
 import ParallaxImage from '@/components/motion/ParallaxImage';
 import Reveal from '@/components/motion/Reveal';
 import PageHero from '@/components/ui/PageHero';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 
-export const metadata: Metadata = {
-  title: 'Design Inspiration | JUFAJA Constructions',
-  description: 'Explore illustrative residential architecture references and concept studies from JUFAJA Constructions.',
-  alternates: { canonical: '/projects' },
-};
+export const metadata = pageMetadata('Design Inspiration', 'Explore illustrative residential architecture references and concept studies from JUFAJA Constructions.', '/projects');
 
 export default function ProjectsPage() {
   return (

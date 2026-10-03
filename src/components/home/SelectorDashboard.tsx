@@ -4,11 +4,11 @@ import { ArrowUpRight } from 'lucide-react';
 import Reveal from '@/components/motion/Reveal';
 
 const options = [
-  { title: 'Single Storey Designs', copy: 'Browse single storey design listings and compare their listed specifications.', href: '/designs?dwelling_type=single', photo: '/images/architecture/daylight-family-home.webp', position: '30% 50%' },
+  { title: 'Single Storey Designs', copy: 'Browse single storey design listings and compare their listed specifications.', href: '/designs?dwelling_type=single', photo: '/images/architecture/daylight-single-storey-home.webp', position: '50% 50%' },
   { title: 'Double Storey Homes', copy: 'Browse double storey design listings and compare their listed specifications.', href: '/designs?dwelling_type=double', photo: '/images/architecture/daylight-cantilever-home.webp', position: '50% 50%' },
   { title: 'Duplex & Dual Living', copy: 'Browse duplex design listings. Confirm drawings and site suitability directly.', href: '/designs?dwelling_type=duplex', photo: '/images/architecture/daylight-paired-homes.webp', position: '50% 50%' },
   { title: 'Knockdown Rebuild', copy: 'Explore questions about the site, planning requirements and rebuild scope.', href: '/knockdown-rebuild', photo: '/images/architecture/daylight-sculptural-home.webp', position: '50% 50%' },
-  { title: 'House & Land Packages', copy: 'Contact JUFAJA to confirm current listings and package details.', href: '/packages', photo: '/images/architecture/daylight-family-home.webp', position: '85% 60%' },
+  { title: 'House & Land Enquiries', copy: 'Contact JUFAJA to confirm current listings and package details.', href: '/packages', photo: '/images/architecture/daylight-family-home.webp', position: '85% 60%' },
   { title: 'Custom Architecture', copy: 'Start with your site, your priorities and a clear design brief.', href: '/custom-homes', photo: '/images/architecture/daylight-stone-residence.webp', position: '50% 50%' },
 ];
 

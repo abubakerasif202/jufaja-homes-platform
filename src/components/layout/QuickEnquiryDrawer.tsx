@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { ENQUIRY_TYPES } from '@/lib/enquiry-context';
 import { X, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 export default function QuickEnquiryDrawer() {
@@ -17,7 +19,7 @@ export default function QuickEnquiryDrawer() {
     fullName: '',
     email: '',
     phone: '',
-    interestType: 'New Build',
+    interestType: 'General enquiry',
     suburbOrCouncil: '',
     ownLand: false,
     message: '',
@@ -29,6 +31,7 @@ export default function QuickEnquiryDrawer() {
       const context = (event as CustomEvent<{ context?: string }>).detail?.context;
       previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       setTargetContext(context ?? '');
+      setFormData(data => ({ ...data, interestType: context ? 'Home design' : 'General enquiry' }));
       setIsOpen(true);
       setIsSubmitted(false);
       setError('');
@@ -93,6 +96,7 @@ export default function QuickEnquiryDrawer() {
       const result = await res.json();
       if (res.ok && result.success) {
         setIsSubmitted(true);
+        setFormData({ fullName: '', email: '', phone: '', interestType: 'General enquiry', suburbOrCouncil: '', ownLand: false, message: '', honeypot: '' });
       } else {
         setError(typeof result.error === 'string' ? result.error : 'The enquiry could not be sent. Please try again.');
       }
@@ -110,6 +114,7 @@ export default function QuickEnquiryDrawer() {
         <button
           onClick={() => {
             setTargetContext('');
+            setFormData(data => ({ ...data, interestType: 'General enquiry' }));
             setError('');
             setIsSubmitted(false);
             previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -182,6 +187,7 @@ export default function QuickEnquiryDrawer() {
                       <input
                         type="text"
                         id="enquiry-name"
+                        maxLength={120}
                         name="name"
                         autoComplete="name"
                         required
@@ -200,6 +206,7 @@ export default function QuickEnquiryDrawer() {
                         <input
                           type="tel"
                           id="enquiry-phone"
+                          maxLength={40}
                           name="tel"
                           autoComplete="tel"
                           inputMode="tel"
@@ -217,6 +224,7 @@ export default function QuickEnquiryDrawer() {
                         <input
                           type="email"
                           id="enquiry-email"
+                          maxLength={254}
                           name="email"
                           autoComplete="email"
                           required
@@ -238,11 +246,7 @@ export default function QuickEnquiryDrawer() {
                         onChange={(e) => setFormData({ ...formData, interestType: e.target.value })}
                         className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
                       >
-                        <option value="New Build">New Home Design (from Catalogue)</option>
-                        <option value="Knock Down Rebuild">Knock Down Rebuild</option>
-                        <option value="House & Land">House &amp; Land Package</option>
-                        <option value="Custom Design">Custom Architectural Design</option>
-                        <option value="General">General Enquiry</option>
+                        {ENQUIRY_TYPES.map(type => <option key={type}>{type}</option>)}
                       </select>
                     </div>
 
@@ -253,6 +257,7 @@ export default function QuickEnquiryDrawer() {
                       <input
                         type="text"
                         id="enquiry-suburb"
+                        maxLength={120}
                         name="address-level2"
                         autoComplete="address-level2"
                         value={formData.suburbOrCouncil}
@@ -281,6 +286,7 @@ export default function QuickEnquiryDrawer() {
                       </label>
                       <textarea
                         id="enquiry-message"
+                        maxLength={4000}
                         name="message"
                         rows={3}
                         value={formData.message}
@@ -316,7 +322,7 @@ export default function QuickEnquiryDrawer() {
                       )}
                     </button>
 
-                    <p className="pt-2 text-center text-xs leading-5 text-jufaja-muted">Availability, pricing and specifications should be confirmed for your project.</p>
+                    <p className="pt-2 text-center text-xs leading-5 text-jufaja-muted">Your details are used to respond to this enquiry. <Link href="/privacy" onClick={() => setIsOpen(false)} className="text-jufaja-forest underline underline-offset-4">Enquiry privacy</Link>.</p>
                   </form>
                 )}
               </div>

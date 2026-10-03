@@ -10,8 +10,8 @@ import JufajaLogo from '@/components/brand/JufajaLogo';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/designs', label: 'Home Designs' },
-  { href: '/packages', label: 'House & Land' },
-  { href: '/display-homes', label: 'Display Homes' },
+  { href: '/packages', label: 'House & Land Enquiries' },
+  { href: '/display-homes', label: 'Display Home Enquiries' },
   { href: '/projects', label: 'Design Studies' },
   { href: '/about-us', label: 'About' },
   { href: '/contact', label: 'Contact' },
@@ -121,15 +121,15 @@ export default function Header() {
           <JufajaLogo size="sm" theme="light" className={overlay ? 'logo-halo' : ''} />
         </Link>
 
-        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-5 2xl:gap-7">
+        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-3 2xl:gap-5">
           {links.map(({ href, label }) => {
             const active = href === '/' ? pathname === '/' : pathname?.startsWith(href);
-            return <Link key={href} href={href} aria-current={active ? 'page' : undefined} className={`hover-gold-sweep rounded-sm py-2 text-[13px] font-semibold tracking-wide transition-colors ${overlay ? `hover:text-jufaja-gold-300 ${active ? 'text-white after:!w-full' : 'text-white/90'}` : `hover:text-jufaja-forest-700 ${active ? 'text-jufaja-forest-900 after:!w-full' : 'text-jufaja-muted'}`}`}>
+            return <Link key={href} href={href} aria-current={active ? 'page' : undefined} className={`hover-gold-sweep rounded-sm py-2 text-xs font-semibold tracking-normal transition-colors ${overlay ? `hover:text-jufaja-gold-300 ${active ? 'text-white after:!w-full' : 'text-white/90'}` : `hover:text-jufaja-forest-700 ${active ? 'text-jufaja-forest-900 after:!w-full' : 'text-jufaja-muted'}`}`}>
               {label}
             </Link>;
           })}
           <div ref={servicesRef} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(true)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-[13px] font-semibold tracking-wide transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
+            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(true)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-xs font-semibold tracking-normal transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
               Services <ChevronDown aria-hidden="true" className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <div id="services-menu" hidden={!servicesOpen} className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
@@ -196,9 +196,8 @@ export default function Header() {
                 );
               })}
               <button type="button" onClick={closeMenu} className="btn btn-outline-light mb-4 mt-6">Close navigation <X aria-hidden="true" className="h-4 w-4" /></button>
-              <div className="grid grid-cols-2 gap-2 pt-4">
-                <Link href="/custom-homes" className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">Custom Homes</Link>
-                <Link href="/knockdown-rebuild" className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">Knockdown Rebuild</Link>
+              <div className="grid grid-cols-1 gap-2 pt-4 min-[360px]:grid-cols-2">
+                {serviceLinks.map(({ href, label }) => <Link key={href} href={href} className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">{label}</Link>)}
               </div>
             </motion.nav>
           </>

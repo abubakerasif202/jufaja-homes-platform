@@ -33,5 +33,5 @@ test('unverified display locations and contact details are not shipped', () => {
   const displayPage = fs.readFileSync(path.join(__dirname, '../src/app/display-homes/page.tsx'), 'utf8');
   assert.strictEqual(fs.existsSync(displayDataPath), false, 'Unverified addresses, hours and phone details must not ship');
   assert.doesNotMatch(displayPage, /Homeworld|Oxley Ridge|openingHours|8783\s*8800/);
-  assert.match(displayPage, /confirm which display homes are currently open/i);
+  assert.match(displayPage, /No confirmed display locations or opening hours/i);
 });

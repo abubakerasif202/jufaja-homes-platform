@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState, useEffect, useTransition } from 'react';
+import React, { useTransition } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import type { HomeDesign, DwellingType } from '@/types';
 import { filterDesigns, type FilterState } from '@/lib/filter-designs';
+import { parseDesignFilters } from '@/lib/design-filter-params';
 import FilterBar from '@/components/catalogue/FilterBar';
 import DesignCard from '@/components/catalogue/DesignCard';
-import { Home, Layers, Video } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 interface Props {
   initialDesigns: HomeDesign[];
@@ -22,30 +23,11 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
     return counts;
   }, { all: 0, single: 0, double: 0, duplex: 0, granny: 0, rural: 0 });
 
-  const searchDwellingType = searchParams.get('dwelling_type');
-  const dwellingType: DwellingType | 'all' = ['single', 'double', 'duplex', 'granny', 'rural'].includes(searchDwellingType ?? '')
-    ? searchDwellingType as DwellingType
-    : 'all';
-  const searchSort = searchParams.get('sort');
-  const sortBy: FilterState['sortBy'] = ['name', 'size-desc', 'size-asc', 'beds-desc'].includes(searchSort ?? '')
-    ? searchSort as FilterState['sortBy']
-    : 'name';
-
-  const [filters, setFilters] = useState<FilterState>(() => {
-    return {
-      dwellingType,
-      bedrooms: searchParams.get('bedrooms') ? Number(searchParams.get('bedrooms')) : 'any',
-      bathrooms: searchParams.get('bathrooms') ? Number(searchParams.get('bathrooms')) : 'any',
-      garages: searchParams.get('garages') ? Number(searchParams.get('garages')) : 'any',
-      hasVirtualTour: false,
-      sortBy,
-    };
-  });
+  const filters = parseDesignFilters(searchParams);
 
   // Sync URL when filters change
   const handleFilterChange = (newFilters: Partial<FilterState>) => {
     const updated = { ...filters, ...newFilters };
-    setFilters(updated);
 
     startTransition(() => {
       const params = new URLSearchParams();
@@ -61,15 +43,6 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
   };
 
   const handleReset = () => {
-    const resetState: FilterState = {
-      dwellingType: 'all',
-      bedrooms: 'any',
-      bathrooms: 'any',
-      garages: 'any',
-      hasVirtualTour: false,
-      sortBy: 'name',
-    };
-    setFilters(resetState);
     router.replace('/designs', { scroll: false });
   };
 
@@ -101,7 +74,7 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
           </div>
           <h3 className="font-serif text-2xl text-jufaja-forest">No Matching Designs Found</h3>
           <p className="text-sm text-jufaja-muted mt-1 max-w-md mx-auto">
-            Try adjusting your bedroom, bathroom, or dwelling type filters to view more plans from our master catalogue.
+            Try adjusting your bedroom, bathroom, or dwelling type filters to explore more design references.
           </p>
           <button
             onClick={handleReset}

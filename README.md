@@ -45,3 +45,20 @@ The design catalogue contains 63 source records whose measurements, names and pl
 - The public sitemap contains the indexable top-level routes and excludes unverified package-detail URLs.
 - Production metadata currently uses `https://jufaja-homes-platform.vercel.app/`, the production URL supplied for this project.
 - The home-page hero is a CSS-driven property slideshow (`src/components/home/HeroSlideshow.tsx`, slide copy and image choices in `src/data/hero-slides.ts`). Autoplay is paced by the active slide's progress bar, pauses on hover, keyboard focus or the pause button, and is disabled under `prefers-reduced-motion`. The imagery is illustrative, not JUFAJA project photography.
+
+## Public contact details
+
+Set the following server environment variables to **owner-approved public business details**, then redeploy so static pages pick them up:
+
+```dotenv
+JUFAJA_PUBLIC_PHONE=
+JUFAJA_PUBLIC_EMAIL=
+JUFAJA_PUBLIC_OFFICE=
+JUFAJA_PUBLIC_HOURS=
+```
+
+Contact and footer links appear only when these details are supplied. The delivery recipient and sender variables are not treated as public contact information. `/privacy` describes the current website enquiry handling; it does not make claims about wider company practices or statutory compliance.
+
+The contact route reads `interest`, `design` and `project` parameters on the server. The selected subject appears in the form and is included in the existing delivery payload. Catalogue filtering derives state from the current URL, including browser navigation, and ignores invalid filter values.
+
+The published catalogue is projected through `src/lib/catalogue.ts`. Legacy prices, third-party floorplan URLs, unsupported features and tour links remain outside the public browser payload. Illustrative images are separate from approved design facades. The 63 unverified design references remain `noindex, follow` and excluded from the sitemap; only verified designs should be promoted to indexable pages in a future content update.

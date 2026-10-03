@@ -2,8 +2,9 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import rawDesigns from '@/data/designs.json';
-import type { HomeDesign } from '@/types';
+import { pageMetadata } from '@/lib/site-metadata';
+import { catalogueDesigns } from '@/lib/catalogue';
+import { DWELLING_LABELS } from '@/lib/design-labels';
 import { formatSquares } from '@/lib/utils';
 import { Bed, Bath, Car, ArrowLeft } from 'lucide-react';
 import ButtonLink from '@/components/ui/ButtonLink';
@@ -17,7 +18,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  const designs = rawDesigns as HomeDesign[];
+  const designs = catalogueDesigns;
   return designs.map((d) => ({
     slug: d.slug,
   }));
@@ -25,26 +26,20 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const designs = rawDesigns as HomeDesign[];
+  const designs = catalogueDesigns;
   const design = designs.find((d) => d.slug === slug);
 
   if (!design) return { title: 'Design Not Found' };
 
   return {
-    title: `${design.name} | Home Design Catalogue`,
-    description: `View the listed information for the ${design.name} home design. Confirm the current plan, dimensions and inclusions with JUFAJA Constructions.`,
-    alternates: { canonical: `/designs/${design.slug}` },
+    ...pageMetadata(`${design.name} | Design reference`, `Explore the reference figures for ${design.name}. Request current floorplans and specifications from JUFAJA.`, `/designs/${design.slug}`),
     robots: { index: false, follow: true },
-    openGraph: {
-      title: `${design.name} | Home Design Catalogue`,
-      description: 'An indicative design listing. Confirm current plans and specifications directly with JUFAJA Constructions.',
-    },
   };
 }
 
 export default async function SingleDesignPage({ params }: Props) {
   const { slug } = await params;
-  const designs = rawDesigns as HomeDesign[];
+  const designs = catalogueDesigns;
   const design = designs.find((d) => d.slug === slug);
 
   if (!design) notFound();
@@ -54,7 +49,7 @@ export default async function SingleDesignPage({ params }: Props) {
     .slice(0, 3);
 
   return (
-    <main className="design-detail min-h-screen bg-jufaja-cream pb-20">
+    <div className="design-detail min-h-screen bg-jufaja-cream pb-20">
       
       {/* Top Breadcrumb Header Bar */}
       <div className="border-b border-jufaja-border bg-white py-4">
@@ -67,7 +62,7 @@ export default async function SingleDesignPage({ params }: Props) {
             <span>Back to Home Designs</span>
           </Link>
           <div className="hidden text-xs font-medium text-jufaja-muted sm:block">
-            Home Designs &bull; {design.dwellingType.toUpperCase()} &bull; {design.name}
+            Home Designs &bull; {DWELLING_LABELS[design.dwellingType]} &bull; {design.name}
           </div>
         </div>
       </div>
@@ -82,15 +77,15 @@ export default async function SingleDesignPage({ params }: Props) {
               <span className="rounded-sm bg-jufaja-forest-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                 {formatSquares(design.houseSizeSquares)}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-muted">
-                {design.dwellingType.replace('single', 'Single Storey').replace('double', 'Double Storey').replace('duplex', 'Duplex')}
+              <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-ivory/80">
+                {DWELLING_LABELS[design.dwellingType]}
               </span>
             </div>
             <h1 className="type-h1 font-serif text-jufaja-forest">
               {design.name}
             </h1>
             <p className="mt-2 text-xs font-medium text-jufaja-muted sm:text-sm">
-                {design.series} design · listed details require confirmation
+                {design.series} reference · request current plans
             </p>
           </div>
 
@@ -129,7 +124,8 @@ export default async function SingleDesignPage({ params }: Props) {
               <h3 className="mb-4 font-serif text-xl text-jufaja-forest">
                 Listed specifications
               </h3>
-              <p className="text-sm leading-6 text-jufaja-muted">The catalogue lists {design.bedrooms} bedrooms, {design.bathrooms} bathrooms and {design.garages} garage spaces. Confirm the current plan and specifications with JUFAJA.</p>
+              {design.dwellingType === 'granny' && <p className="mb-3 text-sm leading-6 text-jufaja-muted">For this secondary living listing, confirm whether the totals include a main home and a secondary dwelling before comparing layouts.</p>}
+              <p className="text-sm leading-6 text-jufaja-muted">The listed figures are {design.bedrooms} bedrooms, {design.bathrooms} bathrooms and {design.garages} garage spaces. Confirm the current plan and specifications with JUFAJA.</p>
             </div>
 
             {/* Quote Action Box */}
@@ -161,7 +157,7 @@ export default async function SingleDesignPage({ params }: Props) {
                   Similar listings
                 </span>
                 <h3 className="type-h3 mt-1 font-serif text-jufaja-forest">
-                  More {design.dwellingType === 'single' ? 'single storey' : design.dwellingType === 'double' ? 'double storey' : design.dwellingType} designs
+                  More {DWELLING_LABELS[design.dwellingType].toLowerCase()} designs
                 </h3>
               </div>
               <Link href="/designs" className="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-jufaja-forest hover:text-jufaja-forest-700">
@@ -178,6 +174,6 @@ export default async function SingleDesignPage({ params }: Props) {
         )}
 
       </div>
-    </main>
+    </div>
   );
 }

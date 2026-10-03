@@ -11,3 +11,7 @@ Client-supplied AI-generated concept images, optimized as local WebP assets. The
 | daylight-sculptural-home.webp | Gemini_Generated_Image_o47fnqo47fnqo47f (5).jpg |
 
 Images retain their original daylight colour treatment. Conversion uses EXIF autorotation, a maximum width of 2400px without enlargement, and WebP quality 86. Near-duplicate supplied views were omitted. The supplied video is not used in this image update.
+
+## Single-storey reference — 3 October 2026
+
+`daylight-single-storey-home.webp` was generated for this audit repair to show a one-level Australian residential concept. It is an illustrative image, not an approved JUFAJA facade, floorplan or completed project. Converted to WebP quality 85 from the generated 1536 × 1024 PNG. No generated image is represented as a genuine client project.

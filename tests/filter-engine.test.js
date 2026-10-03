@@ -2,17 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert');
 const designs = require('../src/data/designs.json');
 
-// Replicate filterDesigns logic for testing
-function filterDesigns(items, f) {
-  return items.filter(d => {
-    if (f.dwellingType && f.dwellingType !== 'all' && d.dwellingType !== f.dwellingType) return false;
-    if (f.bedrooms && f.bedrooms !== 'any' && d.bedrooms < Number(f.bedrooms)) return false;
-    if (f.bathrooms && f.bathrooms !== 'any' && d.bathrooms < Number(f.bathrooms)) return false;
-    if (f.garages && f.garages !== 'any' && d.garages !== Number(f.garages)) return false;
-    if (f.hasVirtualTour && !d.virtualTourUrl) return false;
-    return true;
-  });
-}
+const { filterDesigns } = require('./load-typescript.cjs')('src/lib/filter-designs.ts');
 
 test('filters correctly by dwellingType: single', () => {
   const singles = filterDesigns(designs, { dwellingType: 'single' });
