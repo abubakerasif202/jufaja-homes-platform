@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import ButtonLink from '@/components/ui/ButtonLink';
 import JufajaLogo from '@/components/brand/JufajaLogo';
 import BusinessContactDetails from '@/components/contact/BusinessContactDetails';
@@ -63,6 +64,22 @@ export default function Footer() {
       <div className="cv-footer__legal">
         <p>© {new Date().getFullYear()} JUFAJA Constructions Pty Ltd.</p>
         <p>Website information is a starting point; confirm project details directly before relying on them.</p>
+        <a
+          href="https://abwebstudio.com.au/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cv-footer__attribution"
+        >
+          <span>Designed &amp; Developed by</span>
+          <Image
+            src="/ab-web-studio-logo.webp"
+            alt="AB Web Studio"
+            width={672}
+            height={309}
+            sizes="148px"
+          />
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
       </div>
     </footer>
   );

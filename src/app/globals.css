@@ -850,6 +850,14 @@ html { scroll-padding-top: 120px; }
 .cv-footer__links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
 .cv-footer__links a:hover { color: var(--jufaja-gold-400); }
 .cv-footer__legal { border-top: 1px solid #ffffff24; padding-top: 24px; font-size: 12px; line-height: 1.8; color: #ffffffb8; }
+.cv-footer__attribution { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; max-width: 100%; min-height: 44px; margin-top: 18px; padding: 4px 8px; color: var(--jufaja-ivory); font-size: 11px; letter-spacing: .04em; transition: transform .25s ease; }
+.cv-footer__attribution img { width: 148px; height: auto; flex-shrink: 0; transition: filter .25s ease; }
+.cv-footer__attribution:hover, .cv-footer__attribution:focus-visible { transform: translateY(-1px); }
+.cv-footer__attribution:hover img, .cv-footer__attribution:focus-visible img { filter: brightness(1.12) drop-shadow(0 0 6px #c5a05940); }
+@media (prefers-reduced-motion: reduce) {
+  .cv-footer__attribution, .cv-footer__attribution img { transition: none; }
+  .cv-footer__attribution:hover, .cv-footer__attribution:focus-visible { transform: none; }
+}
 @media (max-width: 1023px) {
   .cv-selector { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .cv-selector__link:nth-child(3) { border-right: 0; }
