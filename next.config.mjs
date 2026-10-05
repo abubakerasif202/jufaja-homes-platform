@@ -3,11 +3,14 @@ const nextConfig = {
   outputFileTracingRoot: process.cwd(),
   images: {
     qualities: [75, 80, 85, 88, 90],
-    remotePatterns: [
-      { protocol: 'https', hostname: 'casaview.com.au' },
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'api.productreview.com.au' },
-    ],
+  },
+  async headers() {
+    return [{ source: '/:path*', headers: [
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'X-Frame-Options', value: 'DENY' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+    ] }];
   },
 };
 

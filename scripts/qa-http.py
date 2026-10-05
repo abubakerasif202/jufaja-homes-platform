@@ -2,6 +2,8 @@
 import concurrent.futures
 import json
 import subprocess
+import threading
+import urllib.error
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
@@ -46,7 +48,7 @@ def check(route):
     html, result = read(route)
     assert result.mains == 1, (route, result.mains)
     assert result.h1 == 1, (route, result.h1)
-    assert result.canonical == ('https://jufaja-homes-platform.vercel.app' + route).rstrip('/'), (route, result.canonical)
+    assert result.canonical == ('https://www.jufajaconstructions.com.au' + route).rstrip('/'), (route, result.canonical)
     assert 'casaview.com.au' not in html, route
     assert 'priceGuideFrom' not in html, route
     if route.startswith('/designs/'):
@@ -54,15 +56,31 @@ def check(route):
     assert 'JUFAJA Constructions | JUFAJA Constructions' not in result.title, (route, result.title)
 
 server = subprocess.Popen(['node', 'node_modules/next/dist/bin/next', 'start', '--hostname', '127.0.0.1', '--port', '3011'], cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-try:
+ready = threading.Event()
+startup_log = []
+def collect_output():
     for line in server.stdout:
-        if 'Ready in' in line: break
-        if server.poll() is not None: raise RuntimeError('Production server did not start: ' + line)
+        startup_log.append(line)
+        if 'Ready in' in line:
+            ready.set()
+output_thread = threading.Thread(target=collect_output, daemon=True)
+output_thread.start()
+try:
+    if not ready.wait(timeout=20):
+        raise RuntimeError('Production server did not become ready: ' + ''.join(startup_log)[-2000:])
     routes = ['/', '/designs', '/packages', '/display-homes', '/projects', '/about-us', '/contact', '/custom-homes', '/knockdown-rebuild', '/inclusions', '/privacy']
     routes += ['/designs/' + design['slug'] for design in json.loads((ROOT / 'src/data/designs.json').read_text())]
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         list(pool.map(check, routes))
     print('Production routes verified:', len(routes))
+    for route in ['/designs/no-such-home', '/packages/no-such-package', '/audit-missing-page']:
+        try:
+            with urllib.request.urlopen(BASE + route, timeout=20):
+                raise AssertionError('Expected HTTP 404: ' + route)
+        except urllib.error.HTTPError as error:
+            with error:
+                assert error.code == 404, (route, error.code)
+    print('Unknown design, package and general URLs return HTTP 404.')
     for query, expected in [('interest=House%20%26%20Land', 'House and land'), ('interest=Display%20Homes', 'Display home'), ('design=Blaxland%20Series', 'Home design'), ('project=Courtyard%20Residence', 'Design inspiration')]:
         html, result = read('/contact?' + query)
         assert expected in result.options, (query, result.options)
@@ -74,4 +92,10 @@ try:
     print('Sitemap verified; unverified designs remain excluded.')
 finally:
     server.terminate()
-    server.wait(timeout=10)
+    try:
+        server.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        server.kill()
+        server.wait(timeout=10)
+    output_thread.join(timeout=1)
+    server.stdout.close()

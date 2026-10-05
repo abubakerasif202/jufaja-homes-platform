@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ENQUIRY_TYPES } from '@/lib/enquiry-context';
 import { X, Send, CheckCircle2, MessageSquare } from 'lucide-react';
 
 export default function QuickEnquiryDrawer() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -14,6 +16,7 @@ export default function QuickEnquiryDrawer() {
   const closeButton = useRef<HTMLButtonElement>(null);
   const dialog = useRef<HTMLElement>(null);
   const previousFocus = useRef<HTMLElement | null>(null);
+  const pendingRequest = useRef<AbortController | null>(null);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -30,15 +33,20 @@ export default function QuickEnquiryDrawer() {
     const handleOpen = (event: Event) => {
       const context = (event as CustomEvent<{ context?: string }>).detail?.context;
       previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-      setTargetContext(context ?? '');
-      setFormData(data => ({ ...data, interestType: context ? 'Home design' : 'General enquiry' }));
+      if (!pendingRequest.current && !isSubmitted) {
+        setTargetContext(context ?? '');
+        setFormData(data => ({ ...data, interestType: context ? 'Home design' : 'General enquiry' }));
+      }
       setIsOpen(true);
-      setIsSubmitted(false);
-      setError('');
     };
 
     window.addEventListener('open-enquiry-drawer', handleOpen);
     return () => window.removeEventListener('open-enquiry-drawer', handleOpen);
+  }, [isSubmitted]);
+
+  useEffect(() => () => {
+    pendingRequest.current?.abort();
+    pendingRequest.current = null;
   }, []);
 
   useEffect(() => {
@@ -59,7 +67,7 @@ export default function QuickEnquiryDrawer() {
         if (!focusable.length) return;
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
+        if (event.shiftKey && (document.activeElement === first || !dialog.current.contains(document.activeElement))) {
           event.preventDefault();
           last?.focus();
         } else if (!event.shiftKey && (document.activeElement === last || !dialog.current.contains(document.activeElement))) {
@@ -79,13 +87,17 @@ export default function QuickEnquiryDrawer() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (isSubmitting) return;
+    if (pendingRequest.current) return;
+    const controller = new AbortController();
+    pendingRequest.current = controller;
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
     setIsSubmitting(true);
     setError('');
 
     try {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
+        signal: controller.signal,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
@@ -93,30 +105,38 @@ export default function QuickEnquiryDrawer() {
         }),
       });
 
-      const result = await res.json();
-      if (res.ok && result.success) {
+      const result: { success?: boolean; error?: unknown } = await res.json();
+      if (pendingRequest.current !== controller) return;
+      if (res.ok && result.success === true) {
         setIsSubmitted(true);
         setFormData({ fullName: '', email: '', phone: '', interestType: 'General enquiry', suburbOrCouncil: '', ownLand: false, message: '', honeypot: '' });
       } else {
         setError(typeof result.error === 'string' ? result.error : 'The enquiry could not be sent. Please try again.');
       }
     } catch {
-      setError('We could not connect to the enquiry service. Please check your connection and try again.');
+      if (pendingRequest.current !== controller) return;
+      setError(controller.signal.aborted
+        ? 'The response took too long. We could not confirm delivery. Please contact JUFAJA before sending the same enquiry again.'
+        : 'We could not connect to the enquiry service. Please check your connection and try again.');
     } finally {
-      setIsSubmitting(false);
+      window.clearTimeout(timeout);
+      if (pendingRequest.current === controller) {
+        pendingRequest.current = null;
+        setIsSubmitting(false);
+      }
     }
   };
 
   return (
     <>
       {/* Floating CTA Pill */}
-      <div data-dialog-open={isOpen} className="mobile-enquiry-rail fixed bottom-6 right-6 z-40">
+      {pathname !== '/contact' && <div data-dialog-open={isOpen} className="mobile-enquiry-rail fixed bottom-6 right-6 z-40">
         <button
           onClick={() => {
-            setTargetContext('');
-            setFormData(data => ({ ...data, interestType: 'General enquiry' }));
-            setError('');
-            setIsSubmitted(false);
+            if (!pendingRequest.current && !isSubmitted) {
+              setTargetContext('');
+              setFormData(data => ({ ...data, interestType: 'General enquiry' }));
+            }
             previousFocus.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
             setIsOpen(true);
           }}
@@ -125,7 +145,7 @@ export default function QuickEnquiryDrawer() {
           <MessageSquare aria-hidden="true" className="w-4 h-4" />
           <span>Enquire Now</span>
         </button>
-      </div>
+      </div>}
 
       {/* Drawer Overlay */}
       {isOpen && (
@@ -164,7 +184,7 @@ export default function QuickEnquiryDrawer() {
               {/* Drawer Content */}
               <div className="flex-1 overflow-y-auto p-6 bg-jufaja-ivory/30">
                 {isSubmitted ? (
-                  <div className="py-12 text-center space-y-4">
+                  <div role="status" className="py-12 text-center space-y-4">
                     <CheckCircle2 aria-hidden="true" className="w-16 h-16 text-jufaja-forest mx-auto" />
                     <h3 className="type-h3 font-serif text-jufaja-forest">Enquiry Received</h3>
                     <p className="text-xs sm:text-sm text-jufaja-muted max-w-xs mx-auto font-sans leading-relaxed">
@@ -176,9 +196,21 @@ export default function QuickEnquiryDrawer() {
                     >
                       Close Window
                     </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setError('');
+                        setTargetContext('');
+                      }}
+                      className="btn btn-outline mt-3"
+                    >
+                      Send another enquiry
+                    </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit}>
+                    <fieldset disabled={isSubmitting} className="min-w-0 space-y-4">
                     {error && <p role="alert" className="rounded-sm border border-jufaja-burgundy-700/25 bg-jufaja-burgundy-700/5 px-3 py-2 text-sm text-jufaja-burgundy-800">{error}</p>}
                     <div>
                       <label htmlFor="enquiry-name" className="block text-[11px] font-semibold text-jufaja-forest uppercase tracking-wider mb-1">
@@ -194,7 +226,7 @@ export default function QuickEnquiryDrawer() {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="e.g. John Smith"
-                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-base bg-white"
                       />
                     </div>
 
@@ -214,7 +246,7 @@ export default function QuickEnquiryDrawer() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="0400 000 000"
-                          className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                          className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-base bg-white"
                         />
                       </div>
                       <div>
@@ -231,7 +263,7 @@ export default function QuickEnquiryDrawer() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="john@example.com"
-                          className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                          className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-base bg-white"
                         />
                       </div>
                     </div>
@@ -244,7 +276,7 @@ export default function QuickEnquiryDrawer() {
                         id="enquiry-type"
                         value={formData.interestType}
                         onChange={(e) => setFormData({ ...formData, interestType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-base bg-white"
                       >
                         {ENQUIRY_TYPES.map(type => <option key={type}>{type}</option>)}
                       </select>
@@ -263,19 +295,19 @@ export default function QuickEnquiryDrawer() {
                         value={formData.suburbOrCouncil}
                         onChange={(e) => setFormData({ ...formData, suburbOrCouncil: e.target.value })}
                         placeholder="e.g. Camden, Liverpool, Penrith"
-                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-base bg-white"
                       />
                     </div>
 
-                    <div className="flex items-center space-x-2 pt-1">
+                    <div className="flex min-h-11 items-center space-x-2 pt-1">
                       <input
                         type="checkbox"
-                        id="ownLand"
+                        id="enquiry-own-land"
                         checked={formData.ownLand}
                         onChange={(e) => setFormData({ ...formData, ownLand: e.target.checked })}
                         className="w-4 h-4 text-jufaja-gold rounded border-jufaja-border focus:ring-jufaja-gold accent-jufaja-gold"
                       />
-                      <label htmlFor="ownLand" className="text-xs text-jufaja-muted font-medium">
+                      <label htmlFor="enquiry-own-land" className="text-xs text-jufaja-muted font-medium">
                         I already own or have purchased land
                       </label>
                     </div>
@@ -292,7 +324,7 @@ export default function QuickEnquiryDrawer() {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Tell us about your land width, timeframe, or desired features..."
-                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-sm bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-sm border border-jufaja-border focus:outline-none focus:ring-2 focus:ring-jufaja-gold text-base bg-white"
                       />
                     </div>
 
@@ -302,6 +334,8 @@ export default function QuickEnquiryDrawer() {
                       className="absolute -left-[10000px] h-px w-px overflow-hidden"
                       aria-hidden="true"
                       tabIndex={-1}
+                      name="website"
+                      autoComplete="off"
                       value={formData.honeypot}
                       onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
                     />
@@ -323,6 +357,7 @@ export default function QuickEnquiryDrawer() {
                     </button>
 
                     <p className="pt-2 text-center text-xs leading-5 text-jufaja-muted">Your details are used to respond to this enquiry. <Link href="/privacy" onClick={() => setIsOpen(false)} className="text-jufaja-forest underline underline-offset-4">Enquiry privacy</Link>.</p>
+                    </fieldset>
                   </form>
                 )}
               </div>

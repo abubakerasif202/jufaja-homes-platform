@@ -1,0 +1,291 @@
+{
+  "base": "http://127.0.0.1:3010",
+  "output": "C:/Users/abuba/AppData/Local/Temp/jufaja-contact-regression",
+  "routes": [
+    "/",
+    "/about-us",
+    "/contact",
+    "/custom-homes",
+    "/designs",
+    "/display-homes",
+    "/inclusions",
+    "/knockdown-rebuild",
+    "/packages",
+    "/privacy",
+    "/projects",
+    "/designs/blaxland-series",
+    "/designs/kingston-series",
+    "/designs/hemsworth-series",
+    "/designs/majestic-series",
+    "/designs/oxley-26-series",
+    "/designs/oxley-series",
+    "/designs/eden-series",
+    "/designs/patterson-series",
+    "/designs/hastings-series",
+    "/designs/riley-series",
+    "/designs/lennox-series",
+    "/designs/collins-series",
+    "/designs/glenbrook-series",
+    "/designs/lindsay-series",
+    "/designs/stuart-series",
+    "/designs/rozelle-series",
+    "/designs/chesterfield-series",
+    "/designs/crest-series",
+    "/designs/darlington-series",
+    "/designs/lithgow-series",
+    "/designs/jardine-series",
+    "/designs/stamford-series",
+    "/designs/winton-series",
+    "/designs/bennelong-series",
+    "/designs/centennial-series",
+    "/designs/grange-series",
+    "/designs/delta-series",
+    "/designs/urban-series",
+    "/designs/verona-series",
+    "/designs/elite-series",
+    "/designs/alpha-series",
+    "/designs/montreal-series",
+    "/designs/crawford-series",
+    "/designs/denison-series",
+    "/designs/elwood-series",
+    "/designs/meadow-series",
+    "/designs/atlantic-series",
+    "/designs/primavera-series",
+    "/designs/stellar-series",
+    "/designs/linden-series",
+    "/designs/coral-series",
+    "/designs/fingal-series",
+    "/designs/pacific-series",
+    "/designs/mcevoy-duplex",
+    "/designs/mayfield-duplex",
+    "/designs/fair-haven-duplex",
+    "/designs/ivory-duplex",
+    "/designs/altona-duplex",
+    "/designs/pine-lea-duplex",
+    "/designs/tempus-duplex",
+    "/designs/stanmore-duplex",
+    "/designs/tempus-mk2-duplex",
+    "/designs/marbella-355",
+    "/designs/marbella-31",
+    "/designs/marbella-31-mk1",
+    "/designs/austin-26",
+    "/designs/austin-25",
+    "/designs/austin-25-mk1",
+    "/designs/berkeley-27-wide-lot",
+    "/designs/edgeworth-35-wide-lot",
+    "/designs/ashford-385-wide-lot",
+    "/designs/holbrook-40-wide-lot",
+    "/designs/cowra-475-wide-lot"
+  ],
+  "matrix": [
+    {
+      "route": "/contact",
+      "width": 320,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/contact",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 996,
+        "shifts": []
+      },
+      "screenshot": "contact-320.png"
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 356,
+        "shifts": []
+      },
+      "screenshot": "home-320.png"
+    },
+    {
+      "route": "/designs/jardine-series",
+      "width": 320,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/jardine-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 388,
+        "shifts": []
+      },
+      "screenshot": "designs--jardine-series-320.png"
+    },
+    {
+      "route": "/audit-missing-page",
+      "width": 320,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 172,
+        "shifts": []
+      },
+      "screenshot": "audit-missing-page-320.png"
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/contact",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "contact-390.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "home-390.png"
+    },
+    {
+      "route": "/designs/jardine-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/jardine-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 160,
+        "shifts": []
+      },
+      "screenshot": "designs--jardine-series-390.png"
+    },
+    {
+      "route": "/audit-missing-page",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 132,
+        "shifts": []
+      },
+      "screenshot": "audit-missing-page-390.png"
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/contact",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 168,
+        "shifts": []
+      },
+      "screenshot": "contact-1440.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 212,
+        "shifts": []
+      },
+      "screenshot": "home-1440.png"
+    },
+    {
+      "route": "/designs/jardine-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/jardine-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 208,
+        "shifts": []
+      },
+      "screenshot": "designs--jardine-series-1440.png"
+    },
+    {
+      "route": "/audit-missing-page",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 280,
+        "shifts": []
+      },
+      "screenshot": "audit-missing-page-1440.png"
+    }
+  ],
+  "interactions": [
+    "24 unique internal links resolve",
+    "Unknown design and package URLs return HTTP 404",
+    "Mobile menu, focus restoration, Escape and resize unlock",
+    "Desktop services keyboard menu",
+    "Service link client navigation and browser back",
+    "Catalogue filter and reset",
+    "Contact validation, pending, error and success (mocked)",
+    "Drawer pending close/reopen preserves result; mocked error and success",
+    "Drawer opens and Escape unlocks background",
+    "Reduced motion and once-per-session skippable intro"
+  ],
+  "errors": [],
+  "enquiriesIntercepted": 4,
+  "routeScope": [
+    "/contact",
+    "/",
+    "/designs/jardine-series"
+  ],
+  "status": "PASS"
+}

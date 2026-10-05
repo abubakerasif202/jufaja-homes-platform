@@ -1,10 +1,11 @@
 'use client';
 
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import { AnimatePresence, motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import JufajaLogo from '@/components/brand/JufajaLogo';
 
 const links = [
@@ -82,7 +83,7 @@ export default function Header() {
         if (!focusable.length) return;
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
-        if (event.shiftKey && document.activeElement === first) {
+        if (event.shiftKey && (document.activeElement === first || !drawer.current.contains(document.activeElement))) {
           event.preventDefault();
           last.focus();
         } else if (!event.shiftKey && (document.activeElement === last || !drawer.current.contains(document.activeElement))) {
@@ -128,8 +129,8 @@ export default function Header() {
               {label}
             </Link>;
           })}
-          <div ref={servicesRef} className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
-            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(true)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-xs font-semibold tracking-normal transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
+          <div ref={servicesRef} className="relative">
+            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(open => !open)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-xs font-semibold tracking-normal transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
               Services <ChevronDown aria-hidden="true" className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <div id="services-menu" hidden={!servicesOpen} className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
@@ -195,7 +196,7 @@ export default function Header() {
                   </motion.div>
                 );
               })}
-              <button type="button" onClick={closeMenu} className="btn btn-outline-light mb-4 mt-6">Close navigation <X aria-hidden="true" className="h-4 w-4" /></button>
+              <button type="button" onClick={closeMenu} className="btn btn-outline mb-4 mt-6">Close navigation <X aria-hidden="true" className="h-4 w-4" /></button>
               <div className="grid grid-cols-1 gap-2 pt-4 min-[360px]:grid-cols-2">
                 {serviceLinks.map(({ href, label }) => <Link key={href} href={href} className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">{label}</Link>)}
               </div>

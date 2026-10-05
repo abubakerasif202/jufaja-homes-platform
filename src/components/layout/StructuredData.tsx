@@ -1,10 +1,12 @@
+import { SITE_URL } from '@/lib/site-metadata';
+
 export default function StructuredData() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'JUFAJA Constructions Pty Ltd',
-    url: 'https://jufaja-homes-platform.vercel.app/',
-    logo: 'https://jufaja-homes-platform.vercel.app/brand/jufaja-logo.png',
+    url: `${SITE_URL}/`,
+    logo: `${SITE_URL}/brand/jufaja-logo.png`,
   };
 
   return (

@@ -12,24 +12,21 @@ function declarations(selector, property, media) {
   });
   return values;
 }
-test('mobile hero uses content-driven grid and landscape photography', () => {
-  assert.equal(declarations('.cinematic-hero', 'height', '(max-width: 767px)').at(-1), 'auto');
-  assert.equal(declarations('.cinematic-hero .hs-slide', 'position', '(max-width: 767px)').at(-1), 'relative');
-  assert.equal(declarations('.cinematic-hero .hs-image-frame', 'height', '(max-width: 767px)').at(-1), 'clamp(13rem, 66.6667vw, 22rem)');
-  assert.equal(declarations('.cinematic-hero .hero-controls > div', 'flex-wrap', '(max-width: 767px)').at(-1), 'wrap');
+test('current homepage keeps mobile cards stacked and its hero image framed', () => {
+  assert.equal(declarations('.cv-design-grid, .cv-studies__grid', 'grid-template-columns', '(max-width: 639px)').at(-1), '1fr');
+  assert.equal(declarations('.cv-hero__image', 'object-fit', '').at(-1), 'cover');
+  assert.match(fs.readFileSync('src/app/page.tsx', 'utf8'), /<CasaviewHome/);
 });
-test('white desktop hero copy cannot override the mobile reading colour', () => {
-  assert.equal(declarations('.cinematic-hero .hero-lead', 'color', '').length, 0);
-  assert.equal(declarations('.cinematic-hero .hero-lead', 'color', '(max-width: 767px)').at(-1), '#5c5852');
+test('mobile home sections have readable space and portrait height', () => {
+  assert.equal(declarations('.cv-about__content, .cv-difference__content', 'padding', '(max-width: 639px)').at(-1), '36px 24px');
+  assert.equal(declarations('.cv-leadership__image', 'height', '(max-width: 639px)').at(-1), '360px');
 });
 test('menu and drawer reserve dynamic viewport and safe-area space', () => {
   assert.match(declarations('.mobile-menu', 'max-height', '').at(-1), /100dvh.*safe-area-inset-top/);
   assert.equal(declarations('.enquiry-drawer__panel', 'height', '').at(-1), '100dvh');
   assert.match(fs.readFileSync('src/app/layout.tsx', 'utf8'), /viewportFit: 'cover'/);
 });
-test('catalogue cards cannot shrink into six phone-width columns', () => {
-  assert.equal(declarations('.featured-rail', 'display', '').at(-1), 'flex');
-  assert.match(declarations('.featured-rail__item', 'flex', '').at(-1), /^0 0 clamp/);
-  assert.match(declarations('.featured-rail__item', 'flex', '(max-width: 767px)').at(-1), /^0 0 clamp\(15rem, calc\(100vw/);
-  assert.equal(declarations('.featured-rail', 'grid-auto-columns', '(max-width: 767px)').length, 0);
+test('home service selector uses three bounded tablet and phone columns', () => {
+  assert.equal(declarations('.cv-selector', 'grid-template-columns', '(max-width: 1023px)').at(-1), 'repeat(3, minmax(0, 1fr))');
+  assert.equal(declarations('.cv-selector__link', 'min-height', '(max-width: 639px)').at(-1), '102px');
 });

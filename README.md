@@ -34,17 +34,19 @@ UPSTASH_REDIS_REST_TOKEN=
 
 The sender must be accepted by the Resend account. Production also requires an Upstash Redis REST URL and token for shared rate limiting; the limiter fails closed if either delivery or shared-rate-limit configuration is missing. Local development can run without Upstash and uses a bounded, process-local fallback. If configuration is missing or delivery fails, the API returns an error and the UI does not claim success.
 
+The owner-approved recipient is `admin@jufajaconstructions.com.au`. See [enquiry delivery setup](docs/enquiry-delivery.md) for pending Resend DNS authentication and deployment configuration. `.env.example` contains the required configuration names without credentials.
+
 ## Content requiring owner confirmation
 
-The design catalogue contains 63 source records whose measurements, names and plan documentation have not been independently verified in this repository. Several image URLs repeat generic external imagery; visible labels identify those as illustrative. Unverified package pricing, lot availability, display-home addresses, contact details and opening hours were removed; package-detail URLs return not found until a verified live listings source is provided. Verify the design records and provide genuine project photography, current offers, contact details, privacy/legal links and any credentials or service-area claims before publishing them as facts.
+The design catalogue contains 63 source records whose measurements, names and plan documentation have not been independently verified in this repository. The public catalogue uses local, optimised architectural concepts by dwelling type; visible labels identify those as illustrative. Unverified package pricing, lot availability, display-home addresses, contact details and opening hours were removed; package-detail URLs return not found until a verified live listings source is provided. Verify the design records and provide genuine project photography, current offers, contact details, privacy/legal links and any credentials or service-area claims before publishing them as facts.
 
 ## Brand and route notes
 
 - Canonical logo files are in `public/brand/`; header, footer and intro use the exact approved transparent PNG with responsive image optimisation. SVG compatibility files embed that artwork instead of redrawing it; see `public/brand/README.md`.
 - The home-page logo intro runs once per session, can be skipped, and has a reduced-motion path.
 - The public sitemap contains the indexable top-level routes and excludes unverified package-detail URLs.
-- Production metadata currently uses `https://jufaja-homes-platform.vercel.app/`, the production URL supplied for this project.
-- The home-page hero is a CSS-driven property slideshow (`src/components/home/HeroSlideshow.tsx`, slide copy and image choices in `src/data/hero-slides.ts`). Autoplay is paced by the active slide's progress bar, pauses on hover, keyboard focus or the pause button, and is disabled under `prefers-reduced-motion`. The imagery is illustrative, not JUFAJA project photography.
+- Production metadata uses `https://www.jufajaconstructions.com.au/`, the verified public domain on the existing Vercel project. The apex domain redirects to www; the Vercel alias remains available for deployment checks.
+- The homepage uses an image-led server component (`src/components/home/CasaviewHome.tsx`) and a once-per-session skippable logo opening. The imagery is illustrative, not JUFAJA project photography.
 
 ## Public contact details
 

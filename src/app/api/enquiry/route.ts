@@ -70,7 +70,7 @@ export async function POST(request: Request) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ success: false, error: 'Please enter a valid email address.' }, { status: 400 });
   }
-  if (phoneDigits.length < 8 || phoneDigits.length > 15) {
+  if (!/^[+()\d\s.-]+$/.test(phone) || phoneDigits.length < 8 || phoneDigits.length > 15) {
     return NextResponse.json({ success: false, error: 'Please enter a valid phone number.' }, { status: 400 });
   }
 
@@ -123,12 +123,22 @@ export async function POST(request: Request) {
           message || 'No message provided',
         ].join('\n'),
       }),
+      cache: 'no-store',
       signal: AbortSignal.timeout(8_000),
     });
 
     if (!delivery.ok) {
       return NextResponse.json(
         { success: false, error: 'Your enquiry could not be sent just now. Please try again later.' },
+        { status: 502 },
+      );
+    }
+
+    const receipt: unknown = await delivery.json();
+    if (!receipt || typeof receipt !== 'object' || !('id' in receipt)
+      || typeof receipt.id !== 'string' || !receipt.id.trim()) {
+      return NextResponse.json(
+        { success: false, error: 'Your enquiry could not be confirmed just now. Please try again later.' },
         { status: 502 },
       );
     }

@@ -18,7 +18,7 @@ const routes = [
 export default function AboutUsPage() {
   return (
     <div className="min-h-screen bg-jufaja-cream">
-      <PageHero image="/brand/javed-iqbal-site.png" tone="ivory" label="Javed Iqbal with colleagues on a building site">
+      <PageHero image="/brand/javed-iqbal-site.webp" tone="ivory" label="Javed Iqbal with colleagues on a building site">
         <p className="eyebrow">JUFAJA Constructions</p>
           <h1 className="type-h1 mt-4 max-w-3xl text-jufaja-forest">A clearer way to begin planning your home.</h1>
           <p className="type-lead mt-7 max-w-2xl text-jufaja-muted">

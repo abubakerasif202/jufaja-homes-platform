@@ -7,3 +7,7 @@ The supplied `ChatGPT Image Oct 1, 2026, 01_58_21 AM.png` is byte-identical to t
 `jufaja-logo.png` is a 768px proportional derivative for metadata. `jufaja-mark.png` crops only the emblem from the source. The SVG filenames are raster carriers with embedded PNG artwork, **not vector conversions**. The favicon contains only the source emblem. Previous `*-3d.png` assets are retained as source/reference artwork.
 
 Regenerate the mechanical derivatives with `node scripts/prepare-brand-assets.mjs` using the installed Sharp image tooling. This does not generate or trace a new logo.
+
+## Portrait web delivery
+
+`javed-iqbal-executive.webp` and `javed-iqbal-site.webp` are WebP quality 85 / effort 6 delivery copies of the unchanged approved PNG portraits. They preserve the original dimensions, aspect ratio and composition. Executive delivery decreases from 2,133,500 to 112,710 bytes; site delivery decreases from 268,090 to 125,704 bytes. Keep the PNG source portraits unchanged.

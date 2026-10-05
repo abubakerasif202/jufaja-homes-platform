@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ENQUIRY_TYPES, type EnquiryContext } from '@/lib/enquiry-context';
 
@@ -9,10 +9,19 @@ type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
 export default function EnquiryForm({ context = { enquiryType: 'General enquiry', target: '' } }: { context?: EnquiryContext }) {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [error, setError] = useState('');
+  const pendingRequest = useRef<AbortController | null>(null);
+
+  useEffect(() => () => {
+    pendingRequest.current?.abort();
+    pendingRequest.current = null;
+  }, []);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (status === 'sending') return;
+    if (pendingRequest.current) return;
+    const controller = new AbortController();
+    pendingRequest.current = controller;
+    const timeout = window.setTimeout(() => controller.abort(), 20000);
     setStatus('sending');
     setError('');
     const form = event.currentTarget;
@@ -21,6 +30,7 @@ export default function EnquiryForm({ context = { enquiryType: 'General enquiry'
     try {
       const response = await fetch('/api/enquiry', {
         method: 'POST',
+        signal: controller.signal,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...values,
@@ -30,8 +40,9 @@ export default function EnquiryForm({ context = { enquiryType: 'General enquiry'
           targetDesignName: context.target,
         }),
       });
-      const result = await response.json();
-      if (!response.ok || !result.success) {
+      const result: { success?: boolean; error?: unknown } = await response.json();
+      if (pendingRequest.current !== controller) return;
+      if (!response.ok || result.success !== true) {
         setError(typeof result.error === 'string' ? result.error : 'Your enquiry could not be sent. Please try again.');
         setStatus('error');
         return;
@@ -39,8 +50,14 @@ export default function EnquiryForm({ context = { enquiryType: 'General enquiry'
       setStatus('sent');
       form.reset();
     } catch {
-      setError('We could not connect to the enquiry service. Check your connection and try again.');
+      if (pendingRequest.current !== controller) return;
+      setError(controller.signal.aborted
+        ? 'The response took too long. We could not confirm delivery. Please contact JUFAJA before sending the same enquiry again.'
+        : 'We could not connect to the enquiry service. Check your connection and try again.');
       setStatus('error');
+    } finally {
+      window.clearTimeout(timeout);
+      if (pendingRequest.current === controller) pendingRequest.current = null;
     }
   }
 

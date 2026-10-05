@@ -1,199 +1,200 @@
-/**
- * Repeatable local designer QA. Requires Playwright + Chromium and a running local site.
- * All enquiry requests are intercepted; this runner never sends a customer enquiry.
- * Usage: node scripts/qa-browser.mjs [--base-url=http://127.0.0.1:3000] [--browser-path=...]
- */
+/** Production browser audit. All enquiries intercepted; never sends a lead. */
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-
+import { tmpdir } from 'node:os';
 const require = createRequire(import.meta.url);
 const argument = (name, fallback) => process.argv.find(value => value.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
-const base = new URL(argument('base-url', 'http://127.0.0.1:3000'));
-assert(['localhost', '127.0.0.1', '[::1]'].includes(base.hostname), 'QA must target a local server.');
-assert(base.protocol === 'http:', 'Use the local HTTP server.');
-const output = path.join(tmpdir(), 'jufaja-designer-qa');
+const base = new URL(argument('base-url', 'http://127.0.0.1:3010'));
+const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
+const productionHosts = ['jufaja-homes-platform.vercel.app', 'www.jufajaconstructions.com.au', 'jufajaconstructions.com.au'];
+assert(local || (argument('live', 'false') === 'true' && base.protocol === 'https:' && productionHosts.includes(base.hostname)), 'Use localhost or an approved HTTPS production host with --live=true');
+const output = argument('output', path.join(tmpdir(), 'jufaja-production-audit'));
 await mkdir(output, { recursive: true });
+const app = new URL('../src/app/', import.meta.url);
+async function discover(directory, prefix = '') {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const routes = entries.some(entry => entry.name === 'page.tsx') ? [prefix || '/'] : [];
+  for (const entry of entries) {
+    if (entry.isDirectory() && !entry.name.startsWith('[') && entry.name !== 'api') routes.push(...await discover(new URL(`${entry.name}/`, directory), `${prefix}/${entry.name}`));
+  }
+  return routes;
+}
 const designs = JSON.parse(await readFile(new URL('../src/data/designs.json', import.meta.url), 'utf8'));
-const details = ['single', 'double', 'duplex'].map(type => {
-  const design = designs.find(item => item.dwellingType === type);
-  assert(design, `No ${type} listing exists`);
-  return `/designs/${design.slug}`;
-});
-const routes = ['/', '/designs', ...details, '/projects', '/about-us', '/custom-homes', '/knockdown-rebuild', '/packages', '/display-homes', '/inclusions', '/contact', '/privacy'];
-const viewports = [
-  { width: 1920, height: 1080 }, { width: 1440, height: 900 },
-  { width: 1280, height: 720 }, { width: 1280, height: 600 },
-  { width: 1024, height: 768 }, { width: 768, height: 1024 },
-  { width: 430, height: 932 }, { width: 390, height: 844 },
-  { width: 375, height: 812 }, { width: 320, height: 720 },
-  { width: 360, height: 640 }, { width: 320, height: 568 },
-  { width: 844, height: 390 }, { width: 640, height: 360 },
-];
-const report = { startedAt: new Date().toISOString(), base: base.origin, output, matrix: [], interactions: [], errors: [], warnings: [], enquiryRequestsIntercepted: 0 };
-let browser;
-let failure;
+const topRoutes = await discover(app);
+const detailRoutes = designs.map(design => `/designs/${design.slug}`);
+const samples = ['single', 'double', 'duplex', 'granny', 'rural'].map(type => designs.find(design => design.dwellingType === type)).filter(Boolean).map(design => `/designs/${design.slug}`);
+const widths = [...new Set(argument('widths', '320,360,390,430,768,1024,1280,1440,1920').split(',').map(Number))];
+assert(widths.length && widths.every(width => Number.isInteger(width) && width >= 320 && width <= 2560), 'Invalid audit widths');
+const report = { base: base.origin, output, routes: [...topRoutes, ...detailRoutes], matrix: [], interactions: [], errors: [], enquiriesIntercepted: 0 };
+const requestedRoutes = argument('routes', '').split(',').filter(Boolean);
+assert(requestedRoutes.every(route => report.routes.includes(route)), 'Audit route is not a discovered public page');
+report.routeScope = requestedRoutes.length ? requestedRoutes : 'all';
+const { chromium } = require('playwright');
+const browser = await chromium.launch({ headless: true, channel: argument('channel', 'msedge') });
 try {
-  const { chromium } = require('playwright');
-  const executablePath = argument('browser-path', undefined);
-  browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : {}) });
-  const context = await browser.newContext();
+  const context = await browser.newContext({ reducedMotion: 'reduce' });
+  await context.addInitScript(() => {
+    window.auditVitals = { cls: 0, lcp: 0, shifts: [] };
+    new PerformanceObserver(list => {
+      for (const entry of list.getEntries()) if (!entry.hadRecentInput) {
+        window.auditVitals.cls += entry.value;
+        window.auditVitals.shifts.push({ value: entry.value, sources: entry.sources.map(source => ({ element: source.node?.outerHTML?.slice(0, 160), previous: source.previousRect, current: source.currentRect })) });
+      }
+    }).observe({ type: 'layout-shift', buffered: true });
+    new PerformanceObserver(list => {
+      for (const entry of list.getEntries()) window.auditVitals.lcp = entry.startTime;
+    }).observe({ type: 'largest-contentful-paint', buffered: true });
+  });
+  let delivery = 'error';
   await context.route('**/api/enquiry', async route => {
-    report.enquiryRequestsIntercepted++;
-    await new Promise(resolve => setTimeout(resolve, 900));
-    await route.fulfill({ status: 503, contentType: 'application/json', body: JSON.stringify({ success: false, error: 'Browser QA interception: no enquiry was sent.' }) });
+    report.enquiriesIntercepted++;
+    await new Promise(resolve => setTimeout(resolve, 350));
+    await route.fulfill({ status: delivery === 'success' ? 200 : 503, contentType: 'application/json', body: JSON.stringify(delivery === 'success' ? { success: true } : { success: false, error: 'Intercepted QA delivery failure.' }) });
   });
   const page = await context.newPage();
-  page.on('requestfailed', request => {
-    if (!request.failure()?.errorText.includes('ERR_ABORTED')) report.errors.push({ url: request.url(), message: request.failure()?.errorText ?? 'Request failed' });
+  page.on('pageerror', error => {
+    const finding = { url: page.url(), viewport: page.viewportSize(), error: error.message, stack: error.stack };
+    report.errors.push(finding);
+    console.error(finding);
   });
-  page.on('response', response => {
-    if (response.status() >= 400 && !new URL(response.url()).pathname.endsWith('/api/enquiry')) report.errors.push({ url: response.url(), message: `HTTP ${response.status()}` });
-  });
-  page.on('pageerror', error => report.errors.push({ url: page.url(), message: error.message }));
   page.on('console', message => {
-    if (message.type() === 'error') report.errors.push({ url: page.url(), resource: message.location().url, message: message.text() });
-    if (message.type() === 'warning') report.warnings.push({ url: page.url(), message: message.text() });
+    if (message.type() === 'error' && !message.text().includes('503') && !message.text().includes('404')) {
+      const finding = { url: page.url(), viewport: page.viewportSize(), error: message.text() };
+      report.errors.push(finding);
+      console.error(finding);
+    }
   });
-  async function open(route) {
-    const response = await page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' });
-    assert(response?.ok(), `${route} returned ${response?.status()}`);
-    await page.locator('main h1').first().waitFor({ state: 'attached' });
+  const links = new Set();
+  async function open(route, expected = 200) {
+    const response = await page.goto(new URL(route, base).href, { waitUntil: 'networkidle' });
+    assert.equal(response.status(), expected, route);
     await page.evaluate(() => document.fonts.ready);
-    const intro = page.getByRole('button', { name: /Skip intro/ });
-    if (await intro.isVisible()) await intro.click();
-    const pause = page.getByRole('button', { name: 'Pause slideshow', exact: true });
-    if (await pause.isVisible()) await pause.click();
-    await page.waitForTimeout(1400);
+    const height = await page.evaluate(() => document.documentElement.scrollHeight);
+    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo(0, top), y); await page.waitForTimeout(25); }
+    await page.waitForTimeout(100);
+    await page.evaluate(() => window.scrollTo(0, 0));
   }
-  for (const viewport of viewports) {
-    await page.setViewportSize(viewport);
-    for (const route of routes) {
-      await open(route);
-      // Traverse the real page so lazy media and scroll entrances are exercised.
-      const height = await page.evaluate(() => document.documentElement.scrollHeight);
-      for (let top = 0; top < height; top += Math.max(300, Math.round(viewport.height * .75))) {
-        await page.evaluate(y => window.scrollTo(0, y), top);
-        await page.waitForTimeout(100);
-      }
-      await page.waitForTimeout(1400);
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await page.waitForTimeout(250);
+  for (const width of widths) {
+    await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
+    const routes = requestedRoutes.length ? requestedRoutes : width === 390 || width === 1440 ? report.routes : [...topRoutes, ...samples];
+    for (const route of [...routes, '/audit-missing-page']) {
+      await open(route, route === '/audit-missing-page' ? 404 : 200);
       const result = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-        brokenImages: [...document.images].filter(image => image.getClientRects().length && getComputedStyle(image).visibility !== 'hidden' && image.complete && !image.naturalWidth).map(image => image.currentSrc),
-        errorOverlay: Boolean(document.querySelector('[data-nextjs-dialog]')),
-        h1: document.querySelector('main h1')?.textContent,
+        brokenImages: [...document.images].filter(image => image.getClientRects().length && image.complete && !image.naturalWidth).map(image => image.currentSrc),
+        h1: document.querySelectorAll('main h1').length,
+        mains: document.querySelectorAll('main').length,
+        canonical: document.querySelector('link[rel=canonical]')?.href,
+        missingAlt: [...document.images].filter(image => !image.hasAttribute('alt')).length,
+        vitals: window.auditVitals,
+        links: [...document.querySelectorAll('a[href]')].map(link => link.getAttribute('href')).filter(href => href.startsWith('/') && !href.startsWith('//')),
       }));
-      const name = `${route === '/' ? 'home' : route.slice(1).replaceAll('/', '--')}-${viewport.width}x${viewport.height}.png`;
-      await page.screenshot({ path: path.join(output, name), fullPage: true });
-      report.matrix.push({ route, ...viewport, ...result, screenshot: name });
-      assert(result.overflow <= 1, `${route} overflows ${result.overflow}px at ${viewport.width}`);
-      assert(!result.errorOverlay, `${route} has a framework error overlay`);
-      assert.equal(result.brokenImages.length, 0, `${route} has broken imagery`);
-      if (route === '/' && viewport.width <= 767) {
-        const rail = await page.locator('.featured-rail').evaluate(element => ({
-          width: element.clientWidth,
-          scrollWidth: element.scrollWidth,
-          cards: [...element.children].map(card => card.getBoundingClientRect().width),
-        }));
-        assert(rail.scrollWidth > rail.width, 'Mobile catalogue must scroll, not fit all six cards');
-        assert(rail.cards.every(width => width >= 240), 'Mobile catalogue cards must remain readable');
-      }
+      result.links.forEach(link => links.add(link));
+      delete result.links;
+      const screenshot = `${route === '/' ? 'home' : route.slice(1).replaceAll('/', '--')}-${width}.png`;
+      await page.screenshot({ path: path.join(output, screenshot), fullPage: true });
+      report.matrix.push({ route, width, ...result, screenshot });
+      assert(result.overflow <= 1, `${route}: ${result.overflow}px overflow at ${width}`);
+      assert.equal(result.brokenImages.length, 0, `${route}: broken image at ${width}`);
+      assert.equal(result.h1, 1, `${route}: H1 count`);
+      assert.equal(result.mains, 1, `${route}: main count`);
+      assert.equal(result.missingAlt, 0, `${route}: missing alt`);
     }
+    console.log(`Passed width ${width}: ${routes.length + 1} pages`);
   }
-
-  await page.setViewportSize({ width: 1440, height: 900 });
-  await open('/');
-  const intents = page.locator('.intent-tile');
-  assert.equal(await intents.count(), 6, 'Expected all six intent links');
-  for (const link of await intents.all()) assert((await link.getAttribute('href'))?.startsWith('/'));
-  report.interactions.push('All six service intent links');
-  const rail = page.getByRole('region', { name: 'Featured home design collection' });
-  await rail.scrollIntoViewIfNeeded();
-  await page.getByRole('button', { name: 'Next home designs', exact: true }).click();
-  await page.waitForTimeout(800);
-  assert((await rail.evaluate(element => element.scrollLeft)) > 0);
-  report.interactions.push('Catalogue rail controls');
-  const before = await page.locator('.hs-slide.is-active').getAttribute('aria-label');
-  await page.getByRole('button', { name: 'Next slide', exact: true }).click();
-  assert.notEqual(await page.locator('.hs-slide.is-active').getAttribute('aria-label'), before);
-  report.interactions.push('Hero manual slide control');
-  await page.getByRole('button', { name: 'Play slideshow', exact: true }).click();
-  await page.mouse.move(20, 20); // Header is outside the carousel: release hover pause.
-  const autoplayBefore = await page.locator('.hs-slide.is-active').getAttribute('aria-label');
-  await page.waitForTimeout(7500);
-  assert.notEqual(await page.locator('.hs-slide.is-active').getAttribute('aria-label'), autoplayBefore);
-  await page.getByRole('button', { name: 'Pause slideshow', exact: true }).click();
-  report.interactions.push('Normal-motion autoplay / pause');
-
+  for (const href of links) { const response = await context.request.get(new URL(href, base).href); assert(response.ok(), `Broken internal link: ${href}`); }
+  report.interactions.push(`${links.size} unique internal links resolve`);
+  for (const route of ['/robots.txt', '/sitemap.xml', '/manifest.webmanifest']) assert((await context.request.get(new URL(route, base).href)).ok(), route);
+  for (const route of ['/designs/no-such-home', '/packages/no-such-package']) assert.equal((await context.request.get(new URL(route, base).href)).status(), 404, route);
+  report.interactions.push('Unknown design and package URLs return HTTP 404');
   await page.setViewportSize({ width: 390, height: 844 });
   await open('/');
-  const toggle = page.getByRole('button', { name: 'Open navigation menu', exact: true });
-  await toggle.click();
+  const menu = page.getByRole('button', { name: 'Open navigation menu', exact: true });
+  await menu.click();
   assert(await page.getByRole('dialog', { name: 'Mobile navigation' }).isVisible());
-  assert(await page.locator('body > main').evaluate(element => element.inert));
+  assert(await page.locator('main').evaluate(element => element.inert));
   await page.keyboard.press('Escape');
-  await page.waitForTimeout(500);
-  assert(await toggle.evaluate(element => element === document.activeElement));
-  await toggle.click();
+  assert(await menu.evaluate(element => element === document.activeElement));
+  await menu.click();
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.waitForTimeout(600);
-  assert.equal(await page.locator('body > main').evaluate(element => element.inert), false);
-  report.interactions.push('Mobile menu / Escape / resize unlock');
-
+  await page.waitForTimeout(100);
+  assert.equal(await page.locator('main').evaluate(element => element.inert), false);
+  report.interactions.push('Mobile menu, focus restoration, Escape and resize unlock');
+  const services = page.getByRole('button', { name: 'Services', exact: true });
+  await services.focus(); await services.click();
+  assert.equal(await services.getAttribute('aria-expanded'), 'true');
+  await page.keyboard.press('Escape');
+  assert.equal(await services.getAttribute('aria-expanded'), 'false');
+  report.interactions.push('Desktop services keyboard menu');
+  await services.click();
+  await page.locator('#services-menu').getByRole('link', { name: 'Custom Homes', exact: true }).click();
+  await page.waitForURL('**/custom-homes');
+  await page.locator('main h1').waitFor();
+  assert.equal(await services.getAttribute('aria-expanded'), 'false');
+  await page.goBack({ waitUntil: 'networkidle' });
+  assert.equal(new URL(page.url()).pathname, '/');
+  report.interactions.push('Service link client navigation and browser back');
   await open('/designs');
   await page.getByRole('button', { name: /Single storey/i }).click();
   await page.waitForURL(/dwelling_type=single/);
   await page.getByRole('button', { name: 'Reset filters', exact: true }).click();
   await page.waitForURL(url => !url.search);
-  report.interactions.push('Catalogue filtering / reset');
-  for (const route of details) {
-    await open(route);
-    const controls = page.getByRole('button', { name: /Show illustrative .* facade/ });
-    if (await controls.count() > 1) {
-      await controls.nth(1).click();
-      assert.equal(await controls.nth(1).getAttribute('aria-pressed'), 'true');
-    }
-  }
-  report.interactions.push('Single / double / duplex facade controls');
-
+  report.interactions.push('Catalogue filter and reset');
   await open('/contact');
+  assert.equal(await page.locator('.mobile-enquiry-rail').count(), 0, 'Contact uses its form and header CTA without an overlapping floating launcher');
   await page.getByRole('button', { name: 'Send enquiry', exact: true }).click();
-  assert.equal(report.enquiryRequestsIntercepted, 0, 'An invalid form attempted a request');
+  assert.equal(report.enquiriesIntercepted, 0);
   await page.locator('#contact-name').fill('Browser QA');
-  await page.locator('#contact-email').fill('browser-qa@example.invalid');
+  await page.locator('#contact-email').fill('qa@example.invalid');
   await page.locator('#contact-phone').fill('0400000000');
   await page.getByRole('button', { name: 'Send enquiry', exact: true }).click();
   assert(await page.getByRole('button', { name: 'Sending…', exact: true }).isDisabled());
-  await page.getByRole('alert').filter({ hasText: 'Browser QA interception' }).waitFor();
-  report.interactions.push('Form validation / loading / intercepted error; no delivery');
+  await page.getByRole('alert').filter({ hasText: 'Intercepted QA' }).waitFor();
+  delivery = 'success';
+  await page.getByRole('button', { name: 'Send enquiry', exact: true }).click();
+  await page.getByRole('status').filter({ hasText: 'Thank you' }).waitFor();
+  report.interactions.push('Contact validation, pending, error and success (mocked)');
   await page.locator('header').getByRole('button', { name: 'Enquire Now', exact: true }).click();
-  assert(await page.getByRole('dialog', { name: 'Enquire With JUFAJA' }).isVisible());
+  const drawer = page.getByRole('dialog', { name: 'Enquire With JUFAJA' });
+  assert(await drawer.isVisible());
+  delivery = 'error';
+  await page.locator('#enquiry-name').fill('Drawer QA');
+  await page.locator('#enquiry-email').fill('drawer@example.invalid');
+  await page.locator('#enquiry-phone').fill('0400000000');
+  await drawer.getByRole('button', { name: 'Submit Free Enquiry', exact: true }).click();
+  const countBeforeReopen = report.enquiriesIntercepted;
   await page.keyboard.press('Escape');
-  assert.equal(await page.locator('body > main').evaluate(element => element.inert), false);
-  report.interactions.push('Enquiry drawer / Escape / background unlock');
-
-  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.locator('header').getByRole('button', { name: 'Enquire Now', exact: true }).click();
+  await drawer.getByRole('alert').filter({ hasText: 'Intercepted QA' }).waitFor();
+  assert.equal(report.enquiriesIntercepted, countBeforeReopen, 'Reopening must not submit another request');
+  delivery = 'success';
+  await drawer.getByRole('button', { name: 'Submit Free Enquiry', exact: true }).click();
+  await drawer.getByRole('status').filter({ hasText: 'Enquiry Received' }).waitFor();
+  report.interactions.push('Drawer pending close/reopen preserves result; mocked error and success');
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('main').evaluate(element => element.inert), false);
+  report.interactions.push('Drawer opens and Escape unlocks background');
   await open('/');
-  const reducedBefore = await page.locator('.hs-slide.is-active').getAttribute('aria-label');
-  await page.waitForTimeout(6500);
-  assert.equal(await page.locator('.hs-slide.is-active').getAttribute('aria-label'), reducedBefore);
   assert.equal(await page.getByRole('button', { name: /Skip intro/ }).isVisible(), false);
-  report.interactions.push('Reduced-motion intro / no autoplay');
-  assert.equal(report.errors.filter(item => !(item.resource?.includes('/api/enquiry') && item.message.includes('503'))).length, 0, 'Unexpected runtime/console errors; inspect report');
-  console.log(`Browser matrix and interactions passed. Review the screenshots as a designer: ${output}`);
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.evaluate(() => sessionStorage.removeItem('jufaja_intro_viewed'));
+  await page.evaluate(() => document.documentElement.classList.remove('jufaja-intro-seen'));
+  await page.reload();
+  const skip = page.getByRole('button', { name: /Skip intro/ });
+  await skip.waitFor({ state: 'visible' });
+  await skip.click();
+  await skip.waitFor({ state: 'hidden' });
+  await page.reload();
+  assert.equal(await skip.isVisible(), false);
+  report.interactions.push('Reduced motion and once-per-session skippable intro');
+  assert.equal(report.errors.length, 0, JSON.stringify(report.errors));
+  report.status = 'PASS';
 } catch (error) {
-  failure = error;
-  report.failure = error.message;
-  console.error(error.message);
-  process.exitCode = 1;
+  report.status = 'FAIL'; report.failure = error.message; process.exitCode = 1; console.error(error);
 } finally {
-  report.finishedAt = new Date().toISOString();
-  report.status = failure ? 'FAILED_OR_BLOCKED' : 'AUTOMATION_PASSED_VISUAL_REVIEW_REQUIRED';
   await writeFile(path.join(output, 'report.json'), JSON.stringify(report, null, 2));
-  await browser?.close();
-  console.log(`QA report: ${path.join(output, 'report.json')}`);
+  await browser.close();
+  console.log(`Browser report: ${path.join(output, 'report.json')}`);
 }

@@ -1,0 +1,458 @@
+{
+  "method": "Repository-wide SHA-256, Sharp dimensions/alpha, 64-bit perceptual difference hashes (distance <=6), and filename reference searches. Candidates require human review; generated/script prerequisites and source originals are not orphans.",
+  "totalAssets": 26,
+  "exactDuplicates": [
+    [
+      "file_0000000001d0820b95f8b16ad7e2002f.png",
+      "public/brand/javed-iqbal-site.png"
+    ],
+    [
+      "public/brand/jufaja-logo-3d.png",
+      "public/brand/jufaja-logo-transparent.png"
+    ],
+    [
+      "public/brand/jufaja-logo-dark.svg",
+      "public/brand/jufaja-logo-horizontal.svg",
+      "public/brand/jufaja-logo-light.svg",
+      "public/brand/jufaja-logo-stacked.svg"
+    ],
+    [
+      "public/brand/jufaja-mark.svg",
+      "public/brand/jufaja-monogram.svg"
+    ]
+  ],
+  "nearDuplicates": [
+    {
+      "files": [
+        "file_0000000001d0820b95f8b16ad7e2002f.png",
+        "public/brand/javed-iqbal-site.webp"
+      ],
+      "hammingDistance": 1
+    },
+    {
+      "files": [
+        "public/brand/favicon.svg",
+        "public/brand/jufaja-mark.png"
+      ],
+      "hammingDistance": 1
+    },
+    {
+      "files": [
+        "public/brand/favicon.svg",
+        "public/brand/jufaja-mark.svg"
+      ],
+      "hammingDistance": 4
+    },
+    {
+      "files": [
+        "public/brand/favicon.svg",
+        "public/brand/jufaja-monogram.svg"
+      ],
+      "hammingDistance": 4
+    },
+    {
+      "files": [
+        "public/brand/javed-iqbal-executive.png",
+        "public/brand/javed-iqbal-executive.webp"
+      ],
+      "hammingDistance": 6
+    },
+    {
+      "files": [
+        "public/brand/javed-iqbal-site.png",
+        "public/brand/javed-iqbal-site.webp"
+      ],
+      "hammingDistance": 1
+    },
+    {
+      "files": [
+        "public/brand/jufaja-logo-3d.png",
+        "public/brand/jufaja-logo.png"
+      ],
+      "hammingDistance": 3
+    },
+    {
+      "files": [
+        "public/brand/jufaja-logo-transparent.png",
+        "public/brand/jufaja-logo.png"
+      ],
+      "hammingDistance": 3
+    },
+    {
+      "files": [
+        "public/brand/jufaja-mark.png",
+        "public/brand/jufaja-mark.svg"
+      ],
+      "hammingDistance": 5
+    },
+    {
+      "files": [
+        "public/brand/jufaja-mark.png",
+        "public/brand/jufaja-monogram.svg"
+      ],
+      "hammingDistance": 5
+    }
+  ],
+  "withoutTextReferences": [
+    "file_0000000001d0820b95f8b16ad7e2002f.png",
+    "public/brand/javed-iqbal-executive.png",
+    "public/brand/javed-iqbal-site.png",
+    "public/brand/jufaja-mark-3d.png"
+  ],
+  "assets": [
+    {
+      "file": "file_0000000001d0820b95f8b16ad7e2002f.png",
+      "bytes": 268090,
+      "sha256": "142f62f20f81f7b6771543e788940564585bb68f22144fc450297bcc3e22fd75",
+      "usages": [],
+      "width": 1536,
+      "height": 1152,
+      "alpha": false,
+      "perceptualHash": "eeec35352c6e96d2"
+    },
+    {
+      "file": "public/ab-web-studio-logo.webp",
+      "bytes": 79676,
+      "sha256": "31d5c1dc2e27e53ab4ba6f91d48980536c2e9a4c570aaf875d9f5333b899799c",
+      "usages": [
+        "src/components/layout/Footer.tsx"
+      ],
+      "width": 672,
+      "height": 309,
+      "alpha": true,
+      "perceptualHash": "30303030100e8ec0"
+    },
+    {
+      "file": "public/brand/favicon.svg",
+      "bytes": 16627,
+      "sha256": "ad49ca3ec15fc1cac950216562558727f47ce30760202d85de61471449e001c1",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs",
+        "src/app/layout.tsx",
+        "src/app/manifest.ts"
+      ],
+      "width": 96,
+      "height": 64,
+      "alpha": true,
+      "perceptualHash": "e169e8eae8cce6c6"
+    },
+    {
+      "file": "public/brand/javed-iqbal-executive.png",
+      "bytes": 2133500,
+      "sha256": "f9363a25c3cb4388a67eb9b2cdfbe08165a44b36433071df787df5883576921a",
+      "usages": [],
+      "width": 1122,
+      "height": 1402,
+      "alpha": false,
+      "perceptualHash": "f4deceeec6cc9ca3"
+    },
+    {
+      "file": "public/brand/javed-iqbal-executive.webp",
+      "bytes": 112710,
+      "sha256": "09639e55416ebc443f96b9744d684ce9e6dd777cd1f1816499fdb851b72ee2e7",
+      "usages": [
+        "public/brand/README.md",
+        "src/components/home/CasaviewHome.tsx",
+        "src/components/home/LeadershipPortrait.tsx"
+      ],
+      "width": 1122,
+      "height": 1402,
+      "alpha": false,
+      "perceptualHash": "fceeccedc6cc9ca3"
+    },
+    {
+      "file": "public/brand/javed-iqbal-site.png",
+      "bytes": 268090,
+      "sha256": "142f62f20f81f7b6771543e788940564585bb68f22144fc450297bcc3e22fd75",
+      "usages": [],
+      "width": 1536,
+      "height": 1152,
+      "alpha": false,
+      "perceptualHash": "eeec35352c6e96d2"
+    },
+    {
+      "file": "public/brand/javed-iqbal-site.webp",
+      "bytes": 125704,
+      "sha256": "ccf91cff6faeea6b53246dcd6c7f7d82e55ede3c544d3fb2c9a895763a27939a",
+      "usages": [
+        "public/brand/README.md",
+        "src/app/about-us/page.tsx",
+        "src/components/home/LeadershipSection.tsx"
+      ],
+      "width": 1536,
+      "height": 1152,
+      "alpha": false,
+      "perceptualHash": "eeec35353c6e96d2"
+    },
+    {
+      "file": "public/brand/jufaja-logo-3d.png",
+      "bytes": 1636440,
+      "sha256": "54aabe5a0672589e2633a2042a665612f87d42ae43f5e834cff524d266b642fd",
+      "usages": [
+        "public/brand/README.md",
+        "scripts/prepare-brand-assets.mjs",
+        "tests/brand-system.test.js"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "alpha": true,
+      "perceptualHash": "22696969edaabad0"
+    },
+    {
+      "file": "public/brand/jufaja-logo-dark.svg",
+      "bytes": 474929,
+      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs",
+        "tests/brand-system.test.js"
+      ],
+      "width": 768,
+      "height": 512,
+      "alpha": true,
+      "perceptualHash": "24b8bd796de2ada4"
+    },
+    {
+      "file": "public/brand/jufaja-logo-horizontal.svg",
+      "bytes": 474929,
+      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs",
+        "tests/brand-system.test.js"
+      ],
+      "width": 768,
+      "height": 512,
+      "alpha": true,
+      "perceptualHash": "24b8bd796de2ada4"
+    },
+    {
+      "file": "public/brand/jufaja-logo-light.svg",
+      "bytes": 474929,
+      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs",
+        "tests/brand-system.test.js"
+      ],
+      "width": 768,
+      "height": 512,
+      "alpha": true,
+      "perceptualHash": "24b8bd796de2ada4"
+    },
+    {
+      "file": "public/brand/jufaja-logo-stacked.svg",
+      "bytes": 474929,
+      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs",
+        "tests/brand-system.test.js"
+      ],
+      "width": 768,
+      "height": 512,
+      "alpha": true,
+      "perceptualHash": "24b8bd796de2ada4"
+    },
+    {
+      "file": "public/brand/jufaja-logo-transparent.png",
+      "bytes": 1636440,
+      "sha256": "54aabe5a0672589e2633a2042a665612f87d42ae43f5e834cff524d266b642fd",
+      "usages": [
+        "public/brand/README.md",
+        "scripts/prepare-brand-assets.mjs",
+        "src/components/brand/JufajaLogo.tsx",
+        "src/components/motion/CinematicIntro.tsx",
+        "tests/brand-system.test.js"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "alpha": true,
+      "perceptualHash": "22696969edaabad0"
+    },
+    {
+      "file": "public/brand/jufaja-logo.png",
+      "bytes": 356058,
+      "sha256": "3e55bbf95250bcbc0c46d4fb765b0163ea7928ec11eaade9529ceb3800f11730",
+      "usages": [
+        "public/brand/README.md",
+        "scripts/prepare-brand-assets.mjs",
+        "src/app/layout.tsx",
+        "src/components/layout/StructuredData.tsx",
+        "src/lib/site-metadata.ts",
+        "tests/brand-system.test.js"
+      ],
+      "width": 768,
+      "height": 512,
+      "alpha": true,
+      "perceptualHash": "a2696969eda6bad0"
+    },
+    {
+      "file": "public/brand/jufaja-mark-3d.png",
+      "bytes": 1503434,
+      "sha256": "661cc0957172641e4c4a68802c0854b53939740955a59e0b5c4340e0ac30d480",
+      "usages": [],
+      "width": 1536,
+      "height": 632,
+      "alpha": true,
+      "perceptualHash": "62aa696969696ded"
+    },
+    {
+      "file": "public/brand/jufaja-mark.png",
+      "bytes": 226976,
+      "sha256": "0d1c08bc0443261f6a97fe245241f8981e22947022fd78251776a29667955f0e",
+      "usages": [
+        "public/brand/README.md",
+        "scripts/prepare-brand-assets.mjs"
+      ],
+      "width": 512,
+      "height": 342,
+      "alpha": true,
+      "perceptualHash": "e169e8eac8cce6c6"
+    },
+    {
+      "file": "public/brand/jufaja-mark.svg",
+      "bytes": 302820,
+      "sha256": "1d8f04990611e58eb983482bfe39fc98f64a92579aea0b07254e57ee6485f54d",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs"
+      ],
+      "width": 512,
+      "height": 342,
+      "alpha": true,
+      "perceptualHash": "646968eae8cce6c6"
+    },
+    {
+      "file": "public/brand/jufaja-monogram.svg",
+      "bytes": 302820,
+      "sha256": "1d8f04990611e58eb983482bfe39fc98f64a92579aea0b07254e57ee6485f54d",
+      "usages": [
+        "scripts/prepare-brand-assets.mjs"
+      ],
+      "width": 512,
+      "height": 342,
+      "alpha": true,
+      "perceptualHash": "646968eae8cce6c6"
+    },
+    {
+      "file": "public/images/architecture/architectural-planning-materials.webp",
+      "bytes": 176548,
+      "sha256": "7cfb4236ac388fc7b4c96520b3e5d572883c6f2cec5e632d70426981ec27dd37",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/contact/page.tsx"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "alpha": false,
+      "perceptualHash": "92b233a38b978fcb"
+    },
+    {
+      "file": "public/images/architecture/daylight-cantilever-home.webp",
+      "bytes": 114964,
+      "sha256": "b2c14f8c9d3eb6b93d03b5450324243351620bcac169d5152c9bf249f27213bd",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/custom-homes/page.tsx",
+        "src/data/designs.json",
+        "src/data/hero-slides.ts",
+        "src/data/projects.ts",
+        "src/lib/catalogue.ts"
+      ],
+      "width": 1920,
+      "height": 1072,
+      "alpha": false,
+      "perceptualHash": "90a6b8b4e2f0f3c1"
+    },
+    {
+      "file": "public/images/architecture/daylight-family-home.webp",
+      "bytes": 151932,
+      "sha256": "ed4781e28e6303bb2583f6c964fb31f97e0f2e5ec507e1400472d2c4434f401d",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/designs/page.tsx",
+        "src/app/display-homes/page.tsx",
+        "src/app/knockdown-rebuild/page.tsx",
+        "src/app/packages/page.tsx",
+        "src/data/designs.json",
+        "src/data/hero-slides.ts",
+        "src/data/projects.ts"
+      ],
+      "width": 1920,
+      "height": 1072,
+      "alpha": false,
+      "perceptualHash": "2cdcf8b87071173f"
+    },
+    {
+      "file": "public/images/architecture/daylight-paired-homes.webp",
+      "bytes": 81718,
+      "sha256": "2cefd1c4d11b5028355331e73cfde001f28362b4eb6dec86a7a2b388aff27e5b",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/inclusions/page.tsx",
+        "src/data/designs.json",
+        "src/data/hero-slides.ts",
+        "src/data/projects.ts",
+        "src/lib/catalogue.ts"
+      ],
+      "width": 1920,
+      "height": 1072,
+      "alpha": false,
+      "perceptualHash": "004cccd85879790f"
+    },
+    {
+      "file": "public/images/architecture/daylight-sculptural-home.webp",
+      "bytes": 189182,
+      "sha256": "bea4b1c06e360e9016b1759837302db8ed031981f56ec0a7be4771d6e53fcc19",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/knockdown-rebuild/page.tsx",
+        "src/data/designs.json",
+        "src/data/hero-slides.ts"
+      ],
+      "width": 1920,
+      "height": 1434,
+      "alpha": false,
+      "perceptualHash": "000136e6ecad0bd3"
+    },
+    {
+      "file": "public/images/architecture/daylight-single-storey-home.webp",
+      "bytes": 347024,
+      "sha256": "9a0aac282cc3f7c44494ac70aedef688a4a59109ac0382657671d2539792c685",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/lib/catalogue.ts",
+        "tests/enquiry-context.test.js"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "alpha": false,
+      "perceptualHash": "f85e2c56456ce0c6"
+    },
+    {
+      "file": "public/images/architecture/daylight-stone-residence.webp",
+      "bytes": 312348,
+      "sha256": "74aba56e496ddfeb16244c011017a15612f612288a89ebc9dd3a0f75f2bb9ba0",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/custom-homes/page.tsx",
+        "src/components/home/CasaviewHome.tsx",
+        "src/data/projects.ts"
+      ],
+      "width": 1920,
+      "height": 1434,
+      "alpha": false,
+      "perceptualHash": "48d8d1d9f9d79756"
+    },
+    {
+      "file": "public/images/architecture/limestone-courtyard-detail.webp",
+      "bytes": 247958,
+      "sha256": "ad8e44e6c14bd2abc88f06f094736c8472534945983217114e3f2de4bfbf655b",
+      "usages": [
+        "public/images/architecture/README.md",
+        "src/app/inclusions/page.tsx",
+        "src/components/home/CasaviewHome.tsx"
+      ],
+      "width": 1536,
+      "height": 1024,
+      "alpha": false,
+      "perceptualHash": "8c2525860626a527"
+    }
+  ]
+}

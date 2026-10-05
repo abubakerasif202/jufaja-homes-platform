@@ -1,6 +1,7 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from '@/lib/use-reduced-motion';
+import { motion } from 'framer-motion';
 
 /** A drawn axonometric house study, not a representation of a specific project. */
 export default function ArchitecturalLines({ className = '' }: { className?: string }) {

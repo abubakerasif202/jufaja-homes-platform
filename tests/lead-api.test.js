@@ -8,7 +8,7 @@ const request = body => new Request('http://localhost/api/enquiry', { method: 'P
 const valid = { name: 'QA Test', email: 'qa@example.com', phone: '0412345678', enquiryType: 'Home design', targetDesignName: 'Blaxland Series', message: 'Test only' };
 
 test('actual route rejects incomplete, malformed and oversized submissions without delivery', async () => {
-  for (const [body, status] of [[{}, 400], [{ ...valid, email: 'invalid' }, 400], [{ ...valid, phone: '123' }, 400], [{ ...valid, message: 'x'.repeat(21000) }, 413]]) {
+  for (const [body, status] of [[{}, 400], [{ ...valid, email: 'invalid' }, 400], [{ ...valid, phone: '123' }, 400], [{ ...valid, phone: 'not-a-phone0412345678' }, 400], [{ ...valid, message: 'x'.repeat(21000) }, 413]]) {
     assert.equal((await POST(request(body))).status, status);
   }
   assert.equal((await POST(new Request('http://localhost/api/enquiry', { method: 'POST', body: '{}' }))).status, 415);
@@ -32,6 +32,12 @@ test('actual route retains enquiry context, reports delivery failures and traps 
     assert.match(delivered.text, /Enquiry type: Home design/);
     assert.equal(delivered.reply_to, 'qa@example.com');
     assert.equal(delivered.subject, 'Website enquiry: Home design');
+    for (const payload of [{}, { id: '' }, { id: 123 }, null]) {
+      global.fetch = async () => new Response(JSON.stringify(payload), { status: 200 });
+      assert.equal((await POST(request(valid))).status, 502, 'unconfirmed provider response must not report success');
+    }
+    global.fetch = async () => new Response('invalid json', { status: 200 });
+    assert.equal((await POST(request(valid))).status, 502);
     global.fetch = async () => new Response('{}', { status: 500 });
     const failed = await POST(request(valid));
     assert.equal(failed.status, 502);

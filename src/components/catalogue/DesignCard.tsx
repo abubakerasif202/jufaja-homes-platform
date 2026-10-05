@@ -9,16 +9,17 @@ import EnquireDesignButton from '@/components/designs/EnquireDesignButton';
 
 interface Props {
   design: HomeDesign;
+  compact?: boolean;
 }
 
-export default function DesignCard({ design }: Props) {
+export default function DesignCard({ design, compact = false }: Props) {
   const facade = design.facades[0];
 
   return (
     <DepthFrame className="design-depth"><div className="design-card bg-white rounded-sm overflow-hidden border border-jufaja-border hover:border-jufaja-gold-500 hover:-translate-y-1 shadow-sm hover:shadow-luxury transition-[transform,box-shadow,border-color] duration-300 flex flex-col justify-between group">
       
       {/* Facade Image Frame */}
-      <div className="design-card__image relative h-64 w-full overflow-hidden bg-jufaja-stone">
+      {!compact && <div className="design-card__image relative h-64 w-full overflow-hidden bg-jufaja-stone">
         {facade && <Image
           src={facade.image}
           alt={`${facade.name}; not a verified facade for ${design.name}`}
@@ -50,11 +51,13 @@ export default function DesignCard({ design }: Props) {
             {formatSqm(design.houseSizeSqm)}
           </span>
         </div>
-      </div>
+      </div>}
 
       {/* Card Content Body */}
       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
         <div>
+          {compact && <p className="mb-3 text-xs font-semibold text-jufaja-gold-600">{DWELLING_LABELS[design.dwellingType]} · {formatSquares(design.houseSizeSquares)}</p>}
+          {compact && <p className="mb-3 text-xs leading-6 text-jufaja-muted">Min frontage: {design.minLotWidth}m · {formatSqm(design.houseSizeSqm)}</p>}
           {/* Title & Series */}
           <div className="mb-3">
             <h3 className="font-serif text-3xl text-jufaja-forest group-hover:text-jufaja-gold-600 transition-colors">

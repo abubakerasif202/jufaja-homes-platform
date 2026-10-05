@@ -41,7 +41,7 @@ export default function ProjectsPage() {
                   <div className="absolute top-4 left-4 bg-jufaja-forest-900 text-white px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider">
                     {proj.category}
                   </div>
-                  <div className="absolute bottom-4 left-4 bg-white px-3.5 py-1.5 rounded-sm text-xs font-semibold text-jufaja-charcoal shadow flex items-center gap-1.5">
+                  <div className="absolute bottom-4 left-4 right-4 w-fit rounded-sm bg-white px-3.5 py-1.5 text-xs font-semibold text-jufaja-charcoal shadow">
                     <span>Illustrative image · not a completed project</span>
                   </div>
                 </div></Reveal>

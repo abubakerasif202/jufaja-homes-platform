@@ -1,8 +1,9 @@
 'use client';
 
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FacadeOption } from '@/types';
 
 interface Props {

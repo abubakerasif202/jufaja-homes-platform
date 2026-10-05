@@ -1,8 +1,8 @@
 export default function Loading() {
   return (
-    <div aria-busy="true" aria-live="polite" className="min-h-[55vh] bg-jufaja-cream px-4 py-20 sm:px-6">
+    <div aria-busy="true" aria-live="polite" className="min-h-[calc(100svh-88px)] bg-jufaja-cream px-4 py-20 sm:px-6">
       <span className="sr-only">Loading page</span>
-      <div className="mx-auto max-w-7xl animate-pulse space-y-6">
+      <div className="mx-auto max-w-7xl motion-safe:animate-pulse space-y-6">
         <div className="h-3 w-28 rounded-sm bg-jufaja-stone" />
         <div className="h-12 max-w-2xl rounded-sm bg-jufaja-stone sm:h-16" />
         <div className="h-5 max-w-xl rounded-sm bg-jufaja-stone" />

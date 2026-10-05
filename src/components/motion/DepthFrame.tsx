@@ -1,7 +1,8 @@
 'use client';
 
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 import { useRef, type ReactNode, type PointerEvent } from 'react';
-import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 /** Pointer depth without React renders. Touch and reduced-motion remain static. */
 export default function DepthFrame({ children, className = '' }: { children: ReactNode; className?: string }) {

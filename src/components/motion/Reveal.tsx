@@ -1,7 +1,8 @@
 'use client';
 
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 type RevealDirection = 'up' | 'down' | 'left' | 'right';
 type RevealMode = 'fade' | 'mask-up' | 'mask-left';

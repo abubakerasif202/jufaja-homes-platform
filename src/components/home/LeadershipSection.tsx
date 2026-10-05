@@ -76,7 +76,7 @@ export default function LeadershipSection({ variant = 'home' }: LeadershipSectio
           <Reveal mode="mask-left" duration={1.2}>
             <div className="relative aspect-[16/10] w-full overflow-hidden border border-jufaja-gold-500/40 sm:aspect-[21/10]">
               <Image
-                src="/brand/javed-iqbal-site.png"
+                src="/brand/javed-iqbal-site.webp"
                 alt="Javed Iqbal in a white hard hat and high-visibility vest talking with colleagues beside a project-overview whiteboard on a building site"
                 fill
                 sizes="(min-width: 1280px) 1216px, 100vw"

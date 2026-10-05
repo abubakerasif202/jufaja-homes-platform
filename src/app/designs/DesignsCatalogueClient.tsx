@@ -68,11 +68,11 @@ export default function DesignsCatalogueClient({ initialDesigns }: Props) {
           ))}
         </div>
       ) : (
-        <div className="bg-white rounded-sm border border-jufaja-border p-16 text-center">
+        <div className="rounded-sm border border-jufaja-border bg-white px-5 py-12 text-center sm:p-16">
           <div className="w-16 h-16 rounded-full bg-jufaja-stone text-jufaja-gold-600 flex items-center justify-center mx-auto mb-4">
             <Home aria-hidden="true" className="w-8 h-8" />
           </div>
-          <h3 className="font-serif text-2xl text-jufaja-forest">No Matching Designs Found</h3>
+          <h2 className="font-serif text-2xl text-jufaja-forest">No Matching Designs Found</h2>
           <p className="text-sm text-jufaja-muted mt-1 max-w-md mx-auto">
             Try adjusting your bedroom, bathroom, or dwelling type filters to explore more design references.
           </p>

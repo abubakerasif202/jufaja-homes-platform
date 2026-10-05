@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-export const SITE_URL = 'https://jufaja-homes-platform.vercel.app';
+export const SITE_URL = 'https://www.jufajaconstructions.com.au';
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const socialTitle = `${title} | JUFAJA Constructions`;

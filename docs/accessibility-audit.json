@@ -1,0 +1,172 @@
+[
+  {
+    "route": "/",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/about-us",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/custom-homes",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/designs",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/display-homes",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/inclusions",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/knockdown-rebuild",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/packages",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/privacy",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/projects",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/designs/blaxland-series",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/designs/bennelong-series",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/designs/mcevoy-duplex",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/designs/marbella-355",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/designs/berkeley-27-wide-lot",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/audit-missing-page",
+    "width": 390,
+    "violations": []
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/about-us",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/contact",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/custom-homes",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/designs",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/display-homes",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/inclusions",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/knockdown-rebuild",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/packages",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/privacy",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/projects",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/designs/blaxland-series",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/designs/bennelong-series",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/designs/mcevoy-duplex",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/designs/marbella-355",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/designs/berkeley-27-wide-lot",
+    "width": 1440,
+    "violations": []
+  },
+  {
+    "route": "/audit-missing-page",
+    "width": 1440,
+    "violations": []
+  }
+]

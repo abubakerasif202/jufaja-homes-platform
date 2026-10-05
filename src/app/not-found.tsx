@@ -4,7 +4,7 @@ import ButtonLink from '@/components/ui/ButtonLink';
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[65vh] items-center bg-jufaja-cream py-20">
+    <div className="flex min-h-[65vh] items-center bg-jufaja-cream py-20">
       <div className="mx-auto w-full max-w-3xl px-4 text-center sm:px-6">
         <p className="eyebrow">404 · Page not found</p>
         <h1 className="type-h1 mt-3 font-serif text-jufaja-forest">Let’s find another way.</h1>
@@ -14,6 +14,6 @@ export default function NotFound() {
           <ButtonLink href="/designs" variant="outline">Browse home designs</ButtonLink>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

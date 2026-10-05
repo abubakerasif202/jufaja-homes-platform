@@ -1,0 +1,2495 @@
+{
+  "base": "http://127.0.0.1:3010",
+  "output": "C:/Users/abuba/AppData/Local/Temp/jufaja-final-audit",
+  "routes": [
+    "/",
+    "/about-us",
+    "/contact",
+    "/custom-homes",
+    "/designs",
+    "/display-homes",
+    "/inclusions",
+    "/knockdown-rebuild",
+    "/packages",
+    "/privacy",
+    "/projects",
+    "/designs/blaxland-series",
+    "/designs/kingston-series",
+    "/designs/hemsworth-series",
+    "/designs/majestic-series",
+    "/designs/oxley-26-series",
+    "/designs/oxley-series",
+    "/designs/eden-series",
+    "/designs/patterson-series",
+    "/designs/hastings-series",
+    "/designs/riley-series",
+    "/designs/lennox-series",
+    "/designs/collins-series",
+    "/designs/glenbrook-series",
+    "/designs/lindsay-series",
+    "/designs/stuart-series",
+    "/designs/rozelle-series",
+    "/designs/chesterfield-series",
+    "/designs/crest-series",
+    "/designs/darlington-series",
+    "/designs/lithgow-series",
+    "/designs/jardine-series",
+    "/designs/stamford-series",
+    "/designs/winton-series",
+    "/designs/bennelong-series",
+    "/designs/centennial-series",
+    "/designs/grange-series",
+    "/designs/delta-series",
+    "/designs/urban-series",
+    "/designs/verona-series",
+    "/designs/elite-series",
+    "/designs/alpha-series",
+    "/designs/montreal-series",
+    "/designs/crawford-series",
+    "/designs/denison-series",
+    "/designs/elwood-series",
+    "/designs/meadow-series",
+    "/designs/atlantic-series",
+    "/designs/primavera-series",
+    "/designs/stellar-series",
+    "/designs/linden-series",
+    "/designs/coral-series",
+    "/designs/fingal-series",
+    "/designs/pacific-series",
+    "/designs/mcevoy-duplex",
+    "/designs/mayfield-duplex",
+    "/designs/fair-haven-duplex",
+    "/designs/ivory-duplex",
+    "/designs/altona-duplex",
+    "/designs/pine-lea-duplex",
+    "/designs/tempus-duplex",
+    "/designs/stanmore-duplex",
+    "/designs/tempus-mk2-duplex",
+    "/designs/marbella-355",
+    "/designs/marbella-31",
+    "/designs/marbella-31-mk1",
+    "/designs/austin-26",
+    "/designs/austin-25",
+    "/designs/austin-25-mk1",
+    "/designs/berkeley-27-wide-lot",
+    "/designs/edgeworth-35-wide-lot",
+    "/designs/ashford-385-wide-lot",
+    "/designs/holbrook-40-wide-lot",
+    "/designs/cowra-475-wide-lot"
+  ],
+  "matrix": [
+    {
+      "route": "/",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 300,
+        "shifts": []
+      },
+      "screenshot": "home-390.png"
+    },
+    {
+      "route": "/about-us",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/about-us",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 140,
+        "shifts": []
+      },
+      "screenshot": "about-us-390.png"
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/contact",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 160,
+        "shifts": []
+      },
+      "screenshot": "contact-390.png"
+    },
+    {
+      "route": "/custom-homes",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/custom-homes",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 116,
+        "shifts": []
+      },
+      "screenshot": "custom-homes-390.png"
+    },
+    {
+      "route": "/designs",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 104,
+        "shifts": []
+      },
+      "screenshot": "designs-390.png"
+    },
+    {
+      "route": "/display-homes",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/display-homes",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 136,
+        "shifts": []
+      },
+      "screenshot": "display-homes-390.png"
+    },
+    {
+      "route": "/inclusions",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/inclusions",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "inclusions-390.png"
+    },
+    {
+      "route": "/knockdown-rebuild",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/knockdown-rebuild",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "knockdown-rebuild-390.png"
+    },
+    {
+      "route": "/packages",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/packages",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 60,
+        "shifts": []
+      },
+      "screenshot": "packages-390.png"
+    },
+    {
+      "route": "/privacy",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/privacy",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 60,
+        "shifts": []
+      },
+      "screenshot": "privacy-390.png"
+    },
+    {
+      "route": "/projects",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/projects",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "projects-390.png"
+    },
+    {
+      "route": "/designs/blaxland-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/blaxland-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 176,
+        "shifts": []
+      },
+      "screenshot": "designs--blaxland-series-390.png"
+    },
+    {
+      "route": "/designs/kingston-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/kingston-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--kingston-series-390.png"
+    },
+    {
+      "route": "/designs/hemsworth-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/hemsworth-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--hemsworth-series-390.png"
+    },
+    {
+      "route": "/designs/majestic-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/majestic-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--majestic-series-390.png"
+    },
+    {
+      "route": "/designs/oxley-26-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/oxley-26-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--oxley-26-series-390.png"
+    },
+    {
+      "route": "/designs/oxley-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/oxley-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--oxley-series-390.png"
+    },
+    {
+      "route": "/designs/eden-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/eden-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--eden-series-390.png"
+    },
+    {
+      "route": "/designs/patterson-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/patterson-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--patterson-series-390.png"
+    },
+    {
+      "route": "/designs/hastings-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/hastings-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--hastings-series-390.png"
+    },
+    {
+      "route": "/designs/riley-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/riley-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 92,
+        "shifts": []
+      },
+      "screenshot": "designs--riley-series-390.png"
+    },
+    {
+      "route": "/designs/lennox-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/lennox-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 108,
+        "shifts": []
+      },
+      "screenshot": "designs--lennox-series-390.png"
+    },
+    {
+      "route": "/designs/collins-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/collins-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--collins-series-390.png"
+    },
+    {
+      "route": "/designs/glenbrook-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/glenbrook-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--glenbrook-series-390.png"
+    },
+    {
+      "route": "/designs/lindsay-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/lindsay-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--lindsay-series-390.png"
+    },
+    {
+      "route": "/designs/stuart-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stuart-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--stuart-series-390.png"
+    },
+    {
+      "route": "/designs/rozelle-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/rozelle-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--rozelle-series-390.png"
+    },
+    {
+      "route": "/designs/chesterfield-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/chesterfield-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--chesterfield-series-390.png"
+    },
+    {
+      "route": "/designs/crest-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/crest-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--crest-series-390.png"
+    },
+    {
+      "route": "/designs/darlington-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/darlington-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--darlington-series-390.png"
+    },
+    {
+      "route": "/designs/lithgow-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/lithgow-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 92,
+        "shifts": []
+      },
+      "screenshot": "designs--lithgow-series-390.png"
+    },
+    {
+      "route": "/designs/jardine-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/jardine-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--jardine-series-390.png"
+    },
+    {
+      "route": "/designs/stamford-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stamford-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--stamford-series-390.png"
+    },
+    {
+      "route": "/designs/winton-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/winton-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 108,
+        "shifts": []
+      },
+      "screenshot": "designs--winton-series-390.png"
+    },
+    {
+      "route": "/designs/bennelong-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/bennelong-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 128,
+        "shifts": []
+      },
+      "screenshot": "designs--bennelong-series-390.png"
+    },
+    {
+      "route": "/designs/centennial-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/centennial-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 136,
+        "shifts": []
+      },
+      "screenshot": "designs--centennial-series-390.png"
+    },
+    {
+      "route": "/designs/grange-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/grange-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 180,
+        "shifts": []
+      },
+      "screenshot": "designs--grange-series-390.png"
+    },
+    {
+      "route": "/designs/delta-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/delta-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 160,
+        "shifts": []
+      },
+      "screenshot": "designs--delta-series-390.png"
+    },
+    {
+      "route": "/designs/urban-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/urban-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--urban-series-390.png"
+    },
+    {
+      "route": "/designs/verona-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/verona-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--verona-series-390.png"
+    },
+    {
+      "route": "/designs/elite-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/elite-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--elite-series-390.png"
+    },
+    {
+      "route": "/designs/alpha-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/alpha-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 120,
+        "shifts": []
+      },
+      "screenshot": "designs--alpha-series-390.png"
+    },
+    {
+      "route": "/designs/montreal-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/montreal-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--montreal-series-390.png"
+    },
+    {
+      "route": "/designs/crawford-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/crawford-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--crawford-series-390.png"
+    },
+    {
+      "route": "/designs/denison-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/denison-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--denison-series-390.png"
+    },
+    {
+      "route": "/designs/elwood-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/elwood-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--elwood-series-390.png"
+    },
+    {
+      "route": "/designs/meadow-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/meadow-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--meadow-series-390.png"
+    },
+    {
+      "route": "/designs/atlantic-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/atlantic-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 128,
+        "shifts": []
+      },
+      "screenshot": "designs--atlantic-series-390.png"
+    },
+    {
+      "route": "/designs/primavera-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/primavera-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 120,
+        "shifts": []
+      },
+      "screenshot": "designs--primavera-series-390.png"
+    },
+    {
+      "route": "/designs/stellar-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stellar-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--stellar-series-390.png"
+    },
+    {
+      "route": "/designs/linden-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/linden-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 108,
+        "shifts": []
+      },
+      "screenshot": "designs--linden-series-390.png"
+    },
+    {
+      "route": "/designs/coral-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/coral-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 104,
+        "shifts": []
+      },
+      "screenshot": "designs--coral-series-390.png"
+    },
+    {
+      "route": "/designs/fingal-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/fingal-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 104,
+        "shifts": []
+      },
+      "screenshot": "designs--fingal-series-390.png"
+    },
+    {
+      "route": "/designs/pacific-series",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/pacific-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 96,
+        "shifts": []
+      },
+      "screenshot": "designs--pacific-series-390.png"
+    },
+    {
+      "route": "/designs/mcevoy-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/mcevoy-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 128,
+        "shifts": []
+      },
+      "screenshot": "designs--mcevoy-duplex-390.png"
+    },
+    {
+      "route": "/designs/mayfield-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/mayfield-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 124,
+        "shifts": []
+      },
+      "screenshot": "designs--mayfield-duplex-390.png"
+    },
+    {
+      "route": "/designs/fair-haven-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/fair-haven-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 144,
+        "shifts": []
+      },
+      "screenshot": "designs--fair-haven-duplex-390.png"
+    },
+    {
+      "route": "/designs/ivory-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/ivory-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 132,
+        "shifts": []
+      },
+      "screenshot": "designs--ivory-duplex-390.png"
+    },
+    {
+      "route": "/designs/altona-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/altona-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 124,
+        "shifts": []
+      },
+      "screenshot": "designs--altona-duplex-390.png"
+    },
+    {
+      "route": "/designs/pine-lea-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/pine-lea-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 196,
+        "shifts": []
+      },
+      "screenshot": "designs--pine-lea-duplex-390.png"
+    },
+    {
+      "route": "/designs/tempus-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/tempus-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 180,
+        "shifts": []
+      },
+      "screenshot": "designs--tempus-duplex-390.png"
+    },
+    {
+      "route": "/designs/stanmore-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stanmore-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 96,
+        "shifts": []
+      },
+      "screenshot": "designs--stanmore-duplex-390.png"
+    },
+    {
+      "route": "/designs/tempus-mk2-duplex",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/tempus-mk2-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 96,
+        "shifts": []
+      },
+      "screenshot": "designs--tempus-mk2-duplex-390.png"
+    },
+    {
+      "route": "/designs/marbella-355",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/marbella-355",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--marbella-355-390.png"
+    },
+    {
+      "route": "/designs/marbella-31",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/marbella-31",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 116,
+        "shifts": []
+      },
+      "screenshot": "designs--marbella-31-390.png"
+    },
+    {
+      "route": "/designs/marbella-31-mk1",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/marbella-31-mk1",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 116,
+        "shifts": []
+      },
+      "screenshot": "designs--marbella-31-mk1-390.png"
+    },
+    {
+      "route": "/designs/austin-26",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/austin-26",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 112,
+        "shifts": []
+      },
+      "screenshot": "designs--austin-26-390.png"
+    },
+    {
+      "route": "/designs/austin-25",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/austin-25",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 132,
+        "shifts": []
+      },
+      "screenshot": "designs--austin-25-390.png"
+    },
+    {
+      "route": "/designs/austin-25-mk1",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/austin-25-mk1",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--austin-25-mk1-390.png"
+    },
+    {
+      "route": "/designs/berkeley-27-wide-lot",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/berkeley-27-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--berkeley-27-wide-lot-390.png"
+    },
+    {
+      "route": "/designs/edgeworth-35-wide-lot",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/edgeworth-35-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--edgeworth-35-wide-lot-390.png"
+    },
+    {
+      "route": "/designs/ashford-385-wide-lot",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/ashford-385-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--ashford-385-wide-lot-390.png"
+    },
+    {
+      "route": "/designs/holbrook-40-wide-lot",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/holbrook-40-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 192,
+        "shifts": []
+      },
+      "screenshot": "designs--holbrook-40-wide-lot-390.png"
+    },
+    {
+      "route": "/designs/cowra-475-wide-lot",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/cowra-475-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 204,
+        "shifts": []
+      },
+      "screenshot": "designs--cowra-475-wide-lot-390.png"
+    },
+    {
+      "route": "/audit-missing-page",
+      "width": 390,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "audit-missing-page-390.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 132,
+        "shifts": []
+      },
+      "screenshot": "home-1440.png"
+    },
+    {
+      "route": "/about-us",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/about-us",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 140,
+        "shifts": []
+      },
+      "screenshot": "about-us-1440.png"
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/contact",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 152,
+        "shifts": []
+      },
+      "screenshot": "contact-1440.png"
+    },
+    {
+      "route": "/custom-homes",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/custom-homes",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 112,
+        "shifts": []
+      },
+      "screenshot": "custom-homes-1440.png"
+    },
+    {
+      "route": "/designs",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 92,
+        "shifts": []
+      },
+      "screenshot": "designs-1440.png"
+    },
+    {
+      "route": "/display-homes",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/display-homes",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 140,
+        "shifts": []
+      },
+      "screenshot": "display-homes-1440.png"
+    },
+    {
+      "route": "/inclusions",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/inclusions",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 96,
+        "shifts": []
+      },
+      "screenshot": "inclusions-1440.png"
+    },
+    {
+      "route": "/knockdown-rebuild",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/knockdown-rebuild",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "knockdown-rebuild-1440.png"
+    },
+    {
+      "route": "/packages",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/packages",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "packages-1440.png"
+    },
+    {
+      "route": "/privacy",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/privacy",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 56,
+        "shifts": []
+      },
+      "screenshot": "privacy-1440.png"
+    },
+    {
+      "route": "/projects",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/projects",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "projects-1440.png"
+    },
+    {
+      "route": "/designs/blaxland-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/blaxland-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 112,
+        "shifts": []
+      },
+      "screenshot": "designs--blaxland-series-1440.png"
+    },
+    {
+      "route": "/designs/kingston-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/kingston-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--kingston-series-1440.png"
+    },
+    {
+      "route": "/designs/hemsworth-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/hemsworth-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--hemsworth-series-1440.png"
+    },
+    {
+      "route": "/designs/majestic-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/majestic-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 124,
+        "shifts": []
+      },
+      "screenshot": "designs--majestic-series-1440.png"
+    },
+    {
+      "route": "/designs/oxley-26-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/oxley-26-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--oxley-26-series-1440.png"
+    },
+    {
+      "route": "/designs/oxley-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/oxley-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 68,
+        "shifts": []
+      },
+      "screenshot": "designs--oxley-series-1440.png"
+    },
+    {
+      "route": "/designs/eden-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/eden-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--eden-series-1440.png"
+    },
+    {
+      "route": "/designs/patterson-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/patterson-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--patterson-series-1440.png"
+    },
+    {
+      "route": "/designs/hastings-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/hastings-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--hastings-series-1440.png"
+    },
+    {
+      "route": "/designs/riley-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/riley-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 100,
+        "shifts": []
+      },
+      "screenshot": "designs--riley-series-1440.png"
+    },
+    {
+      "route": "/designs/lennox-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/lennox-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--lennox-series-1440.png"
+    },
+    {
+      "route": "/designs/collins-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/collins-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--collins-series-1440.png"
+    },
+    {
+      "route": "/designs/glenbrook-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/glenbrook-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--glenbrook-series-1440.png"
+    },
+    {
+      "route": "/designs/lindsay-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/lindsay-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--lindsay-series-1440.png"
+    },
+    {
+      "route": "/designs/stuart-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stuart-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 92,
+        "shifts": []
+      },
+      "screenshot": "designs--stuart-series-1440.png"
+    },
+    {
+      "route": "/designs/rozelle-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/rozelle-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--rozelle-series-1440.png"
+    },
+    {
+      "route": "/designs/chesterfield-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/chesterfield-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--chesterfield-series-1440.png"
+    },
+    {
+      "route": "/designs/crest-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/crest-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--crest-series-1440.png"
+    },
+    {
+      "route": "/designs/darlington-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/darlington-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 104,
+        "shifts": []
+      },
+      "screenshot": "designs--darlington-series-1440.png"
+    },
+    {
+      "route": "/designs/lithgow-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/lithgow-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 92,
+        "shifts": []
+      },
+      "screenshot": "designs--lithgow-series-1440.png"
+    },
+    {
+      "route": "/designs/jardine-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/jardine-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--jardine-series-1440.png"
+    },
+    {
+      "route": "/designs/stamford-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stamford-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--stamford-series-1440.png"
+    },
+    {
+      "route": "/designs/winton-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/winton-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--winton-series-1440.png"
+    },
+    {
+      "route": "/designs/bennelong-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/bennelong-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--bennelong-series-1440.png"
+    },
+    {
+      "route": "/designs/centennial-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/centennial-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--centennial-series-1440.png"
+    },
+    {
+      "route": "/designs/grange-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/grange-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 96,
+        "shifts": []
+      },
+      "screenshot": "designs--grange-series-1440.png"
+    },
+    {
+      "route": "/designs/delta-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/delta-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--delta-series-1440.png"
+    },
+    {
+      "route": "/designs/urban-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/urban-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--urban-series-1440.png"
+    },
+    {
+      "route": "/designs/verona-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/verona-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--verona-series-1440.png"
+    },
+    {
+      "route": "/designs/elite-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/elite-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--elite-series-1440.png"
+    },
+    {
+      "route": "/designs/alpha-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/alpha-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 56,
+        "shifts": []
+      },
+      "screenshot": "designs--alpha-series-1440.png"
+    },
+    {
+      "route": "/designs/montreal-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/montreal-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--montreal-series-1440.png"
+    },
+    {
+      "route": "/designs/crawford-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/crawford-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--crawford-series-1440.png"
+    },
+    {
+      "route": "/designs/denison-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/denison-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--denison-series-1440.png"
+    },
+    {
+      "route": "/designs/elwood-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/elwood-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--elwood-series-1440.png"
+    },
+    {
+      "route": "/designs/meadow-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/meadow-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--meadow-series-1440.png"
+    },
+    {
+      "route": "/designs/atlantic-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/atlantic-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--atlantic-series-1440.png"
+    },
+    {
+      "route": "/designs/primavera-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/primavera-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--primavera-series-1440.png"
+    },
+    {
+      "route": "/designs/stellar-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stellar-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--stellar-series-1440.png"
+    },
+    {
+      "route": "/designs/linden-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/linden-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--linden-series-1440.png"
+    },
+    {
+      "route": "/designs/coral-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/coral-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 60,
+        "shifts": []
+      },
+      "screenshot": "designs--coral-series-1440.png"
+    },
+    {
+      "route": "/designs/fingal-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/fingal-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--fingal-series-1440.png"
+    },
+    {
+      "route": "/designs/pacific-series",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/pacific-series",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--pacific-series-1440.png"
+    },
+    {
+      "route": "/designs/mcevoy-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/mcevoy-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--mcevoy-duplex-1440.png"
+    },
+    {
+      "route": "/designs/mayfield-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/mayfield-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--mayfield-duplex-1440.png"
+    },
+    {
+      "route": "/designs/fair-haven-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/fair-haven-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--fair-haven-duplex-1440.png"
+    },
+    {
+      "route": "/designs/ivory-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/ivory-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--ivory-duplex-1440.png"
+    },
+    {
+      "route": "/designs/altona-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/altona-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 80,
+        "shifts": []
+      },
+      "screenshot": "designs--altona-duplex-1440.png"
+    },
+    {
+      "route": "/designs/pine-lea-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/pine-lea-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 60,
+        "shifts": []
+      },
+      "screenshot": "designs--pine-lea-duplex-1440.png"
+    },
+    {
+      "route": "/designs/tempus-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/tempus-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--tempus-duplex-1440.png"
+    },
+    {
+      "route": "/designs/stanmore-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/stanmore-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 56,
+        "shifts": []
+      },
+      "screenshot": "designs--stanmore-duplex-1440.png"
+    },
+    {
+      "route": "/designs/tempus-mk2-duplex",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/tempus-mk2-duplex",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--tempus-mk2-duplex-1440.png"
+    },
+    {
+      "route": "/designs/marbella-355",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/marbella-355",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 96,
+        "shifts": []
+      },
+      "screenshot": "designs--marbella-355-1440.png"
+    },
+    {
+      "route": "/designs/marbella-31",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/marbella-31",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--marbella-31-1440.png"
+    },
+    {
+      "route": "/designs/marbella-31-mk1",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/marbella-31-mk1",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 88,
+        "shifts": []
+      },
+      "screenshot": "designs--marbella-31-mk1-1440.png"
+    },
+    {
+      "route": "/designs/austin-26",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/austin-26",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 72,
+        "shifts": []
+      },
+      "screenshot": "designs--austin-26-1440.png"
+    },
+    {
+      "route": "/designs/austin-25",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/austin-25",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--austin-25-1440.png"
+    },
+    {
+      "route": "/designs/austin-25-mk1",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/austin-25-mk1",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--austin-25-mk1-1440.png"
+    },
+    {
+      "route": "/designs/berkeley-27-wide-lot",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/berkeley-27-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 76,
+        "shifts": []
+      },
+      "screenshot": "designs--berkeley-27-wide-lot-1440.png"
+    },
+    {
+      "route": "/designs/edgeworth-35-wide-lot",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/edgeworth-35-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 64,
+        "shifts": []
+      },
+      "screenshot": "designs--edgeworth-35-wide-lot-1440.png"
+    },
+    {
+      "route": "/designs/ashford-385-wide-lot",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/ashford-385-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 68,
+        "shifts": []
+      },
+      "screenshot": "designs--ashford-385-wide-lot-1440.png"
+    },
+    {
+      "route": "/designs/holbrook-40-wide-lot",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/holbrook-40-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--holbrook-40-wide-lot-1440.png"
+    },
+    {
+      "route": "/designs/cowra-475-wide-lot",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "canonical": "https://jufaja-homes-platform.vercel.app/designs/cowra-475-wide-lot",
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 84,
+        "shifts": []
+      },
+      "screenshot": "designs--cowra-475-wide-lot-1440.png"
+    },
+    {
+      "route": "/audit-missing-page",
+      "width": 1440,
+      "overflow": 0,
+      "brokenImages": [],
+      "h1": 1,
+      "mains": 1,
+      "missingAlt": 0,
+      "vitals": {
+        "cls": 0,
+        "lcp": 68,
+        "shifts": []
+      },
+      "screenshot": "audit-missing-page-1440.png"
+    }
+  ],
+  "interactions": [
+    "150 unique internal links resolve",
+    "Unknown design and package URLs return HTTP 404",
+    "Mobile menu, focus restoration, Escape and resize unlock",
+    "Desktop services keyboard menu",
+    "Service link client navigation and browser back",
+    "Catalogue filter and reset",
+    "Contact validation, pending, error and success (mocked)",
+    "Drawer pending close/reopen preserves result; mocked error and success",
+    "Drawer opens and Escape unlocks background",
+    "Reduced motion and once-per-session skippable intro"
+  ],
+  "errors": [],
+  "enquiriesIntercepted": 4,
+  "status": "PASS"
+}

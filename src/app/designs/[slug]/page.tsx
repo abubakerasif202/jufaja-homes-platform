@@ -17,6 +17,8 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const designs = catalogueDesigns;
   return designs.map((d) => ({
@@ -29,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const designs = catalogueDesigns;
   const design = designs.find((d) => d.slug === slug);
 
-  if (!design) return { title: 'Design Not Found' };
+  if (!design) notFound();
 
   return {
     ...pageMetadata(`${design.name} | Design reference`, `Explore the reference figures for ${design.name}. Request current floorplans and specifications from JUFAJA.`, `/designs/${design.slug}`),
@@ -77,7 +79,7 @@ export default async function SingleDesignPage({ params }: Props) {
               <span className="rounded-sm bg-jufaja-forest-900 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
                 {formatSquares(design.houseSizeSquares)}
               </span>
-              <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-ivory/80">
+              <span className="text-xs font-semibold uppercase tracking-wider text-jufaja-gold-400">
                 {DWELLING_LABELS[design.dwellingType]}
               </span>
             </div>
@@ -121,9 +123,9 @@ export default async function SingleDesignPage({ params }: Props) {
           {/* Right 1 Col: Highlights & Quick Enquiry */}
           <div className="space-y-6">
             <div className="border border-jufaja-border bg-white p-6 shadow-jufaja-soft">
-              <h3 className="mb-4 font-serif text-xl text-jufaja-forest">
+              <h2 className="mb-4 font-serif text-xl text-jufaja-forest">
                 Listed specifications
-              </h3>
+              </h2>
               {design.dwellingType === 'granny' && <p className="mb-3 text-sm leading-6 text-jufaja-muted">For this secondary living listing, confirm whether the totals include a main home and a secondary dwelling before comparing layouts.</p>}
               <p className="text-sm leading-6 text-jufaja-muted">The listed figures are {design.bedrooms} bedrooms, {design.bathrooms} bathrooms and {design.garages} garage spaces. Confirm the current plan and specifications with JUFAJA.</p>
             </div>
@@ -151,14 +153,14 @@ export default async function SingleDesignPage({ params }: Props) {
         {/* Related Designs Section */}
         {relatedDesigns.length > 0 && (
           <div className="border-t border-jufaja-border pt-12">
-            <div className="flex justify-between items-end mb-6">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <span className="eyebrow">
                   Similar listings
                 </span>
-                <h3 className="type-h3 mt-1 font-serif text-jufaja-forest">
+                <h2 className="type-h3 mt-1 font-serif text-jufaja-forest">
                   More {DWELLING_LABELS[design.dwellingType].toLowerCase()} designs
-                </h3>
+                </h2>
               </div>
               <Link href="/designs" className="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-jufaja-forest hover:text-jufaja-forest-700">
                 View All Designs &rarr;
@@ -167,7 +169,7 @@ export default async function SingleDesignPage({ params }: Props) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedDesigns.map((rel) => (
-                <DesignCard key={rel.id} design={rel} />
+                <DesignCard key={rel.id} design={rel} compact />
               ))}
             </div>
           </div>

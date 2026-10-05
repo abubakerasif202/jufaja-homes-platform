@@ -15,7 +15,7 @@ const topics = [
 export default function InclusionsPage() {
   return (
     <div className="min-h-[65vh] bg-jufaja-cream">
-      <PageHero image="/images/architecture/daylight-stone-residence.webp" tone="burgundy" label="Architecture reference">
+      <PageHero image="/images/architecture/limestone-courtyard-detail.webp" tone="burgundy" label="Illustrative materials study · limestone, timber and garden threshold">
         <p className="eyebrow">Selections and specifications</p>
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">Know what is included in your project.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">A current inclusions schedule is not published here. Request the written schedule for your preferred design so you can compare standard selections, optional upgrades and site allowances.</p>

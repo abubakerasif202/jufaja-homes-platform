@@ -11,8 +11,15 @@ yarn-error.log*
 .env*.local
 .vercel
 *.tsbuildinfo
+__pycache__/
+*.py[cod]
 next-env.d.ts
 
 .vercel
 .env*
+!.env.example
 .gstack/
+
+# Local diagnostic/source files; preserve them without publishing.
+/x
+/file_*.png

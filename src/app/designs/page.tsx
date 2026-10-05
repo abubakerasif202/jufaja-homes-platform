@@ -19,7 +19,7 @@ export default function DesignsPage() {
       <div className="catalogue-body py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Client-side Filter & Grid Wrapped in Suspense */}
         <Suspense fallback={
-          <div className="py-20 text-center text-jufaja-muted font-medium">
+          <div role="status" className="py-20 text-center text-jufaja-muted font-medium">
             Loading design catalogue...
           </div>
         }>

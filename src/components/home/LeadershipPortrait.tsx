@@ -1,7 +1,8 @@
 'use client';
 
+import { useReducedMotion } from '@/lib/use-reduced-motion';
 import { useRef } from 'react';
-import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import ParallaxImage from '@/components/motion/ParallaxImage';
 import Reveal from '@/components/motion/Reveal';
 
@@ -53,7 +54,7 @@ export default function LeadershipPortrait() {
         <Reveal mode="mask-up" duration={1.1}>
           <div className="relative bg-jufaja-forest-900 p-2 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.65)]">
             <ParallaxImage
-              src="/brand/javed-iqbal-executive.png"
+              src="/brand/javed-iqbal-executive.webp"
               alt="Portrait of Javed Iqbal, Chief Executive Officer of JUFAJA Constructions, in a navy suit and tie"
               sizes="(min-width: 1024px) 40vw, (min-width: 640px) 26rem, 90vw"
               quality={88}

@@ -104,8 +104,10 @@ export async function consumeEnquiryRateLimit(request: Request): Promise<LimitRe
     if (!payload || typeof payload !== 'object' || !('result' in payload)) {
       return { status: 'unavailable' };
     }
-    const count = Number(payload.result);
-    if (!Number.isSafeInteger(count) || count < 1) return { status: 'unavailable' };
+    const count = payload.result;
+    if (typeof count !== 'number' || !Number.isSafeInteger(count) || count < 1) {
+      return { status: 'unavailable' };
+    }
     if (count <= MAX_REQUESTS) return { status: 'allowed' };
 
     return {

@@ -11,7 +11,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
   const context = getEnquiryContext(query);
   return (
     <div className="min-h-screen bg-jufaja-cream">
-      <PageHero image="/images/architecture/daylight-paired-homes.webp" tone="ivory" label="Architecture reference">
+      <PageHero image="/images/architecture/architectural-planning-materials.webp" tone="ivory" label="Illustrative planning study · materials and concept sketch">
         <p className="eyebrow">Contact</p>
           <h1 className="type-h1 mt-3 font-serif text-jufaja-forest">Tell us what you’re planning.</h1>
           <p className="type-lead mt-5 max-w-2xl text-jufaja-muted">Tell us about your site, the home you have in mind and the questions you want answered.</p>

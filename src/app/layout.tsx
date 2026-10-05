@@ -1,15 +1,18 @@
 import type { Metadata, Viewport } from 'next';
+import { Suspense } from 'react';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
+import Loading from './loading';
+import { SITE_URL } from '@/lib/site-metadata';
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jufaja-homes-platform.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'JUFAJA Constructions | Home Designs & Building Enquiries',
     template: '%s | JUFAJA Constructions',
@@ -26,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'JUFAJA Constructions | Home Designs & Building Enquiries',
     description: 'Explore home designs, custom home enquiries, knockdown rebuild information and house and land enquiries.',
-    url: 'https://jufaja-homes-platform.vercel.app/',
+    url: `${SITE_URL}/`,
     siteName: 'JUFAJA Constructions',
     locale: 'en_AU',
     type: 'website',
@@ -60,8 +63,11 @@ export default function RootLayout({
         <StructuredData />
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-white text-jufaja-charcoal selection:bg-jufaja-gold selection:text-jufaja-forest font-sans">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-grow">
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </main>
         <Footer />
         <QuickEnquiryDrawer />
       </body>
