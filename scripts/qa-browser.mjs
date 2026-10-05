@@ -75,6 +75,8 @@ try {
     for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo(0, top), y); await page.waitForTimeout(25); }
     await page.waitForTimeout(100);
     await page.evaluate(() => window.scrollTo(0, 0));
+    await page.waitForFunction(() => [...document.images].filter(image => image.getClientRects().length).every(image => image.complete), undefined, { timeout: 20000 });
+    await page.evaluate(async () => Promise.all([...document.images].filter(image => image.getClientRects().length && image.naturalWidth).map(image => image.decode())));
   }
   for (const width of widths) {
     await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
