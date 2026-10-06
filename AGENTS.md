@@ -87,7 +87,7 @@ git diff --check
 npm audit --omit=dev
 ```
 
-Run the production server, scripts/qa-browser.mjs and scripts/qa-intro.mjs (normal-motion intro, WebGL-off and JS-off) for mobile and desktop QA.
+Run the production server, scripts/qa-browser.mjs and scripts/qa-intro.mjs (normal-motion intro, WebGL-off and JS-off) and scripts/qa-hydration.mjs (hydration stress, local and live) for mobile and desktop QA.
 Do not claim unexecuted checks passed. Block release on hydration/console errors,
 broken visible assets, overflow, inaccessible navigation, obstructed CTAs,
 form regressions or incorrect 404 handling. Reuse the existing Vercel project
