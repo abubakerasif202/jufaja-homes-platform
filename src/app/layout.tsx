@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from 'next';
+import { Suspense } from 'react';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
+import Loading from './loading';
 import { SITE_URL } from '@/lib/site-metadata';
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
@@ -50,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <noscript><style>{`.jufaja-intro { display: none !important; } body:has(.jufaja-intro) { overflow: visible !important; } [data-reveal] { opacity: 1 !important; transform: none !important; } [data-reveal-curtain] { display: none !important; } [data-text-reveal-word] { transform: none !important; }`}</style></noscript>
+        <noscript><style>{`.jufaja-intro { display: none !important; } body:has(.jufaja-intro) { overflow: visible !important; } [data-reveal] { opacity: 1 !important; transform: none !important; } [data-reveal-curtain] { display: none !important; } [data-text-reveal-word] { transform: none !important; } [aria-busy="true"] { display: none !important; } body > div[hidden][id^="S:"] { display: block !important; flex-grow: 1; order: 1; } body > footer { order: 2; }`}</style></noscript>
         <Script
           id="jufaja-intro-session"
           strategy="beforeInteractive"
@@ -64,7 +66,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-grow">
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </main>
         <Footer />
         <QuickEnquiryDrawer />

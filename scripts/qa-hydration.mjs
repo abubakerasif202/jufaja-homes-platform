@@ -123,9 +123,24 @@ async function load(session, route, scenario) {
 }
 
 const scenarios = argument('scenarios', 'plain,early-scroll,reload-scrolled,back-forward,resize-immediately,rapid-routes,client-nav').split(',');
+const soak = argument('soak', 'false') === 'true';
+const workers = Number(argument('workers', '4'));
+/** The pattern that exposes root-level hydration races: concurrent reused tabs, reduced motion, intercepted requests, networkidle navigations. */
+async function soakWorker() {
+  const session = await newSession({ width: 1440, height: 900, network: 'none', cpu: 1, reduced: true, intercept: true, observers: false, crawl: false, reuse: true, populated: false });
+  while (loads < total) {
+    const route = pick(routes);
+    session.current = { route, scenario: 'soak', load: loads };
+    loads += 1;
+    await session.page.goto(new URL(route, base).href, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => undefined);
+    await session.page.waitForTimeout(300);
+  }
+  await session.context.close();
+}
 let reused = null;
 try {
-  while (loads < total) {
+  if (soak) await Promise.all(Array.from({ length: workers }, () => soakWorker()));
+  while (!soak && loads < total) {
     const [width, height] = pick(widths);
     const options = {
       width, height,
