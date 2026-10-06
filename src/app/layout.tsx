@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Suspense } from 'react';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
-import Loading from './loading';
 import { SITE_URL } from '@/lib/site-metadata';
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
@@ -66,7 +64,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-grow">
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          {children}
         </main>
         <Footer />
         <QuickEnquiryDrawer />
