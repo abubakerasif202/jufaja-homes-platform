@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
   outputFileTracingRoot: process.cwd(),
   images: {
     qualities: [75, 80, 85, 88, 90],
