@@ -67,6 +67,30 @@ p { text-wrap: pretty; }
   outline-offset: 3px;
 }
 
+/* Progressive enhancement: reveals are visible in the server HTML; Reveal.tsx arms only below-the-fold elements after hydration. */
+[data-reveal] {
+  transition: opacity var(--reveal-duration, .8s) cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0s), transform var(--reveal-duration, .8s) cubic-bezier(.16, 1, .3, 1) var(--reveal-delay, 0s);
+}
+[data-reveal][data-state='armed'] {
+  opacity: 0;
+  transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 0), 0);
+  transition: none;
+}
+[data-reveal-curtain] {
+  transition: transform var(--reveal-duration, .8s) cubic-bezier(.76, 0, .24, 1) var(--reveal-delay, 0s);
+}
+[data-reveal-curtain][data-axis='y'] { transform: scaleY(0); }
+[data-reveal-curtain][data-axis='x'] { transform: scaleX(0); }
+[data-reveal-curtain][data-state='armed'] { transition: none; }
+[data-reveal-curtain][data-axis='y'][data-state='armed'] { transform: scaleY(1); }
+[data-reveal-curtain][data-axis='x'][data-state='armed'] { transform: scaleX(1); }
+
+/* Without scripting the intro overlay can never be dismissed, so it is never shown. */
+@media (scripting: none) {
+  .jufaja-intro { display: none !important; }
+  body:has(.jufaja-intro) { overflow: visible !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .jufaja-intro { display: none !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }

@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useTransition } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import React, { useSyncExternalStore } from 'react';
 import type { HomeDesign, DwellingType } from '@/types';
 import { filterDesigns, type FilterState } from '@/lib/filter-designs';
 import { parseDesignFilters } from '@/lib/design-filter-params';
@@ -13,37 +12,48 @@ interface Props {
   initialDesigns: HomeDesign[];
 }
 
+const FILTER_EVENT = 'jufaja-design-filters';
+
+function subscribe(onChange: () => void) {
+  window.addEventListener('popstate', onChange);
+  window.addEventListener(FILTER_EVENT, onChange);
+  return () => {
+    window.removeEventListener('popstate', onChange);
+    window.removeEventListener(FILTER_EVENT, onChange);
+  };
+}
+
+/** Filters live in the URL. The server (and first client render) use the unfiltered list; the query string is read after hydration. */
+function replaceQuery(queryString: string) {
+  window.history.replaceState(window.history.state, '', `/designs${queryString ? `?${queryString}` : ''}`);
+  window.dispatchEvent(new Event(FILTER_EVENT));
+}
+
 export default function DesignsCatalogueClient({ initialDesigns }: Props) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [, startTransition] = useTransition();
+  const search = useSyncExternalStore(subscribe, () => window.location.search, () => '');
   const categoryCounts = initialDesigns.reduce<Record<DwellingType | 'all', number>>((counts, design) => {
     counts.all += 1;
     counts[design.dwellingType] += 1;
     return counts;
   }, { all: 0, single: 0, double: 0, duplex: 0, granny: 0, rural: 0 });
 
-  const filters = parseDesignFilters(searchParams);
+  const filters = parseDesignFilters(new URLSearchParams(search));
 
   // Sync URL when filters change
   const handleFilterChange = (newFilters: Partial<FilterState>) => {
     const updated = { ...filters, ...newFilters };
 
-    startTransition(() => {
-      const params = new URLSearchParams();
-      if (updated.dwellingType && updated.dwellingType !== 'all') params.set('dwelling_type', updated.dwellingType);
-      if (updated.bedrooms && updated.bedrooms !== 'any') params.set('bedrooms', String(updated.bedrooms));
-      if (updated.bathrooms && updated.bathrooms !== 'any') params.set('bathrooms', String(updated.bathrooms));
-      if (updated.garages && updated.garages !== 'any') params.set('garages', String(updated.garages));
-      if (updated.sortBy && updated.sortBy !== 'name') params.set('sort', updated.sortBy);
-
-      const queryString = params.toString();
-      router.replace(`/designs${queryString ? `?${queryString}` : ''}`, { scroll: false });
-    });
+    const params = new URLSearchParams();
+    if (updated.dwellingType && updated.dwellingType !== 'all') params.set('dwelling_type', updated.dwellingType);
+    if (updated.bedrooms && updated.bedrooms !== 'any') params.set('bedrooms', String(updated.bedrooms));
+    if (updated.bathrooms && updated.bathrooms !== 'any') params.set('bathrooms', String(updated.bathrooms));
+    if (updated.garages && updated.garages !== 'any') params.set('garages', String(updated.garages));
+    if (updated.sortBy && updated.sortBy !== 'name') params.set('sort', updated.sortBy);
+    replaceQuery(params.toString());
   };
 
   const handleReset = () => {
-    router.replace('/designs', { scroll: false });
+    replaceQuery('');
   };
 
   const filtered = filterDesigns(initialDesigns, filters);

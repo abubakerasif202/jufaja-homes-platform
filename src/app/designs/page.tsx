@@ -1,5 +1,4 @@
 import PageHero from '@/components/ui/PageHero';
-import React, { Suspense } from 'react';
 import DesignsCatalogueClient from './DesignsCatalogueClient';
 import { catalogueDesigns } from '@/lib/catalogue';
 import { pageMetadata } from '@/lib/site-metadata';
@@ -17,14 +16,7 @@ export default function DesignsPage() {
         <p className="type-lead mt-6 text-jufaja-muted">Compare the information shown for {designs.length} listed home designs. Images are illustrative and listed figures require confirmation; ask JUFAJA for current drawings and specifications.</p>
       </PageHero>
       <div className="catalogue-body py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Client-side Filter & Grid Wrapped in Suspense */}
-        <Suspense fallback={
-          <div role="status" className="py-20 text-center text-jufaja-muted font-medium">
-            Loading design catalogue...
-          </div>
-        }>
-          <DesignsCatalogueClient initialDesigns={designs} />
-        </Suspense>
+        <DesignsCatalogueClient initialDesigns={designs} />
 
       </div>
     </div>

@@ -52,6 +52,8 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
           // Nothing to persist when storage is unavailable.
         }
       }
+      // The server always renders the overlay; session state is read only after mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setVisible(false);
       return;
     }

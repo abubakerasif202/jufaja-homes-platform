@@ -38,11 +38,14 @@ export default function Header() {
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 16);
+    // First render matches the server (unscrolled); the real scroll position is read only after mount.
     update();
     window.addEventListener('scroll', update, { passive: true });
     return () => window.removeEventListener('scroll', update);
   }, []);
 
+  // Close menus when navigation completes.
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setMenuOpen(false); setServicesOpen(false); }, [pathname]);
 
   useEffect(() => {

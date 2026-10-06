@@ -87,7 +87,8 @@ git diff --check
 npm audit --omit=dev
 ```
 
-Run the production server, scripts/qa-browser.mjs and scripts/qa-intro.mjs (normal-motion intro, WebGL-off and JS-off) and scripts/qa-hydration.mjs (hydration stress, local and live) for mobile and desktop QA.
+Run the production server, scripts/qa-browser.mjs and scripts/qa-intro.mjs (normal-motion intro, WebGL-off and JS-off) scripts/qa-hydration.mjs (hydration stress, local and live; use --soak=true for the root-race pattern), scripts/qa-ssr.mjs (raw server HTML, no JS) and scripts/qa-nojs.mjs (JavaScript-disabled browser) for mobile and desktop QA.
+Architecture rule: public pages ship their real content in the first server HTML. Never wrap page content in a Suspense/loading.tsx boundary (React outlines boundaries over 12.8KB into a hidden, script-revealed block) and never server-render content hidden for animation; enhance after mount instead.
 Do not claim unexecuted checks passed. Block release on hydration/console errors,
 broken visible assets, overflow, inaccessible navigation, obstructed CTAs,
 form regressions or incorrect 404 handling. Reuse the existing Vercel project
