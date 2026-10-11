@@ -88,6 +88,13 @@ try {
   for (const design of designs) {
     await open(`/designs/${design.slug}`);
     await checkFrame(page.locator('.facade-view'), design.slug, false);
+    if (records.get(design.slug).status === 'available') {
+      const disclosure = page.locator('.facade-disclosure');
+      assert.equal(await disclosure.count(), 1, `${design.slug}: visible CGI disclosure`);
+      assert(await disclosure.isVisible(), `${design.slug}: CGI disclosure must be visible`);
+      assert.match(await disclosure.innerText(), /CGI/i, `${design.slug}: identify architectural CGI`);
+      assert.match(await disclosure.innerText(), /not.*completed JUFAJA/i, `${design.slug}: distinguish conceptual imagery from completed projects`);
+    }
     const related = await checkCards('.design-card', '.design-card__image');
     const expected = designs.filter(item => item.dwellingType === design.dwellingType && item.id !== design.id).slice(0, 3).map(item => item.slug);
     assert.deepEqual(related, expected, `${design.slug}: related cards`);
