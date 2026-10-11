@@ -47,7 +47,7 @@ Vercel's Production environment lists all five required variable names as hidden
 
 The canonical domain is `https://www.jufajaconstructions.com.au`. At review time it returned HTTP 200 through Vercel over TLS; DNS returned Vercel A records `216.150.16.65` and `216.150.16.129`. No DNS or domain settings were changed. Vercel CLI showed a recent Production deployment in Ready state for the existing `jufaja-homes-platform` project. This feature branch is based on `main` at `045c30a3d61bf71739994d4f172f31844c705798`. The image change has not been merged or deployed to Production.
 
-The tested feature commit is `c92a08186ca00a558207118e6607a0c244fe3ba9`, on draft [PR #11](https://github.com/abubakerasif202/jufaja-homes-platform/pull/11). Its Vercel Preview deployment is Ready and passed authenticated browser checks on 14 key public routes at 390px and 1440px; the full local browser suite covered all 74 public routes. The feature remains out of Production while 36 catalogue designs need approved, unique imagery. See the final QA report for deployment and test evidence.
+The image-integration implementation commit is `c92a08186ca00a558207118e6607a0c244fe3ba9` on draft [PR #11](https://github.com/abubakerasif202/jufaja-homes-platform/pull/11). Its [Vercel Preview deployment](https://jufaja-homes-platform-79o04fvmg-abubakerasif202s-projects.vercel.app) is Ready and passed authenticated browser checks on 14 key public routes at 390px and 1440px; the full local browser suite covered all 74 public routes. The feature remains out of Production while 36 catalogue designs need approved, unique imagery. See the final QA report for deployment and test evidence.
 
 ## SEO and Search Console
 
