@@ -5,6 +5,7 @@ import Reveal from '@/components/motion/Reveal';
 import PageHero from '@/components/ui/PageHero';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
+import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
 
 export const metadata = pageMetadata('Design Inspiration', 'Explore illustrative residential architecture references and concept studies from JUFAJA Constructions.', '/projects');
 
@@ -77,6 +78,8 @@ export default function ProjectsPage() {
           ))}
         </div>
       </section>
+
+      <PropertyAddressDirectory />
 
       {/* Consultation Banner */}
       <section className="bg-jufaja-stone py-16 border-t border-jufaja-border">
