@@ -925,3 +925,117 @@ html { scroll-padding-top: 120px; }
   .cv-header > .mx-auto { min-height: 88px; }
   .cv-footer { padding-inline: 20px; }
 }
+
+/* A reserved architectural sculpture stage keeps decoration clear of page controls.
+   Motion is opt-in after hydration; first HTML and no-JS rendering remain static. */
+.architectural-stage {
+  position: relative;
+  height: clamp(144px, 13vw, 208px);
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 50% 110%, #295540 0%, #163024 48%, #0d1e16 100%);
+  border-bottom: 1px solid #c5a05955;
+}
+.architectural-stage__scene {
+  position: absolute;
+  inset: 0;
+  perspective: 850px;
+  pointer-events: none;
+}
+.architectural-stage__ground {
+  position: absolute;
+  width: 660px;
+  height: 280px;
+  left: calc(50% - 330px);
+  top: 65%;
+  background: repeating-linear-gradient(0deg, transparent 0 39px, #dfc17b14 40px 41px),
+    repeating-linear-gradient(90deg, transparent 0 39px, #dfc17b14 40px 41px);
+  transform: rotateX(68deg) rotateZ(-12deg);
+}
+.architectural-stage__model {
+  position: absolute;
+  top: calc(50% - 43px);
+  left: calc(50% - 66px);
+  width: 132px;
+  height: 86px;
+  transform-style: preserve-3d;
+  transform: rotateX(-14deg) rotateY(-28deg);
+  animation: architectural-orbit 16s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.architectural-stage[data-moving="true"] .architectural-stage__model { animation-play-state: running; }
+.architectural-stage__model--left {
+  left: calc(50% - 264px);
+  top: calc(50% - 32px);
+  scale: .78;
+  animation-delay: -7s;
+}
+.architectural-stage__model--right {
+  left: calc(50% + 132px);
+  top: calc(50% - 32px);
+  scale: .78;
+  animation-delay: -12s;
+}
+.architectural-stage__plane {
+  display: block;
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--jufaja-gold-400);
+  background: linear-gradient(90deg, #dfc17b16, #faf8f50a);
+}
+.architectural-stage__plane--front {
+  transform: translateZ(44px);
+  background: repeating-linear-gradient(90deg, transparent 0 30px, #dfc17b66 31px 32px),
+    linear-gradient(0deg, #0d1e1666, #faf8f516);
+}
+.architectural-stage__plane--back { transform: translateZ(-44px); border-color: #c5a05988; }
+.architectural-stage__plane--left { width: 88px; transform: translateX(-44px) rotateY(90deg); }
+.architectural-stage__plane--right { width: 88px; transform: translateX(88px) rotateY(90deg); }
+.architectural-stage__plane--roof {
+  height: 88px;
+  transform: translateY(-44px) rotateX(90deg);
+  background: #dfc17b4d;
+}
+.architectural-stage__model--right .architectural-stage__plane { background-color: #6b1d2f38; }
+.architectural-stage__base {
+  display: block;
+  position: absolute;
+  width: 156px;
+  height: 112px;
+  left: -12px;
+  top: 30px;
+  border: 1px solid #dfc17b80;
+  background: #faf8f522;
+  transform: translateY(0) rotateX(90deg);
+}
+.architectural-stage__control {
+  position: absolute;
+  right: max(12px, calc((100% - 1440px) / 2));
+  bottom: 6px;
+  min-width: 108px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #dfc17b55;
+  border-radius: 2px;
+  background: #0d1e16;
+  color: var(--jufaja-gold-400);
+  font-size: 11px;
+  letter-spacing: .06em;
+  transition: background-color .2s ease;
+}
+.architectural-stage__control:hover { background: var(--jufaja-green-800); }
+.architectural-stage__control:focus-visible { outline: 2px solid var(--jufaja-gold-400); outline-offset: 2px; }
+@keyframes architectural-orbit {
+  from { transform: translateY(4px) rotateX(-14deg) rotateY(-28deg); }
+  to { transform: translateY(-10px) rotateX(-8deg) rotateY(24deg); }
+}
+@media (max-width: 639px) {
+  .architectural-stage__model { scale: .68; top: calc(50% - 56px); }
+  .architectural-stage__model--left { left: calc(50% - 175px); scale: .4; }
+  .architectural-stage__model--right { left: calc(50% + 43px); scale: .4; }
+  .architectural-stage__control { bottom: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .architectural-stage__model { animation: none; }
+  .architectural-stage__control { display: none; transition: none; }
+}

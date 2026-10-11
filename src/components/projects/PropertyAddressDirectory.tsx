@@ -183,7 +183,6 @@ export default function PropertyAddressDirectory({ properties }: { properties: P
                 <article key={propertyAddress(property)} className="group min-w-0">
                   <button
                     type="button"
-                    aria-label={'View gallery for ' + propertyAddress(property)}
                     onClick={(event) => openGallery(property, event.currentTarget)}
                     className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
                   >
@@ -192,6 +191,7 @@ export default function PropertyAddressDirectory({ properties }: { properties: P
                       <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
                       <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
                     </span>
+                    <span className="sr-only"> for {property.street}</span>
                   </button>
                   <h3 className="mt-5 font-serif text-2xl leading-tight text-jufaja-forest">{property.street}</h3>
                   <p className="mt-1 text-sm text-jufaja-muted">{property.suburb} · NSW {property.postcode}</p>
