@@ -1,10 +1,11 @@
 'use client';
 
 import { useReducedMotion } from '@/lib/use-reduced-motion';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FacadeOption } from '@/types';
+import DesignImagePlaceholder from '@/components/designs/DesignImagePlaceholder';
 
 interface Props {
   facades: FacadeOption[];
@@ -17,31 +18,33 @@ export default function FacadeGallery({ facades, designName }: Props) {
 
   const activeFacade = facades[selectedIdx] || facades[0];
 
+  if (!activeFacade) {
+    return (
+      <section className="overflow-hidden rounded-sm border border-jufaja-border bg-white shadow-sm">
+        <DesignImagePlaceholder
+          designName={designName}
+          className="facade-view aspect-[4/3] w-full"
+        />
+        <p className="border-t border-jufaja-border px-5 py-4 text-sm leading-6 text-jufaja-muted">
+          A unique exterior rendering has not passed review for this design. Ask JUFAJA for current reference material.
+        </p>
+      </section>
+    );
+  }
+
   return (
     <div className="bg-white rounded-sm border border-jufaja-border overflow-hidden shadow-sm">
       {/* Main Facade View */}
-      <div className="facade-view relative h-[320px] sm:h-[440px] w-full bg-jufaja-stone">
+      <div className="facade-view relative aspect-[4/3] w-full bg-jufaja-stone">
         <AnimatePresence initial={false}><motion.div key={activeFacade.image + selectedIdx} className="absolute inset-0" initial={reduced ? false : { opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: reduced ? 0 : .5 }}><Image
           src={activeFacade.image}
-          alt={`${activeFacade.name}; not a verified facade for ${designName}`}
+          alt={`Representative exterior rendering for ${designName}`}
           fill
           priority
           sizes="(max-width: 1023px) 100vw, 66vw"
           className="object-cover"
         /></motion.div></AnimatePresence>
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-jufaja-forest-950/80 to-transparent" />
-
-        <div className="absolute bottom-6 left-6 text-white">
-          <span className="eyebrow eyebrow--light mb-1 block">
-            ARCHITECTURE INSPIRATION
-          </span>
-          <h3 className="type-h3 font-serif drop-shadow-md">
-            {activeFacade.name}
-          </h3>
-        </div>
       </div>
-
-      <p className="border-t border-jufaja-border px-5 py-4 text-sm leading-6 text-jufaja-muted">Illustrative concept only. This image is not the approved facade or floorplan for {designName}.</p>
 
       {/* Thumbnails Selector */}
       {facades.length > 1 && (

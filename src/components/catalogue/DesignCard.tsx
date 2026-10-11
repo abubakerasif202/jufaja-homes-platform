@@ -6,6 +6,7 @@ import { Bed, Bath, Car } from 'lucide-react';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { formatSquares, formatSqm } from '@/lib/utils';
 import EnquireDesignButton from '@/components/designs/EnquireDesignButton';
+import DesignImagePlaceholder from '@/components/designs/DesignImagePlaceholder';
 
 interface Props {
   design: HomeDesign;
@@ -19,38 +20,16 @@ export default function DesignCard({ design, compact = false }: Props) {
     <DepthFrame className="design-depth"><div className="design-card bg-white rounded-sm overflow-hidden border border-jufaja-border hover:border-jufaja-gold-500 hover:-translate-y-1 shadow-sm hover:shadow-luxury transition-[transform,box-shadow,border-color] duration-300 flex flex-col justify-between group">
       
       {/* Facade Image Frame */}
-      {!compact && <div className="design-card__image relative h-64 w-full overflow-hidden bg-jufaja-stone">
-        {facade && <Image
+      {!compact && <div className="design-card__image relative aspect-[4/3] w-full overflow-hidden bg-jufaja-stone">
+        {facade ? <>
+          <Image
           src={facade.image}
-          alt={`${facade.name}; not a verified facade for ${design.name}`}
+          alt={`Representative ${DWELLING_LABELS[design.dwellingType].toLowerCase()} exterior rendering for ${design.name}`}
           fill
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 420px"
           className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-        />}
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-jufaja-forest-950/85 to-transparent" />
-
-        <div className="absolute bottom-16 left-4 rounded-sm bg-white/95 px-2.5 py-1 text-[10px] font-medium text-jufaja-forest-900">Architecture inspiration</div>
-
-        {/* Square Size Badge (Gold) */}
-        <div className="absolute top-3.5 right-3.5 bg-jufaja-forest-900 text-white text-[11px] font-bold px-3 py-1 rounded-sm shadow border border-jufaja-gold-500/40">
-          <span className="text-jufaja-gold-400 mr-1">&bull;</span>
-          {formatSquares(design.houseSizeSquares)}
-        </div>
-
-        {/* Bottom Banner on Image */}
-        <div className="absolute bottom-3.5 left-4 right-4 flex justify-between items-end text-white">
-          <div>
-            <span className="eyebrow eyebrow--light block">
-              {DWELLING_LABELS[design.dwellingType]}
-            </span>
-            <span className="text-xs font-semibold text-jufaja-stone">
-              Min Frontage: {design.minLotWidth}m
-            </span>
-          </div>
-          <span className="text-xs text-jufaja-stone font-medium">
-            {formatSqm(design.houseSizeSqm)}
-          </span>
-        </div>
+          />
+        </> : <DesignImagePlaceholder designName={design.name} className="h-full" />}
       </div>}
 
       {/* Card Content Body */}
@@ -58,6 +37,8 @@ export default function DesignCard({ design, compact = false }: Props) {
         <div>
           {compact && <p className="mb-3 text-xs font-semibold text-jufaja-gold-600">{DWELLING_LABELS[design.dwellingType]} · {formatSquares(design.houseSizeSquares)}</p>}
           {compact && <p className="mb-3 text-xs leading-6 text-jufaja-muted">Min frontage: {design.minLotWidth}m · {formatSqm(design.houseSizeSqm)}</p>}
+          {!compact && <p className="mb-3 text-xs font-semibold tracking-wide text-jufaja-gold-600">{DWELLING_LABELS[design.dwellingType]} · {formatSquares(design.houseSizeSquares)} · {formatSqm(design.houseSizeSqm)}</p>}
+          {!compact && <p className="-mt-2 mb-3 text-xs leading-5 text-jufaja-muted">Minimum frontage: {design.minLotWidth}m</p>}
           {/* Title & Series */}
           <div className="mb-3">
             <h3 className="font-serif text-3xl text-jufaja-forest group-hover:text-jufaja-gold-600 transition-colors">
