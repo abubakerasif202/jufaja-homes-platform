@@ -1,0 +1,36 @@
+name: Release checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, feat/final-36-design-images]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm test
+      - run: npm run audit:design-images
+      - run: npm run build
+      - run: npm audit --omit=dev
+      - run: git diff --check

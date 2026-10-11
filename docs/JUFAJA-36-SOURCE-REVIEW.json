@@ -1,0 +1,1242 @@
+{
+  "sourceLabel": "JUFAJA_36_Designs_Renders",
+  "method": "Actual file bytes and Sharp metadata; unchanged production dimension predicate and 64-bit perceptual hash; cross-design near-duplicate threshold <= 8. Same-slug format variants are excluded.",
+  "limitations": "Hashes cannot establish architectural correctness, facade uniqueness, text, watermarks, collages or image quality. Manual contact-sheet and full-size review remains required. Catalogue dwellingType is a filename match, not a visual architectural finding.",
+  "summary": {
+    "sourceFileCount": 72,
+    "matchedPendingDesignCount": 36,
+    "publishedReferenceCount": 27,
+    "dimensionFailures": 72,
+    "crossDesignComparisons": 4464,
+    "sameSlugVariantComparisonsExcluded": 36,
+    "duplicateCandidateCount": 0
+  },
+  "errors": [],
+  "files": [
+    {
+      "sourcePath": "png/altona-duplex.png",
+      "slug": "altona-duplex",
+      "dwellingType": "duplex",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1963462,
+      "sha256": "629fa655c61292d8c58864f93a4d50e6b518125e84eb1990cfefd75ca1217d9c",
+      "phash": "0101010111010101110101000101010011010010011100100100001010101101",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/ashford-385-wide-lot.png",
+      "slug": "ashford-385-wide-lot",
+      "dwellingType": "rural",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2105540,
+      "sha256": "f3f0859c1d8b650eef9f759c89a7f070eee38b8c9dad793b293148b56944a0be",
+      "phash": "0001010010001110100110010011101001111100100101011000001001111011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/atlantic-series.png",
+      "slug": "atlantic-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1789016,
+      "sha256": "5ca9046dd6b6722f705d38d3733662701fec37621a20009914ef1b90cac02ae5",
+      "phash": "0100000110111111110001100101000100011110001011100111100101100000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/austin-25-mk1.png",
+      "slug": "austin-25-mk1",
+      "dwellingType": "granny",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1868141,
+      "sha256": "8fe85adce58719f822a4f730ba75dd94cd634990b2cd2b639929597f1e44244d",
+      "phash": "0001100011101110100101111101000001001111101100010110001001101000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/austin-25.png",
+      "slug": "austin-25",
+      "dwellingType": "granny",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1971594,
+      "sha256": "05c3add80140f13335f7d73d9432de85ab0a761a3997a63d50c23a1dc4edb6c1",
+      "phash": "0101000010000011110100100110101000011110111100101101011010011100",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/austin-26.png",
+      "slug": "austin-26",
+      "dwellingType": "granny",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1860349,
+      "sha256": "e541763a1cd095f9c7182e8c29a390aa645a07ce721d1b92f19b2d56cb86094d",
+      "phash": "0000011110110001100110000100001101110101100111010110001100111010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/berkeley-27-wide-lot.png",
+      "slug": "berkeley-27-wide-lot",
+      "dwellingType": "rural",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1871213,
+      "sha256": "4e0f075f6754d5fdd8c356aee93e0c1fd3d9a42dafc1202783c6d4b7dd365650",
+      "phash": "0001000110100000110011100011111001111100010100001110001110011011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/chesterfield-series.png",
+      "slug": "chesterfield-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1694486,
+      "sha256": "0878a7e57d1316c6866690d8a4d77beaffe7244836452f51bab65e034fbc6547",
+      "phash": "0100010010111111110010000001001100111111111000100001010011000101",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/coral-series.png",
+      "slug": "coral-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1847356,
+      "sha256": "e8f79baa953018053d7a2a9bf5feb9a1aa420721409740ce4ad21dcce36aae5b",
+      "phash": "0011010111101011110110000100011010000101100011000011101001100011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/cowra-475-wide-lot.png",
+      "slug": "cowra-475-wide-lot",
+      "dwellingType": "rural",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2160280,
+      "sha256": "b5d48b967e431c5841fef3b721aebf924e8f4fa0bc25c04a7d51083f08d6664c",
+      "phash": "0001010011010110100111100111111001101100110100001000001100101100",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/crest-series.png",
+      "slug": "crest-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1767937,
+      "sha256": "1b510b3feab39cdbba5e2e383aff1ddcba034641146dab38c220e7ec0d640855",
+      "phash": "0000100110101010101101100101001001010011001110010001110110101110",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/darlington-series.png",
+      "slug": "darlington-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1617315,
+      "sha256": "29c32630658f6c3c32cfc2e7ae1f0f053667885323d8538dba918f2f4492d8fb",
+      "phash": "0011001110110001110001000001111010011110000001000111111110100001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/edgeworth-35-wide-lot.png",
+      "slug": "edgeworth-35-wide-lot",
+      "dwellingType": "rural",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2094858,
+      "sha256": "2786746702e81b504ccac5a5b93ea72d3ad7625d1a9077ca2548b3596651efb9",
+      "phash": "0100000110001100110011100111011000011111101000111000100101001011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/elwood-series.png",
+      "slug": "elwood-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1940047,
+      "sha256": "c9a29dfce1163100274a7459557951c8af291894e286c35359f2f9e3318dbafe",
+      "phash": "0000100110101110110001100011010110010001111100010111101011000010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/fingal-series.png",
+      "slug": "fingal-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1848957,
+      "sha256": "754456e6ab30d61db31076bb059675a8ae70146fe89185117e8b580516545b50",
+      "phash": "0100000110101111100011010001111100011110001100110110001000100011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/holbrook-40-wide-lot.png",
+      "slug": "holbrook-40-wide-lot",
+      "dwellingType": "rural",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1860474,
+      "sha256": "2a799a42390830f4de0a87f2c29b4e003e761fa1b2c0e982de7de7216be698bd",
+      "phash": "0001000011010000101011010110101101101011101101101101100001000101",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/jardine-series.png",
+      "slug": "jardine-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2004430,
+      "sha256": "91b2fbfdb881f174ca46a27f9731edb2cb1a8d6380761dfe6f581e720ce816c5",
+      "phash": "0111110010111000110110000000011101000011011100001011000111100110",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/linden-series.png",
+      "slug": "linden-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1873396,
+      "sha256": "de745e38385c6e440ac2d8a651d629769dceb4ce989c09a3400cb5dc47b35820",
+      "phash": "0101010011000010110100010101100110011010011111100010111101100000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/lithgow-series.png",
+      "slug": "lithgow-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1879297,
+      "sha256": "913ba4fe2f610d5521ef6d4525cc410e14517bd7d94072d49a55d8ae763a747f",
+      "phash": "0001110110010010100000010110100001111010001101011101111100011010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/majestic-series.png",
+      "slug": "majestic-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1829488,
+      "sha256": "65695e89b2fed74768b700a59fe69e57f57af357b2a56d81be837cebd1f629ee",
+      "phash": "0000000110000111100001111111110000111010011000110110111010010010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/marbella-31-mk1.png",
+      "slug": "marbella-31-mk1",
+      "dwellingType": "granny",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2003397,
+      "sha256": "0df0299951199a3171274b006048ca1f903aee95749c6e2e901c5bfccc1eb7c4",
+      "phash": "0000010110111111100000100100110101111100111000110010010100011010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/marbella-31.png",
+      "slug": "marbella-31",
+      "dwellingType": "granny",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1924480,
+      "sha256": "9b025f89440ee4ff31f9d94c4c9065fde1b9e960127f1f63e2d1fe43ebd53f3e",
+      "phash": "0101000011010010110100111101010100011101111100100001100010101010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/marbella-355.png",
+      "slug": "marbella-355",
+      "dwellingType": "granny",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2009784,
+      "sha256": "3977227a28fce1d6cd301c50f0bd4f77154bf312402382120e85024f32edfd48",
+      "phash": "0101010010010001110000111100001001000010111111000011111011101001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/meadow-series.png",
+      "slug": "meadow-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2074435,
+      "sha256": "ae1bc321377b47fdc64bc5fcfd673f88cd5acd0af7b43257b9f8b93de77bc7ed",
+      "phash": "0001010011011000101101000101010101101011111111010010011100010000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/oxley-26-series.png",
+      "slug": "oxley-26-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1720991,
+      "sha256": "43e5f13b3009e09a0d4607fb4bc48c3a0af083d2c2f8bc5dc00b2f20a2e2c8f5",
+      "phash": "0001011010111100100011001110000101101001001111110011011010001000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/pacific-series.png",
+      "slug": "pacific-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2054221,
+      "sha256": "405ddd5017768c58cedc2063dea0ee20f3a50f64197bbc48ab9316a3540a8511",
+      "phash": "0000010110010010100101010101011000110010011111010010111110000111",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/pine-lea-duplex.png",
+      "slug": "pine-lea-duplex",
+      "dwellingType": "duplex",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1993000,
+      "sha256": "c7bcffd3864b7e773ba182d69d8576ec6cf772b768e6b59253834acf5a036568",
+      "phash": "0101000111011011110010100100001001001001001010010010111110111100",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/primavera-series.png",
+      "slug": "primavera-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1825039,
+      "sha256": "9be7fb1bbd6cb6b2eff623bddf2a34304b43d3ed2397722f59c4e379e0dbfd19",
+      "phash": "0001010111111110100111101010000111000000101000010010101110111000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/rozelle-series.png",
+      "slug": "rozelle-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1903192,
+      "sha256": "cbbfad3b037136509cef04ae138398708c4f620ec581e9302880dca303c9a875",
+      "phash": "0000000111000001100001000001101101111010101011100111101011110011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/stamford-series.png",
+      "slug": "stamford-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1890998,
+      "sha256": "f6ed47a60fa6162450b2106814b543fad73d7728ea9919e5bc1cef7b7ed74fd9",
+      "phash": "0001101110100111100001100010110100011011000100110100000111100111",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/stanmore-duplex.png",
+      "slug": "stanmore-duplex",
+      "dwellingType": "duplex",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1783462,
+      "sha256": "afda22a0a43657231eae24e221409953d29034ea67765f11491b4bfbf5bee152",
+      "phash": "0010101010100000111110000101001110000111110101010000111011111000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/stellar-series.png",
+      "slug": "stellar-series",
+      "dwellingType": "double",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1829418,
+      "sha256": "494817ff47049aa77f66580308ca2b867da895a61a91609ce4f78acf07b2f73d",
+      "phash": "0100001011001110011001000000101110111110110100100001111101100001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/stuart-series.png",
+      "slug": "stuart-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 2088374,
+      "sha256": "84e2b350306549b4d3e50f3061946612a053d0b3a7ed004c1c3adf1bd9c81118",
+      "phash": "0100111110011111100001000010110001101100010010110101101000010110",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/tempus-duplex.png",
+      "slug": "tempus-duplex",
+      "dwellingType": "duplex",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1618955,
+      "sha256": "01b3a4434e0b856993ad4161111e2e486177162002730571ac58e839229acc8b",
+      "phash": "0010010110101010110110100101010110010111100110100010100101101000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/tempus-mk2-duplex.png",
+      "slug": "tempus-mk2-duplex",
+      "dwellingType": "duplex",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1801036,
+      "sha256": "9e38ba1d726008f7bdd2501a996de98555b68ab97f89d2e58cbcf85b67ffab88",
+      "phash": "0100000011100010100010010000011110011111001101011111110001011001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "png/winton-series.png",
+      "slug": "winton-series",
+      "dwellingType": "single",
+      "format": "png",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 1854746,
+      "sha256": "9f301ee369d83ae1921e3dd358d8b6035cee2150f7546861c73ed98e622718ff",
+      "phash": "0101000011001100001111110111000100101101100111100101001011100000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/altona-duplex.webp",
+      "slug": "altona-duplex",
+      "dwellingType": "duplex",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 349650,
+      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+      "phash": "0101010111010101110101000101010011010010110100100100001010101101",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/ashford-385-wide-lot.webp",
+      "slug": "ashford-385-wide-lot",
+      "dwellingType": "rural",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 377064,
+      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+      "phash": "0001010010001110100110010011101001111100100101011000001001111011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/atlantic-series.webp",
+      "slug": "atlantic-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 304770,
+      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+      "phash": "0100000110111111110001100101000100011110001011100111100101100000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/austin-25-mk1.webp",
+      "slug": "austin-25-mk1",
+      "dwellingType": "granny",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 332030,
+      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+      "phash": "0001100011101110100101111101000001001111101100010110001001101000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/austin-25.webp",
+      "slug": "austin-25",
+      "dwellingType": "granny",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 345054,
+      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+      "phash": "0101000010000011110100100110101000011110111100101101011010011100",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/austin-26.webp",
+      "slug": "austin-26",
+      "dwellingType": "granny",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 321680,
+      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+      "phash": "0000011110110010100110000100001101110101100111010110001100111010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/berkeley-27-wide-lot.webp",
+      "slug": "berkeley-27-wide-lot",
+      "dwellingType": "rural",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 325522,
+      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+      "phash": "0001000110100000110011100011111001111100010100001110001110011011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/chesterfield-series.webp",
+      "slug": "chesterfield-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 290078,
+      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+      "phash": "0100010010111111110010000001001100111111111000100001010011000101",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/coral-series.webp",
+      "slug": "coral-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 305886,
+      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+      "phash": "0011010111101011110110000100011010000101100011000011101001100011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/cowra-475-wide-lot.webp",
+      "slug": "cowra-475-wide-lot",
+      "dwellingType": "rural",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 417414,
+      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+      "phash": "0001010011010110100111100111111001101100110100001000001100101100",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/crest-series.webp",
+      "slug": "crest-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 270878,
+      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+      "phash": "0000100110101010101101100101001001010011001110010001110110101110",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/darlington-series.webp",
+      "slug": "darlington-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 248338,
+      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+      "phash": "0011001110110001110001000001111010011110000001000111111110100001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/edgeworth-35-wide-lot.webp",
+      "slug": "edgeworth-35-wide-lot",
+      "dwellingType": "rural",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 383252,
+      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+      "phash": "0100000110001100110011100111011000011111101000111000100101001011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/elwood-series.webp",
+      "slug": "elwood-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 325412,
+      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+      "phash": "0000100110101110110001100011010110010001111100010111101011000010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/fingal-series.webp",
+      "slug": "fingal-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 313190,
+      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
+      "phash": "0100000110101111100011010001111100011110001100110110001000100011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/holbrook-40-wide-lot.webp",
+      "slug": "holbrook-40-wide-lot",
+      "dwellingType": "rural",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 317430,
+      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+      "phash": "0001000011010000101011010110101101101011101101101101100001000101",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/jardine-series.webp",
+      "slug": "jardine-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 364418,
+      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+      "phash": "0111110010111000110110000000011101000011011100001011000111100110",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/linden-series.webp",
+      "slug": "linden-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 323778,
+      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+      "phash": "0101010011000010110100010101100110011010011111100010111101100000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/lithgow-series.webp",
+      "slug": "lithgow-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 328862,
+      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+      "phash": "0001110110010010100000010110100001111010001101011101111100011010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/majestic-series.webp",
+      "slug": "majestic-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 306676,
+      "sha256": "6786b049c77d4c893e6c9f3821e75122ab18080d4578fb98d7699fbf9355d9d8",
+      "phash": "0000000110000111100001111111110000111010011000110110111010010010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/marbella-31-mk1.webp",
+      "slug": "marbella-31-mk1",
+      "dwellingType": "granny",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 352590,
+      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+      "phash": "0000010110111111100000110100110001111100111000110010010100011010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/marbella-31.webp",
+      "slug": "marbella-31",
+      "dwellingType": "granny",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 344242,
+      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+      "phash": "0101000011010010110101111101010100011101111100100001100000101010",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/marbella-355.webp",
+      "slug": "marbella-355",
+      "dwellingType": "granny",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 355202,
+      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+      "phash": "0101010010010001110000111100001001000010111111000011111011101001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/meadow-series.webp",
+      "slug": "meadow-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 378590,
+      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+      "phash": "0001010011011000101101000101010101101011111111010010011100010000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/oxley-26-series.webp",
+      "slug": "oxley-26-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 288032,
+      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+      "phash": "0001011010011100100011001110000101101001001111110011011011001000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/pacific-series.webp",
+      "slug": "pacific-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 368196,
+      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+      "phash": "0000010110010010100101010101011000110010011111010010111110000111",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/pine-lea-duplex.webp",
+      "slug": "pine-lea-duplex",
+      "dwellingType": "duplex",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 357370,
+      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+      "phash": "0101000111011011110010100100001001001001001010010010111110111100",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/primavera-series.webp",
+      "slug": "primavera-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 306676,
+      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+      "phash": "0001010111111110100111101010000111000000101000010010101110111000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/rozelle-series.webp",
+      "slug": "rozelle-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 337306,
+      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+      "phash": "0000000111000001100001000001101101111010101011100111101011110011",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/stamford-series.webp",
+      "slug": "stamford-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 317884,
+      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+      "phash": "0001101110100111100001100010110100011011000100110100000111100111",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/stanmore-duplex.webp",
+      "slug": "stanmore-duplex",
+      "dwellingType": "duplex",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 314204,
+      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+      "phash": "0010101010100000111110000101001110000111110101010000111011111000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/stellar-series.webp",
+      "slug": "stellar-series",
+      "dwellingType": "double",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 293966,
+      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+      "phash": "0100001011001110011001000000101110111110110100100001111101100001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/stuart-series.webp",
+      "slug": "stuart-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 384930,
+      "sha256": "028556a9fdef939cddec059043a6a40689f95a755824ac6dcf072a302e44b4bc",
+      "phash": "0100111110011111100001000010110001101100010010110101101000010110",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/tempus-duplex.webp",
+      "slug": "tempus-duplex",
+      "dwellingType": "duplex",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 239138,
+      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+      "phash": "0010010110101010110110100101010110010111100110100010100101101000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/tempus-mk2-duplex.webp",
+      "slug": "tempus-mk2-duplex",
+      "dwellingType": "duplex",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 301600,
+      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+      "phash": "0100000011100010100010010000011110011111001101011111110001011001",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    },
+    {
+      "sourcePath": "webp/winton-series.webp",
+      "slug": "winton-series",
+      "dwellingType": "single",
+      "format": "webp",
+      "width": 1200,
+      "height": 896,
+      "aspectRatio": 1.3392857142857142,
+      "bytes": 313716,
+      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+      "phash": "0101000011001100001011110111100100101101100111100101001011100000",
+      "suitableDimensions": false,
+      "rejectionReasons": [
+        "Fails unchanged minimum 1200 x 900 and aspect-ratio gate."
+      ],
+      "architecturalApproval": "requires_manual_review"
+    }
+  ],
+  "duplicateCandidates": []
+}

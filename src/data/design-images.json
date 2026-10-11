@@ -14,7 +14,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_01/01_blaxland-series.webp",
-    "sourceSha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3"
+    "sourceSha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+    "visualReview": {
+      "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "kingston-series",
@@ -31,7 +38,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_01/02_kingston-series.webp",
-    "sourceSha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100"
+    "sourceSha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
+    "visualReview": {
+      "sha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "hemsworth-series",
@@ -48,27 +62,81 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_01/03_hemsworth-series.webp",
-    "sourceSha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54"
+    "sourceSha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
+    "visualReview": {
+      "sha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "majestic-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Near duplicate of Blaxland Series exterior composition; do not publish both.",
-    "nearDuplicateOf": "blaxland-series",
-    "candidateFile": "batch_01/04_majestic-series.webp",
-    "candidateSha256": "9c71b5473fa11668a3452f4c924e2fa99240a7d8ae233a7e4aea47e86d422b13",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "majestic-series",
+      "path": "/images/designs/majestic-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 469198,
+      "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+      "phash": "0100010010010101001111011110100000110010101011111100100000011011"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-a2180b5a-ea97-4089-a248-fda9eecd5c92.png",
+    "sourceSha256": "d0342f021305248ace5f1ffe7e33b365b01c319dfd16f46a48fdf9e6c90ec126",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "JUFAJA_36_Designs_Renders/webp/majestic-series.webp",
+      "sha256": "6786b049c77d4c893e6c9f3821e75122ab18080d4578fb98d7699fbf9355d9d8",
+      "sourceType": "individual_render",
+      "rejectionReason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required."
+    },
+    "visualReview": {
+      "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "oxley-26-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Near duplicate of Kingston Series exterior composition; do not publish both.",
-    "nearDuplicateOf": "kingston-series",
-    "candidateFile": "batch_01/05_oxley-26-series.webp",
-    "candidateSha256": "c0dea71db9ee1639d9dd38a8c61db16b306f4b6a0522a0efb7e4a604a747fe8e",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "oxley-26-series",
+      "path": "/images/designs/oxley-26-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 288032,
+      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+      "phash": "0001011010011100100011001110000101101001001111110011011011001000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/oxley-26-series.webp",
+    "sourceSha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "oxley-series",
@@ -85,7 +153,14 @@
     },
     "sourceType": "generated_concept",
     "sourceFile": "Generated concept render (2026-10-12)",
-    "sourceSha256": "6d3aaa1f18282881b24ba117c5341e04641b36e70ac6173305669687d0180da3"
+    "sourceSha256": "6d3aaa1f18282881b24ba117c5341e04641b36e70ac6173305669687d0180da3",
+    "visualReview": {
+      "sha256": "decc0daea35d9ac782ba71e0fca466ed975d6bd708a515e74de417341b1c800b",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "eden-series",
@@ -102,7 +177,14 @@
     },
     "sourceType": "generated_concept",
     "sourceFile": "Generated concept render (2026-10-12)",
-    "sourceSha256": "c67ce89ea09df1e472108d15fe872b2303bd3920c1fd02fc5e4fb81da71f9ecd"
+    "sourceSha256": "c67ce89ea09df1e472108d15fe872b2303bd3920c1fd02fc5e4fb81da71f9ecd",
+    "visualReview": {
+      "sha256": "fcc7834edd6e2cd9e5dce149cb9d17b986d11fe199c55e371ff17c0082fa80bb",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "patterson-series",
@@ -119,7 +201,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_01/08_patterson-series.webp",
-    "sourceSha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1"
+    "sourceSha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
+    "visualReview": {
+      "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "hastings-series",
@@ -128,15 +217,32 @@
     "image": {
       "slug": "hastings-series",
       "path": "/images/designs/hastings-series.webp",
-      "width": 1440,
-      "height": 1080,
-      "bytes": 422888,
-      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
-      "phash": "0011110110111101101110100000001101000010100010100101110111001000"
+      "width": 1448,
+      "height": 1086,
+      "bytes": 329602,
+      "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
+      "phash": "0001001011010010111011000100110101011111101101100100001011001000"
     },
-    "sourceType": "individual_render",
-    "sourceFile": "batch_01/09_hastings-series.webp",
-    "sourceSha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22"
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-792c7bff-acb1-4b55-86a2-3ed19645604c.png",
+    "sourceSha256": "3837a786bf38f5a83362ee4a8db66e93ba825d78f6cdee96d53d34a8229b6731",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/hastings-series.webp",
+      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "riley-series",
@@ -153,7 +259,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_01/10_riley-series.webp",
-    "sourceSha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36"
+    "sourceSha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
+    "visualReview": {
+      "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "lennox-series",
@@ -162,15 +275,32 @@
     "image": {
       "slug": "lennox-series",
       "path": "/images/designs/lennox-series.webp",
-      "width": 1440,
-      "height": 1080,
-      "bytes": 272088,
-      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
-      "phash": "0110011111100110101110100001100111001001100101001101010011000000"
+      "width": 1448,
+      "height": 1086,
+      "bytes": 472088,
+      "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
+      "phash": "0001010110010100101010101010111101000111111110110001100000010100"
     },
-    "sourceType": "individual_render",
-    "sourceFile": "batch_02/11_lennox-series.webp",
-    "sourceSha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25"
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-674fd9a3-a3f6-47bd-8c87-f92c2b7aa99d.png",
+    "sourceSha256": "7780a481fa755e0542da094270b92e1fb35da2f560bfe6a3c0143d10caae6d89",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/lennox-series.webp",
+      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 1,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "collins-series",
@@ -179,15 +309,32 @@
     "image": {
       "slug": "collins-series",
       "path": "/images/designs/collins-series.webp",
-      "width": 1440,
-      "height": 1080,
-      "bytes": 312926,
-      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
-      "phash": "0011100001111000110000010010011100010111110111110001100001111000"
+      "width": 1448,
+      "height": 1086,
+      "bytes": 442732,
+      "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+      "phash": "0010010111010110101110001111100100001111011111101100000010000000"
     },
-    "sourceType": "individual_render",
-    "sourceFile": "batch_02/12_collins-series.webp",
-    "sourceSha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732"
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-2d09ce64-ae39-4b67-8bd9-4f253ecc1705.png",
+    "sourceSha256": "1d6f23752f28e62959b4b05e413f036c7d0953c880eca283abc90f2a2eebdcba",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/collins-series.webp",
+      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "glenbrook-series",
@@ -196,15 +343,32 @@
     "image": {
       "slug": "glenbrook-series",
       "path": "/images/designs/glenbrook-series.webp",
-      "width": 1440,
-      "height": 1080,
-      "bytes": 275630,
-      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
-      "phash": "0110000111110011100111000101111001001011100000110100010110000101"
+      "width": 1448,
+      "height": 1086,
+      "bytes": 468146,
+      "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+      "phash": "0000000010000101101101101010100001101011101111100011111011000011"
     },
-    "sourceType": "individual_render",
-    "sourceFile": "batch_02/13_glenbrook-series.webp",
-    "sourceSha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30"
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-04b8d525-a461-400b-b8f4-fce654d82e2e.png",
+    "sourceSha256": "bf9f9000866beb5546b036d3dd4aba964ad85f45f098f4ea8aad58acf96adce5",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/glenbrook-series.webp",
+      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "lindsay-series",
@@ -221,88 +385,312 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_02/14_lindsay-series.webp",
-    "sourceSha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e"
+    "sourceSha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
+    "visualReview": {
+      "sha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "stuart-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_02/15_stuart-series.webp",
-    "candidateSha256": "49ea6e30354bc36ebb61759de25c8f96b11ad2a9df15df3c8408573ee9b61a16",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "stuart-series",
+      "path": "/images/designs/stuart-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 477188,
+      "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+      "phash": "0101010010000101110000110000101100011110111100110101011010011100"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-902e4800-b67b-4876-aa14-d6b69640b2fe.png",
+    "sourceSha256": "5d8e5f2d416f0f60d213a4cd2099b460e97fae068db3965cfed7267787139c48",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "JUFAJA_36_Designs_Renders/webp/stuart-series.webp",
+      "sha256": "028556a9fdef939cddec059043a6a40689f95a755824ac6dcf072a302e44b4bc",
+      "sourceType": "individual_render",
+      "rejectionReason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required."
+    },
+    "visualReview": {
+      "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "rozelle-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_02/16_rozelle-series.webp",
-    "candidateSha256": "0d8fc59aae5622e71a16f84ebb5bb51fae60d8cae6875ad852317d7dbd63cb22",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "rozelle-series",
+      "path": "/images/designs/rozelle-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 337306,
+      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+      "phash": "0000000111000001100001000001101101111010101011100111101011110011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/rozelle-series.webp",
+    "sourceSha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "chesterfield-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_02/17_chesterfield-series.webp",
-    "candidateSha256": "63f13c92ab2edf187e3e8366d248bb6880f2ccd6b397dda5a462b13b1662689b",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "chesterfield-series",
+      "path": "/images/designs/chesterfield-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 290078,
+      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+      "phash": "0100010010111111110010000001001100111111111000100001010011000101"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/chesterfield-series.webp",
+    "sourceSha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "crest-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_02/18_crest-series.webp",
-    "candidateSha256": "19a4976e4327361d371eba9d23b6db76d1f57ee3a40633f31e36d45317b863a7",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "crest-series",
+      "path": "/images/designs/crest-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 270878,
+      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+      "phash": "0000100110101010101101100101001001010011001110010001110110101110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/crest-series.webp",
+    "sourceSha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "darlington-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_02/19_darlington-series.webp",
-    "candidateSha256": "65736fb86898105e8e44f8189bc9fe22c4f41ee7aa6d12a7ba3b3ab2c1447691",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "darlington-series",
+      "path": "/images/designs/darlington-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 248338,
+      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+      "phash": "0011001110110001110001000001111010011110000001000111111110100001"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/darlington-series.webp",
+    "sourceSha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "lithgow-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_02/20_lithgow-series.webp",
-    "candidateSha256": "ed707ca76b9ea52f0f1eac66811a207e37705eae442c4e935b7b207c78e86f6e",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "lithgow-series",
+      "path": "/images/designs/lithgow-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 328862,
+      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+      "phash": "0001110110010010100000010110100001111010001101011101111100011010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/lithgow-series.webp",
+    "sourceSha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "jardine-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_03/21_jardine-series.webp",
-    "candidateSha256": "e289c747d246af320d17e9a35530ae7b3d54fde0a5925d70100cb6550d049c27",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "jardine-series",
+      "path": "/images/designs/jardine-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 364418,
+      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+      "phash": "0111110010111000110110000000011101000011011100001011000111100110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/jardine-series.webp",
+    "sourceSha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "stamford-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_03/22_stamford-series.webp",
-    "candidateSha256": "41976f31746fb472913ab5c1be7e2c8d104885d7b5ff859c7a48977047cc10b0",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "stamford-series",
+      "path": "/images/designs/stamford-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 317884,
+      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+      "phash": "0001101110100111100001100010110100011011000100110100000111100111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/stamford-series.webp",
+    "sourceSha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "winton-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_03/23_winton-series.webp",
-    "candidateSha256": "a8b6f5372827035c8ca98cfa7103aee8e195282b0e8bcddb9ca21829f990088b",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "winton-series",
+      "path": "/images/designs/winton-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 313716,
+      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+      "phash": "0101000011001100001011110111100100101101100111100101001011100000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/winton-series.webp",
+    "sourceSha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "bennelong-series",
@@ -319,7 +707,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/24_bennelong-series.webp",
-    "sourceSha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281"
+    "sourceSha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+    "visualReview": {
+      "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "centennial-series",
@@ -336,7 +731,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/25_centennial-series.webp",
-    "sourceSha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1"
+    "sourceSha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
+    "visualReview": {
+      "sha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "grange-series",
@@ -353,7 +755,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/26_grange-series.webp",
-    "sourceSha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523"
+    "sourceSha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
+    "visualReview": {
+      "sha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "delta-series",
@@ -370,7 +779,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/27_delta-series.webp",
-    "sourceSha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0"
+    "sourceSha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
+    "visualReview": {
+      "sha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "urban-series",
@@ -387,7 +803,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/28_urban-series.webp",
-    "sourceSha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be"
+    "sourceSha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
+    "visualReview": {
+      "sha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "verona-series",
@@ -404,7 +827,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/29_verona-series.webp",
-    "sourceSha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1"
+    "sourceSha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
+    "visualReview": {
+      "sha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "elite-series",
@@ -421,7 +851,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_03/30_elite-series.webp",
-    "sourceSha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467"
+    "sourceSha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
+    "visualReview": {
+      "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "alpha-series",
@@ -430,15 +867,32 @@
     "image": {
       "slug": "alpha-series",
       "path": "/images/designs/alpha-series.webp",
-      "width": 1440,
-      "height": 1080,
-      "bytes": 470860,
-      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
-      "phash": "0000010111010101010101100000111000010100011101111010110111110000"
+      "width": 1448,
+      "height": 1086,
+      "bytes": 439814,
+      "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
+      "phash": "0111100110101010111001111101011000011100100100010001000101100010"
     },
-    "sourceType": "individual_render",
-    "sourceFile": "batch_04/31_alpha-series.webp",
-    "sourceSha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a"
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-94209fe5-a915-4ef0-8e00-f703985ea2d4.png",
+    "sourceSha256": "366330a73844d46bf122437a9a6cceee4b4c5e9e89ca2cedaebefe68029a6670",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/alpha-series.webp",
+      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a single-storey dwelling, inconsistent with the double-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "montreal-series",
@@ -455,7 +909,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_04/32_montreal-series.webp",
-    "sourceSha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c"
+    "sourceSha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
+    "visualReview": {
+      "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "crawford-series",
@@ -472,7 +933,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_04/33_crawford-series.webp",
-    "sourceSha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10"
+    "sourceSha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
+    "visualReview": {
+      "sha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "denison-series",
@@ -489,88 +957,311 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_04/34_denison-series.webp",
-    "sourceSha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174"
+    "sourceSha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
+    "visualReview": {
+      "sha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "elwood-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_04/35_elwood-series.webp",
-    "candidateSha256": "fbe2c71eecea028e8b3f67d4d9966c49a86548c295698c5b077d036a4f185e05",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "elwood-series",
+      "path": "/images/designs/elwood-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 325412,
+      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+      "phash": "0000100110101110110001100011010110010001111100010111101011000010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/elwood-series.webp",
+    "sourceSha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "meadow-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_04/36_meadow-series.webp",
-    "candidateSha256": "40bf846eedc56b375fd40348c77bf0ecf6f59eec499d221ac032124d212db65a",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "meadow-series",
+      "path": "/images/designs/meadow-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 378590,
+      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+      "phash": "0001010011011000101101000101010101101011111111010010011100010000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/meadow-series.webp",
+    "sourceSha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "atlantic-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_04/37_atlantic-series.webp",
-    "candidateSha256": "05711a5d39ae862f1a73149bd2bb6be099fd3f139f09ff34b1b7f7d901743302",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "atlantic-series",
+      "path": "/images/designs/atlantic-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 304770,
+      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+      "phash": "0100000110111111110001100101000100011110001011100111100101100000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/atlantic-series.webp",
+    "sourceSha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "primavera-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_04/38_primavera-series.webp",
-    "candidateSha256": "61987855ac9f00ae963fd26c5ad391ff42e99e1e9688cbecea18dbc3fbf48dc5",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "primavera-series",
+      "path": "/images/designs/primavera-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 306676,
+      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+      "phash": "0001010111111110100111101010000111000000101000010010101110111000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/primavera-series.webp",
+    "sourceSha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "stellar-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_04/39_stellar-series.webp",
-    "candidateSha256": "ee9d62583a9e06f7740bfcd638b4f34b6379353673c06f01f1eda470e7fb36c2",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "stellar-series",
+      "path": "/images/designs/stellar-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 293966,
+      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+      "phash": "0100001011001110011001000000101110111110110100100001111101100001"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/stellar-series.webp",
+    "sourceSha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "linden-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_04/40_linden-series.webp",
-    "candidateSha256": "d44fa43364d63c6e3bbb6f8055664f0fe11da0bc20d1335456fda25d54b4e7cc",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "linden-series",
+      "path": "/images/designs/linden-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 323778,
+      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+      "phash": "0101010011000010110100010101100110011010011111100010111101100000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/linden-series.webp",
+    "sourceSha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "coral-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_05/41_coral-series.webp",
-    "candidateSha256": "72b6ba83e0ed496563a4588731ce996eae5de441a620a3ac2a84a27fe3a6e156",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "coral-series",
+      "path": "/images/designs/coral-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 305886,
+      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+      "phash": "0011010111101011110110000100011010000101100011000011101001100011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/coral-series.webp",
+    "sourceSha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "fingal-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_05/42_fingal-series.webp",
-    "candidateSha256": "fa9ca469a386a1747e32ac54ed7bc270e50b6fb6c8c6bec884ae7181d2148385",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "fingal-series",
+      "path": "/images/designs/fingal-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 313190,
+      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
+      "phash": "0100000110101111100011010001111100011110001100110110001000100011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/fingal-series.webp",
+    "sourceSha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "pacific-series",
     "dwellingType": "double",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_05/43_pacific-series.webp",
-    "candidateSha256": "ec6c64f6e4a7bfd6186bae553d78fe0305ab6b0e927c63d77a69206e1607638a",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "pacific-series",
+      "path": "/images/designs/pacific-series.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 368196,
+      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+      "phash": "0000010110010010100101010101011000110010011111010010111110000111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/pacific-series.webp",
+    "sourceSha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "mcevoy-duplex",
@@ -587,7 +1278,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_05/44_mcevoy-duplex.webp",
-    "sourceSha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa"
+    "sourceSha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+    "visualReview": {
+      "sha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "mayfield-duplex",
@@ -604,7 +1302,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_05/45_mayfield-duplex.webp",
-    "sourceSha256": "bc3323c43387364462e88006b36927f397b2138c75a7f098dd030c7330c80028"
+    "sourceSha256": "bc3323c43387364462e88006b36927f397b2138c75a7f098dd030c7330c80028",
+    "visualReview": {
+      "sha256": "bc3323c43387364462e88006b36927f397b2138c75a7f098dd030c7330c80028",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "fair-haven-duplex",
@@ -621,7 +1326,14 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_05/46_fair-haven-duplex.webp",
-    "sourceSha256": "d1e12b51fbfb20ad0e69a0a1af3a67f65ce542fd9f79a28dd8e05499d4471f80"
+    "sourceSha256": "d1e12b51fbfb20ad0e69a0a1af3a67f65ce542fd9f79a28dd8e05499d4471f80",
+    "visualReview": {
+      "sha256": "d1e12b51fbfb20ad0e69a0a1af3a67f65ce542fd9f79a28dd8e05499d4471f80",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "ivory-duplex",
@@ -638,111 +1350,541 @@
     },
     "sourceType": "individual_render",
     "sourceFile": "batch_05/47_ivory-duplex.webp",
-    "sourceSha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a"
+    "sourceSha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a",
+    "visualReview": {
+      "sha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+    }
   },
   {
     "slug": "altona-duplex",
     "dwellingType": "duplex",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_05/48_altona-duplex.webp",
-    "candidateSha256": "f77585a5e168ec29bfbb901f28839b2d48605745fd8666aaa3096599bed6adea",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "altona-duplex",
+      "path": "/images/designs/altona-duplex.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 349650,
+      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+      "phash": "0101010111010101110101000101010011010010110100100100001010101101"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/altona-duplex.webp",
+    "sourceSha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "pine-lea-duplex",
     "dwellingType": "duplex",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_05/49_pine-lea-duplex.webp",
-    "candidateSha256": "d24ec910e94dd66b6f182d9390223adb1730f33f759956a91c52d18d2a984a4b",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "pine-lea-duplex",
+      "path": "/images/designs/pine-lea-duplex.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 357370,
+      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+      "phash": "0101000111011011110010100100001001001001001010010010111110111100"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/pine-lea-duplex.webp",
+    "sourceSha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "tempus-duplex",
     "dwellingType": "duplex",
-    "status": "pending",
-    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
-    "candidateFile": "batch_05/50_tempus-duplex.webp",
-    "candidateSha256": "12203a9f7926a5070c16a63c4f7601ebdd2a36cef7e5f58974d88f9801b581ca",
-    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+    "status": "available",
+    "image": {
+      "slug": "tempus-duplex",
+      "path": "/images/designs/tempus-duplex.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 239138,
+      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+      "phash": "0010010110101010110110100101010110010111100110100010100101101000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/tempus-duplex.webp",
+    "sourceSha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "stanmore-duplex",
     "dwellingType": "duplex",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "stanmore-duplex",
+      "path": "/images/designs/stanmore-duplex.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 314204,
+      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+      "phash": "0010101010100000111110000101001110000111110101010000111011111000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/stanmore-duplex.webp",
+    "sourceSha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "tempus-mk2-duplex",
     "dwellingType": "duplex",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "tempus-mk2-duplex",
+      "path": "/images/designs/tempus-mk2-duplex.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 301600,
+      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+      "phash": "0100000011100010100010010000011110011111001101011111110001011001"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/tempus-mk2-duplex.webp",
+    "sourceSha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+      "observedStoreys": 2,
+      "dwellingUnits": 2,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "marbella-355",
     "dwellingType": "granny",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "marbella-355",
+      "path": "/images/designs/marbella-355.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 355202,
+      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+      "phash": "0101010010010001110000111100001001000010111111000011111011101001"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/marbella-355.webp",
+    "sourceSha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "marbella-31",
     "dwellingType": "granny",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "marbella-31",
+      "path": "/images/designs/marbella-31.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 344242,
+      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+      "phash": "0101000011010010110101111101010100011101111100100001100000101010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/marbella-31.webp",
+    "sourceSha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "marbella-31-mk1",
     "dwellingType": "granny",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "marbella-31-mk1",
+      "path": "/images/designs/marbella-31-mk1.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 352590,
+      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+      "phash": "0000010110111111100000110100110001111100111000110010010100011010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/marbella-31-mk1.webp",
+    "sourceSha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "austin-26",
     "dwellingType": "granny",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "austin-26",
+      "path": "/images/designs/austin-26.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 321680,
+      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+      "phash": "0000011110110010100110000100001101110101100111010110001100111010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/austin-26.webp",
+    "sourceSha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "austin-25",
     "dwellingType": "granny",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "austin-25",
+      "path": "/images/designs/austin-25.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 345054,
+      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+      "phash": "0101000010000011110100100110101000011110111100101101011010011100"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/austin-25.webp",
+    "sourceSha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "austin-25-mk1",
     "dwellingType": "granny",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "austin-25-mk1",
+      "path": "/images/designs/austin-25-mk1.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 332030,
+      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+      "phash": "0001100011101110100101111101000001001111101100010110001001101000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/austin-25-mk1.webp",
+    "sourceSha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "berkeley-27-wide-lot",
     "dwellingType": "rural",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "berkeley-27-wide-lot",
+      "path": "/images/designs/berkeley-27-wide-lot.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 325522,
+      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+      "phash": "0001000110100000110011100011111001111100010100001110001110011011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/berkeley-27-wide-lot.webp",
+    "sourceSha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "edgeworth-35-wide-lot",
     "dwellingType": "rural",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "edgeworth-35-wide-lot",
+      "path": "/images/designs/edgeworth-35-wide-lot.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 383252,
+      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+      "phash": "0100000110001100110011100111011000011111101000111000100101001011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/edgeworth-35-wide-lot.webp",
+    "sourceSha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "ashford-385-wide-lot",
     "dwellingType": "rural",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "ashford-385-wide-lot",
+      "path": "/images/designs/ashford-385-wide-lot.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 377064,
+      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+      "phash": "0001010010001110100110010011101001111100100101011000001001111011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/ashford-385-wide-lot.webp",
+    "sourceSha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "holbrook-40-wide-lot",
     "dwellingType": "rural",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "holbrook-40-wide-lot",
+      "path": "/images/designs/holbrook-40-wide-lot.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 317430,
+      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+      "phash": "0001000011010000101011010110101101101011101101101101100001000101"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/holbrook-40-wide-lot.webp",
+    "sourceSha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   },
   {
     "slug": "cowra-475-wide-lot",
     "dwellingType": "rural",
-    "status": "pending",
-    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+    "status": "available",
+    "image": {
+      "slug": "cowra-475-wide-lot",
+      "path": "/images/designs/cowra-475-wide-lot.webp",
+      "width": 1200,
+      "height": 896,
+      "bytes": 417414,
+      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+      "phash": "0001010011010110100111100111111001101100110100001000001100101100"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "JUFAJA_36_Designs_Renders/webp/cowra-475-wide-lot.webp",
+    "sourceSha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+    "dimensionException": {
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
+    },
+    "visualReview": {
+      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "outcome": "approved",
+      "notes": "Manual contact-sheet review: distinct facade, plausible garage arrangement; no visible text, watermark or collage. Representative CGI, not an approved plan or completed project."
+    }
   }
 ]

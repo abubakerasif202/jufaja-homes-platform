@@ -1,76 +1,55 @@
 # JUFAJA final QA and release report
 
-Prepared 12 October 2026 for `feat/design-image-integration-qa`.
+Prepared 12 October 2026 for existing PR #12: https://github.com/abubakerasif202/jufaja-homes-platform/pull/12.
 
-## Release decision
+## Implementation and release state
 
-The branch is locally validated and suitable for preview review, but it is not ready for Production merge. The catalogue has 63 designs and 27 reviewed unique image assignments; 36 designs remain pending because their package candidates are duplicate compositions, low-resolution collage crops, text-bearing artwork, or absent from the supplied archive. No repeated fallback image is shown for those records. Do not merge this change until the remaining imagery has been supplied or approved.
+The candidate has **63 unique suitable facades for 63 catalogue designs, zero pending**. Seven generic architectural concepts replace cropped or wrong-storey candidates. All 56 previously suitable files and their metadata are unchanged. Representative CGI disclosure remains outside images; authentic `/projects` photography and verified catalogue figures are preserved.
 
-## Image integration
+The 34 native 1200×896 exceptions now carry the owner's explicit 12 October 2026 approval, exact response, scope and current file SHA. This corrects the preceding unconfirmed approval wording. Normal minimum dimensions and integrity controls are intact.
 
-- Source package: `JUFAJA_50_Design_Renders_5_Batches.zip`, with manifest and README, staged outside the repository.
-- Published: 27 slug-specific 1440 × 1080 WebP images, totaling 10,039,612 bytes (9.57 MiB). Each card/detail pair uses the same path.
-- Pending: 36 of 63 catalogue designs. See [`JUFAJA-IMAGE-QA-REPORT.md`](JUFAJA-IMAGE-QA-REPORT.md) for every rejected candidate and missing slug.
-- `npm run audit:design-images`: passed; 63 registry records, 27 available images and 36 pending. Audit checks catalogue type, unique path and SHA-256, WebP format, minimum 1200 × 900 dimensions and accepted aspect ratio, exact registry dimensions/bytes, recalculated pixel DCT pHash, and pairwise near-duplicate threshold.
-- Package-wide candidate comparison identified Blaxland/Majestic and Kingston/Oxley 26 as similar facade compositions; the latter two candidates remain unpublished. Wrong-storey Oxley and Eden package candidates were excluded. Two generic representative single-storey concept images were generated for those slugs; neither is claimed to be an approved design facade or completed JUFAJA home.
-- Existing property photography in `/projects` remains unchanged. `node scripts/audit-assets.mjs` completed and inventoried 102 assets; it reported three exact-match groups and nine visual candidates for reference in `docs/asset-inventory.json`. No existing gallery or brand assets were removed.
+Release gates are being completed on the existing branch. Production remains at `2a244a200668bc3a229a0a67747319ad4dbd06f7` until the final Preview and new GitHub Actions release checks pass. No image blocker remains. Production performance, external services and deployment must not be inferred from local success.
 
-## Automated verification
+## Local verification
 
-| Check | Result | Evidence |
-|---|---|---|
-| `npm ci` | Pass | Installed 396 packages from the lockfile; 9 development-tree advisories were reported. |
-| `npm run lint` | Pass | ESLint: no issues. |
-| `npx tsc --noEmit` | Pass | No errors when run after the production build completed. A parallel attempt raced the build while it regenerated `.next/types`; the sequential check passed. |
-| `npm test` | Pass | 28 tests, 0 failures. |
-| `npm run build` | Pass | Next.js 16.3.8 production build; 80 static pages generated. |
-| `npm run audit:design-images` | Pass with pending inventory | 63 records; 27 unique image files; 36 pending. |
-| `python scripts/qa-http.py` | Pass | 74 public routes, sitemap/robots and enquiry context verified; invalid design, package and general URLs return 404. |
-| `node scripts/audit-assets.mjs` | Pass | 102 assets inventoried; duplicate/candidate groups are recorded, not deleted. |
-| `node scripts/qa-accessibility.mjs` | Pass | 34 checks, 0 violations. |
-| `node scripts/qa-ssr.mjs` | Pass | First-response HTML validated on all 74 public routes. |
-| `node scripts/qa-nojs.mjs` | Pass | 148 page checks across all 74 routes at mobile and desktop, 0 failures. |
-| `node scripts/qa-intro.mjs` | Pass | Normal-motion intro at 390, 430, 768, 1440, and 1920px; WebGL-disabled and JavaScript-disabled paths; CLS 0. |
-| `node scripts/qa-hydration.mjs --soak=true --loads=200` | Pass | 200 loads; 0 hydration events, runtime errors, or failed requests. |
-| `node scripts/qa-gallery.mjs` | Pass | All 11 galleries at 320, 390, 430, 768, 1024, 1440, and 1920px; image controls, thumbnails, swipe, Escape, close, focus and search passed. |
-| `node scripts/qa-browser.mjs` | Pass | 269 route/viewport checks; 10 major interaction journeys; 0 browser errors. All 74 routes at 390/1440px and representative routes at 320/360/430/768/1024/1280/1920px. |
-| Focused `qa-browser.mjs` | Pass | 48 page/viewport checks for homepage, catalogue, available single-storey/duplex details, and pending duplex detail at 320/360/390/430/768/1024/1440/1920px; 10 interactions; zero overflow, broken images, missing alt text, or browser errors. |
-| Current Production browser comparison | Pass | 12 checks at 390/1440px for home, catalogue, Blaxland detail, property gallery, contact, and an unknown route. This is the existing Production site, not the feature preview. |
-| Vercel Preview browser QA | Pass | Latest deployment checked 14 key public routes at 390px and 1440px (28 route/viewport checks), including homepage, services, legal, gallery, available single-storey/duplex designs, and a pending design. No overflow, broken images, missing alt text, or browser/network errors. Unknown design returned 404. |
-| Vercel Preview SSR fetch | Pass | 15 paths verified against the latest deployed preview, including a genuine unknown-design 404; canonical metadata points to `www.jufajaconstructions.com.au`. |
-| `npm audit --omit=dev` | Pass | 0 production dependency vulnerabilities. |
-| `npm audit` | Outstanding maintenance | 9 development-tree findings: 7 high and 2 moderate. Automated remediation proposes a Tailwind 4 major upgrade; no forced upgrade was applied. |
-| `git diff --check` | Pass | No whitespace errors. |
+| Check | Result |
+|---|---|
+| `npm run lint` | Pass |
+| `npx tsc --noEmit` | Pass |
+| `npm test` | Pass, 36 tests |
+| `npm run build` | Pass, 80 prerender jobs |
+| `npm run audit:design-images` | Pass, 63 records, 63 unique images, zero pending |
+| `npm audit --omit=dev` | Pass, zero production dependency advisories |
+| `git diff --check` | Pass |
+| `node scripts/audit-assets.mjs` | Pass, 138 assets, 3 intentional brand duplicate groups, 9 visual candidates |
+| `python scripts/qa-http.py` | Pass, 74 routes, true 404s, enquiry context, sitemap and robots |
+| `node scripts/qa-ssr.mjs` | Pass, 74/74 public routes |
+| `node scripts/qa-nojs.mjs` | Pass, 148 page checks across 74 routes |
+| `node scripts/qa-accessibility.mjs` | Pass, 34 checks, zero violations |
+| `node scripts/qa-gallery.mjs` | Pass at 320, 390, 430, 768, 1024, 1440, 1920 pixels |
+| `node scripts/qa-intro.mjs` | Pass, normal motion, WebGL off, JavaScript off; CLS 0 |
+| `node scripts/qa-hydration.mjs --loads=200 --soak=true --workers=2` | Pass, 200 loads, zero hydration events, console errors or failed requests |
+| `node scripts/qa-browser.mjs` | Pass, 235 viewport/route checks, zero browser errors, broken images or overflow; 4 enquiry deliveries intercepted |
+| `node scripts/qa-design-images.mjs` | Pass, 63 actual response hashes, 63 cards/detail routes, 189 related cards and 3 featured cards; zero errors/enquiries |
 
-## Visual and runtime evidence
+One concurrent intro QA attempt observed SSR markup before its blocking stylesheet and failed the early scroll assertion. The unchanged isolated run passed. The QA script now waits for fixed-position CSS to apply before checking the same scroll-lock assertion; all seven scenarios then passed. No application behavior or assertion was weakened.
 
-Responsive screenshots and JSON reports are stored outside the repository under `C:\Users\abuba\jufaja-image-qa-artifacts\`:
+Reports and screenshots are outside Git under `C:\Users\abuba\jufaja-image-review\release-completion`. These are local lab observations; no claim of production field Core Web Vitals is made.
 
-- `release-local-all/` — final all-route browser matrix and screenshots after the image aspect-ratio correction.
-- `release-local-responsive/` — final focused eight-width responsive matrix; the pending Stanmore and available Blaxland screenshots were visually inspected at 390px, and the catalogue screenshot at 1440px.
-- `final-production-current/` — current Production comparison, not the feature branch.
-- `final-local-responsive-retest/` — corrected run for the hydration timing assertion; the final `release-local-responsive/` run also passed.
+## Remote Preview investigation
 
-The site uses no measured field Core Web Vitals in this task. Final local Playwright lab data recorded maximum observed LCP of 3.52 seconds on the first cold 320px homepage run and 492 ms in the focused catalogue/detail run; CLS was 0 in both. The slower cold load did not repeat at subsequent viewport sizes. INP and Lighthouse were not measured. These are local lab observations, not field-performance guarantees.
+Unauthenticated requests on the preceding Preview failed **56/56 with HTTP 302 `text/plain`** due to Preview protection. Authenticated Chrome response downloads verified **56/56 HTTP 200 `image/webp`**, actual downloaded bytes and matching registry hashes on SHA `404bd024528794f8414601fbed314512fce9c41f`. Cookies/tokens were not exported. The old local-file comparison was not remote evidence.
 
-Authenticated preview screenshots and route results are stored outside the repository under `C:\Users\abuba\jufaja-image-qa-artifacts\preview-79o04fvmg\`; `report.json` records the 28 passing checks and empty browser/network error list. The preview required Vercel protection access; no bypass link or credential is included in the handoff.
+`scripts/qa-design-images.mjs` and `scripts/remote-design-image-verification.mjs` now capture per-file statuses, media types, byte counts, downloaded SHA and expected SHA, and explicitly fail non-image/authentication responses. Preview hosts require exact explicit allowlisting. Five regression tests include a real two-origin redirect to prove the private bypass header cannot leak.
 
-## Enquiry, secrets, and integrations
+The prior claim that two passing statuses constituted CI was inaccurate: they were Vercel and a skipped CodeRabbit review. This release adds `.github/workflows/release-checks.yml` with native Windows PowerShell checks on Node 22. Actual Actions success is required before merge. CodeRabbit's skipped review is not counted as code approval; independent code and architectural reviews passed.
 
-No real enquiry was submitted. Browser form journeys intercepted `/api/enquiry`. Vercel Production lists the required environment-variable names as configured hidden secrets; values were not read or printed. Resend sender verification and live Upstash connectivity were not tested, so live delivery and rate-limit service health remain unverified. Do not bypass rate limiting to test them.
+## SEO and external integrations
 
-## Production and repository state
+HTTP, SSR and no-JavaScript QA confirm canonical host, real initial content, sitemap/robots and actual missing-route 404s. All 63 design pages resolve; the sitemap preserves the existing policy excluding unverified plan detail records. Search Console and production field performance are unverified.
 
-- Canonical domain: `https://www.jufajaconstructions.com.au`; current Production returned HTTP 200 over TLS and the existing Vercel project has a Ready Production deployment.
-- Current `main` base: `045c30a3d61bf71739994d4f172f31844c705798`.
-- Image-integration implementation commit: `c92a08186ca00a558207118e6607a0c244fe3ba9`; preview-verified branch revision (including the first QA report update): `267cb0b83eb76422ed7263fa935fdcf80721ab6c`.
-- GitHub pull request: [#11](https://github.com/abubakerasif202/jufaja-homes-platform/pull/11), open as a draft; Vercel and CodeRabbit checks are successful.
-- Vercel preview: [Ready Preview deployment](https://jufaja-homes-platform-79o04fvmg-abubakerasif202s-projects.vercel.app), deployment `dpl_BNbjpSogFt9kucNb8KK1qhEkyyiZ`, built from the preview-verified branch revision above. Preview QA passed; Production was not changed.
-- No Production deployment or DNS change was made for this feature.
+Form delivery is intercepted during browser QA. No real enquiry is sent. Existing Resend and Upstash protections remain intact and fail safely; sender authentication, inbox delivery and current live Redis connectivity have not been established by this image release. No secrets are printed or committed. The previous development dependency install reported nine advisories; production dependency audit is clean.
 
-## Remaining release blockers
+## Final release evidence
 
-1. Obtain, create, or approve distinct, high-resolution, dwelling-type-correct imagery for all 36 pending designs. Confirm each design-specific assignment against approved source material.
-2. Review the development dependency findings and confirm Resend sender and Upstash health before a release that claims live enquiry delivery is verified.
-
-The requested implementation, local validation, and client handoff are complete for preview review. Production acceptance is not complete while the catalogue has 36 pending images and the integration checks above remain unverified.
+Final candidate SHA, authenticated 63-image Preview verification, GitHub Actions result, merge SHA, actual Production deployment and live browser/image/hydration results will be recorded after those checks run. A failed critical gate keeps PR #12 open.

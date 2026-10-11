@@ -46,6 +46,10 @@ export default function FacadeGallery({ facades, designName }: Props) {
         /></motion.div></AnimatePresence>
       </div>
 
+      <p className="facade-disclosure border-t border-jufaja-border px-5 py-4 text-sm leading-6 text-jufaja-muted">
+        Representative architectural CGI concept, not a photograph of a completed JUFAJA project or an approved construction drawing.
+      </p>
+
       {/* Thumbnails Selector */}
       {facades.length > 1 && (
         <div className="p-4 bg-jufaja-stone border-t border-jufaja-border flex gap-4 overflow-x-auto">
