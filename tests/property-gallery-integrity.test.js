@@ -35,8 +35,28 @@ test('public gallery contains photographs but no map, Google-search or listing-p
     'propertyMapUrl', 'propertyImageSearchUrl', 'Google Maps', 'Search for photos',
     'Full original gallery', 'location.sourceUrl', 'Photography not yet matched',
   ]) assert.ok(!galleryText.includes(unwanted), `Found forbidden gallery reference: ${unwanted}`);
-  assert.match(galleryText, /PHOTOGRAPHED_PROPERTIES/);
+  assert.match(galleryText, /PROPERTY_LOCATIONS\.filter/);
   assert.match(galleryText, /<dialog/);
   assert.match(galleryText, /onTouchCancel/);
   assert.match(galleryText, /onKeyDown/);
+});
+
+test('all 17 unphotographed addresses use distinct reviewed local representative exteriors', () => {
+  const galleryProps = properties.filter(property => property.photos?.length);
+  const unphotographed = properties.filter(property => !property.photos?.length);
+  assert.equal(galleryProps.length, 11);
+  assert.equal(unphotographed.length, 17);
+  assert.equal(new Set(unphotographed.map(property => property.fallbackImage)).size, 17, 'Representative facades must be distinct');
+  const designRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/data/design-images.json'), 'utf8'));
+  const approved = new Set(designRegistry.filter(record => record.status === 'available' && record.visualReview?.outcome === 'approved').map(record => record.image?.path));
+  for (const property of unphotographed) {
+    assert.ok(approved.has(property.fallbackImage), `Unreviewed representative image for ${property.street}`);
+    assert.ok(property.fallbackImage.startsWith('/images/designs/'), 'Representative image must be local');
+    assert.ok(fs.existsSync(path.join(root, 'public', property.fallbackImage)), `Missing representative image: ${property.fallbackImage}`);
+    assert.equal(property.displayNote, 'Representative exterior');
+  }
+  for (const property of galleryProps) {
+    assert.equal(property.fallbackImage, undefined, 'Photographed properties must preserve original hero');
+  }
+  assert.doesNotMatch(galleryText, /PHOTOGRAPHED_PROPERTIES|if \(!firstImage\) return null/);
 });
