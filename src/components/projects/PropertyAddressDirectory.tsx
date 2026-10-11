@@ -46,8 +46,7 @@ function PropertyImage({
         </span>
       )}
       {!failed ? (
-        // Verified source URLs are image data, never public links. Local originals
-        // can replace these sources once the approved files are available.
+        // Authorised property photographs are hosted locally; provenance stays internal.
         // eslint-disable-next-line @next/next/no-img-element
         <img
           ref={imageRef}
@@ -178,7 +177,6 @@ export default function PropertyAddressDirectory() {
                   <button
                     type="button"
                     onClick={(event) => openGallery(property, event.currentTarget)}
-                    aria-label={`View photos of ${propertyAddress(property)}`}
                     className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
                   >
                     <PropertyImage
@@ -190,7 +188,7 @@ export default function PropertyAddressDirectory() {
                     />
                     <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
                       <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
-                      <span aria-hidden="true" className="text-sm">View gallery ↗</span>
+                      <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
                     </span>
                   </button>
                   <h3 className="mt-5 font-serif text-2xl leading-tight text-jufaja-forest">{property.street}</h3>

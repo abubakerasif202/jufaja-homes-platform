@@ -10,12 +10,24 @@ const payload = registryText.split('export const PROPERTY_LOCATIONS: PropertyLoc
 assert.ok(payload, 'Property register must be present and JSON-shaped');
 const properties = JSON.parse(`[${payload}]`);
 
-test('gallery retains all 28 distinct addresses and all 58 image references', () => {
+test('gallery retains all 28 distinct addresses and 50 delivered photos and 58 audited references', () => {
   assert.equal(properties.length, 28);
   const addresses = properties.map(p => `${p.street}|${p.suburb}|${p.postcode}`.toLowerCase());
   assert.equal(new Set(addresses).size, 28);
-  assert.equal(properties.filter(p => p.photos?.length).length, 15);
-  assert.equal(properties.reduce((sum, p) => sum + (p.photos?.length || 0), 0), 58);
+  assert.equal(properties.filter(p => p.photos?.length).length, 11);
+  assert.equal(properties.reduce((sum, p) => sum + (p.photos?.length || 0), 0), 50);
+  const provenance = JSON.parse(fs.readFileSync(path.join(root, 'docs/property-photo-provenance.json'), 'utf8'));
+  assert.equal(provenance.images.length, 58);
+  assert.equal(provenance.images.filter(image => image.error).length, 3);
+  assert.equal(provenance.images.filter(image => image.excludedFromPublicGallery).length, 5);
+  for (const photo of properties.flatMap(property => property.photos || [])) {
+    assert.ok(photo.startsWith('/images/projects/'), 'Property photographs must be local');
+    assert.ok(fs.existsSync(path.join(root, 'public', photo)), `Missing local photograph: ${photo}`);
+    const record = provenance.images.find(image => image.localPath === photo);
+    assert.ok(record?.sourcePage && record.sourceImage, `Missing provenance: ${photo}`);
+    const hash = require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root, 'public', photo))).digest('hex');
+    assert.equal(hash, record.sha256, `Photograph differs from reviewed derivative: ${photo}`);
+  }
 });
 
 test('public gallery contains photographs but no map, Google-search or listing-page navigation', () => {
