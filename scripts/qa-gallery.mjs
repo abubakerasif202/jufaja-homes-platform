@@ -6,7 +6,8 @@ const argument = (name, fallback) => process.argv.find(value => value.startsWith
 const base = new URL(argument('base-url', 'http://127.0.0.1:3010'));
 assert(['localhost', '127.0.0.1'].includes(base.hostname) || (argument('live', 'false') === 'true' && base.origin === 'https://www.jufajaconstructions.com.au'), 'Unapproved QA host');
 const text = await readFile(new URL('../src/data/property-locations.ts', import.meta.url), 'utf8');
-const properties = JSON.parse(`[${text.split('export const PROPERTY_LOCATIONS: PropertyLocation[] = [')[1].split('\n];')[0]}]`).filter(property => property.photos?.length);
+const properties = JSON.parse(`[${text.split('export const PROPERTY_LOCATIONS: PropertyLocation[] = [')[1].split('\n];')[0]}]`);
+const photographed = properties.filter(property => property.photos?.length);
 const errors = [];
 const browser = await chromium.launch({ headless: true, channel: argument('channel', 'msedge') });
 try {
@@ -21,9 +22,19 @@ try {
   assert.equal(response.status(), 200);
   const section = page.locator('section[aria-labelledby="property-collection-heading"]');
   assert.equal(await section.locator('a[href]').count(), 0, 'Public gallery must not navigate to external sources');
-  assert.equal(await section.getByRole('button', {name: /View gallery/}).count(), properties.length);
+  assert.equal(await section.getByRole('button', {name: /View gallery/}).count(), photographed.length);
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), `Page overflow at ${width}`);
+  assert.equal(await section.locator('article').count(), 28);
+  assert.equal(await section.getByText('Representative exterior', {exact: true}).count(), 17);
   for (const property of properties) {
+   const card = section.locator('article').filter({has: page.getByRole('heading', {name: property.street, exact: true})});
+   await card.scrollIntoViewIfNeeded();
+   const cardImage = card.locator('img').first();
+   await cardImage.evaluate(image => image.decode());
+   assert.equal(await cardImage.getAttribute('src'), property.photos?.[0] ?? property.fallbackImage);
+   if (!property.photos?.length) assert.equal(await card.getByRole('button').count(), 0);
+  }
+  for (const property of photographed) {
    const address = `${property.street}, ${property.suburb} NSW ${property.postcode}`;
    const trigger = section.locator('article').filter({has: page.getByRole('heading', {name: property.street, exact: true})}).getByRole('button').first();
    await trigger.click();
@@ -66,12 +77,12 @@ try {
    await dialog.waitFor({state: 'hidden'});
   }
   await section.getByRole('searchbox').fill('no-matching-residence-qa');
-  assert.equal(await section.getByRole('button', {name: /View gallery/}).count(), 0);
+  assert.equal(await section.locator('article').count(), 0);
   await section.getByRole('searchbox').fill('');
   await section.getByRole('combobox').selectOption(properties[0].suburb);
-  assert.equal(await section.getByRole('button', {name: /View gallery/}).count(), properties.filter(property => property.suburb === properties[0].suburb).length);
+  assert.equal(await section.locator('article').count(), properties.filter(property => property.suburb === properties[0].suburb).length);
   await section.getByRole('combobox').selectOption('All areas');
-  console.log(`PASS ${width}px: ${properties.length} galleries, every image, arrows, thumbnails, swipe, Escape, close, focus and search`);
+  console.log(`PASS ${width}px: 28 address cards, 17 distinct representative images, ${photographed.length} galleries, image decoding, modal controls and search`);
  }
  assert.deepEqual(errors, [], 'Browser errors');
 } finally { await browser.close(); }
