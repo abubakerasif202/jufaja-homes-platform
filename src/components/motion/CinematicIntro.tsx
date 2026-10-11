@@ -16,7 +16,7 @@ const EASE = [0.76, 0, 0.24, 1] as const;
 /**
  * Short, once-per-session opening: a forest-green frame, a gold roofline drawing itself,
  * and the approved logo resolving on an ivory plate before the frame lifts to the hero.
- * The overlay is part of the server HTML; a beforeInteractive script hides it for returning sessions.
+ * The overlay is part of the server HTML; session state is applied after mount.
  */
 export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
   const [visible, setVisible] = useState(true);
