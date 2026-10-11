@@ -52,7 +52,13 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "street": "32 Ganugan Road",
     "suburb": "Austral",
     "postcode": "2179",
-    "sourceUrl": "https://www.realestate.com.au/property/32-ganugan-rd-austral-nsw-2179/"
+    "sourceUrl": "https://www.allhomes.com.au/32-ganugan-road-austral-nsw-2179",
+    "photos": [
+      "https://images.allhomes.com.au/property/photo/fd5967067bc34c16cd3da82f76bf271b_hd.jpg",
+      "https://images.allhomes.com.au/property/photo/0eb3759776dcab6ff68b22c12d3ba3f9_hd.jpg"
+    ],
+    "photoCredit": "Allhomes property profile",
+    "photoNote": "Exact-address profile photographs. Image age and current facade have not been independently verified."
   },
   {
     "street": "34 Horatio Street",
@@ -78,19 +84,33 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "street": "3 Lakeman Street",
     "suburb": "Leppington",
     "postcode": "2179",
-    "sourceUrl": "https://www.realestate.com.au/property/3-lakeman-st-leppington-nsw-2179/"
+    "sourceUrl": "https://www.realestate.com.au/property/3-lakeman-st-leppington-nsw-2179/",
+    "photos": [
+      "https://i2.au.reastatic.net/800x600/20535f6b5a42713a410e9af4cfd20d76e893848a24089559f1603a99df4fb6fa/main.jpg"
+    ],
+    "photoCredit": "realestate.com.au property profile",
+    "photoNote": "Property-profile photo. The original 2020 sale was vacant land; this image should not be treated as proof of construction stage."
   },
   {
     "street": "6 Burns Avenue",
     "suburb": "Macquarie Fields",
     "postcode": "2564",
-    "sourceUrl": "https://www.realestate.com.au/property/6-burns-ave-macquarie-fields-nsw-2564/"
+    "sourceUrl": "https://www.domain.com.au/property-profile/6-burns-avenue-macquarie-fields-nsw-2564",
+    "photos": [
+      "https://rimh2.domainstatic.com.au/wq7wcdYjFcd8OlI9Sar8Smxn6fc=/filters:format(png):quality(80):no_upscale()/w800-h533-2009250978_1_pi_150304_073959"
+    ],
+    "photoCredit": "Domain historical property profile",
+    "photoNote": "Historical property image. Do not use as evidence of the current condition or JUFAJA work."
   },
   {
     "street": "6 Blane Street",
     "suburb": "Minto",
     "postcode": "2566",
-    "sourceUrl": "https://www.onthehouse.com.au/property/nsw/minto-2566/6-blane-st-minto-nsw-2566-4578216"
+    "sourceUrl": "https://www.property.com.au/nsw/minto-2566/blane-st/6-pid-8528366/",
+    "photos": [
+      "https://i2.au.reastatic.net/1200x630-format=jpg/4fc335ea85e5c1cc0b3e58849fcec0048b275d7c8033987aebbe911be32848d2/main.jpg"
+    ],
+    "photoCredit": "Property.com.au"
   },
   {
     "street": "59 Fieldhouse Circuit",
@@ -106,7 +126,19 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
   {
     "street": "59A Fieldhouse Circuit",
     "suburb": "Campbelltown",
-    "postcode": "2560"
+    "postcode": "2560",
+    "photos": [
+      "https://website-static.ljhooker.com/images/10726/0003725368.JPG?r=0",
+      "https://website-static.ljhooker.com/images/10726/0003725369.JPG?r=0",
+      "https://website-static.ljhooker.com/images/10726/0003725370.JPG?r=0",
+      "https://website-static.ljhooker.com/images/10726/0003725371.JPG?r=0",
+      "https://website-static.ljhooker.com/images/10726/0003725372.JPG?r=0",
+      "https://website-static.ljhooker.com/images/10726/0003725373.JPG?r=0",
+      "https://website-static.ljhooker.com/images/10726/0003725374.JPG?r=0"
+    ],
+    "photoCredit": "LJ Hooker Ingleburn",
+    "sourceUrl": "https://property.ljhooker.com.au/rental-campbelltown-nsw--59a-fieldhouse-circuit-c0hhg3",
+    "photoNote": "Exact-address two-bedroom secondary dwelling rental gallery."
   },
   {
     "street": "5 Jandaroi Road",
