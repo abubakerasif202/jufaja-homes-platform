@@ -169,7 +169,7 @@ export default async function SingleDesignPage({ params }: Props) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedDesigns.map((rel) => (
-                <DesignCard key={rel.id} design={rel} compact />
+                <DesignCard key={rel.id} design={rel} />
               ))}
             </div>
           </div>

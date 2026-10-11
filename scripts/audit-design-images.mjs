@@ -10,12 +10,33 @@ const MIN_IMAGE_HEIGHT = 900;
 const MIN_ASPECT_RATIO = 1.25;
 const MAX_ASPECT_RATIO = 1.5;
 
+// This validates a manual review attestation, not automated visual recognition.
+export function hasApprovedVisualReview(dwellingType, sha256, review) {
+  if (!review || review.outcome !== 'approved' || review.sha256 !== sha256
+    || !/^[a-f0-9]{64}$/.test(sha256)
+    || typeof review.notes !== 'string' || !review.notes.trim()
+    || !Number.isInteger(review.observedStoreys) || review.observedStoreys < 1
+    || !Number.isInteger(review.dwellingUnits) || review.dwellingUnits < 1) return false;
+  if (dwellingType === 'single' && review.observedStoreys !== 1) return false;
+  if (dwellingType === 'double' && review.observedStoreys !== 2) return false;
+  if (dwellingType === 'duplex' && review.dwellingUnits !== 2) return false;
+  return true;
+}
+
 export function hasSuitableImageDimensions(width, height) {
   const aspectRatio = width / height;
   return width >= MIN_IMAGE_WIDTH
     && height >= MIN_IMAGE_HEIGHT
     && aspectRatio >= MIN_ASPECT_RATIO
     && aspectRatio <= MAX_ASPECT_RATIO;
+}
+
+export function acceptsReviewedNativeDimensions(assignment, width, height) {
+  return width === 1200 && height === 896
+    && assignment.image?.width === width && assignment.image?.height === height
+    && /^[a-f0-9]{64}$/.test(assignment.image?.sha256 ?? '')
+    && assignment.dimensionException?.sha256 === assignment.image.sha256
+    && assignment.dimensionException?.reason === 'Owner approved supplied native 1200 x 896 renders without upscaling.';
 }
 
 export async function calculatePerceptualHash(imagePath) {
@@ -130,9 +151,11 @@ export async function auditDesignImages() {
       if (!dimensions) errors.push(`Unsupported or invalid WebP image: ${assignment.slug}`);
       else {
         if (dimensions.width !== image.width || dimensions.height !== image.height) errors.push(`Image dimensions differ from the registry: ${assignment.slug}`);
-        if (!hasSuitableImageDimensions(dimensions.width, dimensions.height)) errors.push(`Image dimensions are below the minimum or outside the accepted aspect ratio: ${assignment.slug}`);
+        if (!hasSuitableImageDimensions(dimensions.width, dimensions.height)
+          && !acceptsReviewedNativeDimensions(assignment, dimensions.width, dimensions.height)) errors.push(`Image dimensions are below the minimum or outside the accepted aspect ratio: ${assignment.slug}`);
       }
       const sha256 = createHash('sha256').update(buffer).digest('hex');
+      if (!hasApprovedVisualReview(assignment.dwellingType, sha256, assignment.visualReview)) errors.push(`Image needs a current, architecturally consistent manual visual review: ${assignment.slug}`);
       if (sha256 !== image.sha256) errors.push(`Image SHA-256 differs from the registry: ${assignment.slug}`);
       if (fileStat.size !== image.bytes) errors.push(`Image byte size differs from the registry: ${assignment.slug}`);
       if (hashes.has(sha256)) errors.push(`Image file is an exact duplicate: ${assignment.slug}`);
