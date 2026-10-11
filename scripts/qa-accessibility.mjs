@@ -24,6 +24,9 @@ try {
       await page.goto(new URL(route, base).href, { waitUntil: 'networkidle' });
       await page.evaluate(async () => { window.scrollTo(0, document.body.scrollHeight); await document.fonts.ready; });
       await page.waitForTimeout(100);
+      // Load deferred content, then audit from the normal entry viewport. At the
+      // bottom, a partially offscreen footer link can sit beneath the fixed header.
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       await page.addScriptTag({ path: require.resolve('axe-core') });
       const violations = await page.evaluate(async () => (await window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } })).violations.map(item => ({ id: item.id, impact: item.impact, nodes: item.nodes.map(node => ({ target: node.target, summary: node.failureSummary })) })));
       results.push({ route, width, violations });

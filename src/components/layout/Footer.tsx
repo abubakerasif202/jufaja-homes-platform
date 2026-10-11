@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ButtonLink from '@/components/ui/ButtonLink';
 import JufajaLogo from '@/components/brand/JufajaLogo';
 import BusinessContactDetails from '@/components/contact/BusinessContactDetails';
+import { COMPANY_DETAILS } from '@/lib/company-details';
 
 const columns = [
   {
@@ -62,7 +63,8 @@ export default function Footer() {
       </div>
 
       <div className="cv-footer__legal">
-        <p>© {new Date().getFullYear()} JUFAJA Constructions Pty Ltd.</p>
+        <p>© {new Date().getFullYear()} {COMPANY_DETAILS.legalName}.</p>
+        <p>ACN {COMPANY_DETAILS.acn} · NSW Contractor Licence {COMPANY_DETAILS.contractorLicence}. <a className="underline underline-offset-4" href={COMPANY_DETAILS.licenceRegisterUrl}>Verify licence, classes and conditions on the NSW Government register</a>.</p>
         <p>Website information is a starting point; confirm project details directly before relying on them.</p>
         <a
           href="https://abwebstudio.com.au/"

@@ -8,7 +8,7 @@ export interface PropertyLocation {
   postcode: string;
   sourceUrl?: string;
   listedPhotos?: number;
-  /** Exact-address-matched public photography URLs, supplied for authorised portfolio use. */
+  /** Locally hosted property photographs; source evidence is recorded in the provenance manifest. */
   photos?: string[];
   photoCredit?: string;
   photoNote?: string;
@@ -33,7 +33,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.property.com.au/nsw/campbelltown-2560/westview-st/30a-pid-20357559/",
     "listedPhotos": 6,
     "photos": [
-      "https://i2.au.reastatic.net/1200x630-format=jpg/40e5bd43ebd8692a07126800835fa1d6606b680b3c2696e145f5857616030ad4/main.jpg"
+      "/images/projects/30a-westview-street-campbelltown-01.webp"
     ],
     "photoCredit": "Property.com.au"
   },
@@ -42,9 +42,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "suburb": "Campbelltown",
     "postcode": "2560",
     "sourceUrl": "https://www.domain.com.au/property-profile/30-westview-street-campbelltown-nsw-2560",
-    "photos": [
-      "https://rimh2.domainstatic.com.au/VkJVOL8CYYaClPV9rtNCCg7k7Zc=/filters:format(png):quality(80):no_upscale()/2016109265_1_1_200226_052112-w3012-h2466"
-    ],
+    "photos": [],
     "photoCredit": "Domain (historical listing image)",
     "photoNote": "Historical listing photograph. Appearance may differ from the current property."
   },
@@ -53,10 +51,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "suburb": "Austral",
     "postcode": "2179",
     "sourceUrl": "https://www.allhomes.com.au/32-ganugan-road-austral-nsw-2179",
-    "photos": [
-      "https://images.allhomes.com.au/property/photo/fd5967067bc34c16cd3da82f76bf271b_hd.jpg",
-      "https://images.allhomes.com.au/property/photo/0eb3759776dcab6ff68b22c12d3ba3f9_hd.jpg"
-    ],
+    "photos": [],
     "photoCredit": "Allhomes property profile",
     "photoNote": "Exact-address profile photographs. Image age and current facade have not been independently verified."
   },
@@ -66,16 +61,16 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2560",
     "sourceUrl": "https://www.raywhite.com/nsw/rosemeadow/1522948",
     "photos": [
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.29537-DSC2726.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.17740-DSC2701.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.32290-DSC2702.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.18015-DSC2705.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.11749-DSC2708.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.19762-DSC2709.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.12010-DSC2714.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.29074-DSC2716.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.32554-DSC2719.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.12537-DSC2720.jpg?width=1200&quality=85"
+      "/images/projects/34-horatio-street-rosemeadow-01.webp",
+      "/images/projects/34-horatio-street-rosemeadow-02.webp",
+      "/images/projects/34-horatio-street-rosemeadow-03.webp",
+      "/images/projects/34-horatio-street-rosemeadow-04.webp",
+      "/images/projects/34-horatio-street-rosemeadow-05.webp",
+      "/images/projects/34-horatio-street-rosemeadow-06.webp",
+      "/images/projects/34-horatio-street-rosemeadow-07.webp",
+      "/images/projects/34-horatio-street-rosemeadow-08.webp",
+      "/images/projects/34-horatio-street-rosemeadow-09.webp",
+      "/images/projects/34-horatio-street-rosemeadow-10.webp"
     ],
     "photoCredit": "Ray White (2016 historical listing)",
     "photoNote": "Historical listing photographs from 2016; these do not document JUFAJA's subsequent building work."
@@ -85,9 +80,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "suburb": "Leppington",
     "postcode": "2179",
     "sourceUrl": "https://www.realestate.com.au/property/3-lakeman-st-leppington-nsw-2179/",
-    "photos": [
-      "https://i2.au.reastatic.net/800x600/20535f6b5a42713a410e9af4cfd20d76e893848a24089559f1603a99df4fb6fa/main.jpg"
-    ],
+    "photos": [],
     "photoCredit": "realestate.com.au property profile",
     "photoNote": "Property-profile photo. The original 2020 sale was vacant land; this image should not be treated as proof of construction stage."
   },
@@ -96,9 +89,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "suburb": "Macquarie Fields",
     "postcode": "2564",
     "sourceUrl": "https://www.domain.com.au/property-profile/6-burns-avenue-macquarie-fields-nsw-2564",
-    "photos": [
-      "https://rimh2.domainstatic.com.au/wq7wcdYjFcd8OlI9Sar8Smxn6fc=/filters:format(png):quality(80):no_upscale()/w800-h533-2009250978_1_pi_150304_073959"
-    ],
+    "photos": [],
     "photoCredit": "Domain historical property profile",
     "photoNote": "Historical property image. Do not use as evidence of the current condition or JUFAJA work."
   },
@@ -108,7 +99,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2566",
     "sourceUrl": "https://www.property.com.au/nsw/minto-2566/blane-st/6-pid-8528366/",
     "photos": [
-      "https://i2.au.reastatic.net/1200x630-format=jpg/4fc335ea85e5c1cc0b3e58849fcec0048b275d7c8033987aebbe911be32848d2/main.jpg"
+      "/images/projects/6-blane-street-minto-01.webp"
     ],
     "photoCredit": "Property.com.au"
   },
@@ -119,7 +110,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.property.com.au/nsw/campbelltown-2560/fieldhouse-cct/59-pid-20358385/",
     "listedPhotos": 4,
     "photos": [
-      "https://i2.au.reastatic.net/1200x630-format=jpg/f9eb046e02cd268fce467833fd63f1ef33f41098dcc3cc4fcb5290678d9db26e/main.jpg"
+      "/images/projects/59-fieldhouse-circuit-campbelltown-01.webp"
     ],
     "photoCredit": "Property.com.au"
   },
@@ -128,13 +119,13 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "suburb": "Campbelltown",
     "postcode": "2560",
     "photos": [
-      "https://website-static.ljhooker.com/images/10726/0003725368.JPG?r=0",
-      "https://website-static.ljhooker.com/images/10726/0003725369.JPG?r=0",
-      "https://website-static.ljhooker.com/images/10726/0003725370.JPG?r=0",
-      "https://website-static.ljhooker.com/images/10726/0003725371.JPG?r=0",
-      "https://website-static.ljhooker.com/images/10726/0003725372.JPG?r=0",
-      "https://website-static.ljhooker.com/images/10726/0003725373.JPG?r=0",
-      "https://website-static.ljhooker.com/images/10726/0003725374.JPG?r=0"
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-06.webp",
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-01.webp",
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-02.webp",
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-03.webp",
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-04.webp",
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-05.webp",
+      "/images/projects/59a-fieldhouse-circuit-campbelltown-07.webp"
     ],
     "photoCredit": "LJ Hooker Ingleburn",
     "sourceUrl": "https://property.ljhooker.com.au/rental-campbelltown-nsw--59a-fieldhouse-circuit-c0hhg3",
@@ -167,7 +158,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.property.com.au/nsw/catherine-field-2557/wilenski-way/26-pid-21039303/",
     "listedPhotos": 34,
     "photos": [
-      "https://i2.au.reastatic.net/1200x630-format=jpg/88f51a492c6bb967207c5886f4c3227106df22862ce5045d03bde5c3209f4a14/main.jpg"
+      "/images/projects/26-wilenski-way-catherine-field-01.webp"
     ],
     "photoCredit": "Property.com.au"
   },
@@ -178,16 +169,16 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://rwmg.com.au/properties/sold-residential/nsw/bradbury-2560/house/3369239",
     "listedPhotos": 14,
     "photos": [
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/53ff-H3369239-160547081__1756083402-36848-28WaterhouseRoadBradbury-5.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/b55c-H3369239-160547006__1756083388-46297-28WaterhouseRoadBradbury.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/1879-H3369239-160547061__1756083396-46257-28WaterhouseRoadBradbury-3.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/ad1c-H3369239-160547071__1756083399-36726-28WaterhouseRoadBradbury-4.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/d678-H3369239-160547134__1756083405-46370-28WaterhouseRoadBradbury-6.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/c6fa-H3369239-160547148__1756083409-36780-28WaterhouseRoadBradbury-7.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/58cf-H3369239-160547158__1756083411-46478-28WaterhouseRoadBradbury-8.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/7ddb-H3369239-160547224__1756083414-46368-28WaterhouseRoadBradbury-9.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/4639-H3369239-160547236__1756083417-36807-28WaterhouseRoadBradbury-10.jpg?width=1200&quality=85",
-      "https://cdn6.ep.dynamics.net/s3/rw-propertyimages/b35e-H3369239-160547293__1756083421-46304-28WaterhouseRoadBradbury-11.jpg?width=1200&quality=85"
+      "/images/projects/28-waterhouse-road-bradbury-02.webp",
+      "/images/projects/28-waterhouse-road-bradbury-01.webp",
+      "/images/projects/28-waterhouse-road-bradbury-03.webp",
+      "/images/projects/28-waterhouse-road-bradbury-04.webp",
+      "/images/projects/28-waterhouse-road-bradbury-05.webp",
+      "/images/projects/28-waterhouse-road-bradbury-06.webp",
+      "/images/projects/28-waterhouse-road-bradbury-07.webp",
+      "/images/projects/28-waterhouse-road-bradbury-08.webp",
+      "/images/projects/28-waterhouse-road-bradbury-09.webp",
+      "/images/projects/28-waterhouse-road-bradbury-10.webp"
     ],
     "photoCredit": "Ray White Macarthur Group"
   },
@@ -203,22 +194,22 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://property.ljhooker.com.au/rental-campbelltown-nsw--10-westview-street-fcehg3",
     "listedPhotos": 16,
     "photos": [
-      "https://website-static.ljhooker.com/images/10726/0009391975.JPG?r=837201",
-      "https://website-static.ljhooker.com/images/10726/0009391976.JPG?r=885542",
-      "https://website-static.ljhooker.com/images/10726/0009391977.JPG?r=998191",
-      "https://website-static.ljhooker.com/images/10726/0009391978.JPG?r=420414",
-      "https://website-static.ljhooker.com/images/10726/0009391979.JPG?r=467087",
-      "https://website-static.ljhooker.com/images/10726/0009391980.JPG?r=577093",
-      "https://website-static.ljhooker.com/images/10726/0009391981.JPG?r=925986",
-      "https://website-static.ljhooker.com/images/10726/0009391982.JPG?r=335447",
-      "https://website-static.ljhooker.com/images/10726/0009391983.JPG?r=320584",
-      "https://website-static.ljhooker.com/images/10726/0009391984.JPG?r=693367",
-      "https://website-static.ljhooker.com/images/10726/0009391985.JPG?r=856691",
-      "https://website-static.ljhooker.com/images/10726/0009391986.JPG?r=945870",
-      "https://website-static.ljhooker.com/images/10726/0009391987.JPG?r=423977",
-      "https://website-static.ljhooker.com/images/10726/0009391988.JPG?r=414589",
-      "https://website-static.ljhooker.com/images/10726/0009391989.JPG?r=951627",
-      "https://website-static.ljhooker.com/images/10726/0009391990.JPG?r=615997"
+      "/images/projects/10-westview-street-campbelltown-01.webp",
+      "/images/projects/10-westview-street-campbelltown-02.webp",
+      "/images/projects/10-westview-street-campbelltown-03.webp",
+      "/images/projects/10-westview-street-campbelltown-04.webp",
+      "/images/projects/10-westview-street-campbelltown-05.webp",
+      "/images/projects/10-westview-street-campbelltown-06.webp",
+      "/images/projects/10-westview-street-campbelltown-07.webp",
+      "/images/projects/10-westview-street-campbelltown-08.webp",
+      "/images/projects/10-westview-street-campbelltown-09.webp",
+      "/images/projects/10-westview-street-campbelltown-10.webp",
+      "/images/projects/10-westview-street-campbelltown-11.webp",
+      "/images/projects/10-westview-street-campbelltown-12.webp",
+      "/images/projects/10-westview-street-campbelltown-13.webp",
+      "/images/projects/10-westview-street-campbelltown-14.webp",
+      "/images/projects/10-westview-street-campbelltown-15.webp",
+      "/images/projects/10-westview-street-campbelltown-16.webp"
     ],
     "photoCredit": "LJ Hooker"
   },
@@ -229,7 +220,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.property.com.au/nsw/claymore-2559/meeson-st/7-pid-20375741/",
     "listedPhotos": 11,
     "photos": [
-      "https://i2.au.reastatic.net/1200x630-format=jpg/bfc0bfadee4db87a6d2a89366ecf5c2ffc48cc92a4695ede42f17dc598b4f4c0/main.jpg"
+      "/images/projects/7-meeson-street-claymore-01.webp"
     ],
     "photoCredit": "Property.com.au"
   },
@@ -240,10 +231,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.property.com.au/nsw/claymore-2559/meeson-st/5-pid-20376496/",
     "listedPhotos": 11,
     "photos": [
-      "https://i2.au.reastatic.net/1200x630-format=jpg/48378d33391f7daa7104f7e6832ec857fcea8575e80e30aec71d22cbc33f23a2/main.jpg",
-      "https://view.com.au/viewstatic/images/listing/5-meeson-street-claymore-nsw-2559/400-w/16559477-2-A2DFA41.jpg",
-      "https://view.com.au/viewstatic/images/listing/5-meeson-street-claymore-nsw-2559/400-w/16559477-11-F273834.jpg",
-      "https://view.com.au/viewstatic/images/listing/5-meeson-street-claymore-nsw-2559/400-w/16559477-3-964835A.jpg"
+      "/images/projects/5-meeson-street-claymore-01.webp"
     ],
     "photoCredit": "Property.com.au / view.com.au"
   },
@@ -270,7 +258,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.realestate.com.au/property-flat-nsw-gilead-445186016",
     "listedPhotos": 8,
     "photos": [
-      "https://i2.au.reastatic.net/800x600/62ff010d79c42dab26079d2a792d5946dfb43d006c90c63de3e9a89c82ea0e9d/image.png"
+      "/images/projects/18a-dallas-drive-gilead-01.webp"
     ],
     "photoCredit": "Realestate.com.au"
   },

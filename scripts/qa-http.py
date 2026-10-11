@@ -3,6 +3,9 @@ import concurrent.futures
 import json
 import subprocess
 import threading
+import time
+import shutil
+import socket
 import urllib.error
 import urllib.request
 from html.parser import HTMLParser
@@ -55,22 +58,35 @@ def check(route):
         assert 'noindex' in result.robots, (route, result.robots)
     assert 'JUFAJA Constructions | JUFAJA Constructions' not in result.title, (route, result.title)
 
-server = subprocess.Popen(['node', 'node_modules/next/dist/bin/next', 'start', '--hostname', '127.0.0.1', '--port', '3011'], cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-ready = threading.Event()
+node = shutil.which('node')
+if not node:
+    raise RuntimeError('Node.js is not available on PATH.')
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+    probe.settimeout(1)
+    if probe.connect_ex(('127.0.0.1', 3011)) == 0:
+        raise RuntimeError('Port 3011 is already occupied; stop its server before running HTTP QA.')
+server = subprocess.Popen([node, 'node_modules/next/dist/bin/next', 'start', '--hostname', '127.0.0.1', '--port', '3011'], cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding='utf-8', errors='replace')
 startup_log = []
 def collect_output():
     for line in server.stdout:
         startup_log.append(line)
-        if 'Ready in' in line:
-            ready.set()
 output_thread = threading.Thread(target=collect_output, daemon=True)
 output_thread.start()
 try:
-    if not ready.wait(timeout=20):
-        raise RuntimeError('Production server did not become ready: ' + ''.join(startup_log)[-2000:])
+    deadline = time.monotonic() + 60
+    while True:
+        if server.poll() is not None:
+            raise RuntimeError(f'Production server exited ({server.returncode}): ' + ''.join(startup_log)[-6000:])
+        try:
+            read('/projects')
+            break
+        except (OSError, urllib.error.URLError):
+            if time.monotonic() >= deadline:
+                raise RuntimeError('Production server never returned HTTP 200 for /projects: ' + ''.join(startup_log)[-6000:])
+            time.sleep(0.25)
     routes = ['/', '/designs', '/packages', '/display-homes', '/projects', '/about-us', '/contact', '/custom-homes', '/knockdown-rebuild', '/inclusions', '/privacy']
     routes += ['/designs/' + design['slug'] for design in json.loads((ROOT / 'src/data/designs.json').read_text())]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         list(pool.map(check, routes))
     print('Production routes verified:', len(routes))
     for route in ['/designs/no-such-home', '/packages/no-such-package', '/audit-missing-page']:
@@ -90,6 +106,9 @@ try:
     html, _ = read('/sitemap.xml')
     assert '/privacy' in html and '/designs/blaxland' not in html
     print('Sitemap verified; unverified designs remain excluded.')
+except Exception:
+    print('Production server log:\n' + ''.join(startup_log)[-12000:])
+    raise
 finally:
     server.terminate()
     try:
