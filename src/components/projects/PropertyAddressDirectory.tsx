@@ -187,6 +187,11 @@ export default function PropertyAddressDirectory() {
                         ? 'Public property profile available. A reliable exterior photograph is not yet confirmed.'
                         : 'Photo research pending. No substitute property images have been used.'}
                   </p>
+                  {location.photoNote && (
+                    <p className="mt-2 text-xs leading-5 text-jufaja-muted">
+                      {location.photoNote}
+                    </p>
+                  )}
                   <div className="mt-5 flex flex-wrap gap-x-4 gap-y-3 border-t border-jufaja-border pt-4 text-xs font-semibold">
                     <a href={propertyMapUrl(location)} target="_blank" rel="noopener noreferrer" className="text-jufaja-forest underline underline-offset-4 hover:text-jufaja-gold-600">
                       Google Maps<span className="sr-only"> (opens in new tab)</span>
