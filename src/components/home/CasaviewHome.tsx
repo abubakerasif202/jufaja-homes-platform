@@ -23,8 +23,9 @@ const topics = [
 export default function CasaviewHome({ designs }: { designs: HomeDesign[] }) {
   const hero = HERO_SLIDES[0];
   const featured = ['single', 'double', 'duplex'].flatMap((type) => {
-    const design = designs.find((item) => item.featured && item.dwellingType === type)
-      ?? designs.find((item) => item.dwellingType === type);
+    const hasFacade = (item: HomeDesign) => item.facades.length > 0;
+    const design = designs.find((item) => item.featured && item.dwellingType === type && hasFacade(item))
+      ?? designs.find((item) => item.dwellingType === type && hasFacade(item));
     return design ? [design] : [];
   });
   return (

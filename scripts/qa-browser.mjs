@@ -191,6 +191,8 @@ try {
   await skip.click();
   await skip.waitFor({ state: 'hidden' });
   await page.reload();
+  // The server includes the intro overlay before hydration; wait for session state to hide it.
+  await skip.waitFor({ state: 'hidden' });
   assert.equal(await skip.isVisible(), false);
   report.interactions.push('Reduced motion and once-per-session skippable intro');
   assert.equal(report.errors.length, 0, JSON.stringify(report.errors));

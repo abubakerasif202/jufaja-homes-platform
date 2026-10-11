@@ -1,0 +1,748 @@
+[
+  {
+    "slug": "blaxland-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "blaxland-series",
+      "path": "/images/designs/blaxland-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 444250,
+      "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+      "phash": "0000010010010110101010011010110001011011001011110011010011010101"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_01/01_blaxland-series.webp",
+    "sourceSha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3"
+  },
+  {
+    "slug": "kingston-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "kingston-series",
+      "path": "/images/designs/kingston-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 364548,
+      "sha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
+      "phash": "0000000010000000101101111011110101001000011011100011111001111110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_01/02_kingston-series.webp",
+    "sourceSha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100"
+  },
+  {
+    "slug": "hemsworth-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "hemsworth-series",
+      "path": "/images/designs/hemsworth-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 388170,
+      "sha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
+      "phash": "0000011010010011101101011000100101001011100010110011111001110010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_01/03_hemsworth-series.webp",
+    "sourceSha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54"
+  },
+  {
+    "slug": "majestic-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Near duplicate of Blaxland Series exterior composition; do not publish both.",
+    "nearDuplicateOf": "blaxland-series",
+    "candidateFile": "batch_01/04_majestic-series.webp",
+    "candidateSha256": "9c71b5473fa11668a3452f4c924e2fa99240a7d8ae233a7e4aea47e86d422b13",
+    "candidateSourceType": "individual_render"
+  },
+  {
+    "slug": "oxley-26-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Near duplicate of Kingston Series exterior composition; do not publish both.",
+    "nearDuplicateOf": "kingston-series",
+    "candidateFile": "batch_01/05_oxley-26-series.webp",
+    "candidateSha256": "c0dea71db9ee1639d9dd38a8c61db16b306f4b6a0522a0efb7e4a604a747fe8e",
+    "candidateSourceType": "individual_render"
+  },
+  {
+    "slug": "oxley-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "oxley-series",
+      "path": "/images/designs/oxley-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 299072,
+      "sha256": "decc0daea35d9ac782ba71e0fca466ed975d6bd708a515e74de417341b1c800b",
+      "phash": "0111100010010100100111100000100001111011001101100101010111000101"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "Generated concept render (2026-10-12)",
+    "sourceSha256": "6d3aaa1f18282881b24ba117c5341e04641b36e70ac6173305669687d0180da3"
+  },
+  {
+    "slug": "eden-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "eden-series",
+      "path": "/images/designs/eden-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 337336,
+      "sha256": "fcc7834edd6e2cd9e5dce149cb9d17b986d11fe199c55e371ff17c0082fa80bb",
+      "phash": "0001010010010000001110100011111000111100011010100001111111010101"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "Generated concept render (2026-10-12)",
+    "sourceSha256": "c67ce89ea09df1e472108d15fe872b2303bd3920c1fd02fc5e4fb81da71f9ecd"
+  },
+  {
+    "slug": "patterson-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "patterson-series",
+      "path": "/images/designs/patterson-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 401414,
+      "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
+      "phash": "0000001010100000111000001111110001011111111011100111111000010000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_01/08_patterson-series.webp",
+    "sourceSha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1"
+  },
+  {
+    "slug": "hastings-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "hastings-series",
+      "path": "/images/designs/hastings-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 422888,
+      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
+      "phash": "0011110110111101101110100000001101000010100010100101110111001000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_01/09_hastings-series.webp",
+    "sourceSha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22"
+  },
+  {
+    "slug": "riley-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "riley-series",
+      "path": "/images/designs/riley-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 388214,
+      "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
+      "phash": "0011000111101001101010110001011101011100101110000010010101100010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_01/10_riley-series.webp",
+    "sourceSha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36"
+  },
+  {
+    "slug": "lennox-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "lennox-series",
+      "path": "/images/designs/lennox-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 272088,
+      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
+      "phash": "0110011111100110101110100001100111001001100101001101010011000000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_02/11_lennox-series.webp",
+    "sourceSha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25"
+  },
+  {
+    "slug": "collins-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "collins-series",
+      "path": "/images/designs/collins-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 312926,
+      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
+      "phash": "0011100001111000110000010010011100010111110111110001100001111000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_02/12_collins-series.webp",
+    "sourceSha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732"
+  },
+  {
+    "slug": "glenbrook-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "glenbrook-series",
+      "path": "/images/designs/glenbrook-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 275630,
+      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
+      "phash": "0110000111110011100111000101111001001011100000110100010110000101"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_02/13_glenbrook-series.webp",
+    "sourceSha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30"
+  },
+  {
+    "slug": "lindsay-series",
+    "dwellingType": "single",
+    "status": "available",
+    "image": {
+      "slug": "lindsay-series",
+      "path": "/images/designs/lindsay-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 402046,
+      "sha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
+      "phash": "0100110000010010111011101001100100010111111010001010100100011110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_02/14_lindsay-series.webp",
+    "sourceSha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e"
+  },
+  {
+    "slug": "stuart-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_02/15_stuart-series.webp",
+    "candidateSha256": "49ea6e30354bc36ebb61759de25c8f96b11ad2a9df15df3c8408573ee9b61a16",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "rozelle-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_02/16_rozelle-series.webp",
+    "candidateSha256": "0d8fc59aae5622e71a16f84ebb5bb51fae60d8cae6875ad852317d7dbd63cb22",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "chesterfield-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_02/17_chesterfield-series.webp",
+    "candidateSha256": "63f13c92ab2edf187e3e8366d248bb6880f2ccd6b397dda5a462b13b1662689b",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "crest-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_02/18_crest-series.webp",
+    "candidateSha256": "19a4976e4327361d371eba9d23b6db76d1f57ee3a40633f31e36d45317b863a7",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "darlington-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_02/19_darlington-series.webp",
+    "candidateSha256": "65736fb86898105e8e44f8189bc9fe22c4f41ee7aa6d12a7ba3b3ab2c1447691",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "lithgow-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_02/20_lithgow-series.webp",
+    "candidateSha256": "ed707ca76b9ea52f0f1eac66811a207e37705eae442c4e935b7b207c78e86f6e",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "jardine-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_03/21_jardine-series.webp",
+    "candidateSha256": "e289c747d246af320d17e9a35530ae7b3d54fde0a5925d70100cb6550d049c27",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "stamford-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_03/22_stamford-series.webp",
+    "candidateSha256": "41976f31746fb472913ab5c1be7e2c8d104885d7b5ff859c7a48977047cc10b0",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "winton-series",
+    "dwellingType": "single",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_03/23_winton-series.webp",
+    "candidateSha256": "a8b6f5372827035c8ca98cfa7103aee8e195282b0e8bcddb9ca21829f990088b",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "bennelong-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "bennelong-series",
+      "path": "/images/designs/bennelong-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 439144,
+      "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+      "phash": "0010001011111011101101101001000110010001100111000100100011100110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/24_bennelong-series.webp",
+    "sourceSha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281"
+  },
+  {
+    "slug": "centennial-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "centennial-series",
+      "path": "/images/designs/centennial-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 350338,
+      "sha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
+      "phash": "0110000011110000100100011000010100000001100101111101111111101110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/25_centennial-series.webp",
+    "sourceSha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1"
+  },
+  {
+    "slug": "grange-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "grange-series",
+      "path": "/images/designs/grange-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 345470,
+      "sha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
+      "phash": "0010010011011010101011100001000111000001110111000011011110100110"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/26_grange-series.webp",
+    "sourceSha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523"
+  },
+  {
+    "slug": "delta-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "delta-series",
+      "path": "/images/designs/delta-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 381718,
+      "sha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
+      "phash": "0110101010110110101000011000000100000111100111010101011011010011"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/27_delta-series.webp",
+    "sourceSha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0"
+  },
+  {
+    "slug": "urban-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "urban-series",
+      "path": "/images/designs/urban-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 312614,
+      "sha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
+      "phash": "0110010111101000100100000001011010010110110101111001110010011001"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/28_urban-series.webp",
+    "sourceSha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be"
+  },
+  {
+    "slug": "verona-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "verona-series",
+      "path": "/images/designs/verona-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 356252,
+      "sha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
+      "phash": "0101100011110000101100110000010100000001100111110100101111001111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/29_verona-series.webp",
+    "sourceSha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1"
+  },
+  {
+    "slug": "elite-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "elite-series",
+      "path": "/images/designs/elite-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 411742,
+      "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
+      "phash": "0000011010000010101101011001110101010001100101111101011001101010"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_03/30_elite-series.webp",
+    "sourceSha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467"
+  },
+  {
+    "slug": "alpha-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "alpha-series",
+      "path": "/images/designs/alpha-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 470860,
+      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
+      "phash": "0000010111010101010101100000111000010100011101111010110111110000"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_04/31_alpha-series.webp",
+    "sourceSha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a"
+  },
+  {
+    "slug": "montreal-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "montreal-series",
+      "path": "/images/designs/montreal-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 350122,
+      "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
+      "phash": "0000111011110010101100011000000101000001100101011100101111001111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_04/32_montreal-series.webp",
+    "sourceSha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c"
+  },
+  {
+    "slug": "crawford-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "crawford-series",
+      "path": "/images/designs/crawford-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 417626,
+      "sha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
+      "phash": "0001010110010011101011101100101001000011101001110100010010001111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_04/33_crawford-series.webp",
+    "sourceSha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10"
+  },
+  {
+    "slug": "denison-series",
+    "dwellingType": "double",
+    "status": "available",
+    "image": {
+      "slug": "denison-series",
+      "path": "/images/designs/denison-series.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 395784,
+      "sha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
+      "phash": "0000010010001010101010101001011101000011110011000101111110100111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_04/34_denison-series.webp",
+    "sourceSha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174"
+  },
+  {
+    "slug": "elwood-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_04/35_elwood-series.webp",
+    "candidateSha256": "fbe2c71eecea028e8b3f67d4d9966c49a86548c295698c5b077d036a4f185e05",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "meadow-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_04/36_meadow-series.webp",
+    "candidateSha256": "40bf846eedc56b375fd40348c77bf0ecf6f59eec499d221ac032124d212db65a",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "atlantic-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_04/37_atlantic-series.webp",
+    "candidateSha256": "05711a5d39ae862f1a73149bd2bb6be099fd3f139f09ff34b1b7f7d901743302",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "primavera-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_04/38_primavera-series.webp",
+    "candidateSha256": "61987855ac9f00ae963fd26c5ad391ff42e99e1e9688cbecea18dbc3fbf48dc5",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "stellar-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_04/39_stellar-series.webp",
+    "candidateSha256": "ee9d62583a9e06f7740bfcd638b4f34b6379353673c06f01f1eda470e7fb36c2",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "linden-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_04/40_linden-series.webp",
+    "candidateSha256": "d44fa43364d63c6e3bbb6f8055664f0fe11da0bc20d1335456fda25d54b4e7cc",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "coral-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_05/41_coral-series.webp",
+    "candidateSha256": "72b6ba83e0ed496563a4588731ce996eae5de441a620a3ac2a84a27fe3a6e156",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "fingal-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_05/42_fingal-series.webp",
+    "candidateSha256": "fa9ca469a386a1747e32ac54ed7bc270e50b6fb6c8c6bec884ae7181d2148385",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "pacific-series",
+    "dwellingType": "double",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_05/43_pacific-series.webp",
+    "candidateSha256": "ec6c64f6e4a7bfd6186bae553d78fe0305ab6b0e927c63d77a69206e1607638a",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "mcevoy-duplex",
+    "dwellingType": "duplex",
+    "status": "available",
+    "image": {
+      "slug": "mcevoy-duplex",
+      "path": "/images/designs/mcevoy-duplex.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 341864,
+      "sha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+      "phash": "0111001111000001111010011000100000000010101000100011011101111111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_05/44_mcevoy-duplex.webp",
+    "sourceSha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa"
+  },
+  {
+    "slug": "mayfield-duplex",
+    "dwellingType": "duplex",
+    "status": "available",
+    "image": {
+      "slug": "mayfield-duplex",
+      "path": "/images/designs/mayfield-duplex.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 372772,
+      "sha256": "bc3323c43387364462e88006b36927f397b2138c75a7f098dd030c7330c80028",
+      "phash": "0001011111010011101100000100010000000101110100100100111100111111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_05/45_mayfield-duplex.webp",
+    "sourceSha256": "bc3323c43387364462e88006b36927f397b2138c75a7f098dd030c7330c80028"
+  },
+  {
+    "slug": "fair-haven-duplex",
+    "dwellingType": "duplex",
+    "status": "available",
+    "image": {
+      "slug": "fair-haven-duplex",
+      "path": "/images/designs/fair-haven-duplex.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 397970,
+      "sha256": "d1e12b51fbfb20ad0e69a0a1af3a67f65ce542fd9f79a28dd8e05499d4471f80",
+      "phash": "0101101111010111110001001100000001000000100100110101101100101111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_05/46_fair-haven-duplex.webp",
+    "sourceSha256": "d1e12b51fbfb20ad0e69a0a1af3a67f65ce542fd9f79a28dd8e05499d4471f80"
+  },
+  {
+    "slug": "ivory-duplex",
+    "dwellingType": "duplex",
+    "status": "available",
+    "image": {
+      "slug": "ivory-duplex",
+      "path": "/images/designs/ivory-duplex.webp",
+      "width": 1440,
+      "height": 1080,
+      "bytes": 386754,
+      "sha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a",
+      "phash": "0010110110001101100011011001010101010111101001010000001000011111"
+    },
+    "sourceType": "individual_render",
+    "sourceFile": "batch_05/47_ivory-duplex.webp",
+    "sourceSha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a"
+  },
+  {
+    "slug": "altona-duplex",
+    "dwellingType": "duplex",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_05/48_altona-duplex.webp",
+    "candidateSha256": "f77585a5e168ec29bfbb901f28839b2d48605745fd8666aaa3096599bed6adea",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "pine-lea-duplex",
+    "dwellingType": "duplex",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_05/49_pine-lea-duplex.webp",
+    "candidateSha256": "d24ec910e94dd66b6f182d9390223adb1730f33f759956a91c52d18d2a984a4b",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "tempus-duplex",
+    "dwellingType": "duplex",
+    "status": "pending",
+    "reason": "Collage-derived crop is portrait or low resolution and fails full-facade catalogue presentation QA.",
+    "candidateFile": "batch_05/50_tempus-duplex.webp",
+    "candidateSha256": "12203a9f7926a5070c16a63c4f7601ebdd2a36cef7e5f58974d88f9801b581ca",
+    "candidateSourceType": "cropped_collage_panel_lower_resolution"
+  },
+  {
+    "slug": "stanmore-duplex",
+    "dwellingType": "duplex",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "tempus-mk2-duplex",
+    "dwellingType": "duplex",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "marbella-355",
+    "dwellingType": "granny",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "marbella-31",
+    "dwellingType": "granny",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "marbella-31-mk1",
+    "dwellingType": "granny",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "austin-26",
+    "dwellingType": "granny",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "austin-25",
+    "dwellingType": "granny",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "austin-25-mk1",
+    "dwellingType": "granny",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "berkeley-27-wide-lot",
+    "dwellingType": "rural",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "edgeworth-35-wide-lot",
+    "dwellingType": "rural",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "ashford-385-wide-lot",
+    "dwellingType": "rural",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "holbrook-40-wide-lot",
+    "dwellingType": "rural",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  },
+  {
+    "slug": "cowra-475-wide-lot",
+    "dwellingType": "rural",
+    "status": "pending",
+    "reason": "No unique approved asset is present in the supplied first-50 package or the repository; new design-specific imagery is required."
+  }
+]

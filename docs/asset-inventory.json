@@ -1,11 +1,7 @@
 {
   "method": "Repository-wide SHA-256, Sharp dimensions/alpha, 64-bit perceptual difference hashes (distance <=6), and filename reference searches. Candidates require human review; generated/script prerequisites and source originals are not orphans.",
-  "totalAssets": 26,
+  "totalAssets": 102,
   "exactDuplicates": [
-    [
-      "file_0000000001d0820b95f8b16ad7e2002f.png",
-      "public/brand/javed-iqbal-site.png"
-    ],
     [
       "public/brand/jufaja-logo-3d.png",
       "public/brand/jufaja-logo-transparent.png"
@@ -22,13 +18,6 @@
     ]
   ],
   "nearDuplicates": [
-    {
-      "files": [
-        "file_0000000001d0820b95f8b16ad7e2002f.png",
-        "public/brand/javed-iqbal-site.webp"
-      ],
-      "hammingDistance": 1
-    },
     {
       "files": [
         "public/brand/favicon.svg",
@@ -94,22 +83,11 @@
     }
   ],
   "withoutTextReferences": [
-    "file_0000000001d0820b95f8b16ad7e2002f.png",
     "public/brand/javed-iqbal-executive.png",
     "public/brand/javed-iqbal-site.png",
     "public/brand/jufaja-mark-3d.png"
   ],
   "assets": [
-    {
-      "file": "file_0000000001d0820b95f8b16ad7e2002f.png",
-      "bytes": 268090,
-      "sha256": "142f62f20f81f7b6771543e788940564585bb68f22144fc450297bcc3e22fd75",
-      "usages": [],
-      "width": 1536,
-      "height": 1152,
-      "alpha": false,
-      "perceptualHash": "eeec35352c6e96d2"
-    },
     {
       "file": "public/ab-web-studio-logo.webp",
       "bytes": 79676,
@@ -124,8 +102,8 @@
     },
     {
       "file": "public/brand/favicon.svg",
-      "bytes": 16627,
-      "sha256": "ad49ca3ec15fc1cac950216562558727f47ce30760202d85de61471449e001c1",
+      "bytes": 16628,
+      "sha256": "dbed4ec91aebb486451ef8e7cc04cd8f35b56ebf23752ca6679bd939008b8319",
       "usages": [
         "scripts/prepare-brand-assets.mjs",
         "src/app/layout.tsx",
@@ -200,8 +178,8 @@
     },
     {
       "file": "public/brand/jufaja-logo-dark.svg",
-      "bytes": 474929,
-      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "bytes": 474930,
+      "sha256": "f75c882d04faa242909d127228693ad2a386e31f1b0c0f7691b365e19054e3cb",
       "usages": [
         "scripts/prepare-brand-assets.mjs",
         "tests/brand-system.test.js"
@@ -213,8 +191,8 @@
     },
     {
       "file": "public/brand/jufaja-logo-horizontal.svg",
-      "bytes": 474929,
-      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "bytes": 474930,
+      "sha256": "f75c882d04faa242909d127228693ad2a386e31f1b0c0f7691b365e19054e3cb",
       "usages": [
         "scripts/prepare-brand-assets.mjs",
         "tests/brand-system.test.js"
@@ -226,8 +204,8 @@
     },
     {
       "file": "public/brand/jufaja-logo-light.svg",
-      "bytes": 474929,
-      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "bytes": 474930,
+      "sha256": "f75c882d04faa242909d127228693ad2a386e31f1b0c0f7691b365e19054e3cb",
       "usages": [
         "scripts/prepare-brand-assets.mjs",
         "tests/brand-system.test.js"
@@ -239,8 +217,8 @@
     },
     {
       "file": "public/brand/jufaja-logo-stacked.svg",
-      "bytes": 474929,
-      "sha256": "1a9df6350a325dbd45b81609c2adffc1cde4d53420b43968683b79fa9c754146",
+      "bytes": 474930,
+      "sha256": "f75c882d04faa242909d127228693ad2a386e31f1b0c0f7691b365e19054e3cb",
       "usages": [
         "scripts/prepare-brand-assets.mjs",
         "tests/brand-system.test.js"
@@ -308,8 +286,8 @@
     },
     {
       "file": "public/brand/jufaja-mark.svg",
-      "bytes": 302820,
-      "sha256": "1d8f04990611e58eb983482bfe39fc98f64a92579aea0b07254e57ee6485f54d",
+      "bytes": 302821,
+      "sha256": "9ab99e3be395842c84411a67f729acf75fdae653dc18a0ccd1587392b77f2e5d",
       "usages": [
         "scripts/prepare-brand-assets.mjs"
       ],
@@ -320,8 +298,8 @@
     },
     {
       "file": "public/brand/jufaja-monogram.svg",
-      "bytes": 302820,
-      "sha256": "1d8f04990611e58eb983482bfe39fc98f64a92579aea0b07254e57ee6485f54d",
+      "bytes": 302821,
+      "sha256": "9ab99e3be395842c84411a67f729acf75fdae653dc18a0ccd1587392b77f2e5d",
       "usages": [
         "scripts/prepare-brand-assets.mjs"
       ],
@@ -352,8 +330,7 @@
         "src/app/custom-homes/page.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
-        "src/data/projects.ts",
-        "src/lib/catalogue.ts"
+        "src/data/projects.ts"
       ],
       "width": 1920,
       "height": 1072,
@@ -388,8 +365,7 @@
         "src/app/inclusions/page.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
-        "src/data/projects.ts",
-        "src/lib/catalogue.ts"
+        "src/data/projects.ts"
       ],
       "width": 1920,
       "height": 1072,
@@ -416,9 +392,7 @@
       "bytes": 347024,
       "sha256": "9a0aac282cc3f7c44494ac70aedef688a4a59109ac0382657671d2539792c685",
       "usages": [
-        "public/images/architecture/README.md",
-        "src/lib/catalogue.ts",
-        "tests/enquiry-context.test.js"
+        "public/images/architecture/README.md"
       ],
       "width": 1536,
       "height": 1024,
@@ -453,6 +427,931 @@
       "height": 1024,
       "alpha": false,
       "perceptualHash": "8c2525860626a527"
+    },
+    {
+      "file": "public/images/designs/alpha-series.webp",
+      "bytes": 470860,
+      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "1b1f75954a8ca300"
+    },
+    {
+      "file": "public/images/designs/bennelong-series.webp",
+      "bytes": 439144,
+      "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "30f43664346418f1"
+    },
+    {
+      "file": "public/images/designs/blaxland-series.webp",
+      "bytes": 444250,
+      "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "8040135606793003"
+    },
+    {
+      "file": "public/images/designs/centennial-series.webp",
+      "bytes": 350338,
+      "sha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "677cd2523d9d1153"
+    },
+    {
+      "file": "public/images/designs/collins-series.webp",
+      "bytes": 312926,
+      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "63686ce262490f2c"
+    },
+    {
+      "file": "public/images/designs/crawford-series.webp",
+      "bytes": 417626,
+      "sha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "11e4d12745499874"
+    },
+    {
+      "file": "public/images/designs/delta-series.webp",
+      "bytes": 381718,
+      "sha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "0868938d344c6cf8"
+    },
+    {
+      "file": "public/images/designs/denison-series.webp",
+      "bytes": 395784,
+      "sha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "0060c90d13d34948"
+    },
+    {
+      "file": "public/images/designs/eden-series.webp",
+      "bytes": 337336,
+      "sha256": "fcc7834edd6e2cd9e5dce149cb9d17b986d11fe199c55e371ff17c0082fa80bb",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "4043255b198170f1"
+    },
+    {
+      "file": "public/images/designs/elite-series.webp",
+      "bytes": 411742,
+      "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "03525a135c4a10b0"
+    },
+    {
+      "file": "public/images/designs/fair-haven-duplex.webp",
+      "bytes": 397970,
+      "sha256": "d1e12b51fbfb20ad0e69a0a1af3a67f65ce542fd9f79a28dd8e05499d4471f80",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "3fb9a6a60e56e094"
+    },
+    {
+      "file": "public/images/designs/glenbrook-series.webp",
+      "bytes": 275630,
+      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "ffe1693079dd23cc"
+    },
+    {
+      "file": "public/images/designs/grange-series.webp",
+      "bytes": 345470,
+      "sha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "5f50d84d55114999"
+    },
+    {
+      "file": "public/images/designs/hastings-series.webp",
+      "bytes": 422888,
+      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "c0e1e9e1252900fc"
+    },
+    {
+      "file": "public/images/designs/hemsworth-series.webp",
+      "bytes": 388170,
+      "sha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "203152565e8b8938"
+    },
+    {
+      "file": "public/images/designs/ivory-duplex.webp",
+      "bytes": 386754,
+      "sha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "11ccd471a6e9cc86"
+    },
+    {
+      "file": "public/images/designs/kingston-series.webp",
+      "bytes": 364548,
+      "sha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "4020ea5c4ca9f4fc"
+    },
+    {
+      "file": "public/images/designs/lennox-series.webp",
+      "bytes": 272088,
+      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "e0f0313838281090"
+    },
+    {
+      "file": "public/images/designs/lindsay-series.webp",
+      "bytes": 402046,
+      "sha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "463b4aab2b0d9cb8"
+    },
+    {
+      "file": "public/images/designs/mayfield-duplex.webp",
+      "bytes": 372772,
+      "sha256": "bc3323c43387364462e88006b36927f397b2138c75a7f098dd030c7330c80028",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "3f6594371918e3c2"
+    },
+    {
+      "file": "public/images/designs/mcevoy-duplex.webp",
+      "bytes": 341864,
+      "sha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "3f6df3b717f1f0bb"
+    },
+    {
+      "file": "public/images/designs/montreal-series.webp",
+      "bytes": 350122,
+      "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "21ea9a1b1e4e8948"
+    },
+    {
+      "file": "public/images/designs/oxley-series.webp",
+      "bytes": 299072,
+      "sha256": "decc0daea35d9ac782ba71e0fca466ed975d6bd708a515e74de417341b1c800b",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "ce4f71e46c4960fe"
+    },
+    {
+      "file": "public/images/designs/patterson-series.webp",
+      "bytes": 401414,
+      "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "6f26222223cc211e"
+    },
+    {
+      "file": "public/images/designs/riley-series.webp",
+      "bytes": 388214,
+      "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "80cc70692ba163c7"
+    },
+    {
+      "file": "public/images/designs/urban-series.webp",
+      "bytes": 312614,
+      "sha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "206c4d1d3994a161"
+    },
+    {
+      "file": "public/images/designs/verona-series.webp",
+      "bytes": 356252,
+      "sha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1440,
+      "height": 1080,
+      "alpha": false,
+      "perceptualHash": "2758ce5f494c91b2"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-01.webp",
+      "bytes": 465106,
+      "sha256": "644279e7a0be0ea4f0f00b11d4d41561f6a08bb719e1438abab1f08bdd274766",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "12d1f1783e850960"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-02.webp",
+      "bytes": 86058,
+      "sha256": "ec2d3c6db85e823110685dd7f82845827744e746fbf0cccd3e14729aced60b08",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "123028c989939614"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-03.webp",
+      "bytes": 84340,
+      "sha256": "6f7c8b4babee25c40f66167a08d2c4007ac23e0a5ddc87c75357b8d47d301882",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "263051d102b6bd99"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-04.webp",
+      "bytes": 89776,
+      "sha256": "e68ed451f69f8c869aa852d168c50f40b4a72e21e38d32873a5b6c00fe7100ed",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "1f744c3515496103"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-05.webp",
+      "bytes": 141856,
+      "sha256": "7e74102971f1ef3556ddd954800ba2d925ebfcbbabeed0c8767b24fbf84a5039",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "332e1a1c3e624262"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-06.webp",
+      "bytes": 103376,
+      "sha256": "08f5535e4d372c0c6b8fff96168f8404d997d0fe8a6388de45b6c6122e08cea1",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "8323070d99998904"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-07.webp",
+      "bytes": 78924,
+      "sha256": "92daa835e0831b3dd295f2ee91f22cc094c780e77e6b649e553ad8ab961961a4",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "9e1cdf59c98fcedf"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-08.webp",
+      "bytes": 81224,
+      "sha256": "55f4be1261d2a64f8b1cc252f80b16169f5013e35f7240840cd08b3a804708f2",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "d8cdf9e9ccc6cfff"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-09.webp",
+      "bytes": 81666,
+      "sha256": "c5047b2c78ec3da56bebc659bb0b0c486deaabbf552caafe7f1471a8f706c3b1",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "f9742d0f3b696c6c"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-10.webp",
+      "bytes": 101892,
+      "sha256": "c8e094ce1c21a445effb3c0119e9d8c95df4e3b728557be0d2c4cc4f481d512f",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "230b1c140d0c0d2d"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-11.webp",
+      "bytes": 112434,
+      "sha256": "1bd439bddd5608c99f26dac8bd0cdb24414e7efb1ee34c9ebc4af2e5151d26fc",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "656333b3f6da9a9c"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-12.webp",
+      "bytes": 99288,
+      "sha256": "01153c2174ad1a933223ddd24c6d4a8790866cfd9a33f9c2b75a9eeb9c3e1394",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "c7cefe5c4e6e6a63"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-13.webp",
+      "bytes": 96432,
+      "sha256": "38c5118f0dc589a2e1e43720ad0c69e874ecee12c866b7afe5f8936df2424aa7",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "cf4f4d4f27666e0f"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-14.webp",
+      "bytes": 86016,
+      "sha256": "cf448fc3f658c2d0ca31bfd2f269f05856a8b1e52e5dce925e0256d4385e027c",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "33472326cc0c8d8f"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-15.webp",
+      "bytes": 366902,
+      "sha256": "2377bd1c3ec2fde08a49f3b60a87b068fc2e574ca31d04635572d2d3b50626ea",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "0c839ea6a6960e69"
+    },
+    {
+      "file": "public/images/projects/10-westview-street-campbelltown-16.webp",
+      "bytes": 646022,
+      "sha256": "66dfbed5f6df90413ec78239d8149c3ed06dcb025bc5a4ce3feb26a3cc356557",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1920,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "93c3f34e6f979b99"
+    },
+    {
+      "file": "public/images/projects/18a-dallas-drive-gilead-01.webp",
+      "bytes": 59348,
+      "sha256": "c53c3567dc6f153f73764c2d95a2646ffdb250ee04d94607f4ef471604e0ed80",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 600,
+      "alpha": false,
+      "perceptualHash": "0813383a395173cb"
+    },
+    {
+      "file": "public/images/projects/26-wilenski-way-catherine-field-01.webp",
+      "bytes": 113850,
+      "sha256": "620c9dc65800a6cc68c04dc712c983df994590b85a88c3bfe14f9d297967a1fe",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 630,
+      "alpha": false,
+      "perceptualHash": "5b613304268e8f89"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-01.webp",
+      "bytes": 49558,
+      "sha256": "e6771cd39b06e442386f1626cc3baf5acfaf2ab7c0db85da99c6f80e0f5b7c36",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "87466dd2ccf8d0de"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-02.webp",
+      "bytes": 222720,
+      "sha256": "4c2fed3404b0208e04142d4ebddfae27734cdb9ed6d034f97acaeea834a2f3dd",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 900,
+      "alpha": false,
+      "perceptualHash": "f9d5cc57ca0dcf67"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-03.webp",
+      "bytes": 98128,
+      "sha256": "aeb2ddf2bac939e00782df95ea263e6f762be38e8a26fad349d4f0fd86dac33a",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "182d44a5b092d262"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-04.webp",
+      "bytes": 91436,
+      "sha256": "b70d82f5836be7cdef20b33958631d32bb39b2cc74b0e1c1410b896096cdba2e",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "0b018b8c8cb8b039"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-05.webp",
+      "bytes": 50106,
+      "sha256": "df6f631bf96767edde83a7cacb1a00b180408c71cda921dd79c13c7c5da02c33",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "39399c8c9b99ae27"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-06.webp",
+      "bytes": 89960,
+      "sha256": "482e46e35166441958df6bd2eda142819f6966d59cd59ea8b9cbd4cfff639557",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "0f736bcbc5cac7cf"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-07.webp",
+      "bytes": 87636,
+      "sha256": "6c09a8f4cb44f8a01e04ae1ab5b775b1015f600e07bbf9169692797c8cf4354c",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "a723cb9b3c0c5a63"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-08.webp",
+      "bytes": 108088,
+      "sha256": "8143438d46151b97a5c211ad35d8587bb9184acab763511f6dfe5031391cb6d0",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "19336e64c48eb439"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-09.webp",
+      "bytes": 68842,
+      "sha256": "3973d7844a35747f05465544f486ac19c8e80de38d111f01943f559d0ef32769",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "2369393179699e1f"
+    },
+    {
+      "file": "public/images/projects/28-waterhouse-road-bradbury-10.webp",
+      "bytes": 50534,
+      "sha256": "151ba2cc8f7ee88542476bd62524721a322cc8c97a0e6f05f2f119e5a4eb3bd7",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 801,
+      "alpha": false,
+      "perceptualHash": "3079652d2c1ce606"
+    },
+    {
+      "file": "public/images/projects/30a-westview-street-campbelltown-01.webp",
+      "bytes": 40930,
+      "sha256": "d08cfde7e74e7d24df998daeaa338322ab97b16309b3cc800ca122c86ff3f2f4",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 630,
+      "alpha": false,
+      "perceptualHash": "7971d1d9d97968c4"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-01.webp",
+      "bytes": 151360,
+      "sha256": "09c5ffa8fdf1cfb4ee38a9418753b4a538bca8211542f482c8a436e160879063",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "f0b0998434c0e1eb"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-02.webp",
+      "bytes": 80874,
+      "sha256": "ebb579a551a2f6fa39d6911a0d39c374b3c27235025f2530b3a9281263d31f5f",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "3ccc3433dbb39436"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-03.webp",
+      "bytes": 71288,
+      "sha256": "17bcdf271ca3ff885855f3e462e9f3f73c78d8ab9a292e69e15323bd73a56334",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "7cceb6fcfcdab3b8"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-04.webp",
+      "bytes": 49334,
+      "sha256": "f9cc621ea2c8c658d3c1bf8e6631779c821163dc1da9f2cac1c8f9fec22f6a62",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "2d971ba7b9b0b2b5"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-05.webp",
+      "bytes": 35850,
+      "sha256": "01a41a34595a01491ce9b189bb2e8ded2721ee1c5949bbfa07fae29ccd0e2b62",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "8d4d694948444261"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-06.webp",
+      "bytes": 63834,
+      "sha256": "a4a22eed95375c495be60360eb9b00c87740ccf292d4269ad21a71d11c50a1a6",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "e6b6363e667e6d61"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-07.webp",
+      "bytes": 77560,
+      "sha256": "4b318af2d7e8c17cc2dba7f2daa04777bdb394a3c1f357dfc0f6926f677612e0",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "9e3a3e3c329abaa4"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-08.webp",
+      "bytes": 68142,
+      "sha256": "192f1801fe8832d349f9932abb83f4534dd250e6ee2526aba418f69d2b951a80",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "8c9e90964e4d6d75"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-09.webp",
+      "bytes": 60168,
+      "sha256": "bb88e579b252aaa8f79a3742c72fa2432aa72e4cac99d4907e25ff9312324101",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "a6b0d2d6f2f2f2c7"
+    },
+    {
+      "file": "public/images/projects/34-horatio-street-rosemeadow-10.webp",
+      "bytes": 130202,
+      "sha256": "7cba35209f5a8f7957dc5c098285ad2f05bfe54d3f093fa0da112744a4f101ea",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 534,
+      "alpha": false,
+      "perceptualHash": "783b36891346343d"
+    },
+    {
+      "file": "public/images/projects/5-meeson-street-claymore-01.webp",
+      "bytes": 73662,
+      "sha256": "9fb78e5a4cc730a38f4fd642441a0c5345f24214a9d912a6adbcca7267615442",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 630,
+      "alpha": false,
+      "perceptualHash": "c098da9a8bd31313"
+    },
+    {
+      "file": "public/images/projects/59-fieldhouse-circuit-campbelltown-01.webp",
+      "bytes": 161996,
+      "sha256": "1574faa636adeb405b3bd34519bdfbf1e9d39e147c64d6d92fa64585e6b6e201",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 630,
+      "alpha": false,
+      "perceptualHash": "7cd0b307e379c3e0"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-01.webp",
+      "bytes": 111074,
+      "sha256": "4cd286f1cd73a971d5855d7eebf9e010d7abaf8a0f16719926d3495d4685f5b4",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "1dc8c2e2667eb34e"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-02.webp",
+      "bytes": 142848,
+      "sha256": "af7efd7044303fe0e87f145a6fbde97877ff32408e53c8bc68f0bb2a1ca56053",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "1e666c781c369821"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-03.webp",
+      "bytes": 120744,
+      "sha256": "fd3d826e2520b28f5364bac73adbe387dc5c849720ba7a100a83218c110808b9",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "77bf77363f2f171f"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-04.webp",
+      "bytes": 176604,
+      "sha256": "1a43ebdb54399a93a14bbebe842d0a448e86953aba0e13661137ba11bd7c8a4d",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "1c9193078607171b"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-05.webp",
+      "bytes": 145318,
+      "sha256": "d8515b74a6eae9bb70de875f462e4e9f09f52181a13fe50b0d94fb46b648944c",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "82723838e2848084"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-06.webp",
+      "bytes": 267464,
+      "sha256": "a0dab4817ed9abf3a4298197913f3cf641f856087cbaf2733e944d1ac866325e",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "0fdfcb430f1f670b"
+    },
+    {
+      "file": "public/images/projects/59a-fieldhouse-circuit-campbelltown-07.webp",
+      "bytes": 404842,
+      "sha256": "936cd1e1c3ce7985411a428ae0f54d2026b80c9255321834ba901946c60f54a8",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1080,
+      "height": 1440,
+      "alpha": false,
+      "perceptualHash": "3c32baba38b4b4bc"
+    },
+    {
+      "file": "public/images/projects/6-blane-street-minto-01.webp",
+      "bytes": 35404,
+      "sha256": "ef1f44f098b6c6cbef9589274e636a93c8e86bd6b0f2eae13c8392ec8bcc1b61",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 800,
+      "height": 420,
+      "alpha": false,
+      "perceptualHash": "000a2a7a5e0a5a42"
+    },
+    {
+      "file": "public/images/projects/7-meeson-street-claymore-01.webp",
+      "bytes": 70552,
+      "sha256": "cacc3294dbb2ab7ae5aa08b64bf2e9015012913af315ebfb6c57b50f02bd3583",
+      "usages": [
+        "src/app/projects/page.tsx",
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 630,
+      "alpha": false,
+      "perceptualHash": "c37060b0c0193b20"
     }
   ]
 }

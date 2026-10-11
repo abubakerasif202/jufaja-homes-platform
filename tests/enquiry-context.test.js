@@ -4,6 +4,7 @@ const load = require('./load-typescript.cjs');
 const { getEnquiryContext } = load('src/lib/enquiry-context.ts');
 const { parseDesignFilters } = load('src/lib/design-filter-params.ts');
 const { catalogueDesigns } = load('src/lib/catalogue.ts');
+const designImageAssignments = require('../src/data/design-images.json');
 
 test('service links resolve to the matching contact form selection', () => {
   for (const [interest, expected] of [['House & Land', 'House and land'], ['Display Homes', 'Display home'], ['Custom Home', 'Custom home'], ['Knockdown Rebuild', 'Knockdown rebuild'], ['Inclusions', 'Inclusions']]) {
@@ -32,7 +33,12 @@ test('published catalogue does not expose unsupported pricing, features or third
     assert.deepEqual(design.floorplans, []);
     assert.deepEqual(design.features, []);
     assert.equal(design.virtualTourUrl, null);
-    for (const facade of design.facades) assert.match(facade.image, /^\/images\/architecture\//);
-    if (design.dwellingType === 'single') assert.equal(design.facades[0].image, '/images/architecture/daylight-single-storey-home.webp');
+    const assignment = designImageAssignments.find((item) => item.slug === design.slug);
+    assert.ok(assignment);
+    assert.equal(assignment.dwellingType, design.dwellingType);
+    assert.equal(design.facades.length, assignment.status === 'available' ? 1 : 0);
+    if (assignment.status === 'available') {
+      assert.equal(design.facades[0].image, `/images/designs/${design.slug}.webp`);
+    }
   }
 });
