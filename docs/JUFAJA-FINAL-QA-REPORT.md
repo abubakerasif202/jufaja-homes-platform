@@ -36,6 +36,8 @@ The branch is locally validated and suitable for preview review, but it is not r
 | `node scripts/qa-browser.mjs` | Pass | 269 route/viewport checks; 10 major interaction journeys; 0 browser errors. All 74 routes at 390/1440px and representative routes at 320/360/430/768/1024/1280/1920px. |
 | Focused `qa-browser.mjs` | Pass | 48 page/viewport checks for homepage, catalogue, available single-storey/duplex details, and pending duplex detail at 320/360/390/430/768/1024/1440/1920px; 10 interactions; zero overflow, broken images, missing alt text, or browser errors. |
 | Current Production browser comparison | Pass | 12 checks at 390/1440px for home, catalogue, Blaxland detail, property gallery, contact, and an unknown route. This is the existing Production site, not the feature preview. |
+| Vercel Preview browser QA | Pass | Authenticated preview checked 14 key public routes at 390px and 1440px (28 route/viewport checks), including homepage, services, legal, gallery, available single-storey/duplex designs, and a pending design. No overflow, broken images, missing alt text, or browser/network errors. Unknown design returned 404. |
+| Vercel Preview SSR fetch | Pass | 15 paths verified against the deployed preview, including a genuine unknown-design 404; canonical metadata points to `www.jufajaconstructions.com.au`. |
 | `npm audit --omit=dev` | Pass | 0 production dependency vulnerabilities. |
 | `npm audit` | Outstanding maintenance | 9 development-tree findings: 7 high and 2 moderate. Automated remediation proposes a Tailwind 4 major upgrade; no forced upgrade was applied. |
 | `git diff --check` | Pass | No whitespace errors. |
@@ -51,6 +53,8 @@ Responsive screenshots and JSON reports are stored outside the repository under 
 
 The site uses no measured field Core Web Vitals in this task. Final local Playwright lab data recorded maximum observed LCP of 3.52 seconds on the first cold 320px homepage run and 492 ms in the focused catalogue/detail run; CLS was 0 in both. The slower cold load did not repeat at subsequent viewport sizes. INP and Lighthouse were not measured. These are local lab observations, not field-performance guarantees.
 
+Authenticated preview screenshots and route results are stored outside the repository under `C:\Users\abuba\jufaja-image-qa-artifacts\preview-ev7bl3f38\`; `report.json` records the 28 passing checks and empty browser/network error list. The preview required Vercel protection access; no bypass link or credential is included in the handoff.
+
 ## Enquiry, secrets, and integrations
 
 No real enquiry was submitted. Browser form journeys intercepted `/api/enquiry`. Vercel Production lists the required environment-variable names as configured hidden secrets; values were not read or printed. Resend sender verification and live Upstash connectivity were not tested, so live delivery and rate-limit service health remain unverified. Do not bypass rate limiting to test them.
@@ -59,15 +63,14 @@ No real enquiry was submitted. Browser form journeys intercepted `/api/enquiry`.
 
 - Canonical domain: `https://www.jufajaconstructions.com.au`; current Production returned HTTP 200 over TLS and the existing Vercel project has a Ready Production deployment.
 - Current `main` base: `045c30a3d61bf71739994d4f172f31844c705798`.
-- Feature commit SHA: pending.
-- GitHub pull request: pending.
-- Vercel preview URL/status: pending.
+- Feature commit SHA: `c92a08186ca00a558207118e6607a0c244fe3ba9`.
+- GitHub pull request: [#11](https://github.com/abubakerasif202/jufaja-homes-platform/pull/11), open as a draft; Vercel and CodeRabbit checks are successful.
+- Vercel preview: [Ready Preview deployment](https://jufaja-homes-platform-ev7bl3f38-abubakerasif202s-projects.vercel.app), deployment `dpl_5iocUfNw3LhybKFoLE3C3uVoi7kR`, built from the feature commit. Preview QA passed; Production was not changed.
 - No Production deployment or DNS change was made for this feature.
 
 ## Remaining release blockers
 
 1. Obtain, create, or approve distinct, high-resolution, dwelling-type-correct imagery for all 36 pending designs. Confirm each design-specific assignment against approved source material.
-2. Review the preview after branch deployment, then replace the pending preview, PR, and SHA fields above with verified values.
-3. Review the development dependency findings and confirm Resend sender and Upstash health before a release that claims live enquiry delivery is verified.
+2. Review the development dependency findings and confirm Resend sender and Upstash health before a release that claims live enquiry delivery is verified.
 
 The requested implementation, local validation, and client handoff are complete for preview review. Production acceptance is not complete while the catalogue has 36 pending images and the integration checks above remain unverified.
