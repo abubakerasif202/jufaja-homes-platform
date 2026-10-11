@@ -36,7 +36,10 @@ export function acceptsReviewedNativeDimensions(assignment, width, height) {
     && assignment.image?.width === width && assignment.image?.height === height
     && /^[a-f0-9]{64}$/.test(assignment.image?.sha256 ?? '')
     && assignment.dimensionException?.sha256 === assignment.image.sha256
-    && assignment.dimensionException?.reason === 'Owner approved supplied native 1200 x 896 renders without upscaling.';
+    && assignment.dimensionException?.reason === 'Supplied native 1200 x 896 render retained without upscaling.'
+    && assignment.dimensionException?.approval?.date === '2026-10-12'
+    && assignment.dimensionException?.approval?.response === 'Approve native 1200×896 exception'
+    && assignment.dimensionException?.approval?.scope === '34 existing supplied renders at native resolution';
 }
 
 export async function calculatePerceptualHash(imagePath) {

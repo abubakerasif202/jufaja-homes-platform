@@ -35,31 +35,38 @@ test('native dimension exception requires exact owner approval and current image
   const sha256 = 'a'.repeat(64);
   const assignment = { image: { width: 1200, height: 896, sha256 } };
   assert.equal(acceptsReviewedNativeDimensions(assignment, 1200, 896), false);
-  assignment.dimensionException = { sha256, reason: 'Owner approved supplied native 1200 x 896 renders without upscaling.' };
+  assignment.dimensionException = {
+    sha256,
+    reason: 'Supplied native 1200 x 896 render retained without upscaling.',
+    approval: { date: '2026-10-12', response: 'Approve native 1200×896 exception', scope: '34 existing supplied renders at native resolution' },
+  };
   assert.equal(acceptsReviewedNativeDimensions(assignment, 1200, 896), true);
   assert.equal(acceptsReviewedNativeDimensions(assignment, 1200, 895), false);
   assert.equal(acceptsReviewedNativeDimensions(assignment, 1199, 896), false);
   assert.equal(acceptsReviewedNativeDimensions({ ...assignment, image: { ...assignment.image, height: 900 } }, 1200, 896), false);
   assert.equal(acceptsReviewedNativeDimensions({ ...assignment, dimensionException: { ...assignment.dimensionException, sha256: 'b'.repeat(64) } }, 1200, 896), false);
   assert.equal(acceptsReviewedNativeDimensions({ ...assignment, dimensionException: { ...assignment.dimensionException, reason: 'Generic approval' } }, 1200, 896), false);
+  assert.equal(acceptsReviewedNativeDimensions({ ...assignment, dimensionException: { ...assignment.dimensionException, approval: undefined } }, 1200, 896), false);
 });
 
 test('published catalogue images have unique slugs, files, hashes, and perceptual compositions', async () => {
   const { auditDesignImages } = await import('../scripts/audit-design-images.mjs');
   const result = await auditDesignImages();
-  assert.equal(result.availableCount, 56);
-  assert.equal(new Set(result.pendingSlugs).size, 7);
+  assert.equal(result.availableCount, 63);
+  assert.deepEqual(result.pendingSlugs, []);
 });
 
-test('verified wrong-storey facades remain pending with preserved candidates', async () => {
+test('replacement concepts preserve rejected-source provenance and have correct architecture', async () => {
   const assignments = JSON.parse(await readFile(path.join(__dirname, '../src/data/design-images.json'), 'utf8'));
-  for (const slug of ['hastings-series', 'lennox-series', 'collins-series', 'glenbrook-series', 'alpha-series']) {
+  for (const slug of ['majestic-series', 'stuart-series', 'hastings-series', 'lennox-series', 'collins-series', 'glenbrook-series', 'alpha-series']) {
     const assignment = assignments.find((record) => record.slug === slug);
-    assert.equal(assignment.status, 'pending');
-    assert.equal(assignment.image, undefined);
-    assert.equal(assignment.candidateFile, `/images/designs/${slug}.webp`);
-    assert.match(assignment.candidateSha256, /^[a-f0-9]{64}$/);
-    assert.match(assignment.reason, /storey/i);
+    assert.equal(assignment.status, 'available');
+    assert.equal(assignment.sourceType, 'generated_concept');
+    assert.match(assignment.supersededCandidate.sha256, /^[a-f0-9]{64}$/);
+    assert.equal(assignment.visualReview.observedStoreys, slug === 'alpha-series' ? 2 : 1);
+    assert.equal(assignment.visualReview.garageSpaces, slug === 'lennox-series' ? 1 : 2);
+    assert.equal(assignment.visualReview.sha256, assignment.image.sha256);
+    assert(assignment.image.width >= 1200 && assignment.image.height >= 900);
   }
 });
 

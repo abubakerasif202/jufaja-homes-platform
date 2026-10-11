@@ -46,6 +46,12 @@ try {
 
     await page.goto(base.href, { waitUntil: 'commit' });
     await page.waitForSelector('.jufaja-intro', { state: 'attached', timeout: 5000 });
+    // A committed document can attach SSR markup before its blocking stylesheet
+    // is applied. Observe the styled overlay before asserting its scroll lock.
+    await page.waitForFunction(() => {
+      const intro = document.querySelector('.jufaja-intro');
+      return intro && getComputedStyle(intro).position === 'fixed';
+    }, null, { timeout: 5000 });
     const early = await state(page);
     check(`${tag} intro plays in normal motion`, early.introPresent && !early.seen);
     check(`${tag} scroll locked while intro plays`, early.bodyOverflow === 'hidden', early.bodyOverflow);

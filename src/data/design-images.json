@@ -74,11 +74,36 @@
   {
     "slug": "majestic-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required.",
-    "candidateFile": "JUFAJA_36_Designs_Renders/webp/majestic-series.webp",
-    "candidateSha256": "6786b049c77d4c893e6c9f3821e75122ab18080d4578fb98d7699fbf9355d9d8",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "majestic-series",
+      "path": "/images/designs/majestic-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 469198,
+      "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+      "phash": "0100010010010101001111011110100000110010101011111100100000011011"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-a2180b5a-ea97-4089-a248-fda9eecd5c92.png",
+    "sourceSha256": "d0342f021305248ace5f1ffe7e33b365b01c319dfd16f46a48fdf9e6c90ec126",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "JUFAJA_36_Designs_Renders/webp/majestic-series.webp",
+      "sha256": "6786b049c77d4c893e6c9f3821e75122ab18080d4578fb98d7699fbf9355d9d8",
+      "sourceType": "individual_render",
+      "rejectionReason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required."
+    },
+    "visualReview": {
+      "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "oxley-26-series",
@@ -97,8 +122,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/oxley-26-series.webp",
     "sourceSha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
@@ -183,14 +213,36 @@
   {
     "slug": "hastings-series",
     "dwellingType": "single",
-    "status": "pending",
-    "sourceType": "individual_render",
-    "sourceFile": "batch_01/09_hastings-series.webp",
-    "sourceSha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
-    "reason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required.",
-    "candidateFile": "/images/designs/hastings-series.webp",
-    "candidateSha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "hastings-series",
+      "path": "/images/designs/hastings-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 329602,
+      "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
+      "phash": "0001001011010010111011000100110101011111101101100100001011001000"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-792c7bff-acb1-4b55-86a2-3ed19645604c.png",
+    "sourceSha256": "3837a786bf38f5a83362ee4a8db66e93ba825d78f6cdee96d53d34a8229b6731",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/hastings-series.webp",
+      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "riley-series",
@@ -219,38 +271,104 @@
   {
     "slug": "lennox-series",
     "dwellingType": "single",
-    "status": "pending",
-    "sourceType": "individual_render",
-    "sourceFile": "batch_02/11_lennox-series.webp",
-    "sourceSha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
-    "reason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required.",
-    "candidateFile": "/images/designs/lennox-series.webp",
-    "candidateSha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "lennox-series",
+      "path": "/images/designs/lennox-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 472088,
+      "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
+      "phash": "0001010110010100101010101010111101000111111110110001100000010100"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-674fd9a3-a3f6-47bd-8c87-f92c2b7aa99d.png",
+    "sourceSha256": "7780a481fa755e0542da094270b92e1fb35da2f560bfe6a3c0143d10caae6d89",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/lennox-series.webp",
+      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 1,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "collins-series",
     "dwellingType": "single",
-    "status": "pending",
-    "sourceType": "individual_render",
-    "sourceFile": "batch_02/12_collins-series.webp",
-    "sourceSha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
-    "reason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required.",
-    "candidateFile": "/images/designs/collins-series.webp",
-    "candidateSha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "collins-series",
+      "path": "/images/designs/collins-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 442732,
+      "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+      "phash": "0010010111010110101110001111100100001111011111101100000010000000"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-2d09ce64-ae39-4b67-8bd9-4f253ecc1705.png",
+    "sourceSha256": "1d6f23752f28e62959b4b05e413f036c7d0953c880eca283abc90f2a2eebdcba",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/collins-series.webp",
+      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "glenbrook-series",
     "dwellingType": "single",
-    "status": "pending",
-    "sourceType": "individual_render",
-    "sourceFile": "batch_02/13_glenbrook-series.webp",
-    "sourceSha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
-    "reason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required.",
-    "candidateFile": "/images/designs/glenbrook-series.webp",
-    "candidateSha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "glenbrook-series",
+      "path": "/images/designs/glenbrook-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 468146,
+      "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+      "phash": "0000000010000101101101101010100001101011101111100011111011000011"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-04b8d525-a461-400b-b8f4-fce654d82e2e.png",
+    "sourceSha256": "bf9f9000866beb5546b036d3dd4aba964ad85f45f098f4ea8aad58acf96adce5",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/glenbrook-series.webp",
+      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "lindsay-series",
@@ -279,11 +397,36 @@
   {
     "slug": "stuart-series",
     "dwellingType": "single",
-    "status": "pending",
-    "reason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required.",
-    "candidateFile": "JUFAJA_36_Designs_Renders/webp/stuart-series.webp",
-    "candidateSha256": "028556a9fdef939cddec059043a6a40689f95a755824ac6dcf072a302e44b4bc",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "stuart-series",
+      "path": "/images/designs/stuart-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 477188,
+      "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+      "phash": "0101010010000101110000110000101100011110111100110101011010011100"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-902e4800-b67b-4876-aa14-d6b69640b2fe.png",
+    "sourceSha256": "5d8e5f2d416f0f60d213a4cd2099b460e97fae068db3965cfed7267787139c48",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "JUFAJA_36_Designs_Renders/webp/stuart-series.webp",
+      "sha256": "028556a9fdef939cddec059043a6a40689f95a755824ac6dcf072a302e44b4bc",
+      "sourceType": "individual_render",
+      "rejectionReason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required."
+    },
+    "visualReview": {
+      "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+      "observedStoreys": 1,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "rozelle-series",
@@ -302,8 +445,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/rozelle-series.webp",
     "sourceSha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
@@ -330,8 +478,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/chesterfield-series.webp",
     "sourceSha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
@@ -358,8 +511,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/crest-series.webp",
     "sourceSha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
@@ -386,8 +544,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/darlington-series.webp",
     "sourceSha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
@@ -414,8 +577,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/lithgow-series.webp",
     "sourceSha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
@@ -442,8 +610,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/jardine-series.webp",
     "sourceSha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
@@ -470,8 +643,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/stamford-series.webp",
     "sourceSha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
@@ -498,8 +676,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/winton-series.webp",
     "sourceSha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
@@ -680,14 +863,36 @@
   {
     "slug": "alpha-series",
     "dwellingType": "double",
-    "status": "pending",
-    "sourceType": "individual_render",
-    "sourceFile": "batch_04/31_alpha-series.webp",
-    "sourceSha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
-    "reason": "Manual visual review: facade depicts a single-storey dwelling, inconsistent with the double-storey catalogue classification. Replacement required.",
-    "candidateFile": "/images/designs/alpha-series.webp",
-    "candidateSha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
-    "candidateSourceType": "individual_render"
+    "status": "available",
+    "image": {
+      "slug": "alpha-series",
+      "path": "/images/designs/alpha-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 439814,
+      "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
+      "phash": "0111100110101010111001111101011000011100100100010001000101100010"
+    },
+    "sourceType": "generated_concept",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-94209fe5-a915-4ef0-8e00-f703985ea2d4.png",
+    "sourceSha256": "366330a73844d46bf122437a9a6cceee4b4c5e9e89ca2cedaebefe68029a6670",
+    "generatedWith": "image_gen built-in",
+    "generationRecord": "docs/JUFAJA-REPLACEMENT-CONCEPTS.json",
+    "supersededCandidate": {
+      "file": "/images/designs/alpha-series.webp",
+      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a single-storey dwelling, inconsistent with the double-storey catalogue classification. Replacement required."
+    },
+    "visualReview": {
+      "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
+      "observedStoreys": 2,
+      "dwellingUnits": 1,
+      "garageSpaces": 2,
+      "outcome": "approved",
+      "reviewedOn": "2026-10-12",
+      "notes": "Manual full-resolution review: complete facade and roof inside frame, correct storeys and plausible garage arrangement; no text, logo, watermark, border or collage. Distinct concept composition checked against the catalogue contact sheets. Generic CGI, not a verified plan or completed project."
+    }
   },
   {
     "slug": "montreal-series",
@@ -778,8 +983,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/elwood-series.webp",
     "sourceSha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
@@ -806,8 +1016,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/meadow-series.webp",
     "sourceSha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
@@ -834,8 +1049,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/atlantic-series.webp",
     "sourceSha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
@@ -862,8 +1082,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/primavera-series.webp",
     "sourceSha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
@@ -890,8 +1115,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/stellar-series.webp",
     "sourceSha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
@@ -918,8 +1148,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/linden-series.webp",
     "sourceSha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
@@ -946,8 +1181,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/coral-series.webp",
     "sourceSha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
@@ -974,8 +1214,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/fingal-series.webp",
     "sourceSha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
@@ -1002,8 +1247,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/pacific-series.webp",
     "sourceSha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
@@ -1126,8 +1376,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/altona-duplex.webp",
     "sourceSha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
@@ -1154,8 +1409,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/pine-lea-duplex.webp",
     "sourceSha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
@@ -1182,8 +1442,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/tempus-duplex.webp",
     "sourceSha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
@@ -1210,8 +1475,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/stanmore-duplex.webp",
     "sourceSha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
@@ -1238,8 +1508,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/tempus-mk2-duplex.webp",
     "sourceSha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
@@ -1266,8 +1541,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/marbella-355.webp",
     "sourceSha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
@@ -1294,8 +1574,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/marbella-31.webp",
     "sourceSha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
@@ -1322,8 +1607,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/marbella-31-mk1.webp",
     "sourceSha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
@@ -1350,8 +1640,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/austin-26.webp",
     "sourceSha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
@@ -1378,8 +1673,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/austin-25.webp",
     "sourceSha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
@@ -1406,8 +1706,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/austin-25-mk1.webp",
     "sourceSha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
@@ -1434,8 +1739,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/berkeley-27-wide-lot.webp",
     "sourceSha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
@@ -1462,8 +1772,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/edgeworth-35-wide-lot.webp",
     "sourceSha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
@@ -1490,8 +1805,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/ashford-385-wide-lot.webp",
     "sourceSha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
@@ -1518,8 +1838,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/holbrook-40-wide-lot.webp",
     "sourceSha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
@@ -1546,8 +1871,13 @@
     "sourceFile": "JUFAJA_36_Designs_Renders/webp/cowra-475-wide-lot.webp",
     "sourceSha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
     "dimensionException": {
-      "reason": "Owner approved supplied native 1200 x 896 renders without upscaling.",
-      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f"
+      "reason": "Supplied native 1200 x 896 render retained without upscaling.",
+      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+      "approval": {
+        "date": "2026-10-12",
+        "response": "Approve native 1200×896 exception",
+        "scope": "34 existing supplied renders at native resolution"
+      }
     },
     "visualReview": {
       "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",

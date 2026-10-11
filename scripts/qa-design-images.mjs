@@ -1,16 +1,14 @@
 /** Verify published catalogue images against the registry. Never delivers enquiries. */
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { chromium } from 'playwright';
+import { inspectRemoteDesignImage, isPermittedDesignQaBase, installScopedPreviewBypass } from './remote-design-image-verification.mjs';
 
 const argument = (name, fallback) => process.argv.find(value => value.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
 const base = new URL(argument('base-url', 'http://127.0.0.1:3010'));
-const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
-const productionHosts = ['jufaja-homes-platform.vercel.app', 'www.jufajaconstructions.com.au', 'jufajaconstructions.com.au'];
-assert(local || (argument('live', 'false') === 'true' && base.protocol === 'https:' && productionHosts.includes(base.hostname)), 'Use localhost or an approved HTTPS production host with --live=true');
+assert(isPermittedDesignQaBase(base, argument('live', 'false'), argument('preview-host', '')), 'Use localhost, an approved HTTPS production host, or an explicitly named JUFAJA Preview host with --live=true --preview-host=<exact-host>');
 const output = argument('output', path.join(tmpdir(), 'jufaja-design-image-qa'));
 const designs = JSON.parse(await readFile(new URL('../src/data/designs.json', import.meta.url), 'utf8'));
 const registry = JSON.parse(await readFile(new URL('../src/data/design-images.json', import.meta.url), 'utf8'));
@@ -21,18 +19,23 @@ for (const design of designs) assert(records.has(design.slug), `Missing registry
 const report = { base: base.origin, assets: [], catalogueCards: 0, detailPages: 0, relatedCards: 0, featuredCards: 0, blockedEnquiries: 0, errors: [] };
 const browser = await chromium.launch({ headless: true, channel: 'msedge' });
 try {
-  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+  const bypassToken = process.env.VERCEL_AUTOMATION_BYPASS_SECRET;
+  const storageState = process.env.JUFAJA_QA_STORAGE_STATE;
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce', ...(storageState ? { storageState } : {}) });
+  // Scope the private bypass header to this deployment only; never report its value.
+  if (bypassToken) {
+    await installScopedPreviewBypass(context, base.origin, bypassToken);
+  }
   await context.route('**/api/enquiry', route => { report.blockedEnquiries++; return route.abort(); });
   const page = await context.newPage();
   page.on('pageerror', error => report.errors.push(error.message));
   for (const record of registry.filter(record => record.status === 'available')) {
-    const response = await context.request.get(new URL(record.image.path, base).href);
-    assert.equal(response.status(), 200, record.image.path);
-    const body = await response.body();
-    assert.equal(body.length, record.image.bytes, `${record.slug}: byte count`);
-    assert.equal(createHash('sha256').update(body).digest('hex'), record.image.sha256, `${record.slug}: deployed SHA-256`);
-    report.assets.push(record.slug);
+    report.assets.push(await inspectRemoteDesignImage(bypassToken ? { get: (url, options) => context.request.get(url, { ...options, headers: { 'x-vercel-protection-bypass': bypassToken } }) } : context.request, base, record));
   }
+  assert.equal(report.assets.filter(asset => !asset.passed).length, 0, 'Remote image verification failed; inspect per-asset HTTP status, content type and downloaded hashes in report');
+  if (argument('assets-only', 'false') === 'true') {
+    report.browserChecks = 'Not requested (--assets-only=true)';
+  } else {
   async function open(route) {
     const response = await page.goto(new URL(route, base).href, { waitUntil: 'networkidle' });
     assert.equal(response.status(), 200, route);
@@ -92,12 +95,13 @@ try {
     report.detailPages++;
   }
   assert.deepEqual(report.errors, [], 'Browser runtime errors');
+  }
 } catch (error) {
-  report.failure = error.stack;
+  report.failure = error.name === 'AssertionError' ? error.message : 'QA failed; request diagnostics omitted to protect authentication credentials';
   process.exitCode = 1;
 } finally {
   await browser.close();
   await mkdir(output, { recursive: true });
   await writeFile(path.join(output, 'design-images.json'), JSON.stringify(report, null, 2));
-  console.log(JSON.stringify({ ...report, assets: report.assets.length, output }));
+  console.log(JSON.stringify({ ...report, assets: report.assets.length, verifiedAssets: report.assets.filter(asset => asset.passed).length, output }));
 }

@@ -1,33 +1,34 @@
 # JUFAJA Constructions client handoff
 
-Prepared 12 October 2026 for the final 36-design image QA branch. This is a **Preview review candidate, not a Production release**. It contains 56 unique catalogue images; 7 of 63 designs remain pending because the supplied or previously assigned facade is visibly cropped or the storey count conflicts with the catalogue.
+Prepared 12 October 2026 for existing PR #12: https://github.com/abubakerasif202/jufaja-homes-platform/pull/12.
 
-## Website and image status
+## Catalogue
 
-The site has 63 catalogue design records. Each published facade is slug-specific and registry-backed. Cards, detail pages, related designs and homepage featured designs share the catalogue image mapping. The site labels this artwork as representative CGI. It does not assert that a CGI is a completed JUFAJA project or an approved construction plan.
+The release candidate contains **63 catalogue records and 63 unique reviewed representative facade images, zero pending**. Cards, detail pages, related designs and homepage featured designs use the same registry mapping. All 56 suitable earlier images are preserved; seven new concepts replace rejected crops or incorrect storey assignments. Authentic completed-property photography at `/projects` is preserved.
 
-The seven pending designs and the reason for each are in [`JUFAJA-IMAGE-QA-REPORT.md`](JUFAJA-IMAGE-QA-REPORT.md). Do not mark the catalogue complete until those assignments pass visual review. The actual property gallery at `/projects` remains unchanged.
+These architectural renders are generic representative CGI. They are not verified completed JUFAJA projects, current construction drawings or evidence of a matching approved floorplan. This disclosure appears in accessible HTML outside the artwork. Existing plan counts and dimensions remain reference information requiring confirmation; unverified external floorplans, prices and virtual tours are not published.
 
-Public routes include `/`, `/about-us`, `/custom-homes`, `/knockdown-rebuild`, `/designs`, 63 `/designs/[slug]` details, `/packages`, `/display-homes`, `/inclusions`, `/projects`, `/contact`, `/privacy`, `/sitemap.xml`, `/robots.txt`, and `/manifest.webmanifest`.
+The seven replacement concepts, prompts and provenance are in `JUFAJA-REPLACEMENT-CONCEPTS.json`. The native 1200×896 exception for 34 supplied assets was explicitly approved by the owner on 12 October 2026 with the response “Approve native 1200×896 exception”. The earlier unconfirmed approval statement has been corrected. Files are not upscaled.
 
-## Updating catalogue art
+## Updating images
 
-1. Supply a complete facade with no embedded text or watermark. Use at least 1200 × 900 where available; do not upscale or fabricate missing edges.
-2. Verify the image represents the correct number of storeys and dwelling units. Internal `granny` and `rural` categories do not determine storeys.
-3. Save an optimized WebP at `public/images/designs/<slug>.webp` and update that slug's registry entry in `src/data/design-images.json` with actual dimensions, byte count, SHA-256, pixel pHash, source path, and a SHA-bound visual review.
-4. Run `npm run audit:design-images`, `npm test`, `npm run build` and `node scripts/qa-design-images.mjs` against a local production server.
-5. Review the rendered image on mobile and desktop and preserve the representative CGI disclosure.
+1. Supply a complete, distinct facade with no embedded text, logos, watermark, borders or collage. Use at least 1200×900; do not upscale a tiny source or fabricate missing edges.
+2. Verify storeys, dwelling units and plausible garage count. Internal `granny` and `rural` categories do not imply storeys. Keep CGI disclosure for conceptual renders.
+3. Optimize to `public/images/designs/<slug>.webp`. Update that record in `src/data/design-images.json` with actual dimensions, bytes, SHA-256, pixel pHash, source provenance and a file-bound manual visual review. Keep superseded-source provenance.
+4. Remove a dimension exception when a replacement meets the generic minimum. An exception requires explicit recorded owner approval and the exact file SHA; a generic statement is insufficient.
+5. Run `npm run audit:design-images`, `npm test`, `npm run build`, and `node scripts/qa-design-images.mjs` against the local production server. Compare all catalogue facades visually and check cards/details on mobile and desktop.
+6. Before release, inspect authenticated Preview responses. A redirect or HTML login page is a failure. Hash downloaded original WebP response bytes against the registry; do not hash a local file as remote evidence.
 
-The supplied source inventory is summarized in `docs/JUFAJA-36-SOURCE-REVIEW.json`. The original files remain in the owner's Downloads directory, outside the repository.
+Downloads originals and generated PNG sources remain untouched. Final assets are in the repository. Labelled contact sheets, browser screenshots and runtime reports are outside Git under `C:\Users\abuba\jufaja-image-review\release-completion`.
 
-## QA and external services
+## QA and release
 
-Local verification passed lint, typecheck, 31 tests, production build, image audit, HTTP, accessibility, browser, no-JavaScript, SSR, gallery and intro QA. Hydration QA passed for 100 local page loads with 0 hydration events, 0 console errors and 0 failed requests. The Vercel Preview browser check loaded all 56 published image responses without failures. Browser tests intercepted all enquiry delivery. No real customer enquiry was sent.
+Lint, TypeScript, 36 tests, build, image audit, production dependency audit, HTTP, accessibility, SSR, no-JavaScript, gallery, intro and 200-load local hydration checks passed. Responsive browser checks passed 235 route/viewport checks with zero overflow, broken images or browser errors. All-design image QA passed 63 response hashes, 63 detail pages, 189 related cards and 3 homepage featured cards. Authenticated 63-image Preview, GitHub Actions and Production checks are recorded in `JUFAJA-FINAL-QA-REPORT.md` as they complete. PR #12 remains the release vehicle; no new feature branch is created.
 
-Resend sender authentication and Upstash live rate-limit health have not been verified. Credentials were not printed. The local dependency audit found 9 development advisories; production dependencies have zero reported advisories.
+The preceding Preview failures were protection redirects: unauthenticated 56/56 HTTP 302 `text/plain`; authenticated actual response downloads 56/56 HTTP 200 `image/webp`, every hash matching. The final verifier records per-file HTTP and actual byte evidence. CI is now an actual Windows Actions workflow, rather than treating Vercel and skipped CodeRabbit statuses as CI.
 
-## Release state
+Production remains on `2a244a200668bc3a229a0a67747319ad4dbd06f7` until gates pass. The final report records the actual merge/deployment and live verification after release.
 
-Base `main` is `2a244a200668bc3a229a0a67747319ad4dbd06f7`, merged PR #11. Production still uses that SHA. PR #12 is open: https://github.com/abubakerasif202/jufaja-homes-platform/pull/12. Commit `19b22f7b84a7915b4d1979a4390f40743b1dbf13` is available on Vercel Preview at https://jufaja-homes-platform-h7ui0y0ed-abubakerasif202s-projects.vercel.app (READY, deployment `dpl_GAxWvdTxnT8U6u6vbSz4jE8nv27K`). Production remains on `2a244a200668bc3a229a0a67747319ad4dbd06f7`. The seven pending facade assignments block merging and production release.
+## External services
 
-For SEO, the build and HTTP QA confirmed the canonical host and sitemap behavior. Search Console access was not used. After a future approved production release, the owner can inspect indexed canonicals and submit `/sitemap.xml` through Search Console.
+No QA customer enquiry is delivered. Browser form tests intercept requests. Resend sender verification, inbox delivery and Upstash live connectivity remain unverified by this image release; existing server-side protections are preserved. Search Console access and production field Core Web Vitals are also unverified. Local reports are lab evidence. Use the exact deployment/SHA evidence in the final report to distinguish Preview from Production.

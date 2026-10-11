@@ -1,0 +1,198 @@
+[
+  {
+    "slug": "majestic-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-a2180b5a-ea97-4089-a248-fda9eecd5c92.png",
+    "prompt": "Use case: stylized-concept. Asset type: premium Australian home-design catalogue architectural CGI, a generic representative concept rather than any completed project or verified plan. Generate ONE individual image for Majestic Series concept: a complete SINGLE-STOREY house, broad contemporary family facade, two-car garage on left with one broad garage door, central recessed timber entrance, sculptural low flat parapets, pale limestone and warm ivory rendered masonry, elegant horizontal window on right, low native Australian landscaping. Calm natural morning light, accurate materials, credible construction. Landscape 4:3 composition, native resolution at least 1600 x 1200 preferably 2048 x 1536. Camera at street eye level slight three-quarter angle, full roof and both outer walls entirely visible with generous side margins (building within central 75% width); entire driveway and garden frontage. No facade cropped, no hidden house edge behind trees, no second storey, no adjacent attached dwelling, no vehicles or people. NO text, no numbers, no lettering, no logos, no watermark, no border, no collage. Sharp finely detailed professional architectural rendering; no image stretching.",
+    "observedStoreys": 1,
+    "garageSpaces": 2,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "d0342f021305248ace5f1ffe7e33b365b01c319dfd16f46a48fdf9e6c90ec126",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "majestic-series",
+      "path": "/images/designs/majestic-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 469198,
+      "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+      "phash": "0100010010010101001111011110100000110010101011111100100000011011"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "JUFAJA_36_Designs_Renders/webp/majestic-series.webp",
+      "sha256": "6786b049c77d4c893e6c9f3821e75122ab18080d4578fb98d7699fbf9355d9d8",
+      "sourceType": "individual_render",
+      "rejectionReason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required."
+    }
+  },
+  {
+    "slug": "stuart-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-902e4800-b67b-4876-aa14-d6b69640b2fe.png",
+    "prompt": "Use case: stylized-concept. Create ONE individual premium Australian residential architectural CGI for a representative design catalogue concept, not a completed project or verified floorplan. Native high resolution landscape 4:3, at least 1600 x 1200 if available. Credible detailed architectural materials and realistic construction. Full facade and roof entirely visible, both outside corners and side wall ends must be inside frame with generous sky, foreground and at least 8% margins left and right. Street eye-level perspective, tidy native garden and driveway. No text, numbering, logo, watermark, border, collage, vehicles or people. No distorted walls/windows. Single independent detached dwelling. Subject: Stuart concept, exactly ONE STOREY. Warm Australian federation-influenced brick bungalow with terracotta pitched hip roof, one compact front gable over a shallow veranda at right, cream painted posts, dark olive front door in central veranda, TWO-car garage at LEFT finished in dark bronze, warm sandstock reddish bricks, horizontal roofline all at one level. Morning light, soft blue sky, silver-grey driveway. Different from flat-roof modern white homes.",
+    "observedStoreys": 1,
+    "garageSpaces": 2,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "5d8e5f2d416f0f60d213a4cd2099b460e97fae068db3965cfed7267787139c48",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "stuart-series",
+      "path": "/images/designs/stuart-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 477188,
+      "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+      "phash": "0101010010000101110000110000101100011110111100110101011010011100"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "JUFAJA_36_Designs_Renders/webp/stuart-series.webp",
+      "sha256": "028556a9fdef939cddec059043a6a40689f95a755824ac6dcf072a302e44b4bc",
+      "sourceType": "individual_render",
+      "rejectionReason": "Supplied native render crops the right-hand building wing at the image edge; a complete facade is required."
+    }
+  },
+  {
+    "slug": "hastings-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-792c7bff-acb1-4b55-86a2-3ed19645604c.png",
+    "prompt": "Use case: stylized-concept. Create ONE individual premium Australian residential architectural CGI for a representative design catalogue concept, not a completed project or verified floorplan. Native high resolution landscape 4:3, at least 1600 x 1200 if available. Credible detailed architectural materials and realistic construction. Full facade and roof entirely visible, both outside corners and side wall ends must be inside frame with generous sky, foreground and at least 8% margins left and right. Street eye-level perspective, tidy native garden and driveway. No text, numbering, logo, watermark, border, collage, vehicles or people. No distorted walls/windows. Single independent detached dwelling. Subject: Hastings concept, exactly ONE STOREY. A compact contemporary home with two offset charcoal skillion roof planes sloping in opposite directions without an upper floor, a red-brown brick pier, grey weatherboard and off-white rendered front, recessed entrance at LEFT, broad TWO-car garage at RIGHT with charcoal door. Long low window in middle, simple Australian native garden. Soft overcast bright daylight for fine textures. It must be visibly low rise, no second level of windows.",
+    "observedStoreys": 1,
+    "garageSpaces": 2,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "3837a786bf38f5a83362ee4a8db66e93ba825d78f6cdee96d53d34a8229b6731",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "hastings-series",
+      "path": "/images/designs/hastings-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 329602,
+      "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
+      "phash": "0001001011010010111011000100110101011111101101100100001011001000"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "/images/designs/hastings-series.webp",
+      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    }
+  },
+  {
+    "slug": "lennox-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-674fd9a3-a3f6-47bd-8c87-f92c2b7aa99d.png",
+    "prompt": "Use case: stylized-concept. Create ONE individual premium Australian residential architectural CGI for a representative design catalogue concept, not a completed project or verified floorplan. Native high resolution landscape 4:3, at least 1600 x 1200 if available. Credible detailed architectural materials and realistic construction. Full facade and roof entirely visible, both outside corners and side wall ends must be inside frame with generous sky, foreground and at least 8% margins left and right. Street eye-level perspective, tidy native garden and driveway. No text, numbering, logo, watermark, border, collage, vehicles or people. No distorted walls/windows. Single independent detached dwelling. Subject: Lennox concept, exactly ONE STOREY. Narrow-lot coastal cottage with ONE single-width car garage at RIGHT, pale sage horizontal weatherboard, white trims, an asymmetrical front gable above the left living bay, white low pitched metal roof, central entry with small timber porch, two vertically proportioned windows in left bay. Bright gentle daylight and grasses. Modest credible three-bedroom scale. One-car garage clearly narrower than usual two-car doors. All roof and wall edges visible.",
+    "observedStoreys": 1,
+    "garageSpaces": 1,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "7780a481fa755e0542da094270b92e1fb35da2f560bfe6a3c0143d10caae6d89",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "lennox-series",
+      "path": "/images/designs/lennox-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 472088,
+      "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
+      "phash": "0001010110010100101010101010111101000111111110110001100000010100"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "/images/designs/lennox-series.webp",
+      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    }
+  },
+  {
+    "slug": "collins-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-2d09ce64-ae39-4b67-8bd9-4f253ecc1705.png",
+    "prompt": "Use case: stylized-concept. Create ONE individual premium Australian home catalogue architectural CGI of a generic representative concept; not a verified JUFAJA plan or completed project. High native resolution landscape 4:3 at least 1600 x 1200 where possible. Full roof and complete frontage with both outer wall corners plainly inside frame, leave 10% horizontal margins, generous sky and foreground. Street eye-level view. Real materials, crisp believable geometry, small native garden, driveway. No facade crop, no occluding trees in front of building edges, no text or numbers, no logo or watermark, no border or collage, no people or vehicles. ONE independent detached dwelling. Collins concept: exactly SINGLE STOREY, compact sculptural mid-century bungalow, continuous shallow low pitched dark metal roof, white brick with chocolate brown timber entrance canopy, recessed TWO-CAR wide garage on LEFT finished matte brown, front living windows on RIGHT under long eaves, pale brick privacy blade between garage and entry, small verandah. Bright clear afternoon light. No upper floor windows, no multiple levels. Different from gabled weatherboard cottage.",
+    "observedStoreys": 1,
+    "garageSpaces": 2,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "1d6f23752f28e62959b4b05e413f036c7d0953c880eca283abc90f2a2eebdcba",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "collins-series",
+      "path": "/images/designs/collins-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 442732,
+      "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+      "phash": "0010010111010110101110001111100100001111011111101100000010000000"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "/images/designs/collins-series.webp",
+      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    }
+  },
+  {
+    "slug": "glenbrook-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-04b8d525-a461-400b-b8f4-fce654d82e2e.png",
+    "prompt": "Use case: stylized-concept. Create ONE individual premium Australian home catalogue architectural CGI of a generic representative concept; not a verified JUFAJA plan or completed project. High native resolution landscape 4:3 at least 1600 x 1200 where possible. Full roof and complete frontage with both outer wall corners plainly inside frame, leave 10% horizontal margins, generous sky and foreground. Street eye-level view. Real materials, crisp believable geometry, small native garden, driveway. No facade crop, no occluding trees in front of building edges, no text or numbers, no logo or watermark, no border or collage, no people or vehicles. ONE independent detached dwelling. Glenbrook concept: exactly SINGLE STOREY, contemporary rustic Australian bungalow, single long dark-grey hip roof with one shallow front gable over entry, warm honey sandstone facade, deep forest-green TWO-car garage door on RIGHT, recessed dark timber front door centrally, white-framed pair of divided living-room windows on LEFT, low garden of grasses and purple salvia. Soft neutral daylight. Small credible narrow-lot family home, no upper level.",
+    "observedStoreys": 1,
+    "garageSpaces": 2,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "bf9f9000866beb5546b036d3dd4aba964ad85f45f098f4ea8aad58acf96adce5",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "glenbrook-series",
+      "path": "/images/designs/glenbrook-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 468146,
+      "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+      "phash": "0000000010000101101101101010100001101011101111100011111011000011"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "/images/designs/glenbrook-series.webp",
+      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a double-storey dwelling, inconsistent with the single-storey catalogue classification. Replacement required."
+    }
+  },
+  {
+    "slug": "alpha-series",
+    "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-94209fe5-a915-4ef0-8e00-f703985ea2d4.png",
+    "prompt": "Use case: stylized-concept. Create ONE individual premium Australian home catalogue architectural CGI of a generic representative concept; not a verified JUFAJA plan or completed project. High native resolution landscape 4:3 at least 1600 x 1200 where possible. Full roof and complete frontage with both outer wall corners plainly inside frame, leave 10% horizontal margins, generous sky and foreground. Street eye-level view. Real materials, crisp believable geometry, small native garden, driveway. No facade crop, no occluding trees in front of building edges, no text or numbers, no logo or watermark, no border or collage, no people or vehicles. ONE independent detached dwelling. Alpha concept: exactly TWO STOREYS, contemporary warm-brick family house with a cohesive roof of two visible low pitched charcoal hip volumes, one upper level of residential windows. Asymmetric facade, TWO-car broad garage at LEFT, off-white entry portico centered, warm tan brick main upper volume with four modest black framed windows, large right-side ground floor living window and small timber slat accent at entry. No balcony, no giant vertical monumental glazed stair tower. Bright neutral afternoon daylight. Full facade on normal suburban lot, not a mansion, no neighboring houses visible. This must be clearly double-storey.",
+    "observedStoreys": 2,
+    "garageSpaces": 2,
+    "generatedWith": "image_gen built-in",
+    "generatedOn": "2026-10-12",
+    "sourceSha256": "366330a73844d46bf122437a9a6cceee4b4c5e9e89ca2cedaebefe68029a6670",
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "deliveredImage": {
+      "slug": "alpha-series",
+      "path": "/images/designs/alpha-series.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 439814,
+      "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
+      "phash": "0111100110101010111001111101011000011100100100010001000101100010"
+    },
+    "disclosure": "Representative architectural CGI concept; not a verified JUFAJA plan or completed project.",
+    "supersededCandidate": {
+      "file": "/images/designs/alpha-series.webp",
+      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
+      "sourceType": "individual_render",
+      "rejectionReason": "Manual visual review: facade depicts a single-storey dwelling, inconsistent with the double-storey catalogue classification. Replacement required."
+    }
+  }
+]

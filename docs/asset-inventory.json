@@ -1,6 +1,6 @@
 {
   "method": "Repository-wide SHA-256, Sharp dimensions/alpha, 64-bit perceptual difference hashes (distance <=6), and filename reference searches. Candidates require human review; generated/script prerequisites and source originals are not orphans.",
-  "totalAssets": 102,
+  "totalAssets": 138,
   "exactDuplicates": [
     [
       "public/brand/jufaja-logo-3d.png",
@@ -430,15 +430,87 @@
     },
     {
       "file": "public/images/designs/alpha-series.webp",
-      "bytes": 470860,
-      "sha256": "160f8a4e65b9bc978ec501e2019007854ccc04efda055eccfe933eb0bf942b0a",
+      "bytes": 439814,
+      "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
       "usages": [
         "src/data/design-images.json"
       ],
-      "width": 1440,
-      "height": 1080,
+      "width": 1448,
+      "height": 1086,
       "alpha": false,
-      "perceptualHash": "1b1f75954a8ca300"
+      "perceptualHash": "60f860e34bedf56c"
+    },
+    {
+      "file": "public/images/designs/altona-duplex.webp",
+      "bytes": 349650,
+      "sha256": "365f37b0fdf7db796efe13b26d809c81e0e2bfc0404d75924ea556fb34798621",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0b4d0d174d17558c"
+    },
+    {
+      "file": "public/images/designs/ashford-385-wide-lot.webp",
+      "bytes": 377064,
+      "sha256": "379b28898bff7593cefc1a955a6740b121819202ad436a4a6b113fa894655c30",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "040b1b8bd2323307"
+    },
+    {
+      "file": "public/images/designs/atlantic-series.webp",
+      "bytes": 304770,
+      "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "9010dc896f653939"
+    },
+    {
+      "file": "public/images/designs/austin-25-mk1.webp",
+      "bytes": 332030,
+      "sha256": "eba6dd8881d96d8c2419f387c5645cb18ff7812c97c7fd8e9308fbeb8ea76ad7",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "dece5c6d54452501"
+    },
+    {
+      "file": "public/images/designs/austin-25.webp",
+      "bytes": 345054,
+      "sha256": "9c70115541a49503e847ff0aa775d518ca60a9c747adb66e2a6a752decec4e52",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "272723b6497e7be1"
+    },
+    {
+      "file": "public/images/designs/austin-26.webp",
+      "bytes": 321680,
+      "sha256": "4b87b0471a3b90dc90fdfbb51e10eb97520952851345a5c0bb5fae15d39067bc",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "20008199313b8f0f"
     },
     {
       "file": "public/images/designs/bennelong-series.webp",
@@ -451,6 +523,18 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "30f43664346418f1"
+    },
+    {
+      "file": "public/images/designs/berkeley-27-wide-lot.webp",
+      "bytes": 325522,
+      "sha256": "634a6cc1595e374dba773daf7af6664dbe33793a3daecb281eabbc3e2e0f978e",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "c0002367c551071e"
     },
     {
       "file": "public/images/designs/blaxland-series.webp",
@@ -477,16 +561,52 @@
       "perceptualHash": "677cd2523d9d1153"
     },
     {
-      "file": "public/images/designs/collins-series.webp",
-      "bytes": 312926,
-      "sha256": "aa5674f191aa93664241587c884e5ad02a18a53cd6b27e10cd0a6a88e2967732",
+      "file": "public/images/designs/chesterfield-series.webp",
+      "bytes": 290078,
+      "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
       "usages": [
         "src/data/design-images.json"
       ],
-      "width": 1440,
-      "height": 1080,
+      "width": 1200,
+      "height": 896,
       "alpha": false,
-      "perceptualHash": "63686ce262490f2c"
+      "perceptualHash": "000879533573387f"
+    },
+    {
+      "file": "public/images/designs/collins-series.webp",
+      "bytes": 442732,
+      "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1448,
+      "height": 1086,
+      "alpha": false,
+      "perceptualHash": "c05033941569e160"
+    },
+    {
+      "file": "public/images/designs/coral-series.webp",
+      "bytes": 305886,
+      "sha256": "50445668d8dc0c61b0da39d08d5758cbe48972ab9e04196d253882fe75d77edd",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "4c74e4c9316363c7"
+    },
+    {
+      "file": "public/images/designs/cowra-475-wide-lot.webp",
+      "bytes": 417414,
+      "sha256": "c7c927a9aaaccb85a8386c0133961c0eaac5f770db2da613ce80fd3caa19703f",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "8f0b1b37f9834f01"
     },
     {
       "file": "public/images/designs/crawford-series.webp",
@@ -499,6 +619,30 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "11e4d12745499874"
+    },
+    {
+      "file": "public/images/designs/crest-series.webp",
+      "bytes": 270878,
+      "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "2e234c2f2f2f33c7"
+    },
+    {
+      "file": "public/images/designs/darlington-series.webp",
+      "bytes": 248338,
+      "sha256": "5beb19dce2841745e37e298cea8a861f067f6f422022c64f15bf93d3ffa72924",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "096370c68686323f"
     },
     {
       "file": "public/images/designs/delta-series.webp",
@@ -537,6 +681,18 @@
       "perceptualHash": "4043255b198170f1"
     },
     {
+      "file": "public/images/designs/edgeworth-35-wide-lot.webp",
+      "bytes": 383252,
+      "sha256": "08c2460e3b4a6c74ea8bdd849c55d506961817db05a5842bf82f620b946ff3df",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "1d5f4c35257d753f"
+    },
+    {
       "file": "public/images/designs/elite-series.webp",
       "bytes": 411742,
       "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
@@ -547,6 +703,18 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "03525a135c4a10b0"
+    },
+    {
+      "file": "public/images/designs/elwood-series.webp",
+      "bytes": 325412,
+      "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "1098d4e4a4ad0f17"
     },
     {
       "file": "public/images/designs/fair-haven-duplex.webp",
@@ -561,16 +729,28 @@
       "perceptualHash": "3fb9a6a60e56e094"
     },
     {
-      "file": "public/images/designs/glenbrook-series.webp",
-      "bytes": 275630,
-      "sha256": "9995e378a769f8e3607fd35c53af935c0dc3d829518895f49118c4dbfa960d30",
+      "file": "public/images/designs/fingal-series.webp",
+      "bytes": 313190,
+      "sha256": "9c80ef0ae327faa11c8746975dff6869539951778fc913245b1d0cfdbed28f3f",
       "usages": [
         "src/data/design-images.json"
       ],
-      "width": 1440,
-      "height": 1080,
+      "width": 1200,
+      "height": 896,
       "alpha": false,
-      "perceptualHash": "ffe1693079dd23cc"
+      "perceptualHash": "9d1834531323251f"
+    },
+    {
+      "file": "public/images/designs/glenbrook-series.webp",
+      "bytes": 468146,
+      "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1448,
+      "height": 1086,
+      "alpha": false,
+      "perceptualHash": "4001335d5d4172f0"
     },
     {
       "file": "public/images/designs/grange-series.webp",
@@ -586,15 +766,15 @@
     },
     {
       "file": "public/images/designs/hastings-series.webp",
-      "bytes": 422888,
-      "sha256": "a5ad0e5e2996d743b00cbbba5d9d9057abc9b0727664d6d7abf814d56932de22",
+      "bytes": 329602,
+      "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
       "usages": [
         "src/data/design-images.json"
       ],
-      "width": 1440,
-      "height": 1080,
+      "width": 1448,
+      "height": 1086,
       "alpha": false,
-      "perceptualHash": "c0e1e9e1252900fc"
+      "perceptualHash": "8f6532231447b1ce"
     },
     {
       "file": "public/images/designs/hemsworth-series.webp",
@@ -609,6 +789,18 @@
       "perceptualHash": "203152565e8b8938"
     },
     {
+      "file": "public/images/designs/holbrook-40-wide-lot.webp",
+      "bytes": 317430,
+      "sha256": "69e70c633241c09c4447fa3d0ee10944a42576707fbedf22a4de759edac774a2",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0001434227019168"
+    },
+    {
       "file": "public/images/designs/ivory-duplex.webp",
       "bytes": 386754,
       "sha256": "6180092822168277b032447bb4afc3630dda5afdc879a676ccab50ef58c2172a",
@@ -619,6 +811,18 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "11ccd471a6e9cc86"
+    },
+    {
+      "file": "public/images/designs/jardine-series.webp",
+      "bytes": 364418,
+      "sha256": "d8b33667f211e8940e1a92421628fd87f8c5871a3bf957265294a778e63dac9e",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "c3c1c1d09591393f"
     },
     {
       "file": "public/images/designs/kingston-series.webp",
@@ -634,15 +838,27 @@
     },
     {
       "file": "public/images/designs/lennox-series.webp",
-      "bytes": 272088,
-      "sha256": "94842a85bdf3afe4c8b7975fd6fc7a38540f447f0b33218d696a25e22b803a25",
+      "bytes": 472088,
+      "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
       "usages": [
         "src/data/design-images.json"
       ],
-      "width": 1440,
-      "height": 1080,
+      "width": 1448,
+      "height": 1086,
       "alpha": false,
-      "perceptualHash": "e0f0313838281090"
+      "perceptualHash": "80084b313189ec2a"
+    },
+    {
+      "file": "public/images/designs/linden-series.webp",
+      "bytes": 323778,
+      "sha256": "e734a8c8912acb4aaed5352156e47bdbf70575ac1878e0543e8c7ae9e1836ceb",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "f73b33d363217303"
     },
     {
       "file": "public/images/designs/lindsay-series.webp",
@@ -655,6 +871,66 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "463b4aab2b0d9cb8"
+    },
+    {
+      "file": "public/images/designs/lithgow-series.webp",
+      "bytes": 328862,
+      "sha256": "8ddae96d1792744645862967819a23230645467b817cf0ed3d7beaf5c045bab7",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "430383c3c64c4017"
+    },
+    {
+      "file": "public/images/designs/majestic-series.webp",
+      "bytes": 469198,
+      "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1448,
+      "height": 1086,
+      "alpha": false,
+      "perceptualHash": "414337737218ff38"
+    },
+    {
+      "file": "public/images/designs/marbella-31-mk1.webp",
+      "bytes": 352590,
+      "sha256": "dc8b35d0dcb06b09b64a8c61d68f0581bcd75debb46d9354f347bc60c81135c3",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "210323294b1d0f03"
+    },
+    {
+      "file": "public/images/designs/marbella-31.webp",
+      "bytes": 344242,
+      "sha256": "f77e792011db892749d5450adb78fe65979bcdbec1ddc91c87a6e6673703a6e6",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "133756536d7b331f"
+    },
+    {
+      "file": "public/images/designs/marbella-355.webp",
+      "bytes": 355202,
+      "sha256": "9ddb883684e49cac41302110a5f02cbbca3a55051c6ef9d393f66ef7a6d8f4eb",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0723c9cb1fdf5f7f"
     },
     {
       "file": "public/images/designs/mayfield-duplex.webp",
@@ -681,6 +957,18 @@
       "perceptualHash": "3f6df3b717f1f0bb"
     },
     {
+      "file": "public/images/designs/meadow-series.webp",
+      "bytes": 378590,
+      "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "7b4323b527312313"
+    },
+    {
       "file": "public/images/designs/montreal-series.webp",
       "bytes": 350122,
       "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
@@ -691,6 +979,18 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "21ea9a1b1e4e8948"
+    },
+    {
+      "file": "public/images/designs/oxley-26-series.webp",
+      "bytes": 288032,
+      "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0010c2a62e330107"
     },
     {
       "file": "public/images/designs/oxley-series.webp",
@@ -705,6 +1005,18 @@
       "perceptualHash": "ce4f71e46c4960fe"
     },
     {
+      "file": "public/images/designs/pacific-series.webp",
+      "bytes": 368196,
+      "sha256": "f961b54f5af6e95d023a05209492389307ae1dc81cbe8f9c559852b6a6ec4b86",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "130331e133dd5921"
+    },
+    {
       "file": "public/images/designs/patterson-series.webp",
       "bytes": 401414,
       "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
@@ -717,6 +1029,30 @@
       "perceptualHash": "6f26222223cc211e"
     },
     {
+      "file": "public/images/designs/pine-lea-duplex.webp",
+      "bytes": 357370,
+      "sha256": "0ce76d1313a969fe595f02f20baa104ec2682795ed2d01df4d747ea735bfdd8f",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0ec7e3757173274b"
+    },
+    {
+      "file": "public/images/designs/primavera-series.webp",
+      "bytes": 306676,
+      "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "fbcfc30d2d2d0307"
+    },
+    {
       "file": "public/images/designs/riley-series.webp",
       "bytes": 388214,
       "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
@@ -727,6 +1063,90 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "80cc70692ba163c7"
+    },
+    {
+      "file": "public/images/designs/rozelle-series.webp",
+      "bytes": 337306,
+      "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "2925312424053100"
+    },
+    {
+      "file": "public/images/designs/stamford-series.webp",
+      "bytes": 317884,
+      "sha256": "4dc5299817d3bf3e813d8e31de862af416161e2e546402cf82f56dc6fee3884e",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "101975c69c5c871b"
+    },
+    {
+      "file": "public/images/designs/stanmore-duplex.webp",
+      "bytes": 314204,
+      "sha256": "8989901d789b38dc92eaaadd1a668334508a0221cf22adbde33889c1ccfd5853",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "00705033a282d5d4"
+    },
+    {
+      "file": "public/images/designs/stellar-series.webp",
+      "bytes": 293966,
+      "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "061856d79496336b"
+    },
+    {
+      "file": "public/images/designs/stuart-series.webp",
+      "bytes": 477188,
+      "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1448,
+      "height": 1086,
+      "alpha": false,
+      "perceptualHash": "3b3d5b5acb7670be"
+    },
+    {
+      "file": "public/images/designs/tempus-duplex.webp",
+      "bytes": 239138,
+      "sha256": "649e3ff898665a59f210c48c9d36d4b50af6c0ffaef76b12f3f01767bf05f1af",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "00286c313129390f"
+    },
+    {
+      "file": "public/images/designs/tempus-mk2-duplex.webp",
+      "bytes": 301600,
+      "sha256": "30416bfa6795464932cf60b4ea5aad760e1bbd0a9098a16761af10e3d0c3589f",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "2f3c6ac31739294d"
     },
     {
       "file": "public/images/designs/urban-series.webp",
@@ -751,6 +1171,18 @@
       "height": 1080,
       "alpha": false,
       "perceptualHash": "2758ce5f494c91b2"
+    },
+    {
+      "file": "public/images/designs/winton-series.webp",
+      "bytes": 313716,
+      "sha256": "ea7f73d52e1c755759f40360f83e49308734a0c03ea21146e4b5c2a34c4d3352",
+      "usages": [
+        "src/data/design-images.json"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "3f7f0b0f69677703"
     },
     {
       "file": "public/images/projects/10-westview-street-campbelltown-01.webp",

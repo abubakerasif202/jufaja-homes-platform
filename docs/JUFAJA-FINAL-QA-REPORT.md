@@ -1,59 +1,55 @@
 # JUFAJA final QA and release report
 
-Prepared 12 October 2026 from clean feature worktree based on `main` commit `2a244a200668bc3a229a0a67747319ad4dbd06f7` (merged PR #11).
+Prepared 12 October 2026 for existing PR #12: https://github.com/abubakerasif202/jufaja-homes-platform/pull/12.
 
-## Release decision
+## Implementation and release state
 
-The preview candidate contains 56 unique suitable catalogue images across 63 designs. Seven remain pending for wrong-storey or cropped-source defects. Production has not been changed. Per the release instructions, merge is blocked until suitable source art replaces the seven pending candidates and the owner accepts the preview. Resend and Upstash live service health were not verified.
+The candidate has **63 unique suitable facades for 63 catalogue designs, zero pending**. Seven generic architectural concepts replace cropped or wrong-storey candidates. All 56 previously suitable files and their metadata are unchanged. Representative CGI disclosure remains outside images; authentic `/projects` photography and verified catalogue figures are preserved.
 
-## Changes
+The 34 native 1200×896 exceptions now carry the owner's explicit 12 October 2026 approval, exact response, scope and current file SHA. This corrects the preceding unconfirmed approval wording. Normal minimum dimensions and integrity controls are intact.
 
-- Added 34 of the supplied 36 WebP renders at native 1200 × 896, with original bytes, SHA-256, pixel pHash, source provenance and SHA-bound visual-review attestations.
-- Retained 22 conforming prior assignments and marked five visibly wrong-storey records pending, preserving their files/provenance.
-- Kept Majestic and Stuart pending because their source frames cut off part of the house.
-- Fixed related design cards so they display the same registry-backed representative image as cards and detail pages.
-- Preserved verified plan metadata, existing project photography, CGI disclosures, Resend and Upstash controls and factual service content.
-- Added reproducible source inventory and design-image browser QA scripts.
+Release gates are being completed on the existing branch. Production remains at `2a244a200668bc3a229a0a67747319ad4dbd06f7` until the final Preview and new GitHub Actions release checks pass. No image blocker remains. Production performance, external services and deployment must not be inferred from local success.
 
-## Verification
+## Local verification
 
 | Check | Result |
 |---|---|
-| `npm ci` | Pass, lockfile install; npm reported 9 development dependency advisories |
-| `npm run lint` | Pass, no issues |
+| `npm run lint` | Pass |
 | `npx tsc --noEmit` | Pass |
-| `npm test` | Pass, 31 tests |
-| `npm run build` | Pass, Next.js production build and 80 prerender jobs |
-| `npm run audit:design-images` | Pass, 63 records, 56 unique images, 7 pending |
-| `npm audit --omit=dev` | Pass, zero production advisories |
-| `node scripts/audit-assets.mjs` | Pass, 136 repository assets inventoried; 3 exact groups and 9 visual candidates reported in local generated inventory |
+| `npm test` | Pass, 36 tests |
+| `npm run build` | Pass, 80 prerender jobs |
+| `npm run audit:design-images` | Pass, 63 records, 63 unique images, zero pending |
+| `npm audit --omit=dev` | Pass, zero production dependency advisories |
 | `git diff --check` | Pass |
-| `python scripts/qa-http.py` | Pass; site routes, metadata, sitemap, robots, enquiry context and real 404 checks |
+| `node scripts/audit-assets.mjs` | Pass, 138 assets, 3 intentional brand duplicate groups, 9 visual candidates |
+| `python scripts/qa-http.py` | Pass, 74 routes, true 404s, enquiry context, sitemap and robots |
 | `node scripts/qa-ssr.mjs` | Pass, 74/74 public routes |
-| `node scripts/qa-nojs.mjs` | Pass, 148 mobile/desktop page checks across 74 routes |
-| `node scripts/qa-accessibility.mjs` | Pass, 34 checks, 0 violations |
-| `node scripts/qa-browser.mjs` | Pass, 235 route/viewport checks, 0 overflow or broken visible images, 0 browser errors; 4 enquiry calls intercepted and no message delivered |
-| `node scripts/qa-design-images.mjs` | Pass, 56 assets byte/SHA verified; all 63 catalogue cards, all detail routes, 189 related cards, 3 homepage featured cards; zero errors/enquiries |
-| `node scripts/qa-gallery.mjs` | Pass at 320, 390, 430, 768, 1024, 1440, 1920; image controls, focus, Escape and filters |
-| `node scripts/qa-intro.mjs` | Pass, normal motion, WebGL disabled and JavaScript disabled |
-| `node scripts/qa-hydration.mjs --loads=100` | Pass, 100 loads, 0 hydration events, 0 console errors, 0 failed requests |
+| `node scripts/qa-nojs.mjs` | Pass, 148 page checks across 74 routes |
+| `node scripts/qa-accessibility.mjs` | Pass, 34 checks, zero violations |
+| `node scripts/qa-gallery.mjs` | Pass at 320, 390, 430, 768, 1024, 1440, 1920 pixels |
+| `node scripts/qa-intro.mjs` | Pass, normal motion, WebGL off, JavaScript off; CLS 0 |
+| `node scripts/qa-hydration.mjs --loads=200 --soak=true --workers=2` | Pass, 200 loads, zero hydration events, console errors or failed requests |
+| `node scripts/qa-browser.mjs` | Pass, 235 viewport/route checks, zero browser errors, broken images or overflow; 4 enquiry deliveries intercepted |
+| `node scripts/qa-design-images.mjs` | Pass, 63 actual response hashes, 63 cards/detail routes, 189 related cards and 3 featured cards; zero errors/enquiries |
 
-The hydration report is at `C:\Users\abuba\jufaja-image-review\hydration-local\report.json`. The browser report and screenshots are outside the repository under `C:\Users\abuba\jufaja-image-review\browser`. The image-only report is at `%TEMP%\jufaja-design-image-qa\design-images.json`. Other logs and the 63-design visual contact sheets are outside Git under `C:\Users\abuba\jufaja-image-review`. These are local lab and preview evidence, not production field Core Web Vitals. The production-current deployment remains SHA `2a244a200668bc3a229a0a67747319ad4dbd06f7`; this feature has not been deployed to Production.
+One concurrent intro QA attempt observed SSR markup before its blocking stylesheet and failed the early scroll assertion. The unchanged isolated run passed. The QA script now waits for fixed-position CSS to apply before checking the same scroll-lock assertion; all seven scenarios then passed. No application behavior or assertion was weakened.
 
-## Images and remaining review
+Reports and screenshots are outside Git under `C:\Users\abuba\jufaja-image-review\release-completion`. These are local lab observations; no claim of production field Core Web Vitals is made.
 
-The 36 pending-source files decode at 1200 × 896 and are matched by slug. The owner explicitly approved use at native resolution after the four-pixel shortfall from the standard 1200 × 900 minimum was explained. No stretching, padding or upscaling was used. The general dimension gate remains 1200 × 900; a separate exact-size exception is bound to each supplied image hash. Distinct facade checks include actual-file hash, pairwise pHash and manual comparison; human approval is an attestation, not automated architectural recognition.
+## Remote Preview investigation
 
-The seven pending slugs are listed with individual reasons in `JUFAJA-IMAGE-QA-REPORT.md`. Do not label the catalogue 63/63 complete. All catalogue CGI is representative imagery and not evidence of completed JUFAJA projects. The `/projects` property gallery remains genuine photography and was not modified.
+Unauthenticated requests on the preceding Preview failed **56/56 with HTTP 302 `text/plain`** due to Preview protection. Authenticated Chrome response downloads verified **56/56 HTTP 200 `image/webp`**, actual downloaded bytes and matching registry hashes on SHA `404bd024528794f8414601fbed314512fce9c41f`. Cookies/tokens were not exported. The old local-file comparison was not remote evidence.
 
-## SEO, integrations and deployment
+`scripts/qa-design-images.mjs` and `scripts/remote-design-image-verification.mjs` now capture per-file statuses, media types, byte counts, downloaded SHA and expected SHA, and explicitly fail non-image/authentication responses. Preview hosts require exact explicit allowlisting. Five regression tests include a real two-origin redirect to prove the private bypass header cannot leak.
 
-The route audit confirms the sitemap excludes unverified catalogue details, canonical metadata and actual missing-route 404 behavior. No sitemap or SEO regression was found.
+The prior claim that two passing statuses constituted CI was inaccurate: they were Vercel and a skipped CodeRabbit review. This release adds `.github/workflows/release-checks.yml` with native Windows PowerShell checks on Node 22. Actual Actions success is required before merge. CodeRabbit's skipped review is not counted as code approval; independent code and architectural reviews passed.
 
-QA intercepted form delivery and made no customer enquiries. Resend sender verification and Upstash live connectivity remain unverified; this work does not establish external service health. Credentials remained server-side and were not printed or committed. npm reported 9 development-tree dependency advisories (7 high, 2 moderate); production audit is clean and no breaking dependency upgrade was attempted.
+## SEO and external integrations
 
-PR #12 is open at https://github.com/abubakerasif202/jufaja-homes-platform/pull/12. Commit `19b22f7b84a7915b4d1979a4390f40743b1dbf13` is deployed to Vercel Preview `https://jufaja-homes-platform-h7ui0y0ed-abubakerasif202s-projects.vercel.app` (deployment `dpl_GAxWvdTxnT8U6u6vbSz4jE8nv27K`, READY). GitHub reports both Vercel Preview and CI successful (2 checks, 0 failures); CodeRabbit reports a skipped review requiring manual OSS review, so it is not counted as code approval. The preview was opened in a browser: all 56 published image responses loaded, with 0 broken images; pending designs remain visibly pending. Production stays on SHA `2a244a200668bc3a229a0a67747319ad4dbd06f7` until suitable images resolve the seven blockers. No production release was attempted.
+HTTP, SSR and no-JavaScript QA confirm canonical host, real initial content, sitemap/robots and actual missing-route 404s. All 63 design pages resolve; the sitemap preserves the existing policy excluding unverified plan detail records. Search Console and production field performance are unverified.
 
-## Client handoff
+Form delivery is intercepted during browser QA. No real enquiry is sent. Existing Resend and Upstash protections remain intact and fail safely; sender authentication, inbox delivery and current live Redis connectivity have not been established by this image release. No secrets are printed or committed. The previous development dependency install reported nine advisories; production dependency audit is clean.
 
-To replace a pending render, supply an approved, complete facade at least 1200 × 900 if possible, with no text, watermark or collage. Confirm storeys and dwelling count against approved plan material. Save the optimized image to `public/images/designs/<slug>.webp`, update that slug's registry image/source/hash/visual-review fields, remove the native-size exception when the replacement meets the generic gate, and run the image audit, tests and browser image QA. Never reuse another design's picture or present CGI as a completed project.
+## Final release evidence
+
+Final candidate SHA, authenticated 63-image Preview verification, GitHub Actions result, merge SHA, actual Production deployment and live browser/image/hydration results will be recorded after those checks run. A failed critical gate keeps PR #12 open.
