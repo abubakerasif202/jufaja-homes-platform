@@ -3,10 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { PROPERTY_LOCATIONS, propertyAddress, type PropertyLocation } from '@/data/property-locations';
 
-const PHOTOGRAPHED_PROPERTIES = PROPERTY_LOCATIONS.filter(
-  (property) => (property.photos?.length ?? 0) > 0
-);
-const SUBURBS = ['All areas', ...Array.from(new Set(PHOTOGRAPHED_PROPERTIES.map(
+const SUBURBS = ['All areas', ...Array.from(new Set(PROPERTY_LOCATIONS.map(
   (property) => property.suburb
 ))).sort()];
 
@@ -105,7 +102,7 @@ export default function PropertyAddressDirectory() {
     }
   }, [opened, photoIndex]);
 
-  const shown = useMemo(() => PHOTOGRAPHED_PROPERTIES.filter((property) =>
+  const shown = useMemo(() => PROPERTY_LOCATIONS.filter((property) =>
     (suburb === 'All areas' || property.suburb === suburb) &&
     propertyAddress(property).toLowerCase().includes(query.trim().toLowerCase())
   ), [query, suburb]);
@@ -138,7 +135,7 @@ export default function PropertyAddressDirectory() {
             Residential property collection.
           </h2>
           <p className="mt-5 text-base leading-7 text-jufaja-muted">
-            Explore a curated collection of residential property photography across Sydney’s south-west.
+            Explore our 28-address residential collection across Sydney’s south-west. Representative exteriors are shown where property photographs are unavailable.
           </p>
         </header>
 
@@ -170,35 +167,48 @@ export default function PropertyAddressDirectory() {
         {shown.length ? (
           <div className="grid items-start gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
             {shown.map((property, index) => {
-              const firstImage = property.photos?.[0];
-              if (!firstImage) return null;
+              const hasGallery = Boolean(property.photos?.length);
+              const firstImage = property.photos?.[0] ?? property.fallbackImage;
+              const image = firstImage ? (
+                <PropertyImage
+                  key={firstImage}
+                  src={firstImage}
+                  eager={index === 0}
+                  alt={hasGallery ? `Residential property at ${propertyAddress(property)}` : 'Representative residential exterior, not an exact-address photograph'}
+                  className="transition-transform duration-700 motion-safe:group-hover:scale-[1.035] motion-reduce:transition-none"
+                />
+              ) : null;
               return (
                 <article key={propertyAddress(property)} className="group min-w-0">
-                  <button
-                    type="button"
-                    onClick={(event) => openGallery(property, event.currentTarget)}
-                    className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
-                  >
-                    <PropertyImage
-                      key={firstImage}
-                      src={firstImage}
-                      eager={index === 0}
-                      alt={`Residential property at ${propertyAddress(property)}`}
-                      className="transition-transform duration-700 motion-safe:group-hover:scale-[1.035] motion-reduce:transition-none"
-                    />
-                    <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
-                      <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
-                      <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
-                    </span>
-                  </button>
+                  {hasGallery ? (
+                    <button
+                      type="button"
+                      onClick={(event) => openGallery(property, event.currentTarget)}
+                      className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
+                    >
+                      {image}
+                      <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
+                        <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
+                        <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
+                      </span>
+                    </button>
+                  ) : (
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 shadow-sm">
+                      {image}
+                      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-xs font-semibold uppercase tracking-[.14em] text-white">{property.suburb}</span>
+                    </div>
+                  )}
                   <h3 className="mt-5 font-serif text-2xl leading-tight text-jufaja-forest">{property.street}</h3>
                   <p className="mt-1 text-sm text-jufaja-muted">{property.suburb} · NSW {property.postcode}</p>
-                  {property.photoNote && (
+                  {!hasGallery && property.displayNote && (
+                    <p className="mt-2 text-xs leading-5 text-jufaja-muted">{property.displayNote}</p>
+                  )}
+                  {hasGallery && property.photoNote && (
                     <p className="mt-2 text-xs leading-5 text-jufaja-muted">
                       {property.photoNote}
                     </p>
                   )}
-                  {property.photoCredit && (
+                  {hasGallery && property.photoCredit && (
                     <p className="mt-2 text-xs text-jufaja-muted">Image credit: {property.photoCredit}</p>
                   )}
                 </article>
