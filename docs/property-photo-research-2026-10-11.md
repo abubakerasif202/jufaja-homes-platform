@@ -1,45 +1,37 @@
-# JUFAJA property address / photography research (11 Oct 2026)
+# JUFAJA property image publication log (updated 11 Oct 2026)
 
-This register records **28 distinct owner-supplied addresses across 12 suburbs**. The submitted source list contained 29 rows; `18 Quondong Street, Campbelltown` appeared twice and was deduplicated. Units and secondary dwellings (10/10A, 30/30A, 59/59A, 18/18A, 112/112A) remain distinct.
+**Owner permission confirmation:** The owner explicitly confirmed permission to use the property photos on the JUFAJA website on 11 Oct 2026. This was taken as approval to publish identifiable exact-address-matched images, subject to source accuracy and credits. The assistant cannot independently audit written licensing contracts.
 
-## Website treatment
+**Current PR:** 28 unique address records, 46 publicly sourced photographs from 10 exact-address-matched photo sets. The other 18 addresses remain in the directory with research and maps links, rather than fabricated / mislabelled galleries.
 
-- `src/data/property-locations.ts` is a research/address index, **not evidence that JUFAJA built, designed, or completed each listed property**.
-- The Projects page includes a searchable address directory, Google Maps links, Google Images search links, and matched external public property records where researched.
-- Public real-estate photos are **not copied, embedded, scraped, or re-hosted**. Their reuse permissions have not been demonstrated.
-- Only authorised, exact-address-verified project photos should later be placed on the website. Capture image rights, photographer/agency credit conditions, actual JUFAJA work scope, status and owner permission.
-- Do not substitute a near-address or same-street building photo for a missing address, or assume current exterior photos appear in historical land listings.
+Images are served from source website/CDN URLs; no image source was silently relabelled as JUFAJA-owned. Direct image hotlinks can expire or block embedding. Prefer original authorised photo uploads for long-term production reliability.
 
-## Exact-match photo-rich records
+## Important source accuracy notes
 
-- 26 Wilenski Way — 34 listing images, realestate.com.au
-- 28 Waterhouse Road — 14 listing images, realestate.com.au
-- 10 Westview Street — 16 listing images, realestate.com.au
-- 5 and 7 Meeson Street — 11 images each, property.com.au
-- 18A Dallas Drive — 8 listing images, realestate.com.au
-- 30A Westview Street — 6 images, property.com.au
-- 59 Fieldhouse Circuit — 4 photos, property.com.au
-- 110 Fieldhouse Circuit — 6 photos, property.com.au
-- 5 Jandaroi Road — 5 photos, property.com.au
+- `28 Waterhouse Road`: 10 photographs matched to Ray White Macarthur Group listing; exact address and gallery source.
+- `10 Westview Street`: 16 photographs matched to LJ Hooker exact-address rental listing.
+- `34 Horatio Street`: 10 *historical (2016)* Ray White listing photos. Explicitly labelled historical: these do **not** document JUFAJA's subsequent work.
+- `30 Westview Street`: 1 historical Domain property image. Exact address, but date/current appearance differ.
+- `26 Wilenski Way`, `30A Westview Street`, `59 Fieldhouse Circuit`, `5 Meeson Street`, `7 Meeson Street`, `18A Dallas Drive`: additional matched imagery from property.com.au, view.com.au or realestate.com.au.
+- `130 Webber Circuit, Bardia`: an older result is vacant land, not a verified completed home. No image shown.
+- `3 Lakeman Street, Leppington`: a historical result depicts land. No finished-property photo shown.
+- `18 Dallas Drive` and `18A Dallas Drive` are separate addresses.
+- `110 Fieldhouse Circuit`: published public records include aerial/land imagery; not used as a building photo.
+- `18 Quondong Street`: duplicate submission removed. A single unique address remains.
+- A matching source address establishes image-to-address provenance, **not** what work was performed by JUFAJA. No fabricated completed-project claims.
 
-These are reported public listing-gallery counts. They are not guaranteed to depict finished buildings, cover recent work, or be licensed for JUFAJA to use.
+## Release safeguards
 
-## High-priority mismatches / checks
+- Show source credits and direct public source page links.
+- Gallery uses lazy-loaded external photographs, keyboard-reachable gallery buttons, thumbnail selection, search and suburb filtering.
+- Show a brand-themed address fallback for empty/missing photos; do not reuse unrelated imagery to fill gaps.
+- Keep the separately labelled illustrative architecture images in their original concept-study section.
+- Test mobile image layout and external CDN load in the deployed application.
+- User authorisation to use imagery is not independent verification of build scope or completion status.
 
-- **130 Webber Circuit, Bardia:** current indexed result is a residential-land listing, so it must not be depicted as a finished house.
-- **3 Lakeman Street, Leppington:** an accessible 2020 listing depicts vacant land; confirm more recent imagery.
-- **32 Emperor Street, Leppington:** image/search results include unrelated properties in Queensland. Do not use them.
-- **18 vs 18A Dallas Drive:** different addresses, and 18A has a separate granny-flat rental listing.
-- **110 and 112 Brassil Avenue:** found land-record results only; 112A remains a distinct address.
-- **10A and 59A:** reliable exact-address photo galleries have not yet been verified.
+## Outstanding
 
-## Release verification
-
-Before merging or deploying: run repo instructions in `AGENTS.md`, including lint, TypeScript, tests, build, visual/mobile QA, accessibility, asset checks, and live verification. No release gates have been executed through this connector-only change.
-
-## Follow-up
-
-1. Confirm for each entry whether JUFAJA constructed, renovated, supplied, designed, or only referenced it.
-2. Obtain licensed image originals/permission, source and required credits.
-3. Add optimized local WebP/AVIF assets and meaningful per-property alt text.
-4. Replace research links with an approved professional image gallery, retaining accurate project descriptions.
+- Run local lint, TypeScript, tests, build, accessibility and asset scripts listed in `AGENTS.md` when a shell runner with repository access is available. Vercel READY indicates a successful preview build, **not** all local tests passed.
+- The preview may require authorised Vercel login, preventing unauthenticated external browser screenshot QA.
+- Obtain approved high-resolution original files where feasible, then move fragile remote photo URLs to local optimised assets.
+- Research imagery for the 18 address entries with no exact-match photos found so far.
