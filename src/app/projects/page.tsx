@@ -7,7 +7,7 @@ import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
 
-export const metadata = pageMetadata('Residential Property Gallery', 'Browse residential property photography across South-West Sydney, with a separate collection of illustrative architectural studies.', '/projects');
+export const metadata = pageMetadata('Residential Property Gallery', 'Browse 28 residential addresses across South-West Sydney, with genuine property photography, representative exteriors and separate architectural studies.', '/projects');
 
 export default function ProjectsPage() {
   return (
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <PageHero image="/images/projects/7-meeson-street-claymore-01.webp" label="7 Meeson Street, Claymore · Property photograph" tone="ivory">
         <p className="eyebrow">JUFAJA / Property collection</p>
         <h1 className="type-h1 mt-4 text-jufaja-forest">Residential property gallery.</h1>
-        <p className="type-lead mt-6 text-jufaja-muted">Browse a selection of residential photography from South-West Sydney and explore our architectural design inspiration.</p>
+        <p className="type-lead mt-6 text-jufaja-muted">Explore a collection of 28 South-West Sydney residential addresses, with property photography and clearly identified representative exteriors.</p>
       </PageHero>
 
       <PropertyAddressDirectory />
