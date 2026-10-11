@@ -7,7 +7,7 @@ import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
 
-export const metadata = pageMetadata('Design Inspiration', 'Explore illustrative residential architecture references and concept studies from JUFAJA Constructions.', '/projects');
+export const metadata = pageMetadata('Design Inspiration & Property Locations', 'Explore illustrative residential architecture concepts and the JUFAJA property location reference directory for South-West Sydney.', '/projects');
 
 export default function ProjectsPage() {
   return (
