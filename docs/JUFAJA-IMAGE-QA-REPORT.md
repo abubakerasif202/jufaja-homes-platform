@@ -98,3 +98,7 @@ No rejected render is repurposed under another slug. The five old defective file
 Total published bytes: 19398638. All 56 paths and hashes are in `src/data/design-images.json`.
 
 Contact sheets and full-size review artifacts are outside Git under `C:\Users\abuba\jufaja-image-review`. See the final QA report for browser/release results.
+
+## Preview deployment
+
+PR #12 is open at https://github.com/abubakerasif202/jufaja-homes-platform/pull/12. Commit `19b22f7b84a7915b4d1979a4390f40743b1dbf13` is deployed to Vercel Preview `https://jufaja-homes-platform-h7ui0y0ed-abubakerasif202s-projects.vercel.app` (deployment `dpl_GAxWvdTxnT8U6u6vbSz4jE8nv27K`, READY). Browser verification loaded all 56 published image responses without failures; seven pending entries remain unpublished. Production remains on `2a244a200668bc3a229a0a67747319ad4dbd06f7` pending corrected source art.

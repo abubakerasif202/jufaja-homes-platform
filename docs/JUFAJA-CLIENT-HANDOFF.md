@@ -22,12 +22,12 @@ The supplied source inventory is summarized in `docs/JUFAJA-36-SOURCE-REVIEW.jso
 
 ## QA and external services
 
-Local verification passed lint, typecheck, 31 tests, production build, image audit, HTTP, accessibility, browser, no-JavaScript, SSR, gallery and intro QA. The final hydration run was still in progress when this document was drafted; consult the final QA report and saved report before acceptance. Browser tests intercepted all enquiry delivery. No real customer enquiry was sent.
+Local verification passed lint, typecheck, 31 tests, production build, image audit, HTTP, accessibility, browser, no-JavaScript, SSR, gallery and intro QA. Hydration QA passed for 100 local page loads with 0 hydration events, 0 console errors and 0 failed requests. The Vercel Preview browser check loaded all 56 published image responses without failures. Browser tests intercepted all enquiry delivery. No real customer enquiry was sent.
 
 Resend sender authentication and Upstash live rate-limit health have not been verified. Credentials were not printed. The local dependency audit found 9 development advisories; production dependencies have zero reported advisories.
 
 ## Release state
 
-Base `main` is `2a244a200668bc3a229a0a67747319ad4dbd06f7`, merged PR #11. Production still uses that SHA. The final image branch/PR and Vercel Preview URL are recorded in the final QA report after creation. Production release remains blocked by the seven pending facade assignments; do not merge while they remain unresolved.
+Base `main` is `2a244a200668bc3a229a0a67747319ad4dbd06f7`, merged PR #11. Production still uses that SHA. PR #12 is open: https://github.com/abubakerasif202/jufaja-homes-platform/pull/12. Commit `19b22f7b84a7915b4d1979a4390f40743b1dbf13` is available on Vercel Preview at https://jufaja-homes-platform-h7ui0y0ed-abubakerasif202s-projects.vercel.app (READY, deployment `dpl_GAxWvdTxnT8U6u6vbSz4jE8nv27K`). Production remains on `2a244a200668bc3a229a0a67747319ad4dbd06f7`. The seven pending facade assignments block merging and production release.
 
 For SEO, the build and HTTP QA confirmed the canonical host and sitemap behavior. Search Console access was not used. After a future approved production release, the owner can inspect indexed canonicals and submit `/sitemap.xml` through Search Console.

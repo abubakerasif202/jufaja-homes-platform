@@ -36,9 +36,9 @@ The preview candidate contains 56 unique suitable catalogue images across 63 des
 | `node scripts/qa-design-images.mjs` | Pass, 56 assets byte/SHA verified; all 63 catalogue cards, all detail routes, 189 related cards, 3 homepage featured cards; zero errors/enquiries |
 | `node scripts/qa-gallery.mjs` | Pass at 320, 390, 430, 768, 1024, 1440, 1920; image controls, focus, Escape and filters |
 | `node scripts/qa-intro.mjs` | Pass, normal motion, WebGL disabled and JavaScript disabled |
-| `node scripts/qa-hydration.mjs --loads=100` | Running at report preparation; inspect its external report before declaring result |
+| `node scripts/qa-hydration.mjs --loads=100` | Pass, 100 loads, 0 hydration events, 0 console errors, 0 failed requests |
 
-The browser report and screenshots are outside the repository under `C:\Users\abuba\jufaja-image-review\browser`. The image-only report is at `%TEMP%\jufaja-design-image-qa\design-images.json`. Other logs and the 63-design visual contact sheets are outside Git under `C:\Users\abuba\jufaja-image-review`. They are local lab evidence, not production field Core Web Vitals. The production-current deployment remains SHA `2a244a200668bc3a229a0a67747319ad4dbd06f7`; this feature has not been deployed to Production.
+The hydration report is at `C:\Users\abuba\jufaja-image-review\hydration-local\report.json`. The browser report and screenshots are outside the repository under `C:\Users\abuba\jufaja-image-review\browser`. The image-only report is at `%TEMP%\jufaja-design-image-qa\design-images.json`. Other logs and the 63-design visual contact sheets are outside Git under `C:\Users\abuba\jufaja-image-review`. These are local lab and preview evidence, not production field Core Web Vitals. The production-current deployment remains SHA `2a244a200668bc3a229a0a67747319ad4dbd06f7`; this feature has not been deployed to Production.
 
 ## Images and remaining review
 
@@ -52,7 +52,7 @@ The route audit confirms the sitemap excludes unverified catalogue details, cano
 
 QA intercepted form delivery and made no customer enquiries. Resend sender verification and Upstash live connectivity remain unverified; this work does not establish external service health. Credentials remained server-side and were not printed or committed. npm reported 9 development-tree dependency advisories (7 high, 2 moderate); production audit is clean and no breaking dependency upgrade was attempted.
 
-A Vercel preview and PR will be created after this report and its final checks are staged. Preview protection may require an authenticated browser session. Production stays on the known deployed SHA until the seven image blockers are resolved and all preview checks pass.
+PR #12 is open at https://github.com/abubakerasif202/jufaja-homes-platform/pull/12. Commit `19b22f7b84a7915b4d1979a4390f40743b1dbf13` is deployed to Vercel Preview `https://jufaja-homes-platform-h7ui0y0ed-abubakerasif202s-projects.vercel.app` (deployment `dpl_GAxWvdTxnT8U6u6vbSz4jE8nv27K`, READY). GitHub reports both Vercel Preview and CI successful (2 checks, 0 failures); CodeRabbit reports a skipped review requiring manual OSS review, so it is not counted as code approval. The preview was opened in a browser: all 56 published image responses loaded, with 0 broken images; pending designs remain visibly pending. Production stays on SHA `2a244a200668bc3a229a0a67747319ad4dbd06f7` until suitable images resolve the seven blockers. No production release was attempted.
 
 ## Client handoff
 
