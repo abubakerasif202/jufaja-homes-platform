@@ -1,11 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { PROPERTY_LOCATIONS, propertyAddress, type PropertyLocation } from '@/data/property-locations';
-
-const SUBURBS = ['All areas', ...Array.from(new Set(PROPERTY_LOCATIONS.map(
-  (property) => property.suburb
-))).sort()];
+import { propertyAddress, propertyGalleryImages, type PublicPropertyLocation } from '@/lib/property-gallery';
 
 function PropertyImage({
   src,
@@ -39,7 +35,7 @@ function PropertyImage({
     <div className="relative h-full w-full overflow-hidden bg-jufaja-forest-900">
       {contain && !loaded && !failed && (
         <span role="status" className="pointer-events-none absolute inset-x-0 bottom-4 z-10 text-center text-sm text-white">
-          Loading photograph…
+          Loading image…
         </span>
       )}
       {!failed ? (
@@ -59,17 +55,18 @@ function PropertyImage({
         />
       ) : (
         <div role="img" aria-label={alt + ' (image unavailable)'} className="flex h-full w-full items-center justify-center p-8">
-          <span className="font-serif text-xl text-white/70">Photograph unavailable</span>
+          <span className="font-serif text-xl text-white/70">Image unavailable</span>
         </div>
       )}
     </div>
   );
 }
 
-export default function PropertyAddressDirectory() {
+export default function PropertyAddressDirectory({ properties }: { properties: PublicPropertyLocation[] }) {
+  const suburbs = useMemo(() => ['All areas', ...Array.from(new Set(properties.map(property => property.suburb))).sort()], [properties]);
   const [query, setQuery] = useState('');
   const [suburb, setSuburb] = useState('All areas');
-  const [opened, setOpened] = useState<PropertyLocation | null>(null);
+  const [opened, setOpened] = useState<PublicPropertyLocation | null>(null);
   const [photoIndex, setPhotoIndex] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
@@ -102,12 +99,12 @@ export default function PropertyAddressDirectory() {
     }
   }, [opened, photoIndex]);
 
-  const shown = useMemo(() => PROPERTY_LOCATIONS.filter((property) =>
+  const shown = useMemo(() => properties.filter((property) =>
     (suburb === 'All areas' || property.suburb === suburb) &&
     propertyAddress(property).toLowerCase().includes(query.trim().toLowerCase())
-  ), [query, suburb]);
+  ), [properties, query, suburb]);
 
-  const openGallery = (property: PropertyLocation, button: HTMLButtonElement) => {
+  const openGallery = (property: PublicPropertyLocation, button: HTMLButtonElement) => {
     triggerRef.current = button;
     setPhotoIndex(0);
     setOpened(property);
@@ -120,8 +117,12 @@ export default function PropertyAddressDirectory() {
     setOpened(null);
   };
 
+  const openedImages = opened ? propertyGalleryImages(opened) : [];
+  const representative = opened?.imageMode === 'representative';
+  const imageLabel = representative ? 'representative image' : 'photograph';
+
   const movePhoto = (direction: number) => {
-    const count = opened?.photos?.length ?? 0;
+    const count = openedImages.length;
     if (count <= 1) return;
     setPhotoIndex((index) => (index + direction + count) % count);
   };
@@ -156,7 +157,7 @@ export default function PropertyAddressDirectory() {
             </label>
             <select id="gallery-suburb" value={suburb} onChange={(event) => setSuburb(event.target.value)}
               className="w-full rounded-sm border border-jufaja-border bg-white px-4 py-3 text-sm text-jufaja-charcoal focus:border-jufaja-gold-600 focus:outline-none focus:ring-2 focus:ring-jufaja-gold-500/30">
-              {SUBURBS.map((value) => <option value={value} key={value}>{value}</option>)}
+              {suburbs.map((value) => <option value={value} key={value}>{value}</option>)}
             </select>
           </div>
         </div>
@@ -167,48 +168,42 @@ export default function PropertyAddressDirectory() {
         {shown.length ? (
           <div className="grid items-start gap-x-6 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
             {shown.map((property, index) => {
-              const hasGallery = Boolean(property.photos?.length);
-              const firstImage = property.photos?.[0] ?? property.fallbackImage;
+              const hasRealPhotos = property.imageMode === 'real';
+              const firstImage = propertyGalleryImages(property)[0];
               const image = firstImage ? (
                 <PropertyImage
                   key={firstImage}
                   src={firstImage}
                   eager={index === 0}
-                  alt={hasGallery ? `Residential property at ${propertyAddress(property)}` : 'Representative residential exterior, not an exact-address photograph'}
+                  alt={hasRealPhotos ? `Residential property at ${propertyAddress(property)}` : 'Representative residential exterior, not an exact-address photograph'}
                   className="transition-transform duration-700 motion-safe:group-hover:scale-[1.035] motion-reduce:transition-none"
                 />
               ) : null;
               return (
                 <article key={propertyAddress(property)} className="group min-w-0">
-                  {hasGallery ? (
-                    <button
-                      type="button"
-                      onClick={(event) => openGallery(property, event.currentTarget)}
-                      className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
-                    >
-                      {image}
-                      <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
-                        <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
-                        <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
-                      </span>
-                    </button>
-                  ) : (
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 shadow-sm">
-                      {image}
-                      <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-xs font-semibold uppercase tracking-[.14em] text-white">{property.suburb}</span>
-                    </div>
-                  )}
+                  <button
+                    type="button"
+                    aria-label={'View gallery for ' + propertyAddress(property)}
+                    onClick={(event) => openGallery(property, event.currentTarget)}
+                    className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
+                  >
+                    {image}
+                    <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
+                      <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
+                      <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
+                    </span>
+                  </button>
                   <h3 className="mt-5 font-serif text-2xl leading-tight text-jufaja-forest">{property.street}</h3>
                   <p className="mt-1 text-sm text-jufaja-muted">{property.suburb} · NSW {property.postcode}</p>
-                  {!hasGallery && property.displayNote && (
+                  {!hasRealPhotos && property.displayNote && (
                     <p className="mt-2 text-xs leading-5 text-jufaja-muted">{property.displayNote}</p>
                   )}
-                  {hasGallery && property.photoNote && (
+                  {hasRealPhotos && property.photoNote && (
                     <p className="mt-2 text-xs leading-5 text-jufaja-muted">
                       {property.photoNote}
                     </p>
                   )}
-                  {hasGallery && property.photoCredit && (
+                  {hasRealPhotos && property.photoCredit && (
                     <p className="mt-2 text-xs text-jufaja-muted">Image credit: {property.photoCredit}</p>
                   )}
                 </article>
@@ -232,15 +227,17 @@ export default function PropertyAddressDirectory() {
           }}
           className="m-auto max-h-[calc(100dvh-24px)] w-[calc(100vw-24px)] max-w-6xl overflow-y-auto rounded-sm border border-white/20 bg-jufaja-forest-950 p-0 text-white shadow-2xl backdrop:bg-black/85"
         >
-          {opened && opened.photos?.length ? (
+          {opened && openedImages.length ? (
             <div className="w-full">
               <div className="flex items-center justify-between gap-4 p-4 sm:px-6">
                 <div className="min-w-0">
                   <h2 id="property-dialog-title" className="break-words font-serif text-lg sm:text-2xl">{opened.street}</h2>
                   <p className="text-xs text-white/70">{opened.suburb}, NSW {opened.postcode}</p>
+                  <p className="mt-2 text-sm text-white">{representative ? 'Representative project imagery' : 'Residential property photography'}</p>
+                  {representative && <p className="mt-1 max-w-xl text-xs leading-5 text-white/70">Architectural references, not photographs of this property.</p>}
                 </div>
                 <button type="button" onClick={closeGallery} autoFocus
-                  aria-label="Close property photo gallery"
+                  aria-label="Close property gallery"
                   className="min-h-11 min-w-11 rounded-sm border border-white/40 px-3 text-white hover:bg-white/10">
                   Close ×
                 </button>
@@ -263,26 +260,26 @@ export default function PropertyAddressDirectory() {
                   if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) movePhoto(dx < 0 ? 1 : -1);
                 }}
               >
-                <PropertyImage key={opened.photos[photoIndex]} src={opened.photos[photoIndex]}
-                  alt={`Photograph ${photoIndex + 1} of ${opened.photos.length} at ${propertyAddress(opened)}`}
+                <PropertyImage key={openedImages[photoIndex]} src={openedImages[photoIndex]}
+                  alt={representative ? 'Representative exterior ' + (photoIndex + 1) + ' of ' + openedImages.length + ', not an exact-address photograph' : 'Photograph ' + (photoIndex + 1) + ' of ' + openedImages.length + ' at ' + propertyAddress(opened)}
                   contain
                   eager
                 />
               </div>
               <div className="flex items-center justify-between gap-3 px-4 py-4 sm:px-6">
-                <button type="button" onClick={() => movePhoto(-1)} disabled={opened.photos.length <= 1}
+                <button type="button" onClick={() => movePhoto(-1)} disabled={openedImages.length <= 1}
                   className="min-h-11 rounded-sm border border-white/40 px-4 text-sm hover:bg-white/10 disabled:opacity-40"
-                  aria-label="Previous photograph">← Previous</button>
-                <p className="text-sm text-white" aria-live="polite">{photoIndex + 1} / {opened.photos.length}</p>
-                <button type="button" onClick={() => movePhoto(1)} disabled={opened.photos.length <= 1}
+                  aria-label={'Previous ' + imageLabel}>← Previous</button>
+                <p className="text-sm text-white" aria-live="polite">{photoIndex + 1} / {openedImages.length}</p>
+                <button type="button" onClick={() => movePhoto(1)} disabled={openedImages.length <= 1}
                   className="min-h-11 rounded-sm border border-white/40 px-4 text-sm hover:bg-white/10 disabled:opacity-40"
-                  aria-label="Next photograph">Next →</button>
+                  aria-label={'Next ' + imageLabel}>Next →</button>
               </div>
-              {opened.photos.length > 1 && (
-                <div ref={thumbnailsRef} role="group" className="relative flex gap-2 overflow-x-auto px-4 pb-5 sm:px-6" aria-label="Select photograph">
-                  {opened.photos.map((src, i) => (
+              {openedImages.length > 1 && (
+                <div ref={thumbnailsRef} role="group" className="relative flex gap-2 overflow-x-auto px-4 pb-5 sm:px-6" aria-label={'Select ' + imageLabel}>
+                  {openedImages.map((src, i) => (
                     <button key={src} type="button" aria-pressed={i === photoIndex}
-                      aria-label={`Show photograph ${i + 1}`}
+                      aria-label={'Show ' + imageLabel + ' ' + (i + 1)}
                       onClick={() => setPhotoIndex(i)}
                       className={`relative h-16 w-20 shrink-0 overflow-hidden rounded-sm border-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${i === photoIndex ? 'border-jufaja-gold-400' : 'border-transparent'}`}>
                       <PropertyImage src={src} alt="" />
@@ -290,8 +287,8 @@ export default function PropertyAddressDirectory() {
                   ))}
                 </div>
               )}
-              {opened.photoNote && <p className="px-4 pb-4 text-xs leading-5 text-white/70 sm:px-6">{opened.photoNote}</p>}
-              {opened.photoCredit && <p className="px-4 pb-5 text-xs text-white/70 sm:px-6">Image credit: {opened.photoCredit}</p>}
+              {!representative && opened.photoNote && <p className="px-4 pb-4 text-xs leading-5 text-white/70 sm:px-6">{opened.photoNote}</p>}
+              {!representative && opened.photoCredit && <p className="px-4 pb-5 text-xs text-white/70 sm:px-6">Image credit: {opened.photoCredit}</p>}
             </div>
           ) : (
             <p id="property-dialog-title" className="p-6">Property photographs</p>

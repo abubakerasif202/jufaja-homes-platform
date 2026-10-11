@@ -4,12 +4,11 @@ import { createRequire } from 'node:module';
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { tmpdir } from 'node:os';
+import { isPermittedDesignQaBase } from './remote-design-image-verification.mjs';
 const require = createRequire(import.meta.url);
 const argument = (name, fallback) => process.argv.find(value => value.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
 const base = new URL(argument('base-url', 'http://127.0.0.1:3010'));
-const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
-const productionHosts = ['jufaja-homes-platform.vercel.app', 'www.jufajaconstructions.com.au', 'jufajaconstructions.com.au'];
-assert(local || (argument('live', 'false') === 'true' && base.protocol === 'https:' && productionHosts.includes(base.hostname)), 'Use localhost or an approved HTTPS production host with --live=true');
+assert(isPermittedDesignQaBase(base, argument('live', 'false'), argument('preview-host', '')), 'Use localhost or explicitly name the approved JUFAJA preview host');
 const total = Number(argument('loads', '200'));
 const seedArg = Number(argument('seed', '1'));
 const output = argument('output', path.join(tmpdir(), 'jufaja-hydration'));
@@ -42,7 +41,7 @@ let loads = 0;
 const log = [];
 
 async function newSession(options) {
-  const context = await browser.newContext({ reducedMotion: options.reduced ? 'reduce' : 'no-preference', viewport: { width: options.width, height: options.height } });
+  const context = await browser.newContext({ reducedMotion: options.reduced ? 'reduce' : 'no-preference', viewport: { width: options.width, height: options.height }, ...(process.env.JUFAJA_QA_STORAGE_STATE ? {storageState: process.env.JUFAJA_QA_STORAGE_STATE} : {}) });
   if (options.intercept) await context.route('**/api/enquiry', route => route.fulfill({ status: 503, contentType: 'application/json', body: '{"success":false}' }));
   if (options.observers) await context.addInitScript(() => {
     window.auditVitals = { cls: 0, lcp: 0 };
@@ -132,7 +131,9 @@ async function soakWorker() {
     const route = pick(routes);
     session.current = { route, scenario: 'soak', load: loads };
     loads += 1;
-    await session.page.goto(new URL(route, base).href, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => undefined);
+    await session.page.goto(new URL(route, base).href, { waitUntil: 'networkidle', timeout: 30000 }).catch(error => {
+      log.push({kind: 'navigation', text: 'Navigation did not settle: ' + error.name, url: new URL(route, base).href});
+    });
     await session.page.waitForTimeout(300);
   }
   await session.context.close();
@@ -175,4 +176,4 @@ await writeFile(path.join(output, 'report.json'), JSON.stringify({ summary, even
 console.log(JSON.stringify(summary));
 for (const event of events.slice(0, 10)) console.log(`HYDRATION ${event.kind} ${event.pageUrl} scenario=${event.scenario} ${JSON.stringify(event.options)} :: ${event.text.slice(0, 120)}`);
 for (const entry of log.slice(0, 5)) console.log(`OTHER ${entry.kind} ${entry.url} :: ${entry.text}`);
-if (events.length) process.exit(1);
+if (events.length || log.length || failedRequests.length) process.exit(1);

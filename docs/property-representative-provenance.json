@@ -1,0 +1,397 @@
+{
+  "audited": "2026-10-12",
+  "scope": "Reviewed owner-supplied catalogue exteriors. Two distinct architectural references per unphotographed address, not multiple verified views of one building. No property specifications inferred.",
+  "addresses": [
+    {
+      "address": "5 Daintrees Street, Campbelltown NSW 2560",
+      "images": [
+        {
+          "path": "/images/designs/blaxland-series.webp",
+          "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 444250,
+          "sourceFile": "batch_01/01_blaxland-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/majestic-series.webp",
+          "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 469198,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-a2180b5a-ea97-4089-a248-fda9eecd5c92.png",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "18 Quondong Street, Campbelltown NSW 2560",
+      "images": [
+        {
+          "path": "/images/designs/kingston-series.webp",
+          "sha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 364548,
+          "sourceFile": "batch_01/02_kingston-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/oxley-26-series.webp",
+          "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+          "width": 1200,
+          "height": 896,
+          "bytes": 288032,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/oxley-26-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "30 Westview Street, Campbelltown NSW 2560",
+      "images": [
+        {
+          "path": "/images/designs/hemsworth-series.webp",
+          "sha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 388170,
+          "sourceFile": "batch_01/03_hemsworth-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/eden-series.webp",
+          "sha256": "fcc7834edd6e2cd9e5dce149cb9d17b986d11fe199c55e371ff17c0082fa80bb",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 337336,
+          "sourceFile": "Generated concept render (2026-10-12)",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "32 Ganugan Road, Austral NSW 2179",
+      "images": [
+        {
+          "path": "/images/designs/bennelong-series.webp",
+          "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 439144,
+          "sourceFile": "batch_03/24_bennelong-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/montreal-series.webp",
+          "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 350122,
+          "sourceFile": "batch_04/32_montreal-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "3 Lakeman Street, Leppington NSW 2179",
+      "images": [
+        {
+          "path": "/images/designs/oxley-series.webp",
+          "sha256": "decc0daea35d9ac782ba71e0fca466ed975d6bd708a515e74de417341b1c800b",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 299072,
+          "sourceFile": "Generated concept render (2026-10-12)",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/patterson-series.webp",
+          "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 401414,
+          "sourceFile": "batch_01/08_patterson-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "6 Burns Avenue, Macquarie Fields NSW 2564",
+      "images": [
+        {
+          "path": "/images/designs/hastings-series.webp",
+          "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 329602,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-792c7bff-acb1-4b55-86a2-3ed19645604c.png",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/riley-series.webp",
+          "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 388214,
+          "sourceFile": "batch_01/10_riley-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "5 Jandaroi Road, Austral NSW 2179",
+      "images": [
+        {
+          "path": "/images/designs/centennial-series.webp",
+          "sha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 350338,
+          "sourceFile": "batch_03/25_centennial-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/crawford-series.webp",
+          "sha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 417626,
+          "sourceFile": "batch_04/33_crawford-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "110 Fieldhouse Circuit, Campbelltown NSW 2560",
+      "images": [
+        {
+          "path": "/images/designs/grange-series.webp",
+          "sha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 345470,
+          "sourceFile": "batch_03/26_grange-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/denison-series.webp",
+          "sha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 395784,
+          "sourceFile": "batch_04/34_denison-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "47 Gleeson Rise, Oran Park NSW 2570",
+      "images": [
+        {
+          "path": "/images/designs/urban-series.webp",
+          "sha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 312614,
+          "sourceFile": "batch_03/28_urban-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/elwood-series.webp",
+          "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+          "width": 1200,
+          "height": 896,
+          "bytes": 325412,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/elwood-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "10A Westview Street, Campbelltown NSW 2560",
+      "images": [
+        {
+          "path": "/images/designs/lennox-series.webp",
+          "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 472088,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-674fd9a3-a3f6-47bd-8c87-f92c2b7aa99d.png",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/lindsay-series.webp",
+          "sha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 402046,
+          "sourceFile": "batch_02/14_lindsay-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "30 Wilenski Way, Catherine Field NSW 2557",
+      "images": [
+        {
+          "path": "/images/designs/delta-series.webp",
+          "sha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 381718,
+          "sourceFile": "batch_03/27_delta-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/meadow-series.webp",
+          "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+          "width": 1200,
+          "height": 896,
+          "bytes": 378590,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/meadow-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "32 Emperor Street, Leppington NSW 2179",
+      "images": [
+        {
+          "path": "/images/designs/verona-series.webp",
+          "sha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 356252,
+          "sourceFile": "batch_03/29_verona-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/atlantic-series.webp",
+          "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+          "width": 1200,
+          "height": 896,
+          "bytes": 304770,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/atlantic-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "130 Webber Circuit, Bardia NSW 2565",
+      "images": [
+        {
+          "path": "/images/designs/elite-series.webp",
+          "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 411742,
+          "sourceFile": "batch_03/30_elite-series.webp",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/primavera-series.webp",
+          "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+          "width": 1200,
+          "height": 896,
+          "bytes": 306676,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/primavera-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "18 Dallas Drive, Gilead NSW 2560",
+      "images": [
+        {
+          "path": "/images/designs/stuart-series.webp",
+          "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 477188,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-902e4800-b67b-4876-aa14-d6b69640b2fe.png",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/rozelle-series.webp",
+          "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+          "width": 1200,
+          "height": 896,
+          "bytes": 337306,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/rozelle-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "112A Brassil Avenue, Claymore NSW 2559",
+      "images": [
+        {
+          "path": "/images/designs/collins-series.webp",
+          "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 442732,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-2d09ce64-ae39-4b67-8bd9-4f253ecc1705.png",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/chesterfield-series.webp",
+          "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+          "width": 1200,
+          "height": 896,
+          "bytes": 290078,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/chesterfield-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "112 Brassil Avenue, Claymore NSW 2559",
+      "images": [
+        {
+          "path": "/images/designs/alpha-series.webp",
+          "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 439814,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-94209fe5-a915-4ef0-8e00-f703985ea2d4.png",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/stellar-series.webp",
+          "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+          "width": 1200,
+          "height": 896,
+          "bytes": 293966,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/stellar-series.webp",
+          "review": "approved"
+        }
+      ]
+    },
+    {
+      "address": "110 Brassil Avenue, Claymore NSW 2559",
+      "images": [
+        {
+          "path": "/images/designs/glenbrook-series.webp",
+          "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
+          "width": 1448,
+          "height": 1086,
+          "bytes": 468146,
+          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-04b8d525-a461-400b-b8f4-fce654d82e2e.png",
+          "review": "approved"
+        },
+        {
+          "path": "/images/designs/crest-series.webp",
+          "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+          "width": 1200,
+          "height": 896,
+          "bytes": 270878,
+          "sourceFile": "JUFAJA_36_Designs_Renders/webp/crest-series.webp",
+          "review": "approved"
+        }
+      ]
+    }
+  ]
+}

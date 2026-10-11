@@ -11,7 +11,8 @@ export interface PropertyLocation {
   /** Locally hosted property photographs; source evidence is recorded in the provenance manifest. */
   photos?: string[];
   /** Architecturally representative design, not a photograph of this address. */
-  fallbackImage?: string;
+  fallbackImages?: string[];
+  imageMode: 'real' | 'representative';
   displayNote?: 'Representative exterior';
   photoCredit?: string;
   photoNote?: string;
@@ -22,16 +23,24 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "suburb": "Campbelltown",
     "postcode": "2560",
     "sourceUrl": "https://www.realestate.com.au/property/5-daintrees-st-campbelltown-nsw-2560/",
-    "fallbackImage": "/images/designs/blaxland-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/blaxland-series.webp",
+      "/images/designs/majestic-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "18 Quondong Street",
     "suburb": "Campbelltown",
     "postcode": "2560",
     "sourceUrl": "https://www.realestate.com.au/property/18-quondong-st-campbelltown-nsw-2560/",
-    "fallbackImage": "/images/designs/kingston-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/kingston-series.webp",
+      "/images/designs/oxley-26-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "30A Westview Street",
@@ -42,7 +51,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/30a-westview-street-campbelltown-01.webp"
     ],
-    "photoCredit": "Property.com.au"
+    "photoCredit": "Property.com.au",
+    "imageMode": "real"
   },
   {
     "street": "30 Westview Street",
@@ -52,8 +62,12 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [],
     "photoCredit": "Domain (historical listing image)",
     "photoNote": "Historical listing photograph. Appearance may differ from the current property.",
-    "fallbackImage": "/images/designs/hemsworth-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/hemsworth-series.webp",
+      "/images/designs/eden-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "32 Ganugan Road",
@@ -63,8 +77,12 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [],
     "photoCredit": "Allhomes property profile",
     "photoNote": "Exact-address profile photographs. Image age and current facade have not been independently verified.",
-    "fallbackImage": "/images/designs/bennelong-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/bennelong-series.webp",
+      "/images/designs/montreal-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "34 Horatio Street",
@@ -84,7 +102,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
       "/images/projects/34-horatio-street-rosemeadow-10.webp"
     ],
     "photoCredit": "Ray White (2016 historical listing)",
-    "photoNote": "Historical listing photographs from 2016; these do not document JUFAJA's subsequent building work."
+    "photoNote": "Historical listing photographs from 2016; these do not document JUFAJA's subsequent building work.",
+    "imageMode": "real"
   },
   {
     "street": "3 Lakeman Street",
@@ -94,8 +113,12 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [],
     "photoCredit": "realestate.com.au property profile",
     "photoNote": "Property-profile photo. The original 2020 sale was vacant land; this image should not be treated as proof of construction stage.",
-    "fallbackImage": "/images/designs/oxley-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/oxley-series.webp",
+      "/images/designs/patterson-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "6 Burns Avenue",
@@ -105,8 +128,12 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [],
     "photoCredit": "Domain historical property profile",
     "photoNote": "Historical property image. Do not use as evidence of the current condition or JUFAJA work.",
-    "fallbackImage": "/images/designs/hastings-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/hastings-series.webp",
+      "/images/designs/riley-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "6 Blane Street",
@@ -116,7 +143,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/6-blane-street-minto-01.webp"
     ],
-    "photoCredit": "Property.com.au"
+    "photoCredit": "Property.com.au",
+    "imageMode": "real"
   },
   {
     "street": "59 Fieldhouse Circuit",
@@ -127,7 +155,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/59-fieldhouse-circuit-campbelltown-01.webp"
     ],
-    "photoCredit": "Property.com.au"
+    "photoCredit": "Property.com.au",
+    "imageMode": "real"
   },
   {
     "street": "59A Fieldhouse Circuit",
@@ -144,7 +173,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     ],
     "photoCredit": "LJ Hooker Ingleburn",
     "sourceUrl": "https://property.ljhooker.com.au/rental-campbelltown-nsw--59a-fieldhouse-circuit-c0hhg3",
-    "photoNote": "Exact-address two-bedroom secondary dwelling rental gallery."
+    "photoNote": "Exact-address two-bedroom secondary dwelling rental gallery.",
+    "imageMode": "real"
   },
   {
     "street": "5 Jandaroi Road",
@@ -152,8 +182,12 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2179",
     "sourceUrl": "https://www.property.com.au/nsw/austral-2179/jandaroi-rd/5-pid-19805686/",
     "listedPhotos": 5,
-    "fallbackImage": "/images/designs/centennial-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/centennial-series.webp",
+      "/images/designs/crawford-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "110 Fieldhouse Circuit",
@@ -161,16 +195,24 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2560",
     "sourceUrl": "https://www.property.com.au/nsw/campbelltown-2560/fieldhouse-cct/110-pid-20358787/",
     "listedPhotos": 6,
-    "fallbackImage": "/images/designs/grange-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/grange-series.webp",
+      "/images/designs/denison-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "47 Gleeson Rise",
     "suburb": "Oran Park",
     "postcode": "2570",
     "sourceUrl": "https://www.realestate.com.au/property/47-gleeson-rise-oran-park-nsw-2570/",
-    "fallbackImage": "/images/designs/urban-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/urban-series.webp",
+      "/images/designs/elwood-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "26 Wilenski Way",
@@ -181,7 +223,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/26-wilenski-way-catherine-field-01.webp"
     ],
-    "photoCredit": "Property.com.au"
+    "photoCredit": "Property.com.au",
+    "imageMode": "real"
   },
   {
     "street": "28 Waterhouse Road",
@@ -201,14 +244,19 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
       "/images/projects/28-waterhouse-road-bradbury-09.webp",
       "/images/projects/28-waterhouse-road-bradbury-10.webp"
     ],
-    "photoCredit": "Ray White Macarthur Group"
+    "photoCredit": "Ray White Macarthur Group",
+    "imageMode": "real"
   },
   {
     "street": "10A Westview Street",
     "suburb": "Campbelltown",
     "postcode": "2560",
-    "fallbackImage": "/images/designs/lennox-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/lennox-series.webp",
+      "/images/designs/lindsay-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "10 Westview Street",
@@ -234,7 +282,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
       "/images/projects/10-westview-street-campbelltown-15.webp",
       "/images/projects/10-westview-street-campbelltown-16.webp"
     ],
-    "photoCredit": "LJ Hooker"
+    "photoCredit": "LJ Hooker",
+    "imageMode": "real"
   },
   {
     "street": "7 Meeson Street",
@@ -245,7 +294,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/7-meeson-street-claymore-01.webp"
     ],
-    "photoCredit": "Property.com.au"
+    "photoCredit": "Property.com.au",
+    "imageMode": "real"
   },
   {
     "street": "5 Meeson Street",
@@ -256,29 +306,42 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/5-meeson-street-claymore-01.webp"
     ],
-    "photoCredit": "Property.com.au / view.com.au"
+    "photoCredit": "Property.com.au / view.com.au",
+    "imageMode": "real"
   },
   {
     "street": "30 Wilenski Way",
     "suburb": "Catherine Field",
     "postcode": "2557",
-    "fallbackImage": "/images/designs/delta-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/delta-series.webp",
+      "/images/designs/meadow-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "32 Emperor Street",
     "suburb": "Leppington",
     "postcode": "2179",
-    "fallbackImage": "/images/designs/verona-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/verona-series.webp",
+      "/images/designs/atlantic-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "130 Webber Circuit",
     "suburb": "Bardia",
     "postcode": "2565",
     "sourceUrl": "https://www.property.com.au/nsw/bardia-2565/webber-cct/130-pid-15177352/",
-    "fallbackImage": "/images/designs/elite-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/elite-series.webp",
+      "/images/designs/primavera-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "18A Dallas Drive",
@@ -289,37 +352,54 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photos": [
       "/images/projects/18a-dallas-drive-gilead-01.webp"
     ],
-    "photoCredit": "Realestate.com.au"
+    "photoCredit": "Realestate.com.au",
+    "imageMode": "real"
   },
   {
     "street": "18 Dallas Drive",
     "suburb": "Gilead",
     "postcode": "2560",
-    "fallbackImage": "/images/designs/stuart-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/stuart-series.webp",
+      "/images/designs/rozelle-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "112A Brassil Avenue",
     "suburb": "Claymore",
     "postcode": "2559",
-    "fallbackImage": "/images/designs/collins-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/collins-series.webp",
+      "/images/designs/chesterfield-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "112 Brassil Avenue",
     "suburb": "Claymore",
     "postcode": "2559",
     "sourceUrl": "https://www.aussie.com.au/property/nsw/claymore-2559/112-brassil-avenue/",
-    "fallbackImage": "/images/designs/alpha-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/alpha-series.webp",
+      "/images/designs/stellar-series.webp"
+    ],
+    "imageMode": "representative"
   },
   {
     "street": "110 Brassil Avenue",
     "suburb": "Claymore",
     "postcode": "2559",
     "sourceUrl": "https://www.aussie.com.au/property/nsw/claymore-2559/110-brassil-avenue/",
-    "fallbackImage": "/images/designs/glenbrook-series.webp",
-    "displayNote": "Representative exterior"
+    "displayNote": "Representative exterior",
+    "fallbackImages": [
+      "/images/designs/glenbrook-series.webp",
+      "/images/designs/crest-series.webp"
+    ],
+    "imageMode": "representative"
   }
 ];
 export const propertyAddress = (location: PropertyLocation) =>

@@ -5,6 +5,7 @@ import Reveal from '@/components/motion/Reveal';
 import PageHero from '@/components/ui/PageHero';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
+import { PROPERTY_LOCATIONS } from '@/data/property-locations';
 import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
 
 export const metadata = pageMetadata('Residential Property Gallery', 'Browse 28 residential addresses across South-West Sydney, with genuine property photography, representative exteriors and separate architectural studies.', '/projects');
@@ -19,7 +20,17 @@ export default function ProjectsPage() {
         <p className="type-lead mt-6 text-jufaja-muted">Explore a collection of 28 South-West Sydney residential addresses, with property photography and clearly identified representative exteriors.</p>
       </PageHero>
 
-      <PropertyAddressDirectory />
+      <PropertyAddressDirectory properties={PROPERTY_LOCATIONS.map(property => ({
+        street: property.street,
+        suburb: property.suburb,
+        postcode: property.postcode,
+        photos: property.photos,
+        fallbackImages: property.fallbackImages,
+        imageMode: property.imageMode,
+        displayNote: property.displayNote,
+        photoCredit: property.photoCredit,
+        photoNote: property.photoNote,
+      }))} />
 
       {/* Projects Showcase List */}
       <section className="studies-journal py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +52,7 @@ export default function ProjectsPage() {
                 <Reveal mode="mask-up" curtain="bg-jufaja-stone"><div className="journal-image relative h-[340px] sm:h-[440px] w-full overflow-hidden bg-jufaja-stone group">
                   <ParallaxImage
                     src={proj.image}
-                    alt={`${proj.title} illustrative concept image`}
+                    alt={`${proj.title} representative architectural exterior`}
                     frameClassName="absolute inset-0"
                     sizes="(max-width: 1023px) 100vw, 58vw"
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
@@ -50,7 +61,7 @@ export default function ProjectsPage() {
                     {proj.category}
                   </div>
                   <div className="absolute bottom-4 left-4 right-4 w-fit rounded-sm bg-white px-3.5 py-1.5 text-xs font-semibold text-jufaja-charcoal shadow">
-                    <span>Illustrative image · not a completed project</span>
+                    <span>Representative project imagery</span>
                   </div>
                 </div></Reveal>
               </div>
