@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { PROPERTY_LOCATIONS, propertyAddress, type PropertyLocation } from '@/data/property-locations';
 
 const PHOTOGRAPHED_PROPERTIES = PROPERTY_LOCATIONS.filter(
@@ -15,32 +15,55 @@ function PropertyImage({
   alt,
   className = '',
   eager = false,
+  contain = false,
 }: {
   src: string;
   alt: string;
   className?: string;
   eager?: boolean;
+  contain?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    // Handle a photo that loaded (or failed) before hydration attached its handlers.
+    const frame = requestAnimationFrame(() => {
+      const image = imageRef.current;
+      if (!image?.complete) return;
+      if (image.naturalWidth > 0) setLoaded(true);
+      else setFailed(true);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [src]);
+
   return (
     <div className="relative h-full w-full overflow-hidden bg-jufaja-forest-900">
+      {contain && !loaded && !failed && (
+        <span role="status" className="pointer-events-none absolute inset-x-0 bottom-4 z-10 text-center text-sm text-white">
+          Loading photograph…
+        </span>
+      )}
       {!failed ? (
         // Verified source URLs are image data, never public links. Local originals
         // can replace these sources once the approved files are available.
         // eslint-disable-next-line @next/next/no-img-element
         <img
+          ref={imageRef}
           src={src}
           alt={alt}
           width={1200}
           height={900}
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
+          onLoad={() => setLoaded(true)}
           onError={() => setFailed(true)}
-          className={`h-full w-full object-cover ${className}`}
+          className={`h-full w-full ${contain ? 'object-contain' : 'object-cover'} ${className}`}
         />
       ) : (
         <div role="img" aria-label={alt + ' (image unavailable)'} className="flex h-full w-full items-center justify-center p-8">
-          <span className="font-serif text-xl text-white/70">JUFAJA Constructions</span>
+          <span className="font-serif text-xl text-white/70">Photograph unavailable</span>
         </div>
       )}
     </div>
@@ -54,8 +77,34 @@ export default function PropertyAddressDirectory() {
   const [photoIndex, setPhotoIndex] = useState(0);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
-  const previousOverflow = useRef('');
-  const touchStartX = useRef<number | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const thumbnailsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!opened) return;
+    const dialog = dialogRef.current;
+    const trigger = triggerRef.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    if (dialog && !dialog.open) dialog.showModal();
+    dialog?.querySelector<HTMLButtonElement>('button')?.focus();
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (dialog?.open) dialog.close();
+      if (trigger?.isConnected) trigger.focus();
+    };
+  }, [opened]);
+
+  useEffect(() => {
+    const strip = thumbnailsRef.current;
+    const selected = strip?.querySelector<HTMLButtonElement>('[aria-pressed="true"]');
+    if (!strip || !selected) return;
+    const left = selected.getBoundingClientRect().left - strip.getBoundingClientRect().left + strip.scrollLeft;
+    if (left < strip.scrollLeft) strip.scrollLeft = left;
+    else if (left + selected.offsetWidth > strip.scrollLeft + strip.clientWidth) {
+      strip.scrollLeft = left + selected.offsetWidth - strip.clientWidth;
+    }
+  }, [opened, photoIndex]);
 
   const shown = useMemo(() => PHOTOGRAPHED_PROPERTIES.filter((property) =>
     (suburb === 'All areas' || property.suburb === suburb) &&
@@ -66,22 +115,19 @@ export default function PropertyAddressDirectory() {
     triggerRef.current = button;
     setPhotoIndex(0);
     setOpened(property);
-    previousOverflow.current = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    dialogRef.current?.showModal();
   };
 
   const closeGallery = () => dialogRef.current?.close();
 
   const onClose = () => {
-    document.body.style.overflow = previousOverflow.current;
+    touchStart.current = null;
     setOpened(null);
-    triggerRef.current?.focus();
   };
 
   const movePhoto = (direction: number) => {
-    if (!opened?.photos?.length) return;
-    setPhotoIndex((index) => (index + direction + opened.photos!.length) % opened.photos!.length);
+    const count = opened?.photos?.length ?? 0;
+    if (count <= 1) return;
+    setPhotoIndex((index) => (index + direction + count) % count);
   };
 
   return (
@@ -182,7 +228,7 @@ export default function PropertyAddressDirectory() {
             <div className="w-full">
               <div className="flex items-center justify-between gap-4 p-4 sm:px-6">
                 <div className="min-w-0">
-                  <h2 id="property-dialog-title" className="truncate font-serif text-lg sm:text-2xl">{opened.street}</h2>
+                  <h2 id="property-dialog-title" className="break-words font-serif text-lg sm:text-2xl">{opened.street}</h2>
                   <p className="text-xs text-white/70">{opened.suburb}, NSW {opened.postcode}</p>
                 </div>
                 <button type="button" onClick={closeGallery} autoFocus
@@ -193,17 +239,25 @@ export default function PropertyAddressDirectory() {
               </div>
               <div
                 className="relative mx-3 h-[min(55vh,680px)] overflow-hidden bg-black sm:mx-6"
-                onTouchStart={(event) => { touchStartX.current = event.touches[0].clientX; }}
+                onTouchStart={(event) => {
+                  const touch = event.touches[0];
+                  touchStart.current = event.touches.length === 1 && touch ? { x: touch.clientX, y: touch.clientY } : null;
+                }}
+                onTouchMove={(event) => { if (event.touches.length !== 1) touchStart.current = null; }}
+                onTouchCancel={() => { touchStart.current = null; }}
                 onTouchEnd={(event) => {
-                  if (touchStartX.current === null) return;
-                  const dx = event.changedTouches[0].clientX - touchStartX.current;
-                  touchStartX.current = null;
-                  if (Math.abs(dx) > 55) movePhoto(dx < 0 ? 1 : -1);
+                  const start = touchStart.current;
+                  const touch = event.changedTouches[0];
+                  touchStart.current = null;
+                  if (!start || !touch) return;
+                  const dx = touch.clientX - start.x;
+                  const dy = touch.clientY - start.y;
+                  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.5) movePhoto(dx < 0 ? 1 : -1);
                 }}
               >
                 <PropertyImage key={opened.photos[photoIndex]} src={opened.photos[photoIndex]}
                   alt={`Photograph ${photoIndex + 1} of ${opened.photos.length} at ${propertyAddress(opened)}`}
-                  className="object-contain"
+                  contain
                   eager
                 />
               </div>
@@ -217,12 +271,12 @@ export default function PropertyAddressDirectory() {
                   aria-label="Next photograph">Next →</button>
               </div>
               {opened.photos.length > 1 && (
-                <div className="flex gap-2 overflow-x-auto px-4 pb-5 sm:px-6" aria-label="Select photograph">
+                <div ref={thumbnailsRef} role="group" className="relative flex gap-2 overflow-x-auto px-4 pb-5 sm:px-6" aria-label="Select photograph">
                   {opened.photos.map((src, i) => (
                     <button key={src} type="button" aria-pressed={i === photoIndex}
                       aria-label={`Show photograph ${i + 1}`}
                       onClick={() => setPhotoIndex(i)}
-                      className={`relative h-16 w-20 shrink-0 overflow-hidden rounded-sm border-2 ${i === photoIndex ? 'border-jufaja-gold-400' : 'border-transparent'}`}>
+                      className={`relative h-16 w-20 shrink-0 overflow-hidden rounded-sm border-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${i === photoIndex ? 'border-jufaja-gold-400' : 'border-transparent'}`}>
                       <PropertyImage src={src} alt="" />
                     </button>
                   ))}
