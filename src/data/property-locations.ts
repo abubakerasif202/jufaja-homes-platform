@@ -10,9 +10,8 @@ export interface PropertyLocation {
   listedPhotos?: number;
   /** Locally hosted property photographs; source evidence is recorded in the provenance manifest. */
   photos?: string[];
-  /** Distinct conceptual architectural image, not a photograph of this address. */
+  /** Architecturally representative design, not a photograph of this address. */
   fallbackImage?: string;
-  /** Brief visible disclosure when an exact-address photograph is unavailable. */
   displayNote?: 'Representative exterior';
   photoCredit?: string;
   photoNote?: string;
@@ -321,13 +320,6 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.aussie.com.au/property/nsw/claymore-2559/110-brassil-avenue/",
     "fallbackImage": "/images/designs/glenbrook-series.webp",
     "displayNote": "Representative exterior"
-  }operty/nsw/claymore-2559/112-brassil-avenue/"
-  },
-  {
-    "street": "110 Brassil Avenue",
-    "suburb": "Claymore",
-    "postcode": "2559",
-    "sourceUrl": "https://www.aussie.com.au/property/nsw/claymore-2559/110-brassil-avenue/"
   }
 ];
 export const propertyAddress = (location: PropertyLocation) =>
