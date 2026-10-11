@@ -5,21 +5,29 @@ import Reveal from '@/components/motion/Reveal';
 import PageHero from '@/components/ui/PageHero';
 import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
+import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
 
-export const metadata = pageMetadata('Design Inspiration', 'Explore illustrative residential architecture references and concept studies from JUFAJA Constructions.', '/projects');
+export const metadata = pageMetadata('Design Inspiration & Property Locations', 'Explore illustrative residential architecture concepts and the JUFAJA property location reference directory for South-West Sydney.', '/projects');
 
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-jufaja-cream">
       {/* Hero Header */}
       <PageHero image={JUFAJA_PROJECTS[0].image} tone="ivory">
-        <p className="eyebrow">Illustrative concepts / Design journal</p>
-        <h1 className="type-h1 mt-4 text-jufaja-forest">Design inspiration.</h1>
-        <p className="type-lead mt-6 text-jufaja-muted">These reference images and concept studies illustrate architectural directions. They are not photographs or records of completed JUFAJA projects.</p>
+        <p className="eyebrow">JUFAJA / Property collection</p>
+        <h1 className="type-h1 mt-4 text-jufaja-forest">Homes & design inspiration.</h1>
+        <p className="type-lead mt-6 text-jufaja-muted">Explore residential property photographs and locations across South-West Sydney, followed by clearly marked architectural concept references.</p>
       </PageHero>
+
+      <PropertyAddressDirectory />
 
       {/* Projects Showcase List */}
       <section className="studies-journal py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="mb-12 max-w-3xl">
+          <p className="eyebrow">Architectural studies / Not built projects</p>
+          <h2 className="type-h2 mt-3 text-jufaja-forest">Design inspiration.</h2>
+          <p className="mt-3 text-sm leading-7 text-jufaja-muted">The following imagery illustrates architectural concepts. These are not photographs or records of completed JUFAJA projects.</p>
+        </header>
         <div className="space-y-16 sm:space-y-24">
           {JUFAJA_PROJECTS.map((proj, idx) => (
             <div
