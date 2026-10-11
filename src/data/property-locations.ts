@@ -11,6 +11,7 @@ export interface PropertyLocation {
   /** Exact-address-matched public photography URLs, supplied for authorised portfolio use. */
   photos?: string[];
   photoCredit?: string;
+  photoNote?: string;
 }
 export const PROPERTY_LOCATIONS: PropertyLocation[] = [
   {
@@ -40,7 +41,12 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "street": "30 Westview Street",
     "suburb": "Campbelltown",
     "postcode": "2560",
-    "sourceUrl": "https://www.realestate.com.au/property/30-westview-st-campbelltown-nsw-2560/"
+    "sourceUrl": "https://www.domain.com.au/property-profile/30-westview-street-campbelltown-nsw-2560",
+    "photos": [
+      "https://rimh2.domainstatic.com.au/VkJVOL8CYYaClPV9rtNCCg7k7Zc=/filters:format(png):quality(80):no_upscale()/2016109265_1_1_200226_052112-w3012-h2466"
+    ],
+    "photoCredit": "Domain (historical listing image)",
+    "photoNote": "Historical listing photograph. Appearance may differ from the current property."
   },
   {
     "street": "32 Ganugan Road",
@@ -52,7 +58,21 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "street": "34 Horatio Street",
     "suburb": "Rosemeadow",
     "postcode": "2560",
-    "sourceUrl": "https://www.raywhite.com/nsw/rosemeadow/1522948"
+    "sourceUrl": "https://www.raywhite.com/nsw/rosemeadow/1522948",
+    "photos": [
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.29537-DSC2726.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.17740-DSC2701.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.32290-DSC2702.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.18015-DSC2705.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.11749-DSC2708.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.19762-DSC2709.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.12010-DSC2714.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.29074-DSC2716.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.32554-DSC2719.jpg?width=1200&quality=85",
+      "https://cdn6.ep.dynamics.net/s3/rw-media/propertyphotos/2016/8/29/H1327-hires.12537-DSC2720.jpg?width=1200&quality=85"
+    ],
+    "photoCredit": "Ray White (2016 historical listing)",
+    "photoNote": "Historical listing photographs from 2016; these do not document JUFAJA's subsequent building work."
   },
   {
     "street": "3 Lakeman Street",
@@ -112,7 +132,7 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "street": "26 Wilenski Way",
     "suburb": "Catherine Field",
     "postcode": "2557",
-    "sourceUrl": "https://www.realestate.com.au/property-house-nsw-catherine%2Bfield-150806824",
+    "sourceUrl": "https://www.property.com.au/nsw/catherine-field-2557/wilenski-way/26-pid-21039303/",
     "listedPhotos": 34,
     "photos": [
       "https://i2.au.reastatic.net/1200x630-format=jpg/88f51a492c6bb967207c5886f4c3227106df22862ce5045d03bde5c3209f4a14/main.jpg"
