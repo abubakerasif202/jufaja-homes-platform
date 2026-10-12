@@ -7,6 +7,7 @@ import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 import { PROPERTY_LOCATIONS } from '@/data/property-locations';
 import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
+import { prioritizePropertyCards } from '@/lib/property-gallery';
 
 export const metadata = pageMetadata('Residential Property Gallery', 'Browse 28 residential addresses across South-West Sydney, with genuine property photography, representative exteriors and separate architectural studies.', '/projects');
 
@@ -20,7 +21,7 @@ export default function ProjectsPage() {
         <p className="type-lead mt-6 text-jufaja-muted">Explore a collection of 28 South-West Sydney residential addresses, with property photography and clearly identified representative exteriors.</p>
       </PageHero>
 
-      <PropertyAddressDirectory properties={PROPERTY_LOCATIONS.map(property => ({
+      <PropertyAddressDirectory properties={prioritizePropertyCards(PROPERTY_LOCATIONS).map(property => ({
         street: property.street,
         suburb: property.suburb,
         postcode: property.postcode,
