@@ -41,33 +41,38 @@ test('public gallery contains photographs but no map, Google-search or listing-p
   assert.match(galleryText, /onKeyDown/);
 });
 
-test('all 17 unphotographed addresses use 34 distinct reviewed local representative exteriors', () => {
+test('all 17 unphotographed addresses use 34 local, source-verified representative exteriors', () => {
   const galleryProps = properties.filter(property => property.photos?.length);
   const unphotographed = properties.filter(property => !property.photos?.length);
   assert.equal(galleryProps.length, 11);
   assert.equal(unphotographed.length, 17);
-  assert.equal(new Set(unphotographed.map(property => property.fallbackImages[0])).size, 17, 'Representative facades must be distinct');
-  const designRegistry = JSON.parse(fs.readFileSync(path.join(root, 'src/data/design-images.json'), 'utf8'));
-  const approved = new Set(designRegistry.filter(record => record.status === 'available' && record.visualReview?.outcome === 'approved').map(record => record.image?.path));
-  assert.equal(new Set(unphotographed.flatMap(property => property.fallbackImages)).size, 34);
-  const references = JSON.parse(fs.readFileSync(path.join(root, 'docs/property-representative-provenance.json'), 'utf8'));
+  const provenance = JSON.parse(fs.readFileSync(path.join(root, 'docs/property-representative-provenance.json'), 'utf8'));
+  assert.equal(provenance.addresses.length, 17);
+  const images = unphotographed.flatMap(property => property.fallbackImages || []);
+  assert.equal(images.length, 34);
+  assert.equal(new Set(images).size, 34);
+  const crypto = require('node:crypto');
   for (const property of unphotographed) {
     assert.equal(property.imageMode, 'representative');
     assert.equal(property.fallbackImages.length, 2);
-    for (const image of property.fallbackImages) {
-      assert.ok(approved.has(image));
-      const record = references.addresses.flatMap(address => address.images).find(record => record.path === image);
-      const hash = require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root, 'public', image))).digest('hex');
-      assert.equal(hash, record.sha256);
-    }
-    assert.ok(approved.has(property.fallbackImages[0]), `Unreviewed representative image for ${property.street}`);
-    assert.ok(property.fallbackImages[0].startsWith('/images/designs/'), 'Representative image must be local');
-    assert.ok(fs.existsSync(path.join(root, 'public', property.fallbackImages[0])), `Missing representative image: ${property.fallbackImages[0]}`);
     assert.equal(property.displayNote, 'Representative exterior');
+    const address = `${property.street}, ${property.suburb} NSW ${property.postcode}`;
+    const record = provenance.addresses.find(item => item.address === address);
+    assert.ok(record, `Missing representative provenance: ${address}`);
+    for (const image of property.fallbackImages) {
+      assert.ok(image.startsWith('/images/projects/representative/'));
+      const dest = path.join(root, 'public', image);
+      assert.ok(fs.existsSync(dest), `Missing representative image: ${image}`);
+      const source = record.images.find(item => item.path === image);
+      assert.ok(source, `No provenance entry: ${image}`);
+      const buffer = fs.readFileSync(dest);
+      assert.equal(buffer.length, source.bytes);
+      assert.equal(crypto.createHash('sha256').update(buffer).digest('hex'), source.sha256);
+    }
   }
   for (const property of galleryProps) {
     assert.equal(property.imageMode, 'real');
-    assert.equal(property.fallbackImages, undefined, 'Photographed properties must preserve original hero');
+    assert.equal(property.fallbackImages, undefined, 'Original real photos must remain unchanged');
   }
   assert.doesNotMatch(galleryText, /PHOTOGRAPHED_PROPERTIES|if \(!firstImage\) return null/);
 });

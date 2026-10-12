@@ -1,397 +1,543 @@
 {
   "audited": "2026-10-12",
-  "scope": "Reviewed owner-supplied catalogue exteriors. Two distinct architectural references per unphotographed address, not multiple verified views of one building. No property specifications inferred.",
+  "scope": "34 client-supplied architectural reference WebPs for 17 properties without exact-address photographs. Visual content is fictional/representative, not photos of the listed property.",
+  "realPropertyPhotosPreserved": 50,
+  "sourceArchive": "JUFAJA_34_Property_Views_Representative_Updated.zip",
+  "reviewSummary": {
+    "filesValidated": 34,
+    "nearIdenticalPairs": [],
+    "verySimilarPairs": [],
+    "manuallyReviewedRegeneratedPairs": [
+      "10a-westview-street-campbelltown",
+      "110-brassil-avenue-claymore",
+      "30-westview-street-campbelltown",
+      "32-emperor-street-leppington",
+      "32-ganugan-road-austral",
+      "6-burns-avenue-macquarie-fields"
+    ],
+    "otherPairsRetainOriginalDifferentCompositionReview": 11
+  },
   "addresses": [
     {
       "address": "5 Daintrees Street, Campbelltown NSW 2560",
       "images": [
         {
-          "path": "/images/designs/blaxland-series.webp",
-          "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 444250,
-          "sourceFile": "batch_01/01_blaxland-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/5-daintrees-street-campbelltown-view-01.webp",
+          "sha256": "b9bbd275a53886f6fc3b245f85cef0097b9681bcec2c946dbd3b3359dd9b84b4",
+          "bytes": 246898,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/5-daintrees-street-campbelltown-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "b9bbd275a53886f6fc3b245f85cef0097b9681bcec2c946dbd3b3359dd9b84b4"
         },
         {
-          "path": "/images/designs/majestic-series.webp",
-          "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 469198,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-a2180b5a-ea97-4089-a248-fda9eecd5c92.png",
-          "review": "approved"
+          "path": "/images/projects/representative/5-daintrees-street-campbelltown-view-02.webp",
+          "sha256": "ae661aa2398b223c31fbc58358c22b3fc7422098fca01fe10f6565475edbb6c0",
+          "bytes": 248304,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/5-daintrees-street-campbelltown-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "ae661aa2398b223c31fbc58358c22b3fc7422098fca01fe10f6565475edbb6c0"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.5147,
+      "pairReview": "different-composition"
     },
     {
       "address": "18 Quondong Street, Campbelltown NSW 2560",
       "images": [
         {
-          "path": "/images/designs/kingston-series.webp",
-          "sha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 364548,
-          "sourceFile": "batch_01/02_kingston-series.webp",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/oxley-26-series.webp",
-          "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
+          "path": "/images/projects/representative/18-quondong-street-campbelltown-view-01.webp",
+          "sha256": "d51158d998d7f5680e97b38321321312b97fec064654fada14346f2180fc67e2",
+          "bytes": 243928,
           "width": 1200,
           "height": 896,
-          "bytes": 288032,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/oxley-26-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/18-quondong-street-campbelltown-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "d51158d998d7f5680e97b38321321312b97fec064654fada14346f2180fc67e2"
+        },
+        {
+          "path": "/images/projects/representative/18-quondong-street-campbelltown-view-02.webp",
+          "sha256": "9005c5f97378426733c3370df1dfd0e166abd22fda7da035cb8a54d4b464eb88",
+          "bytes": 281172,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/18-quondong-street-campbelltown-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "9005c5f97378426733c3370df1dfd0e166abd22fda7da035cb8a54d4b464eb88"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.234,
+      "pairReview": "different-composition"
     },
     {
       "address": "30 Westview Street, Campbelltown NSW 2560",
       "images": [
         {
-          "path": "/images/designs/hemsworth-series.webp",
-          "sha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 388170,
-          "sourceFile": "batch_01/03_hemsworth-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/30-westview-street-campbelltown-view-01.webp",
+          "sha256": "35d082db05838f069075e78e5933c05b14b5e2f5a1f762baa199a583841409e1",
+          "bytes": 296632,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/30-westview-street-campbelltown-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "35d082db05838f069075e78e5933c05b14b5e2f5a1f762baa199a583841409e1"
         },
         {
-          "path": "/images/designs/eden-series.webp",
-          "sha256": "fcc7834edd6e2cd9e5dce149cb9d17b986d11fe199c55e371ff17c0082fa80bb",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 337336,
-          "sourceFile": "Generated concept render (2026-10-12)",
-          "review": "approved"
+          "path": "/images/projects/representative/30-westview-street-campbelltown-view-02.webp",
+          "sha256": "68d05a28c61d6cd6b9e347457c58d8e81736e78558e2459c1a0cad06f742de1a",
+          "bytes": 343444,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/source_renders/30-westview-street-campbelltown-view-02.jpg",
+          "review": "manual review approved: same design and materially distinct camera angle",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "0488fd37a644de5f713877062420a2f0a61a88105eafc498b46a5332bfea89a9",
+          "generationJobId": "JUF-P03-V02",
+          "sourceDimensions": "1200x896"
         }
-      ]
+      ],
+      "pairSimilaritySsim": null,
+      "pairReview": "manual-reviewed-same-design-camera-distinct",
+      "visualReviewDate": "2026-10-12",
+      "visualReview": "Approved after side-by-side comparison of View 01 and updated View 02."
     },
     {
       "address": "32 Ganugan Road, Austral NSW 2179",
       "images": [
         {
-          "path": "/images/designs/bennelong-series.webp",
-          "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 439144,
-          "sourceFile": "batch_03/24_bennelong-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/32-ganugan-road-austral-view-01.webp",
+          "sha256": "ffa51b808300ca9b1aa3976b465ae803cd02416c5fd14ae9f3f223191815a66e",
+          "bytes": 224294,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/32-ganugan-road-austral-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "ffa51b808300ca9b1aa3976b465ae803cd02416c5fd14ae9f3f223191815a66e"
         },
         {
-          "path": "/images/designs/montreal-series.webp",
-          "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 350122,
-          "sourceFile": "batch_04/32_montreal-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/32-ganugan-road-austral-view-02.webp",
+          "sha256": "2ec5bb38bc3129500068aa38946e8e28a0bbf5767336dd82bfa7f70cffba990f",
+          "bytes": 192202,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/source_renders/32-ganugan-road-austral-view-02.jpg",
+          "review": "manual review approved: same design and materially distinct camera angle",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "bf5a9e62160f70ec7d2029acda675475f179f13478312e7c8db89078fdbfc760",
+          "generationJobId": "JUF-P04-V02",
+          "sourceDimensions": "1200x896"
         }
-      ]
+      ],
+      "pairSimilaritySsim": null,
+      "pairReview": "manual-reviewed-same-design-camera-distinct",
+      "visualReviewDate": "2026-10-12",
+      "visualReview": "Approved after side-by-side comparison of View 01 and updated View 02."
     },
     {
       "address": "3 Lakeman Street, Leppington NSW 2179",
       "images": [
         {
-          "path": "/images/designs/oxley-series.webp",
-          "sha256": "decc0daea35d9ac782ba71e0fca466ed975d6bd708a515e74de417341b1c800b",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 299072,
-          "sourceFile": "Generated concept render (2026-10-12)",
-          "review": "approved"
+          "path": "/images/projects/representative/3-lakeman-street-leppington-view-01.webp",
+          "sha256": "46de9c31fef45a5bd2bcbb470c6f008c1bddbef048c5d559d5269a76d83d601e",
+          "bytes": 296618,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/3-lakeman-street-leppington-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "46de9c31fef45a5bd2bcbb470c6f008c1bddbef048c5d559d5269a76d83d601e"
         },
         {
-          "path": "/images/designs/patterson-series.webp",
-          "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 401414,
-          "sourceFile": "batch_01/08_patterson-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/3-lakeman-street-leppington-view-02.webp",
+          "sha256": "77eb99b052f66aff66a20cfe1b5b2477bb17d2afaa2cfad267b8bbaaad38320e",
+          "bytes": 281520,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/3-lakeman-street-leppington-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "77eb99b052f66aff66a20cfe1b5b2477bb17d2afaa2cfad267b8bbaaad38320e"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.5157,
+      "pairReview": "different-composition"
     },
     {
       "address": "6 Burns Avenue, Macquarie Fields NSW 2564",
       "images": [
         {
-          "path": "/images/designs/hastings-series.webp",
-          "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 329602,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-792c7bff-acb1-4b55-86a2-3ed19645604c.png",
-          "review": "approved"
+          "path": "/images/projects/representative/6-burns-avenue-macquarie-fields-view-01.webp",
+          "sha256": "a4084e2eff5fabd2d77cc8921bf41542c67a3925ccdcdea1f1ab3ed06a6f4a42",
+          "bytes": 249990,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/6-burns-avenue-macquarie-fields-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "a4084e2eff5fabd2d77cc8921bf41542c67a3925ccdcdea1f1ab3ed06a6f4a42"
         },
         {
-          "path": "/images/designs/riley-series.webp",
-          "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 388214,
-          "sourceFile": "batch_01/10_riley-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/6-burns-avenue-macquarie-fields-view-02.webp",
+          "sha256": "cf9f3e670dab600956b5ddbe922b5cb48a46e9eb9979ef3f1896c058818aafae",
+          "bytes": 190330,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/source_renders/6-burns-avenue-macquarie-fields-view-02.jpg",
+          "review": "manual review approved: same design and materially distinct camera angle",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "7c742ca8390bbd2d65523e6e80714cd582b4cb252b48f24b4397e8b24e733c8b",
+          "generationJobId": "JUF-P06-V02",
+          "sourceDimensions": "1200x896"
         }
-      ]
+      ],
+      "pairSimilaritySsim": null,
+      "pairReview": "manual-reviewed-same-design-camera-distinct",
+      "visualReviewDate": "2026-10-12",
+      "visualReview": "Approved after side-by-side comparison of View 01 and updated View 02."
     },
     {
       "address": "5 Jandaroi Road, Austral NSW 2179",
       "images": [
         {
-          "path": "/images/designs/centennial-series.webp",
-          "sha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 350338,
-          "sourceFile": "batch_03/25_centennial-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/5-jandaroi-road-austral-view-01.webp",
+          "sha256": "5d09c2b62912e8270907bba5e2bd1958c657e6af135b5ff9696244ac44b35251",
+          "bytes": 309920,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/5-jandaroi-road-austral-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "5d09c2b62912e8270907bba5e2bd1958c657e6af135b5ff9696244ac44b35251"
         },
         {
-          "path": "/images/designs/crawford-series.webp",
-          "sha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 417626,
-          "sourceFile": "batch_04/33_crawford-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/5-jandaroi-road-austral-view-02.webp",
+          "sha256": "aa9462c2c1a33d9667be66f7de3223a1835f94b3c62eb133aec18c5c11b52305",
+          "bytes": 298574,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/5-jandaroi-road-austral-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "aa9462c2c1a33d9667be66f7de3223a1835f94b3c62eb133aec18c5c11b52305"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.3669,
+      "pairReview": "different-composition"
     },
     {
       "address": "110 Fieldhouse Circuit, Campbelltown NSW 2560",
       "images": [
         {
-          "path": "/images/designs/grange-series.webp",
-          "sha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 345470,
-          "sourceFile": "batch_03/26_grange-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-01.webp",
+          "sha256": "2a96f400aaf49bd582e34022f1cd54dac8c925fb15bceb12e4dab7966a751e7c",
+          "bytes": 272154,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "2a96f400aaf49bd582e34022f1cd54dac8c925fb15bceb12e4dab7966a751e7c"
         },
         {
-          "path": "/images/designs/denison-series.webp",
-          "sha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 395784,
-          "sourceFile": "batch_04/34_denison-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-02.webp",
+          "sha256": "8e0671e5fb32443444511725e9b4e47df77fbc65a77e7661fd7db3065ce5a1fb",
+          "bytes": 266182,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "8e0671e5fb32443444511725e9b4e47df77fbc65a77e7661fd7db3065ce5a1fb"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.6397,
+      "pairReview": "different-composition"
     },
     {
       "address": "47 Gleeson Rise, Oran Park NSW 2570",
       "images": [
         {
-          "path": "/images/designs/urban-series.webp",
-          "sha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 312614,
-          "sourceFile": "batch_03/28_urban-series.webp",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/elwood-series.webp",
-          "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
+          "path": "/images/projects/representative/47-gleeson-rise-oran-park-view-01.webp",
+          "sha256": "bd355363568d36d36be3becba9f5dd7bd8014592470d9f5aa36e6834ed92a779",
+          "bytes": 227528,
           "width": 1200,
           "height": 896,
-          "bytes": 325412,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/elwood-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/47-gleeson-rise-oran-park-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "bd355363568d36d36be3becba9f5dd7bd8014592470d9f5aa36e6834ed92a779"
+        },
+        {
+          "path": "/images/projects/representative/47-gleeson-rise-oran-park-view-02.webp",
+          "sha256": "e4dbf79d78f245e0d3cbba718e59e948c1492e1a6240232379323af3cab1e3b2",
+          "bytes": 214472,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/47-gleeson-rise-oran-park-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "e4dbf79d78f245e0d3cbba718e59e948c1492e1a6240232379323af3cab1e3b2"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.3509,
+      "pairReview": "different-composition"
     },
     {
       "address": "10A Westview Street, Campbelltown NSW 2560",
       "images": [
         {
-          "path": "/images/designs/lennox-series.webp",
-          "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 472088,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-674fd9a3-a3f6-47bd-8c87-f92c2b7aa99d.png",
-          "review": "approved"
+          "path": "/images/projects/representative/10a-westview-street-campbelltown-view-01.webp",
+          "sha256": "22efe15754617ec68f75d4ca106bce3c404d6b2ec3e29957be21eae8fe1bd76b",
+          "bytes": 314036,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/10a-westview-street-campbelltown-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "22efe15754617ec68f75d4ca106bce3c404d6b2ec3e29957be21eae8fe1bd76b"
         },
         {
-          "path": "/images/designs/lindsay-series.webp",
-          "sha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 402046,
-          "sourceFile": "batch_02/14_lindsay-series.webp",
-          "review": "approved"
+          "path": "/images/projects/representative/10a-westview-street-campbelltown-view-02.webp",
+          "sha256": "d4405b618faf9ec8c4cdae9034c41e016779236a21a14495f4feb74e9140766b",
+          "bytes": 245078,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/source_renders/10a-westview-street-campbelltown-view-02.jpg",
+          "review": "manual review approved: same design and materially distinct camera angle",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "38e5be7f7a80001db25d94e4a108781358bf2266809afd7901580c9229f7eec8",
+          "generationJobId": "JUF-P10-V02",
+          "sourceDimensions": "1200x896"
         }
-      ]
+      ],
+      "pairSimilaritySsim": null,
+      "pairReview": "manual-reviewed-same-design-camera-distinct",
+      "visualReviewDate": "2026-10-12",
+      "visualReview": "Approved after side-by-side comparison of View 01 and updated View 02."
     },
     {
       "address": "30 Wilenski Way, Catherine Field NSW 2557",
       "images": [
         {
-          "path": "/images/designs/delta-series.webp",
-          "sha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 381718,
-          "sourceFile": "batch_03/27_delta-series.webp",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/meadow-series.webp",
-          "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
+          "path": "/images/projects/representative/30-wilenski-way-catherine-field-view-01.webp",
+          "sha256": "8eab51975cbdc1e02bbabee5a61da85382e387531e6169dbecc06c40eeab512b",
+          "bytes": 194154,
           "width": 1200,
           "height": 896,
-          "bytes": 378590,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/meadow-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/30-wilenski-way-catherine-field-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "8eab51975cbdc1e02bbabee5a61da85382e387531e6169dbecc06c40eeab512b"
+        },
+        {
+          "path": "/images/projects/representative/30-wilenski-way-catherine-field-view-02.webp",
+          "sha256": "9ccfcc987e915b6536d1331584b0be7040b963434a7714ab276c32ee67847705",
+          "bytes": 190030,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/30-wilenski-way-catherine-field-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "9ccfcc987e915b6536d1331584b0be7040b963434a7714ab276c32ee67847705"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.5725,
+      "pairReview": "different-composition"
     },
     {
       "address": "32 Emperor Street, Leppington NSW 2179",
       "images": [
         {
-          "path": "/images/designs/verona-series.webp",
-          "sha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 356252,
-          "sourceFile": "batch_03/29_verona-series.webp",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/atlantic-series.webp",
-          "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
+          "path": "/images/projects/representative/32-emperor-street-leppington-view-01.webp",
+          "sha256": "047e645d40b4d12a2ff4952c43912c282e0b6a2dd73e1b7f4e99b6aa06741c2b",
+          "bytes": 276102,
           "width": 1200,
           "height": 896,
-          "bytes": 304770,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/atlantic-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/32-emperor-street-leppington-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "047e645d40b4d12a2ff4952c43912c282e0b6a2dd73e1b7f4e99b6aa06741c2b"
+        },
+        {
+          "path": "/images/projects/representative/32-emperor-street-leppington-view-02.webp",
+          "sha256": "15f777542c98f4a0836d231ead44d4c61b442280f1985afdbe4c3379726d13d1",
+          "bytes": 255756,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/source_renders/32-emperor-street-leppington-view-02.jpg",
+          "review": "manual review approved: same design and materially distinct camera angle",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "8151a74815c782a3aa9c25d716659ff766c6e758dfc91356b1141909bb7fa04c",
+          "generationJobId": "JUF-P12-V02",
+          "sourceDimensions": "1200x896"
         }
-      ]
+      ],
+      "pairSimilaritySsim": null,
+      "pairReview": "manual-reviewed-same-design-camera-distinct",
+      "visualReviewDate": "2026-10-12",
+      "visualReview": "Approved after side-by-side comparison of View 01 and updated View 02."
     },
     {
       "address": "130 Webber Circuit, Bardia NSW 2565",
       "images": [
         {
-          "path": "/images/designs/elite-series.webp",
-          "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
-          "width": 1440,
-          "height": 1080,
-          "bytes": 411742,
-          "sourceFile": "batch_03/30_elite-series.webp",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/primavera-series.webp",
-          "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
+          "path": "/images/projects/representative/130-webber-circuit-bardia-view-01.webp",
+          "sha256": "b52416e03de26e7aa2d982c5c6d9f061e8bcaef52dff514aed24ecec65cbe9a0",
+          "bytes": 267588,
           "width": 1200,
           "height": 896,
-          "bytes": 306676,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/primavera-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/130-webber-circuit-bardia-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "b52416e03de26e7aa2d982c5c6d9f061e8bcaef52dff514aed24ecec65cbe9a0"
+        },
+        {
+          "path": "/images/projects/representative/130-webber-circuit-bardia-view-02.webp",
+          "sha256": "916c3403f37f70b3b5c9a3dd82032ac0c2f940dcf632fa70676f2dce117dddec",
+          "bytes": 267998,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/130-webber-circuit-bardia-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "916c3403f37f70b3b5c9a3dd82032ac0c2f940dcf632fa70676f2dce117dddec"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.2907,
+      "pairReview": "different-composition"
     },
     {
       "address": "18 Dallas Drive, Gilead NSW 2560",
       "images": [
         {
-          "path": "/images/designs/stuart-series.webp",
-          "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 477188,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-902e4800-b67b-4876-aa14-d6b69640b2fe.png",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/rozelle-series.webp",
-          "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
+          "path": "/images/projects/representative/18-dallas-drive-gilead-view-01.webp",
+          "sha256": "8c6254ec998dac4accbf06915725848dc87e993c8d7d14699fa746949b383a51",
+          "bytes": 250648,
           "width": 1200,
           "height": 896,
-          "bytes": 337306,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/rozelle-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/18-dallas-drive-gilead-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "8c6254ec998dac4accbf06915725848dc87e993c8d7d14699fa746949b383a51"
+        },
+        {
+          "path": "/images/projects/representative/18-dallas-drive-gilead-view-02.webp",
+          "sha256": "cc6ff36d057b3bf5c2a12ac5fb58c0ff28ad8fc323a0e7e3cf8f4bf22faf3a4f",
+          "bytes": 273498,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/18-dallas-drive-gilead-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "cc6ff36d057b3bf5c2a12ac5fb58c0ff28ad8fc323a0e7e3cf8f4bf22faf3a4f"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.355,
+      "pairReview": "different-composition"
     },
     {
       "address": "112A Brassil Avenue, Claymore NSW 2559",
       "images": [
         {
-          "path": "/images/designs/collins-series.webp",
-          "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 442732,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-2d09ce64-ae39-4b67-8bd9-4f253ecc1705.png",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/chesterfield-series.webp",
-          "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
+          "path": "/images/projects/representative/112a-brassil-avenue-claymore-view-01.webp",
+          "sha256": "08d8e720bf6fa511e7fbc0cadb0f31c8908dc8fe462ce0d6cd87916c0da03d2b",
+          "bytes": 268574,
           "width": 1200,
           "height": 896,
-          "bytes": 290078,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/chesterfield-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/112a-brassil-avenue-claymore-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "08d8e720bf6fa511e7fbc0cadb0f31c8908dc8fe462ce0d6cd87916c0da03d2b"
+        },
+        {
+          "path": "/images/projects/representative/112a-brassil-avenue-claymore-view-02.webp",
+          "sha256": "1156b2287ed182442db626bbd5606a91b761f7ddfadd4e75b9da5489326c2d28",
+          "bytes": 272484,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/112a-brassil-avenue-claymore-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "1156b2287ed182442db626bbd5606a91b761f7ddfadd4e75b9da5489326c2d28"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.4084,
+      "pairReview": "different-composition"
     },
     {
       "address": "112 Brassil Avenue, Claymore NSW 2559",
       "images": [
         {
-          "path": "/images/designs/alpha-series.webp",
-          "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 439814,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-94209fe5-a915-4ef0-8e00-f703985ea2d4.png",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/stellar-series.webp",
-          "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
+          "path": "/images/projects/representative/112-brassil-avenue-claymore-view-01.webp",
+          "sha256": "c18c42b45f41a114482939a741bb46a77262e8d84bbf3f79e959cb42000a3a87",
+          "bytes": 295538,
           "width": 1200,
           "height": 896,
-          "bytes": 293966,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/stellar-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/112-brassil-avenue-claymore-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "c18c42b45f41a114482939a741bb46a77262e8d84bbf3f79e959cb42000a3a87"
+        },
+        {
+          "path": "/images/projects/representative/112-brassil-avenue-claymore-view-02.webp",
+          "sha256": "6fb3d9e7f764fbaa28d0fa09631961d30b411c1d21fe487e319156810441a1d6",
+          "bytes": 280632,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/112-brassil-avenue-claymore-view-02.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "6fb3d9e7f764fbaa28d0fa09631961d30b411c1d21fe487e319156810441a1d6"
         }
-      ]
+      ],
+      "pairSimilaritySsim": 0.4134,
+      "pairReview": "different-composition"
     },
     {
       "address": "110 Brassil Avenue, Claymore NSW 2559",
       "images": [
         {
-          "path": "/images/designs/glenbrook-series.webp",
-          "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
-          "width": 1448,
-          "height": 1086,
-          "bytes": 468146,
-          "sourceFile": "C:\\Users\\abuba\\.codex\\generated_images\\01a12c7f-1eae-70a0-a4aa-642da29c7878\\exec-04b8d525-a461-400b-b8f4-fce654d82e2e.png",
-          "review": "approved"
-        },
-        {
-          "path": "/images/designs/crest-series.webp",
-          "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
+          "path": "/images/projects/representative/110-brassil-avenue-claymore-view-01.webp",
+          "sha256": "40a70b40c5a32600092f1cc827800dc97f88355c1ee371e30d77eb8d11ea602e",
+          "bytes": 272228,
           "width": 1200,
           "height": 896,
-          "bytes": 270878,
-          "sourceFile": "JUFAJA_36_Designs_Renders/webp/crest-series.webp",
-          "review": "approved"
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/public/images/projects/representative/110-brassil-avenue-claymore-view-01.webp",
+          "review": "unchanged byte-for-byte from the original representative image handoff; visual continuity status remains as recorded in the original pair review",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "40a70b40c5a32600092f1cc827800dc97f88355c1ee371e30d77eb8d11ea602e"
+        },
+        {
+          "path": "/images/projects/representative/110-brassil-avenue-claymore-view-02.webp",
+          "sha256": "a4e5a1286f62e80b4b615bdb37c861aed5378aea9bbf6e05cfb0d83340041c35",
+          "bytes": 155810,
+          "width": 1200,
+          "height": 896,
+          "sourceFile": "JUFAJA_34_Property_Views_Representative_Updated.zip/source_renders/110-brassil-avenue-claymore-view-02.jpg",
+          "review": "manual review approved: same design and materially distinct camera angle",
+          "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+          "sourceFileSha256": "4ef37ade6bd580e63ca39d296ccd6530cb8a402fbda91ec9a83390dc76529958",
+          "generationJobId": "JUF-P17-V02",
+          "sourceDimensions": "1200x896"
         }
-      ]
+      ],
+      "pairSimilaritySsim": null,
+      "pairReview": "manual-reviewed-same-design-camera-distinct",
+      "visualReviewDate": "2026-10-12",
+      "visualReview": "Approved after side-by-side comparison of View 01 and updated View 02."
     }
-  ]
+  ],
+  "sourceArchiveSha256": "feb85741d2a5afd7e4bb2eb46621d5d11924903b97fc13e10b5eef9a4a1ca931",
+  "generationSourceManifest": "JUFAJA_34_Property_Views_Representative_Updated.zip/JUFAJA_Gemini_NanoBanana_34_Property_Views_MASTER.json",
+  "generationProvenanceNote": "The owner-supplied updated archive master manifest describes Gemini/Nano Banana reference-image-to-image jobs and says it is not an official Gemini SDK/API request. The six updated view-02 JPEGs were converted to WebP by replace_six_then_refresh.py. The owner approved the supplied 1200x896 images despite the original 2K/minimum-size check. Six pairs were manually reviewed on 2026-10-12; generated exteriors remain fictional representative concepts.",
+  "generationSourceManifestSha256": "ad648f4401c935613aff097b685d709ec4565237a18288a97c234a17226a579a"
 }

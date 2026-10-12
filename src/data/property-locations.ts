@@ -25,8 +25,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.realestate.com.au/property/5-daintrees-st-campbelltown-nsw-2560/",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/blaxland-series.webp",
-      "/images/designs/majestic-series.webp"
+      "/images/projects/representative/5-daintrees-street-campbelltown-view-01.webp",
+      "/images/projects/representative/5-daintrees-street-campbelltown-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -37,8 +37,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.realestate.com.au/property/18-quondong-st-campbelltown-nsw-2560/",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/kingston-series.webp",
-      "/images/designs/oxley-26-series.webp"
+      "/images/projects/representative/18-quondong-street-campbelltown-view-01.webp",
+      "/images/projects/representative/18-quondong-street-campbelltown-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -64,8 +64,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photoNote": "Historical listing photograph. Appearance may differ from the current property.",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/hemsworth-series.webp",
-      "/images/designs/eden-series.webp"
+      "/images/projects/representative/30-westview-street-campbelltown-view-01.webp",
+      "/images/projects/representative/30-westview-street-campbelltown-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -79,8 +79,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photoNote": "Exact-address profile photographs. Image age and current facade have not been independently verified.",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/bennelong-series.webp",
-      "/images/designs/montreal-series.webp"
+      "/images/projects/representative/32-ganugan-road-austral-view-01.webp",
+      "/images/projects/representative/32-ganugan-road-austral-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -115,8 +115,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photoNote": "Property-profile photo. The original 2020 sale was vacant land; this image should not be treated as proof of construction stage.",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/oxley-series.webp",
-      "/images/designs/patterson-series.webp"
+      "/images/projects/representative/3-lakeman-street-leppington-view-01.webp",
+      "/images/projects/representative/3-lakeman-street-leppington-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -130,8 +130,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "photoNote": "Historical property image. Do not use as evidence of the current condition or JUFAJA work.",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/hastings-series.webp",
-      "/images/designs/riley-series.webp"
+      "/images/projects/representative/6-burns-avenue-macquarie-fields-view-01.webp",
+      "/images/projects/representative/6-burns-avenue-macquarie-fields-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -184,8 +184,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "listedPhotos": 5,
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/centennial-series.webp",
-      "/images/designs/crawford-series.webp"
+      "/images/projects/representative/5-jandaroi-road-austral-view-01.webp",
+      "/images/projects/representative/5-jandaroi-road-austral-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -197,8 +197,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "listedPhotos": 6,
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/grange-series.webp",
-      "/images/designs/denison-series.webp"
+      "/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-01.webp",
+      "/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -209,8 +209,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.realestate.com.au/property/47-gleeson-rise-oran-park-nsw-2570/",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/urban-series.webp",
-      "/images/designs/elwood-series.webp"
+      "/images/projects/representative/47-gleeson-rise-oran-park-view-01.webp",
+      "/images/projects/representative/47-gleeson-rise-oran-park-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -253,8 +253,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2560",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/lennox-series.webp",
-      "/images/designs/lindsay-series.webp"
+      "/images/projects/representative/10a-westview-street-campbelltown-view-01.webp",
+      "/images/projects/representative/10a-westview-street-campbelltown-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -315,8 +315,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2557",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/delta-series.webp",
-      "/images/designs/meadow-series.webp"
+      "/images/projects/representative/30-wilenski-way-catherine-field-view-01.webp",
+      "/images/projects/representative/30-wilenski-way-catherine-field-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -326,8 +326,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2179",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/verona-series.webp",
-      "/images/designs/atlantic-series.webp"
+      "/images/projects/representative/32-emperor-street-leppington-view-01.webp",
+      "/images/projects/representative/32-emperor-street-leppington-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -338,8 +338,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.property.com.au/nsw/bardia-2565/webber-cct/130-pid-15177352/",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/elite-series.webp",
-      "/images/designs/primavera-series.webp"
+      "/images/projects/representative/130-webber-circuit-bardia-view-01.webp",
+      "/images/projects/representative/130-webber-circuit-bardia-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -361,8 +361,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2560",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/stuart-series.webp",
-      "/images/designs/rozelle-series.webp"
+      "/images/projects/representative/18-dallas-drive-gilead-view-01.webp",
+      "/images/projects/representative/18-dallas-drive-gilead-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -372,8 +372,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "postcode": "2559",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/collins-series.webp",
-      "/images/designs/chesterfield-series.webp"
+      "/images/projects/representative/112a-brassil-avenue-claymore-view-01.webp",
+      "/images/projects/representative/112a-brassil-avenue-claymore-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -384,8 +384,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.aussie.com.au/property/nsw/claymore-2559/112-brassil-avenue/",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/alpha-series.webp",
-      "/images/designs/stellar-series.webp"
+      "/images/projects/representative/112-brassil-avenue-claymore-view-01.webp",
+      "/images/projects/representative/112-brassil-avenue-claymore-view-02.webp"
     ],
     "imageMode": "representative"
   },
@@ -396,8 +396,8 @@ export const PROPERTY_LOCATIONS: PropertyLocation[] = [
     "sourceUrl": "https://www.aussie.com.au/property/nsw/claymore-2559/110-brassil-avenue/",
     "displayNote": "Representative exterior",
     "fallbackImages": [
-      "/images/designs/glenbrook-series.webp",
-      "/images/designs/crest-series.webp"
+      "/images/projects/representative/110-brassil-avenue-claymore-view-01.webp",
+      "/images/projects/representative/110-brassil-avenue-claymore-view-02.webp"
     ],
     "imageMode": "representative"
   }
