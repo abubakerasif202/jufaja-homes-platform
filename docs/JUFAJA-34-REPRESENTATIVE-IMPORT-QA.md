@@ -15,10 +15,10 @@ The six originally flagged pairs are manually approved after regeneration. The o
 
 ## Publication gates
 
-- Verify the whole contact sheet at full resolution, especially each second view and image artifacts.
-- Run property integrity test, full tests, lint, TypeScript, production build and Playwright gallery script.
-- Verify the exact PR #14 Vercel preview, including every original-image asset response.
-- Keep PR #14 draft until all visual, security, CI and preview checks pass.
+- Review each updated View 02 against View 01 at its supplied 1200×896 resolution.
+- Run property integrity, full tests, lint, TypeScript, production build and Playwright gallery checks.
+- Verify the exact PR #14 Vercel preview and delivered image bytes.
+- Keep PR #14 draft until every required visual, security, CI and browser gate passes.
 - Do not merge/deploy automatically.
 
 ## Updated regeneration handoff (2026-10-12)
@@ -28,7 +28,7 @@ The six originally flagged pairs are manually approved after regeneration. The o
 - The six source JPEGs and published WebPs are 1200×896. The original 2K/minimum-resolution gate was relaxed at the owner's instruction; no upscaling was applied.
 - All six pairs were reviewed side-by-side. The house identity cues remain consistent and each second view has a materially different camera angle.
 - Automated mean grayscale differences are recorded in `assets_manifest.json`; they are a composition check and do not establish architectural continuity.
-- This document records local import and asset review only. CI, browser QA, Vercel Preview and security credential cleanup must be recorded separately after those checks run.
+- The supplied updated archive contained the replacement source JPEGs. This session imported and converted those owner-supplied images; no Gemini generation session was run here.
 
 
 ### Regenerated View 02 outputs
@@ -48,8 +48,18 @@ Per-source JPEG hashes and generation job IDs are recorded in the internal prove
 
 Passed: `npm ci`; `npm run lint`; `npx tsc --noEmit`; `npm test` (39/39); `npm run audit:design-images`; `npm run build` (80 static routes/pages); `npm audit --omit=dev` (0 production vulnerabilities); `git diff --check`; `scripts/qa-http.py` (74 routes); `scripts/qa-ssr.mjs` (74/74); `scripts/qa-accessibility.mjs` (34 checks, 0 violations); and `scripts/qa-intro.mjs` (normal motion, WebGL disabled and JavaScript disabled).
 
-`qa-gallery.mjs` passed all 28 cards, representative-image decode, gallery interactions and search at 320, 390 and 430px. It then timed out waiting for `networkidle` on `/projects` at the next 768px viewport. `qa-browser.mjs --routes=/projects --widths=320,390,430` timed out waiting for all visible images to complete. `qa-nojs.mjs` checked 146/148 page/viewport combinations; desktop and mobile `/` timed out waiting for the browser `load` event. These are recorded as unresolved QA failures, not passes. Tablet and desktop gallery checks, no-JavaScript homepage load, and preview browser checks remain unverified.
+`qa-gallery.mjs` passed all 28 cards, representative-image decode, gallery interactions and search at 320, 390 and 430px. It then timed out waiting for `networkidle` on `/projects` at the next 768px viewport. `qa-browser.mjs --routes=/projects --widths=320,390,430` timed out waiting for all visible images to complete. `qa-nojs.mjs` checked 146/148 page/viewport combinations; desktop and mobile `/` timed out waiting for the browser `load` event. These are recorded as unresolved QA failures, not passes. Tablet/desktop gallery checks and no-JavaScript homepage load remain unverified; preview image delivery is recorded below.
 
 The PR remains draft pending successful completion of all required gallery, browser, preview, CI and security gates.
 
 `qa-site-motion.mjs` passed its normal-motion, keyboard pause/resume, touch-target and overflow checks at 320, 390 and 430px, then timed out waiting for `networkidle` on `/` at the next viewport. Tablet/desktop motion QA is therefore not complete.
+
+
+## PR preview and security verification (2026-10-12)
+
+- PR #14 checks for commit `b0a6a9d5d2154065f411da73d75a5d99a9a191ca`: GitHub Actions passed, CodeRabbit passed and Vercel passed. PR remains open and draft.
+- Initial Vercel Preview: `https://jufaja-homes-platform-5lc5njq3q-abubakerasif202s-projects.vercel.app`. After removing the temporary bypass, Vercel redeployed the preview: `https://jufaja-homes-platform-mitsj2gef-abubakerasif202s-projects.vercel.app` (Ready).
+- Browser review on the refreshed preview showed all 28 property cards, all 17 representative galleries and all 11 real-photo galleries. Search and suburb filtering returned the expected results. All 34 representative WebPs and all 50 genuine photos were downloaded through the signed-in preview browser; their byte sizes and SHA-256 hashes matched the local source/provenance files (84/84 exact matches). The six updated View 02 files also match the hashes in the table above.
+- Vercel Deployment Protection settings showed one masked automation-bypass entry, added about three hours earlier. The entry was removed, and Vercel confirmed “Automation Bypass removed.” The refreshed Preview was created after removal. No bypass secret was read or printed.
+- A browser log captured one generic Chrome asynchronous message-channel error on the preview page; attribution to the site or browser extension was not established. Treat browser-console cleanliness as unverified.
+- `qa-hydration.mjs` did not complete its 200-load run: navigation to `/` timed out waiting for `load` at 30 seconds. The PR remains draft because browser matrix and hydration gates did not all complete successfully.
