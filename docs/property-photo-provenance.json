@@ -870,19 +870,34 @@
       "address": "5 Meeson Street",
       "sourceImage": "https://view.com.au/viewstatic/images/listing/5-meeson-street-claymore-nsw-2559/400-w/16559477-2-A2DFA41.jpg",
       "filename": "5-meeson-street-claymore-02.webp",
-      "error": "HTTP 403"
+      "error": "HTTP 403",
+      "latestRetrieval": {
+        "date": "2026-10-12",
+        "status": 403,
+        "result": "Unavailable; excluded from publication"
+      }
     },
     {
       "address": "5 Meeson Street",
       "sourceImage": "https://view.com.au/viewstatic/images/listing/5-meeson-street-claymore-nsw-2559/400-w/16559477-11-F273834.jpg",
       "filename": "5-meeson-street-claymore-03.webp",
-      "error": "HTTP 403"
+      "error": "HTTP 403",
+      "latestRetrieval": {
+        "date": "2026-10-12",
+        "status": 403,
+        "result": "Unavailable; excluded from publication"
+      }
     },
     {
       "address": "5 Meeson Street",
       "sourceImage": "https://view.com.au/viewstatic/images/listing/5-meeson-street-claymore-nsw-2559/400-w/16559477-3-964835A.jpg",
       "filename": "5-meeson-street-claymore-04.webp",
-      "error": "HTTP 403"
+      "error": "HTTP 403",
+      "latestRetrieval": {
+        "date": "2026-10-12",
+        "status": 403,
+        "result": "Unavailable; excluded from publication"
+      }
     },
     {
       "address": "18A Dallas Drive, Gilead NSW 2560",
@@ -900,5 +915,11 @@
       "localPath": "/images/projects/18a-dallas-drive-gilead-01.webp",
       "processing": "EXIF orientation; no enlargement; fit within 1920x1440; WebP quality 86. No structural or invented edits."
     }
-  ]
+  ],
+  "expansionAudit": {
+    "date": "2026-10-12",
+    "publishedRealPhotos": 50,
+    "additionalPublished": 0,
+    "notes": "Approved unpublished 5 Meeson references retried with browser user agent and source referrer: HTTP 403. Profile counts are not approval for unspecified URLs. See property-gallery-source-audit-2026-10-12.md."
+  }
 }

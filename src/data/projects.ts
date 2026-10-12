@@ -5,6 +5,8 @@ export interface ProjectShowcase {
   description: string;
   image: string;
   study: string;
+  /** Serve the source directly where Next's local WebP optimizer leaves requests pending. */
+  unoptimized?: boolean;
 }
 
 export const JUFAJA_PROJECTS: ProjectShowcase[] = [
@@ -15,6 +17,7 @@ export const JUFAJA_PROJECTS: ProjectShowcase[] = [
     study: 'Courtyard planning',
     description: 'A residential design study exploring a private courtyard, natural light and the relationship between indoor and outdoor living.',
     image: '/images/architecture/daylight-family-home.webp',
+    unoptimized: true,
   },
   {
     id: 'meridian-duplex',
@@ -23,6 +26,7 @@ export const JUFAJA_PROJECTS: ProjectShowcase[] = [
     study: 'Dual occupancy',
     description: 'A concept study in two-home planning, with separate entries and a balanced shared street presence.',
     image: '/images/architecture/daylight-paired-homes.webp',
+    unoptimized: true,
   },
   {
     id: 'ashbury-extension',

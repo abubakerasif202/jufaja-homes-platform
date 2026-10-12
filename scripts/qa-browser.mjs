@@ -27,7 +27,7 @@ const detailRoutes = designs.map(design => `/designs/${design.slug}`);
 const samples = ['single', 'double', 'duplex', 'granny', 'rural'].map(type => designs.find(design => design.dwellingType === type)).filter(Boolean).map(design => `/designs/${design.slug}`);
 const widths = [...new Set(argument('widths', '320,360,390,430,768,1024,1280,1440,1920').split(',').map(Number))];
 assert(widths.length && widths.every(width => Number.isInteger(width) && width >= 320 && width <= 2560), 'Invalid audit widths');
-const report = { base: base.origin, output, routes: [...topRoutes, ...detailRoutes], matrix: [], interactions: [], errors: [], enquiriesIntercepted: 0 };
+const report = { base: base.origin, output, routes: [...topRoutes, ...detailRoutes], matrix: [], interactions: [], errors: [], requestFailures: [], abortedRequests: 0, enquiriesIntercepted: 0 };
 const requestedRoutes = argument('routes', '').split(',').filter(Boolean);
 assert(requestedRoutes.every(route => report.routes.includes(route)), 'Audit route is not a discovered public page');
 report.routeScope = requestedRoutes.length ? requestedRoutes : 'all';
@@ -54,6 +54,11 @@ try {
     await route.fulfill({ status: delivery === 'success' ? 200 : 503, contentType: 'application/json', body: JSON.stringify(delivery === 'success' ? { success: true } : { success: false, error: 'Intercepted QA delivery failure.' }) });
   });
   const page = await context.newPage();
+  page.on('requestfailed', request => {
+    const failure = request.failure()?.errorText ?? 'unknown';
+    if (failure === 'net::ERR_ABORTED') report.abortedRequests++;
+    else report.requestFailures.push({ url: request.url(), failure });
+  });
   page.on('pageerror', error => {
     const finding = { url: page.url(), viewport: page.viewportSize(), error: error.message, stack: error.stack };
     report.errors.push(finding);
@@ -68,17 +73,34 @@ try {
   });
   const links = new Set();
   async function open(route, expected = 200) {
-    const response = await page.goto(new URL(route, base).href, { waitUntil: 'networkidle' });
+    console.log(`CHECK ${page.viewportSize().width}px ${route}`);
+    const response = await page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' });
     assert.equal(response.status(), expected, route);
+    await page.locator('main h1').first().waitFor({ state: 'visible' });
+    // `load` waits for document scripts to execute so this audit does not race React hydration.
+    // Unlike `networkidle`, it does not wait for offscreen native-lazy images or router prefetches.
+    await page.waitForLoadState('load');
     await page.evaluate(() => document.fonts.ready);
     const height = await page.evaluate(() => document.documentElement.scrollHeight);
-    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo(0, top), y); await page.waitForTimeout(25); }
+    // Load Next/Image lazy sources before fast QA scrolling; setting loading after a long scroll
+    // can leave below-the-fold srcSet candidates unselected at wide viewports.
+    await page.evaluate(() => [...document.images].forEach(image => { image.loading = 'eager'; }));
+    await page.evaluate(() => document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important'));
+    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo({ top, behavior: 'instant' }), y); await page.waitForTimeout(25); }
     await page.waitForTimeout(100);
-    await page.evaluate(() => window.scrollTo(0, 0));
-    // Chromium may defer native lazy images that the fast scroll passed; load them explicitly so the capture is deterministic.
-    await page.evaluate(() => [...document.images].forEach(image => { if (image.loading === 'lazy') image.loading = 'eager'; }));
-    await page.waitForFunction(() => [...document.images].filter(image => image.getClientRects().length).every(image => image.complete), undefined, { timeout: 20000 });
-    await page.evaluate(async () => Promise.all([...document.images].filter(image => image.getClientRects().length && image.naturalWidth).map(image => image.decode())));
+    await page.evaluate(() => { window.scrollTo({ top: 0, behavior: 'instant' }); document.documentElement.style.removeProperty('scroll-behavior'); });
+    try {
+      await page.waitForFunction(() => [...document.images].filter(image => image.getClientRects().length).every(image => image.currentSrc && image.complete), undefined, { timeout: 20000 });
+    } catch (error) {
+      const pending = await page.evaluate(() => [...document.images].filter(image => image.getClientRects().length && (!image.currentSrc || !image.complete)).map(image => ({ src: image.currentSrc || image.getAttribute('src') || '(no source)', complete: image.complete })));
+      throw new Error(`${route}: visible images did not receive and finish their source requests: ${JSON.stringify(pending)}; ${error.message}`);
+    }
+    const imageDecodes = await page.evaluate(async () => Promise.all([...document.images].filter(image => image.getClientRects().length).map(async image => {
+      try { await image.decode(); return { src: image.currentSrc, naturalWidth: image.naturalWidth, decodeError: '' }; }
+      catch (error) { return { src: image.currentSrc, naturalWidth: image.naturalWidth, decodeError: error instanceof Error ? error.message : String(error) }; }
+    })));
+    const incomplete = imageDecodes.filter(image => image.naturalWidth === 0 || image.decodeError);
+    assert.equal(incomplete.length, 0, `${route}: visible images failed to decode: ${JSON.stringify(incomplete)}`);
   }
   for (const width of widths) {
     await page.setViewportSize({ width, height: width < 768 ? 844 : 900 });
@@ -87,7 +109,7 @@ try {
       await open(route, route === '/audit-missing-page' ? 404 : 200);
       const result = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-        brokenImages: [...document.images].filter(image => image.getClientRects().length && image.complete && !image.naturalWidth).map(image => image.currentSrc),
+        brokenImages: [...document.images].filter(image => image.getClientRects().length && (!image.complete || !image.naturalWidth)).map(image => image.currentSrc || image.getAttribute('src') || '(no source)'),
         h1: document.querySelectorAll('main h1').length,
         mains: document.querySelectorAll('main').length,
         canonical: document.querySelector('link[rel=canonical]')?.href,
@@ -137,7 +159,7 @@ try {
   await page.waitForURL('**/custom-homes');
   await page.locator('main h1').waitFor();
   assert.equal(await services.getAttribute('aria-expanded'), 'false');
-  await page.goBack({ waitUntil: 'networkidle' });
+  await page.goBack({ waitUntil: 'domcontentloaded' });
   assert.equal(new URL(page.url()).pathname, '/');
   report.interactions.push('Service link client navigation and browser back');
   await open('/designs');
@@ -196,6 +218,7 @@ try {
   assert.equal(await skip.isVisible(), false);
   report.interactions.push('Reduced motion and once-per-session skippable intro');
   assert.equal(report.errors.length, 0, JSON.stringify(report.errors));
+  assert.equal(report.requestFailures.length, 0, JSON.stringify(report.requestFailures));
   report.status = 'PASS';
 } catch (error) {
   report.status = 'FAIL'; report.failure = error.message; process.exitCode = 1; console.error(error);

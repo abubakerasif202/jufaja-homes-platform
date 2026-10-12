@@ -4,12 +4,11 @@ import { createRequire } from 'node:module';
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { tmpdir } from 'node:os';
+import { isPermittedDesignQaBase } from './remote-design-image-verification.mjs';
 const require = createRequire(import.meta.url);
 const argument = (name, fallback) => process.argv.find(value => value.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
 const base = new URL(argument('base-url', 'http://127.0.0.1:3010'));
-const local = ['localhost', '127.0.0.1', '[::1]'].includes(base.hostname);
-const productionHosts = ['jufaja-homes-platform.vercel.app', 'www.jufajaconstructions.com.au', 'jufajaconstructions.com.au'];
-assert(local || (argument('live', 'false') === 'true' && base.protocol === 'https:' && productionHosts.includes(base.hostname)), 'Use localhost or an approved HTTPS production host with --live=true');
+assert(isPermittedDesignQaBase(base, argument('live', 'false'), argument('preview-host', '')), 'Use localhost or explicitly name the approved JUFAJA preview host');
 const total = Number(argument('loads', '200'));
 const seedArg = Number(argument('seed', '1'));
 const output = argument('output', path.join(tmpdir(), 'jufaja-hydration'));
@@ -42,7 +41,7 @@ let loads = 0;
 const log = [];
 
 async function newSession(options) {
-  const context = await browser.newContext({ reducedMotion: options.reduced ? 'reduce' : 'no-preference', viewport: { width: options.width, height: options.height } });
+  const context = await browser.newContext({ reducedMotion: options.reduced ? 'reduce' : 'no-preference', viewport: { width: options.width, height: options.height }, ...(process.env.JUFAJA_QA_STORAGE_STATE ? {storageState: process.env.JUFAJA_QA_STORAGE_STATE} : {}) });
   if (options.intercept) await context.route('**/api/enquiry', route => route.fulfill({ status: 503, contentType: 'application/json', body: '{"success":false}' }));
   if (options.observers) await context.addInitScript(() => {
     window.auditVitals = { cls: 0, lcp: 0 };
@@ -93,9 +92,9 @@ async function load(session, route, scenario) {
     await page.waitForTimeout(100);
     await page.reload({ waitUntil: 'commit' });
   } else if (scenario === 'back-forward') {
-    await page.goto(new URL('/contact', base).href, { waitUntil: 'load' });
-    await page.goto(target, { waitUntil: 'load' });
-    await page.goBack({ waitUntil: 'load' }).catch(() => undefined);
+    await page.goto(new URL('/contact', base).href, { waitUntil: 'domcontentloaded' });
+    await page.goto(target, { waitUntil: 'domcontentloaded' });
+    await page.goBack({ waitUntil: 'domcontentloaded' }).catch(() => undefined);
     await page.goForward({ waitUntil: 'commit' }).catch(() => undefined);
   } else if (scenario === 'resize-immediately') {
     await page.goto(target, { waitUntil: 'commit' });
@@ -104,19 +103,27 @@ async function load(session, route, scenario) {
   } else if (scenario === 'rapid-routes') {
     for (const next of [pick(routes), pick(routes), route]) await page.goto(new URL(next, base).href, { waitUntil: 'commit' }).catch(() => undefined);
   } else if (scenario === 'client-nav') {
-    await page.goto(new URL('/', base).href, { waitUntil: 'load' });
+    await page.goto(new URL('/', base).href, { waitUntil: 'domcontentloaded' });
     const link = page.locator(`a[href="${route}"]`).first();
-    if (await link.count()) await link.evaluate(node => node.click()).catch(() => undefined); else await page.goto(target, { waitUntil: 'commit' });
+    if (await link.count()) {
+      await link.click();
+      await page.waitForURL(target, { waitUntil: 'domcontentloaded' });
+    } else {
+      await page.goto(target, { waitUntil: 'commit' });
+    }
+    if (new URL(page.url()).pathname !== route) throw new Error(`Client navigation expected ${route}, received ${new URL(page.url()).pathname}`);
   } else {
     await page.goto(target, { waitUntil: 'commit' });
   }
-  await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => undefined);
+  await page.locator('main h1').first().waitFor({ state: 'visible' });
+  await page.waitForLoadState('domcontentloaded');
   await page.waitForTimeout(200);
   if (session.options.crawl) {
     // Mirror scripts/qa-browser.mjs: scroll the whole page, decode images, then full-page screenshot.
     const height = await page.evaluate(() => document.documentElement.scrollHeight).catch(() => 0);
-    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo(0, top), y).catch(() => undefined); await page.waitForTimeout(25); }
-    await page.evaluate(() => window.scrollTo(0, 0)).catch(() => undefined);
+    await page.evaluate(() => document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important')).catch(() => undefined);
+    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo({ top, behavior: 'instant' }), y).catch(() => undefined); await page.waitForTimeout(25); }
+    await page.evaluate(() => { window.scrollTo({ top: 0, behavior: 'instant' }); document.documentElement.style.removeProperty('scroll-behavior'); }).catch(() => undefined);
     await page.evaluate(async () => Promise.all([...document.images].filter(image => image.getClientRects().length && image.naturalWidth).map(image => image.decode().catch(() => undefined)))).catch(() => undefined);
     await page.screenshot({ fullPage: true }).catch(() => undefined);
   }
@@ -125,14 +132,17 @@ async function load(session, route, scenario) {
 const scenarios = argument('scenarios', 'plain,early-scroll,reload-scrolled,back-forward,resize-immediately,rapid-routes,client-nav').split(',');
 const soak = argument('soak', 'false') === 'true';
 const workers = Number(argument('workers', '4'));
-/** The pattern that exposes root-level hydration races: concurrent reused tabs, reduced motion, intercepted requests, networkidle navigations. */
+/** The pattern that exposes root-level hydration races: concurrent reused tabs, reduced motion, intercepted requests, repeated document navigations. */
 async function soakWorker() {
   const session = await newSession({ width: 1440, height: 900, network: 'none', cpu: 1, reduced: true, intercept: true, observers: false, crawl: false, reuse: true, populated: false });
   while (loads < total) {
     const route = pick(routes);
     session.current = { route, scenario: 'soak', load: loads };
     loads += 1;
-    await session.page.goto(new URL(route, base).href, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => undefined);
+    await session.page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' }).catch(error => {
+      log.push({kind: 'navigation', text: 'Navigation did not settle: ' + error.name, url: new URL(route, base).href});
+    });
+    await session.page.locator('main h1').first().waitFor({ state: 'visible' });
     await session.page.waitForTimeout(300);
   }
   await session.context.close();
@@ -175,4 +185,4 @@ await writeFile(path.join(output, 'report.json'), JSON.stringify({ summary, even
 console.log(JSON.stringify(summary));
 for (const event of events.slice(0, 10)) console.log(`HYDRATION ${event.kind} ${event.pageUrl} scenario=${event.scenario} ${JSON.stringify(event.options)} :: ${event.text.slice(0, 120)}`);
 for (const entry of log.slice(0, 5)) console.log(`OTHER ${entry.kind} ${entry.url} :: ${entry.text}`);
-if (events.length) process.exit(1);
+if (events.length || log.length || failedRequests.length) process.exit(1);

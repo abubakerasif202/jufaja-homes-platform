@@ -36,11 +36,12 @@ for (const viewport of viewports) {
   const page = await context.newPage();
   for (const route of routes) {
     const problems = [];
-    const response = await page.goto(new URL(route, base).href, { waitUntil: 'load', timeout: 30000 }).catch(error => ({ error }));
+    const response = await page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' }).catch(error => ({ error }));
     if (!response || response.error || response.status() !== 200) { failures.push({ route, viewport: viewport.name, problems: [`navigation failed: ${response?.error?.message ?? response?.status()}`] }); continue; }
     checked += 1;
 
     const heading = page.locator('main h1').first();
+    await heading.waitFor({ state: 'visible' });
     if (!(await heading.isVisible())) problems.push('main <h1> not visible');
     else if ((await heading.innerText()).trim().length < 8) problems.push('main <h1> has no readable text');
     const opacity = await heading.evaluate(node => { let value = 1; for (let el = node; el; el = el.parentElement) value *= Number(getComputedStyle(el).opacity); return value; }).catch(() => 0);
@@ -73,8 +74,14 @@ for (const viewport of viewports) {
     // Images: native lazy loading works without JS; every content image needs alt text and must decode once scrolled into view.
     const height = await page.evaluate(() => document.documentElement.scrollHeight);
     for (let y = 0; y < height; y += 700) { await page.mouse.wheel(0, 700); await page.waitForTimeout(40); }
-    await page.waitForLoadState('load');
-    const images = await page.evaluate(() => [...document.images].filter(image => image.getClientRects().length).map(image => ({ src: image.currentSrc || image.src, alt: image.getAttribute('alt'), ok: image.complete && image.naturalWidth > 0 })));
+    const images = await page.evaluate(async () => {
+      const visible = [...document.images].filter(image => image.getClientRects().length);
+      visible.forEach(image => { image.loading = 'eager'; });
+      return Promise.all(visible.map(async image => {
+        try { await image.decode(); } catch { /* Preserve the failed state for the assertion below. */ }
+        return { src: image.currentSrc || image.getAttribute('src') || '', alt: image.getAttribute('alt'), ok: image.complete && image.naturalWidth > 0 };
+      }));
+    });
     const missingAlt = images.filter(image => image.alt === null);
     const broken = images.filter(image => !image.ok);
     if (missingAlt.length) problems.push(`${missingAlt.length} image(s) without alt attribute: ${missingAlt[0].src.slice(-60)}`);

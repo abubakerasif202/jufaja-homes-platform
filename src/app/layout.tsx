@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import ArchitecturalMotionStage from '@/components/motion/ArchitecturalMotionStage';
 import QuickEnquiryDrawer from '@/components/layout/QuickEnquiryDrawer';
 import StructuredData from '@/components/layout/StructuredData';
 import { SITE_URL } from '@/lib/site-metadata';
@@ -55,6 +56,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content" tabIndex={-1} className="flex-grow">
+          <ArchitecturalMotionStage />
           {children}
         </main>
         <Footer />

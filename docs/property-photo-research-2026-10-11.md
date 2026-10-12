@@ -31,3 +31,7 @@ The existing owner-approved registry and its prior address-matching research wer
 ## Remaining owner asset needs
 
 Supply authorised original photographs for the 17 records without suitable public photos, and high-resolution replacements wherever the source quality is limited. Do not publish current JUFAJA construction claims based only on historical property listings. No public-office address or other business claim is inferred from residential records.
+
+
+## 12 October 2026 continuation (PR #14)
+The directory now exposes all 28 addresses: 11 real-photo galleries retain all 50 original delivered files and hashes, and 17 representative galleries each contain two distinct reviewed catalogue exteriors (34 distinct local assets). Reference sets are architectural references, not authenticated multiple views of the listed residence. Original real galleries never include representative images. No additional real photos could be retrieved within the approved reference manifest; see property-gallery-source-audit-2026-10-12.md for the 28-address audit and HTTP 403/429 retrieval results. Listing provenance is now server-only and excluded from client display props. Runtime and preview release evidence is recorded separately in the PR release report.
