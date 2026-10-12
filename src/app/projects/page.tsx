@@ -55,6 +55,7 @@ export default function ProjectsPage() {
                     alt={`${proj.title} representative architectural exterior`}
                     frameClassName="absolute inset-0"
                     sizes="(max-width: 1023px) 100vw, 58vw"
+                    unoptimized={proj.unoptimized}
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
                   />
                   <div className="absolute top-4 left-4 bg-jufaja-forest-900 text-white px-3 py-1.5 rounded-sm text-xs font-bold uppercase tracking-wider">

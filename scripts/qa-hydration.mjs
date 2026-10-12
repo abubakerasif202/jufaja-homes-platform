@@ -92,9 +92,9 @@ async function load(session, route, scenario) {
     await page.waitForTimeout(100);
     await page.reload({ waitUntil: 'commit' });
   } else if (scenario === 'back-forward') {
-    await page.goto(new URL('/contact', base).href, { waitUntil: 'load' });
-    await page.goto(target, { waitUntil: 'load' });
-    await page.goBack({ waitUntil: 'load' }).catch(() => undefined);
+    await page.goto(new URL('/contact', base).href, { waitUntil: 'domcontentloaded' });
+    await page.goto(target, { waitUntil: 'domcontentloaded' });
+    await page.goBack({ waitUntil: 'domcontentloaded' }).catch(() => undefined);
     await page.goForward({ waitUntil: 'commit' }).catch(() => undefined);
   } else if (scenario === 'resize-immediately') {
     await page.goto(target, { waitUntil: 'commit' });
@@ -103,19 +103,27 @@ async function load(session, route, scenario) {
   } else if (scenario === 'rapid-routes') {
     for (const next of [pick(routes), pick(routes), route]) await page.goto(new URL(next, base).href, { waitUntil: 'commit' }).catch(() => undefined);
   } else if (scenario === 'client-nav') {
-    await page.goto(new URL('/', base).href, { waitUntil: 'load' });
+    await page.goto(new URL('/', base).href, { waitUntil: 'domcontentloaded' });
     const link = page.locator(`a[href="${route}"]`).first();
-    if (await link.count()) await link.evaluate(node => node.click()).catch(() => undefined); else await page.goto(target, { waitUntil: 'commit' });
+    if (await link.count()) {
+      await link.click();
+      await page.waitForURL(target, { waitUntil: 'domcontentloaded' });
+    } else {
+      await page.goto(target, { waitUntil: 'commit' });
+    }
+    if (new URL(page.url()).pathname !== route) throw new Error(`Client navigation expected ${route}, received ${new URL(page.url()).pathname}`);
   } else {
     await page.goto(target, { waitUntil: 'commit' });
   }
-  await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => undefined);
+  await page.locator('main h1').first().waitFor({ state: 'visible' });
+  await page.waitForLoadState('domcontentloaded');
   await page.waitForTimeout(200);
   if (session.options.crawl) {
     // Mirror scripts/qa-browser.mjs: scroll the whole page, decode images, then full-page screenshot.
     const height = await page.evaluate(() => document.documentElement.scrollHeight).catch(() => 0);
-    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo(0, top), y).catch(() => undefined); await page.waitForTimeout(25); }
-    await page.evaluate(() => window.scrollTo(0, 0)).catch(() => undefined);
+    await page.evaluate(() => document.documentElement.style.setProperty('scroll-behavior', 'auto', 'important')).catch(() => undefined);
+    for (let y = 0; y < height; y += 650) { await page.evaluate(top => window.scrollTo({ top, behavior: 'instant' }), y).catch(() => undefined); await page.waitForTimeout(25); }
+    await page.evaluate(() => { window.scrollTo({ top: 0, behavior: 'instant' }); document.documentElement.style.removeProperty('scroll-behavior'); }).catch(() => undefined);
     await page.evaluate(async () => Promise.all([...document.images].filter(image => image.getClientRects().length && image.naturalWidth).map(image => image.decode().catch(() => undefined)))).catch(() => undefined);
     await page.screenshot({ fullPage: true }).catch(() => undefined);
   }
@@ -124,16 +132,17 @@ async function load(session, route, scenario) {
 const scenarios = argument('scenarios', 'plain,early-scroll,reload-scrolled,back-forward,resize-immediately,rapid-routes,client-nav').split(',');
 const soak = argument('soak', 'false') === 'true';
 const workers = Number(argument('workers', '4'));
-/** The pattern that exposes root-level hydration races: concurrent reused tabs, reduced motion, intercepted requests, networkidle navigations. */
+/** The pattern that exposes root-level hydration races: concurrent reused tabs, reduced motion, intercepted requests, repeated document navigations. */
 async function soakWorker() {
   const session = await newSession({ width: 1440, height: 900, network: 'none', cpu: 1, reduced: true, intercept: true, observers: false, crawl: false, reuse: true, populated: false });
   while (loads < total) {
     const route = pick(routes);
     session.current = { route, scenario: 'soak', load: loads };
     loads += 1;
-    await session.page.goto(new URL(route, base).href, { waitUntil: 'networkidle', timeout: 30000 }).catch(error => {
+    await session.page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' }).catch(error => {
       log.push({kind: 'navigation', text: 'Navigation did not settle: ' + error.name, url: new URL(route, base).href});
     });
+    await session.page.locator('main h1').first().waitFor({ state: 'visible' });
     await session.page.waitForTimeout(300);
   }
   await session.context.close();

@@ -26,9 +26,10 @@ try {
  page.on('console', message => { if (message.type() === 'error') errors.push(message.text()); });
  for (const width of argument('widths', '320,390,430,768,1024,1440,1920').split(',').map(Number)) {
   await page.setViewportSize({width, height: width < 768 ? 844 : 900});
-  const response = await page.goto(new URL('/projects', base).href, {waitUntil: 'networkidle'});
+  const response = await page.goto(new URL('/projects', base).href, {waitUntil: 'domcontentloaded'});
   assert.equal(response.status(), 200);
   const section = page.locator('section[aria-labelledby="property-collection-heading"]');
+  await section.waitFor({state: 'visible'});
   assert.equal(await section.locator('a[href]').count(), 0, 'Public gallery must not navigate to external sources');
   assert.equal(await section.getByRole('button', {name: /View gallery/}).count(), properties.length);
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), `Page overflow at ${width}`);

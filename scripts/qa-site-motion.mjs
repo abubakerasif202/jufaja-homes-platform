@@ -41,11 +41,13 @@ async function session(options) {
 
 async function load(page, route, width) {
   await page.setViewportSize({ width, height: width < 768 ? 844 : 1000 });
-  const response = await page.goto(new URL(route, base).href, { waitUntil: 'networkidle' });
+  const response = await page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' });
   assert.equal(response?.status(), 200, `HTTP ${route}`);
+  await page.locator('main h1').first().waitFor({ state: 'visible' });
   const stage = page.locator('.architectural-stage');
   assert.equal(await stage.count(), 1, `One stage: ${route}`);
-  assert(await stage.isVisible(), 'Stage must remain visible');
+  await stage.waitFor({ state: 'visible' });
+  assert(await stage.isVisible(), `Stage must remain visible: ${route} at ${width}px`);
   const bounds = await stage.boundingBox();
   assert(bounds && bounds.height >= 100 && bounds.width <= width, 'Visible, contained architectural scene');
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), `Overflow: ${route} at ${width}px`);

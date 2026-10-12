@@ -1,6 +1,6 @@
 {
   "method": "Repository-wide SHA-256, Sharp dimensions/alpha, 64-bit perceptual difference hashes (distance <=6), and filename reference searches. Candidates require human review; generated/script prerequisites and source originals are not orphans.",
-  "totalAssets": 138,
+  "totalAssets": 172,
   "exactDuplicates": [
     [
       "public/brand/jufaja-logo-3d.png",
@@ -80,6 +80,13 @@
         "public/brand/jufaja-monogram.svg"
       ],
       "hammingDistance": 5
+    },
+    {
+      "files": [
+        "public/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-01.webp",
+        "public/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-02.webp"
+      ],
+      "hammingDistance": 4
     }
   ],
   "withoutTextReferences": [
@@ -433,8 +440,7 @@
       "bytes": 439814,
       "sha256": "6a08761596b784c757419cb089d2462d3c10bafc18962e8b8ca4347014036b4d",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -470,8 +476,7 @@
       "bytes": 304770,
       "sha256": "f97390feb2e1bffaf58ebbb957776dac5a3b843190aefe512aa942859ebd7ce8",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -519,8 +524,7 @@
       "bytes": 439144,
       "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -544,8 +548,7 @@
       "bytes": 444250,
       "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -557,8 +560,7 @@
       "bytes": 350338,
       "sha256": "c9a8d372edbc66957c02ad6a0fd1d76285795f3b5ef00e77f38d2b644aac20d1",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -570,8 +572,7 @@
       "bytes": 290078,
       "sha256": "dd6553d5c7716432d6ecff35bcab268123ee6c77c28907352475ac20a92ecf11",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -583,8 +584,7 @@
       "bytes": 442732,
       "sha256": "af6862b9bc8341a298b86e7f5bb6051771005245f70f6134cb4cb3877f97a9b5",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -620,8 +620,7 @@
       "bytes": 417626,
       "sha256": "c554028647cc5332e96598ff2188316c39a41fe10bc02268ead3a9cfc9a6fb10",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -633,8 +632,7 @@
       "bytes": 270878,
       "sha256": "d61ada0a630d26a4080f6a6025165eddc4463126336bfce4fdef56429c8bff1e",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -658,8 +656,7 @@
       "bytes": 381718,
       "sha256": "e6bdd15c384754a2e0643b2a8c75690312b8fe11490ef3278014d0874a3246d0",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -671,8 +668,7 @@
       "bytes": 395784,
       "sha256": "77c836a416b324c6312ed743c044680fe85a1f486cbf1e4edbeab0ddefd50174",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -684,8 +680,7 @@
       "bytes": 337336,
       "sha256": "fcc7834edd6e2cd9e5dce149cb9d17b986d11fe199c55e371ff17c0082fa80bb",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -709,8 +704,7 @@
       "bytes": 411742,
       "sha256": "61fbf65d19d1e4a1a9780c6a28d6210bfdf7b818f244b69ba629b1314fb3f467",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -722,8 +716,7 @@
       "bytes": 325412,
       "sha256": "3a1529bbb96bb008642a1c9bf940bcbbda6556c86ef037ff357e2ebbda70f582",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -759,8 +752,7 @@
       "bytes": 468146,
       "sha256": "841531c7b9e3e7d7b5c2258b5d78495a770ccc85b85f552e4792fd498a4d7e66",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -772,8 +764,7 @@
       "bytes": 345470,
       "sha256": "b7632e520a901f70a2976113ecdc20a462462361069564b337c72fba6ecfa523",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -785,8 +776,7 @@
       "bytes": 329602,
       "sha256": "72da014f358c94daefd59253fae3a3587e8053e8cbaf6c9c74981c42dceccd72",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -798,8 +788,7 @@
       "bytes": 388170,
       "sha256": "8380bc50cce3bb29f5755396a70039c84856ccd25923a79b35872de37530fe54",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -847,8 +836,7 @@
       "bytes": 364548,
       "sha256": "1129f3ce4673bb1d967329984caf67e86312581a3a0977aa810d0475bd215100",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -860,8 +848,7 @@
       "bytes": 472088,
       "sha256": "2ff8b1a273c58f76150932e820edf40f4889612e569d1e684dc2ecabf604d8ae",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -885,8 +872,7 @@
       "bytes": 402046,
       "sha256": "25b87439cd52c59d7c4d2a1c3702637a31663d3ff2823ce077074f196eca9c4e",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -910,8 +896,7 @@
       "bytes": 469198,
       "sha256": "a0e9a4fdccebb2f8a8d9857ddb92eb731c2a335481df22c8a2947bb6cdce61ba",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -983,8 +968,7 @@
       "bytes": 378590,
       "sha256": "8849361356f45993f1c44f25e8ff568c04696950c954a9685e97f37c59ed9e40",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -996,8 +980,7 @@
       "bytes": 350122,
       "sha256": "b9051d1f1b61bbeeb5b1a7684a005f280f1fb49d6e0381f0c6ec388fc404d18c",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -1009,8 +992,7 @@
       "bytes": 288032,
       "sha256": "66130273135d256c960bed2a68c17b9bb000b355e7e325474348ffd346a36063",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -1022,8 +1004,7 @@
       "bytes": 299072,
       "sha256": "decc0daea35d9ac782ba71e0fca466ed975d6bd708a515e74de417341b1c800b",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -1047,8 +1028,7 @@
       "bytes": 401414,
       "sha256": "ae33a09f692b17d5038ae2ad02222d7c89dc8418202ffdecf77d4de07c1d55f1",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -1072,8 +1052,7 @@
       "bytes": 306676,
       "sha256": "a9abe696b8836e1b515c3bb29bedfff13362368276730dd60e4ecfb664f17c37",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -1085,8 +1064,7 @@
       "bytes": 388214,
       "sha256": "5bec930c934abab4810caf32b7a57edea56546f9b270f22bf548cc3378a98a36",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -1098,8 +1076,7 @@
       "bytes": 337306,
       "sha256": "04605d1dc91b5407c2023e5ea9260b33d312eef6f068daa5741929d06d177b2c",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -1135,8 +1112,7 @@
       "bytes": 293966,
       "sha256": "9cf84e2e9deee78ee81eebc92a9bc66cb1c5404cdcf6d87ee282fc3ed3ae3f9e",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1200,
       "height": 896,
@@ -1148,8 +1124,7 @@
       "bytes": 477188,
       "sha256": "abca50f7b50af029165194c7b7940a65b10318e91fb45a4943c014ab673efa07",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1448,
       "height": 1086,
@@ -1185,8 +1160,7 @@
       "bytes": 312614,
       "sha256": "97d713fc612d69560bf6ad72ee1f6811d1ce1a9c98d3e89ebda2ef8e034fe1be",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -1198,8 +1172,7 @@
       "bytes": 356252,
       "sha256": "669b1a0be5af07ff2e1dda2230e11967e5df02e249596eef3e4d98570768f2a1",
       "usages": [
-        "src/data/design-images.json",
-        "src/data/property-locations.ts"
+        "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
@@ -1818,6 +1791,414 @@
       "height": 630,
       "alpha": false,
       "perceptualHash": "c37060b0c0193b20"
+    },
+    {
+      "file": "public/images/projects/representative/10a-westview-street-campbelltown-view-01.webp",
+      "bytes": 314036,
+      "sha256": "22efe15754617ec68f75d4ca106bce3c404d6b2ec3e29957be21eae8fe1bd76b",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "4f7f473313030101"
+    },
+    {
+      "file": "public/images/projects/representative/10a-westview-street-campbelltown-view-02.webp",
+      "bytes": 245078,
+      "sha256": "d4405b618faf9ec8c4cdae9034c41e016779236a21a14495f4feb74e9140766b",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "51b06c232b933107"
+    },
+    {
+      "file": "public/images/projects/representative/110-brassil-avenue-claymore-view-01.webp",
+      "bytes": 272228,
+      "sha256": "40a70b40c5a32600092f1cc827800dc97f88355c1ee371e30d77eb8d11ea602e",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "19f2c4d3de9ac301"
+    },
+    {
+      "file": "public/images/projects/representative/110-brassil-avenue-claymore-view-02.webp",
+      "bytes": 155810,
+      "sha256": "a4e5a1286f62e80b4b615bdb37c861aed5378aea9bbf6e05cfb0d83340041c35",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "b9c2d3f9dd5c4267"
+    },
+    {
+      "file": "public/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-01.webp",
+      "bytes": 272154,
+      "sha256": "2a96f400aaf49bd582e34022f1cd54dac8c925fb15bceb12e4dab7966a751e7c",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "5c646cc5d9da66e7"
+    },
+    {
+      "file": "public/images/projects/representative/110-fieldhouse-circuit-campbelltown-view-02.webp",
+      "bytes": 266182,
+      "sha256": "8e0671e5fb32443444511725e9b4e47df77fbc65a77e7661fd7db3065ce5a1fb",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "5c6464e5c9da6667"
+    },
+    {
+      "file": "public/images/projects/representative/112-brassil-avenue-claymore-view-01.webp",
+      "bytes": 295538,
+      "sha256": "c18c42b45f41a114482939a741bb46a77262e8d84bbf3f79e959cb42000a3a87",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "9bcb4bd8d873ef07"
+    },
+    {
+      "file": "public/images/projects/representative/112-brassil-avenue-claymore-view-02.webp",
+      "bytes": 280632,
+      "sha256": "6fb3d9e7f764fbaa28d0fa09631961d30b411c1d21fe487e319156810441a1d6",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "9b9399d9d8733f07"
+    },
+    {
+      "file": "public/images/projects/representative/112a-brassil-avenue-claymore-view-01.webp",
+      "bytes": 268574,
+      "sha256": "08d8e720bf6fa511e7fbc0cadb0f31c8908dc8fe462ce0d6cd87916c0da03d2b",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "091b636b3b1f1c04"
+    },
+    {
+      "file": "public/images/projects/representative/112a-brassil-avenue-claymore-view-02.webp",
+      "bytes": 272484,
+      "sha256": "1156b2287ed182442db626bbd5606a91b761f7ddfadd4e75b9da5489326c2d28",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0325636b6b4e8b07"
+    },
+    {
+      "file": "public/images/projects/representative/130-webber-circuit-bardia-view-01.webp",
+      "bytes": 267588,
+      "sha256": "b52416e03de26e7aa2d982c5c6d9f061e8bcaef52dff514aed24ecec65cbe9a0",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "30336163d2976733"
+    },
+    {
+      "file": "public/images/projects/representative/130-webber-circuit-bardia-view-02.webp",
+      "bytes": 267998,
+      "sha256": "916c3403f37f70b3b5c9a3dd82032ac0c2f940dcf632fa70676f2dce117dddec",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "2463e343b7a7e743"
+    },
+    {
+      "file": "public/images/projects/representative/18-dallas-drive-gilead-view-01.webp",
+      "bytes": 250648,
+      "sha256": "8c6254ec998dac4accbf06915725848dc87e993c8d7d14699fa746949b383a51",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "0943cb424d51391f"
+    },
+    {
+      "file": "public/images/projects/representative/18-dallas-drive-gilead-view-02.webp",
+      "bytes": 273498,
+      "sha256": "cc6ff36d057b3bf5c2a12ac5fb58c0ff28ad8fc323a0e7e3cf8f4bf22faf3a4f",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "33c2c3036d088707"
+    },
+    {
+      "file": "public/images/projects/representative/18-quondong-street-campbelltown-view-01.webp",
+      "bytes": 243928,
+      "sha256": "d51158d998d7f5680e97b38321321312b97fec064654fada14346f2180fc67e2",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "13d3f96321630929"
+    },
+    {
+      "file": "public/images/projects/representative/18-quondong-street-campbelltown-view-02.webp",
+      "bytes": 281172,
+      "sha256": "9005c5f97378426733c3370df1dfd0e166abd22fda7da035cb8a54d4b464eb88",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "9975ed27652580f6"
+    },
+    {
+      "file": "public/images/projects/representative/3-lakeman-street-leppington-view-01.webp",
+      "bytes": 296618,
+      "sha256": "46de9c31fef45a5bd2bcbb470c6f008c1bddbef048c5d559d5269a76d83d601e",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "373b5b1d2eae2103"
+    },
+    {
+      "file": "public/images/projects/representative/3-lakeman-street-leppington-view-02.webp",
+      "bytes": 281520,
+      "sha256": "77eb99b052f66aff66a20cfe1b5b2477bb17d2afaa2cfad267b8bbaaad38320e",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "373b5d153e8e6301"
+    },
+    {
+      "file": "public/images/projects/representative/30-westview-street-campbelltown-view-01.webp",
+      "bytes": 296632,
+      "sha256": "35d082db05838f069075e78e5933c05b14b5e2f5a1f762baa199a583841409e1",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "001675c5b64bed82"
+    },
+    {
+      "file": "public/images/projects/representative/30-westview-street-campbelltown-view-02.webp",
+      "bytes": 343444,
+      "sha256": "68d05a28c61d6cd6b9e347457c58d8e81736e78558e2459c1a0cad06f742de1a",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "c307c639c6ce7703"
+    },
+    {
+      "file": "public/images/projects/representative/30-wilenski-way-catherine-field-view-01.webp",
+      "bytes": 194154,
+      "sha256": "8eab51975cbdc1e02bbabee5a61da85382e387531e6169dbecc06c40eeab512b",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "2cf3ccc832649100"
+    },
+    {
+      "file": "public/images/projects/representative/30-wilenski-way-catherine-field-view-02.webp",
+      "bytes": 190030,
+      "sha256": "9ccfcc987e915b6536d1331584b0be7040b963434a7714ab276c32ee67847705",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "2cf2c8d866649300"
+    },
+    {
+      "file": "public/images/projects/representative/32-emperor-street-leppington-view-01.webp",
+      "bytes": 276102,
+      "sha256": "047e645d40b4d12a2ff4952c43912c282e0b6a2dd73e1b7f4e99b6aa06741c2b",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "25a3ab9ce9f32e02"
+    },
+    {
+      "file": "public/images/projects/representative/32-emperor-street-leppington-view-02.webp",
+      "bytes": 255756,
+      "sha256": "15f777542c98f4a0836d231ead44d4c61b442280f1985afdbe4c3379726d13d1",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "c3c5c1dd95550100"
+    },
+    {
+      "file": "public/images/projects/representative/32-ganugan-road-austral-view-01.webp",
+      "bytes": 224294,
+      "sha256": "ffa51b808300ca9b1aa3976b465ae803cd02416c5fd14ae9f3f223191815a66e",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "24137049d5593f3f"
+    },
+    {
+      "file": "public/images/projects/representative/32-ganugan-road-austral-view-02.webp",
+      "bytes": 192202,
+      "sha256": "2ec5bb38bc3129500068aa38946e8e28a0bbf5767336dd82bfa7f70cffba990f",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "64c3d3355d5b0d0f"
+    },
+    {
+      "file": "public/images/projects/representative/47-gleeson-rise-oran-park-view-01.webp",
+      "bytes": 227528,
+      "sha256": "bd355363568d36d36be3becba9f5dd7bd8014592470d9f5aa36e6834ed92a779",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "99b078654d1f2667"
+    },
+    {
+      "file": "public/images/projects/representative/47-gleeson-rise-oran-park-view-02.webp",
+      "bytes": 214472,
+      "sha256": "e4dbf79d78f245e0d3cbba718e59e948c1492e1a6240232379323af3cab1e3b2",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "b97868674f1f3233"
+    },
+    {
+      "file": "public/images/projects/representative/5-daintrees-street-campbelltown-view-01.webp",
+      "bytes": 246898,
+      "sha256": "b9bbd275a53886f6fc3b245f85cef0097b9681bcec2c946dbd3b3359dd9b84b4",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "ba197cd826666f0f"
+    },
+    {
+      "file": "public/images/projects/representative/5-daintrees-street-campbelltown-view-02.webp",
+      "bytes": 248304,
+      "sha256": "ae661aa2398b223c31fbc58358c22b3fc7422098fca01fe10f6565475edbb6c0",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "fcdc7c78a467d905"
+    },
+    {
+      "file": "public/images/projects/representative/5-jandaroi-road-austral-view-01.webp",
+      "bytes": 309920,
+      "sha256": "5d09c2b62912e8270907bba5e2bd1958c657e6af135b5ff9696244ac44b35251",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "09131b0e37353307"
+    },
+    {
+      "file": "public/images/projects/representative/5-jandaroi-road-austral-view-02.webp",
+      "bytes": 298574,
+      "sha256": "aa9462c2c1a33d9667be66f7de3223a1835f94b3c62eb133aec18c5c11b52305",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "131b4b4665356721"
+    },
+    {
+      "file": "public/images/projects/representative/6-burns-avenue-macquarie-fields-view-01.webp",
+      "bytes": 249990,
+      "sha256": "a4084e2eff5fabd2d77cc8921bf41542c67a3925ccdcdea1f1ab3ed06a6f4a42",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "381919fd631f3fff"
+    },
+    {
+      "file": "public/images/projects/representative/6-burns-avenue-macquarie-fields-view-02.webp",
+      "bytes": 190330,
+      "sha256": "cf9f3e670dab600956b5ddbe922b5cb48a46e9eb9979ef3f1896c058818aafae",
+      "usages": [
+        "src/data/property-locations.ts"
+      ],
+      "width": 1200,
+      "height": 896,
+      "alpha": false,
+      "perceptualHash": "4d0d744d494f7f0f"
     }
   ]
 }
