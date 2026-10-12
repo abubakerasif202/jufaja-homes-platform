@@ -11,6 +11,8 @@ assert(isPermittedDesignQaBase(base, argument('live', 'false'), argument('previe
 const text = await readFile(new URL('../src/data/property-locations.ts', import.meta.url), 'utf8');
 const properties = JSON.parse(`[${text.split('export const PROPERTY_LOCATIONS: PropertyLocation[] = [')[1].split('\n];')[0]}]`);
 const photographed = properties.filter(property => property.photos?.length);
+const editorialOrder = JSON.parse(await readFile(new URL('../src/data/property-gallery-order.json', import.meta.url), 'utf8'));
+const curatedStreets = editorialOrder.map(address => address.split('|')[0]);
 const output = argument('output', path.join(tmpdir(), 'jufaja-gallery-expansion'));
 await mkdir(output, {recursive: true});
 const galleryImages = property => property.imageMode === 'real' ? property.photos : property.fallbackImages;
@@ -34,6 +36,7 @@ try {
   assert.equal(await section.getByRole('button', {name: /View gallery/}).count(), properties.length);
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), `Page overflow at ${width}`);
   assert.equal(await section.locator('article').count(), 28);
+  assert.deepEqual(await section.locator('article h3').allTextContents(), curatedStreets, 'Curated high-quality cards should appear first across every viewport');
   assert.equal(await section.getByText('Representative exterior', {exact: true}).count(), 17);
   for (const property of properties) {
    const card = section.locator('article').filter({has: page.getByRole('heading', {name: property.street, exact: true})});
@@ -97,6 +100,7 @@ try {
   await section.getByRole('combobox').selectOption(properties[0].suburb);
   assert.equal(await section.locator('article').count(), properties.filter(property => property.suburb === properties[0].suburb).length);
   await section.getByRole('combobox').selectOption('All areas');
+  assert.deepEqual(await section.locator('article h3').allTextContents(), curatedStreets, 'Resetting filters must restore curated order');
   console.log(`PASS ${width}px: 28 address cards, 34 distinct representative images, 17 representative galleries, ${photographed.length} real galleries, image decoding, modal controls and search`);
  }
  assert.deepEqual(errors, [], 'Browser errors');
