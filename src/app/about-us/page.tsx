@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 import ButtonLink from '@/components/ui/ButtonLink';
 import LeadershipSection from '@/components/home/LeadershipSection';
 import Reveal from '@/components/motion/Reveal';
-import { COMPANY_DETAILS } from '@/lib/company-details';
 
 export const metadata = pageMetadata('About', 'Meet JUFAJA Constructions and explore the home design and building services available through the website.', '/about-us');
 
@@ -32,19 +31,6 @@ export default function AboutUsPage() {
       </PageHero>
 
       <LeadershipSection variant="about" />
-
-      <section className="bg-jufaja-cream py-12 sm:py-16" aria-labelledby="company-licence-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="eyebrow">Company &amp; licence</p>
-          <h2 id="company-licence-heading" className="type-h2 mt-3 text-jufaja-forest">{COMPANY_DETAILS.legalName}</h2>
-          <div className="mt-5 max-w-3xl space-y-4 text-sm leading-7 text-jufaja-muted">
-            <p>ACN {COMPANY_DETAILS.acn}. NSW Contractor Licence {COMPANY_DETAILS.contractorLicence}, recorded as current on the NSW Government register when checked on 11 October 2026.</p>
-            <p>The register lists Builder and Carpenter classes, commencement on 20 January 2020 and expiry on 19 January 2028. The Builder class records this limitation: “LIMITS APPLY TO BCA CLASS 2, MAX 2000 SQM, TYPE C CONSTRUCTION ONLY.”</p>
-            <p>Check the current register for licence status, conditions and compliance history, and confirm that the licence and any required insurance are appropriate for your particular project.</p>
-            <a className="inline-flex min-h-11 items-center font-semibold text-jufaja-forest underline underline-offset-4" href={COMPANY_DETAILS.licenceRegisterUrl}>Verify licence details on the NSW Government register</a>
-          </div>
-        </div>
-      </section>
 
       <section className="border-y border-jufaja-border bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
