@@ -64,7 +64,7 @@ export default function Footer() {
 
       <div className="cv-footer__legal">
         <p>© {new Date().getFullYear()} {COMPANY_DETAILS.legalName}.</p>
-        <p>ACN {COMPANY_DETAILS.acn} · NSW Contractor Licence {COMPANY_DETAILS.contractorLicence}. <a className="underline underline-offset-4" href={COMPANY_DETAILS.licenceRegisterUrl}>Verify licence, classes and conditions on the NSW Government register</a>.</p>
+        <p>ACN {COMPANY_DETAILS.acn} · NSW Contractor Licence {COMPANY_DETAILS.contractorLicence}.</p>
         <p>Website information is a starting point; confirm project details directly before relying on them.</p>
         <a
           href="https://abwebstudio.com.au/"

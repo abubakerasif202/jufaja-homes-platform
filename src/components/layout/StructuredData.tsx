@@ -9,7 +9,7 @@ export default function StructuredData() {
     legalName: COMPANY_DETAILS.legalName,
     identifier: [
       { '@type': 'PropertyValue', propertyID: 'ACN', value: COMPANY_DETAILS.acn },
-      { '@type': 'PropertyValue', propertyID: 'NSW Contractor Licence', value: COMPANY_DETAILS.contractorLicence, url: COMPANY_DETAILS.licenceRegisterUrl },
+      { '@type': 'PropertyValue', propertyID: 'NSW Contractor Licence', value: COMPANY_DETAILS.contractorLicence },
     ],
     url: `${SITE_URL}/`,
     logo: `${SITE_URL}/brand/jufaja-logo.png`,
