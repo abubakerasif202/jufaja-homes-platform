@@ -8,19 +8,19 @@
       "path": "/images/designs/blaxland-series.webp",
       "width": 1440,
       "height": 1080,
-      "bytes": 444250,
-      "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
-      "phash": "0000010010010110101010011010110001011011001011110011010011010101"
+      "bytes": 340168,
+      "sha256": "fd76545f57aef58b8d5aacdc047e23a3a410626dd348656188d5de366f78e633",
+      "phash": "0010001010010101101011110011100001011010001001111001010101001011"
     },
     "sourceType": "individual_render",
-    "sourceFile": "batch_01/01_blaxland-series.webp",
-    "sourceSha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+    "sourceFile": "Downloads/ChatGPT Image Oct 18, 2026, 04_27_06 PM-1.png",
+    "sourceSha256": "ec90efd77828b774052fef86522fb8f629da2c58bb760d3a769d3e45ab78afbd",
     "visualReview": {
-      "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+      "sha256": "fd76545f57aef58b8d5aacdc047e23a3a410626dd348656188d5de366f78e633",
       "observedStoreys": 1,
       "dwellingUnits": 1,
       "outcome": "approved",
-      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+      "notes": "Owner-supplied daylight render (18 Oct 2026), checked by eye: complete facade, no text, watermark or collage. Generated design visual, not a completed JUFAJA project."
     }
   },
   {
@@ -701,19 +701,19 @@
       "path": "/images/designs/bennelong-series.webp",
       "width": 1440,
       "height": 1080,
-      "bytes": 439144,
-      "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
-      "phash": "0010001011111011101101101001000110010001100111000100100011100110"
+      "bytes": 369602,
+      "sha256": "7d66b230f501389aa6d1e4b463a9121e7e2f70ae8fb6f882371224478d12fc6a",
+      "phash": "0010111110101111101100001001001000010011100011010100111000101001"
     },
     "sourceType": "individual_render",
-    "sourceFile": "batch_03/24_bennelong-series.webp",
-    "sourceSha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+    "sourceFile": "Downloads/ChatGPT Image Oct 18, 2026, 04_27_07 PM-2.png",
+    "sourceSha256": "13f17efe09aa360b228a99e3eb5fe61d680b7a9bbfcae519c4b9db0603fd6824",
     "visualReview": {
-      "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+      "sha256": "7d66b230f501389aa6d1e4b463a9121e7e2f70ae8fb6f882371224478d12fc6a",
       "observedStoreys": 2,
-      "dwellingUnits": 1,
+      "dwellingUnits": 2,
       "outcome": "approved",
-      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+      "notes": "Owner-supplied daylight render (18 Oct 2026), checked by eye: complete facade, no text, watermark or collage. Generated design visual, not a completed JUFAJA project."
     }
   },
   {
@@ -1272,19 +1272,19 @@
       "path": "/images/designs/mcevoy-duplex.webp",
       "width": 1440,
       "height": 1080,
-      "bytes": 341864,
-      "sha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
-      "phash": "0111001111000001111010011000100000000010101000100011011101111111"
+      "bytes": 379868,
+      "sha256": "c92baa8168c47e897841aa7ae0675ee6a547dd74beedba9dfd50a244303dce67",
+      "phash": "0010010110001011111010101000010001010100110011110001101101111000"
     },
     "sourceType": "individual_render",
-    "sourceFile": "batch_05/44_mcevoy-duplex.webp",
-    "sourceSha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+    "sourceFile": "Downloads/ChatGPT Image Oct 18, 2026, 04_27_08 PM-3.png",
+    "sourceSha256": "56c5b943f84bb68cf107c9b9dadece18af69367f847e46e2f5b35c7ea5c7c161",
     "visualReview": {
-      "sha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+      "sha256": "c92baa8168c47e897841aa7ae0675ee6a547dd74beedba9dfd50a244303dce67",
       "observedStoreys": 2,
       "dwellingUnits": 2,
       "outcome": "approved",
-      "notes": "Manual contact-sheet review: complete facade; no visible text, watermark or collage."
+      "notes": "Owner-supplied daylight render (18 Oct 2026), checked by eye: complete facade, no text, watermark or collage. Generated design visual, not a completed JUFAJA project."
     }
   },
   {

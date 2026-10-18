@@ -526,15 +526,15 @@
     },
     {
       "file": "public/images/designs/bennelong-series.webp",
-      "bytes": 439144,
-      "sha256": "69521ab795c0115f1cfbdf4f1bff69b70b3fdc3ab7dfa9fd028a06992ff87281",
+      "bytes": 369602,
+      "sha256": "7d66b230f501389aa6d1e4b463a9121e7e2f70ae8fb6f882371224478d12fc6a",
       "usages": [
         "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
       "alpha": false,
-      "perceptualHash": "30f43664346418f1"
+      "perceptualHash": "00309495349361c2"
     },
     {
       "file": "public/images/designs/berkeley-27-wide-lot.webp",
@@ -550,15 +550,15 @@
     },
     {
       "file": "public/images/designs/blaxland-series.webp",
-      "bytes": 444250,
-      "sha256": "e8a0b766f6017211f05b0007355f7dedbd9bb3d93ef74bf50c071a96367322e3",
+      "bytes": 340168,
+      "sha256": "fd76545f57aef58b8d5aacdc047e23a3a410626dd348656188d5de366f78e633",
       "usages": [
         "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
       "alpha": false,
-      "perceptualHash": "8040135606793003"
+      "perceptualHash": "8040111646615cb0"
     },
     {
       "file": "public/images/designs/centennial-series.webp",
@@ -958,15 +958,15 @@
     },
     {
       "file": "public/images/designs/mcevoy-duplex.webp",
-      "bytes": 341864,
-      "sha256": "61daa6ca3420708c556a00520e433bfb28133d7b7d3474c94355c101e88c69aa",
+      "bytes": 379868,
+      "sha256": "c92baa8168c47e897841aa7ae0675ee6a547dd74beedba9dfd50a244303dce67",
       "usages": [
         "src/data/design-images.json"
       ],
       "width": 1440,
       "height": 1080,
       "alpha": false,
-      "perceptualHash": "3f6df3b717f1f0bb"
+      "perceptualHash": "0000c43161315ef7"
     },
     {
       "file": "public/images/designs/meadow-series.webp",
@@ -1213,6 +1213,7 @@
       "bytes": 53442,
       "sha256": "b5a1d52468e06c2d6dab022afb51759412d32f80ccc5b5941fc86b4a50f9e4d3",
       "usages": [
+        ".remember/now.md",
         "public/images/inspiration/README.md",
         "src/data/hero-slides.ts"
       ],
