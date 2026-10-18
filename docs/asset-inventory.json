@@ -92,21 +92,7 @@
   "withoutTextReferences": [
     "public/brand/javed-iqbal-executive.png",
     "public/brand/javed-iqbal-site.png",
-    "public/brand/jufaja-mark-3d.png",
-    "public/images/inspiration/bath-green-vanity.webp",
-    "public/images/inspiration/bath-grey-tile.webp",
-    "public/images/inspiration/bath-marble-shower.webp",
-    "public/images/inspiration/bath-walk-in.webp",
-    "public/images/inspiration/kitchen-garden-window.webp",
-    "public/images/inspiration/kitchen-island-stools.webp",
-    "public/images/inspiration/kitchen-marble-island.webp",
-    "public/images/inspiration/living-dining-kitchen.webp",
-    "public/images/inspiration/living-glass-marble.webp",
-    "public/images/inspiration/living-grey-sofa.webp",
-    "public/images/inspiration/living-open-plan.webp",
-    "public/images/inspiration/outdoor-garden-stairs.webp",
-    "public/images/inspiration/outdoor-pool-villa.webp",
-    "public/images/inspiration/outdoor-terrace.webp"
+    "public/brand/jufaja-mark-3d.png"
   ],
   "assets": [
     {
@@ -1215,7 +1201,7 @@
       "bytes": 87982,
       "sha256": "0af576ab267a4ef234671ff30809d6aaec330aef8d047cae4d3d1337f04b73d7",
       "usages": [
-        "src/data/hero-slides.ts"
+        "public/images/inspiration/README.md"
       ],
       "width": 1920,
       "height": 1280,
@@ -1226,7 +1212,10 @@
       "file": "public/images/inspiration/bath-green-vanity.webp",
       "bytes": 53442,
       "sha256": "b5a1d52468e06c2d6dab022afb51759412d32f80ccc5b5941fc86b4a50f9e4d3",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md",
+        "src/data/hero-slides.ts"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1236,7 +1225,9 @@
       "file": "public/images/inspiration/bath-grey-tile.webp",
       "bytes": 265902,
       "sha256": "d8ddf69af50352f878a949bf4a2a54ff99ebd467a8cb06bf25a2ad716c91df32",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1246,7 +1237,9 @@
       "file": "public/images/inspiration/bath-marble-shower.webp",
       "bytes": 67484,
       "sha256": "d213fc929574e99225cbe1eb7a8febe4c5f68dfc15e37e941e03034d76b41aa7",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1256,7 +1249,9 @@
       "file": "public/images/inspiration/bath-walk-in.webp",
       "bytes": 124310,
       "sha256": "93c48e9093fa46f90c20d2b18ad345e90b888091a35997b6971b108154dff0a6",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1266,7 +1261,9 @@
       "file": "public/images/inspiration/kitchen-garden-window.webp",
       "bytes": 215212,
       "sha256": "9029a950301299352894f6b01be97e173e1db8fa2e78095bbf90b8d22fdf356c",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1276,7 +1273,9 @@
       "file": "public/images/inspiration/kitchen-island-stools.webp",
       "bytes": 115646,
       "sha256": "043cc1dfb3963e90b7f3d3cdcfda7679d3dd913255c00d26561af8f7f103c2fe",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1286,7 +1285,9 @@
       "file": "public/images/inspiration/kitchen-marble-island.webp",
       "bytes": 82750,
       "sha256": "b0e4e3df695ef45e14c181cad56da1c8c758dd41fb1776a12a8d6356647db4ba",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1297,6 +1298,7 @@
       "bytes": 78526,
       "sha256": "3fce2a7b87371d4298dc88e48fd46a67a5e08b54774a4d2264b430d0ca0cbe5a",
       "usages": [
+        "public/images/inspiration/README.md",
         "src/app/inspiration/page.tsx",
         "src/data/hero-slides.ts"
       ],
@@ -1309,7 +1311,9 @@
       "file": "public/images/inspiration/living-dining-kitchen.webp",
       "bytes": 139912,
       "sha256": "00baa3b20487dff233e26b860f8148fd0ffc06d259bfd22fb72c7df2af19f68b",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1319,7 +1323,9 @@
       "file": "public/images/inspiration/living-glass-marble.webp",
       "bytes": 285892,
       "sha256": "0ceb3e8cd4735bf7f63b62a153a2c4d95d0729017b10dd16d3ff37d3a347459a",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1329,7 +1335,9 @@
       "file": "public/images/inspiration/living-grey-sofa.webp",
       "bytes": 158308,
       "sha256": "fc4144e63215533d5e2e6c9efe6b7107d3539528fdb6790b3a30b5fb5a87fbeb",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1339,7 +1347,9 @@
       "file": "public/images/inspiration/living-open-plan.webp",
       "bytes": 141204,
       "sha256": "b65a043966e60370ec1a83148f5bca044aefd1377253241fb44e716bc5686d09",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1349,7 +1359,9 @@
       "file": "public/images/inspiration/outdoor-garden-stairs.webp",
       "bytes": 387218,
       "sha256": "e62bddeefc94d01004c3b55f324c949b52260692246341b9e4ec488fa1be100d",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1359,7 +1371,9 @@
       "file": "public/images/inspiration/outdoor-pool-villa.webp",
       "bytes": 138880,
       "sha256": "ae8224144c8c7e310115554d1ada2d1c823664aaa588f607e7a7c7fdd07b1158",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,
@@ -1369,7 +1383,9 @@
       "file": "public/images/inspiration/outdoor-terrace.webp",
       "bytes": 335824,
       "sha256": "717244ad9572de7ce8c1b9be6e99f90b5f93fd0f125df20b5ae6aa33fd643fdc",
-      "usages": [],
+      "usages": [
+        "public/images/inspiration/README.md"
+      ],
       "width": 1920,
       "height": 1280,
       "alpha": false,

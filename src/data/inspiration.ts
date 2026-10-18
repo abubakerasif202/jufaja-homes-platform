@@ -66,7 +66,7 @@ function photoItems(ids: string[], subject: string): GalleryItem[] {
   return ids.map((id) => {
     const found = byId.get(id);
     if (!found) throw new Error(`Unknown inspiration photo: ${id}`);
-    return { id, src: found.src, alt: found.alt, title: found.title, tag: 'Inspiration photograph', href: enquiryHref(`${subject}: ${found.title}`) };
+    return { id, src: found.src, alt: found.alt, title: found.title, tag: 'Inspiration', href: enquiryHref(`${subject}: ${found.title}`) };
   });
 }
 
@@ -81,7 +81,7 @@ const KNOCKDOWN_CONCEPTS: ConceptImage[] = [
 ];
 
 function conceptItems(images: ConceptImage[], href: string): GalleryItem[] {
-  return images.map((image) => ({ ...image, tag: 'Illustrative concept', href }));
+  return images.map((image) => ({ ...image, tag: 'Rebuild concept', href }));
 }
 
 interface FacadeSource { slug: string; name: string; dwellingType: string; featured: boolean; facades: { image: string }[] }
@@ -97,7 +97,7 @@ function facadeItems(designs: FacadeSource[], dwellingType: string, limit: numbe
       src: design.facades[0].image,
       alt: `${design.name}, illustrative representative exterior`,
       title: design.name,
-      tag: 'Illustrative facade',
+      tag: 'Home design',
       href: `/designs/${design.slug}`,
     }));
 }

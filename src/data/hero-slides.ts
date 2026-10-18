@@ -8,17 +8,12 @@ export interface HeroSlide {
   lines: string[];
   copy: string;
   cta: { label: string; href: string };
-  /** Disclosure for the image source. Imagery is never presented as a completed JUFAJA project. */
-  caption: string;
   /** object-position for narrow (portrait) and wide viewports so the subject stays in frame. */
   focusMobile: string;
   focusDesktop: string;
   /** Side the copy sits on from lg up, chosen so it never covers the slide's focal feature. */
   align?: 'left' | 'right';
 }
-
-const CONCEPT_CAPTION = 'Illustrative architecture · not a completed JUFAJA project';
-const PHOTO_CAPTION = 'Inspiration photograph · not a JUFAJA project';
 
 export const HERO_SLIDES: HeroSlide[] = [
   {
@@ -29,21 +24,20 @@ export const HERO_SLIDES: HeroSlide[] = [
     lines: ['Building Homes', 'for a Brighter', 'Tomorrow.'],
     copy: 'Explore considered homes designed for modern Australian living.',
     cta: { label: 'Explore Home Designs', href: '/designs' },
-    caption: CONCEPT_CAPTION,
     focusMobile: '50% 45%',
     focusDesktop: '50% 45%',
+    align: 'left',
   },
   {
     id: 'luxury-bathrooms',
     eyebrow: 'Luxury bathroom inspiration',
-    photo: '/images/inspiration/bath-freestanding.webp',
-    alt: 'Inspiration photograph of a stone freestanding bath beneath a wall-mounted tap in soft sunlight',
+    photo: '/images/inspiration/bath-green-vanity.webp',
+    alt: 'Inspiration photograph of a bathroom with a forest-green double vanity, brass tapware, arched mirrors and a freestanding bath',
     lines: ['Beautiful Spaces.', 'Thoughtfully', 'Designed.'],
-    copy: 'Stone, glass and soft architectural light, gathered as ideas for your own brief.',
+    copy: 'Stone, glass and soft natural light, gathered as ideas for your own brief.',
     cta: { label: 'Explore Design Inspiration', href: '/inspiration#luxury-bathrooms' },
-    caption: PHOTO_CAPTION,
-    focusMobile: '50% 75%',
-    focusDesktop: '50% 70%',
+    focusMobile: '35% 60%',
+    focusDesktop: '50% 55%',
     align: 'left',
   },
   {
@@ -54,7 +48,6 @@ export const HERO_SLIDES: HeroSlide[] = [
     lines: ['A New Beginning', 'at Your Existing', 'Address.'],
     copy: 'Explore the information available for replacing an existing home.',
     cta: { label: 'Explore Knockdown Rebuild', href: '/knockdown-rebuild' },
-    caption: CONCEPT_CAPTION,
     focusMobile: '50% 45%',
     focusDesktop: '50% 45%',
     align: 'right',
@@ -67,9 +60,9 @@ export const HERO_SLIDES: HeroSlide[] = [
     lines: ['More Possibilities.', 'Smarter', 'Living.'],
     copy: 'Contemporary duplex and dual living designs for sites that can support them.',
     cta: { label: 'Explore Duplex Designs', href: '/designs?dwelling_type=duplex' },
-    caption: CONCEPT_CAPTION,
     focusMobile: '50% 45%',
     focusDesktop: '50% 45%',
+    align: 'left',
   },
   {
     id: 'custom-homes',
@@ -79,7 +72,6 @@ export const HERO_SLIDES: HeroSlide[] = [
     lines: ['A Home That’s', 'Uniquely', 'Yours.'],
     copy: 'Natural materials, glass, stone and timber, shaped around your site and priorities.',
     cta: { label: 'Explore Custom Homes', href: '/custom-homes' },
-    caption: CONCEPT_CAPTION,
     focusMobile: '50% 45%',
     focusDesktop: '50% 45%',
     align: 'right',
@@ -92,7 +84,6 @@ export const HERO_SLIDES: HeroSlide[] = [
     lines: ['Inspiration', 'for Every', 'Space.'],
     copy: 'Kitchens, living spaces and finishes to bring to a conversation about your plans.',
     cta: { label: 'View Inspiration', href: '/inspiration#modern-kitchens' },
-    caption: PHOTO_CAPTION,
     focusMobile: '35% 50%',
     focusDesktop: '50% 55%',
     align: 'left',

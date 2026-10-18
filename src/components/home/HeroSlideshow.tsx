@@ -166,7 +166,6 @@ export default function HeroSlideshow() {
                 <Link href={slide.cta.href} className="cv-button cv-button--light cv-hero__cta" tabIndex={active ? undefined : -1}>
                   {slide.cta.label} <ArrowRight aria-hidden="true" size={18} />
                 </Link>
-                <p className="cv-hero__caption">{slide.caption}</p>
               </div>
             </div>
           );

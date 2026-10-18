@@ -24,7 +24,7 @@ export default function InspirationPage() {
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8" aria-labelledby="inspiration-galleries-heading">
         <header className="mb-8 max-w-3xl">
           <h2 id="inspiration-galleries-heading" className="type-h2 text-jufaja-forest">Eight ways to start the conversation.</h2>
-          <p className="mt-3 text-sm leading-7 text-jufaja-muted">Interior and outdoor images are third-party inspiration photographs. Facade images are illustrative renderings and concept studies. None of this imagery is a completed JUFAJA project, and inclusion here is not a confirmed specification or service.</p>
+          <p className="mt-3 text-sm leading-7 text-jufaja-muted">Interior and outdoor images are third-party inspiration photographs. Facade images are illustrative renderings and concept studies. This imagery is not a completed JUFAJA project, and inclusion here is not a confirmed specification or service.</p>
         </header>
         <InspirationGalleries categories={categories} />
       </section>

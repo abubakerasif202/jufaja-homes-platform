@@ -1,0 +1,19 @@
+/* Bright editorial pass for the homepage: light sections, forest green and gold as accents, deep green only in the footer. */
+.cv-home .cv-about__content { background: var(--jufaja-ivory); color: var(--jufaja-green-900); border-top: 3px solid var(--jufaja-gold-500); }
+.cv-home .cv-about__content .cv-kicker { color: var(--jufaja-gold-600); }
+.cv-home .cv-about__content > p:not(.cv-kicker) { color: #2b4338; font-size: 16px; line-height: 1.7; }
+.cv-home .cv-about .cv-button { background: var(--jufaja-green-900); border-color: var(--jufaja-green-900); color: #fff; }
+.cv-home .cv-about .cv-button:hover { background: var(--jufaja-gold-500); border-color: var(--jufaja-gold-500); color: var(--jufaja-green-950); }
+.cv-home .cv-difference__content { background: #fff; color: var(--jufaja-green-900); }
+.cv-home .cv-difference__content .cv-kicker { color: var(--jufaja-gold-600); }
+.cv-home .cv-difference__content > p:not(.cv-kicker) { color: #2b4338; font-size: 16px; line-height: 1.7; }
+.cv-home .cv-topic { background: var(--jufaja-ivory); border: 1px solid var(--jufaja-border); border-top: 2px solid var(--jufaja-gold-500); padding: 20px; }
+.cv-home .cv-topic h3 { color: var(--jufaja-green-900); font-size: 18px; margin: 0 0 6px; }
+.cv-home .cv-topic p { color: #3d544a; font-size: 15px; line-height: 1.6; }
+.cv-home .cv-studies { background: var(--jufaja-cream); }
+.cv-home .cv-contact { background: var(--jufaja-cream); border-top: 1px solid var(--jufaja-border); }
+.cv-home .cv-contact h2 { color: var(--jufaja-green-900); }
+.cv-home .cv-contact__content > p:not(.cv-kicker) { color: #3d544a; }
+.cv-home .cv-contact .cv-kicker { color: var(--jufaja-gold-600); }
+.cv-home .cv-contact .cv-button--light { background: var(--jufaja-gold-500); border-color: var(--jufaja-gold-500); }
+.cv-home .cv-design-card__image span { display: none; }

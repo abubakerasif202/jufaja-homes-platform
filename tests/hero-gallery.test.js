@@ -29,7 +29,7 @@ test('hero has six unique slides with local images, alt text, a disclosure capti
   for (const slide of HERO_SLIDES) {
     assert.ok(publicExists(slide.photo), `Missing hero image ${slide.photo}`);
     assert.ok(slide.alt.length > 20, `${slide.id} needs descriptive alt text`);
-    assert.match(slide.caption, /not a (completed )?JUFAJA project/i);
+    assert.equal(slide.caption, undefined, 'source disclosures are not overlaid on hero imagery');
     assert.ok(routeExists(slide.cta.href), `${slide.id} CTA ${slide.cta.href} must resolve to a route`);
   }
 });
@@ -85,6 +85,20 @@ test('facade categories only publish designs of the matching dwelling type', () 
   for (const [id, type] of Object.entries(expected)) {
     for (const item of categories.get(id).items) assert.equal(typeBySlug.get(item.id), type, `${item.id} in ${id}`);
   }
+});
+
+test('promotional imagery carries no repeated disclaimer overlays, but context and credits remain', () => {
+  const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+  const overlay = /illustrative (architecture|facade|concept)|not a (completed )?JUFAJA project|inspiration photograph ·/i;
+  for (const file of ['src/components/home/CasaviewHome.tsx', 'src/components/home/HeroSlideshow.tsx', 'src/components/gallery/InspirationGalleries.tsx']) {
+    // Alt text and aria-labels may keep the honest description; only visible text is checked.
+    const visible = read(file).split('\n').filter((line) => !/alt=|alt:|aria-label=/.test(line)).join(' ');
+    assert.doesNotMatch(visible, overlay, `${file} must not overlay disclaimers`);
+  }
+  for (const category of buildGalleryCategories(catalogueFixture)) for (const item of category.items) assert.doesNotMatch(item.tag, overlay);
+  assert.match(read('src/app/inspiration/page.tsx'), /not a completed JUFAJA project/i, 'inspiration page keeps its context statement');
+  assert.match(read('src/app/inspiration/page.tsx'), /Photo credits/);
+  assert.match(read('src/components/layout/Footer.tsx'), /not completed JUFAJA projects/);
 });
 
 test('slideshow keeps accessibility and server-render contracts', () => {
