@@ -1,0 +1,52 @@
+/* Continuously moving design galleries: pure-CSS loop, so it runs without JavaScript and cannot desync on hydration. */
+.cv-gallery { position: relative; }
+.cv-gallery__toggle {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin: 0 0 20px; padding: 0 18px; cursor: pointer;
+  font: 600 13px/1 var(--font-body), sans-serif; letter-spacing: .04em; color: var(--jufaja-green-900); background: #fff;
+  border: 1px solid var(--jufaja-green-900); border-radius: 999px; transition: background .2s, color .2s;
+}
+.cv-gallery__toggle:hover { background: var(--jufaja-green-900); color: #fff; }
+
+.cv-gallery-row { padding-block: 28px 36px; border-top: 1px solid var(--jufaja-border); scroll-margin-top: 96px; }
+.cv-gallery-row__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px 24px; margin-bottom: 20px; }
+.cv-gallery-row__head h3 { margin: 4px 0 6px; font-size: clamp(24px, 3vw, 34px); color: var(--jufaja-green-900); }
+.cv-gallery-row__head p:not(.cv-kicker) { max-width: 560px; margin: 0; color: var(--jufaja-muted); font-size: 15px; line-height: 1.55; }
+
+.cv-marquee {
+  --card-w: 260px; --card-gap: 16px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+@media (min-width: 1024px) { .cv-marquee { --card-w: 340px; } }
+.cv-marquee__track { display: flex; width: max-content; animation: cv-marquee var(--marquee-duration, 48s) linear infinite; }
+.cv-marquee[data-direction='reverse'] .cv-marquee__track { animation-direction: reverse; }
+.cv-marquee__group { display: flex; gap: var(--card-gap); margin: 0; padding: 0 var(--card-gap) 0 0; list-style: none; }
+
+.cv-gcard { flex: none; width: var(--card-w); }
+.cv-gcard__link { position: relative; display: block; overflow: hidden; border-radius: 4px; background: var(--jufaja-green-900); box-shadow: var(--shadow-soft); color: #fff; transition: box-shadow .3s, transform .3s; }
+.cv-gcard__image { position: relative; display: block; aspect-ratio: 4 / 3; }
+.cv-gcard__image img { object-fit: cover; transition: transform .8s cubic-bezier(.16, 1, .3, 1); }
+.cv-gcard__caption {
+  position: absolute; inset: auto 0 0; display: grid; gap: 2px; padding: 40px 14px 12px;
+  background: linear-gradient(180deg, transparent, rgba(8, 20, 14, .82));
+}
+.cv-gcard__tag { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--jufaja-gold-400); }
+.cv-gcard__title { font-family: var(--font-display), serif; font-size: 17px; line-height: 1.25; }
+.cv-gcard__link:hover, .cv-gcard__link:focus-visible { box-shadow: var(--shadow-elevated); transform: translateY(-3px); }
+.cv-gcard__link:hover img, .cv-gcard__link:focus-visible img { transform: scale(1.06); }
+.cv-gcard__link:focus-visible { outline: 3px solid var(--jufaja-gold-600); outline-offset: 3px; }
+
+.cv-gallery[data-paused='true'] .cv-marquee__track, .cv-marquee:focus-within .cv-marquee__track { animation-play-state: paused; }
+@media (hover: hover) { .cv-marquee:hover .cv-marquee__track { animation-play-state: paused; } }
+
+@keyframes cv-marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+
+/* Reduced motion: a still, swipeable row; the looping copy is removed. */
+@media (prefers-reduced-motion: reduce) {
+  .cv-gallery__toggle { display: none; }
+  .cv-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; scroll-snap-type: x proximity; padding-bottom: 8px; }
+  .cv-marquee__track { animation: none; }
+  .cv-marquee__group[aria-hidden='true'] { display: none; }
+  .cv-gcard { scroll-snap-align: start; }
+  .cv-gcard__link, .cv-gcard__image img { transition: none; }
+}

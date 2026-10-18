@@ -47,6 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${baseUrl}/inspiration`,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/projects`,
       changeFrequency: 'weekly',
       priority: 0.85,

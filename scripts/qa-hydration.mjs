@@ -11,6 +11,11 @@ const base = new URL(argument('base-url', 'http://127.0.0.1:3010'));
 assert(isPermittedDesignQaBase(base, argument('live', 'false'), argument('preview-host', '')), 'Use localhost or explicitly name the approved JUFAJA preview host');
 const total = Number(argument('loads', '200'));
 const seedArg = Number(argument('seed', '1'));
+const maxMinutes = Number(argument('max-minutes', '12'));
+const actionTimeoutMs = Number(argument('action-timeout-ms', '20000'));
+const deadline = Date.now() + maxMinutes * 60_000;
+let timedOut = false;
+const budgetLeft = () => { if (Date.now() > deadline) timedOut = true; return !timedOut; };
 const output = argument('output', path.join(tmpdir(), 'jufaja-hydration'));
 await mkdir(output, { recursive: true });
 
@@ -49,6 +54,8 @@ async function newSession(options) {
     new PerformanceObserver(list => { for (const entry of list.getEntries()) window.auditVitals.lcp = entry.startTime; }).observe({ type: 'largest-contentful-paint', buffered: true });
   });
   const page = await context.newPage();
+  page.setDefaultTimeout(actionTimeoutMs);
+  page.setDefaultNavigationTimeout(actionTimeoutMs);
   const cdp = await context.newCDPSession(page);
   if (options.cpu > 1) await cdp.send('Emulation.setCPUThrottlingRate', { rate: options.cpu });
   const net = networks[options.network];
@@ -104,7 +111,8 @@ async function load(session, route, scenario) {
     for (const next of [pick(routes), pick(routes), route]) await page.goto(new URL(next, base).href, { waitUntil: 'commit' }).catch(() => undefined);
   } else if (scenario === 'client-nav') {
     await page.goto(new URL('/', base).href, { waitUntil: 'domcontentloaded' });
-    const link = page.locator(`a[href="${route}"]`).first();
+    // Skip the continuously moving gallery cards (they never settle) and links in inactive hero slides (hidden).
+    const link = page.locator(`a[href="${route}"]:not(.cv-gcard__link):visible`).first();
     if (await link.count()) {
       await link.click();
       await page.waitForURL(target, { waitUntil: 'domcontentloaded' });
@@ -135,7 +143,7 @@ const workers = Number(argument('workers', '4'));
 /** The pattern that exposes root-level hydration races: concurrent reused tabs, reduced motion, intercepted requests, repeated document navigations. */
 async function soakWorker() {
   const session = await newSession({ width: 1440, height: 900, network: 'none', cpu: 1, reduced: true, intercept: true, observers: false, crawl: false, reuse: true, populated: false });
-  while (loads < total) {
+  while (loads < total && budgetLeft()) {
     const route = pick(routes);
     session.current = { route, scenario: 'soak', load: loads };
     loads += 1;
@@ -150,7 +158,7 @@ async function soakWorker() {
 let reused = null;
 try {
   if (soak) await Promise.all(Array.from({ length: workers }, () => soakWorker()));
-  while (!soak && loads < total) {
+  while (!soak && loads < total && budgetLeft()) {
     const [width, height] = pick(widths);
     const options = {
       width, height,
@@ -172,17 +180,23 @@ try {
       if (!options.reuse) reused = null;
     }
     if (options.populated) await session.page.addInitScript(() => { try { sessionStorage.setItem('jufaja_intro_viewed', 'true'); } catch { /* storage unavailable */ } });
-    for (let i = 0; i < 6 && loads < total; i += 1) {
-      await load(session, pick(routes), pick(scenarios));
+    for (let i = 0; i < 6 && loads < total && budgetLeft(); i += 1) {
+      const route = pick(routes);
+      const scenario = pick(scenarios);
+      try { await load(session, route, scenario); }
+      catch (error) { log.push({ kind: 'load-failure', text: `${scenario} ${route}: ${String(error.message).slice(0, 140)}`, url: route }); }
+      if (loads % 25 === 0) console.error(`progress ${loads}/${total} loads, ${events.length} hydration events, ${log.length} other errors`);
     }
     if (!options.reuse) await session.context.close();
   }
 } finally {
   await browser.close();
 }
-const summary = { base: base.origin, loads, hydrationEvents: events.length, otherErrors: log.length, failedRequests: failedRequests.length, output };
+const incomplete = timedOut || loads < total;
+const summary = { base: base.origin, completed: !incomplete, loads, requested: total, hydrationEvents: events.length, otherErrors: log.length, failedRequests: failedRequests.length, output };
 await writeFile(path.join(output, 'report.json'), JSON.stringify({ summary, events, log, failedRequests }, null, 1));
 console.log(JSON.stringify(summary));
 for (const event of events.slice(0, 10)) console.log(`HYDRATION ${event.kind} ${event.pageUrl} scenario=${event.scenario} ${JSON.stringify(event.options)} :: ${event.text.slice(0, 120)}`);
 for (const entry of log.slice(0, 5)) console.log(`OTHER ${entry.kind} ${entry.url} :: ${entry.text}`);
+if (incomplete) { console.log(`INCOMPLETE: ran ${loads}/${total} loads within the ${maxMinutes} minute budget`); process.exit(2); }
 if (events.length || log.length || failedRequests.length) process.exit(1);

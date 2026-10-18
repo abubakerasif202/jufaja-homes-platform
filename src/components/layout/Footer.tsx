@@ -12,6 +12,7 @@ const columns = [
       ['Home Designs', '/designs'],
       ['House & Land Enquiries', '/packages'],
       ['Display Home Enquiries', '/display-homes'],
+      ['Design Inspiration', '/inspiration'],
       ['Property Gallery', '/projects'],
     ],
   },

@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Bath, BedDouble, CarFront, Home, Layers, LandPlot, PencilRuler, RefreshCw, Warehouse } from 'lucide-react';
-import { HERO_SLIDES } from '@/data/hero-slides';
-import { JUFAJA_PROJECTS } from '@/data/projects';
+import HeroSlideshow from '@/components/home/HeroSlideshow';
+import InspirationGalleries from '@/components/gallery/InspirationGalleries';
+import { buildGalleryCategories } from '@/data/inspiration';
 import type { HomeDesign } from '@/types';
 
 const categories = [
@@ -20,8 +21,10 @@ const topics = [
   { title: 'Local experience', copy: 'Review your site, its context and the approvals that may apply.' },
 ];
 
+const HOME_GALLERY_IDS = ['luxury-bathrooms', 'modern-kitchens', 'new-home-facades', 'outdoor-living'];
+
 export default function CasaviewHome({ designs }: { designs: HomeDesign[] }) {
-  const hero = HERO_SLIDES[0];
+  const galleries = buildGalleryCategories(designs).filter((category) => HOME_GALLERY_IDS.includes(category.id));
   const featured = ['single', 'double', 'duplex'].flatMap((type) => {
     const hasFacade = (item: HomeDesign) => item.facades.length > 0;
     const design = designs.find((item) => item.featured && item.dwellingType === type && hasFacade(item))
@@ -30,12 +33,7 @@ export default function CasaviewHome({ designs }: { designs: HomeDesign[] }) {
   });
   return (
     <div className="cv-home">
-      <section className="cv-hero" aria-labelledby="cv-hero-heading">
-        <Image src={hero.photo} alt={hero.alt} fill priority sizes="100vw" className="cv-hero__image" />
-        <div className="cv-hero__shade" aria-hidden="true" />
-        <div className="cv-hero__content"><p className="cv-kicker">JUFAJA Constructions</p><h1 id="cv-hero-heading">Building Homes<br />for a Brighter Tomorrow.</h1><p>{hero.copy}</p><Link href="/designs" className="cv-button cv-button--light">Explore home designs <ArrowRight aria-hidden="true" size={18} /></Link></div>
-        <p className="cv-hero__caption">Illustrative architecture · not a completed JUFAJA project</p>
-      </section>
+      <HeroSlideshow />
       <nav className="cv-selector" aria-label="Explore building options">{categories.map(({ label, href, icon: Icon }) => <Link key={href} href={href} className="cv-selector__link"><Icon className="cv-selector__icon" aria-hidden="true" strokeWidth={1.3} /><span>{label}</span><ArrowRight aria-hidden="true" size={15} /></Link>)}</nav>
       <section className="cv-section" aria-labelledby="cv-designs-heading"><div className="cv-container">
         <div className="cv-section-heading"><div><p className="cv-kicker">Find your next home</p><h2 id="cv-designs-heading">Explore our home designs</h2></div><Link href="/designs" className="cv-card-link">View all designs <ArrowRight aria-hidden="true" size={18} /></Link></div>
@@ -45,8 +43,8 @@ export default function CasaviewHome({ designs }: { designs: HomeDesign[] }) {
         </article>)}</div>
       </div></section>
       <section className="cv-studies" aria-labelledby="cv-studies-heading"><div className="cv-container">
-        <div className="cv-studies__intro"><div><p className="cv-kicker">Space. Light. Possibility.</p><h2 id="cv-studies-heading">Design inspiration</h2><p>Residential design studies to help shape your ideas. These images are illustrative references, not completed JUFAJA projects.</p></div><Link href="/projects" className="cv-button">Explore design studies <ArrowRight aria-hidden="true" size={18} /></Link></div>
-        <div className="cv-studies__grid">{JUFAJA_PROJECTS.slice(0, 3).map((project) => <Link key={project.id} href={`/contact?project=${encodeURIComponent(project.title)}`} className="cv-study"><div className="cv-study__image"><Image src={project.image} alt={`${project.title}, illustrative concept image`} fill sizes="(min-width: 768px) 33vw, 100vw" /></div><p>{project.study}</p><h3>{project.title}<ArrowRight aria-hidden="true" size={20} /></h3></Link>)}</div>
+        <div className="cv-studies__intro"><p className="cv-kicker">Space. Light. Possibility.</p><h2 id="cv-studies-heading">Design inspiration</h2><p>Ideas for bathrooms, kitchens, facades and outdoor living to help shape your brief. Interior and outdoor images are third-party inspiration photography, and facades are illustrative; none are completed JUFAJA projects.</p><Link href="/inspiration" className="cv-button">Explore all inspiration <ArrowRight aria-hidden="true" size={18} /></Link></div>
+        <InspirationGalleries categories={galleries} />
       </div></section>
       <section className="cv-about" aria-labelledby="cv-about-heading"><div className="cv-about__image"><Image src="/images/architecture/daylight-stone-residence.webp" alt="Illustrative stone residence with a landscaped garden" fill sizes="(min-width: 900px) 50vw, 100vw" /><span>Illustrative architecture</span></div><div className="cv-about__content"><p className="cv-kicker">Welcome to JUFAJA</p><h2 id="cv-about-heading">Homes designed<br />around you.</h2><p>Every project begins with different priorities. Share what you are planning, where you hope to build, and the questions you want answered.</p><p>The JUFAJA team can help you explore the designs and services available, from a new home to a custom brief or knockdown rebuild.</p><Link href="/about-us" className="cv-button">About JUFAJA <ArrowRight aria-hidden="true" size={18} /></Link></div></section>
       <section className="cv-difference" aria-labelledby="cv-difference-heading"><div className="cv-difference__image"><Image src="/images/architecture/limestone-courtyard-detail.webp" alt="Illustrative limestone and timber courtyard detail with forest-green window frames" fill sizes="(min-width: 900px) 45vw, 100vw" /><span>Illustrative architecture</span></div><div className="cv-difference__content"><p className="cv-kicker">The JUFAJA difference</p><h2 id="cv-difference-heading">Consider every detail.</h2><p>Use these topics to shape a conversation about your plans.</p><div className="cv-topic-grid">{topics.map((topic) => <article className="cv-topic" key={topic.title}><h3>{topic.title}</h3><p>{topic.copy}</p></article>)}</div><Link href="/contact" className="cv-card-link">Talk through your plans <ArrowRight aria-hidden="true" size={18} /></Link></div></section>

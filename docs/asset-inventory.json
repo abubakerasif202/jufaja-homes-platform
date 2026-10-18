@@ -1,6 +1,6 @@
 {
   "method": "Repository-wide SHA-256, Sharp dimensions/alpha, 64-bit perceptual difference hashes (distance <=6), and filename reference searches. Candidates require human review; generated/script prerequisites and source originals are not orphans.",
-  "totalAssets": 172,
+  "totalAssets": 188,
   "exactDuplicates": [
     [
       "public/brand/jufaja-logo-3d.png",
@@ -92,7 +92,21 @@
   "withoutTextReferences": [
     "public/brand/javed-iqbal-executive.png",
     "public/brand/javed-iqbal-site.png",
-    "public/brand/jufaja-mark-3d.png"
+    "public/brand/jufaja-mark-3d.png",
+    "public/images/inspiration/bath-green-vanity.webp",
+    "public/images/inspiration/bath-grey-tile.webp",
+    "public/images/inspiration/bath-marble-shower.webp",
+    "public/images/inspiration/bath-walk-in.webp",
+    "public/images/inspiration/kitchen-garden-window.webp",
+    "public/images/inspiration/kitchen-island-stools.webp",
+    "public/images/inspiration/kitchen-marble-island.webp",
+    "public/images/inspiration/living-dining-kitchen.webp",
+    "public/images/inspiration/living-glass-marble.webp",
+    "public/images/inspiration/living-grey-sofa.webp",
+    "public/images/inspiration/living-open-plan.webp",
+    "public/images/inspiration/outdoor-garden-stairs.webp",
+    "public/images/inspiration/outdoor-pool-villa.webp",
+    "public/images/inspiration/outdoor-terrace.webp"
   ],
   "assets": [
     {
@@ -337,6 +351,7 @@
         "src/app/custom-homes/page.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
+        "src/data/inspiration.ts",
         "src/data/projects.ts"
       ],
       "width": 1920,
@@ -356,6 +371,7 @@
         "src/app/packages/page.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
+        "src/data/inspiration.ts",
         "src/data/projects.ts"
       ],
       "width": 1920,
@@ -387,7 +403,8 @@
         "public/images/architecture/README.md",
         "src/app/knockdown-rebuild/page.tsx",
         "src/data/designs.json",
-        "src/data/hero-slides.ts"
+        "src/data/hero-slides.ts",
+        "src/data/inspiration.ts"
       ],
       "width": 1920,
       "height": 1434,
@@ -399,7 +416,8 @@
       "bytes": 347024,
       "sha256": "9a0aac282cc3f7c44494ac70aedef688a4a59109ac0382657671d2539792c685",
       "usages": [
-        "public/images/architecture/README.md"
+        "public/images/architecture/README.md",
+        "src/data/inspiration.ts"
       ],
       "width": 1536,
       "height": 1024,
@@ -414,6 +432,7 @@
         "public/images/architecture/README.md",
         "src/app/custom-homes/page.tsx",
         "src/components/home/CasaviewHome.tsx",
+        "src/data/inspiration.ts",
         "src/data/projects.ts"
       ],
       "width": 1920,
@@ -1190,6 +1209,171 @@
       "height": 896,
       "alpha": false,
       "perceptualHash": "3f7f0b0f69677703"
+    },
+    {
+      "file": "public/images/inspiration/bath-freestanding.webp",
+      "bytes": 87982,
+      "sha256": "0af576ab267a4ef234671ff30809d6aaec330aef8d047cae4d3d1337f04b73d7",
+      "usages": [
+        "src/data/hero-slides.ts"
+      ],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "9f9f33371e1e0ecd"
+    },
+    {
+      "file": "public/images/inspiration/bath-green-vanity.webp",
+      "bytes": 53442,
+      "sha256": "b5a1d52468e06c2d6dab022afb51759412d32f80ccc5b5941fc86b4a50f9e4d3",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "9696b4b4f0b2b2b2"
+    },
+    {
+      "file": "public/images/inspiration/bath-grey-tile.webp",
+      "bytes": 265902,
+      "sha256": "d8ddf69af50352f878a949bf4a2a54ff99ebd467a8cb06bf25a2ad716c91df32",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "9693a3e2c603170f"
+    },
+    {
+      "file": "public/images/inspiration/bath-marble-shower.webp",
+      "bytes": 67484,
+      "sha256": "d213fc929574e99225cbe1eb7a8febe4c5f68dfc15e37e941e03034d76b41aa7",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "f17363e9bde5f1f1"
+    },
+    {
+      "file": "public/images/inspiration/bath-walk-in.webp",
+      "bytes": 124310,
+      "sha256": "93c48e9093fa46f90c20d2b18ad345e90b888091a35997b6971b108154dff0a6",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "6aa4adefb631e9cc"
+    },
+    {
+      "file": "public/images/inspiration/kitchen-garden-window.webp",
+      "bytes": 215212,
+      "sha256": "9029a950301299352894f6b01be97e173e1db8fa2e78095bbf90b8d22fdf356c",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "0d4143732415910f"
+    },
+    {
+      "file": "public/images/inspiration/kitchen-island-stools.webp",
+      "bytes": 115646,
+      "sha256": "043cc1dfb3963e90b7f3d3cdcfda7679d3dd913255c00d26561af8f7f103c2fe",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "8defcfdb9b8f8b03"
+    },
+    {
+      "file": "public/images/inspiration/kitchen-marble-island.webp",
+      "bytes": 82750,
+      "sha256": "b0e4e3df695ef45e14c181cad56da1c8c758dd41fb1776a12a8d6356647db4ba",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "0f1fd93d9dcf8f27"
+    },
+    {
+      "file": "public/images/inspiration/kitchen-timber-island.webp",
+      "bytes": 78526,
+      "sha256": "3fce2a7b87371d4298dc88e48fd46a67a5e08b54774a4d2264b430d0ca0cbe5a",
+      "usages": [
+        "src/app/inspiration/page.tsx",
+        "src/data/hero-slides.ts"
+      ],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "b63270717171b3c9"
+    },
+    {
+      "file": "public/images/inspiration/living-dining-kitchen.webp",
+      "bytes": 139912,
+      "sha256": "00baa3b20487dff233e26b860f8148fd0ffc06d259bfd22fb72c7df2af19f68b",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "6d6f636967640c0e"
+    },
+    {
+      "file": "public/images/inspiration/living-glass-marble.webp",
+      "bytes": 285892,
+      "sha256": "0ceb3e8cd4735bf7f63b62a153a2c4d95d0729017b10dd16d3ff37d3a347459a",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "39664d0f73638787"
+    },
+    {
+      "file": "public/images/inspiration/living-grey-sofa.webp",
+      "bytes": 158308,
+      "sha256": "fc4144e63215533d5e2e6c9efe6b7107d3539528fdb6790b3a30b5fb5a87fbeb",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "7f3f5e5e5e5e787f"
+    },
+    {
+      "file": "public/images/inspiration/living-open-plan.webp",
+      "bytes": 141204,
+      "sha256": "b65a043966e60370ec1a83148f5bca044aefd1377253241fb44e716bc5686d09",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "c84401414dd1ddc0"
+    },
+    {
+      "file": "public/images/inspiration/outdoor-garden-stairs.webp",
+      "bytes": 387218,
+      "sha256": "e62bddeefc94d01004c3b55f324c949b52260692246341b9e4ec488fa1be100d",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "006627230f3a0e1a"
+    },
+    {
+      "file": "public/images/inspiration/outdoor-pool-villa.webp",
+      "bytes": 138880,
+      "sha256": "ae8224144c8c7e310115554d1ada2d1c823664aaa588f607e7a7c7fdd07b1158",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "fffff9e9ed6d0d07"
+    },
+    {
+      "file": "public/images/inspiration/outdoor-terrace.webp",
+      "bytes": 335824,
+      "sha256": "717244ad9572de7ce8c1b9be6e99f90b5f93fd0f125df20b5ae6aa33fd643fdc",
+      "usages": [],
+      "width": 1920,
+      "height": 1280,
+      "alpha": false,
+      "perceptualHash": "3b3f2f2f1f797f6f"
     },
     {
       "file": "public/images/projects/10-westview-street-campbelltown-01.webp",

@@ -13,6 +13,7 @@ const links = [
   { href: '/designs', label: 'Home Designs' },
   { href: '/packages', label: 'House & Land Enquiries' },
   { href: '/display-homes', label: 'Display Home Enquiries' },
+  { href: '/inspiration', label: 'Design Inspiration' },
   { href: '/projects', label: 'Property Gallery' },
   { href: '/about-us', label: 'About' },
   { href: '/contact', label: 'Contact' },
