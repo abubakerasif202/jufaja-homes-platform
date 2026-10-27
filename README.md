@@ -2,6 +2,24 @@
 
 The JUFAJA website is a light, editorial home-design and building-enquiry site built with Next.js App Router. Catalogue measurements and external residential imagery are presented as indicative references; confirm current plans and project details with JUFAJA before relying on them. The `/projects` page is design inspiration, not a portfolio of verified completed builds.
 
+## Interactive design studio
+
+`/design-studio` supports editable site polygons and room dimensions, up to three
+floors, an interactive projected 3D model, NSW address/parcel lookup, an official
+basemap, sourced planning-map records, measured boundary clearances against
+explicit manual assumptions, JSON save/open, TXT/print-to-PDF reports and an
+editable enquiry summary. Saved projects are user data; reopening never restores
+authoritative planning status. Look up the site again for current records.
+
+See [planning sources and operational limits](docs/planning-sources.md).
+Map records and numeric comparisons are concept screening only. This is not a
+complete council/Housing Code/NCC rules engine, certified plan or BASIX/NatHERS
+assessment. Obtain current council controls and professional assessment.
+
+Run `node scripts/qa-design-studio.mjs` against the production server on port
+3010 for the fixture-based editor journey. It intercepts every enquiry. Live
+NSW service verification is separate; provider outages remain unavailable.
+
 ## Development
 
 Requirements: Node.js 20 or later and npm.

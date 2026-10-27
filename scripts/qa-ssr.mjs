@@ -88,6 +88,13 @@ function inspect(html, route) {
   // Content body in <main>.
   const words = text(main).split(' ').filter(Boolean).length;
   if (words < 40) fail(`only ${words} words inside <main>`);
+  // SVG titles must survive server rendering. Multiple JSX children in a title
+  // can serialize empty and cause a hydration mismatch when the client fills it.
+  for (const svg of main.matchAll(/<svg\b[\s\S]*?<\/svg>/g)) {
+    const titles = [...svg[0].matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/g)];
+    const emptyTitles = titles.filter(title => !text(title[1]));
+    if (emptyTitles.length) fail(`${emptyTitles.length}/${titles.length} SVG title(s) are empty in server HTML`);
+  }
   // Content must not be server-rendered hidden. Decorative (aria-hidden) elements such as drawing lines and the intro overlay may animate in.
   const hiddenContent = [];
   const walk = [];

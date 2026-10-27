@@ -6,6 +6,7 @@ type ButtonVariant = 'primary' | 'gold' | 'outline' | 'outline-light';
 
 interface ButtonLinkProps {
   href: string;
+  prefetch?: boolean;
   tabIndex?: number;
   variant?: ButtonVariant;
   arrow?: boolean;
@@ -13,9 +14,9 @@ interface ButtonLinkProps {
   children: React.ReactNode;
 }
 
-export default function ButtonLink({ href, variant = 'primary', arrow = true, className, children, tabIndex }: ButtonLinkProps) {
+export default function ButtonLink({ href, prefetch, variant = 'primary', arrow = true, className, children, tabIndex }: ButtonLinkProps) {
   return (
-    <Link href={href} tabIndex={tabIndex} className={cn('btn', `btn-${variant}`, className)}>
+    <Link href={href} prefetch={prefetch} tabIndex={tabIndex} className={cn('btn', `btn-${variant}`, className)}>
       <span>{children}</span>
       {arrow && <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />}
     </Link>
