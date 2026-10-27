@@ -6,7 +6,7 @@ import { ENQUIRY_TYPES, type EnquiryContext } from '@/lib/enquiry-context';
 
 type FormStatus = 'idle' | 'sending' | 'sent' | 'error';
 
-export default function EnquiryForm({ context = { enquiryType: 'General enquiry', target: '' } }: { context?: EnquiryContext }) {
+export default function EnquiryForm({ context = { enquiryType: 'General enquiry', target: '' }, initialMessage }: { context?: EnquiryContext; initialMessage?: string }) {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [error, setError] = useState('');
   const pendingRequest = useRef<AbortController | null>(null);
@@ -100,7 +100,7 @@ export default function EnquiryForm({ context = { enquiryType: 'General enquiry'
       </div>
       <div>
         <label htmlFor="contact-message" className="mb-1.5 block text-sm font-medium text-jufaja-forest-900">Message</label>
-        <textarea id="contact-message" name="message" defaultValue={context.target ? `I would like to discuss ${context.target}.` : ''} rows={5} maxLength={4000} className="w-full rounded-sm border border-jufaja-border p-3 text-base text-jufaja-forest-950 focus:border-jufaja-gold-600" />
+        <textarea id="contact-message" name="message" defaultValue={initialMessage ?? (context.target ? `I would like to discuss ${context.target}.` : '')} rows={5} maxLength={4000} className="w-full rounded-sm border border-jufaja-border p-3 text-base text-jufaja-forest-950 focus:border-jufaja-gold-600" />
       </div>
       <div className="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="contact-website">Leave this field empty</label>

@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Unverified design references are noindex and intentionally excluded.
   // Core Static Routes
   const staticRoutes: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/design-studio`, changeFrequency: 'monthly', priority: 0.8 },
     {
       url: `${baseUrl}`,
       changeFrequency: 'weekly',

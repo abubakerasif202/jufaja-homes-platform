@@ -20,6 +20,7 @@ const links = [
 ];
 
 const serviceLinks = [
+  { href: '/design-studio', label: 'Visualise Your Home' },
   { href: '/custom-homes', label: 'Custom Homes' },
   { href: '/knockdown-rebuild', label: 'Knockdown Rebuild' },
   { href: '/inclusions', label: 'Inclusions' },
@@ -139,7 +140,7 @@ export default function Header() {
             </button>
             <div id="services-menu" hidden={!servicesOpen} className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
               <ul className="border border-jufaja-gold/40 bg-white p-2 shadow-jufaja-card">
-                {serviceLinks.map(({ href, label }) => <li key={href}><Link href={href} aria-current={pathname?.startsWith(href) ? 'page' : undefined} className="flex min-h-11 items-center px-3 text-sm font-semibold text-jufaja-forest-900 transition-colors hover:bg-jufaja-cream hover:text-jufaja-gold-700">{label}</Link></li>)}
+                {serviceLinks.map(({ href, label }) => <li key={href}><Link href={href} prefetch={href === '/design-studio' ? false : undefined} aria-current={pathname?.startsWith(href) ? 'page' : undefined} className="flex min-h-11 items-center px-3 text-sm font-semibold text-jufaja-forest-900 transition-colors hover:bg-jufaja-cream hover:text-jufaja-gold-700">{label}</Link></li>)}
               </ul>
             </div>
           </div>
@@ -202,7 +203,7 @@ export default function Header() {
               })}
               <button type="button" onClick={closeMenu} className="btn btn-outline mb-4 mt-6">Close navigation <X aria-hidden="true" className="h-4 w-4" /></button>
               <div className="grid grid-cols-1 gap-2 pt-4 min-[360px]:grid-cols-2">
-                {serviceLinks.map(({ href, label }) => <Link key={href} href={href} className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">{label}</Link>)}
+                {serviceLinks.map(({ href, label }) => <Link key={href} href={href} prefetch={href === '/design-studio' ? false : undefined} className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">{label}</Link>)}
               </div>
             </motion.nav>
           </>

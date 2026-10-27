@@ -35,6 +35,7 @@ export default function CasaviewHome({ designs }: { designs: HomeDesign[] }) {
   return (
     <div className="cv-home">
       <HeroSlideshow />
+      <section className="cv-section" aria-labelledby="cv-studio-heading"><div className="cv-container"><div className="cv-section-heading"><div><p className="cv-kicker">From your site to your brief</p><h2 id="cv-studio-heading">Visualise your home in 3D</h2><p>Explore room layouts, dimensions and available NSW planning information. Save a concept to discuss with JUFAJA and your planning professionals. Concepts are not approved building plans.</p></div><Link href="/design-studio" prefetch={false} className="cv-button">Open design studio <ArrowRight aria-hidden="true" size={18} /></Link></div></div></section>
       <nav className="cv-selector" aria-label="Explore building options">{categories.map(({ label, href, icon: Icon }) => <Link key={href} href={href} className="cv-selector__link"><Icon className="cv-selector__icon" aria-hidden="true" strokeWidth={1.3} /><span>{label}</span><ArrowRight aria-hidden="true" size={15} /></Link>)}</nav>
       <section className="cv-section" aria-labelledby="cv-designs-heading"><div className="cv-container">
         <div className="cv-section-heading"><div><p className="cv-kicker">Find your next home</p><h2 id="cv-designs-heading">Explore our home designs</h2></div><Link href="/designs" className="cv-card-link">View all designs <ArrowRight aria-hidden="true" size={18} /></Link></div>

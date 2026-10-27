@@ -20,6 +20,7 @@ export default function CustomHomesPage() {
           <h1 className="type-h1 mt-3 max-w-3xl font-serif text-jufaja-forest">A home shaped around your brief.</h1>
           <p className="type-lead mt-6 max-w-2xl text-jufaja-muted">Start with the site and the way you want to live. A clear brief helps you explore appropriate design options and identify what needs closer review.</p>
           <div className="mt-9 flex flex-wrap gap-3">
+            <ButtonLink href="/design-studio" prefetch={false}>Visualise your home</ButtonLink>
             <ButtonLink href="/contact?interest=Custom%20Home">Discuss your brief</ButtonLink>
             <ButtonLink href="/designs" variant="outline" arrow={false}>Browse listed designs</ButtonLink>
           </div>

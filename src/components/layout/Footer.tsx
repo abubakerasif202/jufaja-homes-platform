@@ -19,6 +19,7 @@ const columns = [
   {
     title: 'Services',
     links: [
+      ['Visualise Your Home', '/design-studio'],
       ['Custom Homes', '/custom-homes'],
       ['Knockdown Rebuild', '/knockdown-rebuild'],
       ['Inclusions', '/inclusions'],
@@ -49,7 +50,7 @@ export default function Footer() {
             <ul>
               {column.links.map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href}>{label}</Link>
+                  <Link href={href} prefetch={href === '/design-studio' ? false : undefined}>{label}</Link>
                 </li>
               ))}
             </ul>
