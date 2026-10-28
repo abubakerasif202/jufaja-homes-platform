@@ -1,4 +1,5 @@
 import './home-bright.css';
+import HeroSlideshow from '@/components/home/HeroSlideshow';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Bath, BedDouble, CarFront, Home, Layers, LandPlot, PencilRuler, RefreshCw, Warehouse } from 'lucide-react';
@@ -39,10 +40,7 @@ export default function CasaviewHome({ designs }: { designs: HomeDesign[] }) {
   return (
     <div className="cv-home">
       <section className="editorial-hero" aria-labelledby="editorial-heading">
-        <figure className="editorial-hero__figure">
-          <div className="editorial-hero__photo"><Image src="/images/architecture/daylight-family-home.webp" alt="Illustrative architectural concept of a stone and timber home" fill priority fetchPriority="high" sizes="(min-width: 1100px) 54vw, 100vw" quality={80} /></div>
-          <figcaption>Client-supplied architectural concept · Not a completed JUFAJA project</figcaption>
-        </figure>
+        <div className="editorial-hero__figure"><HeroSlideshow /></div>
         <div className="editorial-hero__content">
           <p className="cv-kicker">Custom homes · Sydney</p>
           <h1 id="editorial-heading">Beautiful Homes.<br /><em>Thoughtfully Built.</em></h1>

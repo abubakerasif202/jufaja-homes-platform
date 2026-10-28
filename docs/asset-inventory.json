@@ -939,7 +939,8 @@
         "src/data/designs.json",
         "src/data/hero-slides.ts",
         "src/data/inspiration.ts",
-        "src/data/projects.ts"
+        "src/data/projects.ts",
+        "tests/hero-gallery.test.js"
       ],
       "width": 1920,
       "height": 1072,
@@ -961,7 +962,8 @@
         "src/data/designs.json",
         "src/data/hero-slides.ts",
         "src/data/inspiration.ts",
-        "src/data/projects.ts"
+        "src/data/projects.ts",
+        "tests/hero-gallery.test.js"
       ],
       "width": 1920,
       "height": 1072,
@@ -978,7 +980,8 @@
         "src/components/home/CasaviewHome.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
-        "src/data/projects.ts"
+        "src/data/projects.ts",
+        "tests/hero-gallery.test.js"
       ],
       "width": 1920,
       "height": 1072,
@@ -995,7 +998,8 @@
         "src/components/home/CasaviewHome.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
-        "src/data/inspiration.ts"
+        "src/data/inspiration.ts",
+        "tests/hero-gallery.test.js"
       ],
       "width": 1920,
       "height": 1434,
@@ -1819,7 +1823,8 @@
       "sha256": "b5a1d52468e06c2d6dab022afb51759412d32f80ccc5b5941fc86b4a50f9e4d3",
       "usages": [
         "public/images/inspiration/README.md",
-        "src/data/hero-slides.ts"
+        "src/data/hero-slides.ts",
+        "tests/hero-gallery.test.js"
       ],
       "width": 1920,
       "height": 1280,
@@ -1905,7 +1910,8 @@
       "usages": [
         "public/images/inspiration/README.md",
         "src/app/inspiration/page.tsx",
-        "src/data/hero-slides.ts"
+        "src/data/hero-slides.ts",
+        "tests/hero-gallery.test.js"
       ],
       "width": 1920,
       "height": 1280,

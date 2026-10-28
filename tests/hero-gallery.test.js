@@ -44,6 +44,15 @@ test('hero headlines and calls to action match the approved brief', () => {
     'A Home That’s Uniquely Yours.',
     'Inspiration for Every Space.',
   ]);
+  assert.deepEqual(HERO_SLIDES.map((slide) => slide.photo), [
+    '/images/architecture/daylight-family-home.webp', '/images/inspiration/bath-green-vanity.webp',
+    '/images/architecture/daylight-sculptural-home.webp', '/images/architecture/daylight-paired-homes.webp',
+    '/images/architecture/daylight-cantilever-home.webp', '/images/inspiration/kitchen-timber-island.webp',
+  ], 'the original six showcase assets are preserved');
+  assert.deepEqual(HERO_SLIDES.map((slide) => slide.cta.href), [
+    '/designs', '/inspiration#luxury-bathrooms', '/knockdown-rebuild',
+    '/designs?dwelling_type=duplex', '/custom-homes', '/inspiration#modern-kitchens',
+  ], 'each slide preserves its original destination');
   assert.deepEqual(HERO_SLIDES.map((slide) => slide.cta.label), [
     'Explore Home Designs', 'Explore Design Inspiration', 'Explore Knockdown Rebuild',
     'Explore Duplex Designs', 'Explore Custom Homes', 'View Inspiration',
@@ -87,17 +96,11 @@ test('facade categories only publish designs of the matching dwelling type', () 
   }
 });
 
-test('promotional imagery carries no repeated disclaimer overlays, but context and credits remain', () => {
+test('showcase provenance is outside image content and inspiration credits remain', () => {
   const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
-  const overlay = /illustrative (architecture|facade|concept)|not a (completed )?JUFAJA project|inspiration photograph ·/i;
-  for (const file of ['src/components/home/CasaviewHome.tsx', 'src/components/home/HeroSlideshow.tsx', 'src/components/gallery/InspirationGalleries.tsx']) {
-    // Captions outside images and accessible descriptions retain honest provenance; overlays remain absent.
-    const visible = read(file).replace(/<figcaption>.*?<\/figcaption>/gs, '').split('\n').filter((line) => !/alt=|alt:|aria-label=/.test(line)).join(' ');
-    assert.doesNotMatch(visible, overlay, `${file} must not overlay disclaimers`);
-  }
-  assert.match(read('src/components/home/CasaviewHome.tsx'), /<figcaption>(?:Illustrative|Client-supplied) architectural concept.*?not a completed JUFAJA project/i);
-  for (const category of buildGalleryCategories(catalogueFixture)) for (const item of category.items) assert.doesNotMatch(item.tag, overlay);
-  assert.match(read('src/app/inspiration/page.tsx'), /not a completed JUFAJA project/i, 'inspiration page keeps its context statement');
+  const home = read('src/components/home/CasaviewHome.tsx');
+  assert.match(home, /<HeroSlideshow\s*\/>/);
+  assert.match(read('src/app/inspiration/page.tsx'), /not a completed JUFAJA project/i);
   assert.match(read('src/app/inspiration/page.tsx'), /Photo credits/);
   assert.match(read('src/components/layout/Footer.tsx'), /not completed JUFAJA projects/);
 });
@@ -108,8 +111,12 @@ test('slideshow keeps accessibility and server-render contracts', () => {
   assert.match(source, /Pause slideshow/);
   assert.match(source, /visibilitychange/);
   assert.match(source, /aria-hidden=\{active \? undefined : true\}/);
-  assert.equal((source.match(/<h1\s/g) || []).length, 1, 'exactly one h1');
+  assert.equal((source.match(/<h1\s/g) || []).length, 0, 'the image carousel does not duplicate the editorial h1');
+  const home = fs.readFileSync(path.join(root, 'src/components/home/CasaviewHome.tsx'), 'utf8');
+  assert.equal((home.match(/<h1\s/g) || []).length, 1, 'the editorial content retains one h1');
+  assert.doesNotMatch(source, /className="cv-hero__shade"|className="cv-hero__headline"/, 'no shade or headline overlay is restored');
   const css = fs.readFileSync(path.join(root, 'src/components/home/hero-slideshow.css'), 'utf8');
   assert.match(css, /prefers-reduced-motion: reduce/);
+  assert.match(css, /--hero-slide-ms:\s*6s/, 'showcase cadence is six seconds');
   assert.doesNotMatch(css, /animation:[^;]*(width|height|left|top)\b/);
 });

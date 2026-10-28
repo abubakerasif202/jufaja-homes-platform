@@ -1,115 +1,38 @@
-/* Cinematic homepage hero. Slide 1 is fully visible in the server HTML; motion is layered on after the intro. */
-:root {
-  --hero-slide-ms: 5s;
+/* Image-only showcase: controls and destinations sit on ivory, never over architecture. */
+.cv-home .cv-hero {
+  --hero-slide-ms: 6s;
   --hero-fade: 1.1s;
+  position: relative; display: flex; flex-direction: column; align-items: stretch;
+  min-width: 0; min-height: 0; height: auto; overflow: hidden;
+  background: #f7f5f0; color: #152f29; isolation: isolate;
 }
-
-.cv-home .cv-hero { overflow: hidden; background: var(--jufaja-green-950); min-height: 660px; height: min(100svh - 90px, 800px); }
-@media (min-width: 640px) { .cv-home .cv-hero { min-height: 600px; height: min(72vw, 720px); } }
-
-.cv-hero h1.cv-hero__brand {
-  position: absolute; top: 20px; left: 0; right: 0; z-index: 5; margin: 0; text-align: center;
-  font: 600 11px/1 var(--font-body), sans-serif; letter-spacing: .26em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 8px #0008;
-}
-
-.cv-hero__stage { position: absolute; inset: 0; touch-action: pan-y; }
-
-.cv-slide {
-  position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; isolation: isolate;
-  background: var(--jufaja-green-900); opacity: 0; visibility: hidden; transition: opacity var(--hero-fade) ease;
-}
-.cv-slide.is-previous { opacity: 1; visibility: visible; z-index: 1; }
-.cv-slide.is-active { opacity: 1; visibility: visible; z-index: 2; }
-
-.cv-slide .cv-hero__image { object-position: var(--focus-mobile, center 48%); will-change: transform; }
-.cv-slide .cv-hero__image img { object-position: var(--focus-mobile, center 48%); }
-@media (min-width: 768px) {
-  .cv-slide .cv-hero__image, .cv-slide .cv-hero__image img { object-position: var(--focus-desktop, center 48%); }
-}
-
-.cv-slide .cv-hero__shade {
-  /* Light touch: a soft pool of shade only where copy sits, so the photograph itself stays bright. */
-  background:
-    radial-gradient(ellipse 120% 60% at 50% 52%, rgba(10, 28, 20, .46), rgba(10, 28, 20, .18) 62%, transparent 82%),
-    linear-gradient(0deg, rgba(10, 28, 20, .34), transparent 30%);
-}
-@media (min-width: 1024px) {
-  .cv-slide .cv-hero__shade { background: linear-gradient(90deg, rgba(10, 28, 20, .5), rgba(10, 28, 20, .2) 38%, transparent 62%), linear-gradient(0deg, rgba(10, 28, 20, .3), transparent 24%); }
-  .cv-slide[data-align='right'] .cv-hero__shade { background: linear-gradient(270deg, rgba(10, 28, 20, .5), rgba(10, 28, 20, .2) 38%, transparent 62%), linear-gradient(0deg, rgba(10, 28, 20, .3), transparent 24%); }
-}
-
-.cv-slide .cv-hero__content { width: 100%; max-width: 1000px; padding: 64px 24px 170px; text-align: center; }
-.cv-hero__eyebrow { margin: 0; }
-.cv-hero__headline {
-  font-family: var(--font-body), sans-serif; font-size: clamp(36px, 5.8vw, 78px); font-weight: 300; line-height: 1.12;
-  letter-spacing: -.035em; margin: 14px 0 22px; text-shadow: 0 1px 3px #0006, 0 2px 22px #0007;
-}
-.cv-hero__headline span { display: block; }
-.cv-hero__accent { font-style: italic; color: var(--jufaja-gold-400); }
-.cv-slide .cv-hero__content > .cv-hero__copy { max-width: 520px; margin: 0 auto 26px; font-size: 17px; line-height: 1.55; }
-
-@media (min-width: 1024px) {
-  .cv-slide .cv-hero__content { padding-bottom: 110px; }
-  .cv-slide[data-align='left'] .cv-hero__content { justify-self: start; margin-left: max(32px, 7vw); text-align: left; }
-  .cv-slide[data-align='right'] .cv-hero__content { justify-self: end; margin-right: max(32px, 7vw); text-align: left; }
-  .cv-slide[data-align='left'] .cv-hero__content > .cv-hero__copy, .cv-slide[data-align='right'] .cv-hero__content > .cv-hero__copy { margin-inline: 0; }
-  .cv-slide[data-align='left'] .cv-hero__content, .cv-slide[data-align='right'] .cv-hero__content { max-width: 600px; }
-}
-
-/* Controls */
-.cv-hero__controls {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center;
-  justify-content: space-between; gap: 6px 16px; padding: 0 max(16px, env(safe-area-inset-right)) calc(76px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
-}
-/* Clear of the floating Enquire Now pill, which is shown below 1280px. */
-@media (min-width: 1280px) { .cv-hero__controls { padding-inline: calc(max(32px, 7vw) + 24px); padding-bottom: 22px; } }
-@media (min-width: 1024px) and (max-width: 1279px) { .cv-hero__controls { padding-inline: calc(max(32px, 7vw) + 24px); } }
-.cv-hero__progress { display: flex; flex: 1 1 180px; min-width: 0; max-width: 460px; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.cv-hero__progress li { flex: 1 1 0; min-width: 24px; }
-.cv-hero__dot { display: flex; align-items: center; width: 100%; min-height: 44px; padding: 0; border: 0; background: transparent; cursor: pointer; }
-.cv-hero__dot-track { display: block; width: 100%; height: 3px; overflow: hidden; background: rgba(255, 255, 255, .38); transition: background .3s; }
-.cv-hero__dot:hover .cv-hero__dot-track, .cv-hero__dot[aria-current='true'] .cv-hero__dot-track { background: rgba(255, 255, 255, .62); }
-.cv-hero__dot-fill {
-  display: block; width: 100%; height: 100%; background: var(--jufaja-gold-400); transform-origin: left center; transform: scaleX(0);
-  animation: cv-hero-progress var(--hero-slide-ms) linear both; animation-play-state: paused;
-}
-.cv-hero[data-playing='true'] .cv-hero__dot-fill { animation-play-state: running; }
-.cv-hero__buttons { display: flex; gap: 8px; margin-left: auto; }
-.cv-hero__control {
-  display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0; color: #fff; cursor: pointer;
-  background: rgba(13, 30, 22, .55); border: 1px solid rgba(255, 255, 255, .55); border-radius: 50%; backdrop-filter: blur(4px);
-  transition: background .2s, color .2s, border-color .2s;
-}
-.cv-hero__control:hover { background: var(--jufaja-gold-400); border-color: var(--jufaja-gold-400); color: var(--jufaja-green-950); }
-.cv-hero :focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
-
-/* Hovering the slide, or keyboard focus on its call to action, also holds the clock (WCAG 2.2.2). The controls bar is
-   excluded so pressing Play or Next never leaves the slideshow paused by its own button. */
-@media (hover: hover) {
-  .cv-hero:has(.cv-hero__stage:hover) .cv-hero__dot-fill, .cv-hero:has(.cv-hero__stage:hover) .cv-hero__image { animation-play-state: paused; }
-}
-.cv-hero:has(.cv-hero__stage :focus-visible) .cv-hero__dot-fill, .cv-hero:has(.cv-hero__stage :focus-visible) .cv-hero__image { animation-play-state: paused; }
-
-/* Ken Burns: slow zoom with a panoramic drift, alternating direction. Only after the intro, only while playing. */
-.cv-hero[data-motion='on'] .cv-slide.is-active .cv-hero__image,
-.cv-hero[data-motion='on'] .cv-slide.is-previous .cv-hero__image { animation: cv-kenburns-in 11s ease-out both; }
-.cv-hero[data-motion='on'] .cv-slide:nth-child(even).is-active .cv-hero__image,
-.cv-hero[data-motion='on'] .cv-slide:nth-child(even).is-previous .cv-hero__image { animation-name: cv-kenburns-out; }
-.cv-hero[data-playing='false'] .cv-hero__image { animation-play-state: paused; }
-
-/* Staggered copy, only for slide changes (slide 1 is never hidden for animation). */
-.cv-slide.is-entering .cv-hero__content > * { animation: cv-hero-rise .8s cubic-bezier(.16, 1, .3, 1) both; }
-.cv-slide.is-entering .cv-hero__content > :nth-child(2) { animation-delay: .12s; }
-.cv-slide.is-entering .cv-hero__content > :nth-child(3) { animation-delay: .24s; }
-.cv-slide.is-entering .cv-hero__content > :nth-child(4) { animation-delay: .36s; }
-.cv-slide.is-entering .cv-hero__content > :nth-child(5) { animation-delay: .48s; }
-
+.cv-home .cv-hero__stage { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #eeece6; touch-action: pan-y; }
+.cv-home .cv-slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; z-index: 0; transition: opacity var(--hero-fade) ease; }
+.cv-home .cv-slide.is-previous { opacity: 1; visibility: visible; z-index: 1; }
+.cv-home .cv-slide.is-active { opacity: 1; visibility: visible; z-index: 2; }
+.cv-home .cv-slide .cv-hero__image { z-index: auto; object-fit: contain; object-position: center; }
+.cv-home .cv-hero__details { padding: 16px 20px 0; min-height: 120px; }
+.cv-home .cv-hero__caption { position: static; margin: 0 0 4px; color: #626660; font-size: 11px; line-height: 1.6; text-shadow: none; }
+.cv-home .cv-hero__cta { font-size: 11px; letter-spacing: .06em; line-height: 1.5; }
+.cv-home .cv-hero__cta[hidden] { display: none; }
+.cv-home .cv-hero__controls { position: static; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 16px; padding: 4px 16px 16px; }
+.cv-home .cv-hero__progress { display: flex; flex: 1 1 284px; min-width: 284px; max-width: 420px; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.cv-home .cv-hero__progress li { flex: 1; min-width: 0; }
+.cv-home .cv-hero__dot { display: flex; align-items: center; width: 100%; min-height: 44px; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.cv-home .cv-hero__dot-track { display: block; width: 100%; height: 2px; background: #dfd8c8; overflow: hidden; }
+.cv-home .cv-hero__dot[aria-current='true'] .cv-hero__dot-track { background: #bda16c; }
+.cv-home .cv-hero__dot-fill { display: block; width: 100%; height: 100%; background: #8a6a2f; transform-origin: left center; transform: scaleX(0); animation: cv-hero-progress var(--hero-slide-ms) linear both; animation-play-state: paused; }
+.cv-home .cv-hero[data-playing='true'] .cv-hero__dot-fill { animation-play-state: running; }
+.cv-home .cv-hero__buttons { display: flex; gap: 8px; margin-left: auto; }
+.cv-home .cv-hero__control { display: inline-grid; place-items: center; width: 44px; height: 44px; border: 1px solid #d8d2c5; border-radius: 50%; padding: 0; background: transparent; color: #152f29; cursor: pointer; transition: background .2s, border-color .2s; }
+.cv-home .cv-hero__control:hover { background: #e9dfcb; border-color: #bda16c; }
+.cv-home .cv-hero :focus-visible { outline: 2px solid #806026; outline-offset: 3px; }
 @keyframes cv-hero-progress { to { transform: scaleX(1); } }
-@keyframes cv-hero-rise { from { opacity: 0; transform: translate3d(0, 18px, 0); } to { opacity: 1; transform: none; } }
-@keyframes cv-kenburns-in { from { transform: scale(1) translate3d(0, 0, 0); } to { transform: scale(1.1) translate3d(-1.5%, -1%, 0); } }
-@keyframes cv-kenburns-out { from { transform: scale(1.1) translate3d(1.5%, 0, 0); } to { transform: scale(1) translate3d(0, 0, 0); } }
-
+@media (min-width: 1100px) {
+  .cv-home .editorial-hero__figure .cv-hero { flex: 1; }
+  .cv-home .cv-hero__stage { flex: 1; min-height: 420px; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .cv-slide { transition-duration: .2s; }
-  .cv-slide .cv-hero__image, .cv-slide.is-entering .cv-hero__content > * { animation: none !important; }
+  .cv-home .cv-slide { transition: none; }
+  .cv-home .cv-hero__control { transition: none; }
 }

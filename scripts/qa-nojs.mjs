@@ -36,7 +36,7 @@ for (const viewport of viewports) {
   const page = await context.newPage();
   for (const route of routes) {
     const problems = [];
-    const response = await page.goto(new URL(route, base).href, { waitUntil: 'domcontentloaded' }).catch(error => ({ error }));
+    const response = await page.goto(new URL(route, base).href, { waitUntil: 'load' }).catch(error => ({ error }));
     if (!response || response.error || response.status() !== 200) { failures.push({ route, viewport: viewport.name, problems: [`navigation failed: ${response?.error?.message ?? response?.status()}`] }); continue; }
     checked += 1;
 
