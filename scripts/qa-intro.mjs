@@ -70,7 +70,7 @@ try {
     check(`${tag} intro marked seen and stored`, after.seen && after.stored === 'true');
     check(`${tag} no horizontal overflow`, after.scrollWidth <= after.innerWidth + 1, `${after.scrollWidth}>${after.innerWidth}`);
     await page.getByRole('heading', { level: 1 }).first().waitFor({ state: 'visible', timeout: 3000 }).catch(() => failures.push(`${tag} hero heading hidden after intro`));
-    const cta = page.locator('.editorial-hero').getByRole('link', { name: /explore our homes/i });
+    const cta = page.locator('.editorial-hero__content').getByRole('link', { name: /explore home designs/i });
     await cta.evaluate(node => node.scrollIntoView({ block: 'center', behavior: 'instant' }));
     check(`${tag} hero CTA visible and unobstructed`, await cta.isVisible() && await cta.evaluate(node => { const rect = node.getBoundingClientRect(); const hit = document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2); return Boolean(hit && node.contains(hit)); }));
     const nav = page.getByRole('navigation').first();
@@ -128,7 +128,7 @@ try {
         await page.getByRole('dialog', { name: /logo introduction/i }).waitFor({ state: 'detached', timeout: 7000 }).catch(() => failures.push(`${tag} intro stuck`));
       }
       await page.getByRole('heading', { level: 1 }).first().waitFor({ state: 'visible', timeout: 4000 }).catch(() => failures.push(`${tag} hero heading not visible`));
-      check(`${tag} CTA visible`, await page.locator('.editorial-hero__content').getByRole('link', { name: /explore our homes/i }).isVisible());
+      check(`${tag} CTA visible`, await page.locator('.editorial-hero__content').getByRole('link', { name: /explore home designs/i }).isVisible());
       check(`${tag} not scroll-locked`, (await state(page)).bodyOverflow !== 'hidden');
       check(`${tag} no console errors`, errors.length === 0, errors.slice(0, 2).join(' | '));
       console.log(`${failures.some(f => f.startsWith(tag)) ? 'FAIL' : 'ok  '} ${tag}`);

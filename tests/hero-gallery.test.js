@@ -38,24 +38,24 @@ test('hero headlines and calls to action match the approved brief', () => {
   const headlines = HERO_SLIDES.map((slide) => slide.lines.join(' '));
   assert.deepEqual(headlines, [
     'Building Homes for a Brighter Tomorrow.',
-    'Beautiful Spaces. Thoughtfully Designed.',
     'A New Beginning at Your Existing Address.',
     'More Possibilities. Smarter Living.',
     'A Home That’s Uniquely Yours.',
+    'Beautiful Spaces. Thoughtfully Designed.',
     'Inspiration for Every Space.',
   ]);
   assert.deepEqual(HERO_SLIDES.map((slide) => slide.photo), [
-    '/images/architecture/daylight-family-home.webp', '/images/inspiration/bath-green-vanity.webp',
+    '/images/architecture/daylight-family-home.webp',
     '/images/architecture/daylight-sculptural-home.webp', '/images/architecture/daylight-paired-homes.webp',
-    '/images/architecture/daylight-cantilever-home.webp', '/images/inspiration/kitchen-timber-island.webp',
+    '/images/architecture/daylight-cantilever-home.webp', '/images/inspiration/bath-green-vanity.webp', '/images/inspiration/kitchen-timber-island.webp',
   ], 'the original six showcase assets are preserved');
   assert.deepEqual(HERO_SLIDES.map((slide) => slide.cta.href), [
-    '/designs', '/inspiration#luxury-bathrooms', '/knockdown-rebuild',
-    '/designs?dwelling_type=duplex', '/custom-homes', '/inspiration#modern-kitchens',
+    '/designs', '/knockdown-rebuild',
+    '/designs?dwelling_type=duplex', '/custom-homes', '/inspiration#luxury-bathrooms', '/inspiration#modern-kitchens',
   ], 'each slide preserves its original destination');
   assert.deepEqual(HERO_SLIDES.map((slide) => slide.cta.label), [
-    'Explore Home Designs', 'Explore Design Inspiration', 'Explore Knockdown Rebuild',
-    'Explore Duplex Designs', 'Explore Custom Homes', 'View Inspiration',
+    'Explore Home Designs', 'Explore Knockdown Rebuild',
+    'Explore Duplex Designs', 'Explore Custom Homes', 'Explore Design Inspiration', 'View Inspiration',
   ]);
 });
 

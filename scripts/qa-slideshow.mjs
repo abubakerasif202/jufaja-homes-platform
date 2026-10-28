@@ -59,7 +59,7 @@ const open = async (options = {}) => {
   }
   // The first interval starts mid-slide when sampling begins, so it is measured from the second change.
   const gaps = stamps.slice(1).map((time, i) => time - stamps[i]).slice(1);
-  check(`autoplay visits slides in order for ${loops} full loops`, seen.every((value, i) => value === i % SLIDES), seen.join(','));
+  check(`autoplay visits slides in order for ${loops} full loops`, seen.every((value, i) => value === (seen[0] + i) % SLIDES), seen.join(','));
   check('autoplay advances about every 6 seconds', gaps.every(gap => gap > 5300 && gap < 7200), `gaps ${gaps.join(',')}ms`);
   check('all six active images decoded through the loop', decoded.size === SLIDES);
   check('carousel has no headline or shade overlay', await page.locator('.cv-hero__stage h1, .cv-hero__stage h2, .cv-hero__shade').count() === 0);
@@ -95,7 +95,7 @@ const open = async (options = {}) => {
       [...document.querySelectorAll('.cv-hero__cta')].every(link => Number(link.dataset.slideIndex) === index || (link.hidden && link.tabIndex === -1));
   });
   check('inactive slides and their destinations are inaccessible', hidden);
-  const expectedLinks = ['/designs', '/inspiration#luxury-bathrooms', '/knockdown-rebuild', '/designs?dwelling_type=duplex', '/custom-homes', '/inspiration#modern-kitchens'];
+  const expectedLinks = ['/designs', '/knockdown-rebuild', '/designs?dwelling_type=duplex', '/custom-homes', '/inspiration#luxury-bathrooms', '/inspiration#modern-kitchens'];
   const heights = [];
   for (let i = 0; i < SLIDES; i += 1) {
     await page.getByRole('button', { name: new RegExp(`Go to slide ${i + 1}:`) }).click();
@@ -173,6 +173,19 @@ const open = async (options = {}) => {
   await page.getByRole('button', { name: 'Play slideshow' }).click();
   await page.waitForFunction(index => [...document.querySelectorAll('.cv-slide')].findIndex(slide => slide.classList.contains('is-active')) !== index, focused, { timeout: SLIDE_MS * 2 });
   check('explicit Play resumes after keyboard interruption', true);
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { configurable: true, get: () => 'hidden' });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const backgroundIndex = await activeIndex(page);
+  await page.waitForTimeout(SLIDE_MS + 300);
+  check('hidden documents pause the slideshow', await activeIndex(page) === backgroundIndex && await page.locator('.cv-hero').getAttribute('data-playing') === 'false');
+  await page.evaluate(() => {
+    delete document.visibilityState;
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  await page.locator('.cv-hero[data-playing="true"]').waitFor();
+  check('returning to a visible document resumes playback', true);
   await context.close();
 }
 
@@ -234,6 +247,12 @@ for (const width of [320, 375, 390, 430, 768, 1024, 1440, 1920]) {
     return { ctaClear: Boolean(hit && hit.closest('.cv-hero__cta')), ctaOutsidePhoto: separate(cta), controlsOutsidePhoto: separate(controls), editorialOutsidePhoto: separate(content), mobileImageFirst: innerWidth >= 1100 || content.top >= stage.bottom - 1 };
   });
   check(`hero controls and text stay separate from photography at ${width}px`, hero.ctaClear && hero.ctaOutsidePhoto && hero.controlsOutsidePhoto && hero.editorialOutsidePhoto && hero.mobileImageFirst, JSON.stringify(hero));
+  const slideHeights = [];
+  for (let i = 0; i < SLIDES; i++) {
+    await page.getByRole('button', { name: new RegExp(`Go to slide ${i + 1}:`) }).click();
+    slideHeights.push(await page.locator('.editorial-hero').evaluate(node => node.getBoundingClientRect().height));
+  }
+  check(`all slides reserve a stable hero height at ${width}px`, Math.max(...slideHeights) - Math.min(...slideHeights) < 1, slideHeights.join(','));
   await context.close();
 }
 

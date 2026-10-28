@@ -4,7 +4,7 @@ import './hero-slideshow.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { AnimationEvent, KeyboardEvent, PointerEvent } from 'react';
+import type { AnimationEvent, CSSProperties, KeyboardEvent, PointerEvent } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { HERO_SLIDES } from '@/data/hero-slides';
 import { useReducedMotion } from '@/lib/use-reduced-motion';
@@ -13,7 +13,7 @@ const SWIPE_DISTANCE_PX = 48;
 const INTRO_SEEN_CLASS = 'jufaja-intro-seen';
 const PROGRESS_ANIMATION = 'cv-hero-progress';
 const COUNT = HERO_SLIDES.length;
-const CROSSFADE_MS = 1100;
+const CROSSFADE_MS = 900;
 
 /** Resolves once the opening logo sequence has finished (or was never shown), so slide 1 is not animated unseen. */
 function useIntroFinished() {
@@ -109,14 +109,14 @@ export default function HeroSlideshow() {
               role="group" aria-roledescription="slide" aria-label={`${i + 1} of ${COUNT}: ${item.eyebrow}`} aria-hidden={active ? undefined : true}>
               {mounted && <Image src={item.photo} alt={active ? item.alt : ''} fill priority={i === 0}
                 loading={i === 0 ? undefined : 'eager'} fetchPriority={i === 0 ? 'high' : 'low'} quality={80}
-                sizes="(min-width: 1100px) 54vw, 100vw" className="cv-hero__image" />}
+                sizes="(min-width: 1100px) 60vw, 100vw" style={{ '--focus-mobile': item.focusMobile, '--focus-desktop': item.focusDesktop } as CSSProperties} className="cv-hero__image" />}
             </div>
           );
         })}
       </div>
       <div className="cv-hero__details">
         <p className="cv-hero__caption">{slide.eyebrow} · {concept ? 'Illustrative architectural concept' : 'Third-party inspiration photograph'}<br />Not a completed JUFAJA project</p>
-        {HERO_SLIDES.map((item, i) => <Link key={item.id} href={item.cta.href} className="cv-hero__cta cv-card-link"
+        {HERO_SLIDES.map((item, i) => <Link prefetch={false} key={item.id} href={item.cta.href} className="cv-hero__cta jh-link"
           hidden={i !== index} tabIndex={i === index ? undefined : -1} data-slide-index={i}>
           {item.cta.label} <ArrowRight aria-hidden="true" size={16} />
         </Link>)}

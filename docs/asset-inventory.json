@@ -935,7 +935,6 @@
       "usages": [
         "public/images/architecture/README.md",
         "src/app/custom-homes/page.tsx",
-        "src/components/home/CasaviewHome.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
         "src/data/inspiration.ts",
@@ -958,7 +957,6 @@
         "src/app/knockdown-rebuild/page.tsx",
         "src/app/packages/page.tsx",
         "src/app/projects/page.tsx",
-        "src/components/home/CasaviewHome.tsx",
         "src/data/designs.json",
         "src/data/hero-slides.ts",
         "src/data/inspiration.ts",

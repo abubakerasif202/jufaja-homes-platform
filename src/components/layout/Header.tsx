@@ -11,8 +11,8 @@ import JufajaLogo from '@/components/brand/JufajaLogo';
 const links = [
   { href: '/', label: 'Home' },
   { href: '/designs', label: 'Home Designs' },
-  { href: '/packages', label: 'House & Land Enquiries' },
-  { href: '/display-homes', label: 'Display Home Enquiries' },
+  { href: '/packages', label: 'House & Land' },
+  { href: '/display-homes', label: 'Display Homes' },
   { href: '/inspiration', label: 'Design Inspiration' },
   { href: '/projects', label: 'Property Gallery' },
   { href: '/about-us', label: 'About' },
@@ -122,24 +122,24 @@ export default function Header() {
       <div aria-hidden="true" className={`absolute inset-0 -z-10 border-b transition-opacity duration-300 ${overlay ? 'opacity-0' : 'opacity-100'} ${scrolled ? 'border-jufaja-gold/30 bg-white/95 shadow-jufaja-soft backdrop-blur-md' : 'border-jufaja-border bg-jufaja-cream/95 backdrop-blur-sm'}`} />
       <div aria-hidden="true" className={`absolute inset-0 -z-10 bg-gradient-to-b from-jufaja-forest-950/75 to-jufaja-forest-950/0 transition-opacity duration-300 ${overlay ? 'opacity-100' : 'opacity-0'}`} />
       <div className="mx-auto flex min-h-[88px] max-w-[1440px] items-center justify-between gap-2 px-4 min-[360px]:min-h-[100px] min-[360px]:gap-4 sm:min-h-[100px] sm:px-6 lg:px-8">
-        <Link href="/" aria-label="JUFAJA Constructions home" className="shrink-0 rounded-sm px-1 py-0.5 min-[360px]:px-2">
+        <Link prefetch={false} href="/" aria-label="JUFAJA Constructions home" className="shrink-0 rounded-sm px-1 py-0.5 min-[360px]:px-2">
           <JufajaLogo size="sm" theme="light" className={overlay ? 'logo-halo' : ''} />
         </Link>
 
-        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-3 2xl:gap-5">
+        <nav aria-label="Main navigation" className="hidden xl:flex items-center gap-3 2xl:gap-4">
           {links.map(({ href, label }) => {
             const active = href === '/' ? pathname === '/' : pathname?.startsWith(href);
-            return <Link key={href} href={href} aria-current={active ? 'page' : undefined} className={`hover-gold-sweep rounded-sm py-2 text-xs font-semibold tracking-normal transition-colors ${overlay ? `hover:text-jufaja-gold-300 ${active ? 'text-white after:!w-full' : 'text-white/90'}` : `hover:text-jufaja-forest-700 ${active ? 'text-jufaja-forest-900 after:!w-full' : 'text-jufaja-muted'}`}`}>
+            return <Link prefetch={false} key={href} href={href} aria-current={active ? 'page' : undefined} className={`hover-gold-sweep rounded-sm py-2 text-[13px] font-semibold tracking-normal transition-colors ${overlay ? `hover:text-jufaja-gold-300 ${active ? 'text-white after:!w-full' : 'text-white/90'}` : `hover:text-jufaja-forest-700 ${active ? 'text-jufaja-forest-900 after:!w-full' : 'text-jufaja-muted'}`}`}>
               {label}
             </Link>;
           })}
           <div ref={servicesRef} className="relative">
-            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(open => !open)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-xs font-semibold tracking-normal transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
+            <button type="button" aria-expanded={servicesOpen} aria-controls="services-menu" onClick={() => setServicesOpen(open => !open)} className={`hover-gold-sweep inline-flex items-center gap-1 rounded-sm py-2 text-[13px] font-semibold tracking-normal transition-colors ${overlay ? 'text-white/90 hover:text-jufaja-gold-300' : serviceLinks.some(l => pathname?.startsWith(l.href)) ? 'text-jufaja-forest-900' : 'text-jufaja-muted hover:text-jufaja-forest-700'}`}>
               Services <ChevronDown aria-hidden="true" className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
             </button>
             <div id="services-menu" hidden={!servicesOpen} className="absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-2">
               <ul className="border border-jufaja-gold/40 bg-white p-2 shadow-jufaja-card">
-                {serviceLinks.map(({ href, label }) => <li key={href}><Link href={href} aria-current={pathname?.startsWith(href) ? 'page' : undefined} className="flex min-h-11 items-center px-3 text-sm font-semibold text-jufaja-forest-900 transition-colors hover:bg-jufaja-cream hover:text-jufaja-gold-700">{label}</Link></li>)}
+                {serviceLinks.map(({ href, label }) => <li key={href}><Link prefetch={false} href={href} aria-current={pathname?.startsWith(href) ? 'page' : undefined} className="flex min-h-11 items-center px-3 text-sm font-semibold text-jufaja-forest-900 transition-colors hover:bg-jufaja-cream hover:text-jufaja-gold-700">{label}</Link></li>)}
               </ul>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function Header() {
                 const active = href === '/' ? pathname === '/' : pathname?.startsWith(href);
                 return (
                   <motion.div key={href} initial={reduceMotion ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: reduceMotion ? 0 : 0.12 + index * 0.04 }}>
-                    <Link href={href} aria-current={active ? 'page' : undefined} className={`flex min-h-12 items-center justify-between border-b border-jufaja-border/70 px-2 font-serif text-xl ${active ? 'text-jufaja-forest-900' : 'text-jufaja-muted'}`}>
+                    <Link prefetch={false} href={href} aria-current={active ? 'page' : undefined} className={`flex min-h-12 items-center justify-between border-b border-jufaja-border/70 px-2 font-serif text-xl ${active ? 'text-jufaja-forest-900' : 'text-jufaja-muted'}`}>
                       <span><small className="mobile-menu__number">0{index + 1}</small>{label}</span>
                       {active && <span aria-hidden="true" className="h-1.5 w-1.5 bg-jufaja-gold-500" />}
                     </Link>
@@ -202,7 +202,7 @@ export default function Header() {
               })}
               <button type="button" onClick={closeMenu} className="btn btn-outline mb-4 mt-6">Close navigation <X aria-hidden="true" className="h-4 w-4" /></button>
               <div className="grid grid-cols-1 gap-2 pt-4 min-[360px]:grid-cols-2">
-                {serviceLinks.map(({ href, label }) => <Link key={href} href={href} className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">{label}</Link>)}
+                {serviceLinks.map(({ href, label }) => <Link prefetch={false} key={href} href={href} className="flex min-h-11 items-center justify-center rounded-sm border border-jufaja-border px-3 text-center text-xs font-semibold text-jufaja-forest-900">{label}</Link>)}
               </div>
             </motion.nav>
           </>

@@ -40,13 +40,13 @@ try {
     const response = await page.goto(new URL(route, base).href, { waitUntil: 'networkidle' });
     assert.equal(response.status(), 200, route);
   }
-  async function checkFrame(frame, slug, lazy) {
+  async function checkFrame(frame, slug, lazy, aspect = 4 / 3) {
     const record = records.get(slug);
     assert(record, `Unknown linked design ${slug}`);
     assert.equal(await frame.count(), 1, `${slug}: image frame`);
     await frame.scrollIntoViewIfNeeded();
     const ratio = await frame.evaluate(element => { const rect = element.getBoundingClientRect(); return rect.width / rect.height; });
-    assert(Math.abs(ratio - 4 / 3) < 0.025, `${slug}: frame must be 4:3 (${ratio})`);
+    assert(Math.abs(ratio - aspect) < 0.025, `${slug}: expected frame ratio ${aspect}, received ${ratio}`);
     const image = frame.locator('img');
     if (record.status === 'pending') {
       assert.equal(await image.count(), 0, `${slug}: pending must not show facade`);
@@ -65,14 +65,14 @@ try {
     assert(['cover', 'contain'].includes(state.fit), `${slug}: image stretching (${state.fit})`);
     if (lazy) assert.equal(state.loading, 'lazy', `${slug}: card lazy loading`);
   }
-  async function checkCards(selector, frameSelector) {
+  async function checkCards(selector, frameSelector, aspect = 4 / 3) {
     const cards = page.locator(selector);
     const slugs = [];
     for (let index = 0; index < await cards.count(); index++) {
       const card = cards.nth(index);
       const href = await card.locator('a[href^="/designs/"]').first().getAttribute('href');
       const slug = href.split('/')[2];
-      await checkFrame(card.locator(frameSelector), slug, true);
+      await checkFrame(card.locator(frameSelector), slug, true, aspect);
       slugs.push(slug);
     }
     return slugs;
@@ -82,7 +82,7 @@ try {
   assert.deepEqual([...catalogue].sort(), designs.map(design => design.slug).sort(), 'Every catalogue card is represented once');
   report.catalogueCards = catalogue.length;
   await open('/');
-  const featured = await checkCards('.cv-design-card', '.cv-design-card__image');
+  const featured = await checkCards('.jh-design-grid article', '.jh-photo', 3 / 2);
   assert(featured.length > 0, 'Homepage featured images');
   report.featuredCards = featured.length;
   for (const design of designs) {
