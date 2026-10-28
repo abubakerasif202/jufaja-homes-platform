@@ -10,7 +10,7 @@ interface CinematicIntroProps {
 }
 
 const STORAGE_KEY = 'jufaja_intro_viewed';
-const INTRO_MS = 1950;
+const INTRO_MS = 1200;
 const EASE = [0.76, 0, 0.24, 1] as const;
 
 /**
@@ -100,7 +100,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
           initial={false}
           animate={{ clipPath: 'inset(0% 0% 0% 0%)' }}
           exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
-          transition={{ duration: 0.55, ease: EASE }}
+          transition={{ duration: 0.4, ease: EASE }}
           className="jufaja-intro fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-jufaja-forest-950"
         >
           <div aria-hidden="true" className="jufaja-intro__grid bg-blueprint-dark pointer-events-none absolute inset-0" />
@@ -115,8 +115,8 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
 
           {/* Gold roofline drawing itself across the frame */}
           <svg aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" className="pointer-events-none absolute inset-0 h-full w-full">
-            <motion.path d="M-20 430 L360 430 L600 200 L840 430 L1220 430" fill="none" stroke="var(--jufaja-gold-500)" strokeWidth="1.5" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.1, delay: 0.1, ease: 'easeInOut' }} />
-            <motion.path d="M-20 470 H1220" fill="none" stroke="var(--jufaja-gold-500)" strokeOpacity="0.45" strokeWidth="1" strokeDasharray="6 10" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.3, delay: 0.3, ease: 'easeOut' }} />
+            <motion.path d="M-20 430 L360 430 L600 200 L840 430 L1220 430" fill="none" stroke="var(--jufaja-gold-500)" strokeWidth="1.5" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.7, delay: 0.05, ease: 'easeInOut' }} />
+            <motion.path d="M-20 470 H1220" fill="none" stroke="var(--jufaja-gold-500)" strokeOpacity="0.45" strokeWidth="1" strokeDasharray="6 10" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }} />
           </svg>
 
           {/* Transparent logo sits directly on the forest-green field; the glow follows the logo alpha, not a box */}
@@ -124,7 +124,7 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
             aria-hidden="true"
             initial={{ opacity: 0, y: 12, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
             className="relative z-[1] aspect-[3/2] w-[260px] sm:w-[400px]"
           >
             <Image src="/brand/jufaja-logo-transparent.png" alt="" width={1536} height={1024} sizes="(min-width: 640px) 400px, 260px" quality={90} priority className="logo-glow h-full w-full object-contain" />

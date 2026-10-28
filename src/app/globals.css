@@ -925,3 +925,19 @@ html { scroll-padding-top: 120px; }
   .cv-header > .mx-auto { min-height: 88px; }
   .cv-footer { padding-inline: 20px; }
 }
+
+/* Compact, light navigation and enquiry controls shared with internal pages. */
+.cv-header > .mx-auto { min-height: 80px; }
+.cv-header { background: #fff; }
+.cv-header [data-jufaja-logo] { width: 104px; }
+.cv-header .site-header__enquire { background: #c4a15f; border-color: #c4a15f; color: #152f29; }
+.cv-header .site-header__enquire:hover { background: #d6b77d; }
+.mobile-enquiry-cta { background: #c4a15f; border-color: #c4a15f; color: #152f29; box-shadow: 0 4px 16px #152f2912; }
+.mobile-enquiry-cta svg { color: currentColor; }
+.mobile-enquiry-cta::before { background: #d6b77d; }
+@media (max-width: 767px) {
+  .mobile-enquiry-rail { background: #f7f5f0; border-top: 1px solid #e6e3db; }
+  .cv-header .mobile-menu { max-height: calc(100dvh - 80px); }
+}
+
+.mobile-enquiry-cta:hover, .mobile-enquiry-cta:focus-visible { color: #152f29; }

@@ -22,10 +22,12 @@ test('gallery retains all 28 distinct addresses and 50 delivered photos and 58 a
   assert.equal(provenance.images.filter(image => image.excludedFromPublicGallery).length, 5);
   for (const photo of properties.flatMap(property => property.photos || [])) {
     assert.ok(photo.startsWith('/images/projects/'), 'Property photographs must be local');
-    assert.ok(fs.existsSync(path.join(root, 'public', photo)), `Missing local photograph: ${photo}`);
+    const archived = path.join(root, 'assets/private-property-photos', path.basename(photo));
+    assert.ok(fs.existsSync(archived), `Missing preserved photograph: ${photo}`);
+    assert.ok(!fs.existsSync(path.join(root, 'public', photo)), `Unlicensed photograph remains public: ${photo}`);
     const record = provenance.images.find(image => image.localPath === photo);
     assert.ok(record?.sourcePage && record.sourceImage, `Missing provenance: ${photo}`);
-    const hash = require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root, 'public', photo))).digest('hex');
+    const hash = require('node:crypto').createHash('sha256').update(fs.readFileSync(archived)).digest('hex');
     assert.equal(hash, record.sha256, `Photograph differs from reviewed derivative: ${photo}`);
   }
 });
@@ -113,4 +115,33 @@ test('premium image listings are presented first and historical photo listings l
   assert.match(model, /curatedPositions/);
   assert.match(model, /originalIndex/, 'Future unranked addresses should stay in stable order');
   assert.doesNotMatch(page, /latest builds|recently completed|newest construction/i);
+});
+const load = require('./load-typescript.cjs');
+const { toPublicPropertyLocation, propertyGalleryImages } = load('src/lib/property-gallery.ts');
+
+test('unverified listing photos are withheld from all public gallery payloads and rendering', () => {
+  const published = properties.map(toPublicPropertyLocation);
+  assert.equal(published.length, 28);
+  for (const [index, property] of published.entries()) {
+    assert.equal(property.street, properties[index].street);
+    assert.equal(property.sourceUrl, undefined);
+    assert.equal(property.photoCredit, undefined);
+    if (property.imageMode === 'real') {
+      assert.deepEqual(property.photos, []);
+      assert.deepEqual(propertyGalleryImages(property), []);
+      assert.deepEqual(propertyGalleryImages(properties[index]), [], 'Rendering also fails closed on raw registry input');
+    } else {
+      assert.deepEqual(propertyGalleryImages(property), properties[index].fallbackImages);
+    }
+  }
+  const page = fs.readFileSync(path.join(root, 'src/app/projects/page.tsx'), 'utf8');
+  assert.match(page, /map\(toPublicPropertyLocation\)/);
+  assert.doesNotMatch(page, /7-meeson-street-claymore-01/);
+  assert.match(page, /Not a completed JUFAJA project/);
+});
+
+test('withheld-photo records retain accessible details and a close control', () => {
+  assert.match(galleryText, /Property photography unavailable/);
+  assert.match(galleryText, /Close property details/);
+  assert.match(galleryText, /Inclusion in this address collection does not establish construction or completion by JUFAJA/);
 });

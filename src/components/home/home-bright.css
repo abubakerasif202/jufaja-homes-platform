@@ -17,3 +17,91 @@
 .cv-home .cv-contact .cv-kicker { color: var(--jufaja-gold-600); }
 .cv-home .cv-contact .cv-button--light { background: var(--jufaja-gold-500); border-color: var(--jufaja-gold-500); }
 .cv-home .cv-design-card__image span { display: none; }
+
+/* Editorial homepage: content stays visible in server HTML; photography has its own space. */
+.cv-home { --editorial-ivory: #f7f5f0; --editorial-ink: #152f29; background: #fff; color: var(--editorial-ink); }
+.cv-home.cv-home h1, .cv-home.cv-home h2, .cv-home.cv-home h3 { font-family: var(--font-display), Georgia, serif; font-weight: 400; letter-spacing: -.025em; }
+.cv-home.cv-home h2 { font-size: clamp(2.2rem, 4.2vw, 4rem); line-height: 1.12; }
+.cv-home.cv-home h3 { font-size: clamp(1.45rem, 2.2vw, 1.9rem); line-height: 1.2; }
+.cv-home .cv-kicker { color: #76603a; font-size: 10px; letter-spacing: .19em; }
+.cv-home .cv-container { width: min(1240px, calc(100% - 48px)); }
+.cv-home .cv-section { padding-block: clamp(64px, 8vw, 112px); }
+.cv-home .cv-button { min-height: 48px; max-width: 100%; letter-spacing: .1em; }
+.cv-home .cv-button--light { background: #c4a15f; border-color: #c4a15f; color: #152f29; }
+.cv-home .cv-button--light:hover { background: #dcc591; border-color: #dcc591; }
+.cv-home .cv-card-link { min-height: 48px; }
+.cv-home .editorial-hero { display: grid; background: var(--editorial-ivory); }
+.cv-home .editorial-hero__figure { margin: 0; min-width: 0; }
+.cv-home .editorial-hero__photo { position: relative; aspect-ratio: 4 / 3; }
+.cv-home .editorial-hero__photo img { object-fit: cover; object-position: center; }
+.cv-home .editorial-hero figcaption { padding: 9px 24px; font-size: 10px; line-height: 1.5; color: #626660; background: var(--editorial-ivory); }
+.cv-home .editorial-hero__content { padding: 44px 24px 56px; align-self: center; min-width: 0; }
+.cv-home .editorial-hero h1 { margin: 20px 0 24px; font-size: clamp(2.35rem, 6.1vw, 5.6rem); line-height: 1.06; }
+.cv-home em { font-weight: 400; color: #657261; }
+.cv-home .editorial-hero__content > p:not(.cv-kicker) { max-width: 440px; color: #626660; font-size: 16px; line-height: 1.8; }
+.cv-home .editorial-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 28px; }
+.cv-home .editorial-introduction { background: var(--editorial-ivory); border-top: 1px solid #e6e3db; }
+.cv-home .editorial-introduction .cv-container { max-width: 860px; text-align: center; }
+.cv-home .editorial-introduction h2 { margin: 22px 0; }
+.cv-home .editorial-introduction p:not(.cv-kicker) { max-width: 620px; margin: 0 auto 20px; color: #626660; }
+.cv-home .cv-section-heading { text-align: left; margin-bottom: 40px; }
+.cv-home .cv-section-heading h2 { margin-top: 14px; font-size: clamp(2.2rem, 4.2vw, 4rem); }
+.cv-home .cv-section-heading p { margin-left: 0; }
+.cv-home .editorial-service-grid { display: grid; gap: 40px; grid-template-columns: 1fr; }
+.cv-home .editorial-service-grid > * { min-width: 0; }
+.cv-home .editorial-service-photo { display: block; position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.cv-home .editorial-service-photo img { object-fit: cover; transition: transform .4s ease; }
+.cv-home .editorial-service-photo:hover img { transform: scale(1.025); }
+.cv-home .editorial-service-grid h3 { margin: 18px 0 12px; }
+.cv-home .editorial-service-grid p { color: #626660; font-size: 15px; }
+.cv-home .editorial-service-grid .editorial-caption { margin-top: 8px; font-size: 10px; }
+.cv-home .editorial-properties { background: var(--editorial-ivory); }
+.cv-home .editorial-properties > .cv-container > .cv-card-link { margin-top: 32px; }
+.cv-home .editorial-properties figcaption p { font-size: 12px; }
+.cv-home .cv-selector { border-block: 1px solid #e6e3db; padding-block: 16px; }
+.cv-home .cv-selector__link { min-height: 96px; }
+.cv-home .cv-design-card { border: 0; box-shadow: none; }
+.cv-home .cv-design-card h3 { font-size: 26px; }
+.cv-home .cv-studies { background: var(--editorial-ivory); padding-block: 80px; }
+.cv-home .cv-studies__intro { max-width: 760px; margin: 0 auto 40px; }
+.cv-home .cv-studies__intro h2 { font-size: clamp(2.2rem, 4.2vw, 4rem); }
+.cv-home .cv-about h2, .cv-home .cv-difference h2, .cv-home .cv-leadership h2, .cv-home .cv-contact h2 { font-size: clamp(2.2rem, 4.2vw, 4rem); }
+.cv-home .cv-about__content { border-top: 0; background: var(--editorial-ivory); }
+.cv-home .cv-difference__content { background: #fff; }
+.cv-home .cv-topic { background: transparent; border: 0; border-top: 1px solid #e6e3db; padding: 20px 0 0; }
+.cv-home .editorial-planning { background: var(--editorial-ivory); text-align: center; }
+.cv-home .editorial-planning .cv-container { max-width: 760px; }
+.cv-home .editorial-planning h2, .cv-home .editorial-journey h2 { margin: 18px 0 24px; }
+.cv-home .editorial-planning p:not(.cv-kicker) { color: #626660; margin-bottom: 28px; }
+.cv-home .editorial-journey ol { display: grid; grid-template-columns: 1fr; gap: 30px; margin: 40px 0 24px; padding: 0; list-style: none; }
+.cv-home .editorial-journey li { border-top: 1px solid #e6e3db; padding-top: 20px; }
+.cv-home .editorial-journey li > span { color: #8a7040; font-size: 13px; }
+.cv-home .editorial-journey li h3 { margin: 20px 0 14px; }
+.cv-home .editorial-journey p { color: #626660; }
+.cv-home .cv-contact { background: var(--editorial-ivory); padding-block: clamp(64px, 8vw, 112px); }
+@media (min-width: 768px) {
+  .cv-home .cv-container { width: min(1240px, calc(100% - 80px)); }
+  .cv-home .editorial-hero__photo { aspect-ratio: 16 / 9; }
+  .cv-home .editorial-hero__content { padding: 56px 40px 72px; }
+  .cv-home .editorial-service-grid, .cv-home .editorial-journey ol { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+}
+@media (min-width: 1100px) {
+  .cv-home .editorial-hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+  .cv-home .editorial-hero__figure { display: flex; flex-direction: column; }
+  .cv-home .editorial-hero__photo { aspect-ratio: auto; flex: 1; min-height: 590px; }
+  .cv-home .editorial-hero__content { padding: 56px clamp(36px, 4vw, 80px); }
+  .cv-home .editorial-hero h1 { font-size: clamp(3rem, 4.1vw, 5rem); }
+}
+@media (max-width: 374px) {
+  .cv-home .editorial-hero h1 { font-size: 2.2rem; }
+  .cv-home .editorial-hero__content { padding-inline: 20px; }
+  .cv-home .editorial-actions { display: grid; justify-items: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cv-home .editorial-service-photo img { transition: none; }
+  .cv-home .editorial-service-photo:hover img { transform: none; }
+}
+
+/* Keep the full architectural concept visible rather than cropping its facade. */
+.cv-home .editorial-hero__photo img { object-fit: contain; }
+.cv-home .editorial-hero__photo { background: #eeece6; }

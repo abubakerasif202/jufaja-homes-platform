@@ -39,7 +39,7 @@ function PropertyImage({
         </span>
       )}
       {!failed ? (
-        // Authorised property photographs are hosted locally; provenance stays internal.
+        // Only publication-approved imagery reaches this component.
         // eslint-disable-next-line @next/next/no-img-element
         <img
           ref={imageRef}
@@ -136,7 +136,7 @@ export default function PropertyAddressDirectory({ properties }: { properties: P
             Residential property collection.
           </h2>
           <p className="mt-5 text-base leading-7 text-jufaja-muted">
-            Explore our 28-address residential collection across Sydney’s south-west. Representative exteriors are shown where property photographs are unavailable.
+            Explore our 28-address residential collection across Sydney’s south-west. Representative exteriors are clearly labelled. Property photography is withheld until publication permission is confirmed.
           </p>
         </header>
 
@@ -186,10 +186,10 @@ export default function PropertyAddressDirectory({ properties }: { properties: P
                     onClick={(event) => openGallery(property, event.currentTarget)}
                     className="relative block aspect-[4/3] w-full overflow-hidden rounded-sm bg-jufaja-forest-900 text-left shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-jufaja-gold-600"
                   >
-                    {image}
+                    {image ?? <span className="absolute inset-0 flex items-center justify-center px-6 pb-12 text-center text-sm text-white/80">Property photography unavailable</span>}
                     <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-black/70 to-transparent px-5 pb-5 pt-16 text-white">
                       <span className="text-xs font-semibold uppercase tracking-[.14em]">{property.suburb}</span>
-                      <span className="text-sm">View gallery <span aria-hidden="true">↗</span></span>
+                      <span className="text-sm">{firstImage ? 'View gallery' : 'View details'} <span aria-hidden="true">↗</span></span>
                     </span>
                     <span className="sr-only"> for {property.street}</span>
                   </button>
@@ -291,7 +291,14 @@ export default function PropertyAddressDirectory({ properties }: { properties: P
               {!representative && opened.photoCredit && <p className="px-4 pb-5 text-xs text-white/70 sm:px-6">Image credit: {opened.photoCredit}</p>}
             </div>
           ) : (
-            <p id="property-dialog-title" className="p-6">Property photographs</p>
+            <div className="p-6">
+              <div className="flex items-start justify-between gap-4">
+                <h2 id="property-dialog-title" className="font-serif text-2xl">{opened?.street ?? 'Property details'}</h2>
+                <button type="button" onClick={closeGallery} aria-label="Close property details" className="min-h-11 min-w-11 border border-white/40 px-3">Close ×</button>
+              </div>
+              {opened && <p className="mt-3 text-sm text-white/80">{opened.suburb}, NSW {opened.postcode}</p>}
+              <p className="mt-4 text-sm text-white/80">Property photography is not currently available for publication. Inclusion in this address collection does not establish construction or completion by JUFAJA.</p>
+            </div>
           )}
         </dialog>
       </div>
