@@ -91,10 +91,11 @@ test('promotional imagery carries no repeated disclaimer overlays, but context a
   const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
   const overlay = /illustrative (architecture|facade|concept)|not a (completed )?JUFAJA project|inspiration photograph ·/i;
   for (const file of ['src/components/home/CasaviewHome.tsx', 'src/components/home/HeroSlideshow.tsx', 'src/components/gallery/InspirationGalleries.tsx']) {
-    // Alt text and aria-labels may keep the honest description; only visible text is checked.
-    const visible = read(file).split('\n').filter((line) => !/alt=|alt:|aria-label=/.test(line)).join(' ');
+    // Captions outside images and accessible descriptions retain honest provenance; overlays remain absent.
+    const visible = read(file).replace(/<figcaption>.*?<\/figcaption>/gs, '').split('\n').filter((line) => !/alt=|alt:|aria-label=/.test(line)).join(' ');
     assert.doesNotMatch(visible, overlay, `${file} must not overlay disclaimers`);
   }
+  assert.match(read('src/components/home/CasaviewHome.tsx'), /<figcaption>(?:Illustrative|Client-supplied) architectural concept.*?not a completed JUFAJA project/i);
   for (const category of buildGalleryCategories(catalogueFixture)) for (const item of category.items) assert.doesNotMatch(item.tag, overlay);
   assert.match(read('src/app/inspiration/page.tsx'), /not a completed JUFAJA project/i, 'inspiration page keeps its context statement');
   assert.match(read('src/app/inspiration/page.tsx'), /Photo credits/);

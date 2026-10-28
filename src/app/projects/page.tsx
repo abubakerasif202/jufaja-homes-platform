@@ -7,31 +7,21 @@ import ButtonLink from '@/components/ui/ButtonLink';
 import { JUFAJA_PROJECTS } from '@/data/projects';
 import { PROPERTY_LOCATIONS } from '@/data/property-locations';
 import PropertyAddressDirectory from '@/components/projects/PropertyAddressDirectory';
-import { prioritizePropertyCards } from '@/lib/property-gallery';
+import { prioritizePropertyCards, toPublicPropertyLocation } from '@/lib/property-gallery';
 
-export const metadata = pageMetadata('Residential Property Gallery', 'Browse 28 residential addresses across South-West Sydney, with genuine property photography, representative exteriors and separate architectural studies.', '/projects');
+export const metadata = pageMetadata('Residential Property Gallery', 'Browse 28 residential addresses across South-West Sydney, with clearly labelled representative exteriors and separate architectural studies.', '/projects');
 
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-jufaja-cream">
       {/* Hero Header */}
-      <PageHero image="/images/projects/7-meeson-street-claymore-01.webp" label="7 Meeson Street, Claymore · Property photograph" tone="ivory">
+      <PageHero image="/images/architecture/daylight-family-home.webp" label="Illustrative architectural concept · Not a completed JUFAJA project" tone="ivory">
         <p className="eyebrow">JUFAJA / Property collection</p>
         <h1 className="type-h1 mt-4 text-jufaja-forest">Residential property gallery.</h1>
-        <p className="type-lead mt-6 text-jufaja-muted">Explore a collection of 28 South-West Sydney residential addresses, with property photography and clearly identified representative exteriors.</p>
+        <p className="type-lead mt-6 text-jufaja-muted">Explore a collection of 28 South-West Sydney residential addresses, with clearly identified representative exteriors. Property photographs are withheld pending publication permission.</p>
       </PageHero>
 
-      <PropertyAddressDirectory properties={prioritizePropertyCards(PROPERTY_LOCATIONS).map(property => ({
-        street: property.street,
-        suburb: property.suburb,
-        postcode: property.postcode,
-        photos: property.photos,
-        fallbackImages: property.fallbackImages,
-        imageMode: property.imageMode,
-        displayNote: property.displayNote,
-        photoCredit: property.photoCredit,
-        photoNote: property.photoNote,
-      }))} />
+      <PropertyAddressDirectory properties={prioritizePropertyCards(PROPERTY_LOCATIONS).map(toPublicPropertyLocation)} />
 
       {/* Projects Showcase List */}
       <section className="studies-journal py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

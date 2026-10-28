@@ -70,7 +70,8 @@ try {
     check(`${tag} intro marked seen and stored`, after.seen && after.stored === 'true');
     check(`${tag} no horizontal overflow`, after.scrollWidth <= after.innerWidth + 1, `${after.scrollWidth}>${after.innerWidth}`);
     await page.getByRole('heading', { level: 1 }).first().waitFor({ state: 'visible', timeout: 3000 }).catch(() => failures.push(`${tag} hero heading hidden after intro`));
-    const cta = page.getByRole('link', { name: /explore home designs/i }).first();
+    const cta = page.locator('.editorial-hero').getByRole('link', { name: /explore our homes/i });
+    await cta.scrollIntoViewIfNeeded();
     check(`${tag} hero CTA visible and unobstructed`, await cta.isVisible() && await cta.evaluate(node => { const rect = node.getBoundingClientRect(); const hit = document.elementFromPoint(rect.x + rect.width / 2, rect.y + rect.height / 2); return Boolean(hit && node.contains(hit)); }));
     const nav = page.getByRole('navigation').first();
     check(`${tag} navigation present`, await nav.count() > 0);

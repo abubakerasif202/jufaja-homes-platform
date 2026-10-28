@@ -9,9 +9,9 @@ export type PublicPropertyLocation = Pick<PropertyLocation,
 export const propertyAddress = (property: PublicPropertyLocation) =>
   property.street + ', ' + property.suburb + ' NSW ' + property.postcode;
 
-/** Reference imagery never supplements a real-photo gallery. */
+/** Listing-photo credits do not establish republication rights. Withhold photographs pending documented licences. */
 export const propertyGalleryImages = (property: PublicPropertyLocation): readonly string[] =>
-  property.imageMode === 'real' ? (property.photos ?? []) : (property.fallbackImages ?? []);
+  property.imageMode === 'real' ? [] : (property.fallbackImages ?? []);
 
 /**
  * Editorial image-presentation order: stronger/high-resolution gallery covers first,
@@ -32,4 +32,17 @@ export function prioritizePropertyCards<T extends Pick<PropertyLocation, 'street
       return rankA - rankB || a.originalIndex - b.originalIndex;
     })
     .map(({ property }) => property);
+}
+
+/** Keep unlicensed listing photographs and private research outside the public payload. */
+export function toPublicPropertyLocation(property: PropertyLocation): PublicPropertyLocation {
+  return {
+    street: property.street,
+    suburb: property.suburb,
+    postcode: property.postcode,
+    imageMode: property.imageMode,
+    ...(property.imageMode === 'representative'
+      ? { fallbackImages: property.fallbackImages, displayNote: property.displayNote }
+      : { photos: [], photoNote: 'Property photography is not currently available for publication.' }),
+  };
 }

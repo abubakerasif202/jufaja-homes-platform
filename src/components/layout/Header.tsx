@@ -146,7 +146,7 @@ export default function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 xl:ml-0">
-          <button type="button" onClick={openEnquiry} className={`site-header__enquire btn ${overlay ? 'btn-gold' : 'btn-primary'} min-h-11 whitespace-nowrap px-3 tracking-[0.1em] min-[360px]:px-4 sm:px-6 sm:tracking-[0.14em]`}>
+          <button type="button" onClick={openEnquiry} className={`site-header__enquire btn btn-gold min-h-11 whitespace-nowrap px-3 tracking-[0.1em] min-[360px]:px-4 sm:px-6 sm:tracking-[0.14em]`}>
             <span className="min-[360px]:hidden">Enquire</span><span className="hidden min-[360px]:inline">Enquire Now</span>
           </button>
           <button
