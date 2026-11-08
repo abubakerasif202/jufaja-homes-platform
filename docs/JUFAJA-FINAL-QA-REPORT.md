@@ -4,11 +4,11 @@ Prepared 12 October 2026 for existing PR #12: https://github.com/abubakerasif202
 
 ## Implementation and release state
 
-The candidate has **63 unique suitable facades for 63 catalogue designs, zero pending**. Seven generic architectural concepts replace cropped or wrong-storey candidates. All 56 previously suitable files and their metadata are unchanged. Representative CGI disclosure remains outside images; authentic `/projects` photography and verified catalogue figures are preserved.
+The released website has **63 unique suitable facades for 63 catalogue designs, zero pending**. Seven generic architectural concepts replace cropped or wrong-storey candidates. All 56 previously suitable files and their metadata are unchanged. Representative CGI disclosure remains outside images; authentic `/projects` photography and verified catalogue figures are preserved.
 
 The 34 native 1200×896 exceptions now carry the owner's explicit 12 October 2026 approval, exact response, scope and current file SHA. This corrects the preceding unconfirmed approval wording. Normal minimum dimensions and integrity controls are intact.
 
-Release gates are being completed on the existing branch. Production remains at `2a244a200668bc3a229a0a67747319ad4dbd06f7` until the final Preview and new GitHub Actions release checks pass. No image blocker remains. Production performance, external services and deployment must not be inferred from local success.
+**Released 12 October 2026:** PR #12 was merged to `main` as `5ca4622105e6b0aa1b104f62a8eb62ed0eea6742`. Vercel Production deployment `dpl_FjdPmN8B23FLipQsUfCA9msKyQ8d` reached **READY** and was aliased to `www.jufajaconstructions.com.au` and the apex domain. The previous Production commit was `2a244a2`. These are deployment facts, not measured field performance or proof of email delivery.
 
 ## Local verification
 
@@ -42,7 +42,7 @@ Unauthenticated requests on the preceding Preview failed **56/56 with HTTP 302 `
 
 `scripts/qa-design-images.mjs` and `scripts/remote-design-image-verification.mjs` now capture per-file statuses, media types, byte counts, downloaded SHA and expected SHA, and explicitly fail non-image/authentication responses. Preview hosts require exact explicit allowlisting. Five regression tests include a real two-origin redirect to prove the private bypass header cannot leak.
 
-The prior claim that two passing statuses constituted CI was inaccurate: they were Vercel and a skipped CodeRabbit review. This release adds `.github/workflows/release-checks.yml` with native Windows PowerShell checks on Node 22. Actual Actions success is required before merge. CodeRabbit's skipped review is not counted as code approval; independent code and architectural reviews passed.
+The prior claim that two passing statuses constituted CI was inaccurate: they were Vercel and a skipped CodeRabbit review. This release adds `.github/workflows/release-checks.yml` with native Windows PowerShell checks on Node 22. Codex recorded four passing release checks and zero failed checks before merge. CodeRabbit's skipped review is not counted as independent approval; separate code and architectural reviews were reported as passed.
 
 ## SEO and external integrations
 
@@ -52,4 +52,8 @@ Form delivery is intercepted during browser QA. No real enquiry is sent. Existin
 
 ## Final release evidence
 
-Final candidate SHA, authenticated 63-image Preview verification, GitHub Actions result, merge SHA, actual Production deployment and live browser/image/hydration results will be recorded after those checks run. A failed critical gate keeps PR #12 open.
+Authenticated exact-Preview verification passed **63/63** original-image WebP downloads with matching response byte counts and SHA-256 hashes. All catalogue images loaded; the seven corrected design pages had one visible factual CGI disclosure each. Codex recorded four passing release checks, zero failed checks, then merged PR #12 at `5ca4622105e6b0aa1b104f62a8eb62ed0eea6742`.
+
+Production deployment `dpl_FjdPmN8B23FLipQsUfCA9msKyQ8d` was confirmed READY and associated with the production domains. Subsequent direct HTTP checks reported `/designs`, `/sitemap.xml`, `/robots.txt`, and `/privacy` as **200**, and `/audit-final-missing-page` as **404**. The uploaded transcript ended after these HTTP checks: it does **not** contain a new full live browser or 63-image hash sweep on Production. Do not describe those absent post-release checks as complete.
+
+The direct HTTP report did not show a `Content-Security-Policy` header on the tested responses; verify the actual complete header policy and security impact as a separate hardening task. Live Resend inbox delivery, Upstash connectivity, Search Console status, field Core Web Vitals and a production hydration soak remain unverified by this release.
